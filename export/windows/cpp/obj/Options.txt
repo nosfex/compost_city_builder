@@ -1,0 +1,2 @@
+ -DFLX_RENDER_TILE="1" -Ddesktop="1" -Dflixel="3.3.4" -Dhaxe3="1" -Dhaxe_ver="3.103" -Dhxcpp="3.1.37" -Dhxcpp_api_level="311" -Dlime="0.9.8" -Dlime_native="1" -Dnative="1" -Dno-compilation="1" -Dno_compilation="1" -Dno_console="1" -Dopenfl="2.0.0-beta.2" -Dopenfl-native="1" -Dopenfl_native="1" -Dtools="1.5.1" -Dwindows="1"
+C:\HaxeToolkit\haxe\lib\hxcpp/3,1,37/

@@ -46,6 +46,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/data/category.json", __ASSET__assets_data_category_json);
+		type.set ("assets/data/category.json", AssetType.TEXT);
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/images/grid_block.png", __ASSET__assets_images_grid_block_png);
@@ -65,6 +67,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/data/category.json";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
 		id = "assets/data/data-goes-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
@@ -93,6 +98,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/data/category.json", __ASSET__assets_data_category_json);
+		type.set ("assets/data/category.json", AssetType.TEXT);
 		
 		className.set ("assets/data/data-goes-here.txt", __ASSET__assets_data_data_goes_here_txt);
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
@@ -731,6 +739,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+@:keep class __ASSET__assets_data_category_json extends openfl.utils.ByteArray { }
 @:keep class __ASSET__assets_data_data_goes_here_txt extends openfl.utils.ByteArray { }
 @:keep class __ASSET__assets_images_grid_block_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep class __ASSET__assets_images_images_go_here_txt extends openfl.utils.ByteArray { }
@@ -751,9 +760,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif (windows || mac || linux)
 
 
+@:file("assets/data/category.json") class __ASSET__assets_data_category_json extends flash.utils.ByteArray {}
 @:file("assets/data/data-goes-here.txt") class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray {}
 @:bitmap("assets/images/grid_block.png") class __ASSET__assets_images_grid_block_png extends flash.display.BitmapData {}
 @:file("assets/images/images-go-here.txt") class __ASSET__assets_images_images_go_here_txt extends flash.utils.ByteArray {}

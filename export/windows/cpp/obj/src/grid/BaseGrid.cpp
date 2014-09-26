@@ -12,6 +12,12 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
+#ifndef INCLUDED_flixel_interfaces_IFlxPooled
+#include <flixel/interfaces/IFlxPooled.h>
+#endif
+#ifndef INCLUDED_flixel_util_FlxPoint
+#include <flixel/util/FlxPoint.h>
+#endif
 #ifndef INCLUDED_grid_BaseGrid
 #include <grid/BaseGrid.h>
 #endif
@@ -22,7 +28,7 @@ namespace grid{
 
 Void BaseGrid_obj::__construct(hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,Dynamic SimpleGraphic)
 {
-HX_STACK_FRAME("grid.BaseGrid","new",0x8531aeb1,"grid.BaseGrid.new","grid/BaseGrid.hx",14,0xe435df7e)
+HX_STACK_FRAME("grid.BaseGrid","new",0x8531aeb1,"grid.BaseGrid.new","grid/BaseGrid.hx",15,0xe435df7e)
 HX_STACK_THIS(this)
 HX_STACK_ARG(__o_X,"X")
 HX_STACK_ARG(__o_Y,"Y")
@@ -30,10 +36,14 @@ HX_STACK_ARG(SimpleGraphic,"SimpleGraphic")
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 {
-	HX_STACK_LINE(15)
-	super::__construct(X,Y,SimpleGraphic);
 	HX_STACK_LINE(16)
+	super::__construct(X,Y,SimpleGraphic);
+	HX_STACK_LINE(17)
 	this->makeGraphic((int)96,(int)96,(int)1426128784,null(),null());
+	HX_STACK_LINE(18)
+	::flixel::util::FlxPoint _g = ::flixel::util::FlxPoint_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(18)
+	this->origin = _g;
 }
 ;
 	return null();
@@ -54,7 +64,7 @@ Dynamic BaseGrid_obj::__Create(hx::DynamicArray inArgs)
 
 Void BaseGrid_obj::setData( ::grid::GridData value){
 {
-		HX_STACK_FRAME("grid.BaseGrid","setData",0x578171bd,"grid.BaseGrid.setData","grid/BaseGrid.hx",21,0xe435df7e)
+		HX_STACK_FRAME("grid.BaseGrid","setData",0x578171bd,"grid.BaseGrid.setData","grid/BaseGrid.hx",22,0xe435df7e)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(value,"value")
 	}
@@ -66,9 +76,9 @@ HX_DEFINE_DYNAMIC_FUNC1(BaseGrid_obj,setData,(void))
 
 Void BaseGrid_obj::update( ){
 {
-		HX_STACK_FRAME("grid.BaseGrid","update",0x9d30b058,"grid.BaseGrid.update","grid/BaseGrid.hx",27,0xe435df7e)
+		HX_STACK_FRAME("grid.BaseGrid","update",0x9d30b058,"grid.BaseGrid.update","grid/BaseGrid.hx",28,0xe435df7e)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(27)
+		HX_STACK_LINE(28)
 		this->super::update();
 	}
 return null();
@@ -77,9 +87,9 @@ return null();
 
 Void BaseGrid_obj::destroy( ){
 {
-		HX_STACK_FRAME("grid.BaseGrid","destroy",0x742007cb,"grid.BaseGrid.destroy","grid/BaseGrid.hx",32,0xe435df7e)
+		HX_STACK_FRAME("grid.BaseGrid","destroy",0x742007cb,"grid.BaseGrid.destroy","grid/BaseGrid.hx",33,0xe435df7e)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(32)
+		HX_STACK_LINE(33)
 		this->super::destroy();
 	}
 return null();

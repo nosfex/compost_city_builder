@@ -933,6 +933,8 @@
    <depend name="include/flixel/FlxObject.h"/>
    <depend name="include/flixel/FlxSprite.h"/>
    <depend name="include/flixel/interfaces/IFlxDestroyable.h"/>
+   <depend name="include/flixel/interfaces/IFlxPooled.h"/>
+   <depend name="include/flixel/util/FlxPoint.h"/>
    <depend name="include/grid/BaseGrid.h"/>
    <depend name="include/grid/GridData.h"/>
   </file>

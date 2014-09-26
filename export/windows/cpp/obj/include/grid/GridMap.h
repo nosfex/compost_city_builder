@@ -12,6 +12,8 @@ HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS2(flixel,group,FlxGroup)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
+HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
+HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS1(grid,BaseGrid)
 HX_DECLARE_CLASS1(grid,GridMap)
 namespace grid{
@@ -40,6 +42,8 @@ class HXCPP_CLASS_ATTRIBUTES  GridMap_obj : public ::flixel::group::FlxGroup_obj
 		::String __ToString() const { return HX_CSTRING("GridMap"); }
 
 		Array< ::Dynamic > _grids;
+		::flixel::util::FlxPoint _initPos;
+		::flixel::util::FlxPoint _posCorrection;
 		virtual Void update( );
 
 		virtual Void destroy( );
@@ -49,6 +53,9 @@ class HXCPP_CLASS_ATTRIBUTES  GridMap_obj : public ::flixel::group::FlxGroup_obj
 
 		virtual Void scaleToGrowth( );
 		Dynamic scaleToGrowth_dyn();
+
+		virtual Void unlockAreas( );
+		Dynamic unlockAreas_dyn();
 
 		virtual Void addGrids( Float colrowToAdd);
 		Dynamic addGrids_dyn();

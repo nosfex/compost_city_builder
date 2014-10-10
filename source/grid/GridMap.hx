@@ -255,7 +255,7 @@ class GridMap extends FlxGroup
 		//	_walkers.remove(walker);
 			_walkers.push(nextWalker);
 		}
-	}
+		}
 	
 	
 	private function addN4Cluster(col :Int, row : Int) :Void

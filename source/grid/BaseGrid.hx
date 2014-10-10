@@ -1,26 +1,34 @@
 package grid;
 
 import flixel.FlxSprite;
+import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxPoint;
 import flixel.FlxG;
+import buildings.Building;
 import flixel.util.FlxRect;
 /**
  * ...
  * @author Gerardo Heidel
  */
-class BaseGrid extends FlxSprite
+class BaseGrid extends FlxSpriteGroup
 {
 
 	
 	public var usable(get, set) : Bool;
 	
 	private var _usable :Bool = false;
-	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
+	
+	private var _buildings :Array<Building> = new Array();
+	private var _base :FlxSprite;
+	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
 	{
-		super(X, Y, SimpleGraphic);
-		makeGraphic(96, 96, 0x5500FF90);
-		origin = new FlxPoint();
+		super(X, Y, MaxSize);
+		_base = new FlxSprite(x, y, null);
+		_base.makeGraphic(96, 96, 0x5500FF90);
+		_base.origin = new FlxPoint();
+		//_base.alpha = 0.5;
 		alpha = 0.5;
+		add(_base);
 	}
 	
 	
@@ -33,6 +41,12 @@ class BaseGrid extends FlxSprite
 		return _usable;
 	}
 	
+	
+	public function addBuilding(b :Building) : Void
+	{
+		
+	}
+	
 	public function setData(value :GridData) :Void
 	{
 		
@@ -41,7 +55,17 @@ class BaseGrid extends FlxSprite
 	override public function update():Void
     {
         super.update();
-		
+	/*	_base.x = x;
+		_base.y = y;
+		_base.scale = scale;
+		_base.alpha = alpha;*/
+		for (i in 0 ... members.length)
+		{
+			members[i].x = x;
+			members[i].y = y;
+			members[i].scale = scale;
+			members[i].alpha = alpha;
+		}
 		if (FlxG.mouse.justPressed)
 		{
 			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);

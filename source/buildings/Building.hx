@@ -3,6 +3,7 @@ package buildings;
 import flixel.FlxSprite;
 import haxe.Json;
 import flixel.FlxG;
+import openfl.utils.Object;
 
 /**
  * ...
@@ -21,12 +22,13 @@ class Building extends FlxSprite
 	private var _name :String = "";
 	private var _powered :Bool = false;
 	private var _holdTile :Bool = true;
+	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
-		super(X, Y, ?SimpleGraphic);	
+		super(X, Y, SimpleGraphic);	
 	}
 	
-	public function load(data : Json) :Void
+	public function load(data : Object) :Void
 	{
 		_requiresPower 	= data.power;
 		_influenceArea 	= data.area;
@@ -47,7 +49,7 @@ class Building extends FlxSprite
 		{
 			if (_productionTimer >= 1)
 			{
-				_production ++;
+				_production++;
 				_productionTimer = 0.0;
 			}
 			_productionTimer += FlxG.elapsed * _productionRate;
@@ -58,4 +60,5 @@ class Building extends FlxSprite
 			
 		}
 	}
+	
 }

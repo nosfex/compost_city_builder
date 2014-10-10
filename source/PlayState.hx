@@ -1,5 +1,7 @@
 package;
 
+import buildings.BuildingFactory;
+import category.CategoryData;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -15,6 +17,9 @@ class PlayState extends FlxState
 {
 	
 	private var _map :GridMap;
+	
+	private var _buildingFactory :BuildingFactory ;
+	private var _categoryData :CategoryData;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
@@ -26,6 +31,9 @@ class PlayState extends FlxState
 		
 		_map.initMap(16);
 		add(_map);
+		
+		_buildingFactory = new BuildingFactory();
+		_categoryData = new CategoryData();
 	}
 	
 	/**

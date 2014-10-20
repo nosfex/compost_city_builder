@@ -39,7 +39,7 @@ class CategoryData
 	}
 	
 	
-	public function getHeadlinges() : Map < String, Array<String> >
+	public function getHeadlines() : Map < String, Array<String> >
 	{
 		return _headlines;
 	}

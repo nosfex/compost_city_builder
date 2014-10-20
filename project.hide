@@ -1,0 +1,43 @@
+{
+     "type" : 1
+    ,"target" : null
+    ,"name" : "/compost_city_builder"
+    ,"main" : null
+    ,"projectPackage" : null
+    ,"company" : null
+    ,"license" : null
+    ,"url" : null
+    ,"targetData" : [
+
+    ]
+    ,"files" : [
+         {
+             "path" : "source/category/CategoryData.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 41
+        }
+        ,{
+             "path" : "source/gui_selector/Selector.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 21
+        }
+    ]
+    ,"activeFile" : "source/gui_selector/Selector.hx"
+    ,"openFLTarget" : "mac"
+    ,"openFLBuildMode" : "Debug"
+    ,"runActionType" : 2
+    ,"runActionText" : "haxelib run lime run \"%path%\" mac"
+    ,"buildActionCommand" : "haxelib run lime build \"%path%\" mac -debug"
+    ,"hiddenItems" : [
+
+    ]
+    ,"showHiddenItems" : false
+}

@@ -26,16 +26,12 @@ class CategoryData
 	
 	public function loadJson() : Void
 	{
-		
 		var jsonCategories :Dynamic = Json.parse(_categoryJson);
 		
 		for (i in 0 ... jsonCategories.headlines.length)
-		{
-			
+		{	
 			_headlines.set(jsonCategories.headlines[i], jsonCategories.buildings[i].buildings);
 		}
-		
-		trace(_headlines);
 	}
 	
 	

@@ -20,8 +20,20 @@ class Building extends FlxSprite
 	private var _production :Int = 0;
 	private var _productionTimer :Float = 0;
 	private var _name :String = "";
-	private var _powered :Bool = false;
+	private var _power :Bool = false;
 	private var _holdTile :Bool = true;
+	
+	private var _buildingMaxDmg : Int = 0;
+	
+	// GH: ------------------ GET / SET ---------------------	
+	public var powered(get, set) :Bool;
+	public function get_powered() :Bool { return _power; }
+	public function set_powered(value) :Void { _power = value; }
+	
+	public var influenceArea(get, set) :String;
+	public function get_influenceArea() :String { return _influenceArea; }
+	public function set_influenceArea(value) :Void { _influenceArea = value; }
+	
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -38,25 +50,41 @@ class Building extends FlxSprite
 		_name 			= data.name;
 		
 		_holdTile 		= data.holdTile;
+		
+		_buildingMaxDmg = data.buildingMaxDmg;
+		
+		
 	}
 	
 	
 	override public function update() :Void
 	{
-		super.update();
 		
-		if ((_requiresPower && _powered) || !_requiresPower)
+		if (this.alive)
 		{
-			if (_productionTimer >= 1)
+			
+			super.update();
+			
+			if ((_requiresPower && _power) || !_requiresPower)
 			{
-				_production++;
-				_productionTimer = 0.0;
+				if (_productionTimer >= 1)
+				{
+					_production++;
+					_productionTimer = 0.0;
+				}
+				_productionTimer += FlxG.elapsed * _productionRate;
 			}
-			_productionTimer += FlxG.elapsed * _productionRate;
-		}
-		// GH: Requires power and doesn't have any
-		else
-		{
+			// GH: Requires power and doesn't have any
+			else
+			{
+				// GH: Generate an icon for this, or better yet, a callback to flash an icon
+			}
+			
+			if (_buildingMaxDmg <= 0)
+			{
+				this.kill();
+			}
+			
 			
 		}
 	}

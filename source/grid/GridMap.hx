@@ -33,6 +33,9 @@ class GridMap extends FlxGroup
 	override public function update():Void
     {
         super.update();
+		
+		// GH: Logic for the power grids + power stations
+		
     }
 
     override public function destroy():Void

@@ -16,10 +16,14 @@ class BaseGrid extends FlxSpriteGroup
 	
 	public var usable(get, set) : Bool;
 	
+	public var powered(get, set) :Bool;
+	
 	private var _usable :Bool = false;
 	
 	private var _buildings :Array<Building> = new Array();
 	private var _base :FlxSprite;
+	
+	private var _power :Bool;
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
 	{
 		super(X, Y, MaxSize);
@@ -29,8 +33,11 @@ class BaseGrid extends FlxSpriteGroup
 		//_base.alpha = 0.5;
 		alpha = 0.5;
 		add(_base);
+		_power = false;
 	}
 	
+	public function get_powered() :Bool { return _power; }
+	public function set_powered(value) :Void { _power = value; }
 	
 	public function get_usable() :Bool { return _usable; }
 	

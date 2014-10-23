@@ -34,7 +34,7 @@ class Selector extends FlxSpriteGroup
 		add(btn);
 		categoryButtons.push(btn);
 
-		
+		internalCategoryButtons[btn] = new Array();
 
 		for(i in 0 ... innerData.length())
 		{
@@ -67,43 +67,42 @@ class Selector extends FlxSpriteGroup
 			var r :FlxRect = new FlxRect(btn.x, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
 			if (p.inFlxRect(r))
 			{
-				unrollCategory(btn.text);
+				unrollCategory(btn);
 			}
 		}
 
 	}
 
-	private function unrollCategory(category : String) :Void
+	private function unrollCategory(button :FlxButton) :Void
 	{
 
 		var selectedBtn : FlxButton ;
 		for(btn in categoryButtons)
 		{
-			if(btn.text == category)
-			{
-				selectedBtn = btn;
-			}
-
 			for(i in 0 ... internalCategoryButtons[btn].length())
 			{
-				internalCategoryButtons[btn][i].visible = false;
+				Bool vis = false;
+				if(btn == button)
+				{
+					vis = true;
+				}
+				internalCategoryButtons[btn][i].visible = vis;
 
+				if(btn.y <= button.y)
+				{
+					continue;
+				}
+
+				else
+				{
+					btn.setPosition(button.x, button.y  + internalCategoryButtons[button][i].y);	
+				}
 			}
+
 			
+
+
 		}
-
-		for(btn in categoryButtons)
-		{
-			// GH: skip sameness
-			if(btn == selectedBtn)
-				continue;
-			if(btn.y < selectedBtn.y)
-			{
-				// GH: Expand to lower side
-
-			}
-		}
-
 
 	}
 }

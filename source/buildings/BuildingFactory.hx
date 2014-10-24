@@ -1,6 +1,8 @@
 package buildings;
 import flixel.util.FlxPoint;
 import haxe.Json;
+import buildings.Building;
+//import haxe.io.Error;
 
 /**
  * ...
@@ -9,13 +11,33 @@ import haxe.Json;
 class BuildingFactory
 {
 
+	
+	private static var _privCon :Bool =true;
+	private static var _instance :BuildingFactory = null;
+	public static var CURRENT_BUILDING :String = "";
 	private var _buildingData :Map<String, BuildingData> = new Map();
 	private var _jsonFile :String = 
 	'{"buildings":[{"requiresPower": false, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "name":"Power Plant","lockTile":true, "buildingMaxDmg":3},{"requiresPower": true, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "name":"Power Line","lockTile":false, "buildingMaxDmg":3}]}';
 	public function new() 
 	{
 		//_buildingData = new Map
+		if (_privCon)
+		{
+		//	throw new Error("singleton");
+		}
+
 		loadJson();
+	}
+	
+	public static function instance() :BuildingFactory
+	{
+		if(_instance == null)
+		{
+			_privCon = false;
+			_instance = new BuildingFactory();
+			_privCon = true;
+		}
+		return _instance;
 	}
 	
 	public function loadJson() :Void
@@ -39,10 +61,12 @@ class BuildingFactory
 		}
 	}
 	
-	public function createBuildingInstance(buildingName :String, pos :FlxPoint) :Building
+	public function createBuildingInstance(pos :FlxPoint) :Building
 	{
 		
-		return null;
+		var b :Building = new Building(pos.x, pos.y, null);
+		b.load(_buildingData[CURRENT_BUILDING]);
+		return b;
 	}
 	
 }

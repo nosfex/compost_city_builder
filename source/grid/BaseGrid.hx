@@ -5,6 +5,7 @@ import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxPoint;
 import flixel.FlxG;
 import buildings.Building;
+import buildings.BuildingFactory;
 import flixel.util.FlxRect;
 /**
  * ...
@@ -16,7 +17,6 @@ class BaseGrid extends FlxSpriteGroup
 	
 	public var usable(get, set) : Bool;
 	
-	public var powered(get, set) :Bool;
 	
 	private var _usable :Bool = false;
 	
@@ -36,8 +36,8 @@ class BaseGrid extends FlxSpriteGroup
 		_power = false;
 	}
 	
-	public function get_powered() :Bool { return _power; }
-	public function set_powered(value) :Void { _power = value; }
+	public function isPowered() :Bool { return _power; }
+	public function setPowered(value :Bool)  { _power = value; }
 	
 	public function get_usable() :Bool { return _usable; }
 	
@@ -79,7 +79,9 @@ class BaseGrid extends FlxSpriteGroup
 			var r :FlxRect = new FlxRect(x, y, width * scale.x, height * scale.y);
 			if (p.inFlxRect(r))
 			{
+				
 				trace("clickety clack");
+				add(BuildingFactory.instance().createBuildingInstance(new FlxPoint(x, y)));
 			}
 		}
     }

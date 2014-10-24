@@ -4,6 +4,8 @@ import flixel.group.FlxSpriteGroup;
 import category.CategoryData;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
+import flixel.util.FlxPoint;
+import flixel.util.FlxRect;
 /**
  * ...
  * @author Gerardo Heidel
@@ -12,42 +14,48 @@ class Selector extends FlxSpriteGroup
 {	
 	
 	var categoryButtons :Array<FlxButton> = new Array();
+	
+	var initPosY : Map<FlxButton, Float> = new Map();
 	var internalCategoryButtons : Map<FlxButton, Array<FlxButton>> = new Map();
 	var _buttonHeight : Float = 50;
 	
 	public function new() 
 	{
-		
+		super();
 	}
 	
+	public function initSelector(data :CategoryData) :Void
+	{
+		buildCategoryButton(FlxG.width * 0.8, FlxG.height * 0.1, "Energy", data);
+		buildCategoryButton(FlxG.width * 0.8, FlxG.height * 0.2, "Production", data);
+		buildCategoryButton(FlxG.width * 0.8, FlxG.height * 0.3, "Housing", data);
+	}
+
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
 	
 		var data : Map<String, Array<String>> = category.getHeadlines();
 		
 		
-		var  innerData :Array<String> = data[catName];
+		var  innerData :Array<String> = data[categoryName];
 		
 		
 		
 		var btn :FlxButton = new FlxButton(XBase, YBase, categoryName, selectCategory);
 		add(btn);
 		categoryButtons.push(btn);
-
+		initPosY[btn] = YBase;
 		internalCategoryButtons[btn] = new Array();
 
-		for(i in 0 ... innerData.length())
+		for(i in 0 ... innerData.length)
 		{
-			internalCategoryButtons[btn].push(buildBuildingButton(XBase, YBase + i * _buttonHeight, innerData[i] ));
+			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 10, YBase + ( (i + 1) * _buttonHeight), innerData[i] ));
 		}
-	
-		
 	}
 	
 	private function buildBuildingButton(X :Float, Y :Float, building: String) :FlxButton
 	{
 		var btn :FlxButton = new FlxButton(X, Y, building, selectBuilding);
-		
 		btn.visible = false;
 		add(btn);
 		return btn;
@@ -56,7 +64,20 @@ class Selector extends FlxSpriteGroup
 	
 	private function selectBuilding() :Void
 	{
-		
+		for(btn in categoryButtons)
+		{
+			for(i in 0 ... internalCategoryButtons[btn].length)
+			{
+
+				var curBtn :FlxButton = internalCategoryButtons[btn][i];
+				var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+				var r :FlxRect = new FlxRect(curBtn.x, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
+				if (p.inFlxRect(r))
+				{
+					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
+				}
+			}
+		}
 	}
 
 	private function selectCategory() :Void
@@ -79,14 +100,18 @@ class Selector extends FlxSpriteGroup
 		var selectedBtn : FlxButton ;
 		for(btn in categoryButtons)
 		{
-			for(i in 0 ... internalCategoryButtons[btn].length())
+			
+			btn.y = initPosY[btn];
+				
+			for(i in 0 ... internalCategoryButtons[btn].length)
 			{
-				Bool vis = false;
+				var vis :Bool = false;
+				var data :Array<FlxButton> = internalCategoryButtons[btn];
 				if(btn == button)
 				{
 					vis = true;
 				}
-				internalCategoryButtons[btn][i].visible = vis;
+				data[i].visible = vis;
 
 				if(btn.y <= button.y)
 				{
@@ -95,13 +120,9 @@ class Selector extends FlxSpriteGroup
 
 				else
 				{
-					btn.setPosition(button.x, button.y  + internalCategoryButtons[button][i].y);	
+					btn.setPosition(button.x, button.y  + (data[data.length - 1].y + 15));	
 				}
 			}
-
-			
-
-
 		}
 
 	}

@@ -8,6 +8,7 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
+import gui_selector.Selector;
 import grid.GridMap;
 
 /**
@@ -20,6 +21,7 @@ class PlayState extends FlxState
 	
 	private var _buildingFactory :BuildingFactory ;
 	private var _categoryData :CategoryData;
+	private var _selector :gui_selector.Selector;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
@@ -32,8 +34,13 @@ class PlayState extends FlxState
 		_map.initMap(16);
 		add(_map);
 		
-		_buildingFactory = new BuildingFactory();
+		BuildingFactory.instance();
 		_categoryData = new CategoryData();
+
+		_selector = new Selector();
+		_selector.initSelector(_categoryData);
+		add(_selector);
+
 	}
 	
 	/**

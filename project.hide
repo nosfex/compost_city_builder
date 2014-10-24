@@ -29,6 +29,24 @@
             ]
             ,"activeLine" : 21
         }
+        ,{
+             "path" : "source/PlayState.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 36
+        }
+        ,{
+             "path" : "source/grid/BaseGrid.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 82
+        }
     ]
     ,"activeFile" : "source/gui_selector/Selector.hx"
     ,"openFLTarget" : "mac"

@@ -11,6 +11,9 @@ import openfl.utils.Object;
  */
 class Building extends FlxSprite
 {
+	
+
+	
 	private var _requiresPower: Bool = false;
 	private var _influenceArea :String = "N4";
 	private var _initialTechLevel :Int = 0;
@@ -26,13 +29,12 @@ class Building extends FlxSprite
 	private var _buildingMaxDmg : Int = 0;
 	
 	// GH: ------------------ GET / SET ---------------------	
-	public var powered(get, set) :Bool;
-	public function get_powered() :Bool { return _power; }
-	public function set_powered(value) :Void { _power = value; }
+	public function isPowered() :Bool { return _power; }
+	public function setPowered(value :Bool) { _power = value; }
 	
-	public var influenceArea(get, set) :String;
-	public function get_influenceArea() :String { return _influenceArea; }
-	public function set_influenceArea(value) :Void { _influenceArea = value; }
+//	public var influenceArea(get, set) :String;
+//	public function get_influenceArea() :String { return _influenceArea; }
+//	public function set_influenceArea(value: String)  { _influenceArea = value; }
 	
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 

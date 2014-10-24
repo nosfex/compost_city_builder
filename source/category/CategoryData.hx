@@ -22,7 +22,6 @@ class CategoryData
 		loadJson();
 	}
 	
-	public function get_headlines() { return _headlines; }
 	
 	public function loadJson() : Void
 	{

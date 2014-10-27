@@ -11,7 +11,6 @@ import buildings.Building;
 class BuildingFactory
 {
 
-	
 	private static var _privCon :Bool =true;
 	private static var _instance :BuildingFactory = null;
 	public static var CURRENT_BUILDING :String = "";
@@ -56,15 +55,30 @@ class BuildingFactory
 			bData.requiresPower = (jsonBuildings.buildings[i]).requiresPower;
 			bData.productionRate = (jsonBuildings.buildings[i]).productionRate;
 			bData.productionType = (jsonBuildings.buildings[i]).productionType;
+			bData.buildingMaxDmg = (jsonBuildings.buildings[i]).buildingMaxDmg;
 			_buildingData.arrayWrite(bData.name, bData);
-			//trace(bData.name);
 		}
 	}
 	
-	public function createBuildingInstance(pos :FlxPoint) :Building
+	public function createBuildingInstance() :Building
 	{
 		
-		var b :Building = new Building(pos.x, pos.y, null);
+
+		if(CURRENT_BUILDING == "")
+		{
+			return null;
+		}
+		
+
+		var graphic :Dynamic = null;
+		switch (CURRENT_BUILDING)
+		{
+			case "Power Plant":
+				graphic = AssetPaths.power_plant_0__png;
+
+		}
+		var b :Building = new Building(0, 0, graphic);
+
 		b.load(_buildingData[CURRENT_BUILDING]);
 		return b;
 	}

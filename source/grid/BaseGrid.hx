@@ -20,7 +20,7 @@ class BaseGrid extends FlxSpriteGroup
 	
 	private var _usable :Bool = false;
 	
-	private var _buildings :Array<Building> = new Array();
+	private var _building :Building = null;
 	private var _base :FlxSprite;
 	
 	private var _power :Bool;
@@ -38,6 +38,8 @@ class BaseGrid extends FlxSpriteGroup
 	
 	public function isPowered() :Bool { return _power; }
 	public function setPowered(value :Bool)  { _power = value; }
+
+	public function getBuilding() :Building { return _building;}
 	
 	public function get_usable() :Bool { return _usable; }
 	
@@ -51,7 +53,20 @@ class BaseGrid extends FlxSpriteGroup
 	
 	public function addBuilding(b :Building) : Void
 	{
+		if(b == null)
+		{
+			return;
+		}
 		
+		_building = b;
+		add(b);
+		
+// 		if(b.requiresPower == false)
+		{
+			this.setPowered(true);
+			b.setPowered(true);
+
+		}
 	}
 	
 	public function setData(value :GridData) :Void
@@ -66,13 +81,7 @@ class BaseGrid extends FlxSpriteGroup
 		_base.y = y;
 		_base.scale = scale;
 		_base.alpha = alpha;*/
-		for (i in 0 ... members.length)
-		{
-			members[i].x = x;
-			members[i].y = y;
-			members[i].scale = scale;
-			members[i].alpha = alpha;
-		}
+	
 		if (FlxG.mouse.justPressed)
 		{
 			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
@@ -81,9 +90,28 @@ class BaseGrid extends FlxSpriteGroup
 			{
 				
 				trace("clickety clack");
-				add(BuildingFactory.instance().createBuildingInstance(new FlxPoint(x, y)));
+
+				addBuilding(BuildingFactory.instance().createBuildingInstance());
+
+
 			}
 		}
+
+
+		for (i in 0 ... members.length)
+		{
+			members[i].x = x;
+			members[i].y = y;
+			members[i].scale = scale;
+			members[i].alpha = alpha;
+		}
+
+		if(_power)
+		{
+			alpha = 1;
+
+		}
+
     }
 
     override public function destroy():Void

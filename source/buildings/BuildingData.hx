@@ -13,6 +13,7 @@ class BuildingData
 	public var	productionType :String;
 	public var	productionRate :Int;
 	public var	lockTile :Bool;
+	public var 	buildingMaxDmg :Int;
 	public function new() 
 	{
 		

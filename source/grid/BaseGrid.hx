@@ -123,7 +123,7 @@ class BaseGrid extends FlxSpriteGroup
 		{
 			alpha = 1;
 		
-// 			if(_building != null)
+ 			if(_building != null)
 			{
 				if(_building.requiresPower())
 				{

@@ -50,15 +50,13 @@ class Building extends FlxSprite
 	
 	public function load(data : Object) :Void
 	{
-		_requiresPower 	= data.power;
+		_requiresPower 	= data.requiresPower;
 		_influenceArea 	= data.area;
 		_currTechLevel 	= _initialTechLevel = data.techLevel;
 		_productionType	= data.productionType;
 		_productionRate = data.productionRate;
 		_name 			= data.name;
-		
 		_holdTile 		= data.holdTile;
-		
 		_buildingMaxDmg = data.buildingMaxDmg;
 		
 		
@@ -72,7 +70,7 @@ class Building extends FlxSprite
 		if (this.alive)
 		{
 			
-			if ((_requiresPower && _power) || !_requiresPower)
+ 			if (_power || !_requiresPower)
 			{
 				if (_productionTimer >= 1)
 				{
@@ -80,6 +78,8 @@ class Building extends FlxSprite
 					_productionTimer = 0.0;
 				}
 				_productionTimer += FlxG.elapsed * _productionRate;
+				
+				
 			}
 			// GH: Requires power and doesn't have any
 			else

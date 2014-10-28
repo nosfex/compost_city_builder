@@ -21,22 +21,13 @@
             ,"activeLine" : 41
         }
         ,{
-             "path" : "source/gui_selector/Selector.hx"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 6
-        }
-        ,{
              "path" : "source/PlayState.hx"
             ,"useTabs" : true
             ,"indentSize" : 4
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 58
+            ,"activeLine" : 41
         }
         ,{
              "path" : "source/buildings/Building.hx"
@@ -72,7 +63,16 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 39
+            ,"activeLine" : 48
+        }
+        ,{
+             "path" : "source/grid/BaseGrid.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 103
         }
     ]
     ,"activeFile" : "source/PlayState.hx"

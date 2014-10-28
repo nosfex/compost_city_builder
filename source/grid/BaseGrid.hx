@@ -16,7 +16,7 @@ class BaseGrid extends FlxSpriteGroup
 
 	
 	public var usable(get, set) : Bool;
-	
+	public var forceCheck(get, set) : Bool;
 	
 	private var _usable :Bool = false;
 	
@@ -24,6 +24,8 @@ class BaseGrid extends FlxSpriteGroup
 	private var _base :FlxSprite;
 	
 	private var _power :Bool;
+		
+	private var _forceCheck : Bool = false;
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
 	{
 		super(X, Y, MaxSize);
@@ -37,9 +39,29 @@ class BaseGrid extends FlxSpriteGroup
 	}
 	
 	public function isPowered() :Bool { return _power; }
-	public function setPowered(value :Bool)  { _power = value; }
+	public function setPowered(value :Bool) 
+	{ 
+		_power = value; 
+		if(_building != null)
+		{
+			if(_building.requiresPower())
+			{
+				trace("POWER VALUE: "+value );
+				_building.setPowered(value);
+			}
+		}
+	}
 
 	public function getBuilding() :Building { return _building;}
+	
+	public function get_forceCheck() :Bool { return _forceCheck;}
+	
+	public function set_forceCheck(value)
+	{
+		_forceCheck = value;
+		
+		return _forceCheck;
+	}
 	
 	public function get_usable() :Bool { return _usable; }
 	
@@ -60,27 +82,21 @@ class BaseGrid extends FlxSpriteGroup
 		
 		_building = b;
 		add(b);
-		
-// 		if(b.requiresPower == false)
+		b.origin = new FlxPoint();
+ 		if(b.requiresPower() == false || this.isPowered())
 		{
+			trace("BS POWERING");
 			this.setPowered(true);
 			b.setPowered(true);
 
 		}
+		_forceCheck = true;
 	}
-	
-	public function setData(value :GridData) :Void
-	{
-		
-	}
+
 	
 	override public function update():Void
     {
         super.update();
-	/*	_base.x = x;
-		_base.y = y;
-		_base.scale = scale;
-		_base.alpha = alpha;*/
 	
 		if (FlxG.mouse.justPressed)
 		{
@@ -88,12 +104,9 @@ class BaseGrid extends FlxSpriteGroup
 			var r :FlxRect = new FlxRect(x, y, width * scale.x, height * scale.y);
 			if (p.inFlxRect(r))
 			{
-				
 				trace("clickety clack");
-
 				addBuilding(BuildingFactory.instance().createBuildingInstance());
-
-
+				_forceCheck = true;
 			}
 		}
 
@@ -109,7 +122,26 @@ class BaseGrid extends FlxSpriteGroup
 		if(_power)
 		{
 			alpha = 1;
-
+		
+// 			if(_building != null)
+			{
+				if(_building.requiresPower())
+				{
+					_building.setPowered(true)	;
+				}
+			}
+		}
+		else
+		{
+			
+			alpha = 0.5;
+			if(_building != null)
+			{
+				if(_building.requiresPower())
+				{
+					_building.setPowered(false)	;
+				}
+			}
 		}
 
     }

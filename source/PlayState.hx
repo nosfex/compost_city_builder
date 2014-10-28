@@ -40,7 +40,6 @@ class PlayState extends FlxState
 		_selector = new Selector();
 		_selector.initSelector(_categoryData);
 		add(_selector);
-
 	}
 	
 	/**

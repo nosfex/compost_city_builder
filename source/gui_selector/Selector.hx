@@ -74,7 +74,10 @@ class Selector extends FlxSpriteGroup
 				var r :FlxRect = new FlxRect(curBtn.x, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
 				if (p.inFlxRect(r))
 				{
+					trace("*-----BUILDING@SELECTOR-----*");
+					trace(curBtn.text);
 					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
+					return;
 				}
 			}
 		}

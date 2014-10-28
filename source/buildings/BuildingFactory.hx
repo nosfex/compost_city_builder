@@ -75,10 +75,12 @@ class BuildingFactory
 		{
 			case "Power Plant":
 				graphic = AssetPaths.power_plant_0__png;
+				
+			case "Power Line":
+ 				graphic = AssetPaths.power_line_0__png;
 
 		}
 		var b :Building = new Building(0, 0, graphic);
-
 		b.load(_buildingData[CURRENT_BUILDING]);
 		return b;
 	}

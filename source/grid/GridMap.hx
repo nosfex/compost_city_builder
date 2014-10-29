@@ -32,33 +32,46 @@ class GridMap extends FlxGroup
     override public function update():Void
     {
     	super.update();
-    	checkPowered();
+	
+		checkPowered();
+	
     }
+	
+	function unpowerEverything()
+	{
+		for (i in 0 ... _grids.length)
+		{
+    		_grids[i].setPowered(false);
+    	}
+	}
 
     function checkPowered():Void
     {
     	_grids.sort(sortGrids);
-    	for (i in 0 ... _grids.length) {
-    		_grids[i].setPowered(false);
-    	};
-    	for (i in 0 ... _grids.length) {
+    	
+    	for (i in 0 ... _grids.length) 
+		{
     		var b:Building = _grids[i].getBuilding();
-    		if (b != null) {
-    			if (b.isPowered()) {
-    				if (b.getProductionType() == "power" && b.getProduction() > 0) {
+    		if (b != null) 
+			{
+    			if (b.isPowered()) 
+				{
+    				if (b.getProductionType() == "power" && b.getProduction() > 0) 
+					{
     					_grids[i].setPowered(true);
-    					_powered.push(_grids[i]);
-    					if (b.getInfluenceArea() == "N4") {
+    					
+    					if (b.getInfluenceArea() == "N4") 
+						{
     						var n4arr:Array<grid.BaseGrid> = N4FromIndex(i);
-    						for (j in 0 ... n4arr.length) {
+    						for (j in 0 ... n4arr.length) 
+							{
     							n4arr[j].setPowered(true);
-    							_powered.push(n4arr[j]);
-    						};
-    					};
-    				};
-    			};
-    		};
-    	};
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
     }
 
     override public function destroy():Void
@@ -145,10 +158,10 @@ class GridMap extends FlxGroup
     	if (right % sideSize != 0 && right < _grids.length) {
     		ret.push(_grids[right]);
     	};
-    	/*trace("---------*N4FROMINDEX*---------");
+    	trace("---------*N4FROMINDEX*---------");
     	trace("SIDESIZE: " + sideSize);
-    	trace("top: " + top);
-    	trace("bottom: " + bottom);*/
+    	trace("left: " + left);
+    	trace("right: " + right);
     	return ret;
     }
 
@@ -209,6 +222,8 @@ class GridMap extends FlxGroup
     	};
     	_grids.sort(sortGrids);
     	scaleToGrowth();
+		
+		checkPowered();
     }
 
     function sortGrids(a:BaseGrid, b:BaseGrid):Int

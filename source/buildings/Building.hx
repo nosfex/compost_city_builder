@@ -12,7 +12,7 @@ import openfl.utils.Object;
 class Building extends FlxSprite
 {
 	
-
+	public var name(get, set) :String;
 	
 	private var _requiresPower: Bool = false;
 	private var _influenceArea :String = "N4";
@@ -29,6 +29,9 @@ class Building extends FlxSprite
 	private var _buildingMaxDmg : Int = 0;
 	
 	// GH: ------------------ GET / SET ---------------------	
+	public function get_name() :String { return _name;  }
+	public function set_name(value) { _name = value; return _name; }
+	
 	public function isPowered() :Bool { return _power; }
 	public function setPowered(value :Bool) { _power = value; }
 
@@ -72,7 +75,7 @@ class Building extends FlxSprite
 			
  			if (_power || !_requiresPower)
 			{
-				if (_productionTimer >= 1)
+				if (_productionTimer >= 0)
 				{
 					_production++;
 					_productionTimer = 0.0;

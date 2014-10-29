@@ -83,13 +83,18 @@ class BaseGrid extends FlxSpriteGroup
 		_building = b;
 		add(b);
 		b.origin = new FlxPoint();
- 		if(b.requiresPower() == false || this.isPowered())
+ 		if(this.isPowered())
 		{
-			trace("BS POWERING");
-			this.setPowered(true);
 			b.setPowered(true);
 
 		}
+		
+		
+		if (b.name == "Power Plant")
+		{
+			b.setPowered(true);
+		}
+		
 		_forceCheck = true;
 	}
 

@@ -26,16 +26,22 @@ class BaseGrid extends FlxSpriteGroup
 	private var _power :Bool;
 		
 	private var _forceCheck : Bool = false;
+	private var _powerIcon :FlxSprite = null;
+	
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
 	{
 		super(X, Y, MaxSize);
 		_base = new FlxSprite(x, y, null);
 		_base.makeGraphic(96, 96, 0x5500FF90);
 		_base.origin = new FlxPoint();
-		//_base.alpha = 0.5;
+		
 		alpha = 0.5;
 		add(_base);
 		_power = false;
+		
+		_powerIcon = new FlxSprite(x, y, AssetPaths.power__png);
+		add(_powerIcon);
+		
 	}
 	
 	public function isPowered() :Bool { return _power; }
@@ -46,7 +52,6 @@ class BaseGrid extends FlxSpriteGroup
 		{
 			if(_building.requiresPower())
 			{
-				trace("POWER VALUE: "+value );
 				_building.setPowered(value);
 			}
 		}
@@ -80,6 +85,11 @@ class BaseGrid extends FlxSpriteGroup
 			return;
 		}
 		
+		
+		if (_building != null)
+		{
+			return;
+		}
 		_building = b;
 		add(b);
 		b.origin = new FlxPoint();
@@ -109,19 +119,38 @@ class BaseGrid extends FlxSpriteGroup
 			var r :FlxRect = new FlxRect(x, y, width * scale.x, height * scale.y);
 			if (p.inFlxRect(r))
 			{
-				trace("clickety clack");
-				addBuilding(BuildingFactory.instance().createBuildingInstance());
-				_forceCheck = true;
+				
+				if(CompostG.FUNC_BUTTON != "Erase")
+				{	trace("clickety clack");
+					addBuilding(BuildingFactory.instance().createBuildingInstance());
+					
+				}
+				else
+				{
+					if (_building != null)
+					{
+						remove(_building);
+						_building.alive = false;
+						_building = null; 
+						_forceCheck = true;
+						return;
+					}
+				}
 			}
+			
+		
 		}
 
 
 		for (i in 0 ... members.length)
 		{
-			members[i].x = x;
-			members[i].y = y;
-			members[i].scale = scale;
-			members[i].alpha = alpha;
+			if (members[i] != null)
+			{
+				members[i].x = x;
+				members[i].y = y;
+				members[i].scale = scale;
+				members[i].alpha = alpha;
+			}
 		}
 
 		if(_power)
@@ -132,9 +161,11 @@ class BaseGrid extends FlxSpriteGroup
 			{
 				if(_building.requiresPower())
 				{
-					_building.setPowered(true)	;
+					_building.setPowered(true);
 				}
 			}
+			
+			_powerIcon.visible = false;
 		}
 		else
 		{
@@ -147,6 +178,7 @@ class BaseGrid extends FlxSpriteGroup
 					_building.setPowered(false)	;
 				}
 			}
+			_powerIcon.visible = true;
 		}
 
     }

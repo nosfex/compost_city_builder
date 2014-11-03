@@ -15,16 +15,12 @@ import flixel.FlxG;
 class GridMap extends FlxGroup
 {
     var _grids:Array<BaseGrid> = null;
-
     var _initPos:FlxPoint = null;
-
     var _posCorrection:FlxPoint = null;
-
     var _lastGridCount:Int = 0;
-
-    var _powered:Array<BaseGrid> = new Array();
-
-    public function new()
+	
+	
+	public function new()
     {
     	super();
     }
@@ -33,8 +29,16 @@ class GridMap extends FlxGroup
     {
     	super.update();
 	
-		checkPowered();
-	
+		
+		for (i in 0 ... _grids.length)
+		{
+			if (_grids[i].forceCheck)
+			{
+				unpowerEverything();
+				_grids[i].forceCheck = false;
+			}
+		}
+		checkPowered();	
     }
 	
 	function unpowerEverything()
@@ -77,6 +81,7 @@ class GridMap extends FlxGroup
     override public function destroy():Void
     {
     	super.destroy();
+		_grids = null;
     }
 
     public function initMap(gridCount:Int):Void
@@ -128,16 +133,6 @@ class GridMap extends FlxGroup
     	};
     }
 
-    function addN4Cluster(col:Int, row:Int):Void
-    {
-    	var arr:Array<BaseGrid> = N4FromColRow(col, row);
-    	for (i in 0 ... arr.length) {
-    		if (arr[i].usable == false) {
-    			arr[i].usable = true;
-    		};
-    	};
-    }
-
     public function N4FromIndex(index:Int):Array<BaseGrid>
     {
     	var sideSize:Float = Math.sqrt(_grids.length);
@@ -158,45 +153,7 @@ class GridMap extends FlxGroup
     	if (right % sideSize != 0 && right < _grids.length) {
     		ret.push(_grids[right]);
     	};
-    	trace("---------*N4FROMINDEX*---------");
-    	trace("SIDESIZE: " + sideSize);
-    	trace("left: " + left);
-    	trace("right: " + right);
-    	return ret;
-    }
-
-    public function N4FromGrid(baseGrid:BaseGrid):Array<BaseGrid>
-    {
-    	var col:Int = cast Math.round(baseGrid.x / _grids[0].x);
-    	var row:Int = cast Math.round(baseGrid.y / _grids[0].y);
-    	return N4FromColRow(col, row);
-    }
-
-    public function gridFromColRow(col:Int, row:Int):BaseGrid
-    {
-    	var posX:Float = Math.round((32 * _grids[0].scale.x) + (col * ((_grids[0].width * _grids[0].scale.x) * 1.25)));
-    	var posY:Float = Math.round((32 * _grids[0].scale.y) + (row * ((_grids[0].height * _grids[0].scale.y) * 1.25)));
-    	for (i in 0 ... _grids.length) {
-    		if (Math.round(_grids[i].x) == posX && Math.round(_grids[i].y) == posY) {
-    			return (_grids[i]);
-    		};
-    	};
-    	return null;
-    }
-
-    public function N4FromColRow(col:Int, row:Int):Array<BaseGrid>
-    {
-    	var ret:Array<BaseGrid> = new Array();
-    	var top:BaseGrid = gridFromColRow(col, row - 1);
-    	var bot:BaseGrid = gridFromColRow(col, row + 1);
-    	var center:BaseGrid = gridFromColRow(col, row);
-    	var left:BaseGrid = gridFromColRow(col - 1, row);
-    	var right:BaseGrid = gridFromColRow(col + 1, row);
-    	if (top != null) ret.push(top);
-    	if (bot != null) ret.push(bot);
-    	if (center != null) ret.push(center);
-    	if (left != null) ret.push(left);
-    	if (right != null) ret.push(right);
+    
     	return ret;
     }
 

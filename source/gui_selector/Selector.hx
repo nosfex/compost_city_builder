@@ -80,6 +80,8 @@ class Selector extends FlxSpriteGroup
 			{
 
 				var curBtn :FlxButton = internalCategoryButtons[btn][i];
+				if (!curBtn.visible)
+					continue;
 				var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 				var r :FlxRect = new FlxRect(curBtn.x, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
 				if (p.inFlxRect(r))

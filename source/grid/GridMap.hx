@@ -39,6 +39,8 @@ class GridMap extends FlxGroup
 			}
 		}
 		checkPowered();	
+		
+		
     }
 	
 	function unpowerEverything()
@@ -77,6 +79,11 @@ class GridMap extends FlxGroup
     		}
     	}
     }
+	
+	function checkClones() :Void
+	{
+		
+	}
 
     override public function destroy():Void
     {

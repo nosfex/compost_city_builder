@@ -14,6 +14,7 @@ class BuildingData
 	public var	productionRate :Int;
 	public var	lockTile :Bool;
 	public var 	buildingMaxDmg :Int;
+	public var 	maxProduction :Int;
 	public var 	holdTile :Bool = false;
 	public function new() 
 	{

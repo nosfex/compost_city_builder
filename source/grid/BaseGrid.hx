@@ -52,7 +52,7 @@ class BaseGrid extends FlxSpriteGroup
 		{
 			if(_building.requiresPower())
 			{
-				_building.setPowered(value);
+				_building.powered = value;
 			}
 		}
 	}
@@ -95,14 +95,14 @@ class BaseGrid extends FlxSpriteGroup
 		b.origin = new FlxPoint();
  		if(this.isPowered())
 		{
-			b.setPowered(true);
+			b.powered true;
 
 		}
 		
 		
 		if (b.name == "Power Plant")
 		{
-			b.setPowered(true);
+			b.powered = true;
 		}
 		
 		_forceCheck = true;
@@ -161,7 +161,7 @@ class BaseGrid extends FlxSpriteGroup
 			{
 				if(_building.requiresPower())
 				{
-					_building.setPowered(true);
+					_building.powered = (true);
 				}
 			}
 			
@@ -175,7 +175,7 @@ class BaseGrid extends FlxSpriteGroup
 			{
 				if(_building.requiresPower())
 				{
-					_building.setPowered(false)	;
+					_building.powered = (false)	;
 				}
 			}
 			_powerIcon.visible = true;

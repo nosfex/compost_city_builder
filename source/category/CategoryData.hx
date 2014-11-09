@@ -16,7 +16,7 @@ class CategoryData
 	private var _categoryJson :String = '{ "headlines":["Energy", "Production", "Housing"],
 										  "buildings":[ { "owner":"Energy", "buildings":["Power Plant", "Power Line"] },
 														{ "owner":"Production", "buildings": ["foodfactory", "techfactory"] },
-														{ "owner":"Housing", "buildings": ["slums", "richhood"] }]}';
+														{ "owner":"Housing", "buildings": ["Clone Center", "richhood"] }]}';
 	public function new() 
 	{
 		loadJson();

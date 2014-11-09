@@ -13,6 +13,7 @@ class Building extends FlxSprite
 {
 	
 	public var name(get, set) :String;
+	public var powered(get, set): Bool;
 	
 	private var _requiresPower: Bool = false;
 	private var _influenceArea :String = "N4";
@@ -22,18 +23,20 @@ class Building extends FlxSprite
 	private var _productionRate :Float = 0.0;
 	private var _production :Int = 0;
 	private var _productionTimer :Float = 0;
+	private var _maxProduction :Int = 0;
 	private var _name :String = "";
 	private var _power :Bool = false;
 	private var _holdTile :Bool = true;
 	
+	private var _productionObject :Array <Object> = new Array();
 	private var _buildingMaxDmg : Int = 0;
 	
 	// GH: ------------------ GET / SET ---------------------	
 	public function get_name() :String { return _name;  }
 	public function set_name(value) { _name = value; return _name; }
 	
-	public function isPowered() :Bool { return _power; }
-	public function setPowered(value :Bool) { _power = value; }
+	public function get_powered() :Bool { return _power; }
+	public function set_powered(value :Bool) { _power = value; return _power; }
 
 	public function requiresPower() :Bool { return _requiresPower; }
 
@@ -41,10 +44,8 @@ class Building extends FlxSprite
 	public function getProductionType() :String { return _productionType; }
 	public function getProduction() : Int { return _production; }
 	public function getProductionRate() :Float { return _productionRate; }
-//	public var influenceArea(get, set) :String;
-//	public function get_influenceArea() :String { return _influenceArea; }
-//	public function set_influenceArea(value: String)  { _influenceArea = value; }
-	
+
+	public function getProductionObject
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -61,8 +62,7 @@ class Building extends FlxSprite
 		_name 			= data.name;
 		_holdTile 		= data.holdTile;
 		_buildingMaxDmg = data.buildingMaxDmg;
-		
-		
+		_maxProduction	= data.maxProduction;
 	}
 	
 	
@@ -72,30 +72,32 @@ class Building extends FlxSprite
 		super.update();
 		if (this.alive)
 		{
-			
- 			if (_power || !_requiresPower)
+			if (_power || !_requiresPower)
 			{
-				if (_productionTimer >= 0)
+				if (_productionTimer >= _productionRate )
 				{
-					_production++;
-					_productionTimer = 0.0;
+					
+					if (_production <= _maxProduction)
+					{
+						_production++;
+						_productionTimer = 0;
+						
+					}
 				}
-				_productionTimer += FlxG.elapsed * _productionRate;
 				
-				
+				_productionTimer += FlxG.elapsed;
 			}
 			// GH: Requires power and doesn't have any
 			else
 			{
 				// GH: Generate an icon for this, or better yet, a callback to flash an icon
+				trace("NO POWER - REQUIRES POWER");
 			}
 			
 			if (_buildingMaxDmg <= 0)
 			{
 				this.kill();
 			}
-			
-			
 		}
 	}
 	

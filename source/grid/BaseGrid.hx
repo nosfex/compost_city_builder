@@ -95,7 +95,7 @@ class BaseGrid extends FlxSpriteGroup
 		b.origin = new FlxPoint();
  		if(this.isPowered())
 		{
-			b.powered true;
+			b.powered = true;
 
 		}
 		

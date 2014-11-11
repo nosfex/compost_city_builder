@@ -1,4 +1,4 @@
-package buildings;
+	package buildings;
 import flixel.util.FlxPoint;
 import haxe.Json;
 import buildings.Building;
@@ -43,8 +43,7 @@ class BuildingFactory
 		//var buildings :Array<BuildingData> = cast(jsonBuildings.buildings, Array<BuildingData>);
 		
 		for (i in 0 ... jsonBuildings.buildings.length)
-		{
-			
+		{	
 			var bData : BuildingData = new BuildingData();
 			bData.name 				= (jsonBuildings.buildings[i]).name;
 			bData.area 				= (jsonBuildings.buildings[i]).area;
@@ -61,13 +60,10 @@ class BuildingFactory
 	
 	public function createBuildingInstance() :Building
 	{
-		
-
 		if(CURRENT_BUILDING == "")
 		{
 			return null;
 		}
-		
 
 		var graphic :Dynamic = null;
 		switch (CURRENT_BUILDING)
@@ -80,7 +76,6 @@ class BuildingFactory
 				
 			case "Clone Center":
 				graphic = AssetPaths.clone_hab_center_0__png;
-
 		}
 		var b :Building = new Building(0, 0, graphic);
 		trace("CURRENT_BUILDING" + CURRENT_BUILDING);

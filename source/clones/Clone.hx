@@ -1,15 +1,17 @@
 package clones;
 
+import buildings.Building;
 import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.util.FlxPoint;
 import flixel.util.FlxRect;
+import production.IProduct;
 
 /**
  * ...
  * @author Gerardo Heidel
  */
-class Clone extends FlxSprite
+class Clone extends FlxSprite implements IProduct
 {
 
 	
@@ -18,8 +20,9 @@ class Clone extends FlxSprite
 	
 	private var _flxColRect :FlxRect;
 	private var _speed :FlxPoint = new FlxPoint(5, 0);
+	private var _prodParent :Building = null;
 	
-	private var _orders :Array<Int> = { 0, 1, 2, 3 };
+	private var _orders :Array<Int> = new Array();
 	
 	private static var CLONE_UP : FlxPoint = new FlxPoint(0, - 5);
 	private static var CLONE_DOWN : FlxPoint = new FlxPoint(0, 5);
@@ -33,15 +36,23 @@ class Clone extends FlxSprite
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
-		super(X, Y, ?SimpleGraphic);
-		
+		super(X, Y, SimpleGraphic);
+		_orders.push(0);
+		_orders.push(1);
+		_orders.push(2);
+		_orders.push(3);
 	}
 	
+	
+	public function setProductionParent(parent :Building) :Void
+	{
+		_prodParent = parent;
+	}
 	
 	public function get_flxColRect() :FlxRect { return _flxColRect; }
 	public function set_flxColRect(value :FlxRect) { _flxColRect = value; return _flxColRect; }
 	
-	public function update() :Void
+	public override function update() :Void
 	{
 		super.update();
 		
@@ -60,13 +71,13 @@ class Clone extends FlxSprite
 	{
 		switch(dir)
 		{
-			case UP_DIR_CLONE:
+			case 0:
 				_speed = CLONE_UP;
-			case DOWN_DIR_CLONE:
+			case 1:
 				_speed = CLONE_DOWN;
-			case LEFT_DIR_CLONE:
+			case 2:
 				_speed = CLONE_LEFT;
-			case RIGHT_DIR_CLONE:
+			case 3:
 				_speed = CLONE_RIGHT;
 		};
 	}
@@ -88,7 +99,10 @@ class Clone extends FlxSprite
 		
 		if (_orders.length == 0)
 		{
-			_orders = { 0, 1, 2, 3 };
+			_orders.push(0);
+			_orders.push(1);
+			_orders.push(2);
+			_orders.push(3);
 		}
 		return r;
 	}

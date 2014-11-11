@@ -23,6 +23,7 @@ class GridMap extends FlxGroup
 	public function new()
     {
     	super();
+		CompostG.GRID_MAP = this;
     }
 
     override public function update():Void
@@ -60,7 +61,7 @@ class GridMap extends FlxGroup
     		var b:Building = _grids[i].getBuilding();
     		if (b != null) 
 			{
-    			if (b.isPowered()) 
+    			if (b.powered) 
 				{
     				if (b.getProductionType() == "power" && b.getProduction() > 0) 
 					{
@@ -79,6 +80,12 @@ class GridMap extends FlxGroup
     		}
     	}
     }
+	
+	public function addProduct(product :FlxSprite) :Void
+	{
+		// GH: Add codE?!@?
+		SEGUIR DESDE ACA <3
+	}
 	
 	function checkClones() :Void
 	{

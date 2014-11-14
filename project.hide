@@ -27,7 +27,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 41
+            ,"activeLine" : 40
         }
         ,{
              "path" : "source/buildings/Building.hx"
@@ -36,7 +36,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 28
+            ,"activeLine" : 86
         }
         ,{
              "path" : "source/buildings/BuildingFactory.hx"
@@ -45,7 +45,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 59
+            ,"activeLine" : 56
         }
         ,{
              "path" : "source/buildings/BuildingData.hx"
@@ -63,7 +63,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 48
+            ,"activeLine" : 27
         }
         ,{
              "path" : "source/grid/BaseGrid.hx"
@@ -72,10 +72,55 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 103
+            ,"activeLine" : 42
+        }
+        ,{
+             "path" : "source/clones/Clone.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 60
+        }
+        ,{
+             "path" : "source/production/Product.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 40
+        }
+        ,{
+             "path" : "source/MenuState.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 0
+        }
+        ,{
+             "path" : "source/production/ProductionFactory.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 7
+        }
+        ,{
+             "path" : "source/gui_selector/Selector.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 0
         }
     ]
-    ,"activeFile" : "source/PlayState.hx"
+    ,"activeFile" : "source/clones/Clone.hx"
     ,"openFLTarget" : "mac"
     ,"openFLBuildMode" : "Debug"
     ,"runActionType" : 2

@@ -5,29 +5,25 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.util.FlxPoint;
 import flixel.util.FlxRect;
-import production.IProduct;
+import production.Product;
 
 /**
  * ...
  * @author Gerardo Heidel
  */
-class Clone extends FlxSprite implements IProduct
+class Clone extends Product
 {
-
-	
-	public var flxColRect(get, set) : FlxRect;
-	
-	
-	private var _flxColRect :FlxRect;
 	private var _speed :FlxPoint = new FlxPoint(5, 0);
-	private var _prodParent :Building = null;
+	
+	private static var _maxSpeed :Int = 20;
 	
 	private var _orders :Array<Int> = new Array();
+	private var _maxWalk : FlxPoint = new FlxPoint(96, 96);
 	
-	private static var CLONE_UP : FlxPoint = new FlxPoint(0, - 5);
-	private static var CLONE_DOWN : FlxPoint = new FlxPoint(0, 5);
-	private static var CLONE_LEFT : FlxPoint = new FlxPoint(-5, 0);
-	private static var CLONE_RIGHT : FlxPoint = new FlxPoint(5, 0);
+	private static var CLONE_UP : FlxPoint = new FlxPoint(0, - _maxSpeed);
+	private static var CLONE_DOWN : FlxPoint = new FlxPoint(0, _maxSpeed);
+	private static var CLONE_LEFT : FlxPoint = new FlxPoint(-_maxSpeed, 0);
+	private static var CLONE_RIGHT : FlxPoint = new FlxPoint(_maxSpeed, 0);
 	
 	public static var UP_DIR_CLONE : Int = 0;
 	public static var DOWN_DIR_CLONE : Int = 1;
@@ -41,17 +37,11 @@ class Clone extends FlxSprite implements IProduct
 		_orders.push(1);
 		_orders.push(2);
 		_orders.push(3);
+		changeDirection(); 
 	}
 	
 	
-	public function setProductionParent(parent :Building) :Void
-	{
-		_prodParent = parent;
-	}
-	
-	public function get_flxColRect() :FlxRect { return _flxColRect; }
-	public function set_flxColRect(value :FlxRect) { _flxColRect = value; return _flxColRect; }
-	
+
 	public override function update() :Void
 	{
 		super.update();
@@ -63,8 +53,19 @@ class Clone extends FlxSprite implements IProduct
 			changeDirection();
 		}
 		
+
+		if (_maxWalk.x <= 0 || _maxWalk.y <= 0)
+		{
+			changeDirection();
+			_maxWalk = new FlxPoint(96, 96);
+		}
+
+		
 		this.x += _speed.x * FlxG.elapsed;
 		this.y += _speed.y * FlxG.elapsed;
+
+		_maxWalk.x -= Math.abs(_speed.x *FlxG.elapsed);
+		_maxWalk.y -= Math.abs(_speed.y *FlxG.elapsed);
 	}
 	
 	private function processDirection(dir : Int) :Void

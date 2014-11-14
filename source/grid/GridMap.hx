@@ -1,4 +1,5 @@
 package grid;
+import flixel.util.FlxRect;
 
 import flash.geom.Point;
 import flixel.FlxBasic;
@@ -11,7 +12,7 @@ import flixel.util.FlxPoint;
 import flixel.util.FlxSort;
 import buildings.Building;
 import flixel.FlxG;
-
+import production.Product;
 class GridMap extends FlxGroup
 {
     var _grids:Array<BaseGrid> = null;
@@ -19,6 +20,7 @@ class GridMap extends FlxGroup
     var _posCorrection:FlxPoint = null;
     var _lastGridCount:Int = 0;
 	
+	var _products :Array<Product> = new Array<Product>();
 	
 	public function new()
     {
@@ -40,7 +42,7 @@ class GridMap extends FlxGroup
 			}
 		}
 		checkPowered();	
-		
+		checkProducts();
 		
     }
 	
@@ -81,15 +83,25 @@ class GridMap extends FlxGroup
     	}
     }
 	
-	public function addProduct(product :FlxSprite) :Void
+	public function addProduct(product :Product) :Void
 	{
 		// GH: Add codE?!@?
-		SEGUIR DESDE ACA <3
+		add(product);
+		_products.push(product);
+		product.flxColRect = new FlxRect(0, 0, FlxG.width * .75, FlxG.height * .85);
 	}
 	
-	function checkClones() :Void
+	function checkProducts() :Void
 	{
-		
+		for (i in 0 ... _products.length)
+		{
+			for(j in 0 ... _grids.length)
+			{
+				
+				FlxG.collide(_products[i], _grids[i]);
+			}
+		}
+
 	}
 
     override public function destroy():Void
@@ -144,6 +156,7 @@ class GridMap extends FlxGroup
     			(cast _grids[i]).origin = new FlxPoint();
     		};
     		this.setAll("scale", new FlxPoint(newScale, newScale), true);
+		
     	};
     }
 

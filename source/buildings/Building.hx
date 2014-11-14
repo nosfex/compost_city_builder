@@ -6,6 +6,7 @@ import haxe.Json;
 import flixel.FlxG;
 import openfl.utils.Object;
 import production.ProductionFactory;
+import production.Product;
 
 /**
  * ...
@@ -30,7 +31,7 @@ class Building extends FlxSprite
 	private var _power :Bool = false;
 	private var _holdTile :Bool = true;
 	
-	private var _productionObject :Array <FlxSprite> = new Array();
+	private var _productionObject :Array <Product> = new Array();
 	private var _buildingMaxDmg : Int = 0;
 	
 	// GH: ------------------ GET / SET ---------------------	
@@ -83,11 +84,12 @@ class Building extends FlxSprite
 					{
 						_production++;
 						_productionTimer = 0;
-						var p :FlxSprite = ProductionFactory.instance().buildProduct(_productionType, new FlxPoint(x, y), this);
+						var p :Product = ProductionFactory.instance().buildProduct(_productionType, new FlxPoint(x - 18, y - 18), this);
 						if (p != null)
 						{
 							_productionObject.push(p);
 							CompostG.GRID_MAP.addProduct(p);
+							p.prodParent = this;
 						}
 					}
 				}

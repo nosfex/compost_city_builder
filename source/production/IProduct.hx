@@ -10,4 +10,5 @@ interface IProduct
 	
 	public function setProductionParent(parent :Building) :Void;
 	
+	
 }

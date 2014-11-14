@@ -40,6 +40,7 @@ class BaseGrid extends FlxSpriteGroup
 		_power = false;
 		
 		_powerIcon = new FlxSprite(x, y, AssetPaths.power__png);
+		_powerIcon.origin = new FlxPoint();
 		add(_powerIcon);
 		
 	}

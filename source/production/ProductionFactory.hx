@@ -5,6 +5,7 @@ import flixel.FlxSprite;
 import flixel.util.FlxPoint;
 import haxe.io.Error;
 import openfl.utils.Object;
+import production.Product;
 
 /**
  * ...
@@ -34,13 +35,13 @@ class ProductionFactory
 		return _instance;
 	}
 	
-	public function buildProduct(type :String, originPos : FlxPoint, parent :Building) : FlxSprite
+	public function buildProduct(type :String, originPos : FlxPoint, parent :Building) : Product
 	{
 		switch(type)
 		{
 			case "clone":
 				var c :Clone = new Clone(originPos.x, originPos.y);
-				c.setProductionParent(parent);
+				c.prodParent = parent;
 				return c;
 			
 			

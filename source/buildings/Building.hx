@@ -110,4 +110,16 @@ class Building extends FlxSprite
 		}
 	}
 	
+	override public function kill() :Void
+	{
+		super.kill();
+		for (i in 0 ... _productionObject.length)
+		{
+			_productionObject[i].kill();
+			_productionObject[i].visible = false;
+			
+		}
+		_productionObject = new Array();
+	}
+	
 }

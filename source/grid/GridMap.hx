@@ -43,7 +43,7 @@ class GridMap extends FlxGroup
 		}
 		checkPowered();	
 		checkProducts();
-		
+		clearDead();
     }
 	
 	function unpowerEverything()
@@ -83,6 +83,19 @@ class GridMap extends FlxGroup
     	}
     }
 	
+	function clearDead() :Void
+	{
+		for (i in 0 ... this.members.length)
+		{
+			if (!members[i].alive)
+			{
+				remove(members[i], true);
+				break;
+			}
+		
+		}
+	}
+	
 	public function addProduct(product :Product) :Void
 	{
 		// GH: Add codE?!@?
@@ -101,7 +114,6 @@ class GridMap extends FlxGroup
 				FlxG.collide(_products[i], _grids[i]);
 			}
 		}
-
 	}
 
     override public function destroy():Void

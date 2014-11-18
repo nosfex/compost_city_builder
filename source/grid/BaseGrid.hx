@@ -100,7 +100,6 @@ class BaseGrid extends FlxSpriteGroup
 
 		}
 		
-		
 		if (b.name == "Power Plant")
 		{
 			b.powered = true;
@@ -112,6 +111,8 @@ class BaseGrid extends FlxSpriteGroup
 	
 	override public function update():Void
     {
+		if (!this.alive)
+			return;
         super.update();
 	
 		if (FlxG.mouse.justPressed)
@@ -124,13 +125,13 @@ class BaseGrid extends FlxSpriteGroup
 				if(CompostG.FUNC_BUTTON != "Erase")
 				{	trace("clickety clack");
 					addBuilding(BuildingFactory.instance().createBuildingInstance());
-					
 				}
 				else
 				{
-					if (_building != null)
+					if (_building != null && _building.alive)
 					{
 						remove(_building);
+						_building.kill();
 						_building.alive = false;
 						_building = null; 
 						_forceCheck = true;
@@ -138,14 +139,11 @@ class BaseGrid extends FlxSpriteGroup
 					}
 				}
 			}
-			
-		
 		}
-
 
 		for (i in 0 ... members.length)
 		{
-			if (members[i] != null)
+			if (members[i] != null && members[i].alive)
 			{
 				members[i].x = x;
 				members[i].y = y;
@@ -172,7 +170,7 @@ class BaseGrid extends FlxSpriteGroup
 		{
 			
 			alpha = 0.5;
-			if(_building != null)
+			if(_building != null && _building.alive)
 			{
 				if(_building.requiresPower())
 				{

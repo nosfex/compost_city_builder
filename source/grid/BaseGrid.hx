@@ -111,14 +111,22 @@ class BaseGrid extends FlxSpriteGroup
 	
 	override public function update():Void
     {
+		super.update();
+	
 		if (!this.alive)
 			return;
-        super.update();
-	
+      
 		if (FlxG.mouse.justPressed)
 		{
-			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+			var p :FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 			var r :FlxRect = new FlxRect(x, y, width * scale.x, height * scale.y);
+			trace(p);
+			
+			if (r == null)
+			{
+				trace("r IS SHIT");
+			}
+			
 			if (p.inFlxRect(r))
 			{
 				
@@ -130,9 +138,11 @@ class BaseGrid extends FlxSpriteGroup
 				{
 					if (_building != null && _building.alive)
 					{
-						remove(_building);
+					//	remove(_building);
+						
 						_building.kill();
 						_building.alive = false;
+						
 						_building = null; 
 						_forceCheck = true;
 						return;

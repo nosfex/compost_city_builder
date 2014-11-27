@@ -31,7 +31,6 @@ class GridMap extends FlxGroup
     override public function update():Void
     {
     	super.update();
-	
 		
 		for (i in 0 ... _grids.length)
 		{

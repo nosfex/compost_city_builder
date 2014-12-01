@@ -8,6 +8,8 @@ class BuildingData
 {
 	public var	name :String;
 	public var	requiresPower :Bool;
+	public var 	requiresManPower :Bool;
+	public var  maxManPower :Int;
 	public var	area: String;
 	public var	techLevel :Int;
 	public var	productionType :String;

@@ -19,6 +19,8 @@ class Building extends FlxSprite
 	public var powered(get, set): Bool;
 	
 	private var _requiresPower: Bool = false;
+	private var _requiresManPower :Bool = false;
+	private var _maxManPower :Int = 0;
 	private var _influenceArea :String = "N4";
 	private var _initialTechLevel :Int = 0;
 	private var _currTechLevel : Int = 0;
@@ -35,18 +37,20 @@ class Building extends FlxSprite
 	private var _buildingMaxDmg : Int = 0;
 	
 	// GH: ------------------ GET / SET ---------------------	
-	public function get_name() :String { return _name;  }
-	public function set_name(value) { _name = value; return _name; }
+	public function get_name() :String			{ return _name;  }
+	public function set_name(value) 			{ _name = value; return _name; }
 	
-	public function get_powered() :Bool { return _power; }
-	public function set_powered(value :Bool) { _power = value; return _power; }
+	public function get_powered() :Bool 		{ return _power; }
+	public function set_powered(value :Bool) 	{ _power = value; return _power; }
 
-	public function requiresPower() :Bool { return _requiresPower; }
+	public function requiresPower() :Bool 		{ return _requiresPower; }
+	public function requiresManPower() :Bool	{ return _requiresManPower; } 
+	public function maxManPower() :Int			{ return _maxManPower; }
 
-	public function getInfluenceArea() :String { return _influenceArea; }	
+	public function getInfluenceArea() :String 	{ return _influenceArea; }	
 	public function getProductionType() :String { return _productionType; }
-	public function getProduction() : Int { return _production; }
-	public function getProductionRate() :Float { return _productionRate; }
+	public function getProduction() : Int		{ return _production; }
+	public function getProductionRate() :Float 	{ return _productionRate; }
 
 	//public function getProductionObject
 	

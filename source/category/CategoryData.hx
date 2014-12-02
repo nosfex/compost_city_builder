@@ -15,7 +15,7 @@ class CategoryData
 //	var p : URLLoader = new URLLoader(new URLRequest("../../assets/data/category.json");
 	private var _categoryJson :String = '{ "headlines":["Energy", "Production", "Housing"],
 										  "buildings":[ { "owner":"Energy", "buildings":["Power Plant", "Power Line"] },
-														{ "owner":"Production", "buildings": ["foodfactory", "techfactory"] },
+														{ "owner":"Production", "buildings": ["Slave Agency", "techfactory"] },
 														{ "owner":"Housing", "buildings": ["Clone Center", "richhood"] }]}';
 	public function new() 
 	{

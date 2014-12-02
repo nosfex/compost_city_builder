@@ -22,6 +22,7 @@ class PlayState extends FlxState
 	private var _buildingFactory :BuildingFactory ;
 	private var _categoryData :CategoryData;
 	private var _selector :gui_selector.Selector;
+	private var _moneyTxt :FlxText;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
@@ -40,6 +41,12 @@ class PlayState extends FlxState
 		_selector = new Selector();
 		_selector.initSelector(_categoryData);
 		add(_selector);
+		
+		CompostG.updateProductAmount("money", 10);
+		
+		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
+		
+		add(_moneyTxt);
 	}
 	
 	/**
@@ -62,5 +69,8 @@ class PlayState extends FlxState
 		{
 			_map.addGrids(1);
 		}
+		
+		
+		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 	}	
 }

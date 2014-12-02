@@ -32,6 +32,7 @@ class Building extends FlxSprite
 	private var _name :String = "";
 	private var _power :Bool = false;
 	private var _holdTile :Bool = true;
+	private var _price :Int = 0;
 	
 	private var _productionObject :Array <Product> = new Array();
 	private var _buildingMaxDmg : Int = 0;
@@ -46,7 +47,9 @@ class Building extends FlxSprite
 	public function requiresPower() :Bool 		{ return _requiresPower; }
 	public function requiresManPower() :Bool	{ return _requiresManPower; } 
 	public function maxManPower() :Int			{ return _maxManPower; }
-
+	public function getPrice() :Int				{ return _price; }
+	
+	
 	public function getInfluenceArea() :String 	{ return _influenceArea; }	
 	public function getProductionType() :String { return _productionType; }
 	public function getProduction() : Int		{ return _production; }
@@ -94,6 +97,10 @@ class Building extends FlxSprite
 							_productionObject.push(p);
 							CompostG.GRID_MAP.addProduct(p);
 							p.prodParent = this;
+						}
+						else
+						{
+							CompostG.updateProductAmount(_productionType, 1);
 						}
 					}
 				}

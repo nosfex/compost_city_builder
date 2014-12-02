@@ -18,6 +18,7 @@ class BuildingData
 	public var 	buildingMaxDmg :Int;
 	public var 	maxProduction :Int;
 	public var 	holdTile :Bool = false;
+	public var  price :Int = 0;
 	public function new() 
 	{
 		

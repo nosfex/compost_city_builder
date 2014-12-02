@@ -16,7 +16,7 @@ class BuildingFactory
 	public static var CURRENT_BUILDING :String = "";
 	private var _buildingData :Map<String, BuildingData> = new Map();
 	private var _jsonFile :String = 
-	'{"buildings":[	{"requiresPower": true, "requiresManPower":true, "maxManPower":2, "area":"N4", "techLevel":0, "productionType":"money", "productionRate":1, "maxProduction":0, "name":"Slave Agency","lockTile":true, "buildingMaxDmg":3},{"requiresPower": false, "requiresManPower":false, "maxManPower":0, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Plant","lockTile":true, "buildingMaxDmg":3},{"requiresPower": true, "requiresManPower":true, "maxManPower":0, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Line", "lockTile":false, "buildingMaxDmg":3 },{"requiresPower": true, "requiresManPower":true, "maxManPower":0, "area":"N4", "techLevel":0, "productionType":"clone", "productionRate":1, "maxProduction":4, "name":"Clone Center","lockTile":false, "buildingMaxDmg":3}]}';
+	'{"buildings":[	{"requiresPower": true, "requiresManPower":true, "maxManPower":2, "price":2, "area":"N4", "techLevel":0, "productionType":"money", "productionRate":1, "maxProduction":10000, "name":"Slave Agency","lockTile":true, "buildingMaxDmg":3},{"requiresPower": false, "requiresManPower":false, "maxManPower":0, "price": 1, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Plant","lockTile":true, "buildingMaxDmg":3},{"requiresPower": true, "requiresManPower":true, "maxManPower":0, "price":1,  "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Line", "lockTile":false, "buildingMaxDmg":3 },{"requiresPower": true, "requiresManPower":true, "maxManPower":0, "price":2, "area":"N4", "techLevel":0, "productionType":"clone", "productionRate":1, "maxProduction":4, "name":"Clone Center","lockTile":false, "buildingMaxDmg":3}]}';
 	public function new() 
 	{
 		if (_privCon)
@@ -56,6 +56,7 @@ class BuildingFactory
 			bData.maxProduction 	= (jsonBuildings.buildings[i]).maxProduction;
 			bData.maxManPower		= (jsonBuildings.buildings[i]).maxManPower;
 			bData.requiresManPower	= (jsonBuildings.buildings[i]).requiresManPower;
+			bData.price 			= (jsonBuildings.buildings[i]).price;
 			_buildingData.arrayWrite(bData.name, bData);
 		}
 	}
@@ -67,6 +68,9 @@ class BuildingFactory
 			return null;
 		}
 
+		
+		if (_buildingData[CURRENT_BUILDING].price > CompostG.getProductAmountByType("money"))
+			return null;
 		var graphic :Dynamic = null;
 		switch (CURRENT_BUILDING)
 		{
@@ -84,6 +88,8 @@ class BuildingFactory
 		var b :Building = new Building(0, 0, graphic);
 		trace("CURRENT_BUILDING" + CURRENT_BUILDING);
 		b.load(_buildingData[CURRENT_BUILDING]);
+		
+		CompostG.updateProductAmount("money", - _buildingData[CURRENT_BUILDING].price);
 		return b;
 	}
 	

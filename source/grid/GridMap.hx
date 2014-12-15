@@ -103,6 +103,14 @@ class GridMap extends FlxGroup
 		product.flxColRect = new FlxRect(0, 0, FlxG.width * .75, FlxG.height * .85);
 	}
 	
+	public function removeProduct(prodType :String, amount :Int) :Void
+	{
+		for (i in 0 ... _products.length)
+		{
+			if()
+		}
+	}
+	
 	function checkProducts() :Void
 	{
 		for (i in 0 ... _products.length)

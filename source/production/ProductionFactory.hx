@@ -43,9 +43,6 @@ class ProductionFactory
 				var c :Clone = new Clone(originPos.x, originPos.y);
 				c.prodParent = parent;
 				return c;
-			
-			
-			
 		}
 		
 		return null;

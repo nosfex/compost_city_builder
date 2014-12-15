@@ -64,15 +64,17 @@ class Building extends FlxSprite
 	
 	public function load(data : Object) :Void
 	{
-		_requiresPower 	= data.requiresPower;
-		_influenceArea 	= data.area;
-		_currTechLevel 	= _initialTechLevel = data.techLevel;
-		_productionType	= data.productionType;
-		_productionRate = data.productionRate;
-		_name 			= data.name;
-		_holdTile 		= data.holdTile;
-		_buildingMaxDmg = data.buildingMaxDmg;
-		_maxProduction	= data.maxProduction;
+		_requiresPower 		= data.requiresPower;
+		_influenceArea 		= data.area;
+		_currTechLevel 		= _initialTechLevel = data.techLevel;
+		_productionType		= data.productionType;
+		_productionRate 	= data.productionRate;
+		_name 				= data.name;
+		_holdTile 			= data.holdTile;
+		_buildingMaxDmg 	= data.buildingMaxDmg;
+		_maxProduction		= data.maxProduction;
+		_requiresManPower	= data.requiresManPower;
+		_maxManPower		= data.maxManPower;
 	}
 	
 	
@@ -84,6 +86,22 @@ class Building extends FlxSprite
 		{
 			if (_power || !_requiresPower)
 			{
+				if (_requiresManPower)
+				{
+					if (CompostG.getProductAmountByType("clone") < _maxManPower)
+					{	
+						if (_buildingMaxDmg <= 0)
+						{
+							this.kill();
+						}
+						return;
+					}
+					else
+					{
+						
+					}
+				}
+				
 				if (_productionTimer >= _productionRate )
 				{
 					
@@ -96,12 +114,11 @@ class Building extends FlxSprite
 						{
 							_productionObject.push(p);
 							CompostG.GRID_MAP.addProduct(p);
+							
 							p.prodParent = this;
 						}
-						else
-						{
-							CompostG.updateProductAmount(_productionType, 1);
-						}
+						CompostG.updateProductAmount(_productionType, 1);
+					
 					}
 				}
 				

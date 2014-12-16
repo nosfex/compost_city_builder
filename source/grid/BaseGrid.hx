@@ -138,8 +138,6 @@ class BaseGrid extends FlxSpriteGroup
 				{
 					if (_building != null && _building.alive)
 					{
-					//	remove(_building);
-						
 						_building.kill();
 						_building.alive = false;
 						
@@ -173,7 +171,6 @@ class BaseGrid extends FlxSpriteGroup
 					_building.powered = (true);
 				}
 			}
-			
 			_powerIcon.visible = false;
 		}
 		else

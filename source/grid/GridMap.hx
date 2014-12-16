@@ -103,12 +103,28 @@ class GridMap extends FlxGroup
 		product.flxColRect = new FlxRect(0, 0, FlxG.width * .75, FlxG.height * .85);
 	}
 	
-	public function removeProduct(prodType :String, amount :Int) :Void
+	public function removeProduct(prodType :String, amount :Int) :Array<Product>
 	{
+		var ret :Array<Product> = new Array<Product>();
 		for (i in 0 ... _products.length)
 		{
-			if()
+			if ( _products[i].prodParent.getProductionType() == prodType )
+			{
+				if (_products[i].prodParent.productionObject.length >= amount)
+				{
+					trace("Can we get them?");
+					for (j in 0 ... amount )
+					{
+						var p : Product = _products[i].prodParent.productionObject.pop();
+						ret.push(p);
+						CompostG.updateProductAmount(prodType, -1);
+					}
+					
+				}
+			}
 		}
+		
+		return ret;
 	}
 	
 	function checkProducts() :Void

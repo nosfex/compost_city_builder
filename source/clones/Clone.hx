@@ -46,6 +46,21 @@ class Clone extends Product
 	{
 		super.update();
 		
+		if (_gotoPos != null)
+		{
+			
+			var p : FlxPoint = new FlxPoint(x, y);
+			if (p.distanceTo(_gotoPos) <= 5.0)
+			{
+				this.kill();
+				return;
+			}
+			velocity.x = (_gotoPos.x - p.x) * _maxSpeed  * FlxG.elapsed;
+			velocity.y = (_gotoPos.y - p.y) * _maxSpeed  * FlxG.elapsed;
+			
+			
+			return;
+		}
 		// GH: Force it to live within the confines of the area
 		while (!_flxColRect.containsFlxPoint(new FlxPoint(this.x + _speed.x * FlxG.elapsed, this.y + _speed.y * FlxG.elapsed )))
 		{

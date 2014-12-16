@@ -31,8 +31,6 @@ class Product extends FlxSprite
 	public override function update() :Void
 	{
 		super.update();
-		
-		
 	}
 	
 	public function get_prodParent() :Building { return _prodParent; }

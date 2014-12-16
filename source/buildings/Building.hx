@@ -101,18 +101,16 @@ class Building extends FlxSprite
 					}
 					else
 					{
-						trace("Remove Product");
+						trace("Remove Product@: " + _name);
 						var prods : Array<Product> = CompostG.GRID_MAP.removeProduct("clone", _maxManPower);
 						if (prods.length != 0)
 						{
 							_requiresManPower = false;
 							for (i in 0 ... prods.length)
 							{
-								prods[i].gotoPos = new FlxPoint(x, y);
+								prods[i].gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
 							}
-						}
-						
-						
+						}	
 					}
 					return;
 				}

@@ -113,7 +113,7 @@ class GridMap extends FlxGroup
 				if (_products[i].prodParent.productionObject.length >= amount)
 				{
 					trace("Can we get them?");
-					for (j in 0 ... amount )
+					for (j in 0 ... amount)
 					{
 						var p : Product = _products[i].prodParent.productionObject.pop();
 						ret.push(p);

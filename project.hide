@@ -27,16 +27,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 40
-        }
-        ,{
-             "path" : "source/buildings/Building.hx"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 86
+            ,"activeLine" : 35
         }
         ,{
              "path" : "source/buildings/BuildingFactory.hx"
@@ -63,16 +54,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 27
-        }
-        ,{
-             "path" : "source/grid/BaseGrid.hx"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 42
+            ,"activeLine" : 17
         }
         ,{
              "path" : "source/clones/Clone.hx"
@@ -81,7 +63,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 60
+            ,"activeLine" : 65
         }
         ,{
              "path" : "source/production/Product.hx"
@@ -119,8 +101,17 @@
             ]
             ,"activeLine" : 0
         }
+        ,{
+             "path" : "source/buildings/Building.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 108
+        }
     ]
-    ,"activeFile" : "source/clones/Clone.hx"
+    ,"activeFile" : "source/gui_selector/Selector.hx"
     ,"openFLTarget" : "mac"
     ,"openFLBuildMode" : "Debug"
     ,"runActionType" : 2

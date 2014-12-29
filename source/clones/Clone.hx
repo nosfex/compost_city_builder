@@ -38,6 +38,8 @@ class Clone extends Product
 		_orders.push(2);
 		_orders.push(3);
 		changeDirection(); 
+		
+		_gotoPos = null;
 	}
 	
 	
@@ -48,7 +50,7 @@ class Clone extends Product
 		
 		if (_gotoPos != null)
 		{
-			
+			trace("GOING TO POS: " + _gotoPos);
 			var p : FlxPoint = new FlxPoint(x, y);
 			if (p.distanceTo(_gotoPos) <= 5.0)
 			{
@@ -56,8 +58,8 @@ class Clone extends Product
 				_gotoPos = null;
 				return;
 			}
-			_speed.x = (_gotoPos.x - p.x) * _maxSpeed;
-			_speed.y = (_gotoPos.y - p.y) * _maxSpeed;
+			_speed.x = (_gotoPos.x - p.x) * 5;//_maxSpeed;
+			_speed.y = (_gotoPos.y - p.y) * 5;//_maxSpeed;
 			
 			this.x += _speed.x * FlxG.elapsed;
 			this.y += _speed.y * FlxG.elapsed;
@@ -82,8 +84,8 @@ class Clone extends Product
 		this.x += _speed.x * FlxG.elapsed;
 		this.y += _speed.y * FlxG.elapsed;
 
-		_maxWalk.x -= Math.abs(_speed.x *FlxG.elapsed);
-		_maxWalk.y -= Math.abs(_speed.y *FlxG.elapsed);
+		_maxWalk.x -= Math.abs(_speed.x * FlxG.elapsed);
+		_maxWalk.y -= Math.abs(_speed.y * FlxG.elapsed);
 	}
 	
 	private function processDirection(dir : Int) :Void

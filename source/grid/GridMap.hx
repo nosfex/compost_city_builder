@@ -41,7 +41,6 @@ class GridMap extends FlxGroup
 			}
 		}
 		checkPowered();	
-		checkProducts();
 		clearDead();
     }
 	
@@ -119,7 +118,7 @@ class GridMap extends FlxGroup
 						ret.push(p);
 						CompostG.updateProductAmount(prodType, -1);
 					}
-					
+					return ret;
 				}
 			}
 		}
@@ -134,7 +133,7 @@ class GridMap extends FlxGroup
 			for(j in 0 ... _grids.length)
 			{
 				
-				FlxG.collide(_products[i], _grids[i]);
+				FlxG.collide(_products[i], _grids[j]);
 			}
 		}
 	}

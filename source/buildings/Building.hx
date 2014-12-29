@@ -78,6 +78,9 @@ class Building extends FlxSprite
 		_maxProduction		= data.maxProduction;
 		_requiresManPower	= data.requiresManPower;
 		_maxManPower		= data.maxManPower;
+		
+		this.solid = false;
+		this.moves = false;
 	}
 	
 	
@@ -102,6 +105,7 @@ class Building extends FlxSprite
 					else
 					{
 						trace("Remove Product@: " + _name);
+						trace("REMOVE AMOUNT: " + _maxManPower);
 						var prods : Array<Product> = CompostG.GRID_MAP.removeProduct("clone", _maxManPower);
 						if (prods.length != 0)
 						{
@@ -109,6 +113,7 @@ class Building extends FlxSprite
 							for (i in 0 ... prods.length)
 							{
 								prods[i].gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
+								trace("Sent:  " + (i + 1) +" :dudes");
 							}
 						}	
 					}
@@ -138,7 +143,8 @@ class Building extends FlxSprite
 			}
 			// GH: Requires power and doesn't have any
 			else
-			{
+	 		{	
+				
 				// GH: Generate an icon for this, or better yet, a callback to flash an icon
 				trace("NO POWER - REQUIRES POWER");
 			}

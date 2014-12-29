@@ -42,6 +42,8 @@ class BaseGrid extends FlxSpriteGroup
 		_powerIcon = new FlxSprite(x, y, AssetPaths.power__png);
 		_powerIcon.origin = new FlxPoint();
 		add(_powerIcon);
+		this.solid = false;
+		this.moves = false;
 		
 	}
 	
@@ -120,7 +122,6 @@ class BaseGrid extends FlxSpriteGroup
 		{
 			var p :FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 			var r :FlxRect = new FlxRect(x, y, width * scale.x, height * scale.y);
-			trace(p);
 			
 			if (r == null)
 			{
@@ -131,7 +132,7 @@ class BaseGrid extends FlxSpriteGroup
 			{
 				
 				if(CompostG.FUNC_BUTTON != "Erase")
-				{	trace("clickety clack");
+				{
 					addBuilding(BuildingFactory.instance().createBuildingInstance());
 				}
 				else

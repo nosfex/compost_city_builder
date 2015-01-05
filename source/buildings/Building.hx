@@ -37,7 +37,9 @@ class Building extends FlxSprite
 	
 	private var _productionObject :Array <Product> = new Array();
 	private var _buildingMaxDmg : Int = 0;
-	
+	private var _currentManPower : Int = 0;
+	private var _manPowerEnablerTimer :Float = 0;
+	private var _manPowerMaxPower :Float = 2;
 	// GH: ------------------ GET / SET ---------------------	
 	public function get_name() :String			{ return _name;  }
 	public function set_name(value) 			{ _name = value; return _name; }
@@ -59,6 +61,7 @@ class Building extends FlxSprite
 	public function getProductionType() :String { return _productionType; }
 	public function getProduction() : Int		{ return _production; }
 	public function getProductionRate() :Float 	{ return _productionRate; }
+	
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -104,18 +107,22 @@ class Building extends FlxSprite
 					}
 					else
 					{
-						trace("Remove Product@: " + _name);
-						trace("REMOVE AMOUNT: " + _maxManPower);
-						var prods : Array<Product> = CompostG.GRID_MAP.removeProduct("clone", _maxManPower);
-						if (prods.length != 0)
+						if (_currentManPower < _maxManPower)
 						{
-							_requiresManPower = false;
-							for (i in 0 ... prods.length)
+							if (_manPowerEnablerTimer > _manPowerMaxPower)
 							{
-								prods[i].gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
-								trace("Sent:  " + (i + 1) +" :dudes");
+								trace("Remove Product@: " + _name);
+								trace("REMOVE AMOUNT: " + _maxManPower);
+								var prods : Array<Product> = CompostG.GRID_MAP.removeProduct("clone", 1);
+								if (prods.length != 0)
+								{
+									_currentManPower++;
+									_requiresManPower = false;
+									prods.pop().gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
+								}	
 							}
-						}	
+							_manPowerEnablerTimer += FlxG.elapsed;
+						}
 					}
 					return;
 				}

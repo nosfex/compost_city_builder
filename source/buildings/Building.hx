@@ -8,171 +8,173 @@ import openfl.utils.Object;
 import production.ProductionFactory;
 import production.Product;
 
-/**
- * ...
- * @author Gerardo Heidel
- */
 class Building extends FlxSprite
 {
-	
-	public var name(get, set) :String;
-	public var powered(get, set): Bool;
-	public var productionObject(get, set) : Array<Product>;
-	
-	private var _requiresPower: Bool = false;
-	private var _requiresManPower :Bool = false;
-	private var _maxManPower :Int = 0;
-	private var _influenceArea :String = "N4";
-	private var _initialTechLevel :Int = 0;
-	private var _currTechLevel : Int = 0;
-	private var _productionType :String = "";
-	private var _productionRate :Float = 0.0;
-	private var _production :Int = 0;
-	private var _productionTimer :Float = 0;
-	private var _maxProduction :Int = 0;
-	private var _name :String = "";
-	private var _power :Bool = false;
-	private var _holdTile :Bool = true;
-	private var _price :Int = 0;
-	
-	private var _productionObject :Array <Product> = new Array();
-	private var _buildingMaxDmg : Int = 0;
-	private var _currentManPower : Int = 0;
-	private var _manPowerEnablerTimer :Float = 0;
-	private var _manPowerMaxPower :Float = 2;
-	// GH: ------------------ GET / SET ---------------------	
-	public function get_name() :String			{ return _name;  }
-	public function set_name(value) 			{ _name = value; return _name; }
-	
-	public function get_powered() :Bool 		{ return _power; }
-	public function set_powered(value :Bool) 	{ _power = value; return _power; }
-	
-	public function get_productionObject() :Array<Product> 	{ return _productionObject; }
-	public function set_productionObject(po :Array<Product>) :Array<Product> { _productionObject = po; return _productionObject; } 
-	
+    public var name(get, set):String;
+    public var powered(get, set):Bool;
+    public var productionObject(get, set):Array<Product>;
 
-	public function requiresPower() :Bool 		{ return _requiresPower; }
-	public function requiresManPower() :Bool	{ return _requiresManPower; } 
-	public function maxManPower() :Int			{ return _maxManPower; }
-	public function getPrice() :Int				{ return _price; }
-	
-	
-	public function getInfluenceArea() :String 	{ return _influenceArea; }	
-	public function getProductionType() :String { return _productionType; }
-	public function getProduction() : Int		{ return _production; }
-	public function getProductionRate() :Float 	{ return _productionRate; }
-	
-	
-	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
-	{
-		super(X, Y, SimpleGraphic);	
-	}
-	
-	public function load(data : Object) :Void
-	{
-		_requiresPower 		= data.requiresPower;
-		_influenceArea 		= data.area;
-		_currTechLevel 		= _initialTechLevel = data.techLevel;
-		_productionType		= data.productionType;
-		_productionRate 	= data.productionRate;
-		_name 				= data.name;
-		_holdTile 			= data.holdTile;
-		_buildingMaxDmg 	= data.buildingMaxDmg;
-		_maxProduction		= data.maxProduction;
-		_requiresManPower	= data.requiresManPower;
-		_maxManPower		= data.maxManPower;
-		
-		this.solid = false;
-		this.moves = false;
-	}
-	
-	
-	override public function update() :Void
-	{
-	
-		super.update();
-		if (this.alive)
+    var _requiresPower:Bool = false;
+    var _requiresManPower:Bool = false;
+    var _maxManPower:Int = 0;
+    var _influenceArea:String = "N4";
+    var _initialTechLevel:Int = 0;
+    var _currTechLevel:Int = 0;
+    var _productionType:String = "";
+    var _productionRate:Float = 0.0;
+    var _production:Int = 0;
+    var _productionTimer:Float = 0;
+    var _maxProduction:Int = 0;
+    var _name:String = "";
+    var _power:Bool = false;
+    var _holdTile:Bool = true;
+    var _price:Int = 0;
+    var _productionObject:Array<Product> = new Array();
+    var _buildingMaxDmg:Int = 0;
+    var _currentManPower:Int = 0;
+    var _manPowerEnablerTimer:Float = 0;
+    var _manPowerMaxPower:Float = 2;
+
+    public function get_name():String    									{ return _name; }
+    public function set_name(value) 										{ _name = value; return _name; }
+
+    public function get_powered():Bool    									{ return _power; }
+    public function set_powered(value:Bool) 								{ _power = value; return _power; }
+
+    public function get_productionObject():Array<Product>    				{ return _productionObject; }
+    public function set_productionObject(po:Array<Product>):Array<Product>  { _productionObject = po; return _productionObject; }
+
+    public function requiresPower():Bool 									{ return _requiresPower; }
+    public function requiresManPower():Bool 								{ return _requiresManPower; }
+
+    public function maxManPower():Int 										{ return _maxManPower; }
+    public function getPrice():Int 											{ return _price; }
+    public function getInfluenceArea():String 								{ return _influenceArea; }
+//     public function getProductionType():String 								{ return _productionType; }
+
+    public function getProduction():Int
+    {
+    	return _production;
+    }
+
+    public function getProductionRate():Float
+    {
+    	return _productionRate;
+    }
+
+    public function new(X:Float = 0, Y:Float = 0, ?SimpleGraphic:Dynamic)
+    {
+    	super(X, Y, SimpleGraphic);
+    }
+
+    public function load(data:Object):Void
+    {
+    	_requiresPower = data.requiresPower;
+    	_influenceArea = data.area;
+    	_currTechLevel = _initialTechLevel = data.techLevel;
+    	_productionType = data.productionType;
+    	_productionRate = data.productionRate;
+    	_name = data.name;
+    	_holdTile = data.holdTile;
+    	_buildingMaxDmg = data.buildingMaxDmg;
+    	_maxProduction = data.maxProduction;
+    	_requiresManPower = data.requiresManPower;
+    	_maxManPower = data.maxManPower;
+    	this.solid = false;
+    	this.moves = false;
+    }
+
+    override public function update():Void
+    {
+    	super.update();
+    	if (this.alive) 
 		{
-			if (_power || !_requiresPower)
+    		if (_power || !_requiresPower)
 			{
-				if (_requiresManPower)
+    			if (_requiresManPower)
 				{
-					if (CompostG.getProductAmountByType("clone") < _maxManPower)
-					{	
-						if (_buildingMaxDmg <= 0)
-						{
-							this.kill();
-						}
-						return;
-					}
-					else
-					{
-						if (_currentManPower < _maxManPower)
-						{
-							if (_manPowerEnablerTimer > _manPowerMaxPower)
-							{
-								trace("Remove Product@: " + _name);
-								trace("REMOVE AMOUNT: " + _maxManPower);
-								var prods : Array<Product> = CompostG.GRID_MAP.removeProduct("clone", 1);
-								if (prods.length != 0)
-								{
-									_currentManPower++;
-									_requiresManPower = false;
-									prods.pop().gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
-								}	
-							}
-							_manPowerEnablerTimer += FlxG.elapsed;
-						}
-					}
-					return;
-				}
-				
-				if (_productionTimer >= _productionRate )
+    				manpowerCheck();
+    				return;
+    			}
+    			if (_productionTimer >= _productionRate) 
 				{
-					
-					if (_production <= _maxProduction)
-					{
-						_production++;
-						_productionTimer = 0;
-						var p :Product = ProductionFactory.instance().buildProduct(_productionType, new FlxPoint(x - 18, y - 18), this);
-						if (p != null)
-						{
-							_productionObject.push(p);
-							CompostG.GRID_MAP.addProduct(p);
-							
-							p.prodParent = this;
-						}
-						CompostG.updateProductAmount(_productionType, 1);
-					}
-				}
-				
-				_productionTimer += FlxG.elapsed;
-			}
-			// GH: Requires power and doesn't have any
+    				productionCheck();
+    			}
+    			_productionTimer += FlxG.elapsed;
+    		} 
 			else
-	 		{	
-				
-				// GH: Generate an icon for this, or better yet, a callback to flash an icon
-				trace("NO POWER - REQUIRES POWER");
-			}
-			
-			if (_buildingMaxDmg <= 0)
 			{
-				this.kill();
-			}
-		}
-	}
-	
-	override public function kill() :Void
-	{
-		super.kill();
-		for (i in 0 ... _productionObject.length)
+    			trace("NO POWER - REQUIRES POWER");
+    		}
+    		if (_buildingMaxDmg <= 0) 
+			{
+    			this.kill();
+    		}
+    	}
+    }
+
+    function manpowerCheck():Void
+    {
+    	if (CompostG.getProductAmountByType("clone") < _maxManPower) 
 		{
-			_productionObject[i].kill();
-			_productionObject[i].visible = false;
-			
-		}
-		_productionObject = new Array();
-	}
-	
+    		if (_buildingMaxDmg <= 0) 
+			{
+    			this.kill();
+    		}
+    		return;
+    	} 
+		else
+		{
+    		if (_currentManPower < _maxManPower)
+			{
+    			if (_manPowerEnablerTimer > _manPowerMaxPower) 
+				{
+    				var prods:Array<Product> = CompostG.GRID_MAP.removeProduct("clone", 1);
+    				if (prods.length != 0) 
+					{
+    					trace("Before: " + prods.length);
+    					_currentManPower++;
+    					_manPowerEnablerTimer = 0;
+    					var p:Product = prods.pop();
+    					p.gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
+    					trace("After: " + prods.length);
+    					return;
+    				}
+    			}
+    			_manPowerEnablerTimer += FlxG.elapsed;
+    		} 
+			else
+			{
+    			_requiresManPower = false;
+    		}
+    	}
+    }
+
+    function productionCheck():Void
+    {
+    	if (_production <= _maxProduction)
+		{
+    		_production++;
+    		_productionTimer = 0;
+    		var p:Product = ProductionFactory.instance().buildProduct(_productionType, new FlxPoint(x - 18, y - 18), this);
+    		if (p != null) 
+			{
+    			_productionObject.push(p);
+    			CompostG.GRID_MAP.addProduct(p);
+    			p.prodParent = this;
+    		}
+    		CompostG.updateProductAmount(_productionType, 1);
+    	}
+    }
+
+    override public function kill():Void
+    {
+    	super.kill();
+    	for (i in 0 ... _productionObject.length)
+		{
+    		_productionObject[i].kill();
+    		_productionObject[i].visible = false;
+    	}
+    	_productionObject = new Array();
+    }
 }

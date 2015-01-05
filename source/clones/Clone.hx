@@ -50,7 +50,6 @@ class Clone extends Product
 		
 		if (_gotoPos != null)
 		{
-			trace("GOING TO POS: " + _gotoPos);
 			var p : FlxPoint = new FlxPoint(x, y);
 			if (p.distanceTo(_gotoPos) <= 5.0)
 			{

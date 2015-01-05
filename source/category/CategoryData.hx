@@ -13,10 +13,7 @@ class CategoryData
 //	public var headlines(get,set) : Map < String, Array<String> > ;
 	private var _headlines :Map<String, Array<String>> =  new Map();
 //	var p : URLLoader = new URLLoader(new URLRequest("../../assets/data/category.json");
-	private var _categoryJson :String = '{ "headlines":["Energy", "Production", "Housing"],
-										  "buildings":[ { "owner":"Energy", "buildings":["Power Plant", "Power Line"] },
-														{ "owner":"Production", "buildings": ["Slave Agency", "techfactory"] },
-														{ "owner":"Housing", "buildings": ["Clone Center", "richhood"] }]}';
+	private var _categoryJson :String = '{ "headlines":["Energy", "Production", "Housing"], "buildings":[ { "owner":"Energy", "buildings":["Power Plant", "Power Line"] }, { "owner":"Production", "buildings": ["Slave Agency", "techfactory"] }, { "owner":"Housing", "buildings": ["Clone Center", "richhood"] }]}';
 	public function new() 
 	{
 		loadJson();

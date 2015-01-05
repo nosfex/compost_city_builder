@@ -107,16 +107,18 @@ class GridMap extends FlxGroup
 		var ret :Array<Product> = new Array<Product>();
 		for (i in 0 ... _products.length)
 		{
-			if ( _products[i].prodParent.getProductionType() == prodType )
+			var parent : Building = _products[i].prodParent;
+			if ( parent.getProductionType() == prodType )
 			{
-				if (_products[i].prodParent.productionObject.length >= amount)
+				if (parent.productionObject.length >= amount)
 				{
 					trace("Can we get them?");
 					for (j in 0 ... amount)
 					{
-						var p : Product = _products[i].prodParent.productionObject.pop();
+						var p : Product = parent.productionObject.pop();
 						ret.push(p);
 						CompostG.updateProductAmount(prodType, -1);
+						trace("Count: " + j);
 					}
 					return ret;
 				}

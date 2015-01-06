@@ -155,7 +155,8 @@ class Building extends FlxSprite
     			_productionObject.push(p);
     			CompostG.GRID_MAP.addProduct(p);
     			p.prodParent = this;
-    		}
+				p.productType = _productionType;
+			}
     		CompostG.updateProductAmount(_productionType, 1);
     	}
     }

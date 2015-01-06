@@ -133,29 +133,19 @@ class GridMap extends FlxGroup
 		
 		var amountToTake :Int = amount;
 		for (i in 0 ... _products.length)
-		{
-			var parent : Building = _products[i].prodParent;
-			if ( parent.getProductionType() == prodType )
+		{	 
+			if ( _products[i].productType == prodType )
 			{
-				if (parent.productionObject.length >= amount)
+				if (_products.length >= amount)
 				{
+					trace("Can we get them?");
+					_products[i].use(from);
+					_products.splice(i, 1);
+					amountToTake--;
 					if (amountToTake <= 0)
 					{
 						trace("exit using prod: " + prodType);
 						return;
-					}
-					trace("Can we get them?");
-					for (j in 0 ... amount)
-					{
-						parent.productionObject[j].use(from);
-						parent.productionObject.splice(j, 1);
-						trace("parent.productionObject: " + parent.productionObject.toString());
-						amountToTake--;
-						if (amountToTake <= 0)
-						{
-							trace("exit using prod: " + prodType);
-							return;
-						}
 					}
 				}
 			}
@@ -164,14 +154,6 @@ class GridMap extends FlxGroup
 	
 	function checkProducts() :Void
 	{
-		for (i in 0 ... _products.length)
-		{
-			for(j in 0 ... _grids.length)
-			{
-				
-				FlxG.collide(_products[i], _grids[j]);
-			}
-		}
 	}
 
     override public function destroy():Void

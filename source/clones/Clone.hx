@@ -17,8 +17,9 @@ class Clone extends Product
 	
 	private static var _maxSpeed :Int = 20;
 	
+	private static var _blockSize :Int = 96;
 	private var _orders :Array<Int> = new Array();
-	private var _maxWalk : FlxPoint = new FlxPoint(96, 96);
+	private var _maxWalk : FlxPoint = new FlxPoint(_blockSize, _blockSize);
 	
 	private static var CLONE_UP : FlxPoint = new FlxPoint(0, - _maxSpeed);
 	private static var CLONE_DOWN : FlxPoint = new FlxPoint(0, _maxSpeed);
@@ -29,7 +30,8 @@ class Clone extends Product
 	public static var DOWN_DIR_CLONE : Int = 1;
 	public static var LEFT_DIR_CLONE : Int = 2;
 	public static var RIGHT_DIR_CLONE : Int = 3;
-	
+	private var _forcedOrders:Array<FlxPoint> = new Array();
+	private var _finishedForcedOrders :Bool = false;
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
 		super(X, Y, SimpleGraphic);
@@ -52,20 +54,18 @@ class Clone extends Product
 	{
 		super.update();
 		
-		if (_gotoPos != null)
+		if (_gotoPos != null && _forcedOrders.length == 0)
 		{
 			var p : FlxPoint = new FlxPoint(x, y);
 			if (p.distanceTo(_gotoPos) <= 5.0)
 			{
-				this.kill();
-				_gotoPos = null;
+				//this.kill();
+				//_gotoPos = null;
+				
 				return;
 			}
-			_speed.x = (_gotoPos.x - p.x) * 5;//_maxSpeed;
-			_speed.y = (_gotoPos.y - p.y) * 5;//_maxSpeed;
 			
-			this.x += _speed.x * FlxG.elapsed;
-			this.y += _speed.y * FlxG.elapsed;
+			processGotoPoint();
 			return;
 		}
 		// GH FIX THIS BUGGED OUT
@@ -79,8 +79,21 @@ class Clone extends Product
 
 		if (_maxWalk.x <= 0 || _maxWalk.y <= 0)
 		{
-			changeDirection();
-			_maxWalk = new FlxPoint(96, 96);
+			
+			if(_forcedOrders.length != 0)
+			{
+				_speed = takeRandomFromForcedOrder();
+				if(_forcedOrders.length == 0)
+				{
+					_finishedForcedOrders = true;
+				}
+				
+			}
+			else if(_finishedForcedOrders == false) 
+			{
+				changeDirection();
+			}
+			_maxWalk = new FlxPoint(_blockSize, _blockSize);
 		}
 
 		
@@ -107,6 +120,42 @@ class Clone extends Product
 	}
 	
 	
+	public function processGotoPoint(): Void
+	{
+		var distanceX :Float = _gotoPos.x - this.x;
+		var distanceY :Float = _gotoPos.y - this.y;
+		var stepsX : Float = Math.ceil(distanceX / _blockSize);
+		var stepsY : Float = Math.ceil(distanceY / _blockSize);
+		// GH: Means user is going left
+		
+		var vert :FlxPoint = CLONE_DOWN;
+		var horz :FlxPoint = CLONE_RIGHT;
+		if (stepsX <  0)
+		{
+			stepsX = Math.abs(stepsX);
+			horz = CLONE_LEFT;
+		}
+	
+		if (stepsY < 0)
+		{
+			stepsY = Math.abs(stepsY);
+			vert = CLONE_UP;
+		}
+			
+		for (i in 0 ... cast(stepsX))
+		{
+			_forcedOrders.push(horz);
+		}
+	
+		for (i in 0 ... cast(stepsY))
+		{
+			_forcedOrders.push(vert);
+		}
+	
+
+
+		
+	}
 	
 	public function changeDirection() :Void
 	{	
@@ -114,6 +163,15 @@ class Clone extends Product
 	}
 	
 	
+	private function takeRandomFromForcedOrder() : FlxPoint
+	{
+		var order :Int = Math.floor(Math.random() * _forcedOrders.length);
+		var r :FlxPoint = _forcedOrders[order];
+		_forcedOrders.splice(order, 1);
+		trace("TAKING SOME SHIET BRUH");
+		return r;
+	}
+
 	private function takeRandom() :Int
 	{
 		var direction :Int = Math.floor(Math.random() * _orders.length);

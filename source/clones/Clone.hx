@@ -42,7 +42,11 @@ class Clone extends Product
 		_gotoPos = null;
 	}
 	
-	
+	public override function use(fromBuilding :Building) :Void
+	{
+		super.use(fromBuilding);
+		_gotoPos = new FlxPoint(fromBuilding.x, fromBuilding.y);
+	}
 
 	public override function update() :Void
 	{

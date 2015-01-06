@@ -50,7 +50,7 @@ class Building extends FlxSprite
     public function maxManPower():Int 										{ return _maxManPower; }
     public function getPrice():Int 											{ return _price; }
     public function getInfluenceArea():String 								{ return _influenceArea; }
-//     public function getProductionType():String 								{ return _productionType; }
+	public function getProductionType():String 								{ return _productionType; }
 
     public function getProduction():Int
     {
@@ -129,17 +129,10 @@ class Building extends FlxSprite
 			{
     			if (_manPowerEnablerTimer > _manPowerMaxPower) 
 				{
-    				var prods:Array<Product> = CompostG.GRID_MAP.removeProduct("clone", 1);
-    				if (prods.length != 0) 
-					{
-    					trace("Before: " + prods.length);
-    					_currentManPower++;
-    					_manPowerEnablerTimer = 0;
-    					var p:Product = prods.pop();
-    					p.gotoPos = new FlxPoint(x + width * 0.5, y + height * 0.5);
-    					trace("After: " + prods.length);
-    					return;
-    				}
+    				_currentManPower++;
+    				_manPowerEnablerTimer = 0;
+					CompostG.GRID_MAP.useProduct("clone", 1, this);
+    				return;
     			}
     			_manPowerEnablerTimer += FlxG.elapsed;
     		} 

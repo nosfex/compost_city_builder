@@ -20,6 +20,7 @@ class Product extends FlxSprite
 	
 	private var _prodParent :Building = null;
 	private var _gotoPos : FlxPoint = null;
+	private var _useFromBuilding :Building = null;
 	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
@@ -28,6 +29,10 @@ class Product extends FlxSprite
 	}	
 	
 	
+	public function use(fromBuilding :Building) :Void
+	{
+		_useFromBuilding = fromBuilding;
+	}
 	
 	public override function update() :Void
 	{

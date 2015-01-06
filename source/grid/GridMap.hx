@@ -128,6 +128,40 @@ class GridMap extends FlxGroup
 		return ret;
 	}
 	
+	public function useProduct(prodType :String, amount :Int, from :Building) :Void
+	{
+		
+		var amountToTake :Int = amount;
+		for (i in 0 ... _products.length)
+		{
+			var parent : Building = _products[i].prodParent;
+			if ( parent.getProductionType() == prodType )
+			{
+				if (parent.productionObject.length >= amount)
+				{
+					if (amountToTake <= 0)
+					{
+						trace("exit using prod: " + prodType);
+						return;
+					}
+					trace("Can we get them?");
+					for (j in 0 ... amount)
+					{
+						parent.productionObject[j].use(from);
+						parent.productionObject.splice(j, 1);
+						trace("parent.productionObject: " + parent.productionObject.toString());
+						amountToTake--;
+						if (amountToTake <= 0)
+						{
+							trace("exit using prod: " + prodType);
+							return;
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	function checkProducts() :Void
 	{
 		for (i in 0 ... _products.length)

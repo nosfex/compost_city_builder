@@ -7,7 +7,7 @@ import flixel.FlxG;
 import openfl.utils.Object;
 import production.ProductionFactory;
 import production.Product;
-
+import clones.Clone;
 class Building extends FlxSprite
 {
     public var name(get, set):String;
@@ -34,6 +34,7 @@ class Building extends FlxSprite
     var _currentManPower:Int = 0;
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
+	var _workers :Array<Clone> = new Array();
 
     public function get_name():String    									{ return _name; }
     public function set_name(value) 										{ _name = value; return _name; }
@@ -160,6 +161,23 @@ class Building extends FlxSprite
     		CompostG.updateProductAmount(_productionType, 1);
     	}
     }
+	
+	public function addWorker(worker :Clone) :Void
+	{
+		_workers.push(worker);
+	}
+	
+	public function removeWorker(worker :Clone) :Void
+	{
+		for (i in 0 ... _workers.length)
+		{
+			if (_workers[i] == worker)
+			{
+				_workers.splice(i, 1);
+				return;
+			}
+		}
+	}
 
     override public function kill():Void
     {

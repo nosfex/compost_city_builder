@@ -46,8 +46,8 @@ class Clone extends Product
 	
 	public override function use(fromBuilding :Building) :Void
 	{
-		super.use(fromBuilding);
 		_gotoPos = new FlxPoint(fromBuilding.x, fromBuilding.y);
+		fromBuilding.addWorker(this);
 	}
 
 	public override function update() :Void
@@ -75,11 +75,9 @@ class Clone extends Product
 			// GH: Change direction;
 			changeDirection();
 		}
-		
 
 		if (_maxWalk.x <= 0 || _maxWalk.y <= 0)
 		{
-			
 			if(_forcedOrders.length != 0)
 			{
 				_speed = takeRandomFromForcedOrder();
@@ -95,7 +93,6 @@ class Clone extends Product
 			}
 			_maxWalk = new FlxPoint(_blockSize, _blockSize);
 		}
-
 		
 		this.x += _speed.x * FlxG.elapsed;
 		this.y += _speed.y * FlxG.elapsed;

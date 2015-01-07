@@ -164,24 +164,27 @@ class GridMap extends FlxGroup
 
     public function initMap(gridCount:Int):Void
     {
-    	if (_grids == null) {
+    	if (_grids == null) 
+		{
     		_grids = new Array();
-    	};
+    	}
     	_lastGridCount = gridCount;
     	var maxGrids:Float = Math.sqrt(gridCount);
     	var col:Int = 0;
     	var row:Int = 0;
-    	while (row < maxGrids) {
+    	while (row < maxGrids) 
+		{
     		var g:BaseGrid = new BaseGrid(32 + ((col) * (96 * 1.25)), 32 + ((row) * (96 * 1.25)));
     		_grids.push(g);
     		g.usable = false;
     		col++;
-    		if (col >= maxGrids) {
+    		if (col >= maxGrids) 
+			{
     			col = 0;
     			row++;
-    		};
+    		}
     		add(g);
-    	};
+    	}
     	_initPos = new FlxPoint(_grids[0].x, _grids[0].y);
     	scaleToGrowth();
     }
@@ -193,8 +196,10 @@ class GridMap extends FlxGroup
     	var maxHeightScale = FlxG.height * .85;
     	var newScale:Float = maxHeightScale / gridsTotalSize;
     	var reorder:Array<BaseGrid> = _grids;
-    	if (gridsTotalSize >= maxHeightScale) {
-    		for (i in 0 ... _grids.length) {
+    	if (gridsTotalSize >= maxHeightScale) 
+		{
+    		for (i in 0 ... _grids.length)
+			{
     			var oldWidth:Float = (32 * _grids[i].scale.x) + ((_grids[i].width * _grids[i].scale.x) * 1.25);
     			var newWidth:Float = (32 * newScale) + ((_grids[i].width * newScale) * 1.25);
     			_grids[i].x /= oldWidth;
@@ -206,10 +211,10 @@ class GridMap extends FlxGroup
     			var xIndex:Int = cast Math.round(_grids[i].x / newWidth);
     			var yIndex:Int = cast Math.round(_grids[i].y / newHeight) * maxGrids;
     			(cast _grids[i]).origin = new FlxPoint();
-    		};
+    		}
     		this.setAll("scale", new FlxPoint(newScale, newScale), true);
 		
-    	};
+    	}
     }
 
     public function N4FromIndex(index:Int):Array<BaseGrid>
@@ -220,18 +225,22 @@ class GridMap extends FlxGroup
     	var right:Int = cast index + 1;
     	var bottom:Int = cast index + sideSize;
     	var ret:Array<BaseGrid> = new Array();
-    	if (top >= 0) {
+    	if (top >= 0)
+		{
     		ret.push(_grids[top]);
-    	};
-    	if (bottom < _grids.length) {
+    	}
+    	if (bottom < _grids.length) 
+		{
     		ret.push(_grids[bottom]);
-    	};
-    	if (index % sideSize != 0) {
+    	}
+    	if (index % sideSize != 0) 
+		{
     		ret.push(_grids[left]);
-    	};
-    	if (right % sideSize != 0 && right < _grids.length) {
+    	}
+    	if (right % sideSize != 0 && right < _grids.length) 
+		{
     		ret.push(_grids[right]);
-    	};
+    	}
     
     	return ret;
     }
@@ -242,20 +251,23 @@ class GridMap extends FlxGroup
     	var maxRow:Float = 0;
     	var maxCol:Float = initGrids;
     	var maxGridsToAdd:Float = initGrids + colrowToAdd;
-    	while (maxRow < maxGridsToAdd) {
+    	while (maxRow < maxGridsToAdd)
+		{
     		var g:BaseGrid = new BaseGrid(32 + ((maxCol) * (96 * 1.25)), 32 + ((maxRow) * (96 * 1.25)));
     		_grids.unshift(g);
     		g.alpha = 0.5;
     		maxCol++;
-    		if (maxCol >= maxGridsToAdd) {
+    		if (maxCol >= maxGridsToAdd)
+			{
     			maxCol = initGrids;
     			maxRow++;
-    			if (maxRow == maxGridsToAdd - 1) {
+    			if (maxRow == maxGridsToAdd - 1) 
+				{
     				maxCol = 0;
-    			};
-    		};
+    			}
+    		}
     		add(g);
-    	};
+    	}
     	_grids.sort(sortGrids);
     	scaleToGrowth();
 		
@@ -264,12 +276,14 @@ class GridMap extends FlxGroup
 
     function sortGrids(a:BaseGrid, b:BaseGrid):Int
     {
-    	if (a.y < b.y) {
+    	if (a.y < b.y)
+		{
     		return -1;
-    	};
-    	if (a.x < b.x && a.y == b.y) {
+    	}
+    	if (a.x < b.x && a.y == b.y) 
+		{
     		return -1;
-    	};
+    	}
     	return 1;
     }
 }

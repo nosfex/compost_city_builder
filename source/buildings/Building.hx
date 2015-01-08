@@ -35,6 +35,7 @@ class Building extends FlxSprite
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
 	var _workers :Array<Clone> = new Array();
+	var _workersOnSite :Bool = false;
 
     public function get_name():String    									{ return _name; }
     public function set_name(value) 										{ _name = value; return _name; }
@@ -107,7 +108,13 @@ class Building extends FlxSprite
 			{
     			trace("NO POWER - REQUIRES POWER");
     		}
-    		if (_buildingMaxDmg <= 0) 
+				
+			if(_workers.length != 0)
+			{
+				workersCheck();
+			}
+				
+			if (_buildingMaxDmg <= 0) 
 			{
     			this.kill();
     		}
@@ -130,12 +137,11 @@ class Building extends FlxSprite
 			{
     			if (_manPowerEnablerTimer > _manPowerMaxPower) 
 				{
-    				_currentManPower++;
     				_manPowerEnablerTimer = 0;
 					CompostG.GRID_MAP.useProduct("clone", 1, this);
     				return;
     			}
-    			_manPowerEnablerTimer += FlxG.elapsed;
+	   			_manPowerEnablerTimer += FlxG.elapsed;
     		} 
 			else
 			{
@@ -148,6 +154,12 @@ class Building extends FlxSprite
     {
     	if (_production <= _maxProduction)
 		{
+			
+			if (_workers.length != 0 && !_workersOnSite)
+			{
+				return;
+			}
+
     		_production++;
     		_productionTimer = 0;
     		var p:Product = ProductionFactory.instance().buildProduct(_productionType, new FlxPoint(x - 18, y - 18), this);
@@ -162,9 +174,28 @@ class Building extends FlxSprite
     	}
     }
 	
+	public function workersCheck() :Void
+	{
+		var workerCount : Int = 0;
+		for (i in 0 ... _workers.length)
+		{
+			if(_workers[i].finishedForcedOrders && _currentManPower >= _maxManPower)
+			{
+				workerCount++;
+				if(workerCount == _currentManPower)
+				{
+					_workersOnSite = true;
+				}
+			}
+		}
+
+	}
+	
 	public function addWorker(worker :Clone) :Void
 	{
 		_workers.push(worker);
+		
+		_currentManPower++;
 	}
 	
 	public function removeWorker(worker :Clone) :Void
@@ -174,6 +205,7 @@ class Building extends FlxSprite
 			if (_workers[i] == worker)
 			{
 				_workers.splice(i, 1);
+				_currentManPower--;
 				return;
 			}
 		}

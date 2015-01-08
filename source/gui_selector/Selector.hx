@@ -45,13 +45,9 @@ class Selector extends FlxSpriteGroup
 	{
 	
 		var data : Map<String, Array<String>> = category.getHeadlines();
-		
-		
 		var  innerData :Array<String> = data[categoryName];
-		
-		
-		
 		var btn :FlxButton = new FlxButton(XBase, YBase, categoryName, selectCategory);
+		
 		add(btn);
 		categoryButtons.push(btn);
 		initPosY[btn] = YBase;

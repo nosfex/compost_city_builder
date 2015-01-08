@@ -32,6 +32,12 @@ class Clone extends Product
 	public static var RIGHT_DIR_CLONE : Int = 3;
 	private var _forcedOrders:Array<FlxPoint> = new Array();
 	private var _finishedForcedOrders :Bool = false;
+	
+	public var finishedForcedOrders(get, set) : Bool;
+	
+	public function get_finishedForcedOrders() :Bool { return _finishedForcedOrders; }
+	public function set_finishedForcedOrders(value : Bool) :Bool { _finishedForcedOrders = value; return _finishedForcedOrders; }
+	
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
 		super(X, Y, SimpleGraphic);

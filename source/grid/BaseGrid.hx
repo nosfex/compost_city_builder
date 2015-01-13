@@ -99,7 +99,6 @@ class BaseGrid extends FlxSpriteGroup
  		if(this.isPowered())
 		{
 			b.powered = true;
-
 		}
 		
 		if (b.name == "Power Plant")

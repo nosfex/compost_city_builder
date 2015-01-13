@@ -30,14 +30,13 @@ class Building extends FlxSprite
     var _holdTile:Bool = true;
     var _price:Int = 0;
     var _productionObject:Array<Product> = new Array();
-    var _buildingMaxDmg:Int = 0;
+    var _buildingMaxDmg:Int = 2;
     var _currentManPower:Int = 0;
 	var _requestedManPower :Int = 0;
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
 	var _workers :Array<Clone> = new Array();
 	
-
     public function get_name():String    									{ return _name; }
     public function set_name(value) 										{ _name = value; return _name; }
 
@@ -92,30 +91,24 @@ class Building extends FlxSprite
     	super.update();
     	if (this.alive) 
 		{
-    		if (_power || !_requiresPower)
+			if (_power || !_requiresPower)
 			{
-    			if (_requiresManPower)
+    			if (_requiresManPower && _currentManPower < _maxManPower)
 				{
     				manpowerCheck();
     				return;
     			}
     			if (_productionTimer >= _productionRate) 
 				{
-					if(_requiresManPower && _currentManPower >= _maxManPower)
-					{
-						productionCheck();
-					}
-					else if (!_requiresManPower)
-					{
-						productionCheck();
-					}
-    			}
+					productionCheck();
+				}
     			_productionTimer += FlxG.elapsed;
     		} 
 			else
 			{
     			trace("NO POWER - REQUIRES POWER");
     		}
+			if(_buildingMaxDmg <= 0)
 			{
     			this.kill();
     		}
@@ -126,10 +119,7 @@ class Building extends FlxSprite
     {
     	if (CompostG.getProductAmountByType("clone") < _maxManPower) 
 		{
-    		if (_buildingMaxDmg <= 0) 
-			{
-    			this.kill();
-    		}
+			trace("wORKERS PLEASE");
     		return;
     	} 
 		else
@@ -140,9 +130,11 @@ class Building extends FlxSprite
 				{
     				_manPowerEnablerTimer = 0;
 					_requestedManPower++;
+					trace("REQUESTING MAN POWER");
 					CompostG.GRID_MAP.useProduct("clone", 1, this);
     				return;
     			}
+				_manPowerEnablerTimer += FlxG.elapsed;
     		} 
     	}
     }
@@ -169,6 +161,7 @@ class Building extends FlxSprite
 	{
 		_workers.push(worker);
 		_currentManPower++;
+		trace("WORKER ADDED");
 	}
 	
 	public function removeWorker(worker :Clone) :Void

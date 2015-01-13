@@ -93,7 +93,6 @@ class Clone extends Product
 					_finishedForcedOrders = true;
 					_useFromBuilding.addWorker(this);
 				}
-				
 			}
 			else if(_finishedForcedOrders == false) 
 			{
@@ -131,16 +130,16 @@ class Clone extends Product
 		var distanceY :Float = _gotoPos.y - this.y;
 		var stepsX : Float = Math.ceil(distanceX / _blockSize);
 		var stepsY : Float = Math.ceil(distanceY / _blockSize);
-		// GH: Means user is going left
 		
 		var vert :FlxPoint = CLONE_DOWN;
 		var horz :FlxPoint = CLONE_RIGHT;
+		// GH: Means user is going left
 		if (stepsX <  0)
 		{
 			stepsX = Math.abs(stepsX);
 			horz = CLONE_LEFT;
 		}
-	
+		// GH: User going up
 		if (stepsY < 0)
 		{
 			stepsY = Math.abs(stepsY);
@@ -156,10 +155,6 @@ class Clone extends Product
 		{
 			_forcedOrders.push(vert);
 		}
-	
-
-
-		
 	}
 	
 	public function changeDirection() :Void

@@ -116,7 +116,6 @@ class Building extends FlxSprite
 			{
     			trace("NO POWER - REQUIRES POWER");
     		}
-    		if (_buildingMaxDmg <= 0) 
 			{
     			this.kill();
     		}
@@ -144,7 +143,6 @@ class Building extends FlxSprite
 					CompostG.GRID_MAP.useProduct("clone", 1, this);
     				return;
     			}
-    			_manPowerEnablerTimer += FlxG.elapsed;
     		} 
     	}
     }
@@ -180,6 +178,7 @@ class Building extends FlxSprite
 			if (_workers[i] == worker)
 			{
 				_workers.splice(i, 1);
+				_currentManPower--;
 				return;
 			}
 		}

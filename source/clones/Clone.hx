@@ -46,8 +46,9 @@ class Clone extends Product
 	
 	public override function use(fromBuilding :Building) :Void
 	{
+		super.use(fromBuilding);
 		_gotoPos = new FlxPoint(fromBuilding.x, fromBuilding.y);
-		fromBuilding.addWorker(this);
+		
 	}
 
 	public override function update() :Void
@@ -84,6 +85,7 @@ class Clone extends Product
 				if(_forcedOrders.length == 0)
 				{
 					_finishedForcedOrders = true;
+					_useFromBuilding.addWorker(this);
 				}
 				
 			}

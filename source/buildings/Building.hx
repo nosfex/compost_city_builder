@@ -32,9 +32,11 @@ class Building extends FlxSprite
     var _productionObject:Array<Product> = new Array();
     var _buildingMaxDmg:Int = 0;
     var _currentManPower:Int = 0;
+	var _requestedManPower :Int = 0;
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
 	var _workers :Array<Clone> = new Array();
+	
 
     public function get_name():String    									{ return _name; }
     public function set_name(value) 										{ _name = value; return _name; }
@@ -99,7 +101,14 @@ class Building extends FlxSprite
     			}
     			if (_productionTimer >= _productionRate) 
 				{
-    				productionCheck();
+					if(_requiresManPower && _currentManPower >= _maxManPower)
+					{
+						productionCheck();
+					}
+					else if (!_requiresManPower)
+					{
+						productionCheck();
+					}
     			}
     			_productionTimer += FlxG.elapsed;
     		} 
@@ -126,21 +135,17 @@ class Building extends FlxSprite
     	} 
 		else
 		{
-    		if (_currentManPower < _maxManPower)
+    		if (_requestedManPower < _maxManPower)
 			{
     			if (_manPowerEnablerTimer > _manPowerMaxPower) 
 				{
-    				_currentManPower++;
     				_manPowerEnablerTimer = 0;
+					_requestedManPower++;
 					CompostG.GRID_MAP.useProduct("clone", 1, this);
     				return;
     			}
     			_manPowerEnablerTimer += FlxG.elapsed;
     		} 
-			else
-			{
-    			_requiresManPower = false;
-    		}
     	}
     }
 
@@ -165,6 +170,7 @@ class Building extends FlxSprite
 	public function addWorker(worker :Clone) :Void
 	{
 		_workers.push(worker);
+		_currentManPower++;
 	}
 	
 	public function removeWorker(worker :Clone) :Void

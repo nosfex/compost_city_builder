@@ -2,6 +2,9 @@
 import flixel.util.FlxPoint;
 import haxe.Json;
 import buildings.Building;
+import sys.io.FileInput;
+import sys.io.File;
+import haxe.io.Eof;
 //import haxe.io.Error;
 
 /**
@@ -15,8 +18,7 @@ class BuildingFactory
 	private static var _instance :BuildingFactory = null;
 	public static var CURRENT_BUILDING :String = "";
 	private var _buildingData :Map<String, BuildingData> = new Map();
-	private var _jsonFile :String = 
-	'{"buildings":[	{"requiresPower": true, "requiresManPower":true, "maxManPower":2, "price":2, "area":"N4", "techLevel":0, "productionType":"money", "productionRate":1, "maxProduction":10000, "name":"Slave Agency","lockTile":true, "buildingMaxDmg":3},{"requiresPower": false, "requiresManPower":false, "maxManPower":0, "price": 1, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Plant","lockTile":true, "buildingMaxDmg":3},{"requiresPower": true, "requiresManPower":false, "maxManPower":0, "price":1,  "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Line", "lockTile":false, "buildingMaxDmg":3 },{"requiresPower": true, "requiresManPower":false, "maxManPower":0, "price":2, "area":"N4", "techLevel":0, "productionType":"clone", "productionRate":1, "maxProduction":4, "name":"Clone Center","lockTile":false, "buildingMaxDmg":3}]}';
+	
 	public function new() 
 	{
 		if (_privCon)
@@ -39,7 +41,8 @@ class BuildingFactory
 	
 	public function loadJson() :Void
 	{
-		var jsonBuildings :Dynamic = Json.parse(_jsonFile);
+		var fileContent = File.getContent(AssetPaths.buildings_data__json);
+		var jsonBuildings :Dynamic = Json.parse(fileContent);
 		//var buildings :Array<BuildingData> = cast(jsonBuildings.buildings, Array<BuildingData>);
 		
 		for (i in 0 ... jsonBuildings.buildings.length)
@@ -57,6 +60,7 @@ class BuildingFactory
 			bData.maxManPower		= (jsonBuildings.buildings[i]).maxManPower;
 			bData.requiresManPower	= (jsonBuildings.buildings[i]).requiresManPower;
 			bData.price 			= (jsonBuildings.buildings[i]).price;
+			bData.upkeepCost 		= (jsonBuildings.buildings[i]).upkeepCost;
 			_buildingData.arrayWrite(bData.name, bData);
 		}
 	}

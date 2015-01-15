@@ -31,7 +31,7 @@ class ProductionFactory
 			_privCon = false;
 			_instance = new ProductionFactory();
 			_privCon = true;
-		}
+ 		}
 		return _instance;
 	}
 	

@@ -12,15 +12,6 @@
     ]
     ,"files" : [
          {
-             "path" : "source/category/CategoryData.hx"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 41
-        }
-        ,{
              "path" : "source/PlayState.hx"
             ,"useTabs" : true
             ,"indentSize" : 4
@@ -36,7 +27,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 56
+            ,"activeLine" : 20
         }
         ,{
              "path" : "source/buildings/BuildingData.hx"
@@ -45,16 +36,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 14
-        }
-        ,{
-             "path" : "source/grid/GridMap.hx"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 17
+            ,"activeLine" : 21
         }
         ,{
              "path" : "source/clones/Clone.hx"
@@ -63,7 +45,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 35
+            ,"activeLine" : 93
         }
         ,{
              "path" : "source/MenuState.hx"
@@ -81,7 +63,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 7
+            ,"activeLine" : 33
         }
         ,{
              "path" : "source/gui_selector/Selector.hx"
@@ -90,7 +72,7 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 53
+            ,"activeLine" : 27
         }
         ,{
              "path" : "source/buildings/Building.hx"
@@ -99,10 +81,10 @@
             ,"foldedRegions" : [
 
             ]
-            ,"activeLine" : 108
+            ,"activeLine" : 165
         }
     ]
-    ,"activeFile" : "source/production/ProductionFactory.hx"
+    ,"activeFile" : "source/buildings/Building.hx"
     ,"openFLTarget" : "mac"
     ,"openFLBuildMode" : "Debug"
     ,"runActionType" : 2

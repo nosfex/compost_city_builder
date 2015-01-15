@@ -13,7 +13,7 @@ class Building extends FlxSprite
     public var name(get, set):String;
     public var powered(get, set):Bool;
     public var productionObject(get, set):Array<Product>;
-
+	public var upkeepCost(get, set) : Int;
     var _requiresPower:Bool = false;
     var _requiresManPower:Bool = false;
     var _maxManPower:Int = 0;
@@ -36,6 +36,12 @@ class Building extends FlxSprite
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
 	var _workers :Array<Clone> = new Array();
+	
+
+	var _upkeepCost :Int = 0; 
+	
+	public function get_upkeepCost() :Int									{ return _upkeepCost; }
+	public function set_upkeepCost(value : Int) :Int						{ _upkeepCost = value; return _upkeepCost; }
 	
     public function get_name():String    									{ return _name; }
     public function set_name(value) 										{ _name = value; return _name; }
@@ -159,6 +165,15 @@ class Building extends FlxSprite
 	
 	public function addWorker(worker :Clone) :Void
 	{
+		for (i in 0 ... _workers.length)
+		{
+			if(_workers[i] == worker)
+			{
+				return;	
+			}
+			 
+		}
+
 		_workers.push(worker);
 		_currentManPower++;
 		trace("WORKER ADDED");

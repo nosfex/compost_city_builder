@@ -36,8 +36,6 @@ class Building extends FlxSprite
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
 	var _workers :Array<Clone> = new Array();
-	
-
 	var _upkeepCost :Int = 0; 
 	
 	public function get_upkeepCost() :Int									{ return _upkeepCost; }

@@ -45,35 +45,35 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
 namespace flixel{
 namespace system{
@@ -91,7 +91,7 @@ bool Closable = __o_Closable.Default(false);
 	HX_STACK_LINE(39)
 	super::__construct(HX_CSTRING("watch"),_g,(int)0,(int)0,true,null(),Closable);
 	HX_STACK_LINE(41)
-	::openfl::display::Sprite _g1 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
+	::openfl::_legacy::display::Sprite _g1 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(41)
 	this->_names = _g1;
 	HX_STACK_LINE(42)
@@ -101,7 +101,7 @@ bool Closable = __o_Closable.Default(false);
 	HX_STACK_LINE(44)
 	this->addChild(this->_names);
 	HX_STACK_LINE(46)
-	::openfl::display::Sprite _g2 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g2,"_g2");
+	::openfl::_legacy::display::Sprite _g2 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(46)
 	this->_values = _g2;
 	HX_STACK_LINE(47)
@@ -635,11 +635,11 @@ Dynamic Watch_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool
 {
 	switch(inName.length) {
 	case 6:
-		if (HX_FIELD_EQ(inName,"_names") ) { _names=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_names") ) { _names=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"editing") ) { editing=inValue.Cast< bool >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_values") ) { _values=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_values") ) { _values=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"_watching") ) { _watching=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
@@ -668,8 +668,8 @@ static ::String sStaticFields[] = {
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsBool,(int)offsetof(Watch_obj,editing),HX_CSTRING("editing")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(Watch_obj,_names),HX_CSTRING("_names")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(Watch_obj,_values),HX_CSTRING("_values")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(Watch_obj,_names),HX_CSTRING("_names")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(Watch_obj,_values),HX_CSTRING("_values")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(Watch_obj,_watching),HX_CSTRING("_watching")},
 	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(Watch_obj,_quickWatchList),HX_CSTRING("_quickWatchList")},
 	{ hx::fsUnknown, 0, null()}

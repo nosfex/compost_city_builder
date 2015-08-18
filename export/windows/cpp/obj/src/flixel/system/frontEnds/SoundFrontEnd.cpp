@@ -30,17 +30,17 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_media_Sound
-#include <openfl/media/Sound.h>
+#ifndef INCLUDED_openfl__legacy_media_Sound
+#include <openfl/_legacy/media/Sound.h>
 #endif
 namespace flixel{
 namespace system{
@@ -179,7 +179,7 @@ bool AutoPlay = __o_AutoPlay.Default(false);
 
 HX_DEFINE_DYNAMIC_FUNC7(SoundFrontEnd_obj,load,return )
 
-::openfl::media::Sound SoundFrontEnd_obj::cache( ::String EmbeddedSound){
+::openfl::_legacy::media::Sound SoundFrontEnd_obj::cache( ::String EmbeddedSound){
 	HX_STACK_FRAME("flixel.system.frontEnds.SoundFrontEnd","cache",0xf88690bb,"flixel.system.frontEnds.SoundFrontEnd.cache","flixel/system/frontEnds/SoundFrontEnd.hx",138,0x9ba4fb18)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(EmbeddedSound,"EmbeddedSound")
@@ -190,7 +190,7 @@ HX_DEFINE_DYNAMIC_FUNC7(SoundFrontEnd_obj,load,return )
 	}
 	else{
 		HX_STACK_LINE(144)
-		::openfl::media::Sound sound = ::openfl::Assets_obj::getSound(EmbeddedSound,null());		HX_STACK_VAR(sound,"sound");
+		::openfl::_legacy::media::Sound sound = ::openfl::_legacy::Assets_obj::getSound(EmbeddedSound,null());		HX_STACK_VAR(sound,"sound");
 		HX_STACK_LINE(145)
 		this->_soundCache->set(EmbeddedSound,sound);
 		HX_STACK_LINE(147)
@@ -216,17 +216,17 @@ bool AutoDestroy = __o_AutoDestroy.Default(true);
 	HX_STACK_ARG(OnComplete,"OnComplete")
 {
 		HX_STACK_LINE(162)
-		::openfl::media::Sound sound = null();		HX_STACK_VAR(sound,"sound");
+		::openfl::_legacy::media::Sound sound = null();		HX_STACK_VAR(sound,"sound");
 		HX_STACK_LINE(164)
 		if ((this->_soundCache->exists(EmbeddedSound))){
 			HX_STACK_LINE(166)
-			::openfl::media::Sound _g = this->_soundCache->get(EmbeddedSound);		HX_STACK_VAR(_g,"_g");
+			::openfl::_legacy::media::Sound _g = this->_soundCache->get(EmbeddedSound);		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(166)
 			sound = _g;
 		}
 		else{
 			HX_STACK_LINE(170)
-			::openfl::media::Sound _g1 = ::openfl::Assets_obj::getSound(EmbeddedSound,null());		HX_STACK_VAR(_g1,"_g1");
+			::openfl::_legacy::media::Sound _g1 = ::openfl::_legacy::Assets_obj::getSound(EmbeddedSound,null());		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(170)
 			sound = _g1;
 			HX_STACK_LINE(171)

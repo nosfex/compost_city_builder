@@ -31,6 +31,9 @@ class HXCPP_CLASS_ATTRIBUTES  CallStack_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("CallStack"); }
 
+		static Array< ::Dynamic > callStack( );
+		static Dynamic callStack_dyn();
+
 		static Array< ::Dynamic > exceptionStack( );
 		static Dynamic exceptionStack_dyn();
 

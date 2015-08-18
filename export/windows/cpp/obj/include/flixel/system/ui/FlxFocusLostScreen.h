@@ -5,23 +5,23 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/Sprite.h>
+#include <openfl/_legacy/display/Sprite.h>
 HX_DECLARE_CLASS3(flixel,system,ui,FlxFocusLostScreen)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 namespace flixel{
 namespace system{
 namespace ui{
 
 
-class HXCPP_CLASS_ATTRIBUTES  FlxFocusLostScreen_obj : public ::openfl::display::Sprite_obj{
+class HXCPP_CLASS_ATTRIBUTES  FlxFocusLostScreen_obj : public ::openfl::_legacy::display::Sprite_obj{
 	public:
-		typedef ::openfl::display::Sprite_obj super;
+		typedef ::openfl::_legacy::display::Sprite_obj super;
 		typedef FlxFocusLostScreen_obj OBJ_;
 		FlxFocusLostScreen_obj();
 		Void __construct();

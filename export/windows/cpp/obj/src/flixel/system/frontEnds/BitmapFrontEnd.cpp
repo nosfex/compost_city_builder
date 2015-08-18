@@ -30,26 +30,26 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_AssetCache
-#include <openfl/AssetCache.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_IAssetCache
+#include <openfl/_legacy/IAssetCache.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_Tilesheet
-#include <openfl/display/Tilesheet.h>
+#ifndef INCLUDED_openfl__legacy_display_Tilesheet
+#include <openfl/_legacy/display/Tilesheet.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace system{
@@ -86,7 +86,7 @@ Dynamic BitmapFrontEnd_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(32)
 	if (((this->_whitePixel == null()))){
 		HX_STACK_LINE(34)
-		::openfl::display::BitmapData bd = ::openfl::display::BitmapData_obj::__new((int)2,(int)2,true,(int)-1,null());		HX_STACK_VAR(bd,"bd");
+		::openfl::_legacy::display::BitmapData bd = ::openfl::_legacy::display::BitmapData_obj::__new((int)2,(int)2,true,(int)-1,null());		HX_STACK_VAR(bd,"bd");
 		HX_STACK_LINE(35)
 		::flixel::util::loaders::CachedGraphics _g = ::flixel::util::loaders::CachedGraphics_obj::__new(HX_CSTRING("whitePixel"),bd,true);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(35)
@@ -98,9 +98,9 @@ Dynamic BitmapFrontEnd_obj::__Create(hx::DynamicArray inArgs)
 			HX_STACK_LINE(37)
 			::flixel::system::layer::TileSheetData _this = this->_whitePixel->get_tilesheet();		HX_STACK_VAR(_this,"_this");
 			HX_STACK_LINE(37)
-			::openfl::geom::Rectangle tileRect = ::openfl::geom::Rectangle_obj::__new((int)0,(int)0,(int)1,(int)1);		HX_STACK_VAR(tileRect,"tileRect");
+			::openfl::_legacy::geom::Rectangle tileRect = ::openfl::_legacy::geom::Rectangle_obj::__new((int)0,(int)0,(int)1,(int)1);		HX_STACK_VAR(tileRect,"tileRect");
 			HX_STACK_LINE(37)
-			::openfl::geom::Point point = ::openfl::geom::Point_obj::__new((int)0,(int)0);		HX_STACK_VAR(point,"point");
+			::openfl::_legacy::geom::Point point = ::openfl::_legacy::geom::Point_obj::__new((int)0,(int)0);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(37)
 			_this->tileSheet->addTileRectID(tileRect,point);
 		}
@@ -259,7 +259,7 @@ bool Unique = __o_Unique.Default(false);
 		HX_STACK_LINE(116)
 		if ((!(((  ((this->_cache->exists(key))) ? bool(_Function_1_1::Block(this,key)) : bool(false) ))))){
 			HX_STACK_LINE(118)
-			::openfl::display::BitmapData _g3 = ::openfl::display::BitmapData_obj::__new(Width,Height,true,Color,null());		HX_STACK_VAR(_g3,"_g3");
+			::openfl::_legacy::display::BitmapData _g3 = ::openfl::_legacy::display::BitmapData_obj::__new(Width,Height,true,Color,null());		HX_STACK_VAR(_g3,"_g3");
 			HX_STACK_LINE(118)
 			::flixel::util::loaders::CachedGraphics value = ::flixel::util::loaders::CachedGraphics_obj::__new(key,_g3,null());		HX_STACK_VAR(value,"value");
 			HX_STACK_LINE(118)
@@ -344,7 +344,7 @@ bool Unique = __o_Unique.Default(false);
 			}
 			else{
 				HX_STACK_LINE(179)
-				if ((::Std_obj::is(Graphic,hx::ClassOf< ::openfl::display::BitmapData >()))){
+				if ((::Std_obj::is(Graphic,hx::ClassOf< ::openfl::_legacy::display::BitmapData >()))){
 					HX_STACK_LINE(181)
 					isBitmap = true;
 				}
@@ -456,7 +456,7 @@ bool Unique = __o_Unique.Default(false);
 		HX_STACK_LINE(244)
 		if ((!(((  ((this->_cache->exists(key))) ? bool(_Function_1_1::Block(this,key)) : bool(false) ))))){
 			HX_STACK_LINE(246)
-			::openfl::display::BitmapData bd = null();		HX_STACK_VAR(bd,"bd");
+			::openfl::_legacy::display::BitmapData bd = null();		HX_STACK_VAR(bd,"bd");
 			HX_STACK_LINE(247)
 			if ((isClass)){
 				HX_STACK_LINE(249)
@@ -464,7 +464,7 @@ bool Unique = __o_Unique.Default(false);
 				HX_STACK_LINE(249)
 				_g8 = hx::TCast< Class >::cast(Graphic);
 				HX_STACK_LINE(249)
-				::openfl::display::BitmapData _g9 = ::Type_obj::createInstance(_g8,Dynamic( Array_obj<Dynamic>::__new().Add((int)0).Add((int)0)));		HX_STACK_VAR(_g9,"_g9");
+				::openfl::_legacy::display::BitmapData _g9 = ::Type_obj::createInstance(_g8,Dynamic( Array_obj<Dynamic>::__new().Add((int)0).Add((int)0)));		HX_STACK_VAR(_g9,"_g9");
 				HX_STACK_LINE(249)
 				bd = _g9;
 			}
@@ -488,13 +488,13 @@ bool Unique = __o_Unique.Default(false);
 						}
 						else{
 							HX_STACK_LINE(265)
-							::openfl::display::BitmapData _g10;		HX_STACK_VAR(_g10,"_g10");
+							::openfl::_legacy::display::BitmapData _g10;		HX_STACK_VAR(_g10,"_g10");
 							HX_STACK_LINE(265)
 							{
 								HX_STACK_LINE(265)
 								::String id = Graphic;		HX_STACK_VAR(id,"id");
 								HX_STACK_LINE(265)
-								_g10 = ::openfl::Assets_obj::getBitmapData(id,false);
+								_g10 = ::openfl::_legacy::Assets_obj::getBitmapData(id,false);
 							}
 							HX_STACK_LINE(265)
 							bd = _g10;
@@ -569,13 +569,13 @@ bool Unique = __o_Unique.Default(false);
 				HX_STACK_LINE(276)
 				int _g20 = (_g19 + (numVerticalFrames * SpacingY));		HX_STACK_VAR(_g20,"_g20");
 				HX_STACK_LINE(276)
-				::openfl::display::BitmapData tempBitmap = ::openfl::display::BitmapData_obj::__new(_g18,_g20,true,(int)0,null());		HX_STACK_VAR(tempBitmap,"tempBitmap");
+				::openfl::_legacy::display::BitmapData tempBitmap = ::openfl::_legacy::display::BitmapData_obj::__new(_g18,_g20,true,(int)0,null());		HX_STACK_VAR(tempBitmap,"tempBitmap");
 				HX_STACK_LINE(277)
 				tempBitmap->lock();
 				HX_STACK_LINE(278)
-				::openfl::geom::Rectangle tempRect = ::openfl::geom::Rectangle_obj::__new((int)0,(int)0,FrameWidth,FrameHeight);		HX_STACK_VAR(tempRect,"tempRect");
+				::openfl::_legacy::geom::Rectangle tempRect = ::openfl::_legacy::geom::Rectangle_obj::__new((int)0,(int)0,FrameWidth,FrameHeight);		HX_STACK_VAR(tempRect,"tempRect");
 				HX_STACK_LINE(279)
-				::openfl::geom::Point tempPoint = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(tempPoint,"tempPoint");
+				::openfl::_legacy::geom::Point tempPoint = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(tempPoint,"tempPoint");
 				HX_STACK_LINE(281)
 				{
 					HX_STACK_LINE(281)
@@ -626,7 +626,7 @@ bool Unique = __o_Unique.Default(false);
 			HX_STACK_LINE(297)
 			if ((Unique)){
 				HX_STACK_LINE(299)
-				::openfl::display::BitmapData _g21 = bd->clone();		HX_STACK_VAR(_g21,"_g21");
+				::openfl::_legacy::display::BitmapData _g21 = bd->clone();		HX_STACK_VAR(_g21,"_g21");
 				HX_STACK_LINE(299)
 				bd = _g21;
 			}
@@ -666,7 +666,7 @@ HX_DEFINE_DYNAMIC_FUNC7(BitmapFrontEnd_obj,addWithSpaces,return )
 
 HX_DEFINE_DYNAMIC_FUNC1(BitmapFrontEnd_obj,get,return )
 
-::String BitmapFrontEnd_obj::getCacheKeyFor( ::openfl::display::BitmapData bmd){
+::String BitmapFrontEnd_obj::getCacheKeyFor( ::openfl::_legacy::display::BitmapData bmd){
 	HX_STACK_FRAME("flixel.system.frontEnds.BitmapFrontEnd","getCacheKeyFor",0xfaa1a129,"flixel.system.frontEnds.BitmapFrontEnd.getCacheKeyFor","flixel/system/frontEnds/BitmapFrontEnd.hx",336,0x91a05ae2)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(bmd,"bmd")
@@ -675,7 +675,7 @@ HX_DEFINE_DYNAMIC_FUNC1(BitmapFrontEnd_obj,get,return )
 		::String key = __it->next();
 		{
 			HX_STACK_LINE(339)
-			::openfl::display::BitmapData data = this->_cache->get(key)->__Field(HX_CSTRING("bitmap"),true);		HX_STACK_VAR(data,"data");
+			::openfl::_legacy::display::BitmapData data = this->_cache->get(key)->__Field(HX_CSTRING("bitmap"),true);		HX_STACK_VAR(data,"data");
 			HX_STACK_LINE(340)
 			if (((data == bmd))){
 				HX_STACK_LINE(342)
@@ -761,11 +761,11 @@ Void BitmapFrontEnd_obj::remove( ::String key){
 		if (((  (((key != null()))) ? bool(this->_cache->exists(key)) : bool(false) ))){
 			HX_STACK_LINE(373)
 			::flixel::util::loaders::CachedGraphics obj = this->_cache->get(key);		HX_STACK_VAR(obj,"obj");
+			HX_STACK_LINE(374)
+			this->removeFromOpenFLCache(key);
 			HX_STACK_LINE(375)
-			::openfl::Assets_obj::cache->bitmapData->remove(key);
-			HX_STACK_LINE(377)
 			this->_cache->remove(key);
-			HX_STACK_LINE(378)
+			HX_STACK_LINE(376)
 			obj->destroy();
 		}
 	}
@@ -775,36 +775,50 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(BitmapFrontEnd_obj,remove,(void))
 
+Void BitmapFrontEnd_obj::removeFromOpenFLCache( ::String key){
+{
+		HX_STACK_FRAME("flixel.system.frontEnds.BitmapFrontEnd","removeFromOpenFLCache",0x35197031,"flixel.system.frontEnds.BitmapFrontEnd.removeFromOpenFLCache","flixel/system/frontEnds/BitmapFrontEnd.hx",389,0x91a05ae2)
+		HX_STACK_THIS(this)
+		HX_STACK_ARG(key,"key")
+		HX_STACK_LINE(389)
+		::openfl::_legacy::Assets_obj::cache->removeBitmapData(key);
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(BitmapFrontEnd_obj,removeFromOpenFLCache,(void))
+
 Void BitmapFrontEnd_obj::clearCache( ){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.BitmapFrontEnd","clearCache",0xad367388,"flixel.system.frontEnds.BitmapFrontEnd.clearCache","flixel/system/frontEnds/BitmapFrontEnd.hx",386,0x91a05ae2)
+		HX_STACK_FRAME("flixel.system.frontEnds.BitmapFrontEnd","clearCache",0xad367388,"flixel.system.frontEnds.BitmapFrontEnd.clearCache","flixel/system/frontEnds/BitmapFrontEnd.hx",397,0x91a05ae2)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(387)
+		HX_STACK_LINE(398)
 		::flixel::util::loaders::CachedGraphics obj;		HX_STACK_VAR(obj,"obj");
-		HX_STACK_LINE(389)
+		HX_STACK_LINE(400)
 		if (((this->_cache == null()))){
-			HX_STACK_LINE(391)
+			HX_STACK_LINE(402)
 			::haxe::ds::StringMap _g = ::haxe::ds::StringMap_obj::__new();		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(391)
+			HX_STACK_LINE(402)
 			this->_cache = _g;
 		}
-		HX_STACK_LINE(394)
+		HX_STACK_LINE(405)
 		for(::cpp::FastIterator_obj< ::String > *__it = ::cpp::CreateFastIterator< ::String >(this->_cache->keys());  __it->hasNext(); ){
 			::String key = __it->next();
 			{
-				HX_STACK_LINE(396)
+				HX_STACK_LINE(407)
 				::flixel::util::loaders::CachedGraphics _g1 = this->_cache->get(key);		HX_STACK_VAR(_g1,"_g1");
-				HX_STACK_LINE(396)
+				HX_STACK_LINE(407)
 				obj = _g1;
-				HX_STACK_LINE(397)
+				HX_STACK_LINE(408)
 				if (((bool((obj != null())) && bool(!(obj->persist))))){
-					HX_STACK_LINE(400)
-					::openfl::Assets_obj::cache->bitmapData->remove(key);
-					HX_STACK_LINE(402)
+					HX_STACK_LINE(410)
+					this->removeFromOpenFLCache(key);
+					HX_STACK_LINE(411)
 					this->_cache->remove(key);
-					HX_STACK_LINE(403)
+					HX_STACK_LINE(412)
 					obj->destroy();
-					HX_STACK_LINE(404)
+					HX_STACK_LINE(413)
 					obj = null();
 				}
 			}
@@ -819,23 +833,23 @@ HX_DEFINE_DYNAMIC_FUNC0(BitmapFrontEnd_obj,clearCache,(void))
 
 Void BitmapFrontEnd_obj::clearUnused( ){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.BitmapFrontEnd","clearUnused",0x9cfedd10,"flixel.system.frontEnds.BitmapFrontEnd.clearUnused","flixel/system/frontEnds/BitmapFrontEnd.hx",414,0x91a05ae2)
+		HX_STACK_FRAME("flixel.system.frontEnds.BitmapFrontEnd","clearUnused",0x9cfedd10,"flixel.system.frontEnds.BitmapFrontEnd.clearUnused","flixel/system/frontEnds/BitmapFrontEnd.hx",423,0x91a05ae2)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(415)
+		HX_STACK_LINE(424)
 		::flixel::util::loaders::CachedGraphics obj;		HX_STACK_VAR(obj,"obj");
-		HX_STACK_LINE(417)
+		HX_STACK_LINE(426)
 		if (((this->_cache != null()))){
-			HX_STACK_LINE(419)
+			HX_STACK_LINE(428)
 			for(::cpp::FastIterator_obj< ::String > *__it = ::cpp::CreateFastIterator< ::String >(this->_cache->keys());  __it->hasNext(); ){
 				::String key = __it->next();
 				{
-					HX_STACK_LINE(421)
+					HX_STACK_LINE(430)
 					::flixel::util::loaders::CachedGraphics _g = this->_cache->get(key);		HX_STACK_VAR(_g,"_g");
-					HX_STACK_LINE(421)
+					HX_STACK_LINE(430)
 					obj = _g;
-					HX_STACK_LINE(422)
+					HX_STACK_LINE(431)
 					if (((bool((bool((bool((obj != null())) && bool((obj->useCount <= (int)0)))) && bool(!(obj->persist)))) && bool(obj->destroyOnNoUse)))){
-						HX_STACK_LINE(424)
+						HX_STACK_LINE(433)
 						this->remove(obj->key);
 					}
 				}
@@ -904,6 +918,9 @@ Dynamic BitmapFrontEnd_obj::__Field(const ::String &inName,bool inCallProp)
 	case 14:
 		if (HX_FIELD_EQ(inName,"get_whitePixel") ) { return get_whitePixel_dyn(); }
 		if (HX_FIELD_EQ(inName,"getCacheKeyFor") ) { return getCacheKeyFor_dyn(); }
+		break;
+	case 21:
+		if (HX_FIELD_EQ(inName,"removeFromOpenFLCache") ) { return removeFromOpenFLCache_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -958,6 +975,7 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("getCacheKeyFor"),
 	HX_CSTRING("getUniqueKey"),
 	HX_CSTRING("remove"),
+	HX_CSTRING("removeFromOpenFLCache"),
 	HX_CSTRING("clearCache"),
 	HX_CSTRING("clearUnused"),
 	String(null()) };

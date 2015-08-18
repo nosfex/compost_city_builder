@@ -48,20 +48,20 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_Tilesheet
-#include <openfl/display/Tilesheet.h>
+#ifndef INCLUDED_openfl__legacy_display_Tilesheet
+#include <openfl/_legacy/display/Tilesheet.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace text{
@@ -79,7 +79,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(29)
 	this->_num_letters = (int)0;
 	HX_STACK_LINE(56)
-	::openfl::geom::Point _g = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::geom::Point _g = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(56)
 	this->_point = _g;
 	HX_STACK_LINE(63)
@@ -104,7 +104,7 @@ Dynamic PxBitmapFont_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
-::flixel::text::pxText::PxBitmapFont PxBitmapFont_obj::loadPixelizer( ::openfl::display::BitmapData PxBitmapData,::String PxLetters){
+::flixel::text::pxText::PxBitmapFont PxBitmapFont_obj::loadPixelizer( ::openfl::_legacy::display::BitmapData PxBitmapData,::String PxLetters){
 	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","loadPixelizer",0x55603520,"flixel.text.pxText.PxBitmapFont.loadPixelizer","flixel/text/pxText/PxBitmapFont.hx",75,0xb7b5754d)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(PxBitmapData,"PxBitmapData")
@@ -118,7 +118,7 @@ Dynamic PxBitmapFont_obj::__Create(hx::DynamicArray inArgs)
 		HX_STACK_LINE(90)
 		this->_tileRects = Array_obj< ::Dynamic >::__new();
 		HX_STACK_LINE(91)
-		::openfl::display::BitmapData result = this->preparePixelizerBitmapData(PxBitmapData,this->_tileRects);		HX_STACK_VAR(result,"result");
+		::openfl::_legacy::display::BitmapData result = this->preparePixelizerBitmapData(PxBitmapData,this->_tileRects);		HX_STACK_VAR(result,"result");
 		HX_STACK_LINE(92)
 		::String key = ::flixel::FlxG_obj::bitmap->getUniqueKey(HX_CSTRING("font"));		HX_STACK_VAR(key,"key");
 		HX_STACK_LINE(93)
@@ -138,7 +138,7 @@ Dynamic PxBitmapFont_obj::__Create(hx::DynamicArray inArgs)
 		HX_STACK_LINE(96)
 		this->_region->height = _g3;
 		HX_STACK_LINE(97)
-		::openfl::geom::Rectangle currRect;		HX_STACK_VAR(currRect,"currRect");
+		::openfl::_legacy::geom::Rectangle currRect;		HX_STACK_VAR(currRect,"currRect");
 		HX_STACK_LINE(102)
 		::flixel::system::layer::TileSheetData _g4 = this->cachedGraphics->get_tilesheet();		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(102)
@@ -151,7 +151,7 @@ Dynamic PxBitmapFont_obj::__Create(hx::DynamicArray inArgs)
 
 HX_DEFINE_DYNAMIC_FUNC2(PxBitmapFont_obj,loadPixelizer,return )
 
-::flixel::text::pxText::PxBitmapFont PxBitmapFont_obj::loadAngelCode( ::openfl::display::BitmapData pBitmapData,::Xml pXMLData){
+::flixel::text::pxText::PxBitmapFont PxBitmapFont_obj::loadAngelCode( ::openfl::_legacy::display::BitmapData pBitmapData,::Xml pXMLData){
 	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","loadAngelCode",0x3b23f08a,"flixel.text.pxText.PxBitmapFont.loadAngelCode","flixel/text/pxText/PxBitmapFont.hx",117,0xb7b5754d)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(pBitmapData,"pBitmapData")
@@ -165,7 +165,7 @@ HX_DEFINE_DYNAMIC_FUNC2(PxBitmapFont_obj,loadPixelizer,return )
 		HX_STACK_LINE(122)
 		this->_symbols = _g;
 		HX_STACK_LINE(123)
-		::openfl::display::BitmapData result = this->prepareAngelCodeBitmapData(pBitmapData,pXMLData,this->_symbols);		HX_STACK_VAR(result,"result");
+		::openfl::_legacy::display::BitmapData result = this->prepareAngelCodeBitmapData(pBitmapData,pXMLData,this->_symbols);		HX_STACK_VAR(result,"result");
 		HX_STACK_LINE(124)
 		::String key = ::flixel::FlxG_obj::bitmap->getUniqueKey(HX_CSTRING("font"));		HX_STACK_VAR(key,"key");
 		HX_STACK_LINE(125)
@@ -194,15 +194,15 @@ Void PxBitmapFont_obj::updateGlyphData( ::flixel::system::layer::TileSheetData T
 		HX_STACK_LINE(143)
 		this->_glyphs = _g;
 		HX_STACK_LINE(146)
-		::openfl::geom::Rectangle rect;		HX_STACK_VAR(rect,"rect");
+		::openfl::_legacy::geom::Rectangle rect;		HX_STACK_VAR(rect,"rect");
 		HX_STACK_LINE(148)
 		if (((this->_symbols != null()))){
 			HX_STACK_LINE(150)
 			this->_glyphString = HX_CSTRING("");
 			HX_STACK_LINE(151)
-			::openfl::geom::Point point = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(point,"point");
+			::openfl::_legacy::geom::Point point = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(152)
-			::openfl::display::BitmapData bd;		HX_STACK_VAR(bd,"bd");
+			::openfl::_legacy::display::BitmapData bd;		HX_STACK_VAR(bd,"bd");
 			HX_STACK_LINE(153)
 			::String charString;		HX_STACK_VAR(charString,"charString");
 			HX_STACK_LINE(155)
@@ -223,7 +223,7 @@ Void PxBitmapFont_obj::updateGlyphData( ::flixel::system::layer::TileSheetData T
 					HX_STACK_LINE(155)
 					++(_g1);
 					HX_STACK_LINE(157)
-					::openfl::geom::Rectangle _g12 = ::openfl::geom::Rectangle_obj::__new(null(),null(),null(),null());		HX_STACK_VAR(_g12,"_g12");
+					::openfl::_legacy::geom::Rectangle _g12 = ::openfl::_legacy::geom::Rectangle_obj::__new(null(),null(),null(),null());		HX_STACK_VAR(_g12,"_g12");
 					HX_STACK_LINE(157)
 					rect = _g12;
 					HX_STACK_LINE(158)
@@ -290,7 +290,7 @@ Void PxBitmapFont_obj::updateGlyphData( ::flixel::system::layer::TileSheetData T
 					HX_STACK_LINE(210)
 					int letterID = (_g1)++;		HX_STACK_VAR(letterID,"letterID");
 					HX_STACK_LINE(212)
-					rect = this->_tileRects->__get(letterID).StaticCast< ::openfl::geom::Rectangle >();
+					rect = this->_tileRects->__get(letterID).StaticCast< ::openfl::_legacy::geom::Rectangle >();
 					HX_STACK_LINE(222)
 					Dynamic _g6 = this->_glyphString.charCodeAt(letterID);		HX_STACK_VAR(_g6,"_g6");
 					HX_STACK_LINE(222)
@@ -334,7 +334,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(PxBitmapFont_obj,reset,(void))
 
-::openfl::display::BitmapData PxBitmapFont_obj::preparePixelizerBitmapData( ::openfl::display::BitmapData PxBitmapData,Array< ::Dynamic > PxRects){
+::openfl::_legacy::display::BitmapData PxBitmapFont_obj::preparePixelizerBitmapData( ::openfl::_legacy::display::BitmapData PxBitmapData,Array< ::Dynamic > PxRects){
 	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","preparePixelizerBitmapData",0xa38b1074,"flixel.text.pxText.PxBitmapFont.preparePixelizerBitmapData","flixel/text/pxText/PxBitmapFont.hx",249,0xb7b5754d)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(PxBitmapData,"PxBitmapData")
@@ -410,7 +410,7 @@ HX_DEFINE_DYNAMIC_FUNC0(PxBitmapFont_obj,reset,(void))
 				HX_STACK_LINE(279)
 				int gh = (gy - cy);		HX_STACK_VAR(gh,"gh");
 				HX_STACK_LINE(281)
-				::openfl::geom::Rectangle _g8 = ::openfl::geom::Rectangle_obj::__new(cx,cy,gw,gh);		HX_STACK_VAR(_g8,"_g8");
+				::openfl::_legacy::geom::Rectangle _g8 = ::openfl::_legacy::geom::Rectangle_obj::__new(cx,cy,gw,gh);		HX_STACK_VAR(_g8,"_g8");
 				HX_STACK_LINE(281)
 				PxRects->push(_g8);
 				HX_STACK_LINE(284)
@@ -441,7 +441,7 @@ HX_DEFINE_DYNAMIC_FUNC0(PxBitmapFont_obj,reset,(void))
 
 HX_DEFINE_DYNAMIC_FUNC2(PxBitmapFont_obj,preparePixelizerBitmapData,return )
 
-::openfl::display::BitmapData PxBitmapFont_obj::prepareAngelCodeBitmapData( ::openfl::display::BitmapData PxBitmapData,::Xml PxXMLData,Array< ::Dynamic > PxSymbols){
+::openfl::_legacy::display::BitmapData PxBitmapFont_obj::prepareAngelCodeBitmapData( ::openfl::_legacy::display::BitmapData PxBitmapData,::Xml PxXMLData,Array< ::Dynamic > PxSymbols){
 	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","prepareAngelCodeBitmapData",0x4f7ef45e,"flixel.text.pxText.PxBitmapFont.prepareAngelCodeBitmapData","flixel/text/pxText/PxBitmapFont.hx",311,0xb7b5754d)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(PxBitmapData,"PxBitmapData")
@@ -584,7 +584,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(PxBitmapFont_obj,dispose,(void))
 
-Void PxBitmapFont_obj::setGlyph( ::flixel::system::layer::TileSheetData Tiles,int PxCharID,::openfl::geom::Rectangle PxRect,hx::Null< int >  __o_PxOffsetX,hx::Null< int >  __o_PxOffsetY,hx::Null< int >  __o_PxAdvanceX){
+Void PxBitmapFont_obj::setGlyph( ::flixel::system::layer::TileSheetData Tiles,int PxCharID,::openfl::_legacy::geom::Rectangle PxRect,hx::Null< int >  __o_PxOffsetX,hx::Null< int >  __o_PxOffsetY,hx::Null< int >  __o_PxAdvanceX){
 int PxOffsetX = __o_PxOffsetX.Default(0);
 int PxOffsetY = __o_PxOffsetY.Default(0);
 int PxAdvanceX = __o_PxAdvanceX.Default(0);
@@ -794,7 +794,7 @@ int PxBitmapFont_obj::getFontHeight( ){
 
 HX_DEFINE_DYNAMIC_FUNC0(PxBitmapFont_obj,getFontHeight,return )
 
-::openfl::display::BitmapData PxBitmapFont_obj::get_pixels( ){
+::openfl::_legacy::display::BitmapData PxBitmapFont_obj::get_pixels( ){
 	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","get_pixels",0xf34299b4,"flixel.text.pxText.PxBitmapFont.get_pixels","flixel/text/pxText/PxBitmapFont.hx",652,0xb7b5754d)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(653)
@@ -856,7 +856,7 @@ Void PxBitmapFont_obj::setCachedGraphics( ::flixel::util::loaders::CachedGraphic
 			HX_STACK_LINE(686)
 			_g1;
 		}
-		HX_STACK_LINE(688)
+		HX_STACK_LINE(693)
 		this->cachedGraphics = value;
 	}
 return null();
@@ -867,14 +867,14 @@ HX_DEFINE_DYNAMIC_FUNC1(PxBitmapFont_obj,setCachedGraphics,(void))
 
 ::haxe::ds::StringMap PxBitmapFont_obj::_storedFonts;
 
-::openfl::geom::Point PxBitmapFont_obj::ZERO_POINT;
+::openfl::_legacy::geom::Point PxBitmapFont_obj::ZERO_POINT;
 
 Void PxBitmapFont_obj::store( ::String PxHandle,::flixel::text::pxText::PxBitmapFont PxFont){
 {
-		HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","store",0x9ccad1e3,"flixel.text.pxText.PxBitmapFont.store","flixel/text/pxText/PxBitmapFont.hx",699,0xb7b5754d)
+		HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","store",0x9ccad1e3,"flixel.text.pxText.PxBitmapFont.store","flixel/text/pxText/PxBitmapFont.hx",704,0xb7b5754d)
 		HX_STACK_ARG(PxHandle,"PxHandle")
 		HX_STACK_ARG(PxFont,"PxFont")
-		HX_STACK_LINE(699)
+		HX_STACK_LINE(704)
 		::flixel::text::pxText::PxBitmapFont_obj::_storedFonts->set(PxHandle,PxFont);
 	}
 return null();
@@ -884,11 +884,11 @@ return null();
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(PxBitmapFont_obj,store,(void))
 
 ::flixel::text::pxText::PxBitmapFont PxBitmapFont_obj::fetch( ::String PxHandle){
-	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","fetch",0x16aed23c,"flixel.text.pxText.PxBitmapFont.fetch","flixel/text/pxText/PxBitmapFont.hx",709,0xb7b5754d)
+	HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","fetch",0x16aed23c,"flixel.text.pxText.PxBitmapFont.fetch","flixel/text/pxText/PxBitmapFont.hx",714,0xb7b5754d)
 	HX_STACK_ARG(PxHandle,"PxHandle")
-	HX_STACK_LINE(710)
+	HX_STACK_LINE(715)
 	::flixel::text::pxText::PxBitmapFont f = ::flixel::text::pxText::PxBitmapFont_obj::_storedFonts->get(PxHandle);		HX_STACK_VAR(f,"f");
-	HX_STACK_LINE(712)
+	HX_STACK_LINE(717)
 	return f;
 }
 
@@ -897,15 +897,15 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(PxBitmapFont_obj,fetch,return )
 
 Void PxBitmapFont_obj::clearStorage( ){
 {
-		HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","clearStorage",0x290b776c,"flixel.text.pxText.PxBitmapFont.clearStorage","flixel/text/pxText/PxBitmapFont.hx",716,0xb7b5754d)
-		HX_STACK_LINE(717)
+		HX_STACK_FRAME("flixel.text.pxText.PxBitmapFont","clearStorage",0x290b776c,"flixel.text.pxText.PxBitmapFont.clearStorage","flixel/text/pxText/PxBitmapFont.hx",721,0xb7b5754d)
+		HX_STACK_LINE(722)
 		for(::cpp::FastIterator_obj< ::flixel::text::pxText::PxBitmapFont > *__it = ::cpp::CreateFastIterator< ::flixel::text::pxText::PxBitmapFont >(::flixel::text::pxText::PxBitmapFont_obj::_storedFonts->iterator());  __it->hasNext(); ){
 			::flixel::text::pxText::PxBitmapFont font = __it->next();
 			font->dispose();
 		}
-		HX_STACK_LINE(722)
+		HX_STACK_LINE(727)
 		::haxe::ds::StringMap _g = ::haxe::ds::StringMap_obj::__new();		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(722)
+		HX_STACK_LINE(727)
 		::flixel::text::pxText::PxBitmapFont_obj::_storedFonts = _g;
 	}
 return null();
@@ -1020,8 +1020,8 @@ Dynamic PxBitmapFont_obj::__SetField(const ::String &inName,const Dynamic &inVal
 {
 	switch(inName.length) {
 	case 6:
-		if (HX_FIELD_EQ(inName,"_point") ) { _point=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"pixels") ) { pixels=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_point") ) { _point=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"pixels") ) { pixels=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"_glyphs") ) { _glyphs=inValue.Cast< ::haxe::ds::IntMap >(); return inValue; }
@@ -1035,7 +1035,7 @@ Dynamic PxBitmapFont_obj::__SetField(const ::String &inName,const Dynamic &inVal
 		if (HX_FIELD_EQ(inName,"_bgTileID") ) { _bgTileID=inValue.Cast< int >(); return inValue; }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"ZERO_POINT") ) { ZERO_POINT=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"ZERO_POINT") ) { ZERO_POINT=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_maxHeight") ) { _maxHeight=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_tileRects") ) { _tileRects=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
 		break;
@@ -1083,12 +1083,12 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(PxBitmapFont_obj,_bgTileID),HX_CSTRING("_bgTileID")},
 	{hx::fsString,(int)offsetof(PxBitmapFont_obj,_glyphString),HX_CSTRING("_glyphString")},
 	{hx::fsInt,(int)offsetof(PxBitmapFont_obj,_maxHeight),HX_CSTRING("_maxHeight")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(PxBitmapFont_obj,_point),HX_CSTRING("_point")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(PxBitmapFont_obj,_point),HX_CSTRING("_point")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(PxBitmapFont_obj,_tileRects),HX_CSTRING("_tileRects")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(PxBitmapFont_obj,_symbols),HX_CSTRING("_symbols")},
 	{hx::fsObject /*::flixel::system::layer::Region*/ ,(int)offsetof(PxBitmapFont_obj,_region),HX_CSTRING("_region")},
 	{hx::fsObject /*::flixel::util::loaders::CachedGraphics*/ ,(int)offsetof(PxBitmapFont_obj,cachedGraphics),HX_CSTRING("cachedGraphics")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(PxBitmapFont_obj,pixels),HX_CSTRING("pixels")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(PxBitmapFont_obj,pixels),HX_CSTRING("pixels")},
 	{hx::fsInt,(int)offsetof(PxBitmapFont_obj,bgTileID),HX_CSTRING("bgTileID")},
 	{ hx::fsUnknown, 0, null()}
 };
@@ -1158,7 +1158,7 @@ void PxBitmapFont_obj::__register()
 void PxBitmapFont_obj::__boot()
 {
 	_storedFonts= ::haxe::ds::StringMap_obj::__new();
-	ZERO_POINT= ::openfl::geom::Point_obj::__new(null(),null());
+	ZERO_POINT= ::openfl::_legacy::geom::Point_obj::__new(null(),null());
 }
 
 } // end namespace flixel

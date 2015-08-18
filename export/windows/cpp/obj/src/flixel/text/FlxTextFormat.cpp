@@ -6,15 +6,15 @@
 #ifndef INCLUDED_flixel_text_FlxTextFormat
 #include <flixel/text/FlxTextFormat.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
 namespace flixel{
 namespace text{
 
 Void FlxTextFormat_obj::__construct(Dynamic FontColor,Dynamic Bold,Dynamic Italic,Dynamic BorderColor,Dynamic __o_Start,Dynamic __o_End)
 {
-HX_STACK_FRAME("flixel.text.FlxTextFormat","new",0x67be2279,"flixel.text.FlxTextFormat.new","flixel/text/FlxText.hx",952,0xdf165a6e)
+HX_STACK_FRAME("flixel.text.FlxTextFormat","new",0x67be2279,"flixel.text.FlxTextFormat.new","flixel/text/FlxText.hx",948,0xdf165a6e)
 HX_STACK_THIS(this)
 HX_STACK_ARG(FontColor,"FontColor")
 HX_STACK_ARG(Bold,"Bold")
@@ -25,41 +25,41 @@ HX_STACK_ARG(__o_End,"End")
 Dynamic Start = __o_Start.Default(-1);
 Dynamic End = __o_End.Default(-1);
 {
-	HX_STACK_LINE(966)
-	this->end = (int)-1;
 	HX_STACK_LINE(962)
+	this->end = (int)-1;
+	HX_STACK_LINE(958)
 	this->start = (int)-1;
-	HX_STACK_LINE(983)
+	HX_STACK_LINE(979)
 	if (((FontColor != null()))){
-		HX_STACK_LINE(985)
+		HX_STACK_LINE(981)
 		hx::AndEq(FontColor,(int)16777215);
 	}
-	HX_STACK_LINE(987)
+	HX_STACK_LINE(983)
 	if (((BorderColor != null()))){
-		HX_STACK_LINE(989)
+		HX_STACK_LINE(985)
 		hx::AndEq(BorderColor,(int)16777215);
 	}
-	HX_STACK_LINE(991)
-	::openfl::text::TextFormat _g = ::openfl::text::TextFormat_obj::__new(null(),null(),FontColor,Bold,Italic,null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(991)
+	HX_STACK_LINE(987)
+	::openfl::_legacy::text::TextFormat _g = ::openfl::_legacy::text::TextFormat_obj::__new(null(),null(),FontColor,Bold,Italic,null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(987)
 	this->format = _g;
-	HX_STACK_LINE(993)
+	HX_STACK_LINE(989)
 	if (((Start > (int)-1))){
-		HX_STACK_LINE(995)
+		HX_STACK_LINE(991)
 		this->start = Start;
 	}
-	HX_STACK_LINE(997)
+	HX_STACK_LINE(993)
 	if (((End > (int)-1))){
-		HX_STACK_LINE(999)
+		HX_STACK_LINE(995)
 		this->end = End;
 	}
-	HX_STACK_LINE(1002)
+	HX_STACK_LINE(998)
 	if (((BorderColor == null()))){
-		HX_STACK_LINE(1002)
+		HX_STACK_LINE(998)
 		this->borderColor = (int)0;
 	}
 	else{
-		HX_STACK_LINE(1002)
+		HX_STACK_LINE(998)
 		this->borderColor = BorderColor;
 	}
 }
@@ -87,9 +87,9 @@ hx::Object *FlxTextFormat_obj::__ToInterface(const hx::type_info &inType) {
 
 Void FlxTextFormat_obj::destroy( ){
 {
-		HX_STACK_FRAME("flixel.text.FlxTextFormat","destroy",0xc985ff93,"flixel.text.FlxTextFormat.destroy","flixel/text/FlxText.hx",1007,0xdf165a6e)
+		HX_STACK_FRAME("flixel.text.FlxTextFormat","destroy",0xc985ff93,"flixel.text.FlxTextFormat.destroy","flixel/text/FlxText.hx",1003,0xdf165a6e)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(1007)
+		HX_STACK_LINE(1003)
 		this->format = null();
 	}
 return null();
@@ -152,7 +152,7 @@ Dynamic FlxTextFormat_obj::__SetField(const ::String &inName,const Dynamic &inVa
 		if (HX_FIELD_EQ(inName,"start") ) { start=inValue.Cast< int >(); return inValue; }
 		break;
 	case 6:
-		if (HX_FIELD_EQ(inName,"format") ) { format=inValue.Cast< ::openfl::text::TextFormat >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"format") ) { format=inValue.Cast< ::openfl::_legacy::text::TextFormat >(); return inValue; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"borderColor") ) { borderColor=inValue.Cast< int >(); return inValue; }
@@ -177,7 +177,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxTextFormat_obj,borderColor),HX_CSTRING("borderColor")},
 	{hx::fsInt,(int)offsetof(FlxTextFormat_obj,start),HX_CSTRING("start")},
 	{hx::fsInt,(int)offsetof(FlxTextFormat_obj,end),HX_CSTRING("end")},
-	{hx::fsObject /*::openfl::text::TextFormat*/ ,(int)offsetof(FlxTextFormat_obj,format),HX_CSTRING("format")},
+	{hx::fsObject /*::openfl::_legacy::text::TextFormat*/ ,(int)offsetof(FlxTextFormat_obj,format),HX_CSTRING("format")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif

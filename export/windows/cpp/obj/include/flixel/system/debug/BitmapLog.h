@@ -12,19 +12,19 @@ HX_DECLARE_CLASS3(flixel,system,debug,BitmapLog)
 HX_DECLARE_CLASS3(flixel,system,debug,Window)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,display,Bitmap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
-HX_DECLARE_CLASS2(openfl,geom,Matrix)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Bitmap)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Matrix)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -53,22 +53,22 @@ class HXCPP_CLASS_ATTRIBUTES  BitmapLog_obj : public ::flixel::system::debug::Wi
 		::String __ToString() const { return HX_CSTRING("BitmapLog"); }
 
 		Float zoom;
-		::openfl::display::Bitmap _canvasBitmap;
+		::openfl::_legacy::display::Bitmap _canvasBitmap;
 		Dynamic _entries;
 		int _curIndex;
 		::flixel::util::FlxPoint _point;
 		::flixel::util::FlxPoint _lastMousePos;
 		::flixel::util::FlxPoint _curMouseOffset;
-		::openfl::geom::Matrix _matrix;
+		::openfl::_legacy::geom::Matrix _matrix;
 		::flixel::system::ui::FlxSystemButton _buttonLeft;
 		::flixel::system::ui::FlxSystemButton _buttonText;
 		::flixel::system::ui::FlxSystemButton _buttonRight;
-		::openfl::text::TextField _counterText;
-		::openfl::text::TextField _dimensionsText;
-		::openfl::display::Sprite _ui;
+		::openfl::_legacy::text::TextField _counterText;
+		::openfl::_legacy::text::TextField _dimensionsText;
+		::openfl::_legacy::display::Sprite _ui;
 		bool _middleMouseDown;
-		::openfl::display::Bitmap _footer;
-		::openfl::text::TextField _footerText;
+		::openfl::_legacy::display::Bitmap _footer;
+		::openfl::_legacy::text::TextField _footerText;
 		virtual Void createHeaderUI( );
 		Dynamic createHeaderUI_dyn();
 
@@ -95,7 +95,7 @@ class HXCPP_CLASS_ATTRIBUTES  BitmapLog_obj : public ::flixel::system::debug::Wi
 		virtual Void resetSettings( );
 		Dynamic resetSettings_dyn();
 
-		virtual bool add( ::openfl::display::BitmapData bmp,::String name);
+		virtual bool add( ::openfl::_legacy::display::BitmapData bmp,::String name);
 		Dynamic add_dyn();
 
 		virtual Void clearAt( hx::Null< int >  Index);
@@ -110,28 +110,28 @@ class HXCPP_CLASS_ATTRIBUTES  BitmapLog_obj : public ::flixel::system::debug::Wi
 		virtual Void refreshTexts( );
 		Dynamic refreshTexts_dyn();
 
-		virtual Void drawBoundingBox( ::openfl::display::BitmapData bitmap);
+		virtual Void drawBoundingBox( ::openfl::_legacy::display::BitmapData bitmap);
 		Dynamic drawBoundingBox_dyn();
 
-		virtual Void onMouseWheel( ::openfl::events::MouseEvent e);
+		virtual Void onMouseWheel( ::openfl::_legacy::events::MouseEvent e);
 		Dynamic onMouseWheel_dyn();
 
-		virtual Void onMiddleDown( ::openfl::events::MouseEvent e);
+		virtual Void onMiddleDown( ::openfl::_legacy::events::MouseEvent e);
 		Dynamic onMiddleDown_dyn();
 
-		virtual Void onMiddleUp( ::openfl::events::MouseEvent e);
+		virtual Void onMiddleUp( ::openfl::_legacy::events::MouseEvent e);
 		Dynamic onMiddleUp_dyn();
 
 		virtual Float set_zoom( Float Value);
 		Dynamic set_zoom_dyn();
 
-		virtual ::openfl::display::BitmapData get__canvas( );
+		virtual ::openfl::_legacy::display::BitmapData get__canvas( );
 		Dynamic get__canvas_dyn();
 
 		virtual Dynamic get__curEntry( );
 		Dynamic get__curEntry_dyn();
 
-		virtual ::openfl::display::BitmapData get__curBitmap( );
+		virtual ::openfl::_legacy::display::BitmapData get__curBitmap( );
 		Dynamic get__curBitmap_dyn();
 
 };

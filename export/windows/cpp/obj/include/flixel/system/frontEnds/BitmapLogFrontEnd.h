@@ -6,8 +6,8 @@
 #endif
 
 HX_DECLARE_CLASS3(flixel,system,frontEnds,BitmapLogFrontEnd)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace system{
 namespace frontEnds{
@@ -33,7 +33,7 @@ class HXCPP_CLASS_ATTRIBUTES  BitmapLogFrontEnd_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("BitmapLogFrontEnd"); }
 
-		virtual Void add( ::openfl::display::BitmapData Data,::String Name);
+		virtual Void add( ::openfl::_legacy::display::BitmapData Data,::String Name);
 		Dynamic add_dyn();
 
 		virtual Void clear( );

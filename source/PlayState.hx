@@ -1,7 +1,9 @@
 package;
 
 import buildings.BuildingFactory;
+import camera.CameraController;
 import category.CategoryData;
+import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -18,11 +20,11 @@ class PlayState extends FlxState
 {
 	
 	private var _map :GridMap;
-	
 	private var _buildingFactory :BuildingFactory ;
 	private var _categoryData :CategoryData;
 	private var _selector :gui_selector.Selector;
 	private var _moneyTxt :FlxText;
+	private var _camControl : CameraController;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
@@ -44,7 +46,12 @@ class PlayState extends FlxState
 		CompostG.updateProductAmount("money", 10);
 		
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
+		FlxG.camera = new FlxCamera(0, 0, FlxG.width, FlxG.height);
 		
+		_camControl = new CameraController( (FlxG.width * .75) / 2, (FlxG.height * .85) / 2, FlxG.width * .75, FlxG.height * .85);
+		add(_camControl);
+		
+		FlxG.camera.follow(_camControl);
 		add(_moneyTxt);
 	}
 	
@@ -66,9 +73,8 @@ class PlayState extends FlxState
 		
 		if (FlxG.keys.justReleased.A)
 		{
-			_map.addGrids(1);
+			_map.addGrids();
 		}
-		
 		
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 	}	

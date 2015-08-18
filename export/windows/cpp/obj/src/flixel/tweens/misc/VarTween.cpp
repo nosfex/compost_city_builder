@@ -104,31 +104,49 @@ Void VarTween_obj::update( ){
 		HX_STACK_FRAME("flixel.tweens.misc.VarTween","update",0x50d41705,"flixel.tweens.misc.VarTween.update","flixel/tweens/misc/VarTween.hx",64,0x836bddcb)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(65)
-		if (((this->_vars->length < (int)1))){
-			HX_STACK_LINE(69)
-			this->initializeVars();
+		Float delay;		HX_STACK_VAR(delay,"delay");
+		HX_STACK_LINE(65)
+		if (((this->executions > (int)0))){
+			HX_STACK_LINE(65)
+			delay = this->loopDelay;
 		}
-		HX_STACK_LINE(72)
-		this->super::update();
-		HX_STACK_LINE(73)
-		int i = this->_vars->length;		HX_STACK_VAR(i,"i");
-		HX_STACK_LINE(74)
-		while((true)){
+		else{
+			HX_STACK_LINE(65)
+			delay = this->startDelay;
+		}
+		HX_STACK_LINE(67)
+		if (((this->_secondsSinceStart < delay))){
+			HX_STACK_LINE(70)
+			this->super::update();
+		}
+		else{
 			HX_STACK_LINE(74)
-			int _g = (i)--;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(74)
-			if ((!(((_g > (int)0))))){
-				HX_STACK_LINE(74)
-				break;
+			if (((this->_vars->length < (int)1))){
+				HX_STACK_LINE(78)
+				this->initializeVars();
 			}
-			HX_STACK_LINE(76)
-			{
-				HX_STACK_LINE(76)
-				Dynamic o = this->_object;		HX_STACK_VAR(o,"o");
-				HX_STACK_LINE(76)
-				if (((o != null()))){
-					HX_STACK_LINE(76)
-					o->__SetField(this->_vars->__get(i),(this->_startValues->__get(i) + (this->_range->__get(i) * this->scale)),true);
+			HX_STACK_LINE(81)
+			this->super::update();
+			HX_STACK_LINE(83)
+			int i = this->_vars->length;		HX_STACK_VAR(i,"i");
+			HX_STACK_LINE(84)
+			while((true)){
+				HX_STACK_LINE(84)
+				int _g = (i)--;		HX_STACK_VAR(_g,"_g");
+				HX_STACK_LINE(84)
+				if ((!(((_g > (int)0))))){
+					HX_STACK_LINE(84)
+					break;
+				}
+				HX_STACK_LINE(86)
+				{
+					HX_STACK_LINE(86)
+					Dynamic o = this->_object;		HX_STACK_VAR(o,"o");
+					HX_STACK_LINE(86)
+					if (((o != null()))){
+						HX_STACK_LINE(86)
+						o->__SetField(this->_vars->__get(i),(this->_startValues->__get(i) + (this->_range->__get(i) * this->scale)),true);
+					}
 				}
 			}
 		}
@@ -139,103 +157,103 @@ return null();
 
 Void VarTween_obj::initializeVars( ){
 {
-		HX_STACK_FRAME("flixel.tweens.misc.VarTween","initializeVars",0x0a5a5e18,"flixel.tweens.misc.VarTween.initializeVars","flixel/tweens/misc/VarTween.hx",81,0x836bddcb)
+		HX_STACK_FRAME("flixel.tweens.misc.VarTween","initializeVars",0x0a5a5e18,"flixel.tweens.misc.VarTween.initializeVars","flixel/tweens/misc/VarTween.hx",92,0x836bddcb)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(82)
+		HX_STACK_LINE(93)
 		::String p;		HX_STACK_VAR(p,"p");
-		HX_STACK_LINE(83)
+		HX_STACK_LINE(94)
 		Array< ::String > fields;		HX_STACK_VAR(fields,"fields");
-		HX_STACK_LINE(85)
+		HX_STACK_LINE(96)
 		if ((::Reflect_obj::isObject(this->_properties))){
-			HX_STACK_LINE(87)
+			HX_STACK_LINE(98)
 			Array< ::String > _g = ::Reflect_obj::fields(this->_properties);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(87)
+			HX_STACK_LINE(98)
 			fields = _g;
 		}
 		else{
-			HX_STACK_LINE(91)
+			HX_STACK_LINE(102)
 			HX_STACK_DO_THROW(HX_CSTRING("Unsupported properties container - use an object containing key/value pairs."));
 		}
-		HX_STACK_LINE(94)
+		HX_STACK_LINE(105)
 		{
-			HX_STACK_LINE(94)
+			HX_STACK_LINE(105)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(94)
+			HX_STACK_LINE(105)
 			while((true)){
-				HX_STACK_LINE(94)
+				HX_STACK_LINE(105)
 				if ((!(((_g < fields->length))))){
-					HX_STACK_LINE(94)
+					HX_STACK_LINE(105)
 					break;
 				}
-				HX_STACK_LINE(94)
+				HX_STACK_LINE(105)
 				::String p1 = fields->__get(_g);		HX_STACK_VAR(p1,"p1");
-				HX_STACK_LINE(94)
+				HX_STACK_LINE(105)
 				++(_g);
-				HX_STACK_LINE(96)
+				HX_STACK_LINE(107)
 				Dynamic _g1;		HX_STACK_VAR(_g1,"_g1");
-				HX_STACK_LINE(96)
+				HX_STACK_LINE(107)
 				{
-					HX_STACK_LINE(96)
+					HX_STACK_LINE(107)
 					Dynamic o = this->_object;		HX_STACK_VAR(o,"o");
-					HX_STACK_LINE(96)
+					HX_STACK_LINE(107)
 					if (((o == null()))){
-						HX_STACK_LINE(96)
+						HX_STACK_LINE(107)
 						_g1 = null();
 					}
 					else{
-						HX_STACK_LINE(96)
+						HX_STACK_LINE(107)
 						_g1 = o->__Field(p1,true);
 					}
 				}
-				HX_STACK_LINE(96)
+				HX_STACK_LINE(107)
 				if (((_g1 == null()))){
-					HX_STACK_LINE(98)
+					HX_STACK_LINE(109)
 					HX_STACK_DO_THROW(((HX_CSTRING("The Object does not have the property \"") + p1) + HX_CSTRING("\", or it is not accessible.")));
 				}
-				HX_STACK_LINE(101)
+				HX_STACK_LINE(112)
 				Dynamic a;		HX_STACK_VAR(a,"a");
-				HX_STACK_LINE(101)
+				HX_STACK_LINE(112)
 				{
-					HX_STACK_LINE(101)
+					HX_STACK_LINE(112)
 					Dynamic o = this->_object;		HX_STACK_VAR(o,"o");
-					HX_STACK_LINE(101)
+					HX_STACK_LINE(112)
 					if (((o == null()))){
-						HX_STACK_LINE(101)
+						HX_STACK_LINE(112)
 						a = null();
 					}
 					else{
-						HX_STACK_LINE(101)
+						HX_STACK_LINE(112)
 						a = o->__Field(p1,true);
 					}
 				}
-				HX_STACK_LINE(103)
+				HX_STACK_LINE(114)
 				if ((::Math_obj::isNaN(a))){
-					HX_STACK_LINE(105)
+					HX_STACK_LINE(116)
 					HX_STACK_DO_THROW(((HX_CSTRING("The property \"") + p1) + HX_CSTRING("\" is not numeric.")));
 				}
-				HX_STACK_LINE(107)
+				HX_STACK_LINE(118)
 				this->_vars->push(p1);
-				HX_STACK_LINE(108)
+				HX_STACK_LINE(119)
 				this->_startValues->push(a);
-				HX_STACK_LINE(109)
+				HX_STACK_LINE(120)
 				Dynamic _g2;		HX_STACK_VAR(_g2,"_g2");
-				HX_STACK_LINE(109)
+				HX_STACK_LINE(120)
 				{
-					HX_STACK_LINE(109)
+					HX_STACK_LINE(120)
 					Dynamic o = this->_properties;		HX_STACK_VAR(o,"o");
-					HX_STACK_LINE(109)
+					HX_STACK_LINE(120)
 					if (((o == null()))){
-						HX_STACK_LINE(109)
+						HX_STACK_LINE(120)
 						_g2 = null();
 					}
 					else{
-						HX_STACK_LINE(109)
+						HX_STACK_LINE(120)
 						_g2 = o->__Field(p1,true);
 					}
 				}
-				HX_STACK_LINE(109)
+				HX_STACK_LINE(120)
 				Float _g3 = (_g2 - a);		HX_STACK_VAR(_g3,"_g3");
-				HX_STACK_LINE(109)
+				HX_STACK_LINE(120)
 				this->_range->push(_g3);
 			}
 		}

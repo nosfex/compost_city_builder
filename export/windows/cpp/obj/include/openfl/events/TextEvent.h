@@ -5,16 +5,16 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/events/Event.h>
-HX_DECLARE_CLASS2(openfl,events,Event)
+#include <openfl/_legacy/events/Event.h>
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
 HX_DECLARE_CLASS2(openfl,events,TextEvent)
 namespace openfl{
 namespace events{
 
 
-class HXCPP_CLASS_ATTRIBUTES  TextEvent_obj : public ::openfl::events::Event_obj{
+class HXCPP_CLASS_ATTRIBUTES  TextEvent_obj : public ::openfl::_legacy::events::Event_obj{
 	public:
-		typedef ::openfl::events::Event_obj super;
+		typedef ::openfl::_legacy::events::Event_obj super;
 		typedef TextEvent_obj OBJ_;
 		TextEvent_obj();
 		Void __construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,::String __o_text);
@@ -35,7 +35,7 @@ class HXCPP_CLASS_ATTRIBUTES  TextEvent_obj : public ::openfl::events::Event_obj
 		::String __ToString() const { return HX_CSTRING("TextEvent"); }
 
 		::String text;
-		virtual ::openfl::events::Event clone( );
+		virtual ::openfl::_legacy::events::Event clone( );
 
 		virtual ::String toString( );
 

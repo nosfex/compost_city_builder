@@ -14,15 +14,15 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,system,FlxSplash)
 HX_DECLARE_CLASS2(flixel,tweens,FlxTween)
 HX_DECLARE_CLASS2(flixel,util,FlxTimer)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,Graphics)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Graphics)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 
@@ -49,9 +49,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSplash_obj : public ::flixel::FlxState_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxSplash"); }
 
-		::openfl::display::Sprite _sprite;
-		::openfl::display::Graphics _gfx;
-		::openfl::text::TextField _text;
+		::openfl::_legacy::display::Sprite _sprite;
+		::openfl::_legacy::display::Graphics _gfx;
+		::openfl::_legacy::text::TextField _text;
 		Array< Float > _times;
 		Array< int > _colors;
 		Dynamic _functions;

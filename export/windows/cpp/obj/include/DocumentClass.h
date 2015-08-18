@@ -8,14 +8,14 @@
 #include <Main.h>
 HX_DECLARE_CLASS0(DocumentClass)
 HX_DECLARE_CLASS0(Main)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,display,Stage)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Stage)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 
 
 class HXCPP_CLASS_ATTRIBUTES  DocumentClass_obj : public ::Main_obj{
@@ -38,7 +38,7 @@ class HXCPP_CLASS_ATTRIBUTES  DocumentClass_obj : public ::Main_obj{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("DocumentClass"); }
 
-		virtual ::openfl::display::Stage get_stage( );
+		virtual ::openfl::_legacy::display::Stage get_stage( );
 
 };
 

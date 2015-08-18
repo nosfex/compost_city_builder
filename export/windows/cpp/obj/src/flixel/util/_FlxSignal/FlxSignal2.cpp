@@ -21,12 +21,12 @@ namespace _FlxSignal{
 
 Void FlxSignal2_obj::__construct()
 {
-HX_STACK_FRAME("flixel.util._FlxSignal.FlxSignal2","new",0xab2cb8e3,"flixel.util._FlxSignal.FlxSignal2.new","flixel/util/FlxSignal.hx",239,0x3c758c5e)
+HX_STACK_FRAME("flixel.util._FlxSignal.FlxSignal2","new",0xab2cb8e3,"flixel.util._FlxSignal.FlxSignal2.new","flixel/util/FlxSignal.hx",244,0x3c758c5e)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(240)
+	HX_STACK_LINE(245)
 	super::__construct();
-	HX_STACK_LINE(241)
+	HX_STACK_LINE(246)
 	this->dispatch = this->dispatch2_dyn();
 }
 ;

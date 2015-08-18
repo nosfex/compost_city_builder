@@ -39,8 +39,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxVelocity
 #include <flixel/util/FlxVelocity.h>
@@ -436,7 +436,7 @@ int MaxTime = __o_MaxTime.Default(0);
 				HX_STACK_LINE(191)
 				if ((Target->_weak)){
 					HX_STACK_LINE(191)
-					::flixel::util::FlxPoint_obj::_pool->put(Target);
+					Target->put();
 				}
 				HX_STACK_LINE(191)
 				Float _g = ::Math_obj::sqrt(((dx * dx) + (dy * dy)));		HX_STACK_VAR(_g,"_g");
@@ -463,7 +463,7 @@ int MaxTime = __o_MaxTime.Default(0);
 		HX_STACK_LINE(200)
 		if ((Target->_weak)){
 			HX_STACK_LINE(200)
-			::flixel::util::FlxPoint_obj::_pool->put(Target);
+			Target->put();
 		}
 	}
 return null();
@@ -505,7 +505,7 @@ Void FlxVelocity_obj::accelerateTowardsPoint( ::flixel::FlxSprite Source,::flixe
 		HX_STACK_LINE(227)
 		if ((Target->_weak)){
 			HX_STACK_LINE(227)
-			::flixel::util::FlxPoint_obj::_pool->put(Target);
+			Target->put();
 		}
 	}
 return null();
@@ -529,7 +529,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxVelocity_obj,accelerateTowardsPoint,(void))
 		HX_STACK_LINE(241)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(241)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(241)
 		point->_inPool = false;
 		HX_STACK_LINE(241)
@@ -595,7 +595,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxVelocity_obj,velocityFromAngle,return )
 		HX_STACK_LINE(277)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(277)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(277)
 		point->_inPool = false;
 		HX_STACK_LINE(277)

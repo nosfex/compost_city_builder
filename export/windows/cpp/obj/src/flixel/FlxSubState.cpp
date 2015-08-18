@@ -27,11 +27,11 @@
 #ifndef INCLUDED_flixel_system_FlxBGSprite
 #include <flixel/system/FlxBGSprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
 namespace flixel{
 
@@ -107,13 +107,9 @@ Void FlxSubState_obj::close( ){
 		HX_STACK_FRAME("flixel.FlxSubState","close",0x85a9195b,"flixel.FlxSubState.close","flixel/FlxSubState.hx",79,0xd8a3e54e)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(79)
-		if (((this->_parentState != null()))){
+		if (((bool((this->_parentState != null())) && bool((this->_parentState->subState == hx::ObjectPtr<OBJ_>(this)))))){
 			HX_STACK_LINE(81)
-			::flixel::FlxState _this = this->_parentState;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(81)
-			_this->_requestSubStateReset = true;
-			HX_STACK_LINE(81)
-			_this->_requestedSubState = null();
+			this->_parentState->_requestSubStateReset = true;
 		}
 	}
 return null();

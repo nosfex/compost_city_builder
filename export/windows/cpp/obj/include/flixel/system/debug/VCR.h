@@ -9,14 +9,14 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,debug,FlxDebugger)
 HX_DECLARE_CLASS3(flixel,system,debug,VCR)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -44,7 +44,7 @@ class HXCPP_CLASS_ATTRIBUTES  VCR_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("VCR"); }
 
-		::openfl::text::TextField runtimeDisplay;
+		::openfl::_legacy::text::TextField runtimeDisplay;
 		int runtime;
 		::flixel::system::ui::FlxSystemButton playbackToggleBtn;
 		::flixel::system::ui::FlxSystemButton stepBtn;

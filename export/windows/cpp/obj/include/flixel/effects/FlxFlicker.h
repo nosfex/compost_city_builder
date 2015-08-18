@@ -11,7 +11,7 @@ HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS2(flixel,effects,FlxFlicker)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
-HX_DECLARE_CLASS2(flixel,util,FlxPool_flixel_effects_FlxFlicker)
+HX_DECLARE_CLASS2(flixel,util,FlxPool)
 HX_DECLARE_CLASS2(flixel,util,FlxTimer)
 HX_DECLARE_CLASS2(haxe,ds,ObjectMap)
 namespace flixel{
@@ -67,7 +67,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxFlicker_obj : public hx::Object{
 		virtual Void flickerProgress( ::flixel::util::FlxTimer Timer);
 		Dynamic flickerProgress_dyn();
 
-		static ::flixel::util::FlxPool_flixel_effects_FlxFlicker _pool;
+		static ::flixel::util::FlxPool _pool;
 		static ::haxe::ds::ObjectMap _boundObjects;
 		static Void flicker( ::flixel::FlxObject Object,hx::Null< Float >  Duration,hx::Null< Float >  Interval,hx::Null< bool >  EndVisibility,hx::Null< bool >  ForceRestart,Dynamic CompletionCallback,Dynamic ProgressCallback);
 		static Dynamic flicker_dyn();

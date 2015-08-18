@@ -12,11 +12,11 @@
 #ifndef INCLUDED_flixel_util_loaders_TextureRegion
 #include <flixel/util/loaders/TextureRegion.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
 namespace flixel{
 namespace util{

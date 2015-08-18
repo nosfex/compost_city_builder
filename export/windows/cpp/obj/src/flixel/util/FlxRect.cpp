@@ -12,11 +12,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxRect
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
@@ -30,8 +27,8 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -185,7 +182,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxRect_obj,copyFrom,return )
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxRect_obj,copyTo,return )
 
-::flixel::util::FlxRect FlxRect_obj::copyFromFlash( ::openfl::geom::Rectangle FlashRect){
+::flixel::util::FlxRect FlxRect_obj::copyFromFlash( ::openfl::_legacy::geom::Rectangle FlashRect){
 	HX_STACK_FRAME("flixel.util.FlxRect","copyFromFlash",0x305c74ff,"flixel.util.FlxRect.copyFromFlash","flixel/util/FlxRect.hx",141,0x4d61f922)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(FlashRect,"FlashRect")
@@ -204,7 +201,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxRect_obj,copyTo,return )
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxRect_obj,copyFromFlash,return )
 
-::openfl::geom::Rectangle FlxRect_obj::copyToFlash( ::openfl::geom::Rectangle FlashRect){
+::openfl::_legacy::geom::Rectangle FlxRect_obj::copyToFlash( ::openfl::_legacy::geom::Rectangle FlashRect){
 	HX_STACK_FRAME("flixel.util.FlxRect","copyToFlash",0xaf702f0e,"flixel.util.FlxRect.copyToFlash","flixel/util/FlxRect.hx",156,0x4d61f922)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(FlashRect,"FlashRect")
@@ -439,7 +436,7 @@ Float FlxRect_obj::set_bottom( Float Value){
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxRect_obj,set_bottom,return )
 
-::flixel::util::FlxPool_flixel_util_FlxRect FlxRect_obj::_pool;
+::flixel::util::FlxPool FlxRect_obj::_pool;
 
 ::flixel::util::FlxRect FlxRect_obj::get( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height){
 Float X = __o_X.Default(0);
@@ -559,7 +556,7 @@ Dynamic FlxRect_obj::__SetField(const ::String &inName,const Dynamic &inValue,bo
 		if (HX_FIELD_EQ(inName,"left") ) { return set_left(inValue); }
 		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=inValue.Cast< ::flixel::util::FlxPool_flixel_util_FlxRect >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=inValue.Cast< ::flixel::util::FlxPool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"width") ) { width=inValue.Cast< Float >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"right") ) { return set_right(inValue); }
 		break;
@@ -662,7 +659,7 @@ void FlxRect_obj::__register()
 
 void FlxRect_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_util_FlxRect_obj::__new(hx::ClassOf< ::flixel::util::FlxRect >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::util::FlxRect >());
 }
 
 } // end namespace flixel

@@ -27,38 +27,38 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 #ifndef INCLUDED_openfl_events_JoystickEvent
 #include <openfl/events/JoystickEvent.h>
@@ -77,15 +77,15 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(279)
 	this->_gamepads = Array_obj< ::Dynamic >::__new();
 	HX_STACK_LINE(282)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("axisMove"),this->handleAxisMove_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("axisMove"),this->handleAxisMove_dyn(),null(),null(),null());
 	HX_STACK_LINE(283)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("ballMove"),this->handleBallMove_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("ballMove"),this->handleBallMove_dyn(),null(),null(),null());
 	HX_STACK_LINE(284)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("buttonDown"),this->handleButtonDown_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("buttonDown"),this->handleButtonDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(285)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("buttonUp"),this->handleButtonUp_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("buttonUp"),this->handleButtonUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(286)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("hatMove"),this->handleHatMove_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(HX_CSTRING("hatMove"),this->handleHatMove_dyn(),null(),null(),null());
 }
 ;
 	return null();
@@ -123,14 +123,14 @@ hx::Object *FlxGamepadManager_obj::__ToInterface(const hx::type_info &inType) {
 		gamepad = _g;
 		HX_STACK_LINE(64)
 		this->_gamepads[GamepadID] = gamepad;
-		HX_STACK_LINE(66)
-		this->lastActive = gamepad;
-		HX_STACK_LINE(67)
-		if (((this->firstActive == null()))){
-			HX_STACK_LINE(69)
-			this->firstActive = gamepad;
-		}
 	}
+	HX_STACK_LINE(67)
+	if (((this->firstActive == null()))){
+		HX_STACK_LINE(69)
+		this->firstActive = gamepad;
+	}
+	HX_STACK_LINE(71)
+	this->lastActive = gamepad;
 	HX_STACK_LINE(73)
 	return gamepad;
 }

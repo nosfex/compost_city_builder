@@ -21,8 +21,8 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_effects_FlxFlicker
-#include <flixel/util/FlxPool_flixel_effects_FlxFlicker.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxTimer
 #include <flixel/util/FlxTimer.h>
@@ -181,7 +181,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxFlicker_obj,flickerProgress,(void))
 
-::flixel::util::FlxPool_flixel_effects_FlxFlicker FlxFlicker_obj::_pool;
+::flixel::util::FlxPool FlxFlicker_obj::_pool;
 
 ::haxe::ds::ObjectMap FlxFlicker_obj::_boundObjects;
 
@@ -342,7 +342,7 @@ Dynamic FlxFlicker_obj::__SetField(const ::String &inName,const Dynamic &inValue
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=inValue.Cast< ::flixel::util::FlxPool_flixel_effects_FlxFlicker >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=inValue.Cast< ::flixel::util::FlxPool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"timer") ) { timer=inValue.Cast< ::flixel::util::FlxTimer >(); return inValue; }
 		break;
 	case 6:
@@ -444,7 +444,7 @@ void FlxFlicker_obj::__register()
 
 void FlxFlicker_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_effects_FlxFlicker_obj::__new(hx::ClassOf< ::flixel::effects::FlxFlicker >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::effects::FlxFlicker >());
 	_boundObjects= ::haxe::ds::ObjectMap_obj::__new();
 }
 

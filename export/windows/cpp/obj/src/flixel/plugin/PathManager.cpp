@@ -64,7 +64,7 @@ Void PathManager_obj::destroy( ){
 		HX_STACK_FRAME("flixel.plugin.PathManager","destroy",0xa78a694b,"flixel.plugin.PathManager.destroy","flixel/plugin/PathManager.hx",24,0xf3716a7f)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(25)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_util_FlxPath(this->_paths,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->_paths,null());
 		HX_STACK_LINE(26)
 		this->_paths = null();
 		HX_STACK_LINE(28)
@@ -189,7 +189,7 @@ Void PathManager_obj::clear( ){
 		HX_STACK_FRAME("flixel.plugin.PathManager","clear",0x69b1479e,"flixel.plugin.PathManager.clear","flixel/plugin/PathManager.hx",90,0xf3716a7f)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(90)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_util_FlxPath(this->_paths,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->_paths,null());
 	}
 return null();
 }
@@ -202,7 +202,7 @@ Void PathManager_obj::onStateSwitch( ){
 		HX_STACK_FRAME("flixel.plugin.PathManager","onStateSwitch",0x71108317,"flixel.plugin.PathManager.onStateSwitch","flixel/plugin/PathManager.hx",95,0xf3716a7f)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(95)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_util_FlxPath(this->_paths,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->_paths,null());
 	}
 return null();
 }

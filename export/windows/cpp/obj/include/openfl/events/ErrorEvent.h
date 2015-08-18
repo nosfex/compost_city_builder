@@ -6,8 +6,8 @@
 #endif
 
 #include <openfl/events/TextEvent.h>
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
 HX_DECLARE_CLASS2(openfl,events,ErrorEvent)
-HX_DECLARE_CLASS2(openfl,events,Event)
 HX_DECLARE_CLASS2(openfl,events,TextEvent)
 namespace openfl{
 namespace events{
@@ -34,7 +34,7 @@ class HXCPP_CLASS_ATTRIBUTES  ErrorEvent_obj : public ::openfl::events::TextEven
 		::String __ToString() const { return HX_CSTRING("ErrorEvent"); }
 
 		int errorID;
-		virtual ::openfl::events::Event clone( );
+		virtual ::openfl::_legacy::events::Event clone( );
 
 		virtual ::String toString( );
 

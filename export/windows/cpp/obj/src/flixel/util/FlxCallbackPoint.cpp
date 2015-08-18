@@ -17,30 +17,30 @@ namespace util{
 
 Void FlxCallbackPoint_obj::__construct(Dynamic setXCallback,Dynamic setYCallback,Dynamic setXYCallback)
 {
-HX_STACK_FRAME("flixel.util.FlxCallbackPoint","new",0xcabf2565,"flixel.util.FlxCallbackPoint.new","flixel/util/FlxPoint.hx",311,0xb59f5266)
+HX_STACK_FRAME("flixel.util.FlxCallbackPoint","new",0xcabf2565,"flixel.util.FlxCallbackPoint.new","flixel/util/FlxPoint.hx",312,0xb59f5266)
 HX_STACK_THIS(this)
 HX_STACK_ARG(setXCallback,"setXCallback")
 HX_STACK_ARG(setYCallback,"setYCallback")
 HX_STACK_ARG(setXYCallback,"setXYCallback")
 {
-	HX_STACK_LINE(312)
+	HX_STACK_LINE(313)
 	super::__construct(null(),null());
-	HX_STACK_LINE(314)
-	this->_setXCallback = setXCallback;
 	HX_STACK_LINE(315)
-	this->_setYCallback = setXYCallback;
+	this->_setXCallback = setXCallback;
 	HX_STACK_LINE(316)
+	this->_setYCallback = setXYCallback;
+	HX_STACK_LINE(317)
 	this->_setXYCallback = setXYCallback;
-	HX_STACK_LINE(318)
+	HX_STACK_LINE(319)
 	if (((this->_setXCallback_dyn() != null()))){
-		HX_STACK_LINE(320)
+		HX_STACK_LINE(321)
 		if (((this->_setYCallback_dyn() == null()))){
-			HX_STACK_LINE(321)
+			HX_STACK_LINE(322)
 			this->_setYCallback = setXCallback;
 		}
-		HX_STACK_LINE(322)
+		HX_STACK_LINE(323)
 		if (((this->_setXYCallback_dyn() == null()))){
-			HX_STACK_LINE(323)
+			HX_STACK_LINE(324)
 			this->_setXYCallback = setXCallback;
 		}
 	}
@@ -65,67 +65,67 @@ Dynamic FlxCallbackPoint_obj::__Create(hx::DynamicArray inArgs)
 ::flixel::util::FlxPoint FlxCallbackPoint_obj::set( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
-	HX_STACK_FRAME("flixel.util.FlxCallbackPoint","set",0xcac2f0a7,"flixel.util.FlxCallbackPoint.set","flixel/util/FlxPoint.hx",328,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxCallbackPoint","set",0xcac2f0a7,"flixel.util.FlxCallbackPoint.set","flixel/util/FlxPoint.hx",329,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
 {
-		HX_STACK_LINE(329)
-		this->super::set(X,Y);
 		HX_STACK_LINE(330)
+		this->super::set(X,Y);
+		HX_STACK_LINE(331)
 		if (((this->_setXYCallback_dyn() != null()))){
-			HX_STACK_LINE(331)
+			HX_STACK_LINE(332)
 			this->_setXYCallback(hx::ObjectPtr<OBJ_>(this));
 		}
-		HX_STACK_LINE(332)
+		HX_STACK_LINE(333)
 		return hx::ObjectPtr<OBJ_>(this);
 	}
 }
 
 
 Float FlxCallbackPoint_obj::set_x( Float Value){
-	HX_STACK_FRAME("flixel.util.FlxCallbackPoint","set_x",0x35ddfba0,"flixel.util.FlxCallbackPoint.set_x","flixel/util/FlxPoint.hx",336,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxCallbackPoint","set_x",0x35ddfba0,"flixel.util.FlxCallbackPoint.set_x","flixel/util/FlxPoint.hx",337,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(337)
-	this->super::set_x(Value);
 	HX_STACK_LINE(338)
+	this->super::set_x(Value);
+	HX_STACK_LINE(339)
 	if (((this->_setXCallback_dyn() != null()))){
-		HX_STACK_LINE(339)
+		HX_STACK_LINE(340)
 		this->_setXCallback(hx::ObjectPtr<OBJ_>(this));
 	}
-	HX_STACK_LINE(340)
+	HX_STACK_LINE(341)
 	return Value;
 }
 
 
 Float FlxCallbackPoint_obj::set_y( Float Value){
-	HX_STACK_FRAME("flixel.util.FlxCallbackPoint","set_y",0x35ddfba1,"flixel.util.FlxCallbackPoint.set_y","flixel/util/FlxPoint.hx",344,0xb59f5266)
+	HX_STACK_FRAME("flixel.util.FlxCallbackPoint","set_y",0x35ddfba1,"flixel.util.FlxCallbackPoint.set_y","flixel/util/FlxPoint.hx",345,0xb59f5266)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(345)
-	this->super::set_y(Value);
 	HX_STACK_LINE(346)
+	this->super::set_y(Value);
+	HX_STACK_LINE(347)
 	if (((this->_setYCallback_dyn() != null()))){
-		HX_STACK_LINE(347)
+		HX_STACK_LINE(348)
 		this->_setYCallback(hx::ObjectPtr<OBJ_>(this));
 	}
-	HX_STACK_LINE(348)
+	HX_STACK_LINE(349)
 	return Value;
 }
 
 
 Void FlxCallbackPoint_obj::destroy( ){
 {
-		HX_STACK_FRAME("flixel.util.FlxCallbackPoint","destroy",0xf0c0e87f,"flixel.util.FlxCallbackPoint.destroy","flixel/util/FlxPoint.hx",352,0xb59f5266)
+		HX_STACK_FRAME("flixel.util.FlxCallbackPoint","destroy",0xf0c0e87f,"flixel.util.FlxCallbackPoint.destroy","flixel/util/FlxPoint.hx",353,0xb59f5266)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(353)
-		this->super::destroy();
 		HX_STACK_LINE(354)
-		this->_setXCallback = null();
+		this->super::destroy();
 		HX_STACK_LINE(355)
-		this->_setYCallback = null();
+		this->_setXCallback = null();
 		HX_STACK_LINE(356)
+		this->_setYCallback = null();
+		HX_STACK_LINE(357)
 		this->_setXYCallback = null();
 	}
 return null();
@@ -134,7 +134,7 @@ return null();
 
 Void FlxCallbackPoint_obj::put( ){
 {
-		HX_STACK_FRAME("flixel.util.FlxCallbackPoint","put",0xcac0b7d4,"flixel.util.FlxCallbackPoint.put","flixel/util/FlxPoint.hx",359,0xb59f5266)
+		HX_STACK_FRAME("flixel.util.FlxCallbackPoint","put",0xcac0b7d4,"flixel.util.FlxCallbackPoint.put","flixel/util/FlxPoint.hx",360,0xb59f5266)
 		HX_STACK_THIS(this)
 	}
 return null();

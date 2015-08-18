@@ -11,11 +11,11 @@ HX_DECLARE_CLASS3(flixel,system,layer,TileSheetData)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxFrame)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FrameType)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,geom,Matrix)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Matrix)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace system{
 namespace layer{
@@ -45,7 +45,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxFrame_obj : public hx::Object{
 		::String __ToString() const { return HX_CSTRING("FlxFrame"); }
 
 		::String name;
-		::openfl::geom::Rectangle frame;
+		::openfl::_legacy::geom::Rectangle frame;
 		bool trimmed;
 		int tileID;
 		Float additionalAngle;
@@ -53,24 +53,24 @@ class HXCPP_CLASS_ATTRIBUTES  FlxFrame_obj : public hx::Object{
 		::flixel::util::FlxPoint offset;
 		::flixel::util::FlxPoint center;
 		::flixel::system::layer::frames::FrameType type;
-		::openfl::display::BitmapData _bitmapData;
-		::openfl::display::BitmapData _hReversedBitmapData;
-		::openfl::display::BitmapData _vReversedBitmapData;
-		::openfl::display::BitmapData _hvReversedBitmapData;
+		::openfl::_legacy::display::BitmapData _bitmapData;
+		::openfl::_legacy::display::BitmapData _hReversedBitmapData;
+		::openfl::_legacy::display::BitmapData _vReversedBitmapData;
+		::openfl::_legacy::display::BitmapData _hvReversedBitmapData;
 		::flixel::system::layer::TileSheetData _tileSheet;
-		virtual ::openfl::display::BitmapData paintOnBitmap( ::openfl::display::BitmapData bmd);
+		virtual ::openfl::_legacy::display::BitmapData paintOnBitmap( ::openfl::_legacy::display::BitmapData bmd);
 		Dynamic paintOnBitmap_dyn();
 
-		virtual ::openfl::display::BitmapData getBitmap( );
+		virtual ::openfl::_legacy::display::BitmapData getBitmap( );
 		Dynamic getBitmap_dyn();
 
-		virtual ::openfl::display::BitmapData getHReversedBitmap( );
+		virtual ::openfl::_legacy::display::BitmapData getHReversedBitmap( );
 		Dynamic getHReversedBitmap_dyn();
 
-		virtual ::openfl::display::BitmapData getVReversedBitmap( );
+		virtual ::openfl::_legacy::display::BitmapData getVReversedBitmap( );
 		Dynamic getVReversedBitmap_dyn();
 
-		virtual ::openfl::display::BitmapData getHVReversedBitmap( );
+		virtual ::openfl::_legacy::display::BitmapData getHVReversedBitmap( );
 		Dynamic getHVReversedBitmap_dyn();
 
 		virtual Void destroy( );
@@ -79,9 +79,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxFrame_obj : public hx::Object{
 		virtual Void destroyBitmapDatas( );
 		Dynamic destroyBitmapDatas_dyn();
 
-		static ::openfl::geom::Point POINT;
-		static ::openfl::geom::Matrix MATRIX;
-		static ::openfl::geom::Rectangle RECT;
+		static ::openfl::_legacy::geom::Point POINT;
+		static ::openfl::_legacy::geom::Matrix MATRIX;
+		static ::openfl::_legacy::geom::Rectangle RECT;
 };
 
 } // end namespace flixel

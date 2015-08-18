@@ -13,17 +13,17 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,debug,Console)
 HX_DECLARE_CLASS3(flixel,system,debug,Window)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,KeyboardEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 HX_DECLARE_CLASS2(openfl,events,FocusEvent)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,KeyboardEvent)
-HX_DECLARE_CLASS2(openfl,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -57,20 +57,20 @@ class HXCPP_CLASS_ATTRIBUTES  Console_obj : public ::flixel::system::debug::Wind
 		Array< ::String > cmdHistory;
 		Dynamic commands;
 		int _historyIndex;
-		::openfl::text::TextField _input;
+		::openfl::_legacy::text::TextField _input;
 		virtual Void onFocus( ::openfl::events::FocusEvent e);
 		Dynamic onFocus_dyn();
 
 		virtual Void onFocusLost( ::openfl::events::FocusEvent e);
 		Dynamic onFocusLost_dyn();
 
-		virtual Void onKeyPress( ::openfl::events::KeyboardEvent e);
+		virtual Void onKeyPress( ::openfl::_legacy::events::KeyboardEvent e);
 		Dynamic onKeyPress_dyn();
 
 		virtual Void processCommand( );
 		Dynamic processCommand_dyn();
 
-		virtual Void overrideDefaultSelection( ::openfl::events::Event e);
+		virtual Void overrideDefaultSelection( ::openfl::_legacy::events::Event e);
 		Dynamic overrideDefaultSelection_dyn();
 
 		virtual ::String getPreviousCommand( );

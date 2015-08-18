@@ -5,19 +5,19 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/BitmapData.h>
+#include <openfl/_legacy/display/BitmapData.h>
 HX_DECLARE_CLASS4(flixel,system,debug,_FlxDebugger,GraphicFlixel)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace system{
 namespace debug{
 namespace _FlxDebugger{
 
 
-class HXCPP_CLASS_ATTRIBUTES  GraphicFlixel_obj : public ::openfl::display::BitmapData_obj{
+class HXCPP_CLASS_ATTRIBUTES  GraphicFlixel_obj : public ::openfl::_legacy::display::BitmapData_obj{
 	public:
-		typedef ::openfl::display::BitmapData_obj super;
+		typedef ::openfl::_legacy::display::BitmapData_obj super;
 		typedef GraphicFlixel_obj OBJ_;
 		GraphicFlixel_obj();
 		Void __construct(int width,int height,Dynamic __o_transparent,Dynamic __o_fillRGBA);

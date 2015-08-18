@@ -17,10 +17,10 @@ HX_DECLARE_CLASS2(flixel,ui,FlxBar)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace ui{
 
@@ -62,16 +62,16 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBar_obj : public ::flixel::FlxSprite_obj{
 		Float pxPerPercent;
 		Dynamic emptyCallback;
 		Dynamic &emptyCallback_dyn() { return emptyCallback;}
-		::openfl::display::BitmapData emptyBar;
-		::openfl::geom::Rectangle emptyBarRect;
-		::openfl::geom::Point emptyBarPoint;
+		::openfl::_legacy::display::BitmapData emptyBar;
+		::openfl::_legacy::geom::Rectangle emptyBarRect;
+		::openfl::_legacy::geom::Point emptyBarPoint;
 		bool emptyKill;
-		::openfl::geom::Point zeroOffset;
+		::openfl::_legacy::geom::Point zeroOffset;
 		Dynamic filledCallback;
 		Dynamic &filledCallback_dyn() { return filledCallback;}
-		::openfl::display::BitmapData filledBar;
-		::openfl::geom::Rectangle filledBarRect;
-		::openfl::geom::Point filledBarPoint;
+		::openfl::_legacy::display::BitmapData filledBar;
+		::openfl::_legacy::geom::Rectangle filledBarRect;
+		::openfl::_legacy::geom::Point filledBarPoint;
 		int fillDirection;
 		bool fillHorizontal;
 		int _emptyBarFrameID;
@@ -143,7 +143,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBar_obj : public ::flixel::FlxSprite_obj{
 
 		virtual Void draw( );
 
-		virtual ::openfl::display::BitmapData set_pixels( ::openfl::display::BitmapData Pixels);
+		virtual ::openfl::_legacy::display::BitmapData set_pixels( ::openfl::_legacy::display::BitmapData Pixels);
 
 		virtual bool isSimpleRender( );
 

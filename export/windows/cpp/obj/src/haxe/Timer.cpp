@@ -6,8 +6,8 @@
 #ifndef INCLUDED_haxe_Timer
 #include <haxe/Timer.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
 namespace haxe{
 
@@ -50,7 +50,7 @@ Dynamic Timer_obj::__Create(hx::DynamicArray inArgs)
 HX_BEGIN_DEFAULT_FUNC(__default_run,Timer_obj)
 Void run(){
 {
-		HX_STACK_FRAME("haxe.Timer","run",0x4139c7ba,"haxe.Timer.run","haxe/Timer.hx",256,0x1a690682)
+		HX_STACK_FRAME("haxe.Timer","run",0x4139c7ba,"haxe.Timer.run","haxe/Timer.hx",260,0x1a690682)
 		HX_STACK_THIS(this)
 	}
 return null();
@@ -60,32 +60,32 @@ HX_END_DEFAULT_FUNC
 
 Void Timer_obj::stop( ){
 {
-		HX_STACK_FRAME("haxe.Timer","stop",0xd1fd70b3,"haxe.Timer.stop","haxe/Timer.hx",272,0x1a690682)
+		HX_STACK_FRAME("haxe.Timer","stop",0xd1fd70b3,"haxe.Timer.stop","haxe/Timer.hx",280,0x1a690682)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(272)
+		HX_STACK_LINE(280)
 		if ((this->mRunning)){
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(282)
 			this->mRunning = false;
-			HX_STACK_LINE(276)
+			HX_STACK_LINE(284)
 			{
-				HX_STACK_LINE(276)
+				HX_STACK_LINE(284)
 				int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
-				HX_STACK_LINE(276)
+				HX_STACK_LINE(284)
 				int _g = ::haxe::Timer_obj::sRunningTimers->length;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(276)
+				HX_STACK_LINE(284)
 				while((true)){
-					HX_STACK_LINE(276)
+					HX_STACK_LINE(284)
 					if ((!(((_g1 < _g))))){
-						HX_STACK_LINE(276)
+						HX_STACK_LINE(284)
 						break;
 					}
-					HX_STACK_LINE(276)
+					HX_STACK_LINE(284)
 					int i = (_g1)++;		HX_STACK_VAR(i,"i");
-					HX_STACK_LINE(278)
+					HX_STACK_LINE(286)
 					if (((::haxe::Timer_obj::sRunningTimers->__get(i).StaticCast< ::haxe::Timer >() == hx::ObjectPtr<OBJ_>(this)))){
-						HX_STACK_LINE(280)
+						HX_STACK_LINE(288)
 						::haxe::Timer_obj::sRunningTimers[i] = null();
-						HX_STACK_LINE(281)
+						HX_STACK_LINE(289)
 						break;
 					}
 				}
@@ -100,14 +100,14 @@ HX_DEFINE_DYNAMIC_FUNC0(Timer_obj,stop,(void))
 
 Void Timer_obj::__check( Float inTime){
 {
-		HX_STACK_FRAME("haxe.Timer","__check",0xb5623597,"haxe.Timer.__check","haxe/Timer.hx",294,0x1a690682)
+		HX_STACK_FRAME("haxe.Timer","__check",0xb5623597,"haxe.Timer.__check","haxe/Timer.hx",302,0x1a690682)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(inTime,"inTime")
-		HX_STACK_LINE(294)
+		HX_STACK_LINE(302)
 		if (((inTime >= this->mFireAt))){
-			HX_STACK_LINE(296)
+			HX_STACK_LINE(304)
 			hx::AddEq(this->mFireAt,this->mTime);
-			HX_STACK_LINE(297)
+			HX_STACK_LINE(305)
 			this->run();
 		}
 	}
@@ -152,9 +152,9 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(Timer_obj,delay,return )
 
 Float Timer_obj::getMS( ){
 	HX_STACK_FRAME("haxe.Timer","getMS",0xf90fafab,"haxe.Timer.getMS","haxe/Timer.hx",239,0x1a690682)
-	HX_STACK_LINE(241)
-	Float _g = ::haxe::Timer_obj::stamp();		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(241)
+	HX_STACK_LINE(242)
+	Float _g = ::haxe::Timer_obj::lime_time_stamp();		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(242)
 	return (_g * 1000.0);
 }
 
@@ -162,22 +162,22 @@ Float Timer_obj::getMS( ){
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(Timer_obj,getMS,return )
 
 Dynamic Timer_obj::measure( Dynamic f,Dynamic pos){
-	HX_STACK_FRAME("haxe.Timer","measure",0x42373f4d,"haxe.Timer.measure","haxe/Timer.hx",246,0x1a690682)
+	HX_STACK_FRAME("haxe.Timer","measure",0x42373f4d,"haxe.Timer.measure","haxe/Timer.hx",250,0x1a690682)
 	HX_STACK_ARG(f,"f")
 	HX_STACK_ARG(pos,"pos")
-	HX_STACK_LINE(248)
+	HX_STACK_LINE(252)
 	Float t0 = ::haxe::Timer_obj::stamp();		HX_STACK_VAR(t0,"t0");
-	HX_STACK_LINE(249)
+	HX_STACK_LINE(253)
 	Dynamic r = f();		HX_STACK_VAR(r,"r");
-	HX_STACK_LINE(250)
+	HX_STACK_LINE(254)
 	Float _g = ::haxe::Timer_obj::stamp();		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(250)
+	HX_STACK_LINE(254)
 	Float _g1 = (_g - t0);		HX_STACK_VAR(_g1,"_g1");
-	HX_STACK_LINE(250)
+	HX_STACK_LINE(254)
 	::String _g2 = (_g1 + HX_CSTRING("s"));		HX_STACK_VAR(_g2,"_g2");
-	HX_STACK_LINE(250)
+	HX_STACK_LINE(254)
 	::haxe::Log_obj::trace(_g2,pos);
-	HX_STACK_LINE(251)
+	HX_STACK_LINE(255)
 	return r;
 }
 
@@ -185,8 +185,8 @@ Dynamic Timer_obj::measure( Dynamic f,Dynamic pos){
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Timer_obj,measure,return )
 
 Float Timer_obj::stamp( ){
-	HX_STACK_FRAME("haxe.Timer","stamp",0xebba8a32,"haxe.Timer.stamp","haxe/Timer.hx",265,0x1a690682)
-	HX_STACK_LINE(265)
+	HX_STACK_FRAME("haxe.Timer","stamp",0xebba8a32,"haxe.Timer.stamp","haxe/Timer.hx",270,0x1a690682)
+	HX_STACK_LINE(270)
 	return ::haxe::Timer_obj::lime_time_stamp();
 }
 
@@ -195,57 +195,57 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC0(Timer_obj,stamp,return )
 
 Void Timer_obj::__checkTimers( ){
 {
-		HX_STACK_FRAME("haxe.Timer","__checkTimers",0xb7078205,"haxe.Timer.__checkTimers","haxe/Timer.hx",304,0x1a690682)
-		HX_STACK_LINE(306)
+		HX_STACK_FRAME("haxe.Timer","__checkTimers",0xb7078205,"haxe.Timer.__checkTimers","haxe/Timer.hx",312,0x1a690682)
+		HX_STACK_LINE(314)
 		Float now = ::haxe::Timer_obj::getMS();		HX_STACK_VAR(now,"now");
-		HX_STACK_LINE(307)
+		HX_STACK_LINE(315)
 		bool foundNull = false;		HX_STACK_VAR(foundNull,"foundNull");
-		HX_STACK_LINE(308)
+		HX_STACK_LINE(316)
 		::haxe::Timer timer;		HX_STACK_VAR(timer,"timer");
-		HX_STACK_LINE(310)
+		HX_STACK_LINE(318)
 		{
-			HX_STACK_LINE(310)
+			HX_STACK_LINE(318)
 			int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(310)
+			HX_STACK_LINE(318)
 			int _g = ::haxe::Timer_obj::sRunningTimers->length;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(310)
+			HX_STACK_LINE(318)
 			while((true)){
-				HX_STACK_LINE(310)
+				HX_STACK_LINE(318)
 				if ((!(((_g1 < _g))))){
-					HX_STACK_LINE(310)
+					HX_STACK_LINE(318)
 					break;
 				}
-				HX_STACK_LINE(310)
+				HX_STACK_LINE(318)
 				int i = (_g1)++;		HX_STACK_VAR(i,"i");
-				HX_STACK_LINE(312)
+				HX_STACK_LINE(320)
 				timer = ::haxe::Timer_obj::sRunningTimers->__get(i).StaticCast< ::haxe::Timer >();
-				HX_STACK_LINE(314)
+				HX_STACK_LINE(322)
 				if (((timer != null()))){
-					HX_STACK_LINE(316)
+					HX_STACK_LINE(324)
 					timer->__check(now);
 				}
-				HX_STACK_LINE(320)
+				HX_STACK_LINE(328)
 				foundNull = (bool(foundNull) || bool((::haxe::Timer_obj::sRunningTimers->__get(i).StaticCast< ::haxe::Timer >() == null())));
 			}
 		}
-		HX_STACK_LINE(324)
+		HX_STACK_LINE(332)
 		if ((foundNull)){
 
 			HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_2_1)
 			bool run(::haxe::Timer val){
-				HX_STACK_FRAME("*","_Function_2_1",0x5201af78,"*._Function_2_1","haxe/Timer.hx",326,0x1a690682)
+				HX_STACK_FRAME("*","_Function_2_1",0x5201af78,"*._Function_2_1","haxe/Timer.hx",334,0x1a690682)
 				HX_STACK_ARG(val,"val")
 				{
-					HX_STACK_LINE(326)
+					HX_STACK_LINE(334)
 					return (val != null());
 				}
 				return null();
 			}
 			HX_END_LOCAL_FUNC1(return)
 
-			HX_STACK_LINE(326)
+			HX_STACK_LINE(334)
 			Array< ::Dynamic > _g = ::haxe::Timer_obj::sRunningTimers->filter( Dynamic(new _Function_2_1()));		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(326)
+			HX_STACK_LINE(334)
 			::haxe::Timer_obj::sRunningTimers = _g;
 		}
 	}
@@ -256,51 +256,49 @@ return null();
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(Timer_obj,__checkTimers,(void))
 
 Float Timer_obj::__nextWake( Float limit){
-	HX_STACK_FRAME("haxe.Timer","__nextWake",0x0e101148,"haxe.Timer.__nextWake","haxe/Timer.hx",333,0x1a690682)
+	HX_STACK_FRAME("haxe.Timer","__nextWake",0x0e101148,"haxe.Timer.__nextWake","haxe/Timer.hx",342,0x1a690682)
 	HX_STACK_ARG(limit,"limit")
-	HX_STACK_LINE(335)
-	Float _g = ::haxe::Timer_obj::lime_time_stamp();		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(335)
-	Float now = (_g * 1000.0);		HX_STACK_VAR(now,"now");
-	HX_STACK_LINE(336)
+	HX_STACK_LINE(344)
+	Float now = ::haxe::Timer_obj::getMS();		HX_STACK_VAR(now,"now");
+	HX_STACK_LINE(345)
 	Float sleep;		HX_STACK_VAR(sleep,"sleep");
-	HX_STACK_LINE(338)
+	HX_STACK_LINE(347)
 	{
-		HX_STACK_LINE(338)
-		int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(338)
-		Array< ::Dynamic > _g11 = ::haxe::Timer_obj::sRunningTimers;		HX_STACK_VAR(_g11,"_g11");
-		HX_STACK_LINE(338)
+		HX_STACK_LINE(347)
+		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(347)
+		Array< ::Dynamic > _g1 = ::haxe::Timer_obj::sRunningTimers;		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(347)
 		while((true)){
-			HX_STACK_LINE(338)
-			if ((!(((_g1 < _g11->length))))){
-				HX_STACK_LINE(338)
+			HX_STACK_LINE(347)
+			if ((!(((_g < _g1->length))))){
+				HX_STACK_LINE(347)
 				break;
 			}
-			HX_STACK_LINE(338)
-			::haxe::Timer timer = _g11->__get(_g1).StaticCast< ::haxe::Timer >();		HX_STACK_VAR(timer,"timer");
-			HX_STACK_LINE(338)
-			++(_g1);
-			HX_STACK_LINE(340)
+			HX_STACK_LINE(347)
+			::haxe::Timer timer = _g1->__get(_g).StaticCast< ::haxe::Timer >();		HX_STACK_VAR(timer,"timer");
+			HX_STACK_LINE(347)
+			++(_g);
+			HX_STACK_LINE(349)
 			if (((timer == null()))){
-				HX_STACK_LINE(341)
+				HX_STACK_LINE(350)
 				continue;
 			}
-			HX_STACK_LINE(343)
+			HX_STACK_LINE(352)
 			sleep = (timer->mFireAt - now);
-			HX_STACK_LINE(345)
+			HX_STACK_LINE(354)
 			if (((sleep < limit))){
-				HX_STACK_LINE(347)
+				HX_STACK_LINE(356)
 				limit = sleep;
-				HX_STACK_LINE(349)
+				HX_STACK_LINE(358)
 				if (((limit < (int)0))){
-					HX_STACK_LINE(351)
+					HX_STACK_LINE(360)
 					return (int)0;
 				}
 			}
 		}
 	}
-	HX_STACK_LINE(359)
+	HX_STACK_LINE(368)
 	return (limit * 0.001);
 }
 
@@ -467,7 +465,7 @@ void Timer_obj::__register()
 void Timer_obj::__boot()
 {
 	sRunningTimers= Array_obj< ::Dynamic >::__new();
-	lime_time_stamp= ::openfl::Lib_obj::load(HX_CSTRING("lime"),HX_CSTRING("lime_time_stamp"),(int)0);
+	lime_time_stamp= ::openfl::_legacy::Lib_obj::load(HX_CSTRING("lime-legacy"),HX_CSTRING("lime_legacy_time_stamp"),(int)0);
 }
 
 } // end namespace haxe

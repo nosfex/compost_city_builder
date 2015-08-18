@@ -71,6 +71,9 @@ class HXCPP_CLASS_ATTRIBUTES  Type_obj : public hx::Object{
 		static ::ValueType _typeof( Dynamic v);
 		static Dynamic _typeof_dyn();
 
+		static bool enumEq( Dynamic a,Dynamic b);
+		static Dynamic enumEq_dyn();
+
 };
 
 

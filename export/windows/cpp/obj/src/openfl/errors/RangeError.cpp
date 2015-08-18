@@ -11,13 +11,15 @@ namespace errors{
 
 Void RangeError_obj::__construct(::String __o_message)
 {
-HX_STACK_FRAME("openfl.errors.RangeError","new",0xae8f9562,"openfl.errors.RangeError.new","openfl/errors/RangeError.hx",9,0xfc04662e)
+HX_STACK_FRAME("openfl.errors.RangeError","new",0xae8f9562,"openfl.errors.RangeError.new","openfl/errors/RangeError.hx",7,0xfc04662e)
 HX_STACK_THIS(this)
 HX_STACK_ARG(__o_message,"message")
 ::String message = __o_message.Default(HX_CSTRING(""));
 {
 	HX_STACK_LINE(9)
 	super::__construct(message,(int)0);
+	HX_STACK_LINE(11)
+	this->name = HX_CSTRING("RangeError");
 }
 ;
 	return null();

@@ -12,17 +12,17 @@
 #ifndef INCLUDED_flixel_util_FlxSave
 #include <flixel/util/FlxSave.h>
 #endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_net_SharedObject
+#include <openfl/_legacy/net/SharedObject.h>
+#endif
 #ifndef INCLUDED_openfl_errors_Error
 #include <openfl/errors/Error.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_net_SharedObject
-#include <openfl/net/SharedObject.h>
 #endif
 #ifndef INCLUDED_openfl_net_SharedObjectFlushStatus
 #include <openfl/net/SharedObjectFlushStatus.h>
@@ -90,7 +90,7 @@ bool FlxSave_obj::bind( ::String Name){
 	HX_STACK_CATCHABLE(::openfl::errors::Error, 0);
 	{
 		HX_STACK_LINE(76)
-		::openfl::net::SharedObject _g = ::openfl::net::SharedObject_obj::getLocal(this->name,null(),null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::net::SharedObject _g = ::openfl::_legacy::net::SharedObject_obj::getLocal(this->name,null(),null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(76)
 		this->_sharedObject = _g;
 	}
@@ -197,7 +197,19 @@ bool FlxSave_obj::erase( ){
 	}
 	HX_STACK_LINE(161)
 	this->_sharedObject->clear();
+	struct _Function_1_1{
+		inline static Dynamic Block( ){
+			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxSave.hx",162,0xc43cd0a9)
+			{
+				hx::Anon __result = hx::Anon_obj::Create();
+				return __result;
+			}
+			return null();
+		}
+	};
 	HX_STACK_LINE(162)
+	this->data = _Function_1_1::Block();
+	HX_STACK_LINE(163)
 	return true;
 }
 
@@ -205,30 +217,30 @@ bool FlxSave_obj::erase( ){
 HX_DEFINE_DYNAMIC_FUNC0(FlxSave_obj,erase,return )
 
 bool FlxSave_obj::onDone( int Result){
-	HX_STACK_FRAME("flixel.util.FlxSave","onDone",0x76016afa,"flixel.util.FlxSave.onDone","flixel/util/FlxSave.hx",184,0xc43cd0a9)
+	HX_STACK_FRAME("flixel.util.FlxSave","onDone",0x76016afa,"flixel.util.FlxSave.onDone","flixel/util/FlxSave.hx",185,0xc43cd0a9)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Result,"Result")
-	HX_STACK_LINE(185)
+	HX_STACK_LINE(186)
 	int _switch_1 = (Result);
 	if (  ( _switch_1==::flixel::util::FlxSave_obj::PENDING)){
-		HX_STACK_LINE(188)
+		HX_STACK_LINE(189)
 		::flixel::FlxG_obj::log->advanced(HX_CSTRING("FlxSave is requesting extra storage space."),::flixel::system::debug::LogStyle_obj::WARNING,true);
 	}
 	else if (  ( _switch_1==::flixel::util::FlxSave_obj::ERROR)){
-		HX_STACK_LINE(190)
+		HX_STACK_LINE(191)
 		::flixel::FlxG_obj::log->advanced(HX_CSTRING("There was a problem flushing\nthe shared object data from FlxSave."),::flixel::system::debug::LogStyle_obj::ERROR,true);
 	}
-	HX_STACK_LINE(193)
+	HX_STACK_LINE(194)
 	if (((this->_onComplete_dyn() != null()))){
-		HX_STACK_LINE(195)
+		HX_STACK_LINE(196)
 		this->_onComplete((Result == ::flixel::util::FlxSave_obj::SUCCESS));
 	}
-	HX_STACK_LINE(197)
+	HX_STACK_LINE(198)
 	if ((this->_closeRequested)){
-		HX_STACK_LINE(199)
+		HX_STACK_LINE(200)
 		this->destroy();
 	}
-	HX_STACK_LINE(201)
+	HX_STACK_LINE(202)
 	return (Result == ::flixel::util::FlxSave_obj::SUCCESS);
 }
 
@@ -236,16 +248,16 @@ bool FlxSave_obj::onDone( int Result){
 HX_DEFINE_DYNAMIC_FUNC1(FlxSave_obj,onDone,return )
 
 bool FlxSave_obj::checkBinding( ){
-	HX_STACK_FRAME("flixel.util.FlxSave","checkBinding",0xf0eb45d6,"flixel.util.FlxSave.checkBinding","flixel/util/FlxSave.hx",210,0xc43cd0a9)
+	HX_STACK_FRAME("flixel.util.FlxSave","checkBinding",0xf0eb45d6,"flixel.util.FlxSave.checkBinding","flixel/util/FlxSave.hx",211,0xc43cd0a9)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(211)
+	HX_STACK_LINE(212)
 	if (((this->_sharedObject == null()))){
-		HX_STACK_LINE(213)
-		::flixel::FlxG_obj::log->advanced(HX_CSTRING("You must call FlxSave.bind()\nbefore you can read or write data."),::flixel::system::debug::LogStyle_obj::WARNING,true);
 		HX_STACK_LINE(214)
+		::flixel::FlxG_obj::log->advanced(HX_CSTRING("You must call FlxSave.bind()\nbefore you can read or write data."),::flixel::system::debug::LogStyle_obj::WARNING,true);
+		HX_STACK_LINE(215)
 		return false;
 	}
-	HX_STACK_LINE(216)
+	HX_STACK_LINE(217)
 	return true;
 }
 
@@ -338,7 +350,7 @@ Dynamic FlxSave_obj::__SetField(const ::String &inName,const Dynamic &inValue,bo
 		if (HX_FIELD_EQ(inName,"_onComplete") ) { _onComplete=inValue.Cast< Dynamic >(); return inValue; }
 		break;
 	case 13:
-		if (HX_FIELD_EQ(inName,"_sharedObject") ) { _sharedObject=inValue.Cast< ::openfl::net::SharedObject >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_sharedObject") ) { _sharedObject=inValue.Cast< ::openfl::_legacy::net::SharedObject >(); return inValue; }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"_closeRequested") ) { _closeRequested=inValue.Cast< bool >(); return inValue; }
@@ -365,7 +377,7 @@ static ::String sStaticFields[] = {
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxSave_obj,data),HX_CSTRING("data")},
 	{hx::fsString,(int)offsetof(FlxSave_obj,name),HX_CSTRING("name")},
-	{hx::fsObject /*::openfl::net::SharedObject*/ ,(int)offsetof(FlxSave_obj,_sharedObject),HX_CSTRING("_sharedObject")},
+	{hx::fsObject /*::openfl::_legacy::net::SharedObject*/ ,(int)offsetof(FlxSave_obj,_sharedObject),HX_CSTRING("_sharedObject")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxSave_obj,_onComplete),HX_CSTRING("_onComplete")},
 	{hx::fsBool,(int)offsetof(FlxSave_obj,_closeRequested),HX_CSTRING("_closeRequested")},
 	{ hx::fsUnknown, 0, null()}

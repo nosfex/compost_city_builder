@@ -12,16 +12,16 @@
 namespace openfl{
 namespace net{
 
-Void URLVariables_obj::__construct(::String encoded)
+Void URLVariables_obj::__construct(::String inEncoded)
 {
-HX_STACK_FRAME("openfl.net.URLVariables","new",0x0e8c3f29,"openfl.net.URLVariables.new","openfl/net/URLVariables.hx",9,0x10f26625)
+HX_STACK_FRAME("openfl.net.URLVariables","new",0x0e8c3f29,"openfl.net.URLVariables.new","openfl/net/URLVariables.hx",25,0x10f26625)
 HX_STACK_THIS(this)
-HX_STACK_ARG(encoded,"encoded")
+HX_STACK_ARG(inEncoded,"inEncoded")
 {
-	HX_STACK_LINE(9)
-	if (((encoded != null()))){
-		HX_STACK_LINE(11)
-		this->decode(encoded);
+	HX_STACK_LINE(25)
+	if (((inEncoded != null()))){
+		HX_STACK_LINE(27)
+		this->decode(inEncoded);
 	}
 }
 ;
@@ -31,9 +31,9 @@ HX_STACK_ARG(encoded,"encoded")
 //URLVariables_obj::~URLVariables_obj() { }
 
 Dynamic URLVariables_obj::__CreateEmpty() { return  new URLVariables_obj; }
-hx::ObjectPtr< URLVariables_obj > URLVariables_obj::__new(::String encoded)
+hx::ObjectPtr< URLVariables_obj > URLVariables_obj::__new(::String inEncoded)
 {  hx::ObjectPtr< URLVariables_obj > result = new URLVariables_obj();
-	result->__construct(encoded);
+	result->__construct(inEncoded);
 	return result;}
 
 Dynamic URLVariables_obj::__Create(hx::DynamicArray inArgs)
@@ -41,71 +41,71 @@ Dynamic URLVariables_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0]);
 	return result;}
 
-Void URLVariables_obj::decode( ::String data){
+Void URLVariables_obj::decode( ::String inVars){
 {
-		HX_STACK_FRAME("openfl.net.URLVariables","decode",0x44099205,"openfl.net.URLVariables.decode","openfl/net/URLVariables.hx",18,0x10f26625)
+		HX_STACK_FRAME("openfl.net.URLVariables","decode",0x44099205,"openfl.net.URLVariables.decode","openfl/net/URLVariables.hx",45,0x10f26625)
 		HX_STACK_THIS(this)
-		HX_STACK_ARG(data,"data")
-		HX_STACK_LINE(20)
+		HX_STACK_ARG(inVars,"inVars")
+		HX_STACK_LINE(47)
 		Array< ::String > fields = ::Reflect_obj::fields(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(fields,"fields");
-		HX_STACK_LINE(22)
+		HX_STACK_LINE(49)
 		{
-			HX_STACK_LINE(22)
+			HX_STACK_LINE(49)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(22)
+			HX_STACK_LINE(49)
 			while((true)){
-				HX_STACK_LINE(22)
+				HX_STACK_LINE(49)
 				if ((!(((_g < fields->length))))){
-					HX_STACK_LINE(22)
+					HX_STACK_LINE(49)
 					break;
 				}
-				HX_STACK_LINE(22)
-				::String field = fields->__get(_g);		HX_STACK_VAR(field,"field");
-				HX_STACK_LINE(22)
+				HX_STACK_LINE(49)
+				::String f = fields->__get(_g);		HX_STACK_VAR(f,"f");
+				HX_STACK_LINE(49)
 				++(_g);
-				HX_STACK_LINE(24)
-				::Reflect_obj::deleteField(hx::ObjectPtr<OBJ_>(this),field);
+				HX_STACK_LINE(51)
+				::Reflect_obj::deleteField(hx::ObjectPtr<OBJ_>(this),f);
 			}
 		}
-		HX_STACK_LINE(28)
-		Array< ::String > fields1 = data.split(HX_CSTRING(";"))->join(HX_CSTRING("&")).split(HX_CSTRING("&"));		HX_STACK_VAR(fields1,"fields1");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(55)
+		Array< ::String > fields1 = inVars.split(HX_CSTRING(";"))->join(HX_CSTRING("&")).split(HX_CSTRING("&"));		HX_STACK_VAR(fields1,"fields1");
+		HX_STACK_LINE(57)
 		{
-			HX_STACK_LINE(30)
+			HX_STACK_LINE(57)
 			int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(30)
+			HX_STACK_LINE(57)
 			while((true)){
-				HX_STACK_LINE(30)
+				HX_STACK_LINE(57)
 				if ((!(((_g < fields1->length))))){
-					HX_STACK_LINE(30)
+					HX_STACK_LINE(57)
 					break;
 				}
-				HX_STACK_LINE(30)
-				::String field = fields1->__get(_g);		HX_STACK_VAR(field,"field");
-				HX_STACK_LINE(30)
+				HX_STACK_LINE(57)
+				::String f = fields1->__get(_g);		HX_STACK_VAR(f,"f");
+				HX_STACK_LINE(57)
 				++(_g);
-				HX_STACK_LINE(32)
-				int index = field.indexOf(HX_CSTRING("="),null());		HX_STACK_VAR(index,"index");
-				HX_STACK_LINE(34)
-				if (((index > (int)0))){
-					HX_STACK_LINE(36)
-					::String _g1 = field.substr((int)0,index);		HX_STACK_VAR(_g1,"_g1");
-					HX_STACK_LINE(36)
-					::String field1 = ::StringTools_obj::urlDecode(_g1);		HX_STACK_VAR(field1,"field1");
-					HX_STACK_LINE(36)
-					::String _g11 = field.substr((index + (int)1),null());		HX_STACK_VAR(_g11,"_g11");
-					HX_STACK_LINE(36)
+				HX_STACK_LINE(59)
+				int eq = f.indexOf(HX_CSTRING("="),null());		HX_STACK_VAR(eq,"eq");
+				HX_STACK_LINE(61)
+				if (((eq > (int)0))){
+					HX_STACK_LINE(63)
+					::String _g1 = f.substr((int)0,eq);		HX_STACK_VAR(_g1,"_g1");
+					HX_STACK_LINE(63)
+					::String field = ::StringTools_obj::urlDecode(_g1);		HX_STACK_VAR(field,"field");
+					HX_STACK_LINE(63)
+					::String _g11 = f.substr((eq + (int)1),null());		HX_STACK_VAR(_g11,"_g11");
+					HX_STACK_LINE(63)
 					Dynamic value = ::StringTools_obj::urlDecode(_g11);		HX_STACK_VAR(value,"value");
-					HX_STACK_LINE(36)
-					this->__SetField(field1,value,false);
+					HX_STACK_LINE(63)
+					this->__SetField(field,value,false);
 				}
 				else{
-					HX_STACK_LINE(38)
-					if (((index != (int)0))){
-						HX_STACK_LINE(40)
-						::String field1 = ::StringTools_obj::urlDecode(field);		HX_STACK_VAR(field1,"field1");
-						HX_STACK_LINE(40)
-						this->__SetField(field1,HX_CSTRING(""),false);
+					HX_STACK_LINE(65)
+					if (((eq != (int)0))){
+						HX_STACK_LINE(67)
+						::String field = ::StringTools_obj::urlDecode(f);		HX_STACK_VAR(field,"field");
+						HX_STACK_LINE(67)
+						this->__SetField(field,HX_CSTRING(""),false);
 					}
 				}
 			}
@@ -118,42 +118,42 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC1(URLVariables_obj,decode,(void))
 
 ::String URLVariables_obj::toString( ){
-	HX_STACK_FRAME("openfl.net.URLVariables","toString",0x3ea32943,"openfl.net.URLVariables.toString","openfl/net/URLVariables.hx",49,0x10f26625)
+	HX_STACK_FRAME("openfl.net.URLVariables","toString",0x3ea32943,"openfl.net.URLVariables.toString","openfl/net/URLVariables.hx",82,0x10f26625)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(51)
+	HX_STACK_LINE(84)
 	Array< ::String > result = Array_obj< ::String >::__new();		HX_STACK_VAR(result,"result");
-	HX_STACK_LINE(52)
+	HX_STACK_LINE(85)
 	Array< ::String > fields = ::Reflect_obj::fields(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(fields,"fields");
-	HX_STACK_LINE(54)
+	HX_STACK_LINE(87)
 	{
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(87)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(87)
 		while((true)){
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(87)
 			if ((!(((_g < fields->length))))){
-				HX_STACK_LINE(54)
+				HX_STACK_LINE(87)
 				break;
 			}
-			HX_STACK_LINE(54)
-			::String field = fields->__get(_g);		HX_STACK_VAR(field,"field");
-			HX_STACK_LINE(54)
+			HX_STACK_LINE(87)
+			::String f = fields->__get(_g);		HX_STACK_VAR(f,"f");
+			HX_STACK_LINE(87)
 			++(_g);
-			HX_STACK_LINE(56)
-			::String _g1 = ::StringTools_obj::urlEncode(field);		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(89)
+			::String _g1 = ::StringTools_obj::urlEncode(f);		HX_STACK_VAR(_g1,"_g1");
+			HX_STACK_LINE(89)
 			::String _g11 = (_g1 + HX_CSTRING("="));		HX_STACK_VAR(_g11,"_g11");
-			HX_STACK_LINE(56)
-			Dynamic _g2 = ::Reflect_obj::field(hx::ObjectPtr<OBJ_>(this),field);		HX_STACK_VAR(_g2,"_g2");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(89)
+			Dynamic _g2 = ::Reflect_obj::field(hx::ObjectPtr<OBJ_>(this),f);		HX_STACK_VAR(_g2,"_g2");
+			HX_STACK_LINE(89)
 			::String _g3 = ::StringTools_obj::urlEncode(_g2);		HX_STACK_VAR(_g3,"_g3");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(89)
 			::String _g4 = (_g11 + _g3);		HX_STACK_VAR(_g4,"_g4");
-			HX_STACK_LINE(56)
+			HX_STACK_LINE(89)
 			result->push(_g4);
 		}
 	}
-	HX_STACK_LINE(60)
+	HX_STACK_LINE(93)
 	return result->join(HX_CSTRING("&"));
 }
 

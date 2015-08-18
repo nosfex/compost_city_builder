@@ -6,6 +6,7 @@
 #endif
 
 HX_DECLARE_CLASS2(openfl,geom,Matrix3D)
+HX_DECLARE_CLASS2(openfl,geom,Orientation3D)
 HX_DECLARE_CLASS2(openfl,geom,Vector3D)
 namespace openfl{
 namespace geom{
@@ -59,6 +60,12 @@ class HXCPP_CLASS_ATTRIBUTES  Matrix3D_obj : public hx::Object{
 		virtual Void copyFrom( ::openfl::geom::Matrix3D other);
 		Dynamic copyFrom_dyn();
 
+		virtual Void copyRawDataFrom( Array< Float > vector,hx::Null< int >  index,hx::Null< bool >  transpose);
+		Dynamic copyRawDataFrom_dyn();
+
+		virtual Void copyRawDataTo( Array< Float > vector,hx::Null< int >  index,hx::Null< bool >  transpose);
+		Dynamic copyRawDataTo_dyn();
+
 		virtual Void copyRowFrom( int row,::openfl::geom::Vector3D vector3D);
 		Dynamic copyRowFrom_dyn();
 
@@ -68,7 +75,7 @@ class HXCPP_CLASS_ATTRIBUTES  Matrix3D_obj : public hx::Object{
 		virtual Void copyToMatrix3D( ::openfl::geom::Matrix3D other);
 		Dynamic copyToMatrix3D_dyn();
 
-		virtual Array< ::Dynamic > decompose( );
+		virtual Array< ::Dynamic > decompose( ::openfl::geom::Orientation3D orientationStyle);
 		Dynamic decompose_dyn();
 
 		virtual ::openfl::geom::Vector3D deltaTransformVector( ::openfl::geom::Vector3D v);
@@ -98,7 +105,7 @@ class HXCPP_CLASS_ATTRIBUTES  Matrix3D_obj : public hx::Object{
 		virtual Void prependTranslation( Float x,Float y,Float z);
 		Dynamic prependTranslation_dyn();
 
-		virtual bool recompose( Array< ::Dynamic > components);
+		virtual bool recompose( Array< ::Dynamic > components,::openfl::geom::Orientation3D orientationStyle);
 		Dynamic recompose_dyn();
 
 		virtual ::openfl::geom::Vector3D transformVector( ::openfl::geom::Vector3D v);
@@ -116,7 +123,7 @@ class HXCPP_CLASS_ATTRIBUTES  Matrix3D_obj : public hx::Object{
 		virtual ::openfl::geom::Vector3D get_position( );
 		Dynamic get_position_dyn();
 
-		virtual ::openfl::geom::Vector3D set_position( ::openfl::geom::Vector3D value);
+		virtual ::openfl::geom::Vector3D set_position( ::openfl::geom::Vector3D val);
 		Dynamic set_position_dyn();
 
 		static ::openfl::geom::Matrix3D create2D( Float x,Float y,hx::Null< Float >  scale,hx::Null< Float >  rotation);
@@ -128,11 +135,11 @@ class HXCPP_CLASS_ATTRIBUTES  Matrix3D_obj : public hx::Object{
 		static ::openfl::geom::Matrix3D createOrtho( Float x0,Float x1,Float y0,Float y1,Float zNear,Float zFar);
 		static Dynamic createOrtho_dyn();
 
-		static ::openfl::geom::Matrix3D getAxisRotation( Float x,Float y,Float z,Float degrees);
-		static Dynamic getAxisRotation_dyn();
-
 		static ::openfl::geom::Matrix3D interpolate( ::openfl::geom::Matrix3D thisMat,::openfl::geom::Matrix3D toMat,Float percent);
 		static Dynamic interpolate_dyn();
+
+		static ::openfl::geom::Matrix3D getAxisRotation( Float x,Float y,Float z,Float degrees);
+		static Dynamic getAxisRotation_dyn();
 
 };
 

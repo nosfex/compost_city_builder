@@ -6,18 +6,18 @@
 #ifndef INCLUDED_flixel_system_layer__TileSheetExt_RectPointTileID
 #include <flixel/system/layer/_TileSheetExt/RectPointTileID.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace system{
 namespace layer{
 namespace _TileSheetExt{
 
-Void RectPointTileID_obj::__construct(int id,::openfl::geom::Rectangle rect,::openfl::geom::Point point)
+Void RectPointTileID_obj::__construct(int id,::openfl::_legacy::geom::Rectangle rect,::openfl::_legacy::geom::Point point)
 {
 HX_STACK_FRAME("flixel.system.layer._TileSheetExt.RectPointTileID","new",0xd8d2fe9e,"flixel.system.layer._TileSheetExt.RectPointTileID.new","flixel/system/layer/TileSheetExt.hx",104,0x9b6b4f03)
 HX_STACK_THIS(this)
@@ -39,7 +39,7 @@ HX_STACK_ARG(point,"point")
 //RectPointTileID_obj::~RectPointTileID_obj() { }
 
 Dynamic RectPointTileID_obj::__CreateEmpty() { return  new RectPointTileID_obj; }
-hx::ObjectPtr< RectPointTileID_obj > RectPointTileID_obj::__new(int id,::openfl::geom::Rectangle rect,::openfl::geom::Point point)
+hx::ObjectPtr< RectPointTileID_obj > RectPointTileID_obj::__new(int id,::openfl::_legacy::geom::Rectangle rect,::openfl::_legacy::geom::Point point)
 {  hx::ObjectPtr< RectPointTileID_obj > result = new RectPointTileID_obj();
 	result->__construct(id,rect,point);
 	return result;}
@@ -115,10 +115,10 @@ Dynamic RectPointTileID_obj::__SetField(const ::String &inName,const Dynamic &in
 		if (HX_FIELD_EQ(inName,"id") ) { id=inValue.Cast< int >(); return inValue; }
 		break;
 	case 4:
-		if (HX_FIELD_EQ(inName,"rect") ) { rect=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"rect") ) { rect=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"point") ) { point=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"point") ) { point=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -136,8 +136,8 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(RectPointTileID_obj,rect),HX_CSTRING("rect")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(RectPointTileID_obj,point),HX_CSTRING("point")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(RectPointTileID_obj,rect),HX_CSTRING("rect")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(RectPointTileID_obj,point),HX_CSTRING("point")},
 	{hx::fsInt,(int)offsetof(RectPointTileID_obj,id),HX_CSTRING("id")},
 	{ hx::fsUnknown, 0, null()}
 };

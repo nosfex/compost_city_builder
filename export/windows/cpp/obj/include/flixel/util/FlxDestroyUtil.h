@@ -8,8 +8,8 @@
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxDestroyUtil)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace util{
 
@@ -46,7 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxDestroyUtil_obj : public hx::Object{
 		static Dynamic putArray( Dynamic array);
 		static Dynamic putArray_dyn();
 
-		static ::openfl::display::BitmapData dispose( ::openfl::display::BitmapData Bitmap);
+		static ::openfl::_legacy::display::BitmapData dispose( ::openfl::_legacy::display::BitmapData Bitmap);
 		static Dynamic dispose_dyn();
 
 };

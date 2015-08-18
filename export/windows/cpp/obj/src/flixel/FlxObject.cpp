@@ -48,14 +48,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxRect
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
@@ -72,38 +66,38 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_CapsStyle
-#include <openfl/display/CapsStyle.h>
+#ifndef INCLUDED_openfl__legacy_display_CapsStyle
+#include <openfl/_legacy/display/CapsStyle.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_JointStyle
-#include <openfl/display/JointStyle.h>
+#ifndef INCLUDED_openfl__legacy_display_JointStyle
+#include <openfl/_legacy/display/JointStyle.h>
 #endif
-#ifndef INCLUDED_openfl_display_LineScaleMode
-#include <openfl/display/LineScaleMode.h>
+#ifndef INCLUDED_openfl__legacy_display_LineScaleMode
+#include <openfl/_legacy/display/LineScaleMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 namespace flixel{
 
@@ -199,7 +193,7 @@ Void FlxObject_obj::initVars( ){
 		HX_STACK_LINE(492)
 		{
 			HX_STACK_LINE(492)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(this->x,this->y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(this->x,this->y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(492)
 			point->_inPool = false;
 			HX_STACK_LINE(492)
@@ -212,7 +206,7 @@ Void FlxObject_obj::initVars( ){
 		HX_STACK_LINE(493)
 		{
 			HX_STACK_LINE(493)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)1,(int)1);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)1,(int)1);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(493)
 			point->_inPool = false;
 			HX_STACK_LINE(493)
@@ -229,7 +223,7 @@ Void FlxObject_obj::initVars( ){
 			HX_STACK_LINE(494)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(494)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(494)
 			point->_inPool = false;
 			HX_STACK_LINE(494)
@@ -248,7 +242,7 @@ Void FlxObject_obj::initVars( ){
 				HX_STACK_LINE(496)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(496)
 				point->_inPool = false;
 				HX_STACK_LINE(496)
@@ -265,7 +259,7 @@ Void FlxObject_obj::initVars( ){
 				HX_STACK_LINE(496)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(496)
 				point->_inPool = false;
 				HX_STACK_LINE(496)
@@ -282,7 +276,7 @@ Void FlxObject_obj::initVars( ){
 				HX_STACK_LINE(496)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(496)
 				point->_inPool = false;
 				HX_STACK_LINE(496)
@@ -295,7 +289,7 @@ Void FlxObject_obj::initVars( ){
 			HX_STACK_LINE(496)
 			{
 				HX_STACK_LINE(496)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)10000,(int)10000);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)10000,(int)10000);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(496)
 				point->_inPool = false;
 				HX_STACK_LINE(496)
@@ -324,7 +318,7 @@ Void FlxObject_obj::initMotionVars( ){
 			HX_STACK_LINE(504)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(504)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(504)
 			point->_inPool = false;
 			HX_STACK_LINE(504)
@@ -341,7 +335,7 @@ Void FlxObject_obj::initMotionVars( ){
 			HX_STACK_LINE(505)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(505)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(505)
 			point->_inPool = false;
 			HX_STACK_LINE(505)
@@ -358,7 +352,7 @@ Void FlxObject_obj::initMotionVars( ){
 			HX_STACK_LINE(506)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(506)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(506)
 			point->_inPool = false;
 			HX_STACK_LINE(506)
@@ -371,7 +365,7 @@ Void FlxObject_obj::initMotionVars( ){
 		HX_STACK_LINE(507)
 		{
 			HX_STACK_LINE(507)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)10000,(int)10000);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)10000,(int)10000);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(507)
 			point->_inPool = false;
 			HX_STACK_LINE(507)
@@ -1106,7 +1100,7 @@ bool InScreenSpace = __o_InScreenSpace.Default(false);
 		HX_STACK_LINE(708)
 		if ((point->_weak)){
 			HX_STACK_LINE(708)
-			::flixel::util::FlxPoint_obj::_pool->put(point);
+			point->put();
 		}
 		struct _Function_1_1{
 			inline static bool Block( hx::ObjectPtr< ::flixel::FlxObject_obj > __this,Float &X){
@@ -1220,7 +1214,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxObject_obj,inWorldBounds,return )
 			HX_STACK_LINE(733)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(733)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(733)
 			point1->_inPool = false;
 			HX_STACK_LINE(733)
@@ -1256,7 +1250,7 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxObject_obj,getScreenXY,return )
 			HX_STACK_LINE(752)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(752)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(752)
 			point1->_inPool = false;
 			HX_STACK_LINE(752)
@@ -1516,7 +1510,7 @@ Void FlxObject_obj::drawDebugOnCamera( ::flixel::FlxCamera Camera){
 			}
 		}
 		HX_STACK_LINE(934)
-		::openfl::display::Graphics gfx = Camera->debugLayer->get_graphics();		HX_STACK_VAR(gfx,"gfx");
+		::openfl::_legacy::display::Graphics gfx = Camera->debugLayer->get_graphics();		HX_STACK_VAR(gfx,"gfx");
 		HX_STACK_LINE(935)
 		gfx->lineStyle((int)1,color,0.5,null(),null(),null(),null(),null());
 		HX_STACK_LINE(936)

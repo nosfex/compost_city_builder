@@ -5,29 +5,29 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/events/Event.h>
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
+#include <openfl/_legacy/events/Event.h>
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 HX_DECLARE_CLASS2(openfl,events,FocusEvent)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
 namespace openfl{
 namespace events{
 
 
-class HXCPP_CLASS_ATTRIBUTES  FocusEvent_obj : public ::openfl::events::Event_obj{
+class HXCPP_CLASS_ATTRIBUTES  FocusEvent_obj : public ::openfl::_legacy::events::Event_obj{
 	public:
-		typedef ::openfl::events::Event_obj super;
+		typedef ::openfl::_legacy::events::Event_obj super;
 		typedef FocusEvent_obj OBJ_;
 		FocusEvent_obj();
-		Void __construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,::openfl::display::InteractiveObject relatedObject,hx::Null< bool >  __o_shiftKey,hx::Null< int >  __o_keyCode,::String __o_direction);
+		Void __construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,::openfl::_legacy::display::InteractiveObject relatedObject,hx::Null< bool >  __o_shiftKey,hx::Null< int >  __o_keyCode);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< FocusEvent_obj > __new(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,::openfl::display::InteractiveObject relatedObject,hx::Null< bool >  __o_shiftKey,hx::Null< int >  __o_keyCode,::String __o_direction);
+		static hx::ObjectPtr< FocusEvent_obj > __new(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,::openfl::_legacy::display::InteractiveObject relatedObject,hx::Null< bool >  __o_shiftKey,hx::Null< int >  __o_keyCode);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~FocusEvent_obj();
@@ -40,9 +40,9 @@ class HXCPP_CLASS_ATTRIBUTES  FocusEvent_obj : public ::openfl::events::Event_ob
 		::String __ToString() const { return HX_CSTRING("FocusEvent"); }
 
 		int keyCode;
-		::openfl::display::InteractiveObject relatedObject;
+		::openfl::_legacy::display::InteractiveObject relatedObject;
 		bool shiftKey;
-		virtual ::openfl::events::Event clone( );
+		virtual ::openfl::_legacy::events::Event clone( );
 
 		virtual ::String toString( );
 

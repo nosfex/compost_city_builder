@@ -9,17 +9,17 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -42,7 +42,7 @@ Dynamic FlxBitmapUtil_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
-Void FlxBitmapUtil_obj::merge( ::openfl::display::BitmapData sourceBitmapData,::openfl::geom::Rectangle sourceRect,::openfl::display::BitmapData destBitmapData,::openfl::geom::Point destPoint,int redMultiplier,int greenMultiplier,int blueMultiplier,int alphaMultiplier){
+Void FlxBitmapUtil_obj::merge( ::openfl::_legacy::display::BitmapData sourceBitmapData,::openfl::_legacy::geom::Rectangle sourceRect,::openfl::_legacy::display::BitmapData destBitmapData,::openfl::_legacy::geom::Point destPoint,int redMultiplier,int greenMultiplier,int blueMultiplier,int alphaMultiplier){
 {
 		HX_STACK_FRAME("flixel.util.FlxBitmapUtil","merge",0xc3f58073,"flixel.util.FlxBitmapUtil.merge","flixel/util/FlxBitmapUtil.hx",10,0x286986d5)
 		HX_STACK_ARG(sourceBitmapData,"sourceBitmapData")
@@ -56,7 +56,7 @@ Void FlxBitmapUtil_obj::merge( ::openfl::display::BitmapData sourceBitmapData,::
 		HX_STACK_LINE(14)
 		int _g = destBitmapData->get_width();		HX_STACK_VAR(_g,"_g");
 		struct _Function_1_1{
-			inline static bool Block( ::openfl::geom::Point &destPoint,::openfl::display::BitmapData &destBitmapData){
+			inline static bool Block( ::openfl::_legacy::geom::Point &destPoint,::openfl::_legacy::display::BitmapData &destBitmapData){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapUtil.hx",15,0x286986d5)
 				{
 					HX_STACK_LINE(15)
@@ -68,7 +68,7 @@ Void FlxBitmapUtil_obj::merge( ::openfl::display::BitmapData sourceBitmapData,::
 			}
 		};
 		struct _Function_1_2{
-			inline static bool Block( ::openfl::geom::Rectangle &sourceRect,::openfl::display::BitmapData &sourceBitmapData){
+			inline static bool Block( ::openfl::_legacy::geom::Rectangle &sourceRect,::openfl::_legacy::display::BitmapData &sourceBitmapData){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapUtil.hx",16,0x286986d5)
 				{
 					HX_STACK_LINE(16)
@@ -80,7 +80,7 @@ Void FlxBitmapUtil_obj::merge( ::openfl::display::BitmapData sourceBitmapData,::
 			}
 		};
 		struct _Function_1_3{
-			inline static bool Block( ::openfl::geom::Rectangle &sourceRect,::openfl::display::BitmapData &sourceBitmapData){
+			inline static bool Block( ::openfl::_legacy::geom::Rectangle &sourceRect,::openfl::_legacy::display::BitmapData &sourceBitmapData){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapUtil.hx",17,0x286986d5)
 				{
 					HX_STACK_LINE(17)
@@ -101,7 +101,7 @@ Void FlxBitmapUtil_obj::merge( ::openfl::display::BitmapData sourceBitmapData,::
 			HX_STACK_LINE(25)
 			int _g4 = sourceBitmapData->get_width();		HX_STACK_VAR(_g4,"_g4");
 			struct _Function_2_1{
-				inline static bool Block( ::openfl::geom::Rectangle &sourceRect,::openfl::display::BitmapData &sourceBitmapData){
+				inline static bool Block( ::openfl::_legacy::geom::Rectangle &sourceRect,::openfl::_legacy::display::BitmapData &sourceBitmapData){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapUtil.hx",26,0x286986d5)
 					{
 						HX_STACK_LINE(26)
@@ -160,7 +160,7 @@ Void FlxBitmapUtil_obj::merge( ::openfl::display::BitmapData sourceBitmapData,::
 			HX_STACK_LINE(49)
 			int _g12 = destBitmapData->get_width();		HX_STACK_VAR(_g12,"_g12");
 			struct _Function_2_2{
-				inline static bool Block( ::openfl::geom::Point &destPoint,::openfl::display::BitmapData &destBitmapData){
+				inline static bool Block( ::openfl::_legacy::geom::Point &destPoint,::openfl::_legacy::display::BitmapData &destBitmapData){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapUtil.hx",49,0x286986d5)
 					{
 						HX_STACK_LINE(49)
@@ -355,7 +355,7 @@ int FlxBitmapUtil_obj::mergeColorComponent( int source,int dest,int multiplier){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxBitmapUtil_obj,mergeColorComponent,return )
 
-Dynamic FlxBitmapUtil_obj::compare( ::openfl::display::BitmapData Bitmap1,::openfl::display::BitmapData Bitmap2){
+Dynamic FlxBitmapUtil_obj::compare( ::openfl::_legacy::display::BitmapData Bitmap1,::openfl::_legacy::display::BitmapData Bitmap2){
 	HX_STACK_FRAME("flixel.util.FlxBitmapUtil","compare",0x51571b20,"flixel.util.FlxBitmapUtil.compare","flixel/util/FlxBitmapUtil.hx",152,0x286986d5)
 	HX_STACK_ARG(Bitmap1,"Bitmap1")
 	HX_STACK_ARG(Bitmap2,"Bitmap2")
@@ -389,7 +389,7 @@ Dynamic FlxBitmapUtil_obj::compare( ::openfl::display::BitmapData Bitmap1,::open
 			HX_STACK_LINE(171)
 			int height = Bitmap1->get_height();		HX_STACK_VAR(height,"height");
 			HX_STACK_LINE(172)
-			::openfl::display::BitmapData result = ::openfl::display::BitmapData_obj::__new(width,height,true,(int)0,null());		HX_STACK_VAR(result,"result");
+			::openfl::_legacy::display::BitmapData result = ::openfl::_legacy::display::BitmapData_obj::__new(width,height,true,(int)0,null());		HX_STACK_VAR(result,"result");
 			HX_STACK_LINE(173)
 			bool identical = true;		HX_STACK_VAR(identical,"identical");
 			HX_STACK_LINE(175)
@@ -578,7 +578,7 @@ Dynamic FlxBitmapUtil_obj::compare( ::openfl::display::BitmapData Bitmap1,::open
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxBitmapUtil_obj,compare,return )
 
-Float FlxBitmapUtil_obj::getMemorySize( ::openfl::display::BitmapData bitmapData){
+Float FlxBitmapUtil_obj::getMemorySize( ::openfl::_legacy::display::BitmapData bitmapData){
 	HX_STACK_FRAME("flixel.util.FlxBitmapUtil","getMemorySize",0x69329953,"flixel.util.FlxBitmapUtil.getMemorySize","flixel/util/FlxBitmapUtil.hx",255,0x286986d5)
 	HX_STACK_ARG(bitmapData,"bitmapData")
 	HX_STACK_LINE(256)

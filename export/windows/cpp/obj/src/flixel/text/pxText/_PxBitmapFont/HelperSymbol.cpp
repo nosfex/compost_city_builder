@@ -10,7 +10,7 @@ namespace _PxBitmapFont{
 
 Void HelperSymbol_obj::__construct()
 {
-HX_STACK_FRAME("flixel.text.pxText._PxBitmapFont.HelperSymbol","new",0xac5d2b4b,"flixel.text.pxText._PxBitmapFont.HelperSymbol.new","flixel/text/pxText/PxBitmapFont.hx",737,0xb7b5754d)
+HX_STACK_FRAME("flixel.text.pxText._PxBitmapFont.HelperSymbol","new",0xac5d2b4b,"flixel.text.pxText._PxBitmapFont.HelperSymbol.new","flixel/text/pxText/PxBitmapFont.hx",742,0xb7b5754d)
 HX_STACK_THIS(this)
 {
 }

@@ -9,7 +9,7 @@ HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxCamera)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,frontEnds,CameraFrontEnd)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace system{
 namespace frontEnds{
@@ -42,7 +42,7 @@ class HXCPP_CLASS_ATTRIBUTES  CameraFrontEnd_obj : public hx::Object{
 
 		Array< ::Dynamic > list;
 		bool useBufferLocking;
-		::openfl::geom::Rectangle _cameraRect;
+		::openfl::_legacy::geom::Rectangle _cameraRect;
 		virtual Void remove( ::flixel::FlxCamera Camera,hx::Null< bool >  Destroy);
 		Dynamic remove_dyn();
 

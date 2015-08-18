@@ -5,25 +5,25 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/Sprite.h>
+#include <openfl/_legacy/display/Sprite.h>
 HX_DECLARE_CLASS3(flixel,system,debug,StatsGraph)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Shape)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Shape)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
 
 
-class HXCPP_CLASS_ATTRIBUTES  StatsGraph_obj : public ::openfl::display::Sprite_obj{
+class HXCPP_CLASS_ATTRIBUTES  StatsGraph_obj : public ::openfl::_legacy::display::Sprite_obj{
 	public:
-		typedef ::openfl::display::Sprite_obj super;
+		typedef ::openfl::_legacy::display::Sprite_obj super;
 		typedef StatsGraph_obj OBJ_;
 		StatsGraph_obj();
 		Void __construct(int X,int Y,int Width,int Height,int GraphColor,::String Unit,hx::Null< int >  __o_LabelWidth,::String Label);
@@ -43,15 +43,15 @@ class HXCPP_CLASS_ATTRIBUTES  StatsGraph_obj : public ::openfl::display::Sprite_
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("StatsGraph"); }
 
-		::openfl::text::TextField minLabel;
-		::openfl::text::TextField curLabel;
-		::openfl::text::TextField maxLabel;
-		::openfl::text::TextField avgLabel;
+		::openfl::_legacy::text::TextField minLabel;
+		::openfl::_legacy::text::TextField curLabel;
+		::openfl::_legacy::text::TextField maxLabel;
+		::openfl::_legacy::text::TextField avgLabel;
 		Float minValue;
 		Float maxValue;
 		int graphColor;
 		Array< Float > history;
-		::openfl::display::Shape _axis;
+		::openfl::_legacy::display::Shape _axis;
 		int _width;
 		int _height;
 		::String _unit;

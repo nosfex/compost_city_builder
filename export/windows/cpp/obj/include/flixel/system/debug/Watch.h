@@ -12,13 +12,13 @@ HX_DECLARE_CLASS3(flixel,system,debug,Watch)
 HX_DECLARE_CLASS3(flixel,system,debug,WatchEntry)
 HX_DECLARE_CLASS3(flixel,system,debug,Window)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -47,8 +47,8 @@ class HXCPP_CLASS_ATTRIBUTES  Watch_obj : public ::flixel::system::debug::Window
 		::String __ToString() const { return HX_CSTRING("Watch"); }
 
 		bool editing;
-		::openfl::display::Sprite _names;
-		::openfl::display::Sprite _values;
+		::openfl::_legacy::display::Sprite _names;
+		::openfl::_legacy::display::Sprite _values;
 		Array< ::Dynamic > _watching;
 		::haxe::ds::StringMap _quickWatchList;
 		virtual Void destroy( );

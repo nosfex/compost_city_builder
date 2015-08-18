@@ -11,16 +11,16 @@ HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,system,FlxSound)
 HX_DECLARE_CLASS2(haxe,io,Bytes)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,media,Sound)
-HX_DECLARE_CLASS2(openfl,media,SoundChannel)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,media,Sound)
+HX_DECLARE_CLASS3(openfl,_legacy,media,SoundChannel)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,ByteArray)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataInput)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataOutput)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IMemoryRange)
 HX_DECLARE_CLASS2(openfl,media,SoundTransform)
-HX_DECLARE_CLASS2(openfl,utils,ByteArray)
-HX_DECLARE_CLASS2(openfl,utils,IDataInput)
-HX_DECLARE_CLASS2(openfl,utils,IDataOutput)
-HX_DECLARE_CLASS2(openfl,utils,IMemoryRange)
 namespace flixel{
 namespace system{
 
@@ -60,8 +60,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSound_obj : public ::flixel::FlxBasic_obj{
 		Dynamic &onComplete_dyn() { return onComplete;}
 		bool playing;
 		Float time;
-		::openfl::media::Sound _sound;
-		::openfl::media::SoundChannel _channel;
+		::openfl::_legacy::media::Sound _sound;
+		::openfl::_legacy::media::SoundChannel _channel;
 		::openfl::media::SoundTransform _transform;
 		bool _paused;
 		Float _volume;
@@ -86,7 +86,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSound_obj : public ::flixel::FlxBasic_obj{
 		virtual ::flixel::system::FlxSound loadStream( ::String SoundURL,hx::Null< bool >  Looped,hx::Null< bool >  AutoDestroy,Dynamic OnComplete);
 		Dynamic loadStream_dyn();
 
-		virtual ::flixel::system::FlxSound loadByteArray( ::openfl::utils::ByteArray Bytes,hx::Null< bool >  Looped,hx::Null< bool >  AutoDestroy,Dynamic OnComplete);
+		virtual ::flixel::system::FlxSound loadByteArray( ::openfl::_legacy::utils::ByteArray Bytes,hx::Null< bool >  Looped,hx::Null< bool >  AutoDestroy,Dynamic OnComplete);
 		Dynamic loadByteArray_dyn();
 
 		virtual ::flixel::system::FlxSound proximity( Float X,Float Y,::flixel::FlxObject TargetObject,Float Radius,hx::Null< bool >  Pan);
@@ -125,13 +125,13 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSound_obj : public ::flixel::FlxBasic_obj{
 		virtual Void startSound( Float Position);
 		Dynamic startSound_dyn();
 
-		virtual Void stopped( ::openfl::events::Event event);
+		virtual Void stopped( ::openfl::_legacy::events::Event event);
 		Dynamic stopped_dyn();
 
 		virtual Void cleanup( bool destroySound,hx::Null< bool >  resetPosition,hx::Null< bool >  resetFading);
 		Dynamic cleanup_dyn();
 
-		virtual Void gotID3( ::openfl::events::Event event);
+		virtual Void gotID3( ::openfl::_legacy::events::Event event);
 		Dynamic gotID3_dyn();
 
 		virtual Void onFocus( );

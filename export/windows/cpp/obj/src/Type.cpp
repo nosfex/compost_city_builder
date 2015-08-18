@@ -276,6 +276,17 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(Type_obj,getEnumConstructs,return )
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Type_obj,_typeof,return )
 
+bool Type_obj::enumEq( Dynamic a,Dynamic b){
+	HX_STACK_FRAME("Type","enumEq",0x855650e1,"Type.enumEq","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",129,0x00143afe)
+	HX_STACK_ARG(a,"a")
+	HX_STACK_ARG(b,"b")
+	HX_STACK_LINE(129)
+	return (a == b);
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(Type_obj,enumEq,return )
+
 
 Type_obj::Type_obj()
 {
@@ -286,6 +297,7 @@ Dynamic Type_obj::__Field(const ::String &inName,bool inCallProp)
 	switch(inName.length) {
 	case 6:
 		if (HX_FIELD_EQ(inName,"typeof") ) { return _typeof_dyn(); }
+		if (HX_FIELD_EQ(inName,"enumEq") ) { return enumEq_dyn(); }
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"getClass") ) { return getClass_dyn(); }
@@ -346,6 +358,7 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("getClassFields"),
 	HX_CSTRING("getEnumConstructs"),
 	HX_CSTRING("typeof"),
+	HX_CSTRING("enumEq"),
 	String(null()) };
 
 #if HXCPP_SCRIPTABLE

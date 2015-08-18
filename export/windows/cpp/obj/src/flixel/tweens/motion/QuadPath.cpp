@@ -24,8 +24,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -169,7 +169,7 @@ Float y = __o_y.Default(0);
 		HX_STACK_LINE(84)
 		{
 			HX_STACK_LINE(84)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(x,y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(x,y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(84)
 			point->_inPool = false;
 			HX_STACK_LINE(84)
@@ -404,7 +404,7 @@ Float QuadPath_obj::getCurveLength( ::flixel::util::FlxPoint start,::flixel::uti
 		HX_STACK_LINE(202)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(202)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(202)
 		point->_inPool = false;
 		HX_STACK_LINE(202)
@@ -419,7 +419,7 @@ Float QuadPath_obj::getCurveLength( ::flixel::util::FlxPoint start,::flixel::uti
 		HX_STACK_LINE(203)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(203)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(203)
 		point->_inPool = false;
 		HX_STACK_LINE(203)

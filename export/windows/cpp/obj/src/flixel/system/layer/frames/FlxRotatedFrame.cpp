@@ -27,26 +27,26 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace system{
@@ -81,20 +81,20 @@ Dynamic FlxRotatedFrame_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0]);
 	return result;}
 
-::openfl::display::BitmapData FlxRotatedFrame_obj::paintOnBitmap( ::openfl::display::BitmapData bmd){
+::openfl::_legacy::display::BitmapData FlxRotatedFrame_obj::paintOnBitmap( ::openfl::_legacy::display::BitmapData bmd){
 	HX_STACK_FRAME("flixel.system.layer.frames.FlxRotatedFrame","paintOnBitmap",0xb37f3876,"flixel.system.layer.frames.FlxRotatedFrame.paintOnBitmap","flixel/system/layer/frames/FlxRotatedFrame.hx",17,0x68b07e86)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(bmd,"bmd")
 	HX_STACK_LINE(18)
-	::openfl::display::BitmapData result = null();		HX_STACK_VAR(result,"result");
+	::openfl::_legacy::display::BitmapData result = null();		HX_STACK_VAR(result,"result");
 	struct _Function_1_1{
-		inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxRotatedFrame_obj > __this,::openfl::display::BitmapData &bmd){
+		inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxRotatedFrame_obj > __this,::openfl::_legacy::display::BitmapData &bmd){
 			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/layer/frames/FlxRotatedFrame.hx",20,0x68b07e86)
 			{
 				HX_STACK_LINE(20)
 				int _g = bmd->get_width();		HX_STACK_VAR(_g,"_g");
 				struct _Function_2_1{
-					inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxRotatedFrame_obj > __this,::openfl::display::BitmapData &bmd){
+					inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxRotatedFrame_obj > __this,::openfl::_legacy::display::BitmapData &bmd){
 						HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/layer/frames/FlxRotatedFrame.hx",20,0x68b07e86)
 						{
 							HX_STACK_LINE(20)
@@ -130,7 +130,7 @@ Dynamic FlxRotatedFrame_obj::__Create(hx::DynamicArray inArgs)
 		HX_STACK_LINE(31)
 		int _g3 = ::Std_obj::_int(this->sourceSize->y);		HX_STACK_VAR(_g3,"_g3");
 		HX_STACK_LINE(31)
-		::openfl::display::BitmapData _g4 = ::openfl::display::BitmapData_obj::__new(_g2,_g3,true,(int)0,null());		HX_STACK_VAR(_g4,"_g4");
+		::openfl::_legacy::display::BitmapData _g4 = ::openfl::_legacy::display::BitmapData_obj::__new(_g2,_g3,true,(int)0,null());		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(31)
 		result = _g4;
 	}
@@ -139,7 +139,7 @@ Dynamic FlxRotatedFrame_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(34)
 	int _g6 = ::Std_obj::_int(this->frame->height);		HX_STACK_VAR(_g6,"_g6");
 	HX_STACK_LINE(34)
-	::openfl::display::BitmapData temp = ::openfl::display::BitmapData_obj::__new(_g5,_g6,true,(int)0,null());		HX_STACK_VAR(temp,"temp");
+	::openfl::_legacy::display::BitmapData temp = ::openfl::_legacy::display::BitmapData_obj::__new(_g5,_g6,true,(int)0,null());		HX_STACK_VAR(temp,"temp");
 	HX_STACK_LINE(35)
 	Float _g7 = ::flixel::system::layer::frames::FlxFrame_obj::POINT->y = (int)0;		HX_STACK_VAR(_g7,"_g7");
 	HX_STACK_LINE(35)
@@ -159,7 +159,7 @@ Dynamic FlxRotatedFrame_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(43)
 	int _g9 = ::Std_obj::_int(this->sourceSize->y);		HX_STACK_VAR(_g9,"_g9");
 	HX_STACK_LINE(43)
-	::openfl::display::BitmapData _g10 = ::openfl::display::BitmapData_obj::__new(_g8,_g9,true,(int)0,null());		HX_STACK_VAR(_g10,"_g10");
+	::openfl::_legacy::display::BitmapData _g10 = ::openfl::_legacy::display::BitmapData_obj::__new(_g8,_g9,true,(int)0,null());		HX_STACK_VAR(_g10,"_g10");
 	HX_STACK_LINE(43)
 	result = _g10;
 	HX_STACK_LINE(44)

@@ -10,8 +10,8 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,layer,TileSheetData)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxFrame)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxRotatedFrame)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace system{
 namespace layer{
@@ -38,7 +38,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxRotatedFrame_obj : public ::flixel::system::lay
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("FlxRotatedFrame"); }
 
-		virtual ::openfl::display::BitmapData paintOnBitmap( ::openfl::display::BitmapData bmd);
+		virtual ::openfl::_legacy::display::BitmapData paintOnBitmap( ::openfl::_legacy::display::BitmapData bmd);
 
 };
 

@@ -10,8 +10,8 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,util,FlxStringUtil)
 HX_DECLARE_CLASS2(flixel,util,LabelValuePair)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace util{
 
@@ -75,7 +75,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxStringUtil_obj : public hx::Object{
 		static ::String arrayToCSV( Array< int > Data,int Width,hx::Null< bool >  Invert);
 		static Dynamic arrayToCSV_dyn();
 
-		static ::String bitmapToCSV( ::openfl::display::BitmapData Bitmap,hx::Null< bool >  Invert,hx::Null< int >  Scale,Array< int > ColorMap);
+		static ::String bitmapToCSV( ::openfl::_legacy::display::BitmapData Bitmap,hx::Null< bool >  Invert,hx::Null< int >  Scale,Array< int > ColorMap);
 		static Dynamic bitmapToCSV_dyn();
 
 		static ::String imageToCSV( Dynamic ImageFile,hx::Null< bool >  Invert,hx::Null< int >  Scale);

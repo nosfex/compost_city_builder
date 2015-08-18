@@ -42,23 +42,23 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
 namespace loaders{
 
-Void CachedGraphics_obj::__construct(::String Key,::openfl::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist)
+Void CachedGraphics_obj::__construct(::String Key,::openfl::_legacy::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist)
 {
 HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","new",0xc149abe7,"flixel.util.loaders.CachedGraphics.new","flixel/util/loaders/CachedGraphics.hx",10,0x7a61d3e8)
 HX_STACK_THIS(this)
@@ -89,7 +89,7 @@ bool Persist = __o_Persist.Default(false);
 //CachedGraphics_obj::~CachedGraphics_obj() { }
 
 Dynamic CachedGraphics_obj::__CreateEmpty() { return  new CachedGraphics_obj; }
-hx::ObjectPtr< CachedGraphics_obj > CachedGraphics_obj::__new(::String Key,::openfl::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist)
+hx::ObjectPtr< CachedGraphics_obj > CachedGraphics_obj::__new(::String Key,::openfl::_legacy::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist)
 {  hx::ObjectPtr< CachedGraphics_obj > result = new CachedGraphics_obj();
 	result->__construct(Key,Bitmap,__o_Persist);
 	return result;}
@@ -101,13 +101,13 @@ Dynamic CachedGraphics_obj::__Create(hx::DynamicArray inArgs)
 
 Void CachedGraphics_obj::dump( ){
 {
-		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","dump",0x589cb7cd,"flixel.util.loaders.CachedGraphics.dump","flixel/util/loaders/CachedGraphics.hx",75,0x7a61d3e8)
+		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","dump",0x589cb7cd,"flixel.util.loaders.CachedGraphics.dump","flixel/util/loaders/CachedGraphics.hx",76,0x7a61d3e8)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(75)
+		HX_STACK_LINE(76)
 		if (((bool((this->assetsClass != null())) || bool((this->assetsKey != null()))))){
-			HX_STACK_LINE(77)
-			this->bitmap->dumpBits();
 			HX_STACK_LINE(78)
+			this->bitmap->dumpBits();
+			HX_STACK_LINE(79)
 			this->isDumped = true;
 		}
 	}
@@ -119,23 +119,23 @@ HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,dump,(void))
 
 Void CachedGraphics_obj::undump( ){
 {
-		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","undump",0x016856e6,"flixel.util.loaders.CachedGraphics.undump","flixel/util/loaders/CachedGraphics.hx",89,0x7a61d3e8)
+		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","undump",0x016856e6,"flixel.util.loaders.CachedGraphics.undump","flixel/util/loaders/CachedGraphics.hx",91,0x7a61d3e8)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(89)
+		HX_STACK_LINE(91)
 		if ((this->isDumped)){
-			HX_STACK_LINE(91)
-			::openfl::display::BitmapData newBitmap = this->getBitmapFromSystem();		HX_STACK_VAR(newBitmap,"newBitmap");
 			HX_STACK_LINE(93)
+			::openfl::_legacy::display::BitmapData newBitmap = this->getBitmapFromSystem();		HX_STACK_VAR(newBitmap,"newBitmap");
+			HX_STACK_LINE(95)
 			if (((newBitmap != null()))){
-				HX_STACK_LINE(95)
+				HX_STACK_LINE(97)
 				this->bitmap = newBitmap;
-				HX_STACK_LINE(96)
+				HX_STACK_LINE(98)
 				if (((this->_tilesheet != null()))){
-					HX_STACK_LINE(99)
+					HX_STACK_LINE(101)
 					this->_tilesheet->onContext(newBitmap);
 				}
 			}
-			HX_STACK_LINE(103)
+			HX_STACK_LINE(105)
 			this->isDumped = false;
 		}
 	}
@@ -147,13 +147,13 @@ HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,undump,(void))
 
 Void CachedGraphics_obj::onContext( ){
 {
-		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","onContext",0x22400957,"flixel.util.loaders.CachedGraphics.onContext","flixel/util/loaders/CachedGraphics.hx",115,0x7a61d3e8)
+		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","onContext",0x22400957,"flixel.util.loaders.CachedGraphics.onContext","flixel/util/loaders/CachedGraphics.hx",117,0x7a61d3e8)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(115)
+		HX_STACK_LINE(117)
 		if ((this->isDumped)){
-			HX_STACK_LINE(117)
+			HX_STACK_LINE(119)
 			this->undump();
-			HX_STACK_LINE(118)
+			HX_STACK_LINE(120)
 			this->dump();
 		}
 	}
@@ -164,40 +164,40 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,onContext,(void))
 
 ::flixel::util::loaders::TextureRegion CachedGraphics_obj::getRegionForFrame( ::String FrameName){
-	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","getRegionForFrame",0x4be29a75,"flixel.util.loaders.CachedGraphics.getRegionForFrame","flixel/util/loaders/CachedGraphics.hx",123,0x7a61d3e8)
+	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","getRegionForFrame",0x4be29a75,"flixel.util.loaders.CachedGraphics.getRegionForFrame","flixel/util/loaders/CachedGraphics.hx",125,0x7a61d3e8)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(FrameName,"FrameName")
-	HX_STACK_LINE(124)
+	HX_STACK_LINE(126)
 	::flixel::util::loaders::TextureRegion region = ::flixel::util::loaders::TextureRegion_obj::__new(hx::ObjectPtr<OBJ_>(this),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(region,"region");
-	HX_STACK_LINE(125)
+	HX_STACK_LINE(127)
 	::flixel::system::layer::frames::FlxFrame frame;		HX_STACK_VAR(frame,"frame");
-	HX_STACK_LINE(125)
+	HX_STACK_LINE(127)
 	{
-		HX_STACK_LINE(125)
+		HX_STACK_LINE(127)
 		::flixel::system::layer::TileSheetData _this = this->get_tilesheet();		HX_STACK_VAR(_this,"_this");
-		HX_STACK_LINE(125)
+		HX_STACK_LINE(127)
 		frame = _this->flxFrames->get(FrameName);
 	}
-	HX_STACK_LINE(127)
+	HX_STACK_LINE(129)
 	if (((frame != null()))){
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(131)
 		int _g = ::Std_obj::_int(frame->frame->x);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(131)
 		region->region->startX = _g;
-		HX_STACK_LINE(130)
+		HX_STACK_LINE(132)
 		int _g1 = ::Std_obj::_int(frame->frame->y);		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(130)
+		HX_STACK_LINE(132)
 		region->region->startY = _g1;
-		HX_STACK_LINE(131)
+		HX_STACK_LINE(133)
 		int _g2 = ::Std_obj::_int(frame->frame->width);		HX_STACK_VAR(_g2,"_g2");
-		HX_STACK_LINE(131)
+		HX_STACK_LINE(133)
 		region->region->width = _g2;
-		HX_STACK_LINE(132)
+		HX_STACK_LINE(134)
 		int _g3 = ::Std_obj::_int(frame->frame->height);		HX_STACK_VAR(_g3,"_g3");
-		HX_STACK_LINE(132)
+		HX_STACK_LINE(134)
 		region->region->height = _g3;
 	}
-	HX_STACK_LINE(135)
+	HX_STACK_LINE(137)
 	return region;
 }
 
@@ -206,25 +206,25 @@ HX_DEFINE_DYNAMIC_FUNC1(CachedGraphics_obj,getRegionForFrame,return )
 
 Void CachedGraphics_obj::destroy( ){
 {
-		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","destroy",0x801dd801,"flixel.util.loaders.CachedGraphics.destroy","flixel/util/loaders/CachedGraphics.hx",139,0x7a61d3e8)
+		HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","destroy",0x801dd801,"flixel.util.loaders.CachedGraphics.destroy","flixel/util/loaders/CachedGraphics.hx",141,0x7a61d3e8)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(140)
-		::openfl::display::BitmapData _g = ::flixel::util::FlxDestroyUtil_obj::dispose(this->bitmap);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(142)
+		::openfl::_legacy::display::BitmapData _g = ::flixel::util::FlxDestroyUtil_obj::dispose(this->bitmap);		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(142)
 		this->bitmap = _g;
-		HX_STACK_LINE(141)
-		::flixel::util::loaders::TexturePackerData _g1 = ::flixel::util::FlxDestroyUtil_obj::destroy(this->data);		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(141)
-		this->data = _g1;
-		HX_STACK_LINE(142)
-		::flixel::system::layer::TileSheetData _g2 = ::flixel::util::FlxDestroyUtil_obj::destroy(this->_tilesheet);		HX_STACK_VAR(_g2,"_g2");
-		HX_STACK_LINE(142)
-		this->_tilesheet = _g2;
 		HX_STACK_LINE(143)
-		this->key = null();
+		::flixel::util::loaders::TexturePackerData _g1 = ::flixel::util::FlxDestroyUtil_obj::destroy(this->data);		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(143)
+		this->data = _g1;
 		HX_STACK_LINE(144)
-		this->assetsKey = null();
+		::flixel::system::layer::TileSheetData _g2 = ::flixel::util::FlxDestroyUtil_obj::destroy(this->_tilesheet);		HX_STACK_VAR(_g2,"_g2");
+		HX_STACK_LINE(144)
+		this->_tilesheet = _g2;
 		HX_STACK_LINE(145)
+		this->key = null();
+		HX_STACK_LINE(146)
+		this->assetsKey = null();
+		HX_STACK_LINE(147)
 		this->assetsClass = null();
 	}
 return null();
@@ -234,53 +234,53 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,destroy,(void))
 
 ::flixel::system::layer::TileSheetData CachedGraphics_obj::get_tilesheet( ){
-	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","get_tilesheet",0xd5f1cecf,"flixel.util.loaders.CachedGraphics.get_tilesheet","flixel/util/loaders/CachedGraphics.hx",149,0x7a61d3e8)
+	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","get_tilesheet",0xd5f1cecf,"flixel.util.loaders.CachedGraphics.get_tilesheet","flixel/util/loaders/CachedGraphics.hx",151,0x7a61d3e8)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(150)
+	HX_STACK_LINE(152)
 	if (((this->_tilesheet == null()))){
-		HX_STACK_LINE(152)
+		HX_STACK_LINE(154)
 		if ((this->isDumped)){
-			HX_STACK_LINE(154)
+			HX_STACK_LINE(156)
 			this->onContext();
 		}
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(159)
 		::flixel::system::layer::TileSheetData _g = ::flixel::system::layer::TileSheetData_obj::__new(this->bitmap);		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(159)
 		this->_tilesheet = _g;
 	}
-	HX_STACK_LINE(160)
+	HX_STACK_LINE(162)
 	return this->_tilesheet;
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,get_tilesheet,return )
 
-::openfl::display::BitmapData CachedGraphics_obj::getBitmapFromSystem( ){
-	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","getBitmapFromSystem",0xd5289305,"flixel.util.loaders.CachedGraphics.getBitmapFromSystem","flixel/util/loaders/CachedGraphics.hx",164,0x7a61d3e8)
+::openfl::_legacy::display::BitmapData CachedGraphics_obj::getBitmapFromSystem( ){
+	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","getBitmapFromSystem",0xd5289305,"flixel.util.loaders.CachedGraphics.getBitmapFromSystem","flixel/util/loaders/CachedGraphics.hx",166,0x7a61d3e8)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(165)
-	::openfl::display::BitmapData newBitmap = null();		HX_STACK_VAR(newBitmap,"newBitmap");
-	HX_STACK_LINE(166)
+	HX_STACK_LINE(167)
+	::openfl::_legacy::display::BitmapData newBitmap = null();		HX_STACK_VAR(newBitmap,"newBitmap");
+	HX_STACK_LINE(168)
 	if (((this->assetsClass != null()))){
-		HX_STACK_LINE(168)
+		HX_STACK_LINE(170)
 		::Class _g;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(168)
+		HX_STACK_LINE(170)
 		_g = hx::TCast< Class >::cast(this->assetsClass);
-		HX_STACK_LINE(168)
-		::openfl::display::BitmapData _g1 = ::Type_obj::createInstance(_g,Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(168)
+		HX_STACK_LINE(170)
+		::openfl::_legacy::display::BitmapData _g1 = ::Type_obj::createInstance(_g,Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(170)
 		newBitmap = _g1;
 	}
 	else{
-		HX_STACK_LINE(170)
+		HX_STACK_LINE(172)
 		if (((this->assetsKey != null()))){
-			HX_STACK_LINE(172)
-			::openfl::display::BitmapData _g2 = ::openfl::Assets_obj::getBitmapData(this->assetsKey,false);		HX_STACK_VAR(_g2,"_g2");
-			HX_STACK_LINE(172)
+			HX_STACK_LINE(174)
+			::openfl::_legacy::display::BitmapData _g2 = ::openfl::_legacy::Assets_obj::getBitmapData(this->assetsKey,false);		HX_STACK_VAR(_g2,"_g2");
+			HX_STACK_LINE(174)
 			newBitmap = _g2;
 		}
 	}
-	HX_STACK_LINE(175)
+	HX_STACK_LINE(177)
 	return newBitmap;
 }
 
@@ -288,9 +288,9 @@ HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,get_tilesheet,return )
 HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,getBitmapFromSystem,return )
 
 bool CachedGraphics_obj::get_canBeDumped( ){
-	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","get_canBeDumped",0x64ad8a84,"flixel.util.loaders.CachedGraphics.get_canBeDumped","flixel/util/loaders/CachedGraphics.hx",180,0x7a61d3e8)
+	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","get_canBeDumped",0x64ad8a84,"flixel.util.loaders.CachedGraphics.get_canBeDumped","flixel/util/loaders/CachedGraphics.hx",182,0x7a61d3e8)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(180)
+	HX_STACK_LINE(182)
 	return (bool((this->assetsClass != null())) || bool((this->assetsKey != null())));
 }
 
@@ -298,15 +298,15 @@ bool CachedGraphics_obj::get_canBeDumped( ){
 HX_DEFINE_DYNAMIC_FUNC0(CachedGraphics_obj,get_canBeDumped,return )
 
 int CachedGraphics_obj::set_useCount( int Value){
-	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","set_useCount",0xf01d7a1e,"flixel.util.loaders.CachedGraphics.set_useCount","flixel/util/loaders/CachedGraphics.hx",184,0x7a61d3e8)
+	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","set_useCount",0xf01d7a1e,"flixel.util.loaders.CachedGraphics.set_useCount","flixel/util/loaders/CachedGraphics.hx",186,0x7a61d3e8)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(185)
+	HX_STACK_LINE(187)
 	if (((bool((bool((Value <= (int)0)) && bool(this->destroyOnNoUse))) && bool(!(this->persist))))){
-		HX_STACK_LINE(187)
+		HX_STACK_LINE(189)
 		::flixel::FlxG_obj::bitmap->remove(this->key);
 	}
-	HX_STACK_LINE(190)
+	HX_STACK_LINE(192)
 	return this->useCount = Value;
 }
 
@@ -314,15 +314,15 @@ int CachedGraphics_obj::set_useCount( int Value){
 HX_DEFINE_DYNAMIC_FUNC1(CachedGraphics_obj,set_useCount,return )
 
 bool CachedGraphics_obj::set_destroyOnNoUse( bool Value){
-	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","set_destroyOnNoUse",0xf2e436a3,"flixel.util.loaders.CachedGraphics.set_destroyOnNoUse","flixel/util/loaders/CachedGraphics.hx",194,0x7a61d3e8)
+	HX_STACK_FRAME("flixel.util.loaders.CachedGraphics","set_destroyOnNoUse",0xf2e436a3,"flixel.util.loaders.CachedGraphics.set_destroyOnNoUse","flixel/util/loaders/CachedGraphics.hx",196,0x7a61d3e8)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
-	HX_STACK_LINE(195)
+	HX_STACK_LINE(197)
 	if (((bool((bool((bool(Value) && bool((this->useCount == (int)0)))) && bool((this->key != null())))) && bool(!(this->persist))))){
-		HX_STACK_LINE(197)
+		HX_STACK_LINE(199)
 		::flixel::FlxG_obj::bitmap->remove(this->key);
 	}
-	HX_STACK_LINE(200)
+	HX_STACK_LINE(202)
 	return this->destroyOnNoUse = Value;
 }
 
@@ -434,7 +434,7 @@ Dynamic CachedGraphics_obj::__SetField(const ::String &inName,const Dynamic &inV
 		if (HX_FIELD_EQ(inName,"data") ) { data=inValue.Cast< ::flixel::util::loaders::TexturePackerData >(); return inValue; }
 		break;
 	case 6:
-		if (HX_FIELD_EQ(inName,"bitmap") ) { bitmap=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"bitmap") ) { bitmap=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"persist") ) { persist=inValue.Cast< bool >(); return inValue; }
@@ -482,7 +482,7 @@ static ::String sStaticFields[] = {
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsString,(int)offsetof(CachedGraphics_obj,key),HX_CSTRING("key")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(CachedGraphics_obj,bitmap),HX_CSTRING("bitmap")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(CachedGraphics_obj,bitmap),HX_CSTRING("bitmap")},
 	{hx::fsString,(int)offsetof(CachedGraphics_obj,assetsKey),HX_CSTRING("assetsKey")},
 	{hx::fsObject /*::Class*/ ,(int)offsetof(CachedGraphics_obj,assetsClass),HX_CSTRING("assetsClass")},
 	{hx::fsObject /*::flixel::util::loaders::TexturePackerData*/ ,(int)offsetof(CachedGraphics_obj,data),HX_CSTRING("data")},

@@ -24,53 +24,56 @@
 #ifndef INCLUDED_haxe_io_Path
 #include <haxe/io/Path.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_Loader
-#include <openfl/display/Loader.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_LoaderInfo
-#include <openfl/display/LoaderInfo.h>
+#ifndef INCLUDED_openfl__legacy_display_Loader
+#include <openfl/_legacy/display/Loader.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_LoaderInfo
+#include <openfl/_legacy/display/LoaderInfo.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_net_URLLoader
+#include <openfl/_legacy/net/URLLoader.h>
 #endif
 #ifndef INCLUDED_openfl_display_StageAlign
 #include <openfl/display/StageAlign.h>
 #endif
 #ifndef INCLUDED_openfl_display_StageScaleMode
 #include <openfl/display/StageScaleMode.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_net_URLLoader
-#include <openfl/net/URLLoader.h>
 #endif
 
 Void ApplicationMain_obj::__construct()
@@ -91,11 +94,11 @@ Dynamic ApplicationMain_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
-::openfl::display::Sprite ApplicationMain_obj::barA;
+::openfl::_legacy::display::Sprite ApplicationMain_obj::barA;
 
-::openfl::display::Sprite ApplicationMain_obj::barB;
+::openfl::_legacy::display::Sprite ApplicationMain_obj::barB;
 
-::openfl::display::Sprite ApplicationMain_obj::container;
+::openfl::_legacy::display::Sprite ApplicationMain_obj::container;
 
 int ApplicationMain_obj::forceHeight;
 
@@ -103,28 +106,28 @@ int ApplicationMain_obj::forceWidth;
 
 Void ApplicationMain_obj::main( ){
 {
-		HX_STACK_FRAME("ApplicationMain","main",0x93d2f73e,"ApplicationMain.main","ApplicationMain.hx",17,0x0780ded5)
-		HX_STACK_LINE(19)
-		::openfl::Lib_obj::setPackage(HX_CSTRING("HaxeFlixel"),HX_CSTRING("FlxProject"),HX_CSTRING("com.example.myapp"),HX_CSTRING("0.0.1"));
+		HX_STACK_FRAME("ApplicationMain","main",0x93d2f73e,"ApplicationMain.main","ApplicationMain.hx",23,0x0780ded5)
+		HX_STACK_LINE(25)
+		::openfl::_legacy::Lib_obj::setPackage(HX_CSTRING("HaxeFlixel"),HX_CSTRING("FlxProject"),HX_CSTRING("com.example.myapp"),HX_CSTRING("0.0.1"));
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","ApplicationMain.hx",35,0x0780ded5)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","ApplicationMain.hx",41,0x0780ded5)
 			{
-				HX_STACK_LINE(37)
-				::openfl::Lib_obj::get_current()->get_stage()->set_align(::openfl::display::StageAlign_obj::TOP_LEFT);
-				HX_STACK_LINE(38)
-				::openfl::Lib_obj::get_current()->get_stage()->set_scaleMode(::openfl::display::StageScaleMode_obj::NO_SCALE);
-				HX_STACK_LINE(39)
-				::openfl::Lib_obj::get_current()->loaderInfo = ::openfl::display::LoaderInfo_obj::create(null());
-				HX_STACK_LINE(61)
+				HX_STACK_LINE(43)
+				::openfl::_legacy::Lib_obj::get_current()->get_stage()->set_align(::openfl::display::StageAlign_obj::TOP_LEFT);
+				HX_STACK_LINE(44)
+				::openfl::_legacy::Lib_obj::get_current()->get_stage()->set_scaleMode(::openfl::display::StageScaleMode_obj::NO_SCALE);
+				HX_STACK_LINE(45)
+				::openfl::_legacy::Lib_obj::get_current()->loaderInfo = ::openfl::_legacy::display::LoaderInfo_obj::create(null());
+				HX_STACK_LINE(67)
 				try
 				{
 				HX_STACK_CATCHABLE(Dynamic, 0);
 				{
-					HX_STACK_LINE(63)
+					HX_STACK_LINE(69)
 					::String currentPath = ::haxe::io::Path_obj::directory(::Sys_obj::executablePath());		HX_STACK_VAR(currentPath,"currentPath");
-					HX_STACK_LINE(64)
+					HX_STACK_LINE(70)
 					::Sys_obj::setCwd(currentPath);
 				}
 				}
@@ -135,41 +138,43 @@ Void ApplicationMain_obj::main( ){
 						}
 					}
 				}
-				HX_STACK_LINE(79)
+				HX_STACK_LINE(87)
+				::openfl::_legacy::Assets_obj::initialize();
+				HX_STACK_LINE(89)
 				bool hasMain = false;		HX_STACK_VAR(hasMain,"hasMain");
-				HX_STACK_LINE(81)
+				HX_STACK_LINE(91)
 				{
-					HX_STACK_LINE(81)
+					HX_STACK_LINE(91)
 					int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-					HX_STACK_LINE(81)
+					HX_STACK_LINE(91)
 					Array< ::String > _g1 = ::Type_obj::getClassFields(hx::ClassOf< ::Main >());		HX_STACK_VAR(_g1,"_g1");
-					HX_STACK_LINE(81)
+					HX_STACK_LINE(91)
 					while(((_g < _g1->length))){
-						HX_STACK_LINE(81)
+						HX_STACK_LINE(91)
 						::String methodName = _g1->__get(_g);		HX_STACK_VAR(methodName,"methodName");
-						HX_STACK_LINE(81)
+						HX_STACK_LINE(91)
 						++(_g);
-						HX_STACK_LINE(83)
+						HX_STACK_LINE(93)
 						if (((methodName == HX_CSTRING("main")))){
-							HX_STACK_LINE(85)
+							HX_STACK_LINE(95)
 							hasMain = true;
-							HX_STACK_LINE(86)
+							HX_STACK_LINE(96)
 							break;
 						}
 					}
 				}
-				HX_STACK_LINE(92)
+				HX_STACK_LINE(102)
 				if ((hasMain)){
-					HX_STACK_LINE(94)
+					HX_STACK_LINE(104)
 					::Reflect_obj::callMethod(hx::ClassOf< ::Main >(),::Reflect_obj::field(hx::ClassOf< ::Main >(),HX_CSTRING("main")),Dynamic( Array_obj<Dynamic>::__new()));
 				}
 				else{
-					HX_STACK_LINE(98)
+					HX_STACK_LINE(108)
 					::DocumentClass instance = ::Type_obj::createInstance(hx::ClassOf< ::DocumentClass >(),Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(instance,"instance");
-					HX_STACK_LINE(100)
-					if ((::Std_obj::is(instance,hx::ClassOf< ::openfl::display::DisplayObject >()))){
-						HX_STACK_LINE(102)
-						::openfl::Lib_obj::get_current()->addChild(instance);
+					HX_STACK_LINE(110)
+					if ((::Std_obj::is(instance,hx::ClassOf< ::openfl::_legacy::display::DisplayObject >()))){
+						HX_STACK_LINE(112)
+						::openfl::_legacy::Lib_obj::get_current()->addChild(instance);
 					}
 				}
 			}
@@ -177,8 +182,8 @@ Void ApplicationMain_obj::main( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(35)
-		::openfl::Lib_obj::create( Dynamic(new _Function_1_1()),(int)640,(int)480,(int)60,(int)0,(int((int((int((int((int((int((int((int((int((int(::openfl::Lib_obj::HARDWARE) | int(::openfl::Lib_obj::ALLOW_SHADERS))) | int((int)0))) | int((int)0))) | int((int)0))) | int(::openfl::Lib_obj::RESIZABLE))) | int((int)0))) | int(::openfl::Lib_obj::VSYNC))) | int((int)0))) | int((int)0))) | int((int)0)),HX_CSTRING("FlxProject"),null(),null());
+		HX_STACK_LINE(41)
+		::openfl::_legacy::Lib_obj::create( Dynamic(new _Function_1_1()),(int)640,(int)480,(int)60,(int)0,(int((int((int((int((int((int((int((int((int((int(::openfl::_legacy::Lib_obj::HARDWARE) | int(::openfl::_legacy::Lib_obj::ALLOW_SHADERS))) | int((int)0))) | int((int)0))) | int((int)0))) | int(::openfl::_legacy::Lib_obj::RESIZABLE))) | int((int)0))) | int(::openfl::_legacy::Lib_obj::VSYNC))) | int((int)0))) | int((int)0))) | int((int)0)),HX_CSTRING("FlxProject"),null(),null());
 	}
 return null();
 }
@@ -215,11 +220,11 @@ Dynamic ApplicationMain_obj::__SetField(const ::String &inName,const Dynamic &in
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"barA") ) { barA=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"barB") ) { barB=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"barA") ) { barA=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"barB") ) { barB=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 9:
-		if (HX_FIELD_EQ(inName,"container") ) { container=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"container") ) { container=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"forceWidth") ) { forceWidth=inValue.Cast< int >(); return inValue; }

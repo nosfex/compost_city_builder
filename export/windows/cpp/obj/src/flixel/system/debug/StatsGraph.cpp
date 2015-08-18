@@ -12,50 +12,50 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_CapsStyle
-#include <openfl/display/CapsStyle.h>
+#ifndef INCLUDED_openfl__legacy_display_CapsStyle
+#include <openfl/_legacy/display/CapsStyle.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_JointStyle
-#include <openfl/display/JointStyle.h>
+#ifndef INCLUDED_openfl__legacy_display_JointStyle
+#include <openfl/_legacy/display/JointStyle.h>
 #endif
-#ifndef INCLUDED_openfl_display_LineScaleMode
-#include <openfl/display/LineScaleMode.h>
+#ifndef INCLUDED_openfl__legacy_display_LineScaleMode
+#include <openfl/_legacy/display/LineScaleMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_Shape
-#include <openfl/display/Shape.h>
+#ifndef INCLUDED_openfl__legacy_display_Shape
+#include <openfl/_legacy/display/Shape.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormatAlign
-#include <openfl/text/TextFormatAlign.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormatAlign
+#include <openfl/_legacy/text/TextFormatAlign.h>
 #endif
 namespace flixel{
 namespace system{
@@ -107,31 +107,31 @@ int LabelWidth = __o_LabelWidth.Default(45);
 	HX_STACK_LINE(52)
 	this->history = Array_obj< Float >::__new();
 	HX_STACK_LINE(54)
-	::openfl::display::Shape _g = ::openfl::display::Shape_obj::__new();		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::display::Shape _g = ::openfl::_legacy::display::Shape_obj::__new();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(54)
 	this->_axis = _g;
 	HX_STACK_LINE(55)
 	this->_axis->set_x((this->_labelWidth + (int)10));
 	HX_STACK_LINE(57)
-	::openfl::text::TextField _g1 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,(int)0,(int)-1426063361,(int)11);		HX_STACK_VAR(_g1,"_g1");
+	::openfl::_legacy::text::TextField _g1 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,(int)0,(int)-1426063361,(int)11);		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(57)
 	this->maxLabel = _g1;
 	HX_STACK_LINE(58)
-	::openfl::text::TextField _g2 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,((Float(this->_height) / Float((int)2)) - 5.5),this->graphColor,(int)11);		HX_STACK_VAR(_g2,"_g2");
+	::openfl::_legacy::text::TextField _g2 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,((Float(this->_height) / Float((int)2)) - 5.5),this->graphColor,(int)11);		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(58)
 	this->curLabel = _g2;
 	HX_STACK_LINE(59)
-	::openfl::text::TextField _g3 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,(this->_height - (int)11),(int)-1426063361,(int)11);		HX_STACK_VAR(_g3,"_g3");
+	::openfl::_legacy::text::TextField _g3 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,(this->_height - (int)11),(int)-1426063361,(int)11);		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(59)
 	this->minLabel = _g3;
 	HX_STACK_LINE(61)
-	::openfl::text::TextField _g4 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((this->_labelWidth + (int)20),(((Float(this->_height) / Float((int)2)) - 5.5) - (int)10),(int)-1426063361,(int)11);		HX_STACK_VAR(_g4,"_g4");
+	::openfl::_legacy::text::TextField _g4 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((this->_labelWidth + (int)20),(((Float(this->_height) / Float((int)2)) - 5.5) - (int)10),(int)-1426063361,(int)11);		HX_STACK_VAR(_g4,"_g4");
 	HX_STACK_LINE(61)
 	this->avgLabel = _g4;
 	HX_STACK_LINE(62)
 	this->avgLabel->set_width(this->_width);
 	HX_STACK_LINE(63)
-	this->avgLabel->get_defaultTextFormat()->align = ::openfl::text::TextFormatAlign_obj::CENTER;
+	this->avgLabel->get_defaultTextFormat()->align = ::openfl::_legacy::text::TextFormatAlign_obj::CENTER;
 	HX_STACK_LINE(64)
 	this->avgLabel->set_alpha(0.5);
 	HX_STACK_LINE(66)
@@ -169,7 +169,7 @@ Void StatsGraph_obj::drawAxis( ){
 		HX_STACK_FRAME("flixel.system.debug.StatsGraph","drawAxis",0x602722bc,"flixel.system.debug.StatsGraph.drawAxis","flixel/system/debug/StatsGraph.hx",79,0x92e18906)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(80)
-		::openfl::display::Graphics gfx = this->_axis->get_graphics();		HX_STACK_VAR(gfx,"gfx");
+		::openfl::_legacy::display::Graphics gfx = this->_axis->get_graphics();		HX_STACK_VAR(gfx,"gfx");
 		HX_STACK_LINE(81)
 		gfx->clear();
 		HX_STACK_LINE(82)
@@ -198,7 +198,7 @@ Void StatsGraph_obj::drawGraph( ){
 		HX_STACK_FRAME("flixel.system.debug.StatsGraph","drawGraph",0x328160d3,"flixel.system.debug.StatsGraph.drawGraph","flixel/system/debug/StatsGraph.hx",100,0x92e18906)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(101)
-		::openfl::display::Graphics gfx = this->get_graphics();		HX_STACK_VAR(gfx,"gfx");
+		::openfl::_legacy::display::Graphics gfx = this->get_graphics();		HX_STACK_VAR(gfx,"gfx");
 		HX_STACK_LINE(102)
 		gfx->clear();
 		HX_STACK_LINE(103)
@@ -427,7 +427,7 @@ void StatsGraph_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(_unit,"_unit");
 	HX_MARK_MEMBER_NAME(_labelWidth,"_labelWidth");
 	HX_MARK_MEMBER_NAME(_label,"_label");
-	::openfl::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -447,7 +447,7 @@ void StatsGraph_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(_unit,"_unit");
 	HX_VISIT_MEMBER_NAME(_labelWidth,"_labelWidth");
 	HX_VISIT_MEMBER_NAME(_label,"_label");
-	::openfl::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic StatsGraph_obj::__Field(const ::String &inName,bool inCallProp)
@@ -493,7 +493,7 @@ Dynamic StatsGraph_obj::__SetField(const ::String &inName,const Dynamic &inValue
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_axis") ) { _axis=inValue.Cast< ::openfl::display::Shape >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_axis") ) { _axis=inValue.Cast< ::openfl::_legacy::display::Shape >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_unit") ) { _unit=inValue.Cast< ::String >(); return inValue; }
 		break;
 	case 6:
@@ -505,10 +505,10 @@ Dynamic StatsGraph_obj::__SetField(const ::String &inName,const Dynamic &inValue
 		if (HX_FIELD_EQ(inName,"_height") ) { _height=inValue.Cast< int >(); return inValue; }
 		break;
 	case 8:
-		if (HX_FIELD_EQ(inName,"minLabel") ) { minLabel=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"curLabel") ) { curLabel=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"maxLabel") ) { maxLabel=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"avgLabel") ) { avgLabel=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"minLabel") ) { minLabel=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"curLabel") ) { curLabel=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"maxLabel") ) { maxLabel=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"avgLabel") ) { avgLabel=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"minValue") ) { minValue=inValue.Cast< Float >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"maxValue") ) { maxValue=inValue.Cast< Float >(); return inValue; }
 		break;
@@ -548,15 +548,15 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(StatsGraph_obj,minLabel),HX_CSTRING("minLabel")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(StatsGraph_obj,curLabel),HX_CSTRING("curLabel")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(StatsGraph_obj,maxLabel),HX_CSTRING("maxLabel")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(StatsGraph_obj,avgLabel),HX_CSTRING("avgLabel")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(StatsGraph_obj,minLabel),HX_CSTRING("minLabel")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(StatsGraph_obj,curLabel),HX_CSTRING("curLabel")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(StatsGraph_obj,maxLabel),HX_CSTRING("maxLabel")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(StatsGraph_obj,avgLabel),HX_CSTRING("avgLabel")},
 	{hx::fsFloat,(int)offsetof(StatsGraph_obj,minValue),HX_CSTRING("minValue")},
 	{hx::fsFloat,(int)offsetof(StatsGraph_obj,maxValue),HX_CSTRING("maxValue")},
 	{hx::fsInt,(int)offsetof(StatsGraph_obj,graphColor),HX_CSTRING("graphColor")},
 	{hx::fsObject /*Array< Float >*/ ,(int)offsetof(StatsGraph_obj,history),HX_CSTRING("history")},
-	{hx::fsObject /*::openfl::display::Shape*/ ,(int)offsetof(StatsGraph_obj,_axis),HX_CSTRING("_axis")},
+	{hx::fsObject /*::openfl::_legacy::display::Shape*/ ,(int)offsetof(StatsGraph_obj,_axis),HX_CSTRING("_axis")},
 	{hx::fsInt,(int)offsetof(StatsGraph_obj,_width),HX_CSTRING("_width")},
 	{hx::fsInt,(int)offsetof(StatsGraph_obj,_height),HX_CSTRING("_height")},
 	{hx::fsString,(int)offsetof(StatsGraph_obj,_unit),HX_CSTRING("_unit")},

@@ -15,8 +15,8 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton)
 HX_DECLARE_CLASS3(flixel,ui,_FlxTypedButton,FlxButtonEvent)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
 namespace flixel{
 namespace ui{
 
@@ -69,7 +69,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTypedButton_obj : public ::flixel::FlxSprite_ob
 		virtual Void updateStatus( bool Overlap,bool JustPressed,bool Pressed,::flixel::input::touch::FlxTouch Touch);
 		Dynamic updateStatus_dyn();
 
-		virtual Void onUpEventListener( ::openfl::events::MouseEvent E);
+		virtual Void onUpEventListener( ::openfl::_legacy::events::MouseEvent E);
 		Dynamic onUpEventListener_dyn();
 
 		virtual Void onUpHandler( );

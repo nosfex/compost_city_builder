@@ -15,10 +15,10 @@ HX_DECLARE_CLASS4(flixel,text,pxText,_PxBitmapFont,HelperSymbol)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
 HX_DECLARE_CLASS2(haxe,ds,IntMap)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace text{
 namespace pxText{
@@ -51,15 +51,15 @@ class HXCPP_CLASS_ATTRIBUTES  PxBitmapFont_obj : public hx::Object{
 		int _bgTileID;
 		::String _glyphString;
 		int _maxHeight;
-		::openfl::geom::Point _point;
+		::openfl::_legacy::geom::Point _point;
 		Array< ::Dynamic > _tileRects;
 		Array< ::Dynamic > _symbols;
 		::flixel::system::layer::Region _region;
 		::flixel::util::loaders::CachedGraphics cachedGraphics;
-		virtual ::flixel::text::pxText::PxBitmapFont loadPixelizer( ::openfl::display::BitmapData PxBitmapData,::String PxLetters);
+		virtual ::flixel::text::pxText::PxBitmapFont loadPixelizer( ::openfl::_legacy::display::BitmapData PxBitmapData,::String PxLetters);
 		Dynamic loadPixelizer_dyn();
 
-		virtual ::flixel::text::pxText::PxBitmapFont loadAngelCode( ::openfl::display::BitmapData pBitmapData,::Xml pXMLData);
+		virtual ::flixel::text::pxText::PxBitmapFont loadAngelCode( ::openfl::_legacy::display::BitmapData pBitmapData,::Xml pXMLData);
 		Dynamic loadAngelCode_dyn();
 
 		virtual Void updateGlyphData( ::flixel::system::layer::TileSheetData Tiles);
@@ -68,16 +68,16 @@ class HXCPP_CLASS_ATTRIBUTES  PxBitmapFont_obj : public hx::Object{
 		virtual Void reset( );
 		Dynamic reset_dyn();
 
-		virtual ::openfl::display::BitmapData preparePixelizerBitmapData( ::openfl::display::BitmapData PxBitmapData,Array< ::Dynamic > PxRects);
+		virtual ::openfl::_legacy::display::BitmapData preparePixelizerBitmapData( ::openfl::_legacy::display::BitmapData PxBitmapData,Array< ::Dynamic > PxRects);
 		Dynamic preparePixelizerBitmapData_dyn();
 
-		virtual ::openfl::display::BitmapData prepareAngelCodeBitmapData( ::openfl::display::BitmapData PxBitmapData,::Xml PxXMLData,Array< ::Dynamic > PxSymbols);
+		virtual ::openfl::_legacy::display::BitmapData prepareAngelCodeBitmapData( ::openfl::_legacy::display::BitmapData PxBitmapData,::Xml PxXMLData,Array< ::Dynamic > PxSymbols);
 		Dynamic prepareAngelCodeBitmapData_dyn();
 
 		virtual Void dispose( );
 		Dynamic dispose_dyn();
 
-		virtual Void setGlyph( ::flixel::system::layer::TileSheetData Tiles,int PxCharID,::openfl::geom::Rectangle PxRect,hx::Null< int >  PxOffsetX,hx::Null< int >  PxOffsetY,hx::Null< int >  PxAdvanceX);
+		virtual Void setGlyph( ::flixel::system::layer::TileSheetData Tiles,int PxCharID,::openfl::_legacy::geom::Rectangle PxRect,hx::Null< int >  PxOffsetX,hx::Null< int >  PxOffsetY,hx::Null< int >  PxAdvanceX);
 		Dynamic setGlyph_dyn();
 
 		virtual Void render( Array< Float > DrawData,::String PxText,int PxColor,int PxSecondColor,Float PxAlpha,Float PxOffsetX,Float PxOffsetY,int PxLetterSpacing,Float PxScale,hx::Null< bool >  PxUseColor);
@@ -89,8 +89,8 @@ class HXCPP_CLASS_ATTRIBUTES  PxBitmapFont_obj : public hx::Object{
 		virtual int getFontHeight( );
 		Dynamic getFontHeight_dyn();
 
-		::openfl::display::BitmapData pixels;
-		virtual ::openfl::display::BitmapData get_pixels( );
+		::openfl::_legacy::display::BitmapData pixels;
+		virtual ::openfl::_legacy::display::BitmapData get_pixels( );
 		Dynamic get_pixels_dyn();
 
 		int bgTileID;
@@ -104,7 +104,7 @@ class HXCPP_CLASS_ATTRIBUTES  PxBitmapFont_obj : public hx::Object{
 		Dynamic setCachedGraphics_dyn();
 
 		static ::haxe::ds::StringMap _storedFonts;
-		static ::openfl::geom::Point ZERO_POINT;
+		static ::openfl::_legacy::geom::Point ZERO_POINT;
 		static Void store( ::String PxHandle,::flixel::text::pxText::PxBitmapFont PxFont);
 		static Dynamic store_dyn();
 

@@ -24,47 +24,47 @@
 #ifndef INCLUDED_haxe_ds_IntMap
 #include <haxe/ds/IntMap.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
 #endif
-#ifndef INCLUDED_openfl_events_TouchEvent
-#include <openfl/events/TouchEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_TouchEvent
+#include <openfl/_legacy/events/TouchEvent.h>
 #endif
-#ifndef INCLUDED_openfl_ui_Multitouch
-#include <openfl/ui/Multitouch.h>
+#ifndef INCLUDED_openfl__legacy_ui_Multitouch
+#include <openfl/_legacy/ui/Multitouch.h>
 #endif
 #ifndef INCLUDED_openfl_ui_MultitouchInputMode
 #include <openfl/ui/MultitouchInputMode.h>
@@ -91,15 +91,15 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(165)
 	this->_touchesCache = _g2;
 	HX_STACK_LINE(166)
-	::flixel::input::touch::FlxTouchManager_obj::maxTouchPoints = ::openfl::ui::Multitouch_obj::maxTouchPoints;
+	::flixel::input::touch::FlxTouchManager_obj::maxTouchPoints = ::openfl::_legacy::ui::Multitouch_obj::maxTouchPoints;
 	HX_STACK_LINE(167)
-	::openfl::ui::Multitouch_obj::set_inputMode(::openfl::ui::MultitouchInputMode_obj::TOUCH_POINT);
+	::openfl::_legacy::ui::Multitouch_obj::set_inputMode(::openfl::ui::MultitouchInputMode_obj::TOUCH_POINT);
 	HX_STACK_LINE(169)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::events::TouchEvent_obj::TOUCH_BEGIN,this->handleTouchBegin_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::_legacy::events::TouchEvent_obj::TOUCH_BEGIN,this->handleTouchBegin_dyn(),null(),null(),null());
 	HX_STACK_LINE(170)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::events::TouchEvent_obj::TOUCH_END,this->handleTouchEnd_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::_legacy::events::TouchEvent_obj::TOUCH_END,this->handleTouchEnd_dyn(),null(),null(),null());
 	HX_STACK_LINE(171)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::events::TouchEvent_obj::TOUCH_MOVE,this->handleTouchMove_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::_legacy::events::TouchEvent_obj::TOUCH_MOVE,this->handleTouchMove_dyn(),null(),null(),null());
 }
 ;
 	return null();
@@ -351,7 +351,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxTouchManager_obj,reset,(void))
 
-Void FlxTouchManager_obj::handleTouchBegin( ::openfl::events::TouchEvent FlashEvent){
+Void FlxTouchManager_obj::handleTouchBegin( ::openfl::_legacy::events::TouchEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.touch.FlxTouchManager","handleTouchBegin",0x51a5a0c5,"flixel.input.touch.FlxTouchManager.handleTouchBegin","flixel/input/touch/FlxTouchManager.hx",180,0xc27259e6)
 		HX_STACK_THIS(this)
@@ -387,7 +387,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,handleTouchBegin,(void))
 
-Void FlxTouchManager_obj::handleTouchEnd( ::openfl::events::TouchEvent FlashEvent){
+Void FlxTouchManager_obj::handleTouchEnd( ::openfl::_legacy::events::TouchEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.touch.FlxTouchManager","handleTouchEnd",0xa3529b77,"flixel.input.touch.FlxTouchManager.handleTouchEnd","flixel/input/touch/FlxTouchManager.hx",208,0xc27259e6)
 		HX_STACK_THIS(this)
@@ -413,7 +413,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxTouchManager_obj,handleTouchEnd,(void))
 
-Void FlxTouchManager_obj::handleTouchMove( ::openfl::events::TouchEvent FlashEvent){
+Void FlxTouchManager_obj::handleTouchMove( ::openfl::_legacy::events::TouchEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.touch.FlxTouchManager","handleTouchMove",0x4a3ff3f5,"flixel.input.touch.FlxTouchManager.handleTouchMove","flixel/input/touch/FlxTouchManager.hx",230,0xc27259e6)
 		HX_STACK_THIS(this)

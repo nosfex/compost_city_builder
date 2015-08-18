@@ -114,65 +114,65 @@
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignalBase
 #include <flixel/util/_FlxSignal/FlxSignalBase.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_net_URLRequest
-#include <openfl/net/URLRequest.h>
+#ifndef INCLUDED_openfl__legacy_net_URLRequest
+#include <openfl/_legacy/net/URLRequest.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
 #ifndef INCLUDED_openfl_text_TextFieldAutoSize
 #include <openfl/text/TextFieldAutoSize.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
 #endif
 namespace flixel{
 namespace system{
@@ -194,19 +194,19 @@ HX_STACK_ARG(Height,"Height")
 	HX_STACK_LINE(406)
 	this->_layout = ::flixel::system::debug::DebuggerLayout_obj::STANDARD;
 	HX_STACK_LINE(407)
-	::openfl::geom::Point _g = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::geom::Point _g = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(407)
 	this->_screen = _g;
 	HX_STACK_LINE(408)
 	this->_windows = Array_obj< ::Dynamic >::__new();
 	HX_STACK_LINE(410)
-	::openfl::display::Sprite _g1 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
+	::openfl::_legacy::display::Sprite _g1 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(410)
 	this->_topBar = _g1;
 	HX_STACK_LINE(411)
 	this->_topBar->get_graphics()->beginFill((int)0,0.66666666666666663);
 	HX_STACK_LINE(412)
-	int _g2 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g2,"_g2");
+	int _g2 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(412)
 	this->_topBar->get_graphics()->drawRect((int)0,(int)0,_g2,(int)20);
 	HX_STACK_LINE(413)
@@ -214,7 +214,7 @@ HX_STACK_ARG(Height,"Height")
 	HX_STACK_LINE(414)
 	this->addChild(this->_topBar);
 	HX_STACK_LINE(416)
-	::openfl::text::TextField txt = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(txt,"txt");
+	::openfl::_legacy::text::TextField txt = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(txt,"txt");
 	HX_STACK_LINE(417)
 	txt->set_height((int)20);
 	HX_STACK_LINE(418)
@@ -226,7 +226,7 @@ HX_STACK_ARG(Height,"Height")
 	HX_STACK_LINE(421)
 	txt->set_embedFonts(true);
 	HX_STACK_LINE(422)
-	::openfl::text::TextFormat format = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,(int)12,(int)-1,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(format,"format");
+	::openfl::_legacy::text::TextFormat format = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,(int)12,(int)-1,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(format,"format");
 	HX_STACK_LINE(423)
 	txt->set_defaultTextFormat(format);
 	HX_STACK_LINE(424)
@@ -384,9 +384,9 @@ HX_STACK_ARG(Height,"Height")
 	HX_STACK_LINE(457)
 	this->onResize(Width,Height);
 	HX_STACK_LINE(459)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null(),null(),null());
 	HX_STACK_LINE(460)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null(),null(),null());
 	HX_STACK_LINE(462)
 	::flixel::FlxG_obj::signals->stateSwitched->add(::flixel::system::debug::Tracker_obj::onStateSwitch_dyn());
 }
@@ -477,9 +477,9 @@ Void FlxDebugger_obj::destroy( ){
 		HX_STACK_LINE(155)
 		this->_windows = null();
 		HX_STACK_LINE(157)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null());
 		HX_STACK_LINE(158)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null());
 	}
 return null();
 }
@@ -825,7 +825,7 @@ Void FlxDebugger_obj::onResize( Float Width,Float Height){
 		HX_STACK_LINE(256)
 		this->updateBounds();
 		HX_STACK_LINE(257)
-		int _g = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g,"_g");
+		int _g = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(257)
 		this->_topBar->set_width(_g);
 		HX_STACK_LINE(258)
@@ -872,7 +872,7 @@ Void FlxDebugger_obj::updateBounds( ){
 		HX_STACK_FRAME("flixel.system.debug.FlxDebugger","updateBounds",0x09101ca1,"flixel.system.debug.FlxDebugger.updateBounds","flixel/system/debug/FlxDebugger.hx",267,0xd9fc0a74)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(268)
-		::openfl::geom::Rectangle _g = ::openfl::geom::Rectangle_obj::__new((int)2,21.,(this->_screen->x - (int)4),((this->_screen->y - (int)4) - (int)20));		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::geom::Rectangle _g = ::openfl::_legacy::geom::Rectangle_obj::__new((int)2,21.,(this->_screen->x - (int)4),((this->_screen->y - (int)4) - (int)20));		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(268)
 		this->_screenBounds = _g;
 		HX_STACK_LINE(269)
@@ -934,7 +934,7 @@ Float LeftOffset = __o_LeftOffset.Default(0);
 				HX_STACK_LINE(283)
 				int i = (_g1)++;		HX_STACK_VAR(i,"i");
 				HX_STACK_LINE(285)
-				::openfl::display::Sprite o = Sprites->__get(i).StaticCast< ::flixel::system::ui::FlxSystemButton >();		HX_STACK_VAR(o,"o");
+				::openfl::_legacy::display::Sprite o = Sprites->__get(i).StaticCast< ::flixel::system::ui::FlxSystemButton >();		HX_STACK_VAR(o,"o");
 				HX_STACK_LINE(286)
 				Float _g2 = o->get_width();		HX_STACK_VAR(_g2,"_g2");
 				HX_STACK_LINE(286)
@@ -973,7 +973,7 @@ Void FlxDebugger_obj::resetButtonLayout( ){
 		HX_STACK_LINE(301)
 		this->hAlignButtons(this->_leftButtons,(int)10,true,(int)10);
 		HX_STACK_LINE(303)
-		int _g = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g,"_g");
+		int _g = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(303)
 		Float _g1 = (_g * 0.5);		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(303)
@@ -985,7 +985,7 @@ Void FlxDebugger_obj::resetButtonLayout( ){
 		HX_STACK_LINE(304)
 		this->hAlignButtons(this->_middleButtons,(int)10,true,offset);
 		HX_STACK_LINE(306)
-		int _g4 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g4,"_g4");
+		int _g4 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(306)
 		Float _g5 = this->hAlignButtons(this->_rightButtons,(int)10,false,null());		HX_STACK_VAR(_g5,"_g5");
 		HX_STACK_LINE(306)
@@ -999,7 +999,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxDebugger_obj,resetButtonLayout,(void))
 
-::flixel::system::ui::FlxSystemButton FlxDebugger_obj::addButton( ::flixel::system::debug::ButtonAlignment Position,::openfl::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode,hx::Null< bool >  __o_UpdateLayout){
+::flixel::system::ui::FlxSystemButton FlxDebugger_obj::addButton( ::flixel::system::debug::ButtonAlignment Position,::openfl::_legacy::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode,hx::Null< bool >  __o_UpdateLayout){
 bool ToggleMode = __o_ToggleMode.Default(false);
 bool UpdateLayout = __o_UpdateLayout.Default(false);
 	HX_STACK_FRAME("flixel.system.debug.FlxDebugger","addButton",0x3bdccfd0,"flixel.system.debug.FlxDebugger.addButton","flixel/system/debug/FlxDebugger.hx",321,0xd9fc0a74)
@@ -1093,7 +1093,7 @@ Void FlxDebugger_obj::addWindowToggleButton( ::flixel::system::debug::Window win
 		HX_STACK_ARG(window,"window")
 		HX_STACK_ARG(icon,"icon")
 		HX_STACK_LINE(369)
-		::openfl::display::BitmapData _g = ::Type_obj::createInstance(icon,Dynamic( Array_obj<Dynamic>::__new().Add((int)0).Add((int)0)));		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::BitmapData _g = ::Type_obj::createInstance(icon,Dynamic( Array_obj<Dynamic>::__new().Add((int)0).Add((int)0)));		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(369)
 		::flixel::system::ui::FlxSystemButton button = this->addButton(::flixel::system::debug::ButtonAlignment_obj::RIGHT,_g,window->toggleVisible_dyn(),true,true);		HX_STACK_VAR(button,"button");
 		HX_STACK_LINE(370)
@@ -1257,9 +1257,9 @@ Void FlxDebugger_obj::openHomepage( ){
 			prefix = HX_CSTRING("http://");
 		}
 		HX_STACK_LINE(507)
-		::openfl::net::URLRequest _g = ::openfl::net::URLRequest_obj::__new((prefix + HX_CSTRING("http://www.haxeflixel.com")));		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::net::URLRequest _g = ::openfl::_legacy::net::URLRequest_obj::__new((prefix + HX_CSTRING("http://www.haxeflixel.com")));		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(507)
-		::openfl::Lib_obj::getURL(_g,HX_CSTRING("_blank"));
+		::openfl::_legacy::Lib_obj::getURL(_g,HX_CSTRING("_blank"));
 	}
 return null();
 }
@@ -1294,7 +1294,7 @@ void FlxDebugger_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(_rightButtons,"_rightButtons");
 	HX_MARK_MEMBER_NAME(_topBar,"_topBar");
 	HX_MARK_MEMBER_NAME(_windows,"_windows");
-	::openfl::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -1315,7 +1315,7 @@ void FlxDebugger_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(_rightButtons,"_rightButtons");
 	HX_VISIT_MEMBER_NAME(_topBar,"_topBar");
 	HX_VISIT_MEMBER_NAME(_windows,"_windows");
-	::openfl::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic FlxDebugger_obj::__Field(const ::String &inName,bool inCallProp)
@@ -1399,8 +1399,8 @@ Dynamic FlxDebugger_obj::__SetField(const ::String &inName,const Dynamic &inValu
 	case 7:
 		if (HX_FIELD_EQ(inName,"console") ) { console=inValue.Cast< ::flixel::system::debug::Console >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_layout") ) { _layout=inValue.Cast< ::flixel::system::debug::DebuggerLayout >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_screen") ) { _screen=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_topBar") ) { _topBar=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_screen") ) { _screen=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_topBar") ) { _topBar=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"hasMouse") ) { hasMouse=inValue.Cast< bool >(); return inValue; }
@@ -1413,7 +1413,7 @@ Dynamic FlxDebugger_obj::__SetField(const ::String &inName,const Dynamic &inValu
 		if (HX_FIELD_EQ(inName,"_leftButtons") ) { _leftButtons=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
 		break;
 	case 13:
-		if (HX_FIELD_EQ(inName,"_screenBounds") ) { _screenBounds=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_screenBounds") ) { _screenBounds=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_rightButtons") ) { _rightButtons=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
 		break;
 	case 14:
@@ -1457,12 +1457,12 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::system::debug::Console*/ ,(int)offsetof(FlxDebugger_obj,console),HX_CSTRING("console")},
 	{hx::fsBool,(int)offsetof(FlxDebugger_obj,hasMouse),HX_CSTRING("hasMouse")},
 	{hx::fsObject /*::flixel::system::debug::DebuggerLayout*/ ,(int)offsetof(FlxDebugger_obj,_layout),HX_CSTRING("_layout")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(FlxDebugger_obj,_screen),HX_CSTRING("_screen")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(FlxDebugger_obj,_screenBounds),HX_CSTRING("_screenBounds")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(FlxDebugger_obj,_screen),HX_CSTRING("_screen")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(FlxDebugger_obj,_screenBounds),HX_CSTRING("_screenBounds")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxDebugger_obj,_middleButtons),HX_CSTRING("_middleButtons")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxDebugger_obj,_leftButtons),HX_CSTRING("_leftButtons")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxDebugger_obj,_rightButtons),HX_CSTRING("_rightButtons")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxDebugger_obj,_topBar),HX_CSTRING("_topBar")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxDebugger_obj,_topBar),HX_CSTRING("_topBar")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxDebugger_obj,_windows),HX_CSTRING("_windows")},
 	{ hx::fsUnknown, 0, null()}
 };

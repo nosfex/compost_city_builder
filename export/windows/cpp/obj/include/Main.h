@@ -5,21 +5,21 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/Sprite.h>
+#include <openfl/_legacy/display/Sprite.h>
 HX_DECLARE_CLASS0(Main)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 
 
-class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::display::Sprite_obj{
+class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::_legacy::display::Sprite_obj{
 	public:
-		typedef ::openfl::display::Sprite_obj super;
+		typedef ::openfl::_legacy::display::Sprite_obj super;
 		typedef Main_obj OBJ_;
 		Main_obj();
 		Void __construct();
@@ -46,7 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::display::Sprite_obj{
 		int framerate;
 		bool skipSplash;
 		bool startFullscreen;
-		virtual Void init( ::openfl::events::Event E);
+		virtual Void init( ::openfl::_legacy::events::Event E);
 		Dynamic init_dyn();
 
 		virtual Void setupGame( );

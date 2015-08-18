@@ -12,8 +12,8 @@
 #ifndef INCLUDED_flixel_util_loaders_TextureAtlasFrame
 #include <flixel/util/loaders/TextureAtlasFrame.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -142,7 +142,7 @@ Dynamic TextureAtlasFrame_obj::__SetField(const ::String &inName,const Dynamic &
 		if (HX_FIELD_EQ(inName,"name") ) { name=inValue.Cast< ::String >(); return inValue; }
 		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"frame") ) { frame=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"frame") ) { frame=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"offset") ) { offset=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
@@ -178,7 +178,7 @@ static ::String sStaticFields[] = {
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsString,(int)offsetof(TextureAtlasFrame_obj,name),HX_CSTRING("name")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(TextureAtlasFrame_obj,frame),HX_CSTRING("frame")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(TextureAtlasFrame_obj,frame),HX_CSTRING("frame")},
 	{hx::fsBool,(int)offsetof(TextureAtlasFrame_obj,rotated),HX_CSTRING("rotated")},
 	{hx::fsBool,(int)offsetof(TextureAtlasFrame_obj,trimmed),HX_CSTRING("trimmed")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(TextureAtlasFrame_obj,sourceSize),HX_CSTRING("sourceSize")},

@@ -32,6 +32,20 @@ Dynamic Thread_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0]);
 	return result;}
 
+Void Thread_obj::sendMessage( Dynamic msg){
+{
+		HX_STACK_FRAME("cpp.vm.Thread","sendMessage",0x48dced27,"cpp.vm.Thread.sendMessage","C:\\HaxeToolkit\\haxe\\std/cpp/vm/Thread.hx",38,0xd8d7e381)
+		HX_STACK_THIS(this)
+		HX_STACK_ARG(msg,"msg")
+		HX_STACK_LINE(38)
+		::__hxcpp_thread_send(this->handle,msg);
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Thread_obj,sendMessage,(void))
+
 ::cpp::vm::Thread Thread_obj::current( ){
 	HX_STACK_FRAME("cpp.vm.Thread","current",0x21a37c01,"cpp.vm.Thread.current","C:\\HaxeToolkit\\haxe\\std/cpp/vm/Thread.hx",45,0xd8d7e381)
 	HX_STACK_LINE(46)
@@ -54,6 +68,16 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC0(Thread_obj,current,return )
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Thread_obj,create,return )
+
+Dynamic Thread_obj::readMessage( bool block){
+	HX_STACK_FRAME("cpp.vm.Thread","readMessage",0x11bc2cd9,"cpp.vm.Thread.readMessage","C:\\HaxeToolkit\\haxe\\std/cpp/vm/Thread.hx",62,0xd8d7e381)
+	HX_STACK_ARG(block,"block")
+	HX_STACK_LINE(62)
+	return ::__hxcpp_thread_read_message(block);
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Thread_obj,readMessage,return )
 
 
 Thread_obj::Thread_obj()
@@ -81,6 +105,10 @@ Dynamic Thread_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"current") ) { return current_dyn(); }
+		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"readMessage") ) { return readMessage_dyn(); }
+		if (HX_FIELD_EQ(inName,"sendMessage") ) { return sendMessage_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -103,6 +131,7 @@ void Thread_obj::__GetFields(Array< ::String> &outFields)
 static ::String sStaticFields[] = {
 	HX_CSTRING("current"),
 	HX_CSTRING("create"),
+	HX_CSTRING("readMessage"),
 	String(null()) };
 
 #if HXCPP_SCRIPTABLE
@@ -114,6 +143,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 
 static ::String sMemberFields[] = {
 	HX_CSTRING("handle"),
+	HX_CSTRING("sendMessage"),
 	String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {

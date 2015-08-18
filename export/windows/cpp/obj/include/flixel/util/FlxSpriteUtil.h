@@ -14,14 +14,14 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,tweens,FlxTween)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS2(flixel,util,FlxSpriteUtil)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,Graphics)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Graphics)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 namespace flixel{
 namespace util{
 
@@ -46,8 +46,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSpriteUtil_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("FlxSpriteUtil"); }
 
-		static ::openfl::display::Sprite flashGfxSprite;
-		static ::openfl::display::Graphics flashGfx;
+		static ::openfl::_legacy::display::Sprite flashGfxSprite;
+		static ::openfl::_legacy::display::Graphics flashGfx;
 		static ::flixel::FlxSprite alphaMask( ::flixel::FlxSprite output,Dynamic source,Dynamic mask);
 		static Dynamic alphaMask_dyn();
 

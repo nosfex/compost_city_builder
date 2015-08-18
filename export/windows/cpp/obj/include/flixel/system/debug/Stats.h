@@ -11,14 +11,14 @@ HX_DECLARE_CLASS3(flixel,system,debug,Stats)
 HX_DECLARE_CLASS3(flixel,system,debug,StatsGraph)
 HX_DECLARE_CLASS3(flixel,system,debug,Window)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -46,8 +46,8 @@ class HXCPP_CLASS_ATTRIBUTES  Stats_obj : public ::flixel::system::debug::Window
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("Stats"); }
 
-		::openfl::text::TextField _leftTextField;
-		::openfl::text::TextField _rightTextField;
+		::openfl::_legacy::text::TextField _leftTextField;
+		::openfl::_legacy::text::TextField _rightTextField;
 		int _itvTime;
 		int _initTime;
 		int _frameCount;

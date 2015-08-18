@@ -42,35 +42,35 @@
 #ifndef INCLUDED_haxe_Log
 #include <haxe/Log.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_media_Sound
-#include <openfl/media/Sound.h>
+#ifndef INCLUDED_openfl__legacy_media_Sound
+#include <openfl/_legacy/media/Sound.h>
 #endif
-#ifndef INCLUDED_openfl_media_SoundChannel
-#include <openfl/media/SoundChannel.h>
+#ifndef INCLUDED_openfl__legacy_media_SoundChannel
+#include <openfl/_legacy/media/SoundChannel.h>
 #endif
 #ifndef INCLUDED_openfl_media_SoundTransform
 #include <openfl/media/SoundTransform.h>
@@ -192,7 +192,7 @@ bool FireOnce = __o_FireOnce.Default(false);
 			HX_STACK_LINE(75)
 			if (((Style->errorSound != null()))){
 				struct _Function_3_1{
-					inline static ::openfl::media::Sound Block( ::flixel::system::debug::LogStyle &Style){
+					inline static ::openfl::_legacy::media::Sound Block( ::flixel::system::debug::LogStyle &Style){
 						HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/frontEnds/LogFrontEnd.hx",77,0x686ab8c3)
 						{
 							HX_STACK_LINE(77)
@@ -200,13 +200,13 @@ bool FireOnce = __o_FireOnce.Default(false);
 							HX_STACK_LINE(77)
 							extension = HX_CSTRING(".ogg");
 							HX_STACK_LINE(77)
-							return ::openfl::Assets_obj::getSound((Style->errorSound + extension),null());
+							return ::openfl::_legacy::Assets_obj::getSound((Style->errorSound + extension),null());
 						}
 						return null();
 					}
 				};
 				HX_STACK_LINE(77)
-				::openfl::media::SoundChannel _g = (_Function_3_1::Block(Style))->play(null(),null(),null());		HX_STACK_VAR(_g,"_g");
+				::openfl::_legacy::media::SoundChannel _g = (_Function_3_1::Block(Style))->play(null(),null(),null());		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(77)
 				::flixel::FlxG_obj::sound->load(_g,null(),null(),null(),null(),null(),null());
 			}

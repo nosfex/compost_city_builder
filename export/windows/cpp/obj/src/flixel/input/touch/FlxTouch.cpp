@@ -39,35 +39,35 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
 namespace flixel{
 namespace input{
@@ -103,7 +103,7 @@ int PointID = __o_PointID.Default(0);
 		HX_STACK_LINE(166)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(166)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(166)
 		point->_inPool = false;
 		HX_STACK_LINE(166)
@@ -120,7 +120,7 @@ int PointID = __o_PointID.Default(0);
 		HX_STACK_LINE(167)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(167)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(167)
 		point->_inPool = false;
 		HX_STACK_LINE(167)
@@ -137,7 +137,7 @@ int PointID = __o_PointID.Default(0);
 		HX_STACK_LINE(168)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(168)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(168)
 		point->_inPool = false;
 		HX_STACK_LINE(168)
@@ -146,7 +146,7 @@ int PointID = __o_PointID.Default(0);
 	HX_STACK_LINE(168)
 	this->_justPressedPosition = _g2;
 	HX_STACK_LINE(170)
-	::openfl::geom::Point _g3 = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g3,"_g3");
+	::openfl::_legacy::geom::Point _g3 = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(170)
 	this->_flashPoint = _g3;
 	HX_STACK_LINE(171)
@@ -228,7 +228,7 @@ return null();
 			HX_STACK_LINE(78)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(78)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(78)
 			point1->_inPool = false;
 			HX_STACK_LINE(78)
@@ -271,7 +271,7 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxTouch_obj,getWorldPosition,return )
 			HX_STACK_LINE(102)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(102)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(102)
 			point1->_inPool = false;
 			HX_STACK_LINE(102)
@@ -455,7 +455,7 @@ Void FlxTouch_obj::updatePosition( Float X,Float Y){
 		HX_STACK_LINE(224)
 		this->_flashPoint->y = Y;
 		HX_STACK_LINE(225)
-		::openfl::geom::Point _g = ::flixel::FlxG_obj::game->globalToLocal(this->_flashPoint);		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::geom::Point _g = ::flixel::FlxG_obj::game->globalToLocal(this->_flashPoint);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(225)
 		this->_flashPoint = _g;
 		HX_STACK_LINE(227)
@@ -624,7 +624,7 @@ Dynamic FlxTouch_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"_current") ) { _current=inValue.Cast< int >(); return inValue; }
 		break;
 	case 11:
-		if (HX_FIELD_EQ(inName,"_flashPoint") ) { _flashPoint=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_flashPoint") ) { _flashPoint=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"touchPointID") ) { touchPointID=inValue.Cast< int >(); return inValue; }
@@ -672,7 +672,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxTouch_obj,_last),HX_CSTRING("_last")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxTouch_obj,_point),HX_CSTRING("_point")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxTouch_obj,_globalScreenPosition),HX_CSTRING("_globalScreenPosition")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(FlxTouch_obj,_flashPoint),HX_CSTRING("_flashPoint")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(FlxTouch_obj,_flashPoint),HX_CSTRING("_flashPoint")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxTouch_obj,_justPressedPosition),HX_CSTRING("_justPressedPosition")},
 	{hx::fsFloat,(int)offsetof(FlxTouch_obj,_justPressedTimeInTicks),HX_CSTRING("_justPressedTimeInTicks")},
 	{ hx::fsUnknown, 0, null()}

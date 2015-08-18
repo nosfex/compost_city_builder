@@ -9,16 +9,17 @@
 namespace openfl{
 namespace errors{
 
-Void ArgumentError_obj::__construct(::String __o_message,Dynamic id)
+Void ArgumentError_obj::__construct(::String __o_message)
 {
-HX_STACK_FRAME("openfl.errors.ArgumentError","new",0x72c6c578,"openfl.errors.ArgumentError.new","openfl/errors/ArgumentError.hx",4,0xb16d4318)
+HX_STACK_FRAME("openfl.errors.ArgumentError","new",0x72c6c578,"openfl.errors.ArgumentError.new","openfl/errors/ArgumentError.hx",7,0xb16d4318)
 HX_STACK_THIS(this)
 HX_STACK_ARG(__o_message,"message")
-HX_STACK_ARG(id,"id")
 ::String message = __o_message.Default(HX_CSTRING(""));
 {
-	HX_STACK_LINE(4)
-	super::__construct(message,id);
+	HX_STACK_LINE(9)
+	super::__construct(message,null());
+	HX_STACK_LINE(11)
+	this->name = HX_CSTRING("ArgumentError");
 }
 ;
 	return null();
@@ -27,14 +28,14 @@ HX_STACK_ARG(id,"id")
 //ArgumentError_obj::~ArgumentError_obj() { }
 
 Dynamic ArgumentError_obj::__CreateEmpty() { return  new ArgumentError_obj; }
-hx::ObjectPtr< ArgumentError_obj > ArgumentError_obj::__new(::String __o_message,Dynamic id)
+hx::ObjectPtr< ArgumentError_obj > ArgumentError_obj::__new(::String __o_message)
 {  hx::ObjectPtr< ArgumentError_obj > result = new ArgumentError_obj();
-	result->__construct(__o_message,id);
+	result->__construct(__o_message);
 	return result;}
 
 Dynamic ArgumentError_obj::__Create(hx::DynamicArray inArgs)
 {  hx::ObjectPtr< ArgumentError_obj > result = new ArgumentError_obj();
-	result->__construct(inArgs[0],inArgs[1]);
+	result->__construct(inArgs[0]);
 	return result;}
 
 

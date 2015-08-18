@@ -20,13 +20,13 @@ HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxSpriteFrames)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
 HX_DECLARE_CLASS2(haxe,ds,IntMap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,BlendMode)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,geom,ColorTransform)
-HX_DECLARE_CLASS2(openfl,geom,Matrix)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BlendMode)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,ColorTransform)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Matrix)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 
 
@@ -53,7 +53,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		::String __ToString() const { return HX_CSTRING("FlxSprite"); }
 
 		::flixel::animation::FlxAnimationController animation;
-		::openfl::display::BitmapData framePixels;
+		::openfl::_legacy::display::BitmapData framePixels;
 		bool antialiasing;
 		bool dirty;
 		bool isColored;
@@ -72,9 +72,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		::flixel::util::FlxPoint origin;
 		::flixel::util::FlxPoint offset;
 		::flixel::util::FlxPoint scale;
-		::openfl::display::BlendMode blend;
+		::openfl::_legacy::display::BlendMode blend;
 		int color;
-		::openfl::geom::ColorTransform colorTransform;
+		::openfl::_legacy::geom::ColorTransform colorTransform;
 		bool useColorTransform;
 		Float _red;
 		Float _green;
@@ -82,11 +82,11 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		int _facingHorizontalMult;
 		int _facingVerticalMult;
 		int _blendInt;
-		::openfl::geom::Point _flashPoint;
-		::openfl::geom::Rectangle _flashRect;
-		::openfl::geom::Rectangle _flashRect2;
-		::openfl::geom::Point _flashPointZero;
-		::openfl::geom::Matrix _matrix;
+		::openfl::_legacy::geom::Point _flashPoint;
+		::openfl::_legacy::geom::Rectangle _flashRect;
+		::openfl::_legacy::geom::Rectangle _flashRect2;
+		::openfl::_legacy::geom::Point _flashPointZero;
+		::openfl::_legacy::geom::Matrix _matrix;
 		Float _halfWidth;
 		Float _halfHeight;
 		Float _sinAngle;
@@ -170,7 +170,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		virtual Void updateFrameData( );
 		Dynamic updateFrameData_dyn();
 
-		virtual ::openfl::display::BitmapData getFlxFrameBitmapData( );
+		virtual ::openfl::_legacy::display::BitmapData getFlxFrameBitmapData( );
 		Dynamic getFlxFrameBitmapData_dyn();
 
 		virtual ::flixel::util::FlxPoint getGraphicMidpoint( ::flixel::util::FlxPoint point);
@@ -187,10 +187,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 		virtual Void setFacingFlip( int Direction,bool FlipX,bool FlipY);
 		Dynamic setFacingFlip_dyn();
 
-		virtual ::openfl::display::BitmapData get_pixels( );
+		virtual ::openfl::_legacy::display::BitmapData get_pixels( );
 		Dynamic get_pixels_dyn();
 
-		virtual ::openfl::display::BitmapData set_pixels( ::openfl::display::BitmapData Pixels);
+		virtual ::openfl::_legacy::display::BitmapData set_pixels( ::openfl::_legacy::display::BitmapData Pixels);
 		Dynamic set_pixels_dyn();
 
 		virtual ::flixel::system::layer::frames::FlxFrame set_frame( ::flixel::system::layer::frames::FlxFrame Value);
@@ -207,7 +207,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSprite_obj : public ::flixel::FlxObject_obj{
 
 		virtual Float set_angle( Float Value);
 
-		virtual ::openfl::display::BlendMode set_blend( ::openfl::display::BlendMode Value);
+		virtual ::openfl::_legacy::display::BlendMode set_blend( ::openfl::_legacy::display::BlendMode Value);
 		Dynamic set_blend_dyn();
 
 		virtual ::flixel::util::loaders::CachedGraphics set_cachedGraphics( ::flixel::util::loaders::CachedGraphics Value);

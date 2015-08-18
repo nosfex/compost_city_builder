@@ -8,16 +8,16 @@
 #include <flixel/interfaces/IFlxDestroyable.h>
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,debug,WatchEntry)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,KeyboardEvent)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
-HX_DECLARE_CLASS2(openfl,text,TextField)
-HX_DECLARE_CLASS2(openfl,text,TextFormat)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,KeyboardEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextFormat)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -51,12 +51,12 @@ class HXCPP_CLASS_ATTRIBUTES  WatchEntry_obj : public hx::Object{
 		Dynamic object;
 		::String field;
 		::String custom;
-		::openfl::text::TextField nameDisplay;
-		::openfl::text::TextField valueDisplay;
+		::openfl::_legacy::text::TextField nameDisplay;
+		::openfl::_legacy::text::TextField valueDisplay;
 		bool editing;
 		Dynamic oldValue;
-		::openfl::text::TextFormat _whiteText;
-		::openfl::text::TextFormat _blackText;
+		::openfl::_legacy::text::TextFormat _whiteText;
+		::openfl::_legacy::text::TextFormat _blackText;
 		bool quickWatch;
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
@@ -70,10 +70,10 @@ class HXCPP_CLASS_ATTRIBUTES  WatchEntry_obj : public hx::Object{
 		virtual bool updateValue( );
 		Dynamic updateValue_dyn();
 
-		virtual Void onMouseUp( ::openfl::events::MouseEvent FlashEvent);
+		virtual Void onMouseUp( ::openfl::_legacy::events::MouseEvent FlashEvent);
 		Dynamic onMouseUp_dyn();
 
-		virtual Void onKeyUp( ::openfl::events::KeyboardEvent FlashEvent);
+		virtual Void onKeyUp( ::openfl::_legacy::events::KeyboardEvent FlashEvent);
 		Dynamic onKeyUp_dyn();
 
 		virtual Void cancel( );

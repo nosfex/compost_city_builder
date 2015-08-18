@@ -830,7 +830,7 @@ Void FlxTypedGroup_obj::clear( ){
 		HX_STACK_LINE(581)
 		this->length = (int)0;
 		HX_STACK_LINE(582)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_group_FlxTypedGroup_T(this->members,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->members,null());
 	}
 return null();
 }

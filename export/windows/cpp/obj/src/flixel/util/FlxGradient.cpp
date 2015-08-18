@@ -36,56 +36,56 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_Bitmap
-#include <openfl/display/Bitmap.h>
+#ifndef INCLUDED_openfl__legacy_display_Bitmap
+#include <openfl/_legacy/display/Bitmap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Shape
+#include <openfl/_legacy/display/Shape.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_SpreadMethod
+#include <openfl/_legacy/display/SpreadMethod.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 #ifndef INCLUDED_openfl_display_GradientType
 #include <openfl/display/GradientType.h>
-#endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
-#endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
 #endif
 #ifndef INCLUDED_openfl_display_InterpolationMethod
 #include <openfl/display/InterpolationMethod.h>
 #endif
 #ifndef INCLUDED_openfl_display_PixelSnapping
 #include <openfl/display/PixelSnapping.h>
-#endif
-#ifndef INCLUDED_openfl_display_Shape
-#include <openfl/display/Shape.h>
-#endif
-#ifndef INCLUDED_openfl_display_SpreadMethod
-#include <openfl/display/SpreadMethod.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -119,7 +119,7 @@ int rotation = __o_rotation.Default(90);
 	HX_STACK_ARG(rotation,"rotation")
 {
 		HX_STACK_LINE(25)
-		::openfl::geom::Matrix gradientMatrix = ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(gradientMatrix,"gradientMatrix");
+		::openfl::_legacy::geom::Matrix gradientMatrix = ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(gradientMatrix,"gradientMatrix");
 		HX_STACK_LINE(28)
 		Float rot = (rotation * ((Float(::Math_obj::PI) / Float((int)180))));		HX_STACK_VAR(rot,"rot");
 		HX_STACK_LINE(31)
@@ -201,7 +201,7 @@ int rotation = __o_rotation.Default(90);
 			ratio->push((int)255);
 		}
 		struct _Function_1_1{
-			inline static Dynamic Block( Array< int > &ratio,Array< Float > &alpha,::openfl::geom::Matrix &gradientMatrix){
+			inline static Dynamic Block( Array< int > &ratio,Array< Float > &alpha,::openfl::_legacy::geom::Matrix &gradientMatrix){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxGradient.hx",75,0x5a5037d6)
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
@@ -234,7 +234,7 @@ bool interpolate = __o_interpolate.Default(true);
 	HX_STACK_ARG(interpolate,"interpolate")
 {
 		HX_STACK_LINE(80)
-		::openfl::display::BitmapData data = ::flixel::util::FlxGradient_obj::createGradientBitmapData(width,height,colors,chunkSize,rotation,interpolate);		HX_STACK_VAR(data,"data");
+		::openfl::_legacy::display::BitmapData data = ::flixel::util::FlxGradient_obj::createGradientBitmapData(width,height,colors,chunkSize,rotation,interpolate);		HX_STACK_VAR(data,"data");
 		HX_STACK_LINE(81)
 		Array< int > result = Array_obj< int >::__new();		HX_STACK_VAR(result,"result");
 		HX_STACK_LINE(83)
@@ -279,7 +279,7 @@ bool interpolate = __o_interpolate.Default(true);
 	HX_STACK_ARG(interpolate,"interpolate")
 {
 		HX_STACK_LINE(105)
-		::openfl::display::BitmapData data = ::flixel::util::FlxGradient_obj::createGradientBitmapData(width,height,colors,chunkSize,rotation,interpolate);		HX_STACK_VAR(data,"data");
+		::openfl::_legacy::display::BitmapData data = ::flixel::util::FlxGradient_obj::createGradientBitmapData(width,height,colors,chunkSize,rotation,interpolate);		HX_STACK_VAR(data,"data");
 		HX_STACK_LINE(106)
 		::flixel::FlxSprite dest = ::flixel::FlxSprite_obj::__new(null(),null(),null());		HX_STACK_VAR(dest,"dest");
 		HX_STACK_LINE(107)
@@ -292,7 +292,7 @@ bool interpolate = __o_interpolate.Default(true);
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC6(FlxGradient_obj,createGradientFlxSprite,return )
 
-::openfl::display::BitmapData FlxGradient_obj::createGradientBitmapData( int width,int height,Array< int > colors,hx::Null< int >  __o_chunkSize,hx::Null< int >  __o_rotation,hx::Null< bool >  __o_interpolate){
+::openfl::_legacy::display::BitmapData FlxGradient_obj::createGradientBitmapData( int width,int height,Array< int > colors,hx::Null< int >  __o_chunkSize,hx::Null< int >  __o_rotation,hx::Null< bool >  __o_interpolate){
 int chunkSize = __o_chunkSize.Default(1);
 int rotation = __o_rotation.Default(90);
 bool interpolate = __o_interpolate.Default(true);
@@ -377,15 +377,15 @@ bool interpolate = __o_interpolate.Default(true);
 		HX_STACK_LINE(143)
 		Dynamic gradient = ::flixel::util::FlxGradient_obj::createGradientMatrix(width,height,colors,chunkSize,rotation);		HX_STACK_VAR(gradient,"gradient");
 		HX_STACK_LINE(145)
-		::openfl::display::Shape s = ::openfl::display::Shape_obj::__new();		HX_STACK_VAR(s,"s");
+		::openfl::_legacy::display::Shape s = ::openfl::_legacy::display::Shape_obj::__new();		HX_STACK_VAR(s,"s");
 		HX_STACK_LINE(147)
 		if ((interpolate)){
 			HX_STACK_LINE(150)
-			s->get_graphics()->beginGradientFill(::openfl::display::GradientType_obj::LINEAR,colors,gradient->__Field(HX_CSTRING("alpha"),true),gradient->__Field(HX_CSTRING("ratio"),true),gradient->__Field(HX_CSTRING("matrix"),true),::openfl::display::SpreadMethod_obj::PAD,::openfl::display::InterpolationMethod_obj::RGB,(int)0);
+			s->get_graphics()->beginGradientFill(::openfl::display::GradientType_obj::LINEAR,colors,gradient->__Field(HX_CSTRING("alpha"),true),gradient->__Field(HX_CSTRING("ratio"),true),gradient->__Field(HX_CSTRING("matrix"),true),::openfl::_legacy::display::SpreadMethod_obj::PAD,::openfl::display::InterpolationMethod_obj::RGB,(int)0);
 		}
 		else{
 			HX_STACK_LINE(156)
-			s->get_graphics()->beginGradientFill(::openfl::display::GradientType_obj::LINEAR,colors,gradient->__Field(HX_CSTRING("alpha"),true),gradient->__Field(HX_CSTRING("ratio"),true),gradient->__Field(HX_CSTRING("matrix"),true),::openfl::display::SpreadMethod_obj::PAD,::openfl::display::InterpolationMethod_obj::LINEAR_RGB,(int)0);
+			s->get_graphics()->beginGradientFill(::openfl::display::GradientType_obj::LINEAR,colors,gradient->__Field(HX_CSTRING("alpha"),true),gradient->__Field(HX_CSTRING("ratio"),true),gradient->__Field(HX_CSTRING("matrix"),true),::openfl::_legacy::display::SpreadMethod_obj::PAD,::openfl::display::InterpolationMethod_obj::LINEAR_RGB,(int)0);
 		}
 		HX_STACK_LINE(160)
 		if (((chunkSize == (int)1))){
@@ -397,7 +397,7 @@ bool interpolate = __o_interpolate.Default(true);
 			s->get_graphics()->drawRect((int)0,(int)0,width,(Float(height) / Float(chunkSize)));
 		}
 		HX_STACK_LINE(169)
-		::openfl::display::BitmapData data = ::openfl::display::BitmapData_obj::__new(width,height,true,(int)0,null());		HX_STACK_VAR(data,"data");
+		::openfl::_legacy::display::BitmapData data = ::openfl::_legacy::display::BitmapData_obj::__new(width,height,true,(int)0,null());		HX_STACK_VAR(data,"data");
 		HX_STACK_LINE(171)
 		if (((chunkSize == (int)1))){
 			HX_STACK_LINE(173)
@@ -407,15 +407,15 @@ bool interpolate = __o_interpolate.Default(true);
 			HX_STACK_LINE(177)
 			int _g1 = ::Std_obj::_int((Float(height) / Float(chunkSize)));		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(177)
-			::openfl::display::BitmapData _g2 = ::openfl::display::BitmapData_obj::__new(width,_g1,true,(int)0,null());		HX_STACK_VAR(_g2,"_g2");
+			::openfl::_legacy::display::BitmapData _g2 = ::openfl::_legacy::display::BitmapData_obj::__new(width,_g1,true,(int)0,null());		HX_STACK_VAR(_g2,"_g2");
 			HX_STACK_LINE(177)
-			::openfl::display::Bitmap tempBitmap = ::openfl::display::Bitmap_obj::__new(_g2,null(),null());		HX_STACK_VAR(tempBitmap,"tempBitmap");
+			::openfl::_legacy::display::Bitmap tempBitmap = ::openfl::_legacy::display::Bitmap_obj::__new(_g2,null(),null());		HX_STACK_VAR(tempBitmap,"tempBitmap");
 			HX_STACK_LINE(178)
 			tempBitmap->bitmapData->draw(s,null(),null(),null(),null(),null());
 			HX_STACK_LINE(179)
 			tempBitmap->set_scaleY(chunkSize);
 			HX_STACK_LINE(181)
-			::openfl::geom::Matrix sM = ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(sM,"sM");
+			::openfl::_legacy::geom::Matrix sM = ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(sM,"sM");
 			HX_STACK_LINE(182)
 			Float _g3 = tempBitmap->get_scaleX();		HX_STACK_VAR(_g3,"_g3");
 			HX_STACK_LINE(182)
@@ -488,7 +488,7 @@ bool interpolate = __o_interpolate.Default(true);
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC9(FlxGradient_obj,overlayGradientOnFlxSprite,return )
 
-::openfl::display::BitmapData FlxGradient_obj::overlayGradientOnBitmapData( ::openfl::display::BitmapData dest,int width,int height,Array< int > colors,hx::Null< int >  __o_destX,hx::Null< int >  __o_destY,hx::Null< int >  __o_chunkSize,hx::Null< int >  __o_rotation,hx::Null< bool >  __o_interpolate){
+::openfl::_legacy::display::BitmapData FlxGradient_obj::overlayGradientOnBitmapData( ::openfl::_legacy::display::BitmapData dest,int width,int height,Array< int > colors,hx::Null< int >  __o_destX,hx::Null< int >  __o_destY,hx::Null< int >  __o_chunkSize,hx::Null< int >  __o_rotation,hx::Null< bool >  __o_interpolate){
 int destX = __o_destX.Default(0);
 int destY = __o_destY.Default(0);
 int chunkSize = __o_chunkSize.Default(1);
@@ -524,15 +524,15 @@ bool interpolate = __o_interpolate.Default(true);
 			height = _g3;
 		}
 		HX_STACK_LINE(254)
-		::openfl::display::BitmapData source = ::flixel::util::FlxGradient_obj::createGradientBitmapData(width,height,colors,chunkSize,rotation,interpolate);		HX_STACK_VAR(source,"source");
+		::openfl::_legacy::display::BitmapData source = ::flixel::util::FlxGradient_obj::createGradientBitmapData(width,height,colors,chunkSize,rotation,interpolate);		HX_STACK_VAR(source,"source");
 		HX_STACK_LINE(255)
 		int _g4 = source->get_width();		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(255)
 		int _g5 = source->get_height();		HX_STACK_VAR(_g5,"_g5");
 		HX_STACK_LINE(255)
-		::openfl::geom::Rectangle _g6 = ::openfl::geom::Rectangle_obj::__new((int)0,(int)0,_g4,_g5);		HX_STACK_VAR(_g6,"_g6");
+		::openfl::_legacy::geom::Rectangle _g6 = ::openfl::_legacy::geom::Rectangle_obj::__new((int)0,(int)0,_g4,_g5);		HX_STACK_VAR(_g6,"_g6");
 		HX_STACK_LINE(255)
-		::openfl::geom::Point _g7 = ::openfl::geom::Point_obj::__new(destX,destY);		HX_STACK_VAR(_g7,"_g7");
+		::openfl::_legacy::geom::Point _g7 = ::openfl::_legacy::geom::Point_obj::__new(destX,destY);		HX_STACK_VAR(_g7,"_g7");
 		HX_STACK_LINE(255)
 		dest->copyPixels(source,_g6,_g7,null(),null(),true);
 		HX_STACK_LINE(256)

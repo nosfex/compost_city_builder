@@ -30,59 +30,59 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_Bitmap
-#include <openfl/display/Bitmap.h>
+#ifndef INCLUDED_openfl__legacy_display_Bitmap
+#include <openfl/_legacy/display/Bitmap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_media_Sound
+#include <openfl/_legacy/media/Sound.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormatAlign
+#include <openfl/_legacy/text/TextFormatAlign.h>
 #endif
 #ifndef INCLUDED_openfl_display_PixelSnapping
 #include <openfl/display/PixelSnapping.h>
-#endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
-#endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_media_Sound
-#include <openfl/media/Sound.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormatAlign
-#include <openfl/text/TextFormatAlign.h>
 #endif
 namespace flixel{
 namespace system{
@@ -106,15 +106,15 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(53)
 	this->set_scaleY(this->_defaultScale);
 	HX_STACK_LINE(54)
-	::openfl::display::BitmapData _g = ::openfl::display::BitmapData_obj::__new(this->_width,(int)30,true,(int)2130706432,null());		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::display::BitmapData _g = ::openfl::_legacy::display::BitmapData_obj::__new(this->_width,(int)30,true,(int)2130706432,null());		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(54)
-	::openfl::display::Bitmap tmp = ::openfl::display::Bitmap_obj::__new(_g,null(),null());		HX_STACK_VAR(tmp,"tmp");
+	::openfl::_legacy::display::Bitmap tmp = ::openfl::_legacy::display::Bitmap_obj::__new(_g,null(),null());		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(55)
 	this->screenCenter();
 	HX_STACK_LINE(56)
 	this->addChild(tmp);
 	HX_STACK_LINE(58)
-	::openfl::text::TextField text = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(text,"text");
+	::openfl::_legacy::text::TextField text = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(text,"text");
 	HX_STACK_LINE(59)
 	Float _g1 = tmp->get_width();		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(59)
@@ -130,9 +130,9 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(63)
 	text->set_selectable(false);
 	HX_STACK_LINE(72)
-	::openfl::text::TextFormat dtf = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEFAULT,(int)8,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(dtf,"dtf");
+	::openfl::_legacy::text::TextFormat dtf = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEFAULT,(int)8,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(dtf,"dtf");
 	HX_STACK_LINE(73)
-	dtf->align = ::openfl::text::TextFormatAlign_obj::CENTER;
+	dtf->align = ::openfl::_legacy::text::TextFormatAlign_obj::CENTER;
 	HX_STACK_LINE(74)
 	text->set_defaultTextFormat(dtf);
 	HX_STACK_LINE(75)
@@ -163,9 +163,9 @@ HX_STACK_THIS(this)
 			HX_STACK_LINE(83)
 			int i = (_g4)++;		HX_STACK_VAR(i,"i");
 			HX_STACK_LINE(85)
-			::openfl::display::BitmapData _g41 = ::openfl::display::BitmapData_obj::__new((int)4,(i + (int)1),false,(int)-1,null());		HX_STACK_VAR(_g41,"_g41");
+			::openfl::_legacy::display::BitmapData _g41 = ::openfl::_legacy::display::BitmapData_obj::__new((int)4,(i + (int)1),false,(int)-1,null());		HX_STACK_VAR(_g41,"_g41");
 			HX_STACK_LINE(85)
-			::openfl::display::Bitmap _g5 = ::openfl::display::Bitmap_obj::__new(_g41,null(),null());		HX_STACK_VAR(_g5,"_g5");
+			::openfl::_legacy::display::Bitmap _g5 = ::openfl::_legacy::display::Bitmap_obj::__new(_g41,null(),null());		HX_STACK_VAR(_g5,"_g5");
 			HX_STACK_LINE(85)
 			tmp = _g5;
 			HX_STACK_LINE(86)
@@ -269,7 +269,7 @@ bool Silent = __o_Silent.Default(false);
 		HX_STACK_LINE(132)
 		if ((!(Silent))){
 			HX_STACK_LINE(134)
-			::openfl::media::Sound _g;		HX_STACK_VAR(_g,"_g");
+			::openfl::_legacy::media::Sound _g;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(134)
 			{
 				HX_STACK_LINE(134)
@@ -277,7 +277,7 @@ bool Silent = __o_Silent.Default(false);
 				HX_STACK_LINE(134)
 				extension = HX_CSTRING(".ogg");
 				HX_STACK_LINE(134)
-				_g = ::openfl::Assets_obj::getSound((HX_CSTRING("assets/sounds/beep") + extension),null());
+				_g = ::openfl::_legacy::Assets_obj::getSound((HX_CSTRING("assets/sounds/beep") + extension),null());
 			}
 			HX_STACK_LINE(134)
 			::flixel::FlxG_obj::sound->load(_g,null(),null(),null(),null(),null(),null())->play(null());
@@ -315,11 +315,11 @@ bool Silent = __o_Silent.Default(false);
 				HX_STACK_LINE(150)
 				if (((i < globalVolume))){
 					HX_STACK_LINE(152)
-					this->_bars->__get(i).StaticCast< ::openfl::display::Bitmap >()->set_alpha((int)1);
+					this->_bars->__get(i).StaticCast< ::openfl::_legacy::display::Bitmap >()->set_alpha((int)1);
 				}
 				else{
 					HX_STACK_LINE(156)
-					this->_bars->__get(i).StaticCast< ::openfl::display::Bitmap >()->set_alpha(0.5);
+					this->_bars->__get(i).StaticCast< ::openfl::_legacy::display::Bitmap >()->set_alpha(0.5);
 				}
 			}
 		}
@@ -347,7 +347,7 @@ Void FlxSoundTray_obj::screenCenter( ){
 		HX_STACK_LINE(164)
 		this->set_scaleY(_g3);
 		HX_STACK_LINE(166)
-		int _g4 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g4,"_g4");
+		int _g4 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(166)
 		Float _g5 = (_g4 - (this->_width * this->_defaultScale));		HX_STACK_VAR(_g5,"_g5");
 		HX_STACK_LINE(166)
@@ -382,7 +382,7 @@ void FlxSoundTray_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(_bars,"_bars");
 	HX_MARK_MEMBER_NAME(_width,"_width");
 	HX_MARK_MEMBER_NAME(_defaultScale,"_defaultScale");
-	::openfl::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -393,7 +393,7 @@ void FlxSoundTray_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(_bars,"_bars");
 	HX_VISIT_MEMBER_NAME(_width,"_width");
 	HX_VISIT_MEMBER_NAME(_defaultScale,"_defaultScale");
-	::openfl::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic FlxSoundTray_obj::__Field(const ::String &inName,bool inCallProp)

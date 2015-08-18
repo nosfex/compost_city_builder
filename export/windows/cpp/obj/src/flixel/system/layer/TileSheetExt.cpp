@@ -18,26 +18,26 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_Tilesheet
-#include <openfl/display/Tilesheet.h>
+#ifndef INCLUDED_openfl__legacy_display_Tilesheet
+#include <openfl/_legacy/display/Tilesheet.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace system{
 namespace layer{
 
-Void TileSheetExt_obj::__construct(::openfl::display::BitmapData bitmap)
+Void TileSheetExt_obj::__construct(::openfl::_legacy::display::BitmapData bitmap)
 {
 HX_STACK_FRAME("flixel.system.layer.TileSheetExt","new",0x0d1974ec,"flixel.system.layer.TileSheetExt.new","flixel/system/layer/TileSheetExt.hx",11,0x9b6b4f03)
 HX_STACK_THIS(this)
@@ -63,7 +63,7 @@ HX_STACK_ARG(bitmap,"bitmap")
 //TileSheetExt_obj::~TileSheetExt_obj() { }
 
 Dynamic TileSheetExt_obj::__CreateEmpty() { return  new TileSheetExt_obj; }
-hx::ObjectPtr< TileSheetExt_obj > TileSheetExt_obj::__new(::openfl::display::BitmapData bitmap)
+hx::ObjectPtr< TileSheetExt_obj > TileSheetExt_obj::__new(::openfl::_legacy::display::BitmapData bitmap)
 {  hx::ObjectPtr< TileSheetExt_obj > result = new TileSheetExt_obj();
 	result->__construct(bitmap);
 	return result;}
@@ -125,7 +125,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(TileSheetExt_obj,rebuildFromOld,(void))
 
-::String TileSheetExt_obj::getKey( ::openfl::geom::Rectangle rect,::openfl::geom::Point point){
+::String TileSheetExt_obj::getKey( ::openfl::_legacy::geom::Rectangle rect,::openfl::_legacy::geom::Point point){
 	HX_STACK_FRAME("flixel.system.layer.TileSheetExt","getKey",0xe3037d9d,"flixel.system.layer.TileSheetExt.getKey","flixel/system/layer/TileSheetExt.hx",53,0x9b6b4f03)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(rect,"rect")
@@ -144,7 +144,7 @@ HX_DEFINE_DYNAMIC_FUNC1(TileSheetExt_obj,rebuildFromOld,(void))
 
 HX_DEFINE_DYNAMIC_FUNC2(TileSheetExt_obj,getKey,return )
 
-int TileSheetExt_obj::addTileRectID( ::openfl::geom::Rectangle rect,::openfl::geom::Point point){
+int TileSheetExt_obj::addTileRectID( ::openfl::_legacy::geom::Rectangle rect,::openfl::_legacy::geom::Point point){
 	HX_STACK_FRAME("flixel.system.layer.TileSheetExt","addTileRectID",0x582d88da,"flixel.system.layer.TileSheetExt.addTileRectID","flixel/system/layer/TileSheetExt.hx",67,0x9b6b4f03)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(rect,"rect")
@@ -214,7 +214,7 @@ void TileSheetExt_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(numTiles,"numTiles");
 	HX_MARK_MEMBER_NAME(tileIDs,"tileIDs");
 	HX_MARK_MEMBER_NAME(tileOrder,"tileOrder");
-	::openfl::display::Tilesheet_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::Tilesheet_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -223,7 +223,7 @@ void TileSheetExt_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(numTiles,"numTiles");
 	HX_VISIT_MEMBER_NAME(tileIDs,"tileIDs");
 	HX_VISIT_MEMBER_NAME(tileOrder,"tileOrder");
-	::openfl::display::Tilesheet_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::Tilesheet_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic TileSheetExt_obj::__Field(const ::String &inName,bool inCallProp)

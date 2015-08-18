@@ -6,14 +6,14 @@
 #ifndef INCLUDED_flixel_util__FlxBitmapDataPool_FlxBitmapDataPoolNode
 #include <flixel/util/_FlxBitmapDataPool/FlxBitmapDataPoolNode.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -44,9 +44,9 @@ int FlxBitmapDataPool_obj::length;
 
 ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode FlxBitmapDataPool_obj::_tail;
 
-::openfl::geom::Rectangle FlxBitmapDataPool_obj::_rect;
+::openfl::_legacy::geom::Rectangle FlxBitmapDataPool_obj::_rect;
 
-::openfl::display::BitmapData FlxBitmapDataPool_obj::get( int w,int h,hx::Null< bool >  __o_transparent,Dynamic fillColor,Dynamic __o_exactSize){
+::openfl::_legacy::display::BitmapData FlxBitmapDataPool_obj::get( int w,int h,hx::Null< bool >  __o_transparent,Dynamic fillColor,Dynamic __o_exactSize){
 bool transparent = __o_transparent.Default(true);
 Dynamic exactSize = __o_exactSize.Default(false);
 	HX_STACK_FRAME("flixel.util.FlxBitmapDataPool","get",0x62a51335,"flixel.util.FlxBitmapDataPool.get","flixel/util/FlxBitmapDataPool.hx",41,0x992b0db1)
@@ -57,7 +57,7 @@ Dynamic exactSize = __o_exactSize.Default(false);
 	HX_STACK_ARG(exactSize,"exactSize")
 {
 		HX_STACK_LINE(42)
-		::openfl::display::BitmapData res = null();		HX_STACK_VAR(res,"res");
+		::openfl::_legacy::display::BitmapData res = null();		HX_STACK_VAR(res,"res");
 		HX_STACK_LINE(45)
 		::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode node = ::flixel::util::FlxBitmapDataPool_obj::_head;		HX_STACK_VAR(node,"node");
 		HX_STACK_LINE(46)
@@ -68,11 +68,11 @@ Dynamic exactSize = __o_exactSize.Default(false);
 				break;
 			}
 			HX_STACK_LINE(48)
-			::openfl::display::BitmapData bmd = node->bmd;		HX_STACK_VAR(bmd,"bmd");
+			::openfl::_legacy::display::BitmapData bmd = node->bmd;		HX_STACK_VAR(bmd,"bmd");
 			HX_STACK_LINE(49)
 			bool _g = bmd->get_transparent();		HX_STACK_VAR(_g,"_g");
 			struct _Function_2_1{
-				inline static bool Block( ::openfl::display::BitmapData &bmd,int &w){
+				inline static bool Block( ::openfl::_legacy::display::BitmapData &bmd,int &w){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapDataPool.hx",49,0x992b0db1)
 					{
 						HX_STACK_LINE(49)
@@ -84,7 +84,7 @@ Dynamic exactSize = __o_exactSize.Default(false);
 				}
 			};
 			struct _Function_2_2{
-				inline static bool Block( ::openfl::display::BitmapData &bmd,int &h){
+				inline static bool Block( ::openfl::_legacy::display::BitmapData &bmd,int &h){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapDataPool.hx",49,0x992b0db1)
 					{
 						HX_STACK_LINE(49)
@@ -96,15 +96,15 @@ Dynamic exactSize = __o_exactSize.Default(false);
 				}
 			};
 			struct _Function_2_3{
-				inline static bool Block( Dynamic &exactSize,::openfl::display::BitmapData &bmd,int &w,int &h){
+				inline static bool Block( Dynamic &exactSize,::openfl::_legacy::display::BitmapData &bmd,int &w,int &h){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapDataPool.hx",50,0x992b0db1)
 					{
 						struct _Function_3_1{
-							inline static bool Block( Dynamic &exactSize,::openfl::display::BitmapData &bmd,int &w,int &h){
+							inline static bool Block( Dynamic &exactSize,::openfl::_legacy::display::BitmapData &bmd,int &w,int &h){
 								HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapDataPool.hx",50,0x992b0db1)
 								{
 									struct _Function_4_1{
-										inline static bool Block( ::openfl::display::BitmapData &bmd,int &w){
+										inline static bool Block( ::openfl::_legacy::display::BitmapData &bmd,int &w){
 											HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapDataPool.hx",50,0x992b0db1)
 											{
 												HX_STACK_LINE(50)
@@ -116,7 +116,7 @@ Dynamic exactSize = __o_exactSize.Default(false);
 										}
 									};
 									struct _Function_4_2{
-										inline static bool Block( ::openfl::display::BitmapData &bmd,int &h){
+										inline static bool Block( ::openfl::_legacy::display::BitmapData &bmd,int &h){
 											HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxBitmapDataPool.hx",50,0x992b0db1)
 											{
 												HX_STACK_LINE(50)
@@ -191,7 +191,7 @@ Dynamic exactSize = __o_exactSize.Default(false);
 		}
 		else{
 			HX_STACK_LINE(79)
-			::openfl::display::BitmapData _g5 = ::openfl::display::BitmapData_obj::__new(w,h,transparent,(  (((fillColor != null()))) ? int(fillColor) : int((int)-1) ),null());		HX_STACK_VAR(_g5,"_g5");
+			::openfl::_legacy::display::BitmapData _g5 = ::openfl::_legacy::display::BitmapData_obj::__new(w,h,transparent,(  (((fillColor != null()))) ? int(fillColor) : int((int)-1) ),null());		HX_STACK_VAR(_g5,"_g5");
 			HX_STACK_LINE(79)
 			res = _g5;
 		}
@@ -203,7 +203,7 @@ Dynamic exactSize = __o_exactSize.Default(false);
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC5(FlxBitmapDataPool_obj,get,return )
 
-Void FlxBitmapDataPool_obj::put( ::openfl::display::BitmapData bmd){
+Void FlxBitmapDataPool_obj::put( ::openfl::_legacy::display::BitmapData bmd){
 {
 		HX_STACK_FRAME("flixel.util.FlxBitmapDataPool","put",0x62abf56e,"flixel.util.FlxBitmapDataPool.put","flixel/util/FlxBitmapDataPool.hx",89,0x992b0db1)
 		HX_STACK_ARG(bmd,"bmd")
@@ -264,7 +264,7 @@ Void FlxBitmapDataPool_obj::clear( ){
 				break;
 			}
 			HX_STACK_LINE(125)
-			::openfl::display::BitmapData bmd = node->bmd;		HX_STACK_VAR(bmd,"bmd");
+			::openfl::_legacy::display::BitmapData bmd = node->bmd;		HX_STACK_VAR(bmd,"bmd");
 			HX_STACK_LINE(126)
 			bmd->dispose();
 			HX_STACK_LINE(127)
@@ -300,7 +300,7 @@ int FlxBitmapDataPool_obj::set_maxLength( int value){
 				break;
 			}
 			HX_STACK_LINE(141)
-			::openfl::display::BitmapData bmd = node->bmd;		HX_STACK_VAR(bmd,"bmd");
+			::openfl::_legacy::display::BitmapData bmd = node->bmd;		HX_STACK_VAR(bmd,"bmd");
 			HX_STACK_LINE(142)
 			bmd->dispose();
 			HX_STACK_LINE(143)
@@ -354,7 +354,7 @@ Dynamic FlxBitmapDataPool_obj::__SetField(const ::String &inName,const Dynamic &
 	case 5:
 		if (HX_FIELD_EQ(inName,"_head") ) { _head=inValue.Cast< ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_tail") ) { _tail=inValue.Cast< ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_rect") ) { _rect=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_rect") ) { _rect=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"length") ) { length=inValue.Cast< int >(); return inValue; }
@@ -432,7 +432,7 @@ void FlxBitmapDataPool_obj::__boot()
 	length= (int)0;
 	_head= null();
 	_tail= null();
-	_rect= ::openfl::geom::Rectangle_obj::__new(null(),null(),null(),null());
+	_rect= ::openfl::_legacy::geom::Rectangle_obj::__new(null(),null(),null(),null());
 }
 
 } // end namespace flixel

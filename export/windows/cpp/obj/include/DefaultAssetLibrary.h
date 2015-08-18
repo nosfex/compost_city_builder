@@ -5,29 +5,31 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/AssetLibrary.h>
+#include <openfl/_legacy/AssetLibrary.h>
 HX_DECLARE_CLASS0(DefaultAssetLibrary)
 HX_DECLARE_CLASS0(IMap)
+HX_DECLARE_CLASS2(cpp,vm,Deque)
+HX_DECLARE_CLASS2(cpp,vm,Thread)
 HX_DECLARE_CLASS1(haxe,Timer)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
 HX_DECLARE_CLASS2(haxe,io,Bytes)
-HX_DECLARE_CLASS1(openfl,AssetLibrary)
-HX_DECLARE_CLASS1(openfl,AssetType)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,media,Sound)
-HX_DECLARE_CLASS2(openfl,text,Font)
-HX_DECLARE_CLASS2(openfl,utils,ByteArray)
-HX_DECLARE_CLASS2(openfl,utils,IDataInput)
-HX_DECLARE_CLASS2(openfl,utils,IDataOutput)
-HX_DECLARE_CLASS2(openfl,utils,IMemoryRange)
+HX_DECLARE_CLASS2(openfl,_legacy,AssetLibrary)
+HX_DECLARE_CLASS2(openfl,_legacy,AssetType)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,media,Sound)
+HX_DECLARE_CLASS3(openfl,_legacy,text,Font)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,ByteArray)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataInput)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataOutput)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IMemoryRange)
 
 
-class HXCPP_CLASS_ATTRIBUTES  DefaultAssetLibrary_obj : public ::openfl::AssetLibrary_obj{
+class HXCPP_CLASS_ATTRIBUTES  DefaultAssetLibrary_obj : public ::openfl::_legacy::AssetLibrary_obj{
 	public:
-		typedef ::openfl::AssetLibrary_obj super;
+		typedef ::openfl::_legacy::AssetLibrary_obj super;
 		typedef DefaultAssetLibrary_obj OBJ_;
 		DefaultAssetLibrary_obj();
 		Void __construct();
@@ -52,25 +54,25 @@ class HXCPP_CLASS_ATTRIBUTES  DefaultAssetLibrary_obj : public ::openfl::AssetLi
 		::haxe::ds::StringMap type;
 		Float lastModified;
 		::haxe::Timer timer;
-		virtual bool exists( ::String id,::openfl::AssetType type);
+		virtual bool exists( ::String id,::openfl::_legacy::AssetType type);
 
-		virtual ::openfl::display::BitmapData getBitmapData( ::String id);
+		virtual ::openfl::_legacy::display::BitmapData getBitmapData( ::String id);
 
-		virtual ::openfl::utils::ByteArray getBytes( ::String id);
+		virtual ::openfl::_legacy::utils::ByteArray getBytes( ::String id);
 
-		virtual ::openfl::text::Font getFont( ::String id);
+		virtual ::openfl::_legacy::text::Font getFont( ::String id);
 
-		virtual ::openfl::media::Sound getMusic( ::String id);
+		virtual ::openfl::_legacy::media::Sound getMusic( ::String id);
 
 		virtual ::String getPath( ::String id);
 
-		virtual ::openfl::media::Sound getSound( ::String id);
+		virtual ::openfl::_legacy::media::Sound getSound( ::String id);
 
 		virtual ::String getText( ::String id);
 
-		virtual bool isLocal( ::String id,::openfl::AssetType type);
+		virtual bool isLocal( ::String id,::openfl::_legacy::AssetType type);
 
-		virtual Array< ::String > list( ::openfl::AssetType type);
+		virtual Array< ::String > list( ::openfl::_legacy::AssetType type);
 
 		virtual Void loadBitmapData( ::String id,Dynamic handler);
 
@@ -86,6 +88,20 @@ class HXCPP_CLASS_ATTRIBUTES  DefaultAssetLibrary_obj : public ::openfl::AssetLi
 		virtual Void loadSound( ::String id,Dynamic handler);
 
 		virtual Void loadText( ::String id,Dynamic handler);
+
+		virtual Void __load( Dynamic getMethod,::String id,Dynamic handler);
+		Dynamic __load_dyn();
+
+		static int loaded;
+		static int loading;
+		static ::cpp::vm::Deque workerIncomingQueue;
+		static ::cpp::vm::Deque workerResult;
+		static ::cpp::vm::Thread workerThread;
+		static Void __doWork( );
+		static Dynamic __doWork_dyn();
+
+		static Void __poll( );
+		static Dynamic __poll_dyn();
 
 };
 

@@ -9,8 +9,8 @@
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,util,loaders,TextureAtlasFrame)
 HX_DECLARE_CLASS3(flixel,util,loaders,TexturePackerData)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace util{
 namespace loaders{
@@ -44,7 +44,7 @@ class HXCPP_CLASS_ATTRIBUTES  TexturePackerData_obj : public hx::Object{
 		Array< ::Dynamic > frames;
 		::String assetName;
 		::String description;
-		::openfl::display::BitmapData asset;
+		::openfl::_legacy::display::BitmapData asset;
 		virtual Void parseData( );
 		Dynamic parseData_dyn();
 

@@ -27,8 +27,8 @@
 #ifndef INCLUDED_flixel_util_FlxMath
 #include <flixel/util/FlxMath.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -42,26 +42,26 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -734,7 +734,7 @@ bool Invert = __o_Invert.Default(false);
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxStringUtil_obj,arrayToCSV,return )
 
-::String FlxStringUtil_obj::bitmapToCSV( ::openfl::display::BitmapData Bitmap,hx::Null< bool >  __o_Invert,hx::Null< int >  __o_Scale,Array< int > ColorMap){
+::String FlxStringUtil_obj::bitmapToCSV( ::openfl::_legacy::display::BitmapData Bitmap,hx::Null< bool >  __o_Invert,hx::Null< int >  __o_Scale,Array< int > ColorMap){
 bool Invert = __o_Invert.Default(false);
 int Scale = __o_Scale.Default(1);
 	HX_STACK_FRAME("flixel.util.FlxStringUtil","bitmapToCSV",0x6fd72f79,"flixel.util.FlxStringUtil.bitmapToCSV","flixel/util/FlxStringUtil.hx",407,0x4e012e33)
@@ -751,7 +751,7 @@ int Scale = __o_Scale.Default(1);
 		HX_STACK_LINE(414)
 		if (((Scale > (int)1))){
 			HX_STACK_LINE(416)
-			::openfl::display::BitmapData bd = Bitmap;		HX_STACK_VAR(bd,"bd");
+			::openfl::_legacy::display::BitmapData bd = Bitmap;		HX_STACK_VAR(bd,"bd");
 			HX_STACK_LINE(417)
 			int _g = Bitmap->get_width();		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(417)
@@ -761,11 +761,11 @@ int Scale = __o_Scale.Default(1);
 			HX_STACK_LINE(417)
 			int _g3 = (_g2 * Scale);		HX_STACK_VAR(_g3,"_g3");
 			HX_STACK_LINE(417)
-			::openfl::display::BitmapData _g4 = ::openfl::display::BitmapData_obj::__new(_g1,_g3,null(),null(),null());		HX_STACK_VAR(_g4,"_g4");
+			::openfl::_legacy::display::BitmapData _g4 = ::openfl::_legacy::display::BitmapData_obj::__new(_g1,_g3,null(),null(),null());		HX_STACK_VAR(_g4,"_g4");
 			HX_STACK_LINE(417)
 			Bitmap = _g4;
 			HX_STACK_LINE(440)
-			::openfl::geom::Matrix mtx = ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(mtx,"mtx");
+			::openfl::_legacy::geom::Matrix mtx = ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());		HX_STACK_VAR(mtx,"mtx");
 			HX_STACK_LINE(441)
 			mtx->scale(Scale,Scale);
 			HX_STACK_LINE(442)
@@ -860,17 +860,17 @@ int Scale = __o_Scale.Default(1);
 	HX_STACK_ARG(Scale,"Scale")
 {
 		HX_STACK_LINE(513)
-		::openfl::display::BitmapData tempBitmapData;		HX_STACK_VAR(tempBitmapData,"tempBitmapData");
+		::openfl::_legacy::display::BitmapData tempBitmapData;		HX_STACK_VAR(tempBitmapData,"tempBitmapData");
 		HX_STACK_LINE(515)
 		if ((::Std_obj::is(ImageFile,hx::ClassOf< ::String >()))){
 			HX_STACK_LINE(517)
-			::openfl::display::BitmapData _g;		HX_STACK_VAR(_g,"_g");
+			::openfl::_legacy::display::BitmapData _g;		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(517)
 			{
 				HX_STACK_LINE(517)
 				::String id = ImageFile;		HX_STACK_VAR(id,"id");
 				HX_STACK_LINE(517)
-				_g = ::openfl::Assets_obj::getBitmapData(id,false);
+				_g = ::openfl::_legacy::Assets_obj::getBitmapData(id,false);
 			}
 			HX_STACK_LINE(517)
 			tempBitmapData = _g;

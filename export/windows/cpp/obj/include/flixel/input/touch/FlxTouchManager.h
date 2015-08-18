@@ -14,9 +14,9 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxInput)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS2(haxe,ds,IntMap)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
-HX_DECLARE_CLASS2(openfl,events,TouchEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,TouchEvent)
 namespace flixel{
 namespace input{
 namespace touch{
@@ -68,13 +68,13 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTouchManager_obj : public hx::Object{
 		virtual Void reset( );
 		Dynamic reset_dyn();
 
-		virtual Void handleTouchBegin( ::openfl::events::TouchEvent FlashEvent);
+		virtual Void handleTouchBegin( ::openfl::_legacy::events::TouchEvent FlashEvent);
 		Dynamic handleTouchBegin_dyn();
 
-		virtual Void handleTouchEnd( ::openfl::events::TouchEvent FlashEvent);
+		virtual Void handleTouchEnd( ::openfl::_legacy::events::TouchEvent FlashEvent);
 		Dynamic handleTouchEnd_dyn();
 
-		virtual Void handleTouchMove( ::openfl::events::TouchEvent FlashEvent);
+		virtual Void handleTouchMove( ::openfl::_legacy::events::TouchEvent FlashEvent);
 		Dynamic handleTouchMove_dyn();
 
 		virtual ::flixel::input::touch::FlxTouch add( ::flixel::input::touch::FlxTouch Touch);

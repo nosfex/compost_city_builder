@@ -3,8 +3,8 @@
 #ifndef INCLUDED_Std
 #include <Std.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
 #ifndef INCLUDED_openfl_events_JoystickEvent
 #include <openfl/events/JoystickEvent.h>
@@ -64,7 +64,7 @@ Dynamic JoystickEvent_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0],inArgs[1],inArgs[2],inArgs[3],inArgs[4],inArgs[5],inArgs[6],inArgs[7]);
 	return result;}
 
-::openfl::events::Event JoystickEvent_obj::clone( ){
+::openfl::_legacy::events::Event JoystickEvent_obj::clone( ){
 	HX_STACK_FRAME("openfl.events.JoystickEvent","clone",0xb343a2d6,"openfl.events.JoystickEvent.clone","openfl/events/JoystickEvent.hx",40,0x4ab90817)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(42)
@@ -84,9 +84,9 @@ Dynamic JoystickEvent_obj::__Create(hx::DynamicArray inArgs)
 	HX_STACK_LINE(49)
 	::String _g = this->get_type();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(49)
-	::String _g1 = (HX_CSTRING("[JoystickEvent type=") + _g);		HX_STACK_VAR(_g1,"_g1");
+	::String _g1 = (HX_CSTRING("[JoystickEvent type=\"") + _g);		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(49)
-	::String _g2 = (_g1 + HX_CSTRING(" bubbles="));		HX_STACK_VAR(_g2,"_g2");
+	::String _g2 = (_g1 + HX_CSTRING("\" bubbles="));		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(49)
 	bool _g3 = this->get_bubbles();		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(49)
@@ -154,7 +154,7 @@ void JoystickEvent_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(x,"x");
 	HX_MARK_MEMBER_NAME(y,"y");
 	HX_MARK_MEMBER_NAME(z,"z");
-	::openfl::events::Event_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::events::Event_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -166,7 +166,7 @@ void JoystickEvent_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(x,"x");
 	HX_VISIT_MEMBER_NAME(y,"y");
 	HX_VISIT_MEMBER_NAME(z,"z");
-	::openfl::events::Event_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::events::Event_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic JoystickEvent_obj::__Field(const ::String &inName,bool inCallProp)

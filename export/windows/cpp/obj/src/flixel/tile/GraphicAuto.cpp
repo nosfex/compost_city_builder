@@ -9,30 +9,30 @@
 #ifndef INCLUDED_haxe_io_Bytes
 #include <haxe/io/Bytes.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_utils_ByteArray
-#include <openfl/utils/ByteArray.h>
+#ifndef INCLUDED_openfl__legacy_utils_ByteArray
+#include <openfl/_legacy/utils/ByteArray.h>
 #endif
-#ifndef INCLUDED_openfl_utils_IDataInput
-#include <openfl/utils/IDataInput.h>
+#ifndef INCLUDED_openfl__legacy_utils_IDataInput
+#include <openfl/_legacy/utils/IDataInput.h>
 #endif
-#ifndef INCLUDED_openfl_utils_IDataOutput
-#include <openfl/utils/IDataOutput.h>
+#ifndef INCLUDED_openfl__legacy_utils_IDataOutput
+#include <openfl/_legacy/utils/IDataOutput.h>
 #endif
-#ifndef INCLUDED_openfl_utils_IMemoryRange
-#include <openfl/utils/IMemoryRange.h>
+#ifndef INCLUDED_openfl__legacy_utils_IMemoryRange
+#include <openfl/_legacy/utils/IMemoryRange.h>
 #endif
 namespace flixel{
 namespace tile{
 
 Void GraphicAuto_obj::__construct(int width,int height,Dynamic __o_transparent,Dynamic __o_fillRGBA)
 {
-HX_STACK_FRAME("flixel.tile.GraphicAuto","new",0x7549f89b,"flixel.tile.GraphicAuto.new","openfl/Assets.hx",1527,0x989d477c)
+HX_STACK_FRAME("flixel.tile.GraphicAuto","new",0x7549f89b,"flixel.tile.GraphicAuto.new","openfl/_legacy/Assets.hx",1666,0x9276b055)
 HX_STACK_THIS(this)
 HX_STACK_ARG(width,"width")
 HX_STACK_ARG(height,"height")
@@ -41,17 +41,17 @@ HX_STACK_ARG(__o_fillRGBA,"fillRGBA")
 Dynamic transparent = __o_transparent.Default(true);
 Dynamic fillRGBA = __o_fillRGBA.Default(-1);
 {
-	HX_STACK_LINE(1593)
+	HX_STACK_LINE(1732)
 	super::__construct(width,height,transparent,fillRGBA,null());
-	HX_STACK_LINE(1595)
+	HX_STACK_LINE(1734)
 	::haxe::io::Bytes _g = ::haxe::Resource_obj::getBytes(::flixel::tile::GraphicAuto_obj::resourceName);		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(1595)
-	::openfl::utils::ByteArray byteArray = ::openfl::utils::ByteArray_obj::fromBytes(_g);		HX_STACK_VAR(byteArray,"byteArray");
-	HX_STACK_LINE(1596)
+	HX_STACK_LINE(1734)
+	::openfl::_legacy::utils::ByteArray byteArray = ::openfl::_legacy::utils::ByteArray_obj::fromBytes(_g);		HX_STACK_VAR(byteArray,"byteArray");
+	HX_STACK_LINE(1735)
 	{
-		HX_STACK_LINE(1596)
-		Dynamic _g1 = ::openfl::display::BitmapData_obj::lime_bitmap_data_from_bytes(byteArray,null());		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(1596)
+		HX_STACK_LINE(1735)
+		Dynamic _g1 = ::openfl::_legacy::display::BitmapData_obj::lime_bitmap_data_from_bytes(byteArray,null());		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(1735)
 		this->__handle = _g1;
 	}
 }

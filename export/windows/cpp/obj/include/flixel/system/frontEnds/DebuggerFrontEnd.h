@@ -15,14 +15,14 @@ HX_DECLARE_CLASS3(flixel,system,frontEnds,DebuggerFrontEnd)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
 HX_DECLARE_CLASS3(flixel,util,_FlxSignal,FlxSignal0)
 HX_DECLARE_CLASS3(flixel,util,_FlxSignal,FlxSignalBase)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 namespace flixel{
 namespace system{
 namespace frontEnds{
@@ -61,7 +61,7 @@ class HXCPP_CLASS_ATTRIBUTES  DebuggerFrontEnd_obj : public hx::Object{
 		virtual Void resetLayout( );
 		Dynamic resetLayout_dyn();
 
-		virtual ::flixel::system::ui::FlxSystemButton addButton( ::flixel::system::debug::ButtonAlignment Alignment,::openfl::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  ToggleMode,hx::Null< bool >  UpdateLayout);
+		virtual ::flixel::system::ui::FlxSystemButton addButton( ::flixel::system::debug::ButtonAlignment Alignment,::openfl::_legacy::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  ToggleMode,hx::Null< bool >  UpdateLayout);
 		Dynamic addButton_dyn();
 
 		virtual ::flixel::system::debug::Window track( Dynamic Object,::String WindowTitle);

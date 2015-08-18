@@ -8,16 +8,16 @@ namespace net{
 
 Void URLRequestHeader_obj::__construct(::String __o_name,::String __o_value)
 {
-HX_STACK_FRAME("openfl.net.URLRequestHeader","new",0xe794452e,"openfl.net.URLRequestHeader.new","openfl/net/URLRequestHeader.hx",11,0xf4ac7ec0)
+HX_STACK_FRAME("openfl.net.URLRequestHeader","new",0xe794452e,"openfl.net.URLRequestHeader.new","openfl/net/URLRequestHeader.hx",97,0xf4ac7ec0)
 HX_STACK_THIS(this)
 HX_STACK_ARG(__o_name,"name")
 HX_STACK_ARG(__o_value,"value")
 ::String name = __o_name.Default(HX_CSTRING(""));
 ::String value = __o_value.Default(HX_CSTRING(""));
 {
-	HX_STACK_LINE(13)
+	HX_STACK_LINE(99)
 	this->name = name;
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(100)
 	this->value = value;
 }
 ;

@@ -57,59 +57,59 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_KeyboardEvent
+#include <openfl/_legacy/events/KeyboardEvent.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
 #ifndef INCLUDED_openfl_events_FocusEvent
 #include <openfl/events/FocusEvent.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_KeyboardEvent
-#include <openfl/events/KeyboardEvent.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
-#endif
 #ifndef INCLUDED_openfl_text_TextFieldType
 #include <openfl/text/TextFieldType.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
 #endif
 namespace flixel{
 namespace system{
@@ -162,7 +162,7 @@ HX_STACK_THIS(this)
 		::flixel::FlxG_obj::save->data->__FieldRef(HX_CSTRING("history")) = this->cmdHistory;
 	}
 	HX_STACK_LINE(98)
-	::openfl::text::TextField _g7 = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(_g7,"_g7");
+	::openfl::_legacy::text::TextField _g7 = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(_g7,"_g7");
 	HX_STACK_LINE(98)
 	this->_input = _g7;
 	HX_STACK_LINE(99)
@@ -170,7 +170,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(100)
 	this->_input->set_embedFonts(true);
 	HX_STACK_LINE(101)
-	::openfl::text::TextFormat _g8 = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,(int)13,(int)16777215,false,false,false,null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g8,"_g8");
+	::openfl::_legacy::text::TextFormat _g8 = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,(int)13,(int)16777215,false,false,false,null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g8,"_g8");
 	HX_STACK_LINE(101)
 	this->_input->set_defaultTextFormat(_g8);
 	HX_STACK_LINE(102)
@@ -190,7 +190,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(110)
 	this->_input->addEventListener(::openfl::events::FocusEvent_obj::FOCUS_OUT,this->onFocusLost_dyn(),null(),null(),null());
 	HX_STACK_LINE(111)
-	this->_input->addEventListener(::openfl::events::KeyboardEvent_obj::KEY_DOWN,this->onKeyPress_dyn(),null(),null(),null());
+	this->_input->addEventListener(::openfl::_legacy::events::KeyboardEvent_obj::KEY_DOWN,this->onKeyPress_dyn(),null(),null(),null());
 	HX_STACK_LINE(115)
 	::flixel::system::debug::ConsoleCommands_obj::__new(hx::ObjectPtr<OBJ_>(this));
 }
@@ -253,7 +253,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(Console_obj,onFocusLost,(void))
 
-Void Console_obj::onKeyPress( ::openfl::events::KeyboardEvent e){
+Void Console_obj::onKeyPress( ::openfl::_legacy::events::KeyboardEvent e){
 {
 		HX_STACK_FRAME("flixel.system.debug.Console","onKeyPress",0x56941802,"flixel.system.debug.Console.onKeyPress","flixel/system/debug/Console.hx",159,0x3559cbd0)
 		HX_STACK_THIS(this)
@@ -296,7 +296,7 @@ Void Console_obj::onKeyPress( ::openfl::events::KeyboardEvent e){
 			HX_STACK_LINE(169)
 			if (((e->keyCode == (int)27))){
 				HX_STACK_LINE(170)
-				::openfl::Lib_obj::get_current()->get_stage()->set_focus(null());
+				::openfl::_legacy::Lib_obj::get_current()->get_stage()->set_focus(null());
 			}
 			else{
 				HX_STACK_LINE(173)
@@ -327,9 +327,9 @@ Void Console_obj::onKeyPress( ::openfl::events::KeyboardEvent e){
 						HX_STACK_LINE(182)
 						this->_input->set_text(_g2);
 						HX_STACK_LINE(185)
-						this->addEventListener(::openfl::events::Event_obj::RENDER,this->overrideDefaultSelection_dyn(),null(),null(),null());
+						this->addEventListener(::openfl::_legacy::events::Event_obj::RENDER,this->overrideDefaultSelection_dyn(),null(),null(),null());
 						HX_STACK_LINE(186)
-						::openfl::Lib_obj::get_current()->get_stage()->invalidate();
+						::openfl::_legacy::Lib_obj::get_current()->get_stage()->invalidate();
 					}
 					else{
 						HX_STACK_LINE(189)
@@ -448,7 +448,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(Console_obj,processCommand,(void))
 
-Void Console_obj::overrideDefaultSelection( ::openfl::events::Event e){
+Void Console_obj::overrideDefaultSelection( ::openfl::_legacy::events::Event e){
 {
 		HX_STACK_FRAME("flixel.system.debug.Console","overrideDefaultSelection",0x1d35c856,"flixel.system.debug.Console.overrideDefaultSelection","flixel/system/debug/Console.hx",253,0x3559cbd0)
 		HX_STACK_THIS(this)
@@ -456,7 +456,7 @@ Void Console_obj::overrideDefaultSelection( ::openfl::events::Event e){
 		HX_STACK_LINE(254)
 		this->_input->setSelection(this->_input->get_text().length,this->_input->get_text().length);
 		HX_STACK_LINE(255)
-		this->removeEventListener(::openfl::events::Event_obj::RENDER,this->overrideDefaultSelection_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::Event_obj::RENDER,this->overrideDefaultSelection_dyn(),null());
 	}
 return null();
 }
@@ -585,7 +585,7 @@ Void Console_obj::destroy( ){
 		HX_STACK_LINE(323)
 		this->_input->removeEventListener(::openfl::events::FocusEvent_obj::FOCUS_OUT,this->onFocusLost_dyn(),null());
 		HX_STACK_LINE(324)
-		this->_input->removeEventListener(::openfl::events::KeyboardEvent_obj::KEY_DOWN,this->onKeyPress_dyn(),null());
+		this->_input->removeEventListener(::openfl::_legacy::events::KeyboardEvent_obj::KEY_DOWN,this->onKeyPress_dyn(),null());
 		HX_STACK_LINE(326)
 		if (((this->_input != null()))){
 			HX_STACK_LINE(328)
@@ -709,7 +709,7 @@ Dynamic Console_obj::__SetField(const ::String &inName,const Dynamic &inValue,bo
 {
 	switch(inName.length) {
 	case 6:
-		if (HX_FIELD_EQ(inName,"_input") ) { _input=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_input") ) { _input=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"commands") ) { commands=inValue.Cast< Dynamic >(); return inValue; }
@@ -757,7 +757,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Array< ::String >*/ ,(int)offsetof(Console_obj,cmdHistory),HX_CSTRING("cmdHistory")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(Console_obj,commands),HX_CSTRING("commands")},
 	{hx::fsInt,(int)offsetof(Console_obj,_historyIndex),HX_CSTRING("_historyIndex")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(Console_obj,_input),HX_CSTRING("_input")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(Console_obj,_input),HX_CSTRING("_input")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif

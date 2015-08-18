@@ -6,10 +6,10 @@
 #endif
 
 HX_DECLARE_CLASS2(flixel,util,FlxBitmapUtil)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace util{
 
@@ -34,16 +34,16 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBitmapUtil_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("FlxBitmapUtil"); }
 
-		static Void merge( ::openfl::display::BitmapData sourceBitmapData,::openfl::geom::Rectangle sourceRect,::openfl::display::BitmapData destBitmapData,::openfl::geom::Point destPoint,int redMultiplier,int greenMultiplier,int blueMultiplier,int alphaMultiplier);
+		static Void merge( ::openfl::_legacy::display::BitmapData sourceBitmapData,::openfl::_legacy::geom::Rectangle sourceRect,::openfl::_legacy::display::BitmapData destBitmapData,::openfl::_legacy::geom::Point destPoint,int redMultiplier,int greenMultiplier,int blueMultiplier,int alphaMultiplier);
 		static Dynamic merge_dyn();
 
 		static int mergeColorComponent( int source,int dest,int multiplier);
 		static Dynamic mergeColorComponent_dyn();
 
-		static Dynamic compare( ::openfl::display::BitmapData Bitmap1,::openfl::display::BitmapData Bitmap2);
+		static Dynamic compare( ::openfl::_legacy::display::BitmapData Bitmap1,::openfl::_legacy::display::BitmapData Bitmap2);
 		static Dynamic compare_dyn();
 
-		static Float getMemorySize( ::openfl::display::BitmapData bitmapData);
+		static Float getMemorySize( ::openfl::_legacy::display::BitmapData bitmapData);
 		static Dynamic getMemorySize_dyn();
 
 };

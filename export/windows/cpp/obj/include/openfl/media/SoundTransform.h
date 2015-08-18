@@ -15,12 +15,12 @@ class HXCPP_CLASS_ATTRIBUTES  SoundTransform_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef SoundTransform_obj OBJ_;
 		SoundTransform_obj();
-		Void __construct(hx::Null< Float >  __o_volume,hx::Null< Float >  __o_pan);
+		Void __construct(hx::Null< Float >  __o_vol,hx::Null< Float >  __o_panning);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=false)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< SoundTransform_obj > __new(hx::Null< Float >  __o_volume,hx::Null< Float >  __o_pan);
+		static hx::ObjectPtr< SoundTransform_obj > __new(hx::Null< Float >  __o_vol,hx::Null< Float >  __o_panning);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~SoundTransform_obj();

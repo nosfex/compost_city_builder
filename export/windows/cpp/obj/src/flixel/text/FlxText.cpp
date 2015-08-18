@@ -51,8 +51,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_loaders_CachedGraphics
 #include <flixel/util/loaders/CachedGraphics.h>
@@ -60,59 +60,59 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_filters_BitmapFilter
-#include <openfl/filters/BitmapFilter.h>
+#ifndef INCLUDED_openfl__legacy_filters_BitmapFilter
+#include <openfl/_legacy/filters/BitmapFilter.h>
 #endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_text_Font
-#include <openfl/text/Font.h>
+#ifndef INCLUDED_openfl__legacy_text_Font
+#include <openfl/_legacy/text/Font.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormatAlign
+#include <openfl/_legacy/text/TextFormatAlign.h>
 #endif
 #ifndef INCLUDED_openfl_text_TextFieldAutoSize
 #include <openfl/text/TextFieldAutoSize.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormatAlign
-#include <openfl/text/TextFormatAlign.h>
 #endif
 namespace flixel{
 namespace text{
@@ -159,7 +159,7 @@ bool EmbeddedFont = __o_EmbeddedFont.Default(true);
 		setTextEmpty = true;
 	}
 	HX_STACK_LINE(184)
-	::openfl::text::TextField _g = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::text::TextField _g = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(184)
 	this->_textField = _g;
 	HX_STACK_LINE(185)
@@ -169,11 +169,11 @@ bool EmbeddedFont = __o_EmbeddedFont.Default(true);
 	HX_STACK_LINE(187)
 	this->_textField->set_wordWrap(true);
 	HX_STACK_LINE(188)
-	::openfl::text::TextFormat _g1 = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEFAULT,Size,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g1,"_g1");
+	::openfl::_legacy::text::TextFormat _g1 = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEFAULT,Size,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(188)
 	this->_defaultFormat = _g1;
 	HX_STACK_LINE(189)
-	::openfl::text::TextFormat _g2 = ::openfl::text::TextFormat_obj::__new(null(),null(),null(),null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
+	::openfl::_legacy::text::TextFormat _g2 = ::openfl::_legacy::text::TextFormat_obj::__new(null(),null(),null(),null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(189)
 	this->_formatAdjusted = _g2;
 	HX_STACK_LINE(190)
@@ -219,7 +219,7 @@ bool EmbeddedFont = __o_EmbeddedFont.Default(true);
 	HX_STACK_LINE(223)
 	{
 		HX_STACK_LINE(223)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)1,(int)1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)1,(int)1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(223)
 		point->_inPool = false;
 		HX_STACK_LINE(223)
@@ -458,7 +458,7 @@ bool Embedded = __o_Embedded.Default(true);
 			}
 			else{
 				HX_STACK_LINE(318)
-				this->_defaultFormat->font = ::openfl::Assets_obj::getFont(Font,null())->fontName;
+				this->_defaultFormat->font = ::openfl::_legacy::Assets_obj::getFont(Font,null())->fontName;
 			}
 		}
 		else{
@@ -471,15 +471,17 @@ bool Embedded = __o_Embedded.Default(true);
 		HX_STACK_LINE(326)
 		this->_textField->set_embedFonts(Embedded);
 		HX_STACK_LINE(328)
-		this->_defaultFormat->size = Size;
+		int _g = ::Std_obj::_int(Size);		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(328)
+		this->_defaultFormat->size = _g;
 		HX_STACK_LINE(329)
 		hx::AndEq(Color,(int)16777215);
 		HX_STACK_LINE(330)
 		this->_defaultFormat->color = Color;
 		HX_STACK_LINE(331)
-		::String _g = this->convertTextAlignmentFromString(Alignment);		HX_STACK_VAR(_g,"_g");
+		::String _g1 = this->convertTextAlignmentFromString(Alignment);		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(331)
-		this->_defaultFormat->align = _g;
+		this->_defaultFormat->align = _g1;
 		HX_STACK_LINE(332)
 		this->_textField->set_defaultTextFormat(this->_defaultFormat);
 		HX_STACK_LINE(333)
@@ -524,7 +526,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC4(FlxText_obj,setBorderStyle,(void))
 
-Void FlxText_obj::addFilter( ::openfl::filters::BitmapFilter filter,hx::Null< int >  __o_widthInc,hx::Null< int >  __o_heightInc){
+Void FlxText_obj::addFilter( ::openfl::_legacy::filters::BitmapFilter filter,hx::Null< int >  __o_widthInc,hx::Null< int >  __o_heightInc){
 int widthInc = __o_widthInc.Default(0);
 int heightInc = __o_heightInc.Default(0);
 	HX_STACK_FRAME("flixel.text.FlxText","addFilter",0x4880657b,"flixel.text.FlxText.addFilter","flixel/text/FlxText.hx",358,0xdf165a6e)
@@ -548,7 +550,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC3(FlxText_obj,addFilter,(void))
 
-Void FlxText_obj::removeFilter( ::openfl::filters::BitmapFilter filter){
+Void FlxText_obj::removeFilter( ::openfl::_legacy::filters::BitmapFilter filter){
 {
 		HX_STACK_FRAME("flixel.text.FlxText","removeFilter",0x2f410f9a,"flixel.text.FlxText.removeFilter","flixel/text/FlxText.hx",366,0xdf165a6e)
 		HX_STACK_THIS(this)
@@ -605,7 +607,7 @@ return null();
 }
 
 
-Void FlxText_obj::applyFormats( ::openfl::text::TextFormat FormatAdjusted,hx::Null< bool >  __o_UseBorderColor){
+Void FlxText_obj::applyFormats( ::openfl::_legacy::text::TextFormat FormatAdjusted,hx::Null< bool >  __o_UseBorderColor){
 bool UseBorderColor = __o_UseBorderColor.Default(false);
 	HX_STACK_FRAME("flixel.text.FlxText","applyFormats",0x597a620c,"flixel.text.FlxText.applyFormats","flixel/text/FlxText.hx",394,0xdf165a6e)
 	HX_STACK_THIS(this)
@@ -818,7 +820,9 @@ Float FlxText_obj::set_size( Float Size){
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Size,"Size")
 	HX_STACK_LINE(490)
-	this->_defaultFormat->size = Size;
+	int _g = ::Std_obj::_int(Size);		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(490)
+	this->_defaultFormat->size = _g;
 	HX_STACK_LINE(491)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
 	HX_STACK_LINE(492)
@@ -875,7 +879,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,get_font,return )
 	HX_STACK_LINE(523)
 	this->_textField->set_embedFonts(true);
 	HX_STACK_LINE(524)
-	this->_defaultFormat->font = ::openfl::Assets_obj::getFont(Font,null())->fontName;
+	this->_defaultFormat->font = ::openfl::_legacy::Assets_obj::getFont(Font,null())->fontName;
 	HX_STACK_LINE(525)
 	this->_textField->set_defaultTextFormat(this->_defaultFormat);
 	HX_STACK_LINE(526)
@@ -1141,7 +1145,7 @@ Float FlxText_obj::set_borderQuality( Float Value){
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,set_borderQuality,return )
 
-::openfl::text::TextField FlxText_obj::get_textField( ){
+::openfl::_legacy::text::TextField FlxText_obj::get_textField( ){
 	HX_STACK_FRAME("flixel.text.FlxText","get_textField",0xa2909266,"flixel.text.FlxText.get_textField","flixel/text/FlxText.hx",668,0xdf165a6e)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(668)
@@ -1176,7 +1180,7 @@ Void FlxText_obj::updateColorTransform( ){
 			HX_STACK_LINE(685)
 			if (((this->colorTransform == null()))){
 				HX_STACK_LINE(687)
-				::openfl::geom::ColorTransform _g = ::openfl::geom::ColorTransform_obj::__new((int)1,(int)1,(int)1,this->alpha,null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
+				::openfl::_legacy::geom::ColorTransform _g = ::openfl::_legacy::geom::ColorTransform_obj::__new((int)1,(int)1,(int)1,this->alpha,null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(687)
 				this->colorTransform = _g;
 			}
@@ -1339,9 +1343,9 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 				}
 			};
 			HX_STACK_LINE(778)
-			if (((  (((this->_defaultFormat->align == ::openfl::text::TextFormatAlign_obj::CENTER))) ? bool(_Function_2_1::Block(this)) : bool(false) ))){
+			if (((  (((this->_defaultFormat->align == ::openfl::_legacy::text::TextFormatAlign_obj::CENTER))) ? bool(_Function_2_1::Block(this)) : bool(false) ))){
 				HX_STACK_LINE(780)
-				this->_formatAdjusted->align = ::openfl::text::TextFormatAlign_obj::LEFT;
+				this->_formatAdjusted->align = ::openfl::_legacy::text::TextFormatAlign_obj::LEFT;
 				HX_STACK_LINE(781)
 				this->_textField->setTextFormat(this->_formatAdjusted,(int)0,this->_textField->get_text().length);
 				HX_STACK_LINE(786)
@@ -1373,7 +1377,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 					HX_STACK_LINE(803)
 					{
 						HX_STACK_LINE(803)
-						::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+						::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 						HX_STACK_LINE(803)
 						FormatAdjusted->color = this->borderColor;
 						HX_STACK_LINE(803)
@@ -1445,7 +1449,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 					HX_STACK_LINE(812)
 					{
 						HX_STACK_LINE(812)
-						::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+						::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 						HX_STACK_LINE(812)
 						FormatAdjusted->color = this->_defaultFormat->color;
 						HX_STACK_LINE(812)
@@ -1500,7 +1504,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 						HX_STACK_LINE(818)
 						{
 							HX_STACK_LINE(818)
-							::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+							::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 							HX_STACK_LINE(818)
 							FormatAdjusted->color = this->borderColor;
 							HX_STACK_LINE(818)
@@ -1604,7 +1608,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 						HX_STACK_LINE(843)
 						{
 							HX_STACK_LINE(843)
-							::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+							::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 							HX_STACK_LINE(843)
 							FormatAdjusted->color = this->_defaultFormat->color;
 							HX_STACK_LINE(843)
@@ -1659,7 +1663,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 							HX_STACK_LINE(850)
 							{
 								HX_STACK_LINE(850)
-								::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+								::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 								HX_STACK_LINE(850)
 								FormatAdjusted->color = this->borderColor;
 								HX_STACK_LINE(850)
@@ -1747,7 +1751,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 							HX_STACK_LINE(867)
 							{
 								HX_STACK_LINE(867)
-								::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+								::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 								HX_STACK_LINE(867)
 								FormatAdjusted->color = this->_defaultFormat->color;
 								HX_STACK_LINE(867)
@@ -1801,7 +1805,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 			}
 			else{
 				HX_STACK_LINE(872)
-				::openfl::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
+				::openfl::_legacy::text::TextFormat FormatAdjusted = this->_formatAdjusted;		HX_STACK_VAR(FormatAdjusted,"FormatAdjusted");
 				HX_STACK_LINE(872)
 				FormatAdjusted->color = this->_defaultFormat->color;
 				HX_STACK_LINE(872)
@@ -1890,7 +1894,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 		HX_STACK_LINE(889)
 		if (((  ((!(((  ((!(((this->framePixels == null()))))) ? bool(_Function_1_2::Block(this)) : bool(true) ))))) ? bool(_Function_1_3::Block(this)) : bool(true) ))){
 			HX_STACK_LINE(891)
-			::openfl::display::BitmapData _g27 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->framePixels);		HX_STACK_VAR(_g27,"_g27");
+			::openfl::_legacy::display::BitmapData _g27 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->framePixels);		HX_STACK_VAR(_g27,"_g27");
 			HX_STACK_LINE(891)
 			this->framePixels = _g27;
 			HX_STACK_LINE(892)
@@ -1898,7 +1902,7 @@ bool RunOnCpp = __o_RunOnCpp.Default(false);
 			HX_STACK_LINE(892)
 			int _g29 = this->cachedGraphics->bitmap->get_height();		HX_STACK_VAR(_g29,"_g29");
 			HX_STACK_LINE(892)
-			::openfl::display::BitmapData _g30 = ::openfl::display::BitmapData_obj::__new(_g28,_g29,true,(int)0,null());		HX_STACK_VAR(_g30,"_g30");
+			::openfl::_legacy::display::BitmapData _g30 = ::openfl::_legacy::display::BitmapData_obj::__new(_g28,_g29,true,(int)0,null());		HX_STACK_VAR(_g30,"_g30");
 			HX_STACK_LINE(892)
 			this->framePixels = _g30;
 		}
@@ -1914,58 +1918,58 @@ return null();
 }
 
 
-::openfl::text::TextFormat FlxText_obj::dtfCopy( ){
+::openfl::_legacy::text::TextFormat FlxText_obj::dtfCopy( ){
 	HX_STACK_FRAME("flixel.text.FlxText","dtfCopy",0x79c34ded,"flixel.text.FlxText.dtfCopy","flixel/text/FlxText.hx",909,0xdf165a6e)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(910)
-	::openfl::text::TextFormat defaultTextFormat = this->_textField->get_defaultTextFormat();		HX_STACK_VAR(defaultTextFormat,"defaultTextFormat");
+	::openfl::_legacy::text::TextFormat defaultTextFormat = this->_textField->get_defaultTextFormat();		HX_STACK_VAR(defaultTextFormat,"defaultTextFormat");
 	HX_STACK_LINE(912)
-	return ::openfl::text::TextFormat_obj::__new(defaultTextFormat->font,defaultTextFormat->size,defaultTextFormat->color,defaultTextFormat->bold,defaultTextFormat->italic,defaultTextFormat->underline,defaultTextFormat->url,defaultTextFormat->target,defaultTextFormat->align,null(),null(),null(),null());
+	return ::openfl::_legacy::text::TextFormat_obj::__new(defaultTextFormat->font,defaultTextFormat->size,defaultTextFormat->color,defaultTextFormat->bold,defaultTextFormat->italic,defaultTextFormat->underline,defaultTextFormat->url,defaultTextFormat->target,defaultTextFormat->align,null(),null(),null(),null());
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxText_obj,dtfCopy,return )
 
 ::String FlxText_obj::convertTextAlignmentFromString( ::String StrAlign){
-	HX_STACK_FRAME("flixel.text.FlxText","convertTextAlignmentFromString",0xca79ae3c,"flixel.text.FlxText.convertTextAlignmentFromString","flixel/text/FlxText.hx",924,0xdf165a6e)
+	HX_STACK_FRAME("flixel.text.FlxText","convertTextAlignmentFromString",0xca79ae3c,"flixel.text.FlxText.convertTextAlignmentFromString","flixel/text/FlxText.hx",920,0xdf165a6e)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(StrAlign,"StrAlign")
-	HX_STACK_LINE(924)
+	HX_STACK_LINE(920)
 	if (((StrAlign == HX_CSTRING("right")))){
-		HX_STACK_LINE(926)
-		return ::openfl::text::TextFormatAlign_obj::RIGHT;
+		HX_STACK_LINE(922)
+		return ::openfl::_legacy::text::TextFormatAlign_obj::RIGHT;
 	}
 	else{
-		HX_STACK_LINE(928)
+		HX_STACK_LINE(924)
 		if (((StrAlign == HX_CSTRING("center")))){
-			HX_STACK_LINE(930)
-			return ::openfl::text::TextFormatAlign_obj::CENTER;
+			HX_STACK_LINE(926)
+			return ::openfl::_legacy::text::TextFormatAlign_obj::CENTER;
 		}
 		else{
-			HX_STACK_LINE(932)
+			HX_STACK_LINE(928)
 			if (((StrAlign == HX_CSTRING("justify")))){
-				HX_STACK_LINE(934)
-				return ::openfl::text::TextFormatAlign_obj::JUSTIFY;
+				HX_STACK_LINE(930)
+				return ::openfl::_legacy::text::TextFormatAlign_obj::JUSTIFY;
 			}
 			else{
-				HX_STACK_LINE(938)
-				return ::openfl::text::TextFormatAlign_obj::LEFT;
+				HX_STACK_LINE(934)
+				return ::openfl::_legacy::text::TextFormatAlign_obj::LEFT;
 			}
 		}
 	}
-	HX_STACK_LINE(924)
+	HX_STACK_LINE(920)
 	return null();
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxText_obj,convertTextAlignmentFromString,return )
 
-Void FlxText_obj::updateFormat( ::openfl::text::TextFormat Format){
+Void FlxText_obj::updateFormat( ::openfl::_legacy::text::TextFormat Format){
 {
-		HX_STACK_FRAME("flixel.text.FlxText","updateFormat",0x38308a9e,"flixel.text.FlxText.updateFormat","flixel/text/FlxText.hx",945,0xdf165a6e)
+		HX_STACK_FRAME("flixel.text.FlxText","updateFormat",0x38308a9e,"flixel.text.FlxText.updateFormat","flixel/text/FlxText.hx",941,0xdf165a6e)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(Format,"Format")
-		HX_STACK_LINE(945)
+		HX_STACK_LINE(941)
 		this->_textField->setTextFormat(Format,(int)0,this->_textField->get_text().length);
 	}
 return null();
@@ -2154,7 +2158,7 @@ Dynamic FlxText_obj::__SetField(const ::String &inName,const Dynamic &inValue,bo
 		if (HX_FIELD_EQ(inName,"systemFont") ) { return set_systemFont(inValue); }
 		if (HX_FIELD_EQ(inName,"borderSize") ) { if (inCallProp) return set_borderSize(inValue);borderSize=inValue.Cast< Float >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"fieldWidth") ) { return set_fieldWidth(inValue); }
-		if (HX_FIELD_EQ(inName,"_textField") ) { _textField=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_textField") ) { _textField=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_heightInc") ) { _heightInc=inValue.Cast< int >(); return inValue; }
 		break;
 	case 11:
@@ -2168,10 +2172,10 @@ Dynamic FlxText_obj::__SetField(const ::String &inName,const Dynamic &inValue,bo
 		if (HX_FIELD_EQ(inName,"borderQuality") ) { if (inCallProp) return set_borderQuality(inValue);borderQuality=inValue.Cast< Float >(); return inValue; }
 		break;
 	case 14:
-		if (HX_FIELD_EQ(inName,"_defaultFormat") ) { _defaultFormat=inValue.Cast< ::openfl::text::TextFormat >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_defaultFormat") ) { _defaultFormat=inValue.Cast< ::openfl::_legacy::text::TextFormat >(); return inValue; }
 		break;
 	case 15:
-		if (HX_FIELD_EQ(inName,"_formatAdjusted") ) { _formatAdjusted=inValue.Cast< ::openfl::text::TextFormat >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_formatAdjusted") ) { _formatAdjusted=inValue.Cast< ::openfl::_legacy::text::TextFormat >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -2219,9 +2223,9 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsFloat,(int)offsetof(FlxText_obj,borderSize),HX_CSTRING("borderSize")},
 	{hx::fsFloat,(int)offsetof(FlxText_obj,borderQuality),HX_CSTRING("borderQuality")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxText_obj,shadowOffset),HX_CSTRING("shadowOffset")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(FlxText_obj,_textField),HX_CSTRING("_textField")},
-	{hx::fsObject /*::openfl::text::TextFormat*/ ,(int)offsetof(FlxText_obj,_defaultFormat),HX_CSTRING("_defaultFormat")},
-	{hx::fsObject /*::openfl::text::TextFormat*/ ,(int)offsetof(FlxText_obj,_formatAdjusted),HX_CSTRING("_formatAdjusted")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(FlxText_obj,_textField),HX_CSTRING("_textField")},
+	{hx::fsObject /*::openfl::_legacy::text::TextFormat*/ ,(int)offsetof(FlxText_obj,_defaultFormat),HX_CSTRING("_defaultFormat")},
+	{hx::fsObject /*::openfl::_legacy::text::TextFormat*/ ,(int)offsetof(FlxText_obj,_formatAdjusted),HX_CSTRING("_formatAdjusted")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxText_obj,_formats),HX_CSTRING("_formats")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FlxText_obj,_filters),HX_CSTRING("_filters")},
 	{hx::fsInt,(int)offsetof(FlxText_obj,_widthInc),HX_CSTRING("_widthInc")},

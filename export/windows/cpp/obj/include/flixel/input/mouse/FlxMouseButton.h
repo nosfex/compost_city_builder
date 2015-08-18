@@ -10,8 +10,8 @@ HX_DECLARE_CLASS3(flixel,input,mouse,FlxMouseButton)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
 namespace flixel{
 namespace input{
 namespace mouse{
@@ -53,10 +53,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMouseButton_obj : public hx::Object{
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
 
-		virtual Void onDown( ::openfl::events::MouseEvent FlashEvent);
+		virtual Void onDown( ::openfl::_legacy::events::MouseEvent FlashEvent);
 		Dynamic onDown_dyn();
 
-		virtual Void onUp( ::openfl::events::MouseEvent FlashEvent);
+		virtual Void onUp( ::openfl::_legacy::events::MouseEvent FlashEvent);
 		Dynamic onUp_dyn();
 
 		virtual Void reset( );

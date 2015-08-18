@@ -9,8 +9,8 @@ HX_DECLARE_CLASS0(IMap)
 HX_DECLARE_CLASS3(flixel,system,frontEnds,BitmapFrontEnd)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace system{
 namespace frontEnds{
@@ -65,7 +65,7 @@ class HXCPP_CLASS_ATTRIBUTES  BitmapFrontEnd_obj : public hx::Object{
 		virtual ::flixel::util::loaders::CachedGraphics get( ::String key);
 		Dynamic get_dyn();
 
-		virtual ::String getCacheKeyFor( ::openfl::display::BitmapData bmd);
+		virtual ::String getCacheKeyFor( ::openfl::_legacy::display::BitmapData bmd);
 		Dynamic getCacheKeyFor_dyn();
 
 		virtual ::String getUniqueKey( ::String baseKey);
@@ -73,6 +73,9 @@ class HXCPP_CLASS_ATTRIBUTES  BitmapFrontEnd_obj : public hx::Object{
 
 		virtual Void remove( ::String key);
 		Dynamic remove_dyn();
+
+		virtual Void removeFromOpenFLCache( ::String key);
+		Dynamic removeFromOpenFLCache_dyn();
 
 		virtual Void clearCache( );
 		Dynamic clearCache_dyn();

@@ -57,8 +57,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignal0
 #include <flixel/util/_FlxSignal/FlxSignal0.h>
@@ -69,62 +69,62 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_Bitmap
-#include <openfl/display/Bitmap.h>
+#ifndef INCLUDED_openfl__legacy_display_Bitmap
+#include <openfl/_legacy/display/Bitmap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_ui_Mouse
+#include <openfl/_legacy/ui/Mouse.h>
 #endif
 #ifndef INCLUDED_openfl_display_PixelSnapping
 #include <openfl/display/PixelSnapping.h>
-#endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
-#endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
-#endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
-#endif
-#ifndef INCLUDED_openfl_ui_Mouse
-#include <openfl/ui/Mouse.h>
 #endif
 namespace flixel{
 namespace input{
 namespace mouse{
 
-Void FlxMouse_obj::__construct(::openfl::display::Sprite CursorContainer)
+Void FlxMouse_obj::__construct(::openfl::_legacy::display::Sprite CursorContainer)
 {
 HX_STACK_FRAME("flixel.input.mouse.FlxMouse","new",0x1251bd04,"flixel.input.mouse.FlxMouse.new","flixel/input/mouse/FlxMouse.hx",35,0xe4e80b89)
 HX_STACK_THIS(this)
@@ -169,7 +169,7 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 		HX_STACK_LINE(435)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(435)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(435)
 		point->_inPool = false;
 		HX_STACK_LINE(435)
@@ -186,7 +186,7 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 		HX_STACK_LINE(436)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(436)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(436)
 		point->_inPool = false;
 		HX_STACK_LINE(436)
@@ -199,13 +199,13 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 	HX_STACK_LINE(438)
 	this->_leftButton = _g2;
 	HX_STACK_LINE(440)
-	::openfl::display::Stage _g3 = ::openfl::Lib_obj::get_current()->get_stage();		HX_STACK_VAR(_g3,"_g3");
+	::openfl::_legacy::display::Stage _g3 = ::openfl::_legacy::Lib_obj::get_current()->get_stage();		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(440)
 	this->_stage = _g3;
 	HX_STACK_LINE(441)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_DOWN,this->_leftButton->onDown_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_DOWN,this->_leftButton->onDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(442)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->_leftButton->onUp_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->_leftButton->onUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(445)
 	::flixel::input::mouse::FlxMouseButton _g4 = ::flixel::input::mouse::FlxMouseButton_obj::__new((int)-2);		HX_STACK_VAR(_g4,"_g4");
 	HX_STACK_LINE(445)
@@ -215,21 +215,21 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 	HX_STACK_LINE(446)
 	this->_rightButton = _g5;
 	HX_STACK_LINE(448)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->_middleButton->onDown_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->_middleButton->onDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(449)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->_middleButton->onUp_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->_middleButton->onUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(450)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::RIGHT_MOUSE_DOWN,this->_rightButton->onDown_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::RIGHT_MOUSE_DOWN,this->_rightButton->onDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(451)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::RIGHT_MOUSE_UP,this->_rightButton->onUp_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::RIGHT_MOUSE_UP,this->_rightButton->onUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(453)
-	this->_stage->addEventListener(::openfl::events::Event_obj::MOUSE_LEAVE,this->onMouseLeave_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::Event_obj::MOUSE_LEAVE,this->onMouseLeave_dyn(),null(),null(),null());
 	HX_STACK_LINE(456)
-	this->_stage->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null(),null(),null());
+	this->_stage->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null(),null(),null());
 	HX_STACK_LINE(458)
 	::flixel::FlxG_obj::signals->gameStarted->add(this->onGameStart_dyn());
 	HX_STACK_LINE(459)
-	::openfl::ui::Mouse_obj::hide();
+	::openfl::_legacy::ui::Mouse_obj::hide();
 }
 ;
 	return null();
@@ -238,7 +238,7 @@ HX_STACK_ARG(CursorContainer,"CursorContainer")
 //FlxMouse_obj::~FlxMouse_obj() { }
 
 Dynamic FlxMouse_obj::__CreateEmpty() { return  new FlxMouse_obj; }
-hx::ObjectPtr< FlxMouse_obj > FlxMouse_obj::__new(::openfl::display::Sprite CursorContainer)
+hx::ObjectPtr< FlxMouse_obj > FlxMouse_obj::__new(::openfl::_legacy::display::Sprite CursorContainer)
 {  hx::ObjectPtr< FlxMouse_obj > result = new FlxMouse_obj();
 	result->__construct(CursorContainer);
 	return result;}
@@ -279,19 +279,19 @@ int YOffset = __o_YOffset.Default(0);
 		HX_STACK_LINE(174)
 		if ((::Std_obj::is(Graphic,hx::ClassOf< ::Class >()))){
 			HX_STACK_LINE(176)
-			::openfl::display::Bitmap _g1 = ::Type_obj::createInstance(Graphic,Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(_g1,"_g1");
+			::openfl::_legacy::display::Bitmap _g1 = ::Type_obj::createInstance(Graphic,Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(176)
 			this->_cursor = _g1;
 		}
 		else{
 			HX_STACK_LINE(178)
-			if ((::Std_obj::is(Graphic,hx::ClassOf< ::openfl::display::BitmapData >()))){
+			if ((::Std_obj::is(Graphic,hx::ClassOf< ::openfl::_legacy::display::BitmapData >()))){
 				HX_STACK_LINE(180)
-				::openfl::display::BitmapData _g2;		HX_STACK_VAR(_g2,"_g2");
+				::openfl::_legacy::display::BitmapData _g2;		HX_STACK_VAR(_g2,"_g2");
 				HX_STACK_LINE(180)
-				_g2 = hx::TCast< openfl::display::BitmapData >::cast(Graphic);
+				_g2 = hx::TCast< openfl::_legacy::display::BitmapData >::cast(Graphic);
 				HX_STACK_LINE(180)
-				::openfl::display::Bitmap _g3 = ::openfl::display::Bitmap_obj::__new(_g2,null(),null());		HX_STACK_VAR(_g3,"_g3");
+				::openfl::_legacy::display::Bitmap _g3 = ::openfl::_legacy::display::Bitmap_obj::__new(_g2,null(),null());		HX_STACK_VAR(_g3,"_g3");
 				HX_STACK_LINE(180)
 				this->_cursor = _g3;
 			}
@@ -299,16 +299,16 @@ int YOffset = __o_YOffset.Default(0);
 				HX_STACK_LINE(182)
 				if ((::Std_obj::is(Graphic,hx::ClassOf< ::String >()))){
 					HX_STACK_LINE(184)
-					::openfl::display::BitmapData _g4;		HX_STACK_VAR(_g4,"_g4");
+					::openfl::_legacy::display::BitmapData _g4;		HX_STACK_VAR(_g4,"_g4");
 					HX_STACK_LINE(184)
 					{
 						HX_STACK_LINE(184)
 						::String id = Graphic;		HX_STACK_VAR(id,"id");
 						HX_STACK_LINE(184)
-						_g4 = ::openfl::Assets_obj::getBitmapData(id,false);
+						_g4 = ::openfl::_legacy::Assets_obj::getBitmapData(id,false);
 					}
 					HX_STACK_LINE(184)
-					::openfl::display::Bitmap _g5 = ::openfl::display::Bitmap_obj::__new(_g4,null(),null());		HX_STACK_VAR(_g5,"_g5");
+					::openfl::_legacy::display::Bitmap _g5 = ::openfl::_legacy::display::Bitmap_obj::__new(_g4,null(),null());		HX_STACK_VAR(_g5,"_g5");
 					HX_STACK_LINE(184)
 					this->_cursor = _g5;
 				}
@@ -316,7 +316,7 @@ int YOffset = __o_YOffset.Default(0);
 					HX_STACK_LINE(188)
 					::flixel::input::mouse::_FlxMouse::GraphicCursor _g6 = ::flixel::input::mouse::_FlxMouse::GraphicCursor_obj::__new((int)0,(int)0,null(),null());		HX_STACK_VAR(_g6,"_g6");
 					HX_STACK_LINE(188)
-					::openfl::display::Bitmap _g7 = ::openfl::display::Bitmap_obj::__new(_g6,null(),null());		HX_STACK_VAR(_g7,"_g7");
+					::openfl::_legacy::display::Bitmap _g7 = ::openfl::_legacy::display::Bitmap_obj::__new(_g6,null(),null());		HX_STACK_VAR(_g7,"_g7");
 					HX_STACK_LINE(188)
 					this->_cursor = _g7;
 				}
@@ -385,7 +385,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,unload,(void))
 			HX_STACK_LINE(326)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(326)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(326)
 			point1->_inPool = false;
 			HX_STACK_LINE(326)
@@ -426,7 +426,7 @@ HX_DEFINE_DYNAMIC_FUNC2(FlxMouse_obj,getWorldPosition,return )
 			HX_STACK_LINE(349)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(349)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(349)
 			point1->_inPool = false;
 			HX_STACK_LINE(349)
@@ -453,21 +453,21 @@ Void FlxMouse_obj::destroy( ){
 		HX_STACK_LINE(362)
 		if (((this->_stage != null()))){
 			HX_STACK_LINE(364)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_DOWN,this->_leftButton->onDown_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_DOWN,this->_leftButton->onDown_dyn(),null());
 			HX_STACK_LINE(365)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->_leftButton->onUp_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->_leftButton->onUp_dyn(),null());
 			HX_STACK_LINE(368)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->_middleButton->onDown_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->_middleButton->onDown_dyn(),null());
 			HX_STACK_LINE(369)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->_middleButton->onUp_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->_middleButton->onUp_dyn(),null());
 			HX_STACK_LINE(370)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::RIGHT_MOUSE_DOWN,this->_rightButton->onDown_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::RIGHT_MOUSE_DOWN,this->_rightButton->onDown_dyn(),null());
 			HX_STACK_LINE(371)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::RIGHT_MOUSE_UP,this->_rightButton->onUp_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::RIGHT_MOUSE_UP,this->_rightButton->onUp_dyn(),null());
 			HX_STACK_LINE(373)
-			this->_stage->removeEventListener(::openfl::events::Event_obj::MOUSE_LEAVE,this->onMouseLeave_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::Event_obj::MOUSE_LEAVE,this->onMouseLeave_dyn(),null());
 			HX_STACK_LINE(376)
-			this->_stage->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null());
+			this->_stage->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null());
 		}
 		HX_STACK_LINE(379)
 		::flixel::util::FlxPoint _g = ::flixel::util::FlxDestroyUtil_obj::put(this->_point);		HX_STACK_VAR(_g,"_g");
@@ -494,7 +494,7 @@ Void FlxMouse_obj::destroy( ){
 		HX_STACK_LINE(392)
 		this->_rightButton = _g4;
 		HX_STACK_LINE(395)
-		::openfl::display::BitmapData _g5 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_cursorBitmapData);		HX_STACK_VAR(_g5,"_g5");
+		::openfl::_legacy::display::BitmapData _g5 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_cursorBitmapData);		HX_STACK_VAR(_g5,"_g5");
 		HX_STACK_LINE(395)
 		this->_cursorBitmapData = _g5;
 		HX_STACK_LINE(396)
@@ -633,7 +633,7 @@ Void FlxMouse_obj::onFocusLost( ){
 			this->set_visible(false);
 		}
 		HX_STACK_LINE(529)
-		::openfl::ui::Mouse_obj::show();
+		::openfl::_legacy::ui::Mouse_obj::show();
 	}
 return null();
 }
@@ -677,7 +677,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxMouse_obj,updateCursor,(void))
 
-Void FlxMouse_obj::onMouseWheel( ::openfl::events::MouseEvent FlashEvent){
+Void FlxMouse_obj::onMouseWheel( ::openfl::_legacy::events::MouseEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouse","onMouseWheel",0xdc642911,"flixel.input.mouse.FlxMouse.onMouseWheel","flixel/input/mouse/FlxMouse.hx",560,0xe4e80b89)
 		HX_STACK_THIS(this)
@@ -698,7 +698,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxMouse_obj,onMouseWheel,(void))
 
-Void FlxMouse_obj::onMouseLeave( ::openfl::events::Event E){
+Void FlxMouse_obj::onMouseLeave( ::openfl::_legacy::events::Event E){
 {
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouse","onMouseLeave",0x84fd296d,"flixel.input.mouse.FlxMouse.onMouseLeave","flixel/input/mouse/FlxMouse.hx",581,0xe4e80b89)
 		HX_STACK_THIS(this)
@@ -821,7 +821,7 @@ Void FlxMouse_obj::showSystemCursor( ){
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouse","showSystemCursor",0xf4551c9e,"flixel.input.mouse.FlxMouse.showSystemCursor","flixel/input/mouse/FlxMouse.hx",605,0xe4e80b89)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(609)
-		::openfl::ui::Mouse_obj::show();
+		::openfl::_legacy::ui::Mouse_obj::show();
 		HX_STACK_LINE(610)
 		this->cursorContainer->set_visible(false);
 	}
@@ -836,7 +836,7 @@ Void FlxMouse_obj::hideSystemCursor( ){
 		HX_STACK_FRAME("flixel.input.mouse.FlxMouse","hideSystemCursor",0xb5438fe3,"flixel.input.mouse.FlxMouse.hideSystemCursor","flixel/input/mouse/FlxMouse.hx",618,0xe4e80b89)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(626)
-		::openfl::ui::Mouse_obj::hide();
+		::openfl::_legacy::ui::Mouse_obj::hide();
 		HX_STACK_LINE(628)
 		if ((this->visible)){
 			HX_STACK_LINE(630)
@@ -878,7 +878,7 @@ bool FlxMouse_obj::set_visible( bool Value){
 		HX_STACK_LINE(652)
 		if ((this->useSystemCursor)){
 			HX_STACK_LINE(654)
-			::openfl::ui::Mouse_obj::show();
+			::openfl::_legacy::ui::Mouse_obj::show();
 		}
 		else{
 			HX_STACK_LINE(658)
@@ -889,14 +889,14 @@ bool FlxMouse_obj::set_visible( bool Value){
 			HX_STACK_LINE(663)
 			this->cursorContainer->set_visible(true);
 			HX_STACK_LINE(664)
-			::openfl::ui::Mouse_obj::hide();
+			::openfl::_legacy::ui::Mouse_obj::hide();
 		}
 	}
 	else{
 		HX_STACK_LINE(677)
 		this->cursorContainer->set_visible(false);
 		HX_STACK_LINE(678)
-		::openfl::ui::Mouse_obj::hide();
+		::openfl::_legacy::ui::Mouse_obj::hide();
 	}
 	HX_STACK_LINE(688)
 	return this->visible = Value;
@@ -1121,13 +1121,13 @@ Dynamic FlxMouse_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"_lastX") ) { _lastX=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_lastY") ) { _lastY=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_point") ) { _point=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_stage") ) { _stage=inValue.Cast< ::openfl::display::Stage >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_stage") ) { _stage=inValue.Cast< ::openfl::_legacy::display::Stage >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"screenX") ) { screenX=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"screenY") ) { screenY=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"visible") ) { if (inCallProp) return set_visible(inValue);visible=inValue.Cast< bool >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_cursor") ) { _cursor=inValue.Cast< ::openfl::display::Bitmap >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_cursor") ) { _cursor=inValue.Cast< ::openfl::_legacy::display::Bitmap >(); return inValue; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"_wheelUsed") ) { _wheelUsed=inValue.Cast< bool >(); return inValue; }
@@ -1143,11 +1143,11 @@ Dynamic FlxMouse_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"_middleButton") ) { _middleButton=inValue.Cast< ::flixel::input::mouse::FlxMouseButton >(); return inValue; }
 		break;
 	case 15:
-		if (HX_FIELD_EQ(inName,"cursorContainer") ) { cursorContainer=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"cursorContainer") ) { cursorContainer=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"useSystemCursor") ) { if (inCallProp) return set_useSystemCursor(inValue);useSystemCursor=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 17:
-		if (HX_FIELD_EQ(inName,"_cursorBitmapData") ) { _cursorBitmapData=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_cursorBitmapData") ) { _cursorBitmapData=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 21:
 		if (HX_FIELD_EQ(inName,"_visibleWhenFocusLost") ) { _visibleWhenFocusLost=inValue.Cast< bool >(); return inValue; }
@@ -1197,14 +1197,14 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxMouse_obj,wheel),HX_CSTRING("wheel")},
 	{hx::fsInt,(int)offsetof(FlxMouse_obj,screenX),HX_CSTRING("screenX")},
 	{hx::fsInt,(int)offsetof(FlxMouse_obj,screenY),HX_CSTRING("screenY")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxMouse_obj,cursorContainer),HX_CSTRING("cursorContainer")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxMouse_obj,cursorContainer),HX_CSTRING("cursorContainer")},
 	{hx::fsBool,(int)offsetof(FlxMouse_obj,visible),HX_CSTRING("visible")},
 	{hx::fsBool,(int)offsetof(FlxMouse_obj,useSystemCursor),HX_CSTRING("useSystemCursor")},
 	{hx::fsObject /*::flixel::input::mouse::FlxMouseButton*/ ,(int)offsetof(FlxMouse_obj,_leftButton),HX_CSTRING("_leftButton")},
 	{hx::fsObject /*::flixel::input::mouse::FlxMouseButton*/ ,(int)offsetof(FlxMouse_obj,_middleButton),HX_CSTRING("_middleButton")},
 	{hx::fsObject /*::flixel::input::mouse::FlxMouseButton*/ ,(int)offsetof(FlxMouse_obj,_rightButton),HX_CSTRING("_rightButton")},
-	{hx::fsObject /*::openfl::display::Bitmap*/ ,(int)offsetof(FlxMouse_obj,_cursor),HX_CSTRING("_cursor")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxMouse_obj,_cursorBitmapData),HX_CSTRING("_cursorBitmapData")},
+	{hx::fsObject /*::openfl::_legacy::display::Bitmap*/ ,(int)offsetof(FlxMouse_obj,_cursor),HX_CSTRING("_cursor")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxMouse_obj,_cursorBitmapData),HX_CSTRING("_cursorBitmapData")},
 	{hx::fsBool,(int)offsetof(FlxMouse_obj,_wheelUsed),HX_CSTRING("_wheelUsed")},
 	{hx::fsBool,(int)offsetof(FlxMouse_obj,_visibleWhenFocusLost),HX_CSTRING("_visibleWhenFocusLost")},
 	{hx::fsInt,(int)offsetof(FlxMouse_obj,_lastX),HX_CSTRING("_lastX")},
@@ -1212,7 +1212,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxMouse_obj,_lastWheel),HX_CSTRING("_lastWheel")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxMouse_obj,_point),HX_CSTRING("_point")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxMouse_obj,_globalScreenPosition),HX_CSTRING("_globalScreenPosition")},
-	{hx::fsObject /*::openfl::display::Stage*/ ,(int)offsetof(FlxMouse_obj,_stage),HX_CSTRING("_stage")},
+	{hx::fsObject /*::openfl::_legacy::display::Stage*/ ,(int)offsetof(FlxMouse_obj,_stage),HX_CSTRING("_stage")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif

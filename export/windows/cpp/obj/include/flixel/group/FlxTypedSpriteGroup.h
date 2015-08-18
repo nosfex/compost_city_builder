@@ -16,9 +16,9 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxFrame)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,BlendMode)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BlendMode)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace group{
 
@@ -45,8 +45,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTypedSpriteGroup_obj : public ::flixel::FlxSpri
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxTypedSpriteGroup"); }
 
-		virtual Void transformChildren_openfl_display_BlendMode( Dynamic Function,::openfl::display::BlendMode Value);
-		Dynamic transformChildren_openfl_display_BlendMode_dyn();
+		virtual Void transformChildren_openfl__legacy_display_BlendMode( Dynamic Function,::openfl::_legacy::display::BlendMode Value);
+		Dynamic transformChildren_openfl__legacy_display_BlendMode_dyn();
 
 		virtual Void transformChildren_Int( Dynamic Function,int Value);
 		Dynamic transformChildren_Int_dyn();
@@ -193,7 +193,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTypedSpriteGroup_obj : public ::flixel::FlxSpri
 
 		virtual int set_color( int Value);
 
-		virtual ::openfl::display::BlendMode set_blend( ::openfl::display::BlendMode Value);
+		virtual ::openfl::_legacy::display::BlendMode set_blend( ::openfl::_legacy::display::BlendMode Value);
 
 		virtual bool set_pixelPerfectRender( bool Value);
 
@@ -247,7 +247,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTypedSpriteGroup_obj : public ::flixel::FlxSpri
 		virtual Void gColorTransform( ::flixel::FlxSprite Sprite,int Color);
 		Dynamic gColorTransform_dyn();
 
-		virtual Void blendTransform( ::flixel::FlxSprite Sprite,::openfl::display::BlendMode Blend);
+		virtual Void blendTransform( ::flixel::FlxSprite Sprite,::openfl::_legacy::display::BlendMode Blend);
 		Dynamic blendTransform_dyn();
 
 		virtual Void immovableTransform( ::flixel::FlxSprite Sprite,bool Immovable);
@@ -307,11 +307,11 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTypedSpriteGroup_obj : public ::flixel::FlxSpri
 
 		virtual ::flixel::FlxSprite loadRotatedGraphicFromTexture( Dynamic Data,::String Image,hx::Null< int >  Rotations,hx::Null< bool >  AntiAliasing,hx::Null< bool >  AutoBuffer);
 
-		virtual ::openfl::display::BitmapData set_pixels( ::openfl::display::BitmapData Value);
+		virtual ::openfl::_legacy::display::BitmapData set_pixels( ::openfl::_legacy::display::BitmapData Value);
 
 		virtual ::flixel::system::layer::frames::FlxFrame set_frame( ::flixel::system::layer::frames::FlxFrame Value);
 
-		virtual ::openfl::display::BitmapData get_pixels( );
+		virtual ::openfl::_legacy::display::BitmapData get_pixels( );
 
 		virtual Void calcFrame( hx::Null< bool >  RunOnCpp);
 

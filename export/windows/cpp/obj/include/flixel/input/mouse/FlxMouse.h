@@ -16,18 +16,18 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxInput)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS3(flixel,system,replay,MouseRecord)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,display,Bitmap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,display,Stage)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Bitmap)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Stage)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
 namespace flixel{
 namespace input{
 namespace mouse{
@@ -38,12 +38,12 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMouse_obj : public ::flixel::util::FlxPoint_obj
 		typedef ::flixel::util::FlxPoint_obj super;
 		typedef FlxMouse_obj OBJ_;
 		FlxMouse_obj();
-		Void __construct(::openfl::display::Sprite CursorContainer);
+		Void __construct(::openfl::_legacy::display::Sprite CursorContainer);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< FlxMouse_obj > __new(::openfl::display::Sprite CursorContainer);
+		static hx::ObjectPtr< FlxMouse_obj > __new(::openfl::_legacy::display::Sprite CursorContainer);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~FlxMouse_obj();
@@ -61,14 +61,14 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMouse_obj : public ::flixel::util::FlxPoint_obj
 		int wheel;
 		int screenX;
 		int screenY;
-		::openfl::display::Sprite cursorContainer;
+		::openfl::_legacy::display::Sprite cursorContainer;
 		bool visible;
 		bool useSystemCursor;
 		::flixel::input::mouse::FlxMouseButton _leftButton;
 		::flixel::input::mouse::FlxMouseButton _middleButton;
 		::flixel::input::mouse::FlxMouseButton _rightButton;
-		::openfl::display::Bitmap _cursor;
-		::openfl::display::BitmapData _cursorBitmapData;
+		::openfl::_legacy::display::Bitmap _cursor;
+		::openfl::_legacy::display::BitmapData _cursorBitmapData;
 		bool _wheelUsed;
 		bool _visibleWhenFocusLost;
 		int _lastX;
@@ -76,7 +76,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMouse_obj : public ::flixel::util::FlxPoint_obj
 		int _lastWheel;
 		::flixel::util::FlxPoint _point;
 		::flixel::util::FlxPoint _globalScreenPosition;
-		::openfl::display::Stage _stage;
+		::openfl::_legacy::display::Stage _stage;
 		virtual Void load( Dynamic Graphic,hx::Null< Float >  Scale,hx::Null< int >  XOffset,hx::Null< int >  YOffset);
 		Dynamic load_dyn();
 
@@ -112,10 +112,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMouse_obj : public ::flixel::util::FlxPoint_obj
 		virtual Void updateCursor( );
 		Dynamic updateCursor_dyn();
 
-		virtual Void onMouseWheel( ::openfl::events::MouseEvent FlashEvent);
+		virtual Void onMouseWheel( ::openfl::_legacy::events::MouseEvent FlashEvent);
 		Dynamic onMouseWheel_dyn();
 
-		virtual Void onMouseLeave( ::openfl::events::Event E);
+		virtual Void onMouseLeave( ::openfl::_legacy::events::Event E);
 		Dynamic onMouseLeave_dyn();
 
 		virtual bool get_pressed( );

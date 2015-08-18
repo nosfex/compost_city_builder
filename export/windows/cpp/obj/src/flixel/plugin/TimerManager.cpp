@@ -55,7 +55,7 @@ Void TimerManager_obj::destroy( ){
 		HX_STACK_FRAME("flixel.plugin.TimerManager","destroy",0xce8a1c5d,"flixel.plugin.TimerManager.destroy","flixel/plugin/TimerManager.hx",31,0x1b0b986d)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(32)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_util_FlxTimer(this->_timers,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->_timers,null());
 		HX_STACK_LINE(33)
 		this->_timers = null();
 		HX_STACK_LINE(34)
@@ -85,7 +85,7 @@ Void TimerManager_obj::update( ){
 			HX_STACK_LINE(43)
 			++(_g);
 			HX_STACK_LINE(45)
-			if (((bool((bool(timer->active) && bool(!(timer->finished)))) && bool((timer->time > (int)0))))){
+			if (((bool((bool(timer->active) && bool(!(timer->finished)))) && bool((timer->time >= (int)0))))){
 				HX_STACK_LINE(47)
 				timer->update();
 			}
@@ -143,7 +143,7 @@ Void TimerManager_obj::clear( ){
 		HX_STACK_FRAME("flixel.plugin.TimerManager","clear",0x1353b230,"flixel.plugin.TimerManager.clear","flixel/plugin/TimerManager.hx",82,0x1b0b986d)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(82)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_util_FlxTimer(this->_timers,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->_timers,null());
 	}
 return null();
 }
@@ -156,7 +156,7 @@ Void TimerManager_obj::onStateSwitch( ){
 		HX_STACK_FRAME("flixel.plugin.TimerManager","onStateSwitch",0xcfdacfa9,"flixel.plugin.TimerManager.onStateSwitch","flixel/plugin/TimerManager.hx",87,0x1b0b986d)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(87)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_util_FlxTimer(this->_timers,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(this->_timers,null());
 	}
 return null();
 }

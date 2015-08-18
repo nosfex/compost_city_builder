@@ -15,12 +15,12 @@ class HXCPP_CLASS_ATTRIBUTES  SoundLoaderContext_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef SoundLoaderContext_obj OBJ_;
 		SoundLoaderContext_obj();
-		Void __construct();
+		Void __construct(hx::Null< Float >  __o_bufferTime,hx::Null< bool >  __o_checkPolicyFile);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=false)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< SoundLoaderContext_obj > __new();
+		static hx::ObjectPtr< SoundLoaderContext_obj > __new(hx::Null< Float >  __o_bufferTime,hx::Null< bool >  __o_checkPolicyFile);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~SoundLoaderContext_obj();
@@ -30,6 +30,8 @@ class HXCPP_CLASS_ATTRIBUTES  SoundLoaderContext_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("SoundLoaderContext"); }
 
+		Float bufferTime;
+		bool checkPolicyFile;
 };
 
 } // end namespace openfl

@@ -117,38 +117,38 @@
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignalBase
 #include <flixel/util/_FlxSignal/FlxSignalBase.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
 namespace flixel{
 namespace system{
@@ -701,7 +701,7 @@ Void Tracker_obj::initProfiles( ){
 			HX_STACK_LINE(141)
 			{
 				HX_STACK_LINE(141)
-				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::display::DisplayObject >(),Array_obj< ::String >::__new().Add(HX_CSTRING("z")).Add(HX_CSTRING("scaleX")).Add(HX_CSTRING("scaleY")).Add(HX_CSTRING("mouseX")).Add(HX_CSTRING("mouseY")).Add(HX_CSTRING("rotationX")).Add(HX_CSTRING("rotationY")).Add(HX_CSTRING("visible")),Array_obj< ::Dynamic >::__new().Add(hx::ClassOf< ::flixel::util::FlxRect >()));		HX_STACK_VAR(Profile,"Profile");
+				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::_legacy::display::DisplayObject >(),Array_obj< ::String >::__new().Add(HX_CSTRING("z")).Add(HX_CSTRING("scaleX")).Add(HX_CSTRING("scaleY")).Add(HX_CSTRING("mouseX")).Add(HX_CSTRING("mouseY")).Add(HX_CSTRING("rotationX")).Add(HX_CSTRING("rotationY")).Add(HX_CSTRING("visible")),Array_obj< ::Dynamic >::__new().Add(hx::ClassOf< ::flixel::util::FlxRect >()));		HX_STACK_VAR(Profile,"Profile");
 				HX_STACK_LINE(141)
 				if (((Profile != null()))){
 					HX_STACK_LINE(141)
@@ -711,7 +711,7 @@ Void Tracker_obj::initProfiles( ){
 			HX_STACK_LINE(142)
 			{
 				HX_STACK_LINE(142)
-				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::geom::Point >(),null(),Array_obj< ::Dynamic >::__new().Add(hx::ClassOf< ::flixel::util::FlxPoint >()));		HX_STACK_VAR(Profile,"Profile");
+				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::_legacy::geom::Point >(),null(),Array_obj< ::Dynamic >::__new().Add(hx::ClassOf< ::flixel::util::FlxPoint >()));		HX_STACK_VAR(Profile,"Profile");
 				HX_STACK_LINE(142)
 				if (((Profile != null()))){
 					HX_STACK_LINE(142)
@@ -721,7 +721,7 @@ Void Tracker_obj::initProfiles( ){
 			HX_STACK_LINE(143)
 			{
 				HX_STACK_LINE(143)
-				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::geom::Rectangle >(),null(),Array_obj< ::Dynamic >::__new().Add(hx::ClassOf< ::flixel::util::FlxRect >()));		HX_STACK_VAR(Profile,"Profile");
+				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::_legacy::geom::Rectangle >(),null(),Array_obj< ::Dynamic >::__new().Add(hx::ClassOf< ::flixel::util::FlxRect >()));		HX_STACK_VAR(Profile,"Profile");
 				HX_STACK_LINE(143)
 				if (((Profile != null()))){
 					HX_STACK_LINE(143)
@@ -731,7 +731,7 @@ Void Tracker_obj::initProfiles( ){
 			HX_STACK_LINE(144)
 			{
 				HX_STACK_LINE(144)
-				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::geom::Matrix >(),Array_obj< ::String >::__new().Add(HX_CSTRING("a")).Add(HX_CSTRING("b")).Add(HX_CSTRING("c")).Add(HX_CSTRING("d")).Add(HX_CSTRING("tx")).Add(HX_CSTRING("ty")),null());		HX_STACK_VAR(Profile,"Profile");
+				::flixel::system::debug::TrackerProfile Profile = ::flixel::system::debug::TrackerProfile_obj::__new(hx::ClassOf< ::openfl::_legacy::geom::Matrix >(),Array_obj< ::String >::__new().Add(HX_CSTRING("a")).Add(HX_CSTRING("b")).Add(HX_CSTRING("c")).Add(HX_CSTRING("d")).Add(HX_CSTRING("tx")).Add(HX_CSTRING("ty")),null());		HX_STACK_VAR(Profile,"Profile");
 				HX_STACK_LINE(144)
 				if (((Profile != null()))){
 					HX_STACK_LINE(144)

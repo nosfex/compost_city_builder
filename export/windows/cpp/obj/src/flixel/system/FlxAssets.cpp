@@ -6,41 +6,32 @@
 #ifndef INCLUDED_flixel_system_FlxAssets
 #include <flixel/system/FlxAssets.h>
 #endif
-#ifndef INCLUDED_flixel_system__FlxAssets_FontDebugger
-#include <flixel/system/_FlxAssets/FontDebugger.h>
-#endif
-#ifndef INCLUDED_flixel_system__FlxAssets_FontDefault
-#include <flixel/system/_FlxAssets/FontDefault.h>
-#endif
 #ifndef INCLUDED_flixel_system_frontEnds_SoundFrontEnd
 #include <flixel/system/frontEnds/SoundFrontEnd.h>
 #endif
-#ifndef INCLUDED_openfl_AssetType
-#include <openfl/AssetType.h>
+#ifndef INCLUDED_openfl__legacy_AssetType
+#include <openfl/_legacy/AssetType.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_media_Sound
-#include <openfl/media/Sound.h>
-#endif
-#ifndef INCLUDED_openfl_text_Font
-#include <openfl/text/Font.h>
+#ifndef INCLUDED_openfl__legacy_media_Sound
+#include <openfl/_legacy/media/Sound.h>
 #endif
 namespace flixel{
 namespace system{
@@ -67,109 +58,95 @@ Dynamic FlxAssets_obj::__Create(hx::DynamicArray inArgs)
 
 ::String FlxAssets_obj::FONT_DEBUGGER;
 
-Void FlxAssets_obj::init( ){
+Void FlxAssets_obj::drawLogo( ::openfl::_legacy::display::Graphics graph){
 {
-		HX_STACK_FRAME("flixel.system.FlxAssets","init",0x4cb026b6,"flixel.system.FlxAssets.init","flixel/system/FlxAssets.hx",99,0xd3ac1356)
-		HX_STACK_LINE(100)
-		::openfl::text::Font_obj::registerFont(hx::ClassOf< ::flixel::system::_FlxAssets::FontDefault >());
-		HX_STACK_LINE(103)
-		::openfl::text::Font_obj::registerFont(hx::ClassOf< ::flixel::system::_FlxAssets::FontDebugger >());
-	}
-return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC0(FlxAssets_obj,init,(void))
-
-Void FlxAssets_obj::drawLogo( ::openfl::display::Graphics graph){
-{
-		HX_STACK_FRAME("flixel.system.FlxAssets","drawLogo",0xabec0035,"flixel.system.FlxAssets.drawLogo","flixel/system/FlxAssets.hx",108,0xd3ac1356)
+		HX_STACK_FRAME("flixel.system.FlxAssets","drawLogo",0xabec0035,"flixel.system.FlxAssets.drawLogo","flixel/system/FlxAssets.hx",93,0xd3ac1356)
 		HX_STACK_ARG(graph,"graph")
-		HX_STACK_LINE(110)
+		HX_STACK_LINE(95)
 		graph->beginFill((int)47394,null());
-		HX_STACK_LINE(111)
+		HX_STACK_LINE(96)
 		graph->moveTo((int)50,(int)13);
-		HX_STACK_LINE(112)
+		HX_STACK_LINE(97)
 		graph->lineTo((int)51,(int)13);
-		HX_STACK_LINE(113)
+		HX_STACK_LINE(98)
 		graph->lineTo((int)87,(int)50);
-		HX_STACK_LINE(114)
+		HX_STACK_LINE(99)
 		graph->lineTo((int)87,(int)51);
-		HX_STACK_LINE(115)
+		HX_STACK_LINE(100)
 		graph->lineTo((int)51,(int)87);
-		HX_STACK_LINE(116)
+		HX_STACK_LINE(101)
 		graph->lineTo((int)50,(int)87);
-		HX_STACK_LINE(117)
+		HX_STACK_LINE(102)
 		graph->lineTo((int)13,(int)51);
-		HX_STACK_LINE(118)
+		HX_STACK_LINE(103)
 		graph->lineTo((int)13,(int)50);
-		HX_STACK_LINE(119)
+		HX_STACK_LINE(104)
 		graph->lineTo((int)50,(int)13);
-		HX_STACK_LINE(120)
+		HX_STACK_LINE(105)
 		graph->endFill();
-		HX_STACK_LINE(123)
+		HX_STACK_LINE(108)
 		graph->beginFill((int)16761138,null());
-		HX_STACK_LINE(124)
+		HX_STACK_LINE(109)
 		graph->moveTo((int)0,(int)0);
-		HX_STACK_LINE(125)
+		HX_STACK_LINE(110)
 		graph->lineTo((int)25,(int)0);
-		HX_STACK_LINE(126)
+		HX_STACK_LINE(111)
 		graph->lineTo((int)50,(int)13);
-		HX_STACK_LINE(127)
+		HX_STACK_LINE(112)
 		graph->lineTo((int)13,(int)50);
-		HX_STACK_LINE(128)
+		HX_STACK_LINE(113)
 		graph->lineTo((int)0,(int)25);
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(114)
 		graph->lineTo((int)0,(int)0);
-		HX_STACK_LINE(130)
+		HX_STACK_LINE(115)
 		graph->endFill();
-		HX_STACK_LINE(133)
+		HX_STACK_LINE(118)
 		graph->beginFill((int)16066382,null());
-		HX_STACK_LINE(134)
+		HX_STACK_LINE(119)
 		graph->moveTo((int)100,(int)0);
-		HX_STACK_LINE(135)
+		HX_STACK_LINE(120)
 		graph->lineTo((int)75,(int)0);
-		HX_STACK_LINE(136)
+		HX_STACK_LINE(121)
 		graph->lineTo((int)51,(int)13);
-		HX_STACK_LINE(137)
+		HX_STACK_LINE(122)
 		graph->lineTo((int)87,(int)50);
-		HX_STACK_LINE(138)
+		HX_STACK_LINE(123)
 		graph->lineTo((int)100,(int)25);
-		HX_STACK_LINE(139)
+		HX_STACK_LINE(124)
 		graph->lineTo((int)100,(int)0);
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(125)
 		graph->endFill();
-		HX_STACK_LINE(143)
+		HX_STACK_LINE(128)
 		graph->beginFill((int)3555839,null());
-		HX_STACK_LINE(144)
+		HX_STACK_LINE(129)
 		graph->moveTo((int)0,(int)100);
-		HX_STACK_LINE(145)
+		HX_STACK_LINE(130)
 		graph->lineTo((int)25,(int)100);
-		HX_STACK_LINE(146)
+		HX_STACK_LINE(131)
 		graph->lineTo((int)50,(int)87);
-		HX_STACK_LINE(147)
+		HX_STACK_LINE(132)
 		graph->lineTo((int)13,(int)51);
-		HX_STACK_LINE(148)
+		HX_STACK_LINE(133)
 		graph->lineTo((int)0,(int)75);
-		HX_STACK_LINE(149)
+		HX_STACK_LINE(134)
 		graph->lineTo((int)0,(int)100);
-		HX_STACK_LINE(150)
+		HX_STACK_LINE(135)
 		graph->endFill();
-		HX_STACK_LINE(153)
+		HX_STACK_LINE(138)
 		graph->beginFill((int)314875,null());
-		HX_STACK_LINE(154)
+		HX_STACK_LINE(139)
 		graph->moveTo((int)100,(int)100);
-		HX_STACK_LINE(155)
+		HX_STACK_LINE(140)
 		graph->lineTo((int)75,(int)100);
-		HX_STACK_LINE(156)
+		HX_STACK_LINE(141)
 		graph->lineTo((int)51,(int)87);
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(142)
 		graph->lineTo((int)87,(int)51);
-		HX_STACK_LINE(158)
+		HX_STACK_LINE(143)
 		graph->lineTo((int)100,(int)75);
-		HX_STACK_LINE(159)
+		HX_STACK_LINE(144)
 		graph->lineTo((int)100,(int)100);
-		HX_STACK_LINE(160)
+		HX_STACK_LINE(145)
 		graph->endFill();
 	}
 return null();
@@ -178,25 +155,25 @@ return null();
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,drawLogo,(void))
 
-::openfl::display::BitmapData FlxAssets_obj::getBitmapData( ::String id){
-	HX_STACK_FRAME("flixel.system.FlxAssets","getBitmapData",0x17128189,"flixel.system.FlxAssets.getBitmapData","flixel/system/FlxAssets.hx",165,0xd3ac1356)
+::openfl::_legacy::display::BitmapData FlxAssets_obj::getBitmapData( ::String id){
+	HX_STACK_FRAME("flixel.system.FlxAssets","getBitmapData",0x17128189,"flixel.system.FlxAssets.getBitmapData","flixel/system/FlxAssets.hx",150,0xd3ac1356)
 	HX_STACK_ARG(id,"id")
-	HX_STACK_LINE(165)
-	return ::openfl::Assets_obj::getBitmapData(id,false);
+	HX_STACK_LINE(150)
+	return ::openfl::_legacy::Assets_obj::getBitmapData(id,false);
 }
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getBitmapData,return )
 
-::openfl::media::Sound FlxAssets_obj::getSound( ::String id){
-	HX_STACK_FRAME("flixel.system.FlxAssets","getSound",0x306e52ff,"flixel.system.FlxAssets.getSound","flixel/system/FlxAssets.hx",169,0xd3ac1356)
+::openfl::_legacy::media::Sound FlxAssets_obj::getSound( ::String id){
+	HX_STACK_FRAME("flixel.system.FlxAssets","getSound",0x306e52ff,"flixel.system.FlxAssets.getSound","flixel/system/FlxAssets.hx",154,0xd3ac1356)
 	HX_STACK_ARG(id,"id")
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(155)
 	::String extension = HX_CSTRING("");		HX_STACK_VAR(extension,"extension");
-	HX_STACK_LINE(174)
+	HX_STACK_LINE(159)
 	extension = HX_CSTRING(".ogg");
-	HX_STACK_LINE(176)
-	return ::openfl::Assets_obj::getSound((id + extension),null());
+	HX_STACK_LINE(161)
+	return ::openfl::_legacy::Assets_obj::getSound((id + extension),null());
 }
 
 
@@ -204,23 +181,23 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getSound,return )
 
 Void FlxAssets_obj::cacheSounds( ){
 {
-		HX_STACK_FRAME("flixel.system.FlxAssets","cacheSounds",0x35d449c0,"flixel.system.FlxAssets.cacheSounds","flixel/system/FlxAssets.hx",190,0xd3ac1356)
-		HX_STACK_LINE(190)
+		HX_STACK_FRAME("flixel.system.FlxAssets","cacheSounds",0x35d449c0,"flixel.system.FlxAssets.cacheSounds","flixel/system/FlxAssets.hx",175,0xd3ac1356)
+		HX_STACK_LINE(175)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(190)
-		Array< ::String > _g1 = ::openfl::Assets_obj::list(::openfl::AssetType_obj::SOUND);		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(190)
+		HX_STACK_LINE(175)
+		Array< ::String > _g1 = ::openfl::_legacy::Assets_obj::list(::openfl::_legacy::AssetType_obj::SOUND);		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(175)
 		while((true)){
-			HX_STACK_LINE(190)
+			HX_STACK_LINE(175)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(190)
+				HX_STACK_LINE(175)
 				break;
 			}
-			HX_STACK_LINE(190)
+			HX_STACK_LINE(175)
 			::String id = _g1->__get(_g);		HX_STACK_VAR(id,"id");
-			HX_STACK_LINE(190)
+			HX_STACK_LINE(175)
 			++(_g);
-			HX_STACK_LINE(192)
+			HX_STACK_LINE(177)
 			::flixel::FlxG_obj::sound->cache(id);
 		}
 	}
@@ -238,9 +215,6 @@ FlxAssets_obj::FlxAssets_obj()
 Dynamic FlxAssets_obj::__Field(const ::String &inName,bool inCallProp)
 {
 	switch(inName.length) {
-	case 4:
-		if (HX_FIELD_EQ(inName,"init") ) { return init_dyn(); }
-		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"drawLogo") ) { return drawLogo_dyn(); }
 		if (HX_FIELD_EQ(inName,"getSound") ) { return getSound_dyn(); }
@@ -278,7 +252,6 @@ void FlxAssets_obj::__GetFields(Array< ::String> &outFields)
 static ::String sStaticFields[] = {
 	HX_CSTRING("FONT_DEFAULT"),
 	HX_CSTRING("FONT_DEBUGGER"),
-	HX_CSTRING("init"),
 	HX_CSTRING("drawLogo"),
 	HX_CSTRING("getBitmapData"),
 	HX_CSTRING("getSound"),

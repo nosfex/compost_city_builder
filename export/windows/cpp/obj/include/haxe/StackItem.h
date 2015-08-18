@@ -26,7 +26,7 @@ class StackItem_obj : public hx::EnumBase_obj
 		static inline ::haxe::StackItem CFunction_dyn() { return CFunction; }
 		static ::haxe::StackItem FilePos(::haxe::StackItem s,::String file,int line);
 		static Dynamic FilePos_dyn();
-		static ::haxe::StackItem LocalFunction(int v);
+		static ::haxe::StackItem LocalFunction(Dynamic v);
 		static Dynamic LocalFunction_dyn();
 		static ::haxe::StackItem Method(::String classname,::String method);
 		static Dynamic Method_dyn();

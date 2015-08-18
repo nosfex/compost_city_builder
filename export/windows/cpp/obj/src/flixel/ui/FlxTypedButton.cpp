@@ -57,47 +57,47 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
 #endif
 namespace flixel{
 namespace ui{
@@ -149,7 +149,7 @@ Float Y = __o_Y.Default(0);
 		HX_STACK_LINE(93)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(93)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(93)
 		point->_inPool = false;
 		HX_STACK_LINE(93)
@@ -164,7 +164,7 @@ Float Y = __o_Y.Default(0);
 		HX_STACK_LINE(93)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(93)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(93)
 		point->_inPool = false;
 		HX_STACK_LINE(93)
@@ -175,7 +175,7 @@ Float Y = __o_Y.Default(0);
 	HX_STACK_LINE(93)
 	{
 		HX_STACK_LINE(93)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)0,(int)1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)0,(int)1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(93)
 		point->_inPool = false;
 		HX_STACK_LINE(93)
@@ -190,7 +190,7 @@ Float Y = __o_Y.Default(0);
 	HX_STACK_LINE(98)
 	this->scrollFactor->set(null(),null());
 	HX_STACK_LINE(101)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->onUpEventListener_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->onUpEventListener_dyn(),null(),null(),null());
 }
 ;
 	return null();
@@ -242,7 +242,7 @@ Void FlxTypedButton_obj::destroy( ){
 		HX_STACK_LINE(120)
 		this->_pressedTouch = null();
 		HX_STACK_LINE(123)
-		::openfl::Lib_obj::get_current()->get_stage()->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->onUpEventListener_dyn(),null());
+		::openfl::_legacy::Lib_obj::get_current()->get_stage()->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->onUpEventListener_dyn(),null());
 		HX_STACK_LINE(126)
 		this->super::destroy();
 	}
@@ -454,7 +454,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC4(FlxTypedButton_obj,updateStatus,(void))
 
-Void FlxTypedButton_obj::onUpEventListener( ::openfl::events::MouseEvent E){
+Void FlxTypedButton_obj::onUpEventListener( ::openfl::_legacy::events::MouseEvent E){
 {
 		HX_STACK_FRAME("flixel.ui.FlxTypedButton","onUpEventListener",0x0f960298,"flixel.ui.FlxTypedButton.onUpEventListener","flixel/ui/FlxTypedButton.hx",288,0x752be24c)
 		HX_STACK_THIS(this)

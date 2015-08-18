@@ -42,8 +42,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_haxe_io_Bytes
 #include <haxe/io/Bytes.h>
@@ -51,47 +51,47 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_media_Sound
+#include <openfl/_legacy/media/Sound.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_media_SoundChannel
+#include <openfl/_legacy/media/SoundChannel.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_net_URLRequest
+#include <openfl/_legacy/net/URLRequest.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_utils_ByteArray
+#include <openfl/_legacy/utils/ByteArray.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_utils_IDataInput
+#include <openfl/_legacy/utils/IDataInput.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_utils_IDataOutput
+#include <openfl/_legacy/utils/IDataOutput.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_utils_IMemoryRange
+#include <openfl/_legacy/utils/IMemoryRange.h>
 #endif
 #ifndef INCLUDED_openfl_media_ID3Info
 #include <openfl/media/ID3Info.h>
-#endif
-#ifndef INCLUDED_openfl_media_Sound
-#include <openfl/media/Sound.h>
-#endif
-#ifndef INCLUDED_openfl_media_SoundChannel
-#include <openfl/media/SoundChannel.h>
 #endif
 #ifndef INCLUDED_openfl_media_SoundLoaderContext
 #include <openfl/media/SoundLoaderContext.h>
 #endif
 #ifndef INCLUDED_openfl_media_SoundTransform
 #include <openfl/media/SoundTransform.h>
-#endif
-#ifndef INCLUDED_openfl_net_URLRequest
-#include <openfl/net/URLRequest.h>
-#endif
-#ifndef INCLUDED_openfl_utils_ByteArray
-#include <openfl/utils/ByteArray.h>
-#endif
-#ifndef INCLUDED_openfl_utils_IDataInput
-#include <openfl/utils/IDataInput.h>
-#endif
-#ifndef INCLUDED_openfl_utils_IDataOutput
-#include <openfl/utils/IDataOutput.h>
-#endif
-#ifndef INCLUDED_openfl_utils_IMemoryRange
-#include <openfl/utils/IMemoryRange.h>
 #endif
 namespace flixel{
 namespace system{
@@ -198,7 +198,7 @@ Void FlxSound_obj::destroy( ){
 		HX_STACK_LINE(179)
 		if (((this->_channel != null()))){
 			HX_STACK_LINE(181)
-			this->_channel->removeEventListener(::openfl::events::Event_obj::SOUND_COMPLETE,this->stopped_dyn(),null());
+			this->_channel->removeEventListener(::openfl::_legacy::events::Event_obj::SOUND_COMPLETE,this->stopped_dyn(),null());
 			HX_STACK_LINE(182)
 			this->_channel->stop();
 			HX_STACK_LINE(183)
@@ -207,7 +207,7 @@ Void FlxSound_obj::destroy( ){
 		HX_STACK_LINE(186)
 		if (((this->_sound != null()))){
 			HX_STACK_LINE(188)
-			this->_sound->removeEventListener(::openfl::events::Event_obj::ID3,this->gotID3_dyn(),null());
+			this->_sound->removeEventListener(::openfl::_legacy::events::Event_obj::ID3,this->gotID3_dyn(),null());
 			HX_STACK_LINE(189)
 			this->_sound = null();
 		}
@@ -248,7 +248,7 @@ Void FlxSound_obj::update( ){
 				HX_STACK_LINE(215)
 				{
 					HX_STACK_LINE(215)
-					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(this->_target->x,this->_target->y);		HX_STACK_VAR(point,"point");
+					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(this->_target->x,this->_target->y);		HX_STACK_VAR(point,"point");
 					HX_STACK_LINE(215)
 					point->_inPool = false;
 					HX_STACK_LINE(215)
@@ -259,7 +259,7 @@ Void FlxSound_obj::update( ){
 				HX_STACK_LINE(215)
 				{
 					HX_STACK_LINE(215)
-					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(this->x,this->y);		HX_STACK_VAR(point,"point");
+					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(this->x,this->y);		HX_STACK_VAR(point,"point");
 					HX_STACK_LINE(215)
 					point->_inPool = false;
 					HX_STACK_LINE(215)
@@ -272,12 +272,12 @@ Void FlxSound_obj::update( ){
 				HX_STACK_LINE(215)
 				if ((Point1->_weak)){
 					HX_STACK_LINE(215)
-					::flixel::util::FlxPoint_obj::_pool->put(Point1);
+					Point1->put();
 				}
 				HX_STACK_LINE(215)
 				if ((Point2->_weak)){
 					HX_STACK_LINE(215)
-					::flixel::util::FlxPoint_obj::_pool->put(Point2);
+					Point2->put();
 				}
 				HX_STACK_LINE(215)
 				_g1 = ::Math_obj::sqrt(((dx * dx) + (dy * dy)));
@@ -378,7 +378,7 @@ bool AutoDestroy = __o_AutoDestroy.Default(false);
 		HX_STACK_LINE(270)
 		this->cleanup(true,null(),null());
 		HX_STACK_LINE(272)
-		if ((::Std_obj::is(EmbeddedSound,hx::ClassOf< ::openfl::media::Sound >()))){
+		if ((::Std_obj::is(EmbeddedSound,hx::ClassOf< ::openfl::_legacy::media::Sound >()))){
 			HX_STACK_LINE(274)
 			this->_sound = EmbeddedSound;
 		}
@@ -386,7 +386,7 @@ bool AutoDestroy = __o_AutoDestroy.Default(false);
 			HX_STACK_LINE(276)
 			if ((::Std_obj::is(EmbeddedSound,hx::ClassOf< ::Class >()))){
 				HX_STACK_LINE(278)
-				::openfl::media::Sound _g = ::Type_obj::createInstance(EmbeddedSound,Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(_g,"_g");
+				::openfl::_legacy::media::Sound _g = ::Type_obj::createInstance(EmbeddedSound,Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(278)
 				this->_sound = _g;
 			}
@@ -394,7 +394,7 @@ bool AutoDestroy = __o_AutoDestroy.Default(false);
 				HX_STACK_LINE(280)
 				if ((::Std_obj::is(EmbeddedSound,hx::ClassOf< ::String >()))){
 					HX_STACK_LINE(282)
-					::openfl::media::Sound _g1 = ::openfl::Assets_obj::getSound(EmbeddedSound,null());		HX_STACK_VAR(_g1,"_g1");
+					::openfl::_legacy::media::Sound _g1 = ::openfl::_legacy::Assets_obj::getSound(EmbeddedSound,null());		HX_STACK_VAR(_g1,"_g1");
 					HX_STACK_LINE(282)
 					this->_sound = _g1;
 				}
@@ -431,13 +431,13 @@ bool AutoDestroy = __o_AutoDestroy.Default(false);
 		HX_STACK_LINE(305)
 		this->cleanup(true,null(),null());
 		HX_STACK_LINE(307)
-		::openfl::media::Sound _g = ::openfl::media::Sound_obj::__new(null(),null(),null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::media::Sound _g = ::openfl::_legacy::media::Sound_obj::__new(null(),null(),null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(307)
 		this->_sound = _g;
 		HX_STACK_LINE(308)
-		this->_sound->addEventListener(::openfl::events::Event_obj::ID3,this->gotID3_dyn(),null(),null(),null());
+		this->_sound->addEventListener(::openfl::_legacy::events::Event_obj::ID3,this->gotID3_dyn(),null(),null(),null());
 		HX_STACK_LINE(309)
-		::openfl::net::URLRequest _g1 = ::openfl::net::URLRequest_obj::__new(SoundURL);		HX_STACK_VAR(_g1,"_g1");
+		::openfl::_legacy::net::URLRequest _g1 = ::openfl::_legacy::net::URLRequest_obj::__new(SoundURL);		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(309)
 		this->_sound->load(_g1,null(),null());
 		HX_STACK_LINE(310)
@@ -458,7 +458,7 @@ bool AutoDestroy = __o_AutoDestroy.Default(false);
 
 HX_DEFINE_DYNAMIC_FUNC4(FlxSound_obj,loadStream,return )
 
-::flixel::system::FlxSound FlxSound_obj::loadByteArray( ::openfl::utils::ByteArray Bytes,hx::Null< bool >  __o_Looped,hx::Null< bool >  __o_AutoDestroy,Dynamic OnComplete){
+::flixel::system::FlxSound FlxSound_obj::loadByteArray( ::openfl::_legacy::utils::ByteArray Bytes,hx::Null< bool >  __o_Looped,hx::Null< bool >  __o_AutoDestroy,Dynamic OnComplete){
 bool Looped = __o_Looped.Default(false);
 bool AutoDestroy = __o_AutoDestroy.Default(false);
 	HX_STACK_FRAME("flixel.system.FlxSound","loadByteArray",0x83f8d967,"flixel.system.FlxSound.loadByteArray","flixel/system/FlxSound.hx",327,0x7d78fc74)
@@ -471,11 +471,11 @@ bool AutoDestroy = __o_AutoDestroy.Default(false);
 		HX_STACK_LINE(328)
 		this->cleanup(true,null(),null());
 		HX_STACK_LINE(333)
-		::openfl::media::Sound _g = ::openfl::media::Sound_obj::__new(null(),null(),null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::media::Sound _g = ::openfl::_legacy::media::Sound_obj::__new(null(),null(),null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(333)
 		this->_sound = _g;
 		HX_STACK_LINE(334)
-		this->_sound->addEventListener(::openfl::events::Event_obj::ID3,this->gotID3_dyn(),null(),null(),null());
+		this->_sound->addEventListener(::openfl::_legacy::events::Event_obj::ID3,this->gotID3_dyn(),null(),null(),null());
 		HX_STACK_LINE(335)
 		this->_sound->loadCompressedDataFromByteArray(Bytes,Bytes->length,null());
 		HX_STACK_LINE(336)
@@ -734,13 +734,13 @@ Void FlxSound_obj::startSound( Float Position){
 		HX_STACK_LINE(506)
 		this->_paused = false;
 		HX_STACK_LINE(507)
-		::openfl::media::SoundChannel _g = this->_sound->play(this->time,numLoops,this->_transform);		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::media::SoundChannel _g = this->_sound->play(this->time,numLoops,this->_transform);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(507)
 		this->_channel = _g;
 		HX_STACK_LINE(508)
 		if (((this->_channel != null()))){
 			HX_STACK_LINE(510)
-			this->_channel->addEventListener(::openfl::events::Event_obj::SOUND_COMPLETE,this->stopped_dyn(),null(),null(),null());
+			this->_channel->addEventListener(::openfl::_legacy::events::Event_obj::SOUND_COMPLETE,this->stopped_dyn(),null(),null(),null());
 			HX_STACK_LINE(511)
 			this->set_active(true);
 		}
@@ -757,7 +757,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxSound_obj,startSound,(void))
 
-Void FlxSound_obj::stopped( ::openfl::events::Event event){
+Void FlxSound_obj::stopped( ::openfl::_legacy::events::Event event){
 {
 		HX_STACK_FRAME("flixel.system.FlxSound","stopped",0x3480f409,"flixel.system.FlxSound.stopped","flixel/system/FlxSound.hx",526,0x7d78fc74)
 		HX_STACK_THIS(this)
@@ -804,7 +804,7 @@ bool resetFading = __o_resetFading.Default(true);
 		HX_STACK_LINE(558)
 		if (((this->_channel != null()))){
 			HX_STACK_LINE(560)
-			this->_channel->removeEventListener(::openfl::events::Event_obj::SOUND_COMPLETE,this->stopped_dyn(),null());
+			this->_channel->removeEventListener(::openfl::_legacy::events::Event_obj::SOUND_COMPLETE,this->stopped_dyn(),null());
 			HX_STACK_LINE(561)
 			this->_channel->stop();
 			HX_STACK_LINE(562)
@@ -826,7 +826,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC3(FlxSound_obj,cleanup,(void))
 
-Void FlxSound_obj::gotID3( ::openfl::events::Event event){
+Void FlxSound_obj::gotID3( ::openfl::_legacy::events::Event event){
 {
 		HX_STACK_FRAME("flixel.system.FlxSound","gotID3",0xcead1fb0,"flixel.system.FlxSound.gotID3","flixel/system/FlxSound.hx",579,0x7d78fc74)
 		HX_STACK_THIS(this)
@@ -838,7 +838,7 @@ Void FlxSound_obj::gotID3( ::openfl::events::Event event){
 		HX_STACK_LINE(582)
 		this->artist = this->_sound->get_id3()->artist;
 		HX_STACK_LINE(583)
-		this->_sound->removeEventListener(::openfl::events::Event_obj::ID3,this->gotID3_dyn(),null());
+		this->_sound->removeEventListener(::openfl::_legacy::events::Event_obj::ID3,this->gotID3_dyn(),null());
 	}
 return null();
 }
@@ -1111,7 +1111,7 @@ Dynamic FlxSound_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 	case 6:
 		if (HX_FIELD_EQ(inName,"artist") ) { artist=inValue.Cast< ::String >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"volume") ) { return set_volume(inValue); }
-		if (HX_FIELD_EQ(inName,"_sound") ) { _sound=inValue.Cast< ::openfl::media::Sound >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_sound") ) { _sound=inValue.Cast< ::openfl::_legacy::media::Sound >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"persist") ) { persist=inValue.Cast< bool >(); return inValue; }
@@ -1123,7 +1123,7 @@ Dynamic FlxSound_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"_radius") ) { _radius=inValue.Cast< Float >(); return inValue; }
 		break;
 	case 8:
-		if (HX_FIELD_EQ(inName,"_channel") ) { _channel=inValue.Cast< ::openfl::media::SoundChannel >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_channel") ) { _channel=inValue.Cast< ::openfl::_legacy::media::SoundChannel >(); return inValue; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"amplitude") ) { amplitude=inValue.Cast< Float >(); return inValue; }
@@ -1193,8 +1193,8 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxSound_obj,onComplete),HX_CSTRING("onComplete")},
 	{hx::fsBool,(int)offsetof(FlxSound_obj,playing),HX_CSTRING("playing")},
 	{hx::fsFloat,(int)offsetof(FlxSound_obj,time),HX_CSTRING("time")},
-	{hx::fsObject /*::openfl::media::Sound*/ ,(int)offsetof(FlxSound_obj,_sound),HX_CSTRING("_sound")},
-	{hx::fsObject /*::openfl::media::SoundChannel*/ ,(int)offsetof(FlxSound_obj,_channel),HX_CSTRING("_channel")},
+	{hx::fsObject /*::openfl::_legacy::media::Sound*/ ,(int)offsetof(FlxSound_obj,_sound),HX_CSTRING("_sound")},
+	{hx::fsObject /*::openfl::_legacy::media::SoundChannel*/ ,(int)offsetof(FlxSound_obj,_channel),HX_CSTRING("_channel")},
 	{hx::fsObject /*::openfl::media::SoundTransform*/ ,(int)offsetof(FlxSound_obj,_transform),HX_CSTRING("_transform")},
 	{hx::fsBool,(int)offsetof(FlxSound_obj,_paused),HX_CSTRING("_paused")},
 	{hx::fsFloat,(int)offsetof(FlxSound_obj,_volume),HX_CSTRING("_volume")},

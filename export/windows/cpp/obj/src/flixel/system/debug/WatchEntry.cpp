@@ -39,8 +39,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -51,38 +51,38 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_KeyboardEvent
-#include <openfl/events/KeyboardEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_KeyboardEvent
+#include <openfl/_legacy/events/KeyboardEvent.h>
 #endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
 #ifndef INCLUDED_openfl_text_TextFieldType
 #include <openfl/text/TextFieldType.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
 #endif
 namespace flixel{
 namespace system{
@@ -207,15 +207,15 @@ HX_STACK_ARG(Custom,"Custom")
 		color = (int)10875373;
 	}
 	HX_STACK_LINE(123)
-	::openfl::text::TextFormat _g5 = ::openfl::text::TextFormat_obj::__new(fontName,(int)12,color,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g5,"_g5");
+	::openfl::_legacy::text::TextFormat _g5 = ::openfl::_legacy::text::TextFormat_obj::__new(fontName,(int)12,color,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g5,"_g5");
 	HX_STACK_LINE(123)
 	this->_whiteText = _g5;
 	HX_STACK_LINE(124)
-	::openfl::text::TextFormat _g6 = ::openfl::text::TextFormat_obj::__new(fontName,(int)12,(int)0,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g6,"_g6");
+	::openfl::_legacy::text::TextFormat _g6 = ::openfl::_legacy::text::TextFormat_obj::__new(fontName,(int)12,(int)0,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g6,"_g6");
 	HX_STACK_LINE(124)
 	this->_blackText = _g6;
 	HX_STACK_LINE(126)
-	::openfl::text::TextField _g7 = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(_g7,"_g7");
+	::openfl::_legacy::text::TextField _g7 = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(_g7,"_g7");
 	HX_STACK_LINE(126)
 	this->nameDisplay = _g7;
 	HX_STACK_LINE(127)
@@ -229,7 +229,7 @@ HX_STACK_ARG(Custom,"Custom")
 	HX_STACK_LINE(131)
 	this->nameDisplay->set_defaultTextFormat(this->_whiteText);
 	HX_STACK_LINE(133)
-	::openfl::text::TextField _g8 = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(_g8,"_g8");
+	::openfl::_legacy::text::TextField _g8 = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(_g8,"_g8");
 	HX_STACK_LINE(133)
 	this->valueDisplay = _g8;
 	HX_STACK_LINE(134)
@@ -245,9 +245,9 @@ HX_STACK_ARG(Custom,"Custom")
 	HX_STACK_LINE(140)
 	if ((!(this->quickWatch))){
 		HX_STACK_LINE(142)
-		this->valueDisplay->addEventListener(::openfl::events::KeyboardEvent_obj::KEY_UP,this->onKeyUp_dyn(),null(),null(),null());
+		this->valueDisplay->addEventListener(::openfl::_legacy::events::KeyboardEvent_obj::KEY_UP,this->onKeyUp_dyn(),null(),null(),null());
 		HX_STACK_LINE(143)
-		this->valueDisplay->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null(),null(),null());
+		this->valueDisplay->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null(),null(),null());
 	}
 	HX_STACK_LINE(145)
 	this->valueDisplay->set_background(false);
@@ -299,9 +299,9 @@ Void WatchEntry_obj::destroy( ){
 		HX_STACK_LINE(163)
 		if (((this->valueDisplay != null()))){
 			HX_STACK_LINE(165)
-			this->valueDisplay->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null());
+			this->valueDisplay->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null());
 			HX_STACK_LINE(166)
-			this->valueDisplay->removeEventListener(::openfl::events::KeyboardEvent_obj::KEY_UP,this->onKeyUp_dyn(),null());
+			this->valueDisplay->removeEventListener(::openfl::_legacy::events::KeyboardEvent_obj::KEY_UP,this->onKeyUp_dyn(),null());
 			HX_STACK_LINE(167)
 			this->valueDisplay = null();
 		}
@@ -443,7 +443,7 @@ bool WatchEntry_obj::updateValue( ){
 
 HX_DEFINE_DYNAMIC_FUNC0(WatchEntry_obj,updateValue,return )
 
-Void WatchEntry_obj::onMouseUp( ::openfl::events::MouseEvent FlashEvent){
+Void WatchEntry_obj::onMouseUp( ::openfl::_legacy::events::MouseEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.system.debug.WatchEntry","onMouseUp",0xc94c9c9e,"flixel.system.debug.WatchEntry.onMouseUp","flixel/system/debug/WatchEntry.hx",226,0x35f5be92)
 		HX_STACK_THIS(this)
@@ -483,7 +483,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(WatchEntry_obj,onMouseUp,(void))
 
-Void WatchEntry_obj::onKeyUp( ::openfl::events::KeyboardEvent FlashEvent){
+Void WatchEntry_obj::onKeyUp( ::openfl::_legacy::events::KeyboardEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.system.debug.WatchEntry","onKeyUp",0xb8d81718,"flixel.system.debug.WatchEntry.onKeyUp","flixel/system/debug/WatchEntry.hx",244,0x35f5be92)
 		HX_STACK_THIS(this)
@@ -802,15 +802,15 @@ Dynamic WatchEntry_obj::__SetField(const ::String &inName,const Dynamic &inValue
 		if (HX_FIELD_EQ(inName,"oldValue") ) { oldValue=inValue.Cast< Dynamic >(); return inValue; }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"_whiteText") ) { _whiteText=inValue.Cast< ::openfl::text::TextFormat >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_blackText") ) { _blackText=inValue.Cast< ::openfl::text::TextFormat >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_whiteText") ) { _whiteText=inValue.Cast< ::openfl::_legacy::text::TextFormat >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_blackText") ) { _blackText=inValue.Cast< ::openfl::_legacy::text::TextFormat >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"quickWatch") ) { quickWatch=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 11:
-		if (HX_FIELD_EQ(inName,"nameDisplay") ) { nameDisplay=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"nameDisplay") ) { nameDisplay=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 12:
-		if (HX_FIELD_EQ(inName,"valueDisplay") ) { valueDisplay=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"valueDisplay") ) { valueDisplay=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -838,12 +838,12 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(WatchEntry_obj,object),HX_CSTRING("object")},
 	{hx::fsString,(int)offsetof(WatchEntry_obj,field),HX_CSTRING("field")},
 	{hx::fsString,(int)offsetof(WatchEntry_obj,custom),HX_CSTRING("custom")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(WatchEntry_obj,nameDisplay),HX_CSTRING("nameDisplay")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(WatchEntry_obj,valueDisplay),HX_CSTRING("valueDisplay")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(WatchEntry_obj,nameDisplay),HX_CSTRING("nameDisplay")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(WatchEntry_obj,valueDisplay),HX_CSTRING("valueDisplay")},
 	{hx::fsBool,(int)offsetof(WatchEntry_obj,editing),HX_CSTRING("editing")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(WatchEntry_obj,oldValue),HX_CSTRING("oldValue")},
-	{hx::fsObject /*::openfl::text::TextFormat*/ ,(int)offsetof(WatchEntry_obj,_whiteText),HX_CSTRING("_whiteText")},
-	{hx::fsObject /*::openfl::text::TextFormat*/ ,(int)offsetof(WatchEntry_obj,_blackText),HX_CSTRING("_blackText")},
+	{hx::fsObject /*::openfl::_legacy::text::TextFormat*/ ,(int)offsetof(WatchEntry_obj,_whiteText),HX_CSTRING("_whiteText")},
+	{hx::fsObject /*::openfl::_legacy::text::TextFormat*/ ,(int)offsetof(WatchEntry_obj,_blackText),HX_CSTRING("_blackText")},
 	{hx::fsBool,(int)offsetof(WatchEntry_obj,quickWatch),HX_CSTRING("quickWatch")},
 	{ hx::fsUnknown, 0, null()}
 };

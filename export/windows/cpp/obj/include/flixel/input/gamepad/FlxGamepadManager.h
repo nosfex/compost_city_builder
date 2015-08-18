@@ -10,7 +10,7 @@ HX_DECLARE_CLASS3(flixel,input,gamepad,FlxGamepad)
 HX_DECLARE_CLASS3(flixel,input,gamepad,FlxGamepadManager)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxInput)
-HX_DECLARE_CLASS2(openfl,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
 HX_DECLARE_CLASS2(openfl,events,JoystickEvent)
 namespace flixel{
 namespace input{

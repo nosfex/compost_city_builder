@@ -20,8 +20,8 @@ HX_DECLARE_CLASS2(flixel,tile,FlxTilemapBuffer)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS2(flixel,util,FlxRect)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace tile{
 
@@ -62,8 +62,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 		Array< ::Dynamic > _randomChoices;
 		Dynamic _randomLambda;
 		Dynamic &_randomLambda_dyn() { return _randomLambda;}
-		::openfl::geom::Point _flashPoint;
-		::openfl::geom::Rectangle _flashRect;
+		::openfl::_legacy::geom::Point _flashPoint;
+		::openfl::_legacy::geom::Rectangle _flashRect;
 		Array< ::Dynamic > _buffers;
 		Array< int > _data;
 		int _tileWidth;
@@ -72,7 +72,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTilemap_obj : public ::flixel::FlxObject_obj{
 		Float _scaledTileHeight;
 		Array< ::Dynamic > _tileObjects;
 		int _startingIndex;
-		::openfl::geom::Point _helperPoint;
+		::openfl::_legacy::geom::Point _helperPoint;
 		Array< int > _rectIDs;
 		virtual Void destroy( );
 

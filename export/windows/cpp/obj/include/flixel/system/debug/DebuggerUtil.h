@@ -6,12 +6,12 @@
 #endif
 
 HX_DECLARE_CLASS3(flixel,system,debug,DebuggerUtil)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
@@ -37,7 +37,7 @@ class HXCPP_CLASS_ATTRIBUTES  DebuggerUtil_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("DebuggerUtil"); }
 
-		static ::openfl::text::TextField createTextField( hx::Null< Float >  X,hx::Null< Float >  Y,hx::Null< int >  Color,hx::Null< int >  Size);
+		static ::openfl::_legacy::text::TextField createTextField( hx::Null< Float >  X,hx::Null< Float >  Y,hx::Null< int >  Color,hx::Null< int >  Size);
 		static Dynamic createTextField_dyn();
 
 };

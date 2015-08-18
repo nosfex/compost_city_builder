@@ -14,7 +14,7 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxMath)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS2(flixel,util,FlxRect)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace util{
 
@@ -72,7 +72,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxMath_obj : public hx::Object{
 		static bool mouseInFlxRect( bool useWorldCoords,::flixel::util::FlxRect rect);
 		static Dynamic mouseInFlxRect_dyn();
 
-		static bool pointInRectangle( Float pointX,Float pointY,::openfl::geom::Rectangle rect);
+		static bool pointInRectangle( Float pointX,Float pointY,::openfl::_legacy::geom::Rectangle rect);
 		static Dynamic pointInRectangle_dyn();
 
 		static int maxAdd( int value,int amount,int max,hx::Null< int >  min);

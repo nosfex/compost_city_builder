@@ -5,24 +5,24 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/events/Event.h>
-HX_DECLARE_CLASS2(openfl,events,Event)
+#include <openfl/_legacy/events/Event.h>
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
 HX_DECLARE_CLASS2(openfl,events,ProgressEvent)
 namespace openfl{
 namespace events{
 
 
-class HXCPP_CLASS_ATTRIBUTES  ProgressEvent_obj : public ::openfl::events::Event_obj{
+class HXCPP_CLASS_ATTRIBUTES  ProgressEvent_obj : public ::openfl::_legacy::events::Event_obj{
 	public:
-		typedef ::openfl::events::Event_obj super;
+		typedef ::openfl::_legacy::events::Event_obj super;
 		typedef ProgressEvent_obj OBJ_;
 		ProgressEvent_obj();
-		Void __construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,hx::Null< int >  __o_bytesLoaded,hx::Null< int >  __o_bytesTotal);
+		Void __construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,hx::Null< Float >  __o_bytesLoaded,hx::Null< Float >  __o_bytesTotal);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< ProgressEvent_obj > __new(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,hx::Null< int >  __o_bytesLoaded,hx::Null< int >  __o_bytesTotal);
+		static hx::ObjectPtr< ProgressEvent_obj > __new(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,hx::Null< Float >  __o_bytesLoaded,hx::Null< Float >  __o_bytesTotal);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~ProgressEvent_obj();
@@ -32,9 +32,9 @@ class HXCPP_CLASS_ATTRIBUTES  ProgressEvent_obj : public ::openfl::events::Event
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("ProgressEvent"); }
 
-		int bytesLoaded;
-		int bytesTotal;
-		virtual ::openfl::events::Event clone( );
+		Float bytesLoaded;
+		Float bytesTotal;
+		virtual ::openfl::_legacy::events::Event clone( );
 
 		virtual ::String toString( );
 

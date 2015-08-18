@@ -45,8 +45,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxSpriteUtil
 #include <flixel/util/FlxSpriteUtil.h>
@@ -60,71 +60,71 @@
 #ifndef INCLUDED_flixel_util__FlxSignal_FlxSignalBase
 #include <flixel/util/_FlxSignal/FlxSignalBase.h>
 #endif
-#ifndef INCLUDED_openfl_display_Bitmap
-#include <openfl/display/Bitmap.h>
+#ifndef INCLUDED_openfl__legacy_display_Bitmap
+#include <openfl/_legacy/display/Bitmap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_CapsStyle
-#include <openfl/display/CapsStyle.h>
+#ifndef INCLUDED_openfl__legacy_display_CapsStyle
+#include <openfl/_legacy/display/CapsStyle.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_JointStyle
-#include <openfl/display/JointStyle.h>
+#ifndef INCLUDED_openfl__legacy_display_JointStyle
+#include <openfl/_legacy/display/JointStyle.h>
 #endif
-#ifndef INCLUDED_openfl_display_LineScaleMode
-#include <openfl/display/LineScaleMode.h>
+#ifndef INCLUDED_openfl__legacy_display_LineScaleMode
+#include <openfl/_legacy/display/LineScaleMode.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
 #ifndef INCLUDED_openfl_display_PixelSnapping
 #include <openfl/display/PixelSnapping.h>
-#endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
-#endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
-#endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
-#endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
-#endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
 #endif
 namespace flixel{
 namespace system{
@@ -138,7 +138,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(46)
 	this->_middleMouseDown = false;
 	HX_STACK_LINE(39)
-	this->_matrix = ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
+	this->_matrix = ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
 	struct _Function_1_1{
 		inline static ::flixel::util::FlxPoint Block( ){
 			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/debug/BitmapLog.hx",38,0xd4331252)
@@ -148,7 +148,7 @@ HX_STACK_THIS(this)
 				HX_STACK_LINE(38)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(38)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(38)
 				point->_inPool = false;
 				HX_STACK_LINE(38)
@@ -168,7 +168,7 @@ HX_STACK_THIS(this)
 				HX_STACK_LINE(37)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(37)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(37)
 				point->_inPool = false;
 				HX_STACK_LINE(37)
@@ -188,7 +188,7 @@ HX_STACK_THIS(this)
 				HX_STACK_LINE(36)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(36)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(36)
 				point->_inPool = false;
 				HX_STACK_LINE(36)
@@ -224,9 +224,9 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(57)
 	int _g5 = ::Std_obj::_int(_g4);		HX_STACK_VAR(_g5,"_g5");
 	HX_STACK_LINE(57)
-	::openfl::display::BitmapData _g6 = ::openfl::display::BitmapData_obj::__new(_g2,_g5,true,(int)0,null());		HX_STACK_VAR(_g6,"_g6");
+	::openfl::_legacy::display::BitmapData _g6 = ::openfl::_legacy::display::BitmapData_obj::__new(_g2,_g5,true,(int)0,null());		HX_STACK_VAR(_g6,"_g6");
 	HX_STACK_LINE(57)
-	::openfl::display::Bitmap _g7 = ::openfl::display::Bitmap_obj::__new(_g6,null(),null());		HX_STACK_VAR(_g7,"_g7");
+	::openfl::_legacy::display::Bitmap _g7 = ::openfl::_legacy::display::Bitmap_obj::__new(_g6,null(),null());		HX_STACK_VAR(_g7,"_g7");
 	HX_STACK_LINE(57)
 	this->_canvasBitmap = _g7;
 	HX_STACK_LINE(58)
@@ -242,11 +242,11 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(65)
 	this->setVisible(false);
 	HX_STACK_LINE(67)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null(),null(),null());
 	HX_STACK_LINE(69)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->onMiddleDown_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->onMiddleDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(70)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->onMiddleUp_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->onMiddleUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(73)
 	::flixel::FlxG_obj::signals->stateSwitched->add(this->clear_dyn());
 	HX_STACK_LINE(76)
@@ -280,7 +280,7 @@ Void BitmapLog_obj::createHeaderUI( ){
 		HX_STACK_LINE(82)
 		Array< ::Dynamic > _g = Array_obj< ::Dynamic >::__new().Add(hx::ObjectPtr<OBJ_>(this));		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(84)
-		::openfl::display::Sprite _g1 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
+		::openfl::_legacy::display::Sprite _g1 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(84)
 		this->_ui = _g1;
 		HX_STACK_LINE(85)
@@ -292,11 +292,11 @@ Void BitmapLog_obj::createHeaderUI( ){
 		HX_STACK_LINE(87)
 		this->_buttonLeft = _g2;
 		HX_STACK_LINE(89)
-		::openfl::text::TextField _g3 = ::flixel::system::debug::DebuggerUtil_obj::createTextField(null(),null(),null(),null());		HX_STACK_VAR(_g3,"_g3");
+		::openfl::_legacy::text::TextField _g3 = ::flixel::system::debug::DebuggerUtil_obj::createTextField(null(),null(),null(),null());		HX_STACK_VAR(_g3,"_g3");
 		HX_STACK_LINE(89)
 		this->_dimensionsText = _g3;
 		HX_STACK_LINE(91)
-		::openfl::text::TextField _g4 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,(int)-3,null(),null());		HX_STACK_VAR(_g4,"_g4");
+		::openfl::_legacy::text::TextField _g4 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((int)0,(int)-3,null(),null());		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(91)
 		this->_counterText = _g4;
 		HX_STACK_LINE(92)
@@ -356,9 +356,9 @@ Void BitmapLog_obj::createFooterUI( ){
 		HX_STACK_FRAME("flixel.system.debug.BitmapLog","createFooterUI",0x7f1e51ec,"flixel.system.debug.BitmapLog.createFooterUI","flixel/system/debug/BitmapLog.hx",113,0xd4331252)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(114)
-		::openfl::display::BitmapData _g = ::openfl::display::BitmapData_obj::__new((int)1,(int)15,true,(int)-1157627904,null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::BitmapData _g = ::openfl::_legacy::display::BitmapData_obj::__new((int)1,(int)15,true,(int)-1157627904,null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(114)
-		::openfl::display::Bitmap _g1 = ::openfl::display::Bitmap_obj::__new(_g,null(),null());		HX_STACK_VAR(_g1,"_g1");
+		::openfl::_legacy::display::Bitmap _g1 = ::openfl::_legacy::display::Bitmap_obj::__new(_g,null(),null());		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(114)
 		this->_footer = _g1;
 		HX_STACK_LINE(115)
@@ -366,7 +366,7 @@ Void BitmapLog_obj::createFooterUI( ){
 		HX_STACK_LINE(116)
 		this->addChild(this->_footer);
 		HX_STACK_LINE(118)
-		::openfl::text::TextField _g2 = ::flixel::system::debug::DebuggerUtil_obj::createTextField(null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
+		::openfl::_legacy::text::TextField _g2 = ::flixel::system::debug::DebuggerUtil_obj::createTextField(null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(118)
 		this->_footerText = _g2;
 		HX_STACK_LINE(119)
@@ -397,11 +397,11 @@ Void BitmapLog_obj::destroy( ){
 		HX_STACK_LINE(135)
 		this->_entries = null();
 		HX_STACK_LINE(137)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_WHEEL,this->onMouseWheel_dyn(),null());
 		HX_STACK_LINE(139)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->onMiddleDown_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_DOWN,this->onMiddleDown_dyn(),null());
 		HX_STACK_LINE(140)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->onMiddleUp_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MIDDLE_MOUSE_UP,this->onMiddleUp_dyn(),null());
 		HX_STACK_LINE(143)
 		::flixel::FlxG_obj::signals->stateSwitched->remove(this->clear_dyn());
 	}
@@ -424,7 +424,7 @@ Void BitmapLog_obj::update( ){
 				HX_STACK_LINE(150)
 				Float Y = this->get_mouseY();		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(150)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(150)
 				point->_inPool = false;
 				HX_STACK_LINE(150)
@@ -476,7 +476,7 @@ Void BitmapLog_obj::resize( Float Width,Float Height){
 		HX_STACK_LINE(166)
 		this->super::resize(Width,Height);
 		HX_STACK_LINE(168)
-		::openfl::display::BitmapData _g = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_canvasBitmap->bitmapData);		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::BitmapData _g = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_canvasBitmap->bitmapData);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(168)
 		this->_canvasBitmap->set_bitmapData(_g);
 		HX_STACK_LINE(169)
@@ -496,7 +496,7 @@ Void BitmapLog_obj::resize( Float Width,Float Height){
 		HX_STACK_LINE(169)
 		int _g8 = ::Std_obj::_int(_g7);		HX_STACK_VAR(_g8,"_g8");
 		HX_STACK_LINE(169)
-		::openfl::display::BitmapData _g9 = ::openfl::display::BitmapData_obj::__new(_g3,_g8,true,(int)0,null());		HX_STACK_VAR(_g9,"_g9");
+		::openfl::_legacy::display::BitmapData _g9 = ::openfl::_legacy::display::BitmapData_obj::__new(_g3,_g8,true,(int)0,null());		HX_STACK_VAR(_g9,"_g9");
 		HX_STACK_LINE(169)
 		this->_canvasBitmap->set_bitmapData(_g9);
 		HX_STACK_LINE(170)
@@ -649,7 +649,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(BitmapLog_obj,resetSettings,(void))
 
-bool BitmapLog_obj::add( ::openfl::display::BitmapData bmp,::String __o_name){
+bool BitmapLog_obj::add( ::openfl::_legacy::display::BitmapData bmp,::String __o_name){
 ::String name = __o_name.Default(HX_CSTRING(""));
 	HX_STACK_FRAME("flixel.system.debug.BitmapLog","add",0xe9d8df60,"flixel.system.debug.BitmapLog.add","flixel/system/debug/BitmapLog.hx",226,0xd4331252)
 	HX_STACK_THIS(this)
@@ -664,9 +664,9 @@ bool BitmapLog_obj::add( ::openfl::display::BitmapData bmp,::String __o_name){
 		HX_STACK_LINE(231)
 		this->setVisible(true);
 		HX_STACK_LINE(232)
-		::openfl::display::BitmapData _g = bmp->clone();		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::BitmapData _g = bmp->clone();		HX_STACK_VAR(_g,"_g");
 		struct _Function_1_1{
-			inline static Dynamic Block( ::openfl::display::BitmapData &_g,::String &name){
+			inline static Dynamic Block( ::openfl::_legacy::display::BitmapData &_g,::String &name){
 				HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/debug/BitmapLog.hx",232,0xd4331252)
 				{
 					hx::Anon __result = hx::Anon_obj::Create();
@@ -748,7 +748,7 @@ Void BitmapLog_obj::clear( ){
 		HX_STACK_LINE(265)
 		this->_entries = Dynamic( Array_obj<Dynamic>::__new());
 		HX_STACK_LINE(266)
-		::openfl::geom::Rectangle _g = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::geom::Rectangle _g = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(266)
 		this->_canvasBitmap->bitmapData->fillRect(_g,(int)0);
 		HX_STACK_LINE(267)
@@ -781,7 +781,7 @@ bool BitmapLog_obj::refreshCanvas( Dynamic Index){
 		Index = this->_curIndex;
 	}
 	HX_STACK_LINE(285)
-	::openfl::geom::Rectangle _g = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::geom::Rectangle _g = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(285)
 	this->_canvasBitmap->bitmapData->fillRect(_g,(int)0);
 	HX_STACK_LINE(287)
@@ -835,13 +835,13 @@ bool BitmapLog_obj::refreshCanvas( Dynamic Index){
 	HX_STACK_LINE(306)
 	this->_matrix->translate(this->_point->x,this->_point->y);
 	HX_STACK_LINE(308)
-	::openfl::geom::Rectangle _g13 = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g13,"_g13");
+	::openfl::_legacy::geom::Rectangle _g13 = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g13,"_g13");
 	HX_STACK_LINE(308)
 	this->_canvasBitmap->bitmapData->draw(this->_entries->__GetItem(this->_curIndex)->__Field(HX_CSTRING("bitmap"),true),this->_matrix,null(),null(),_g13,false);
 	HX_STACK_LINE(310)
 	this->drawBoundingBox(this->_entries->__GetItem(this->_curIndex)->__Field(HX_CSTRING("bitmap"),true));
 	HX_STACK_LINE(311)
-	::openfl::geom::Rectangle _g14 = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g14,"_g14");
+	::openfl::_legacy::geom::Rectangle _g14 = this->_canvasBitmap->bitmapData->get_rect();		HX_STACK_VAR(_g14,"_g14");
 	HX_STACK_LINE(311)
 	this->_canvasBitmap->bitmapData->draw(::flixel::util::FlxSpriteUtil_obj::flashGfxSprite,this->_matrix,null(),null(),_g14,false);
 	HX_STACK_LINE(313)
@@ -887,7 +887,7 @@ Void BitmapLog_obj::refreshTexts( ){
 		HX_STACK_LINE(325)
 		{
 			HX_STACK_LINE(325)
-			::openfl::display::BitmapData bitmapData = this->_entries->__GetItem(this->_curIndex)->__Field(HX_CSTRING("bitmap"),true);		HX_STACK_VAR(bitmapData,"bitmapData");
+			::openfl::_legacy::display::BitmapData bitmapData = this->_entries->__GetItem(this->_curIndex)->__Field(HX_CSTRING("bitmap"),true);		HX_STACK_VAR(bitmapData,"bitmapData");
 			HX_STACK_LINE(325)
 			int _g4 = bitmapData->get_width();		HX_STACK_VAR(_g4,"_g4");
 			HX_STACK_LINE(325)
@@ -912,17 +912,17 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(BitmapLog_obj,refreshTexts,(void))
 
-Void BitmapLog_obj::drawBoundingBox( ::openfl::display::BitmapData bitmap){
+Void BitmapLog_obj::drawBoundingBox( ::openfl::_legacy::display::BitmapData bitmap){
 {
 		HX_STACK_FRAME("flixel.system.debug.BitmapLog","drawBoundingBox",0xb05c8722,"flixel.system.debug.BitmapLog.drawBoundingBox","flixel/system/debug/BitmapLog.hx",331,0xd4331252)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(bitmap,"bitmap")
 		HX_STACK_LINE(332)
-		::openfl::display::Graphics gfx = ::flixel::util::FlxSpriteUtil_obj::flashGfx;		HX_STACK_VAR(gfx,"gfx");
+		::openfl::_legacy::display::Graphics gfx = ::flixel::util::FlxSpriteUtil_obj::flashGfx;		HX_STACK_VAR(gfx,"gfx");
 		HX_STACK_LINE(333)
 		gfx->clear();
 		HX_STACK_LINE(334)
-		gfx->lineStyle((int)1,(int)-65536,0.75,false,::openfl::display::LineScaleMode_obj::NONE,null(),null(),null());
+		gfx->lineStyle((int)1,(int)-65536,0.75,false,::openfl::_legacy::display::LineScaleMode_obj::NONE,null(),null(),null());
 		HX_STACK_LINE(335)
 		int _g = bitmap->get_width();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(335)
@@ -936,7 +936,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(BitmapLog_obj,drawBoundingBox,(void))
 
-Void BitmapLog_obj::onMouseWheel( ::openfl::events::MouseEvent e){
+Void BitmapLog_obj::onMouseWheel( ::openfl::_legacy::events::MouseEvent e){
 {
 		HX_STACK_FRAME("flixel.system.debug.BitmapLog","onMouseWheel",0x77c9bd16,"flixel.system.debug.BitmapLog.onMouseWheel","flixel/system/debug/BitmapLog.hx",339,0xd4331252)
 		HX_STACK_THIS(this)
@@ -957,7 +957,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(BitmapLog_obj,onMouseWheel,(void))
 
-Void BitmapLog_obj::onMiddleDown( ::openfl::events::MouseEvent e){
+Void BitmapLog_obj::onMiddleDown( ::openfl::_legacy::events::MouseEvent e){
 {
 		HX_STACK_FRAME("flixel.system.debug.BitmapLog","onMiddleDown",0x0e5d5b37,"flixel.system.debug.BitmapLog.onMiddleDown","flixel/system/debug/BitmapLog.hx",345,0xd4331252)
 		HX_STACK_THIS(this)
@@ -977,7 +977,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(BitmapLog_obj,onMiddleDown,(void))
 
-Void BitmapLog_obj::onMiddleUp( ::openfl::events::MouseEvent e){
+Void BitmapLog_obj::onMiddleUp( ::openfl::_legacy::events::MouseEvent e){
 {
 		HX_STACK_FRAME("flixel.system.debug.BitmapLog","onMiddleUp",0x6933f9f0,"flixel.system.debug.BitmapLog.onMiddleUp","flixel/system/debug/BitmapLog.hx",352,0xd4331252)
 		HX_STACK_THIS(this)
@@ -1007,7 +1007,7 @@ Float BitmapLog_obj::set_zoom( Float Value){
 
 HX_DEFINE_DYNAMIC_FUNC1(BitmapLog_obj,set_zoom,return )
 
-::openfl::display::BitmapData BitmapLog_obj::get__canvas( ){
+::openfl::_legacy::display::BitmapData BitmapLog_obj::get__canvas( ){
 	HX_STACK_FRAME("flixel.system.debug.BitmapLog","get__canvas",0x3be08acd,"flixel.system.debug.BitmapLog.get__canvas","flixel/system/debug/BitmapLog.hx",366,0xd4331252)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(366)
@@ -1027,7 +1027,7 @@ Dynamic BitmapLog_obj::get__curEntry( ){
 
 HX_DEFINE_DYNAMIC_FUNC0(BitmapLog_obj,get__curEntry,return )
 
-::openfl::display::BitmapData BitmapLog_obj::get__curBitmap( ){
+::openfl::_legacy::display::BitmapData BitmapLog_obj::get__curBitmap( ){
 	HX_STACK_FRAME("flixel.system.debug.BitmapLog","get__curBitmap",0x1efb5aba,"flixel.system.debug.BitmapLog.get__curBitmap","flixel/system/debug/BitmapLog.hx",376,0xd4331252)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(376)
@@ -1169,7 +1169,7 @@ Dynamic BitmapLog_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 {
 	switch(inName.length) {
 	case 3:
-		if (HX_FIELD_EQ(inName,"_ui") ) { _ui=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_ui") ) { _ui=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"zoom") ) { if (inCallProp) return set_zoom(inValue);zoom=inValue.Cast< Float >(); return inValue; }
@@ -1178,8 +1178,8 @@ Dynamic BitmapLog_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 		if (HX_FIELD_EQ(inName,"_point") ) { _point=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
 		break;
 	case 7:
-		if (HX_FIELD_EQ(inName,"_matrix") ) { _matrix=inValue.Cast< ::openfl::geom::Matrix >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_footer") ) { _footer=inValue.Cast< ::openfl::display::Bitmap >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_matrix") ) { _matrix=inValue.Cast< ::openfl::_legacy::geom::Matrix >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_footer") ) { _footer=inValue.Cast< ::openfl::_legacy::display::Bitmap >(); return inValue; }
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"_entries") ) { _entries=inValue.Cast< Dynamic >(); return inValue; }
@@ -1190,19 +1190,19 @@ Dynamic BitmapLog_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 	case 11:
 		if (HX_FIELD_EQ(inName,"_buttonLeft") ) { _buttonLeft=inValue.Cast< ::flixel::system::ui::FlxSystemButton >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_buttonText") ) { _buttonText=inValue.Cast< ::flixel::system::ui::FlxSystemButton >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_footerText") ) { _footerText=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_footerText") ) { _footerText=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"_buttonRight") ) { _buttonRight=inValue.Cast< ::flixel::system::ui::FlxSystemButton >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_counterText") ) { _counterText=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_counterText") ) { _counterText=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 13:
-		if (HX_FIELD_EQ(inName,"_canvasBitmap") ) { _canvasBitmap=inValue.Cast< ::openfl::display::Bitmap >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_canvasBitmap") ) { _canvasBitmap=inValue.Cast< ::openfl::_legacy::display::Bitmap >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_lastMousePos") ) { _lastMousePos=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"_curMouseOffset") ) { _curMouseOffset=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_dimensionsText") ) { _dimensionsText=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_dimensionsText") ) { _dimensionsText=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 16:
 		if (HX_FIELD_EQ(inName,"_middleMouseDown") ) { _middleMouseDown=inValue.Cast< bool >(); return inValue; }
@@ -1241,22 +1241,22 @@ static ::String sStaticFields[] = {
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsFloat,(int)offsetof(BitmapLog_obj,zoom),HX_CSTRING("zoom")},
-	{hx::fsObject /*::openfl::display::Bitmap*/ ,(int)offsetof(BitmapLog_obj,_canvasBitmap),HX_CSTRING("_canvasBitmap")},
+	{hx::fsObject /*::openfl::_legacy::display::Bitmap*/ ,(int)offsetof(BitmapLog_obj,_canvasBitmap),HX_CSTRING("_canvasBitmap")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(BitmapLog_obj,_entries),HX_CSTRING("_entries")},
 	{hx::fsInt,(int)offsetof(BitmapLog_obj,_curIndex),HX_CSTRING("_curIndex")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(BitmapLog_obj,_point),HX_CSTRING("_point")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(BitmapLog_obj,_lastMousePos),HX_CSTRING("_lastMousePos")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(BitmapLog_obj,_curMouseOffset),HX_CSTRING("_curMouseOffset")},
-	{hx::fsObject /*::openfl::geom::Matrix*/ ,(int)offsetof(BitmapLog_obj,_matrix),HX_CSTRING("_matrix")},
+	{hx::fsObject /*::openfl::_legacy::geom::Matrix*/ ,(int)offsetof(BitmapLog_obj,_matrix),HX_CSTRING("_matrix")},
 	{hx::fsObject /*::flixel::system::ui::FlxSystemButton*/ ,(int)offsetof(BitmapLog_obj,_buttonLeft),HX_CSTRING("_buttonLeft")},
 	{hx::fsObject /*::flixel::system::ui::FlxSystemButton*/ ,(int)offsetof(BitmapLog_obj,_buttonText),HX_CSTRING("_buttonText")},
 	{hx::fsObject /*::flixel::system::ui::FlxSystemButton*/ ,(int)offsetof(BitmapLog_obj,_buttonRight),HX_CSTRING("_buttonRight")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(BitmapLog_obj,_counterText),HX_CSTRING("_counterText")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(BitmapLog_obj,_dimensionsText),HX_CSTRING("_dimensionsText")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(BitmapLog_obj,_ui),HX_CSTRING("_ui")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(BitmapLog_obj,_counterText),HX_CSTRING("_counterText")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(BitmapLog_obj,_dimensionsText),HX_CSTRING("_dimensionsText")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(BitmapLog_obj,_ui),HX_CSTRING("_ui")},
 	{hx::fsBool,(int)offsetof(BitmapLog_obj,_middleMouseDown),HX_CSTRING("_middleMouseDown")},
-	{hx::fsObject /*::openfl::display::Bitmap*/ ,(int)offsetof(BitmapLog_obj,_footer),HX_CSTRING("_footer")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(BitmapLog_obj,_footerText),HX_CSTRING("_footerText")},
+	{hx::fsObject /*::openfl::_legacy::display::Bitmap*/ ,(int)offsetof(BitmapLog_obj,_footer),HX_CSTRING("_footer")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(BitmapLog_obj,_footerText),HX_CSTRING("_footerText")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif

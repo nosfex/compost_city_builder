@@ -15,16 +15,16 @@ HX_DECLARE_CLASS3(flixel,system,layer,DrawStackItem)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS2(flixel,util,FlxRect)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,Graphics)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Graphics)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 
 
@@ -60,7 +60,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		::flixel::util::FlxPoint scroll;
 		int bgColor;
 		bool useBgAlphaBlending;
-		::openfl::display::Sprite flashSprite;
+		::openfl::_legacy::display::Sprite flashSprite;
 		int width;
 		int height;
 		Float zoom;
@@ -69,8 +69,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		int color;
 		bool antialiasing;
 		::flixel::util::FlxPoint followLead;
-		::openfl::geom::Rectangle _flashRect;
-		::openfl::geom::Point _flashPoint;
+		::openfl::_legacy::geom::Rectangle _flashRect;
+		::openfl::_legacy::geom::Point _flashPoint;
 		::flixel::util::FlxPoint _flashOffset;
 		int _fxFlashColor;
 		Float _fxFlashDuration;
@@ -92,8 +92,8 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		::flixel::util::FlxPoint _fxShakeOffset;
 		int _fxShakeDirection;
 		::flixel::util::FlxPoint _point;
-		::openfl::display::Sprite canvas;
-		::openfl::display::Sprite debugLayer;
+		::openfl::_legacy::display::Sprite canvas;
+		::openfl::_legacy::display::Sprite debugLayer;
 		::flixel::system::layer::DrawStackItem _currentStackItem;
 		::flixel::system::layer::DrawStackItem _headOfDrawStack;
 		virtual ::flixel::system::layer::DrawStackItem getDrawStackItem( ::flixel::util::loaders::CachedGraphics ObjGraphics,bool ObjColored,int ObjBlending,hx::Null< bool >  ObjAntialiasing);
@@ -142,7 +142,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxCamera_obj : public ::flixel::FlxBasic_obj{
 		virtual ::flixel::FlxCamera copyFrom( ::flixel::FlxCamera Camera);
 		Dynamic copyFrom_dyn();
 
-		virtual Void fill( int Color,hx::Null< bool >  BlendAlpha,hx::Null< Float >  FxAlpha,::openfl::display::Graphics graphics);
+		virtual Void fill( int Color,hx::Null< bool >  BlendAlpha,hx::Null< Float >  FxAlpha,::openfl::_legacy::display::Graphics graphics);
 		Dynamic fill_dyn();
 
 		virtual Void drawFX( );

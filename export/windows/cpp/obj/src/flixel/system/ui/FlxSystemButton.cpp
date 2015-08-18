@@ -6,47 +6,47 @@
 #ifndef INCLUDED_flixel_system_ui_FlxSystemButton
 #include <flixel/system/ui/FlxSystemButton.h>
 #endif
-#ifndef INCLUDED_openfl_display_Bitmap
-#include <openfl/display/Bitmap.h>
+#ifndef INCLUDED_openfl__legacy_display_Bitmap
+#include <openfl/_legacy/display/Bitmap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_MouseEvent
+#include <openfl/_legacy/events/MouseEvent.h>
 #endif
 #ifndef INCLUDED_openfl_display_PixelSnapping
 #include <openfl/display/PixelSnapping.h>
-#endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
-#endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_MouseEvent
-#include <openfl/events/MouseEvent.h>
 #endif
 namespace flixel{
 namespace system{
 namespace ui{
 
-Void FlxSystemButton_obj::__construct(::openfl::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode)
+Void FlxSystemButton_obj::__construct(::openfl::_legacy::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode)
 {
 HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","new",0x605e3518,"flixel.system.ui.FlxSystemButton.new","flixel/system/ui/FlxSystemButton.hx",14,0x167fa379)
 HX_STACK_THIS(this)
@@ -68,7 +68,7 @@ bool ToggleMode = __o_ToggleMode.Default(false);
 	HX_STACK_LINE(55)
 	if (((Icon != null()))){
 		HX_STACK_LINE(57)
-		::openfl::display::Bitmap _g = ::openfl::display::Bitmap_obj::__new(Icon,null(),null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::Bitmap _g = ::openfl::_legacy::display::Bitmap_obj::__new(Icon,null(),null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(57)
 		this->_icon = _g;
 		HX_STACK_LINE(58)
@@ -79,13 +79,13 @@ bool ToggleMode = __o_ToggleMode.Default(false);
 	HX_STACK_LINE(66)
 	this->toggleMode = ToggleMode;
 	HX_STACK_LINE(68)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(69)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_DOWN,this->onMouseDown_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_DOWN,this->onMouseDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(70)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null(),null(),null());
 	HX_STACK_LINE(71)
-	this->addEventListener(::openfl::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null(),null(),null());
 }
 ;
 	return null();
@@ -94,7 +94,7 @@ bool ToggleMode = __o_ToggleMode.Default(false);
 //FlxSystemButton_obj::~FlxSystemButton_obj() { }
 
 Dynamic FlxSystemButton_obj::__CreateEmpty() { return  new FlxSystemButton_obj; }
-hx::ObjectPtr< FlxSystemButton_obj > FlxSystemButton_obj::__new(::openfl::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode)
+hx::ObjectPtr< FlxSystemButton_obj > FlxSystemButton_obj::__new(::openfl::_legacy::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  __o_ToggleMode)
 {  hx::ObjectPtr< FlxSystemButton_obj > result = new FlxSystemButton_obj();
 	result->__construct(Icon,UpHandler,__o_ToggleMode);
 	return result;}
@@ -109,7 +109,7 @@ hx::Object *FlxSystemButton_obj::__ToInterface(const hx::type_info &inType) {
 	return super::__ToInterface(inType);
 }
 
-Void FlxSystemButton_obj::changeIcon( ::openfl::display::BitmapData Icon){
+Void FlxSystemButton_obj::changeIcon( ::openfl::_legacy::display::BitmapData Icon){
 {
 		HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","changeIcon",0x06083f51,"flixel.system.ui.FlxSystemButton.changeIcon","flixel/system/ui/FlxSystemButton.hx",80,0x167fa379)
 		HX_STACK_THIS(this)
@@ -120,7 +120,7 @@ Void FlxSystemButton_obj::changeIcon( ::openfl::display::BitmapData Icon){
 			this->removeChild(this->_icon);
 		}
 		HX_STACK_LINE(86)
-		::openfl::display::Bitmap _g = ::openfl::display::Bitmap_obj::__new(Icon,null(),null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::Bitmap _g = ::openfl::_legacy::display::Bitmap_obj::__new(Icon,null(),null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(86)
 		this->_icon = _g;
 		HX_STACK_LINE(87)
@@ -137,13 +137,13 @@ Void FlxSystemButton_obj::destroy( ){
 		HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","destroy",0x554d4db2,"flixel.system.ui.FlxSystemButton.destroy","flixel/system/ui/FlxSystemButton.hx",91,0x167fa379)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(92)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_UP,this->onMouseUp_dyn(),null());
 		HX_STACK_LINE(93)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_DOWN,this->onMouseDown_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_DOWN,this->onMouseDown_dyn(),null());
 		HX_STACK_LINE(94)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OUT,this->onMouseOut_dyn(),null());
 		HX_STACK_LINE(95)
-		this->removeEventListener(::openfl::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::MouseEvent_obj::MOUSE_OVER,this->onMouseOver_dyn(),null());
 		HX_STACK_LINE(96)
 		this->_icon = null();
 		HX_STACK_LINE(97)
@@ -155,7 +155,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxSystemButton_obj,destroy,(void))
 
-Void FlxSystemButton_obj::onMouseUp( ::openfl::events::MouseEvent E){
+Void FlxSystemButton_obj::onMouseUp( ::openfl::_legacy::events::MouseEvent E){
 {
 		HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","onMouseUp",0xe1786b39,"flixel.system.ui.FlxSystemButton.onMouseUp","flixel/system/ui/FlxSystemButton.hx",102,0x167fa379)
 		HX_STACK_THIS(this)
@@ -179,7 +179,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxSystemButton_obj,onMouseUp,(void))
 
-Void FlxSystemButton_obj::onMouseDown( ::openfl::events::MouseEvent E){
+Void FlxSystemButton_obj::onMouseDown( ::openfl::_legacy::events::MouseEvent E){
 {
 		HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","onMouseDown",0x759770c0,"flixel.system.ui.FlxSystemButton.onMouseDown","flixel/system/ui/FlxSystemButton.hx",116,0x167fa379)
 		HX_STACK_THIS(this)
@@ -193,7 +193,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxSystemButton_obj,onMouseDown,(void))
 
-Void FlxSystemButton_obj::onMouseOver( ::openfl::events::MouseEvent E){
+Void FlxSystemButton_obj::onMouseOver( ::openfl::_legacy::events::MouseEvent E){
 {
 		HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","onMouseOver",0x7ce209b2,"flixel.system.ui.FlxSystemButton.onMouseOver","flixel/system/ui/FlxSystemButton.hx",121,0x167fa379)
 		HX_STACK_THIS(this)
@@ -213,7 +213,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxSystemButton_obj,onMouseOver,(void))
 
-Void FlxSystemButton_obj::onMouseOut( ::openfl::events::MouseEvent E){
+Void FlxSystemButton_obj::onMouseOut( ::openfl::_legacy::events::MouseEvent E){
 {
 		HX_STACK_FRAME("flixel.system.ui.FlxSystemButton","onMouseOut",0x67e0ddf0,"flixel.system.ui.FlxSystemButton.onMouseOut","flixel/system/ui/FlxSystemButton.hx",126,0x167fa379)
 		HX_STACK_THIS(this)
@@ -263,7 +263,7 @@ void FlxSystemButton_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(toggled,"toggled");
 	HX_MARK_MEMBER_NAME(_icon,"_icon");
 	HX_MARK_MEMBER_NAME(_mouseDown,"_mouseDown");
-	::openfl::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -275,7 +275,7 @@ void FlxSystemButton_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(toggled,"toggled");
 	HX_VISIT_MEMBER_NAME(_icon,"_icon");
 	HX_VISIT_MEMBER_NAME(_mouseDown,"_mouseDown");
-	::openfl::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic FlxSystemButton_obj::__Field(const ::String &inName,bool inCallProp)
@@ -311,7 +311,7 @@ Dynamic FlxSystemButton_obj::__SetField(const ::String &inName,const Dynamic &in
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_icon") ) { _icon=inValue.Cast< ::openfl::display::Bitmap >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_icon") ) { _icon=inValue.Cast< ::openfl::_legacy::display::Bitmap >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"enabled") ) { enabled=inValue.Cast< bool >(); return inValue; }
@@ -346,7 +346,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsBool,(int)offsetof(FlxSystemButton_obj,enabled),HX_CSTRING("enabled")},
 	{hx::fsBool,(int)offsetof(FlxSystemButton_obj,toggleMode),HX_CSTRING("toggleMode")},
 	{hx::fsBool,(int)offsetof(FlxSystemButton_obj,toggled),HX_CSTRING("toggled")},
-	{hx::fsObject /*::openfl::display::Bitmap*/ ,(int)offsetof(FlxSystemButton_obj,_icon),HX_CSTRING("_icon")},
+	{hx::fsObject /*::openfl::_legacy::display::Bitmap*/ ,(int)offsetof(FlxSystemButton_obj,_icon),HX_CSTRING("_icon")},
 	{hx::fsBool,(int)offsetof(FlxSystemButton_obj,_mouseDown),HX_CSTRING("_mouseDown")},
 	{ hx::fsUnknown, 0, null()}
 };

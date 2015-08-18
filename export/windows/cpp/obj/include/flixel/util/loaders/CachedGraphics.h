@@ -10,8 +10,8 @@ HX_DECLARE_CLASS3(flixel,system,layer,TileSheetData)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
 HX_DECLARE_CLASS3(flixel,util,loaders,TexturePackerData)
 HX_DECLARE_CLASS3(flixel,util,loaders,TextureRegion)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace util{
 namespace loaders{
@@ -22,12 +22,12 @@ class HXCPP_CLASS_ATTRIBUTES  CachedGraphics_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef CachedGraphics_obj OBJ_;
 		CachedGraphics_obj();
-		Void __construct(::String Key,::openfl::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist);
+		Void __construct(::String Key,::openfl::_legacy::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< CachedGraphics_obj > __new(::String Key,::openfl::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist);
+		static hx::ObjectPtr< CachedGraphics_obj > __new(::String Key,::openfl::_legacy::display::BitmapData Bitmap,hx::Null< bool >  __o_Persist);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~CachedGraphics_obj();
@@ -40,7 +40,7 @@ class HXCPP_CLASS_ATTRIBUTES  CachedGraphics_obj : public hx::Object{
 		::String __ToString() const { return HX_CSTRING("CachedGraphics"); }
 
 		::String key;
-		::openfl::display::BitmapData bitmap;
+		::openfl::_legacy::display::BitmapData bitmap;
 		::String assetsKey;
 		::Class assetsClass;
 		::flixel::util::loaders::TexturePackerData data;
@@ -68,7 +68,7 @@ class HXCPP_CLASS_ATTRIBUTES  CachedGraphics_obj : public hx::Object{
 		virtual ::flixel::system::layer::TileSheetData get_tilesheet( );
 		Dynamic get_tilesheet_dyn();
 
-		virtual ::openfl::display::BitmapData getBitmapFromSystem( );
+		virtual ::openfl::_legacy::display::BitmapData getBitmapFromSystem( );
 		Dynamic getBitmapFromSystem_dyn();
 
 		virtual bool get_canBeDumped( );

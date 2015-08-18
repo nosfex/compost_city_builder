@@ -48,41 +48,41 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_KeyboardEvent
-#include <openfl/events/KeyboardEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_KeyboardEvent
+#include <openfl/_legacy/events/KeyboardEvent.h>
 #endif
 namespace flixel{
 namespace input{
@@ -388,9 +388,9 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(378)
 	this->_nativeCorrection->set(HX_CSTRING("42_74"),(int)106);
 	HX_STACK_LINE(381)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::events::KeyboardEvent_obj::KEY_DOWN,this->onKeyDown_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::_legacy::events::KeyboardEvent_obj::KEY_DOWN,this->onKeyDown_dyn(),null(),null(),null());
 	HX_STACK_LINE(382)
-	::openfl::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::events::KeyboardEvent_obj::KEY_UP,this->onKeyUp_dyn(),null(),null(),null());
+	::openfl::_legacy::Lib_obj::get_current()->get_stage()->addEventListener(::openfl::_legacy::events::KeyboardEvent_obj::KEY_UP,this->onKeyUp_dyn(),null(),null(),null());
 	HX_STACK_LINE(384)
 	::flixel::input::keyboard::FlxKeyList _g24 = ::flixel::input::keyboard::FlxKeyList_obj::__new((int)1);		HX_STACK_VAR(_g24,"_g24");
 	HX_STACK_LINE(384)
@@ -828,7 +828,7 @@ bool FlxKeyboard_obj::checkKeyStatus( Array< ::String > KeyArray,int Status){
 
 HX_DEFINE_DYNAMIC_FUNC2(FlxKeyboard_obj,checkKeyStatus,return )
 
-Void FlxKeyboard_obj::onKeyUp( ::openfl::events::KeyboardEvent FlashEvent){
+Void FlxKeyboard_obj::onKeyUp( ::openfl::_legacy::events::KeyboardEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.keyboard.FlxKeyboard","onKeyUp",0xa36f8255,"flixel.input.keyboard.FlxKeyboard.onKeyUp","flixel/input/keyboard/FlxKeyboard.hx",472,0x41882875)
 		HX_STACK_THIS(this)
@@ -940,7 +940,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxKeyboard_obj,onKeyUp,(void))
 
-Void FlxKeyboard_obj::onKeyDown( ::openfl::events::KeyboardEvent FlashEvent){
+Void FlxKeyboard_obj::onKeyDown( ::openfl::_legacy::events::KeyboardEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.keyboard.FlxKeyboard","onKeyDown",0xf4d786dc,"flixel.input.keyboard.FlxKeyboard.onKeyDown","flixel/input/keyboard/FlxKeyboard.hx",543,0x41882875)
 		HX_STACK_THIS(this)
@@ -1035,7 +1035,7 @@ bool FlxKeyboard_obj::inKeyArray( Array< ::String > KeyArray,int KeyCode){
 
 HX_DEFINE_DYNAMIC_FUNC2(FlxKeyboard_obj,inKeyArray,return )
 
-int FlxKeyboard_obj::resolveKeyCode( ::openfl::events::KeyboardEvent e){
+int FlxKeyboard_obj::resolveKeyCode( ::openfl::_legacy::events::KeyboardEvent e){
 	HX_STACK_FRAME("flixel.input.keyboard.FlxKeyboard","resolveKeyCode",0x581c5a06,"flixel.input.keyboard.FlxKeyboard.resolveKeyCode","flixel/input/keyboard/FlxKeyboard.hx",593,0x41882875)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(e,"e")

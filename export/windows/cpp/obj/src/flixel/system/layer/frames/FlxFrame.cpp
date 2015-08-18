@@ -24,29 +24,29 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace system{
@@ -78,7 +78,7 @@ HX_STACK_ARG(tileSheet,"tileSheet")
 		HX_STACK_LINE(45)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(45)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(45)
 		point->_inPool = false;
 		HX_STACK_LINE(45)
@@ -95,7 +95,7 @@ HX_STACK_ARG(tileSheet,"tileSheet")
 		HX_STACK_LINE(46)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(46)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(46)
 		point->_inPool = false;
 		HX_STACK_LINE(46)
@@ -112,7 +112,7 @@ HX_STACK_ARG(tileSheet,"tileSheet")
 		HX_STACK_LINE(47)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(47)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(47)
 		point->_inPool = false;
 		HX_STACK_LINE(47)
@@ -140,20 +140,20 @@ Dynamic FlxFrame_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0]);
 	return result;}
 
-::openfl::display::BitmapData FlxFrame_obj::paintOnBitmap( ::openfl::display::BitmapData bmd){
+::openfl::_legacy::display::BitmapData FlxFrame_obj::paintOnBitmap( ::openfl::_legacy::display::BitmapData bmd){
 	HX_STACK_FRAME("flixel.system.layer.frames.FlxFrame","paintOnBitmap",0xb025dd37,"flixel.system.layer.frames.FlxFrame.paintOnBitmap","flixel/system/layer/frames/FlxFrame.hx",53,0x455cb825)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(bmd,"bmd")
 	HX_STACK_LINE(54)
-	::openfl::display::BitmapData result = null();		HX_STACK_VAR(result,"result");
+	::openfl::_legacy::display::BitmapData result = null();		HX_STACK_VAR(result,"result");
 	struct _Function_1_1{
-		inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxFrame_obj > __this,::openfl::display::BitmapData &bmd){
+		inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxFrame_obj > __this,::openfl::_legacy::display::BitmapData &bmd){
 			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/layer/frames/FlxFrame.hx",56,0x455cb825)
 			{
 				HX_STACK_LINE(56)
 				int _g = bmd->get_width();		HX_STACK_VAR(_g,"_g");
 				struct _Function_2_1{
-					inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxFrame_obj > __this,::openfl::display::BitmapData &bmd){
+					inline static bool Block( hx::ObjectPtr< ::flixel::system::layer::frames::FlxFrame_obj > __this,::openfl::_legacy::display::BitmapData &bmd){
 						HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/system/layer/frames/FlxFrame.hx",56,0x455cb825)
 						{
 							HX_STACK_LINE(56)
@@ -206,7 +206,7 @@ Dynamic FlxFrame_obj::__Create(hx::DynamicArray inArgs)
 		HX_STACK_LINE(78)
 		int _g4 = ::Std_obj::_int(this->sourceSize->y);		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(78)
-		::openfl::display::BitmapData _g5 = ::openfl::display::BitmapData_obj::__new(_g3,_g4,true,(int)0,null());		HX_STACK_VAR(_g5,"_g5");
+		::openfl::_legacy::display::BitmapData _g5 = ::openfl::_legacy::display::BitmapData_obj::__new(_g3,_g4,true,(int)0,null());		HX_STACK_VAR(_g5,"_g5");
 		HX_STACK_LINE(78)
 		result = _g5;
 	}
@@ -223,7 +223,7 @@ Dynamic FlxFrame_obj::__Create(hx::DynamicArray inArgs)
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxFrame_obj,paintOnBitmap,return )
 
-::openfl::display::BitmapData FlxFrame_obj::getBitmap( ){
+::openfl::_legacy::display::BitmapData FlxFrame_obj::getBitmap( ){
 	HX_STACK_FRAME("flixel.system.layer.frames.FlxFrame","getBitmap",0x24590cb0,"flixel.system.layer.frames.FlxFrame.getBitmap","flixel/system/layer/frames/FlxFrame.hx",89,0x455cb825)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(90)
@@ -232,7 +232,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxFrame_obj,paintOnBitmap,return )
 		return this->_bitmapData;
 	}
 	HX_STACK_LINE(95)
-	::openfl::display::BitmapData _g = this->paintOnBitmap(null());		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::display::BitmapData _g = this->paintOnBitmap(null());		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(95)
 	this->_bitmapData = _g;
 	HX_STACK_LINE(97)
@@ -242,7 +242,7 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxFrame_obj,paintOnBitmap,return )
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getBitmap,return )
 
-::openfl::display::BitmapData FlxFrame_obj::getHReversedBitmap( ){
+::openfl::_legacy::display::BitmapData FlxFrame_obj::getHReversedBitmap( ){
 	HX_STACK_FRAME("flixel.system.layer.frames.FlxFrame","getHReversedBitmap",0x2e895438,"flixel.system.layer.frames.FlxFrame.getHReversedBitmap","flixel/system/layer/frames/FlxFrame.hx",101,0x455cb825)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(102)
@@ -251,7 +251,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getBitmap,return )
 		return this->_hReversedBitmapData;
 	}
 	HX_STACK_LINE(107)
-	::openfl::display::BitmapData normalFrame = this->getBitmap();		HX_STACK_VAR(normalFrame,"normalFrame");
+	::openfl::_legacy::display::BitmapData normalFrame = this->getBitmap();		HX_STACK_VAR(normalFrame,"normalFrame");
 	HX_STACK_LINE(108)
 	::flixel::system::layer::frames::FlxFrame_obj::MATRIX->identity();
 	HX_STACK_LINE(109)
@@ -265,7 +265,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getBitmap,return )
 	HX_STACK_LINE(111)
 	int _g2 = ::Std_obj::_int(this->sourceSize->y);		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(111)
-	::openfl::display::BitmapData _g3 = ::openfl::display::BitmapData_obj::__new(_g1,_g2,true,(int)0,null());		HX_STACK_VAR(_g3,"_g3");
+	::openfl::_legacy::display::BitmapData _g3 = ::openfl::_legacy::display::BitmapData_obj::__new(_g1,_g2,true,(int)0,null());		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(111)
 	this->_hReversedBitmapData = _g3;
 	HX_STACK_LINE(112)
@@ -277,7 +277,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getBitmap,return )
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getHReversedBitmap,return )
 
-::openfl::display::BitmapData FlxFrame_obj::getVReversedBitmap( ){
+::openfl::_legacy::display::BitmapData FlxFrame_obj::getVReversedBitmap( ){
 	HX_STACK_FRAME("flixel.system.layer.frames.FlxFrame","getVReversedBitmap",0x544c10c6,"flixel.system.layer.frames.FlxFrame.getVReversedBitmap","flixel/system/layer/frames/FlxFrame.hx",118,0x455cb825)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(119)
@@ -286,7 +286,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getHReversedBitmap,return )
 		return this->_vReversedBitmapData;
 	}
 	HX_STACK_LINE(124)
-	::openfl::display::BitmapData normalFrame = this->getBitmap();		HX_STACK_VAR(normalFrame,"normalFrame");
+	::openfl::_legacy::display::BitmapData normalFrame = this->getBitmap();		HX_STACK_VAR(normalFrame,"normalFrame");
 	HX_STACK_LINE(125)
 	::flixel::system::layer::frames::FlxFrame_obj::MATRIX->identity();
 	HX_STACK_LINE(126)
@@ -300,7 +300,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getHReversedBitmap,return )
 	HX_STACK_LINE(128)
 	int _g2 = ::Std_obj::_int(this->sourceSize->y);		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(128)
-	::openfl::display::BitmapData _g3 = ::openfl::display::BitmapData_obj::__new(_g1,_g2,true,(int)0,null());		HX_STACK_VAR(_g3,"_g3");
+	::openfl::_legacy::display::BitmapData _g3 = ::openfl::_legacy::display::BitmapData_obj::__new(_g1,_g2,true,(int)0,null());		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(128)
 	this->_vReversedBitmapData = _g3;
 	HX_STACK_LINE(129)
@@ -312,7 +312,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getHReversedBitmap,return )
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getVReversedBitmap,return )
 
-::openfl::display::BitmapData FlxFrame_obj::getHVReversedBitmap( ){
+::openfl::_legacy::display::BitmapData FlxFrame_obj::getHVReversedBitmap( ){
 	HX_STACK_FRAME("flixel.system.layer.frames.FlxFrame","getHVReversedBitmap",0x3a9fc220,"flixel.system.layer.frames.FlxFrame.getHVReversedBitmap","flixel/system/layer/frames/FlxFrame.hx",135,0x455cb825)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(136)
@@ -321,7 +321,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getVReversedBitmap,return )
 		return this->_hvReversedBitmapData;
 	}
 	HX_STACK_LINE(141)
-	::openfl::display::BitmapData normalFrame = this->getBitmap();		HX_STACK_VAR(normalFrame,"normalFrame");
+	::openfl::_legacy::display::BitmapData normalFrame = this->getBitmap();		HX_STACK_VAR(normalFrame,"normalFrame");
 	HX_STACK_LINE(142)
 	::flixel::system::layer::frames::FlxFrame_obj::MATRIX->identity();
 	HX_STACK_LINE(143)
@@ -337,7 +337,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,getVReversedBitmap,return )
 	HX_STACK_LINE(145)
 	int _g3 = ::Std_obj::_int(this->sourceSize->y);		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(145)
-	::openfl::display::BitmapData _g4 = ::openfl::display::BitmapData_obj::__new(_g2,_g3,true,(int)0,null());		HX_STACK_VAR(_g4,"_g4");
+	::openfl::_legacy::display::BitmapData _g4 = ::openfl::_legacy::display::BitmapData_obj::__new(_g2,_g3,true,(int)0,null());		HX_STACK_VAR(_g4,"_g4");
 	HX_STACK_LINE(145)
 	this->_hvReversedBitmapData = _g4;
 	HX_STACK_LINE(146)
@@ -385,19 +385,19 @@ Void FlxFrame_obj::destroyBitmapDatas( ){
 		HX_STACK_FRAME("flixel.system.layer.frames.FlxFrame","destroyBitmapDatas",0x68a588d5,"flixel.system.layer.frames.FlxFrame.destroyBitmapDatas","flixel/system/layer/frames/FlxFrame.hx",165,0x455cb825)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(166)
-		::openfl::display::BitmapData _g = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_bitmapData);		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::BitmapData _g = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_bitmapData);		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(166)
 		this->_bitmapData = _g;
 		HX_STACK_LINE(167)
-		::openfl::display::BitmapData _g1 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_hReversedBitmapData);		HX_STACK_VAR(_g1,"_g1");
+		::openfl::_legacy::display::BitmapData _g1 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_hReversedBitmapData);		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(167)
 		this->_hReversedBitmapData = _g1;
 		HX_STACK_LINE(168)
-		::openfl::display::BitmapData _g2 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_vReversedBitmapData);		HX_STACK_VAR(_g2,"_g2");
+		::openfl::_legacy::display::BitmapData _g2 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_vReversedBitmapData);		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(168)
 		this->_vReversedBitmapData = _g2;
 		HX_STACK_LINE(169)
-		::openfl::display::BitmapData _g3 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_hvReversedBitmapData);		HX_STACK_VAR(_g3,"_g3");
+		::openfl::_legacy::display::BitmapData _g3 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->_hvReversedBitmapData);		HX_STACK_VAR(_g3,"_g3");
 		HX_STACK_LINE(169)
 		this->_hvReversedBitmapData = _g3;
 	}
@@ -407,11 +407,11 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxFrame_obj,destroyBitmapDatas,(void))
 
-::openfl::geom::Point FlxFrame_obj::POINT;
+::openfl::_legacy::geom::Point FlxFrame_obj::POINT;
 
-::openfl::geom::Matrix FlxFrame_obj::MATRIX;
+::openfl::_legacy::geom::Matrix FlxFrame_obj::MATRIX;
 
-::openfl::geom::Rectangle FlxFrame_obj::RECT;
+::openfl::_legacy::geom::Rectangle FlxFrame_obj::RECT;
 
 
 FlxFrame_obj::FlxFrame_obj()
@@ -516,16 +516,16 @@ Dynamic FlxFrame_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"RECT") ) { RECT=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"RECT") ) { RECT=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"name") ) { name=inValue.Cast< ::String >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"type") ) { type=inValue.Cast< ::flixel::system::layer::frames::FrameType >(); return inValue; }
 		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"POINT") ) { POINT=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"frame") ) { frame=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"POINT") ) { POINT=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"frame") ) { frame=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		break;
 	case 6:
-		if (HX_FIELD_EQ(inName,"MATRIX") ) { MATRIX=inValue.Cast< ::openfl::geom::Matrix >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"MATRIX") ) { MATRIX=inValue.Cast< ::openfl::_legacy::geom::Matrix >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"tileID") ) { tileID=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"offset") ) { offset=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"center") ) { center=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
@@ -538,17 +538,17 @@ Dynamic FlxFrame_obj::__SetField(const ::String &inName,const Dynamic &inValue,b
 		if (HX_FIELD_EQ(inName,"_tileSheet") ) { _tileSheet=inValue.Cast< ::flixel::system::layer::TileSheetData >(); return inValue; }
 		break;
 	case 11:
-		if (HX_FIELD_EQ(inName,"_bitmapData") ) { _bitmapData=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_bitmapData") ) { _bitmapData=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"additionalAngle") ) { additionalAngle=inValue.Cast< Float >(); return inValue; }
 		break;
 	case 20:
-		if (HX_FIELD_EQ(inName,"_hReversedBitmapData") ) { _hReversedBitmapData=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_vReversedBitmapData") ) { _vReversedBitmapData=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_hReversedBitmapData") ) { _hReversedBitmapData=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_vReversedBitmapData") ) { _vReversedBitmapData=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 21:
-		if (HX_FIELD_EQ(inName,"_hvReversedBitmapData") ) { _hvReversedBitmapData=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_hvReversedBitmapData") ) { _hvReversedBitmapData=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -581,7 +581,7 @@ static ::String sStaticFields[] = {
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsString,(int)offsetof(FlxFrame_obj,name),HX_CSTRING("name")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(FlxFrame_obj,frame),HX_CSTRING("frame")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(FlxFrame_obj,frame),HX_CSTRING("frame")},
 	{hx::fsBool,(int)offsetof(FlxFrame_obj,trimmed),HX_CSTRING("trimmed")},
 	{hx::fsInt,(int)offsetof(FlxFrame_obj,tileID),HX_CSTRING("tileID")},
 	{hx::fsFloat,(int)offsetof(FlxFrame_obj,additionalAngle),HX_CSTRING("additionalAngle")},
@@ -589,10 +589,10 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxFrame_obj,offset),HX_CSTRING("offset")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxFrame_obj,center),HX_CSTRING("center")},
 	{hx::fsObject /*::flixel::system::layer::frames::FrameType*/ ,(int)offsetof(FlxFrame_obj,type),HX_CSTRING("type")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_bitmapData),HX_CSTRING("_bitmapData")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_hReversedBitmapData),HX_CSTRING("_hReversedBitmapData")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_vReversedBitmapData),HX_CSTRING("_vReversedBitmapData")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_hvReversedBitmapData),HX_CSTRING("_hvReversedBitmapData")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_bitmapData),HX_CSTRING("_bitmapData")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_hReversedBitmapData),HX_CSTRING("_hReversedBitmapData")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_vReversedBitmapData),HX_CSTRING("_vReversedBitmapData")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxFrame_obj,_hvReversedBitmapData),HX_CSTRING("_hvReversedBitmapData")},
 	{hx::fsObject /*::flixel::system::layer::TileSheetData*/ ,(int)offsetof(FlxFrame_obj,_tileSheet),HX_CSTRING("_tileSheet")},
 	{ hx::fsUnknown, 0, null()}
 };
@@ -657,9 +657,9 @@ void FlxFrame_obj::__register()
 
 void FlxFrame_obj::__boot()
 {
-	POINT= ::openfl::geom::Point_obj::__new(null(),null());
-	MATRIX= ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
-	RECT= ::openfl::geom::Rectangle_obj::__new(null(),null(),null(),null());
+	POINT= ::openfl::_legacy::geom::Point_obj::__new(null(),null());
+	MATRIX= ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
+	RECT= ::openfl::_legacy::geom::Rectangle_obj::__new(null(),null(),null(),null());
 }
 
 } // end namespace flixel

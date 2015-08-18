@@ -18,11 +18,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -33,26 +30,26 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 namespace flixel{
 namespace input{
@@ -222,12 +219,12 @@ Dynamic FlxSwipe_obj::__Create(hx::DynamicArray inArgs)
 			HX_STACK_LINE(49)
 			if ((Point1->_weak)){
 				HX_STACK_LINE(49)
-				::flixel::util::FlxPoint_obj::_pool->put(Point1);
+				Point1->put();
 			}
 			HX_STACK_LINE(49)
 			if ((Point2->_weak)){
 				HX_STACK_LINE(49)
-				::flixel::util::FlxPoint_obj::_pool->put(Point2);
+				Point2->put();
 			}
 			HX_STACK_LINE(49)
 			value = angle;
@@ -334,12 +331,12 @@ Float FlxSwipe_obj::get_angle( ){
 	HX_STACK_LINE(60)
 	if ((Point1->_weak)){
 		HX_STACK_LINE(60)
-		::flixel::util::FlxPoint_obj::_pool->put(Point1);
+		Point1->put();
 	}
 	HX_STACK_LINE(60)
 	if ((Point2->_weak)){
 		HX_STACK_LINE(60)
-		::flixel::util::FlxPoint_obj::_pool->put(Point2);
+		Point2->put();
 	}
 	HX_STACK_LINE(60)
 	return angle;

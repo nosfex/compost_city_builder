@@ -5,40 +5,40 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/Sprite.h>
+#include <openfl/_legacy/display/Sprite.h>
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,debug,Window)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
-HX_DECLARE_CLASS2(openfl,display,Bitmap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,MouseEvent)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
-HX_DECLARE_CLASS2(openfl,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Bitmap)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,MouseEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
 namespace flixel{
 namespace system{
 namespace debug{
 
 
-class HXCPP_CLASS_ATTRIBUTES  Window_obj : public ::openfl::display::Sprite_obj{
+class HXCPP_CLASS_ATTRIBUTES  Window_obj : public ::openfl::_legacy::display::Sprite_obj{
 	public:
-		typedef ::openfl::display::Sprite_obj super;
+		typedef ::openfl::_legacy::display::Sprite_obj super;
 		typedef Window_obj OBJ_;
 		Window_obj();
-		Void __construct(::String Title,::openfl::display::BitmapData Icon,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height,hx::Null< bool >  __o_Resizable,::openfl::geom::Rectangle Bounds,hx::Null< bool >  __o_Closable);
+		Void __construct(::String Title,::openfl::_legacy::display::BitmapData Icon,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height,hx::Null< bool >  __o_Resizable,::openfl::_legacy::geom::Rectangle Bounds,hx::Null< bool >  __o_Closable);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< Window_obj > __new(::String Title,::openfl::display::BitmapData Icon,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height,hx::Null< bool >  __o_Resizable,::openfl::geom::Rectangle Bounds,hx::Null< bool >  __o_Closable);
+		static hx::ObjectPtr< Window_obj > __new(::String Title,::openfl::_legacy::display::BitmapData Icon,hx::Null< Float >  __o_Width,hx::Null< Float >  __o_Height,hx::Null< bool >  __o_Resizable,::openfl::_legacy::geom::Rectangle Bounds,hx::Null< bool >  __o_Closable);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~Window_obj();
@@ -50,21 +50,21 @@ class HXCPP_CLASS_ATTRIBUTES  Window_obj : public ::openfl::display::Sprite_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("Window"); }
 
-		::openfl::geom::Point minSize;
-		::openfl::geom::Point maxSize;
+		::openfl::_legacy::geom::Point minSize;
+		::openfl::_legacy::geom::Point maxSize;
 		::flixel::system::ui::FlxSystemButton toggleButton;
 		int _width;
 		int _height;
-		::openfl::geom::Rectangle _bounds;
-		::openfl::display::Bitmap _background;
-		::openfl::display::Bitmap _header;
-		::openfl::display::Bitmap _shadow;
-		::openfl::text::TextField _title;
-		::openfl::display::Bitmap _handle;
+		::openfl::_legacy::geom::Rectangle _bounds;
+		::openfl::_legacy::display::Bitmap _background;
+		::openfl::_legacy::display::Bitmap _header;
+		::openfl::_legacy::display::Bitmap _shadow;
+		::openfl::_legacy::text::TextField _title;
+		::openfl::_legacy::display::Bitmap _handle;
 		::flixel::system::ui::FlxSystemButton _closeButton;
 		bool _overHeader;
 		bool _overHandle;
-		::openfl::geom::Point _drag;
+		::openfl::_legacy::geom::Point _drag;
 		bool _dragging;
 		bool _resizing;
 		bool _resizable;
@@ -78,7 +78,7 @@ class HXCPP_CLASS_ATTRIBUTES  Window_obj : public ::openfl::display::Sprite_obj{
 		virtual Void reposition( Float X,Float Y);
 		Dynamic reposition_dyn();
 
-		virtual Void updateBounds( ::openfl::geom::Rectangle Bounds);
+		virtual Void updateBounds( ::openfl::_legacy::geom::Rectangle Bounds);
 		Dynamic updateBounds_dyn();
 
 		virtual Void setVisible( bool Value);
@@ -99,16 +99,16 @@ class HXCPP_CLASS_ATTRIBUTES  Window_obj : public ::openfl::display::Sprite_obj{
 		virtual Void update( );
 		Dynamic update_dyn();
 
-		virtual Void init( ::openfl::events::Event E);
+		virtual Void init( ::openfl::_legacy::events::Event E);
 		Dynamic init_dyn();
 
-		virtual Void onMouseMove( ::openfl::events::MouseEvent E);
+		virtual Void onMouseMove( ::openfl::_legacy::events::MouseEvent E);
 		Dynamic onMouseMove_dyn();
 
-		virtual Void onMouseDown( ::openfl::events::MouseEvent E);
+		virtual Void onMouseDown( ::openfl::_legacy::events::MouseEvent E);
 		Dynamic onMouseDown_dyn();
 
-		virtual Void onMouseUp( ::openfl::events::MouseEvent E);
+		virtual Void onMouseUp( ::openfl::_legacy::events::MouseEvent E);
 		Dynamic onMouseUp_dyn();
 
 		virtual Void bound( );

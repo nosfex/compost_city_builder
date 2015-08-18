@@ -14,18 +14,18 @@ namespace errors{
 
 Void Error_obj::__construct(::String __o_message,hx::Null< int >  __o_id)
 {
-HX_STACK_FRAME("openfl.errors.Error","new",0xefad98b5,"openfl.errors.Error.new","openfl/errors/Error.hx",15,0x5096467b)
+HX_STACK_FRAME("openfl.errors.Error","new",0xefad98b5,"openfl.errors.Error.new","openfl/errors/Error.hx",17,0x5096467b)
 HX_STACK_THIS(this)
 HX_STACK_ARG(__o_message,"message")
 HX_STACK_ARG(__o_id,"id")
 ::String message = __o_message.Default(HX_CSTRING(""));
 int id = __o_id.Default(0);
 {
-	HX_STACK_LINE(17)
-	this->message = message;
-	HX_STACK_LINE(18)
-	this->errorID = id;
 	HX_STACK_LINE(19)
+	this->message = message;
+	HX_STACK_LINE(20)
+	this->errorID = id;
+	HX_STACK_LINE(21)
 	this->name = HX_CSTRING("Error");
 }
 ;
@@ -46,26 +46,37 @@ Dynamic Error_obj::__Create(hx::DynamicArray inArgs)
 	return result;}
 
 ::String Error_obj::getStackTrace( ){
-	HX_STACK_FRAME("openfl.errors.Error","getStackTrace",0x0bedf2e8,"openfl.errors.Error.getStackTrace","openfl/errors/Error.hx",24,0x5096467b)
+	HX_STACK_FRAME("openfl.errors.Error","getStackTrace",0x0bedf2e8,"openfl.errors.Error.getStackTrace","openfl/errors/Error.hx",26,0x5096467b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(26)
-	Array< ::Dynamic > stack = ::haxe::CallStack_obj::exceptionStack();		HX_STACK_VAR(stack,"stack");
-	HX_STACK_LINE(27)
-	return ::haxe::CallStack_obj::toString(stack);
+	HX_STACK_LINE(28)
+	Array< ::Dynamic > _g = ::haxe::CallStack_obj::exceptionStack();		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(28)
+	return ::haxe::CallStack_obj::toString(_g);
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Error_obj,getStackTrace,return )
 
 ::String Error_obj::toString( ){
-	HX_STACK_FRAME("openfl.errors.Error","toString",0x62f5b437,"openfl.errors.Error.toString","openfl/errors/Error.hx",34,0x5096467b)
+	HX_STACK_FRAME("openfl.errors.Error","toString",0x62f5b437,"openfl.errors.Error.toString","openfl/errors/Error.hx",35,0x5096467b)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(34)
-	return this->message;
+	HX_STACK_LINE(35)
+	if (((this->message != null()))){
+		HX_STACK_LINE(37)
+		return this->message;
+	}
+	else{
+		HX_STACK_LINE(41)
+		return HX_CSTRING("Error");
+	}
+	HX_STACK_LINE(35)
+	return null();
 }
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Error_obj,toString,return )
+
+::String Error_obj::DEFAULT_TO_STRING;
 
 
 Error_obj::Error_obj()
@@ -129,6 +140,7 @@ void Error_obj::__GetFields(Array< ::String> &outFields)
 };
 
 static ::String sStaticFields[] = {
+	HX_CSTRING("DEFAULT_TO_STRING"),
 	String(null()) };
 
 #if HXCPP_SCRIPTABLE
@@ -150,11 +162,13 @@ static ::String sMemberFields[] = {
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Error_obj::__mClass,"__mClass");
+	HX_MARK_MEMBER_NAME(Error_obj::DEFAULT_TO_STRING,"DEFAULT_TO_STRING");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(Error_obj::__mClass,"__mClass");
+	HX_VISIT_MEMBER_NAME(Error_obj::DEFAULT_TO_STRING,"DEFAULT_TO_STRING");
 };
 
 #endif
@@ -177,6 +191,7 @@ void Error_obj::__register()
 
 void Error_obj::__boot()
 {
+	DEFAULT_TO_STRING= HX_CSTRING("Error");
 }
 
 } // end namespace openfl

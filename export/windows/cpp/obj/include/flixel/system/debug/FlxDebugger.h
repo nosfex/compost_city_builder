@@ -5,7 +5,7 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/Sprite.h>
+#include <openfl/_legacy/display/Sprite.h>
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,debug,BitmapLog)
 HX_DECLARE_CLASS3(flixel,system,debug,ButtonAlignment)
@@ -18,24 +18,24 @@ HX_DECLARE_CLASS3(flixel,system,debug,VCR)
 HX_DECLARE_CLASS3(flixel,system,debug,Watch)
 HX_DECLARE_CLASS3(flixel,system,debug,Window)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSystemButton)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace system{
 namespace debug{
 
 
-class HXCPP_CLASS_ATTRIBUTES  FlxDebugger_obj : public ::openfl::display::Sprite_obj{
+class HXCPP_CLASS_ATTRIBUTES  FlxDebugger_obj : public ::openfl::_legacy::display::Sprite_obj{
 	public:
-		typedef ::openfl::display::Sprite_obj super;
+		typedef ::openfl::_legacy::display::Sprite_obj super;
 		typedef FlxDebugger_obj OBJ_;
 		FlxDebugger_obj();
 		Void __construct(Float Width,Float Height);
@@ -63,12 +63,12 @@ class HXCPP_CLASS_ATTRIBUTES  FlxDebugger_obj : public ::openfl::display::Sprite
 		::flixel::system::debug::Console console;
 		bool hasMouse;
 		::flixel::system::debug::DebuggerLayout _layout;
-		::openfl::geom::Point _screen;
-		::openfl::geom::Rectangle _screenBounds;
+		::openfl::_legacy::geom::Point _screen;
+		::openfl::_legacy::geom::Rectangle _screenBounds;
 		Array< ::Dynamic > _middleButtons;
 		Array< ::Dynamic > _leftButtons;
 		Array< ::Dynamic > _rightButtons;
-		::openfl::display::Sprite _topBar;
+		::openfl::_legacy::display::Sprite _topBar;
 		Array< ::Dynamic > _windows;
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
@@ -94,7 +94,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxDebugger_obj : public ::openfl::display::Sprite
 		virtual Void resetButtonLayout( );
 		Dynamic resetButtonLayout_dyn();
 
-		virtual ::flixel::system::ui::FlxSystemButton addButton( ::flixel::system::debug::ButtonAlignment Position,::openfl::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  ToggleMode,hx::Null< bool >  UpdateLayout);
+		virtual ::flixel::system::ui::FlxSystemButton addButton( ::flixel::system::debug::ButtonAlignment Position,::openfl::_legacy::display::BitmapData Icon,Dynamic UpHandler,hx::Null< bool >  ToggleMode,hx::Null< bool >  UpdateLayout);
 		Dynamic addButton_dyn();
 
 		virtual Void removeButton( ::flixel::system::ui::FlxSystemButton Button,hx::Null< bool >  UpdateLayout);

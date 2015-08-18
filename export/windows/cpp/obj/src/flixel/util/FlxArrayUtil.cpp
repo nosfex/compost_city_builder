@@ -3,9 +3,6 @@
 #ifndef INCLUDED_Std
 #include <Std.h>
 #endif
-#ifndef INCLUDED_flixel_input_FlxSwipe
-#include <flixel/input/FlxSwipe.h>
-#endif
 #ifndef INCLUDED_flixel_input_keyboard_FlxKey
 #include <flixel/input/keyboard/FlxKey.h>
 #endif
@@ -39,26 +36,26 @@
 #ifndef INCLUDED_flixel_util_FlxTimer
 #include <flixel/util/FlxTimer.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 namespace flixel{
 namespace util{
@@ -80,52 +77,6 @@ Dynamic FlxArrayUtil_obj::__Create(hx::DynamicArray inArgs)
 {  hx::ObjectPtr< FlxArrayUtil_obj > result = new FlxArrayUtil_obj();
 	result->__construct();
 	return result;}
-
-Void FlxArrayUtil_obj::clearArray_flixel_input_FlxSwipe( Array< ::Dynamic > array,hx::Null< bool >  __o_recursive){
-bool recursive = __o_recursive.Default(false);
-	HX_STACK_FRAME("flixel.util.FlxArrayUtil","clearArray_flixel_input_FlxSwipe",0x08ba6798,"flixel.util.FlxArrayUtil.clearArray_flixel_input_FlxSwipe","flixel/util/FlxArrayUtil.hx",127,0xa0dc755b)
-	HX_STACK_ARG(array,"array")
-	HX_STACK_ARG(recursive,"recursive")
-{
-		HX_STACK_LINE(127)
-		if (((array != null()))){
-			HX_STACK_LINE(129)
-			if ((!(recursive))){
-				HX_STACK_LINE(131)
-				while((true)){
-					HX_STACK_LINE(131)
-					if ((!(((array->length > (int)0))))){
-						HX_STACK_LINE(131)
-						break;
-					}
-					HX_STACK_LINE(133)
-					array->pop().StaticCast< ::flixel::input::FlxSwipe >();
-				}
-			}
-			else{
-				HX_STACK_LINE(138)
-				while((true)){
-					HX_STACK_LINE(138)
-					if ((!(((array->length > (int)0))))){
-						HX_STACK_LINE(138)
-						break;
-					}
-					HX_STACK_LINE(140)
-					Dynamic thing = array->pop().StaticCast< ::flixel::input::FlxSwipe >();		HX_STACK_VAR(thing,"thing");
-					HX_STACK_LINE(141)
-					if ((::Std_obj::is(thing,hx::ClassOf< Array<int> >()))){
-						HX_STACK_LINE(143)
-						::flixel::util::FlxArrayUtil_obj::clearArray_clearArray_T(array,recursive);
-					}
-				}
-			}
-		}
-	}
-return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,clearArray_flixel_input_FlxSwipe,(void))
 
 Void FlxArrayUtil_obj::setLength_flixel_system_replay_FrameRecord( Array< ::Dynamic > array,int newLength){
 {
@@ -343,52 +294,6 @@ Array< ::Dynamic > FlxArrayUtil_obj::fastSplice_flixel_tweens_FlxTween( Array< :
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,fastSplice_flixel_tweens_FlxTween,return )
 
-Void FlxArrayUtil_obj::clearArray_flixel_util_FlxTimer( Array< ::Dynamic > array,hx::Null< bool >  __o_recursive){
-bool recursive = __o_recursive.Default(false);
-	HX_STACK_FRAME("flixel.util.FlxArrayUtil","clearArray_flixel_util_FlxTimer",0xcaf076d5,"flixel.util.FlxArrayUtil.clearArray_flixel_util_FlxTimer","flixel/util/FlxArrayUtil.hx",127,0xa0dc755b)
-	HX_STACK_ARG(array,"array")
-	HX_STACK_ARG(recursive,"recursive")
-{
-		HX_STACK_LINE(127)
-		if (((array != null()))){
-			HX_STACK_LINE(129)
-			if ((!(recursive))){
-				HX_STACK_LINE(131)
-				while((true)){
-					HX_STACK_LINE(131)
-					if ((!(((array->length > (int)0))))){
-						HX_STACK_LINE(131)
-						break;
-					}
-					HX_STACK_LINE(133)
-					array->pop().StaticCast< ::flixel::util::FlxTimer >();
-				}
-			}
-			else{
-				HX_STACK_LINE(138)
-				while((true)){
-					HX_STACK_LINE(138)
-					if ((!(((array->length > (int)0))))){
-						HX_STACK_LINE(138)
-						break;
-					}
-					HX_STACK_LINE(140)
-					Dynamic thing = array->pop().StaticCast< ::flixel::util::FlxTimer >();		HX_STACK_VAR(thing,"thing");
-					HX_STACK_LINE(141)
-					if ((::Std_obj::is(thing,hx::ClassOf< Array<int> >()))){
-						HX_STACK_LINE(143)
-						::flixel::util::FlxArrayUtil_obj::clearArray_clearArray_T(array,recursive);
-					}
-				}
-			}
-		}
-	}
-return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,clearArray_flixel_util_FlxTimer,(void))
-
 Array< ::Dynamic > FlxArrayUtil_obj::fastSplice_flixel_util_FlxTimer( Array< ::Dynamic > array,::flixel::util::FlxTimer element){
 	HX_STACK_FRAME("flixel.util.FlxArrayUtil","fastSplice_flixel_util_FlxTimer",0x46676ae9,"flixel.util.FlxArrayUtil.fastSplice_flixel_util_FlxTimer","flixel/util/FlxArrayUtil.hx",80,0xa0dc755b)
 	HX_STACK_ARG(array,"array")
@@ -411,52 +316,6 @@ Array< ::Dynamic > FlxArrayUtil_obj::fastSplice_flixel_util_FlxTimer( Array< ::D
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,fastSplice_flixel_util_FlxTimer,return )
 
-Void FlxArrayUtil_obj::clearArray_flixel_util_FlxPath( Array< ::Dynamic > array,hx::Null< bool >  __o_recursive){
-bool recursive = __o_recursive.Default(false);
-	HX_STACK_FRAME("flixel.util.FlxArrayUtil","clearArray_flixel_util_FlxPath",0xe3d6c095,"flixel.util.FlxArrayUtil.clearArray_flixel_util_FlxPath","flixel/util/FlxArrayUtil.hx",127,0xa0dc755b)
-	HX_STACK_ARG(array,"array")
-	HX_STACK_ARG(recursive,"recursive")
-{
-		HX_STACK_LINE(127)
-		if (((array != null()))){
-			HX_STACK_LINE(129)
-			if ((!(recursive))){
-				HX_STACK_LINE(131)
-				while((true)){
-					HX_STACK_LINE(131)
-					if ((!(((array->length > (int)0))))){
-						HX_STACK_LINE(131)
-						break;
-					}
-					HX_STACK_LINE(133)
-					array->pop().StaticCast< ::flixel::util::FlxPath >();
-				}
-			}
-			else{
-				HX_STACK_LINE(138)
-				while((true)){
-					HX_STACK_LINE(138)
-					if ((!(((array->length > (int)0))))){
-						HX_STACK_LINE(138)
-						break;
-					}
-					HX_STACK_LINE(140)
-					Dynamic thing = array->pop().StaticCast< ::flixel::util::FlxPath >();		HX_STACK_VAR(thing,"thing");
-					HX_STACK_LINE(141)
-					if ((::Std_obj::is(thing,hx::ClassOf< Array<int> >()))){
-						HX_STACK_LINE(143)
-						::flixel::util::FlxArrayUtil_obj::clearArray_clearArray_T(array,recursive);
-					}
-				}
-			}
-		}
-	}
-return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,clearArray_flixel_util_FlxPath,(void))
-
 Array< ::Dynamic > FlxArrayUtil_obj::fastSplice_flixel_util_FlxPath( Array< ::Dynamic > array,::flixel::util::FlxPath element){
 	HX_STACK_FRAME("flixel.util.FlxArrayUtil","fastSplice_flixel_util_FlxPath",0xb8c4eb01,"flixel.util.FlxArrayUtil.fastSplice_flixel_util_FlxPath","flixel/util/FlxArrayUtil.hx",80,0xa0dc755b)
 	HX_STACK_ARG(array,"array")
@@ -478,52 +337,6 @@ Array< ::Dynamic > FlxArrayUtil_obj::fastSplice_flixel_util_FlxPath( Array< ::Dy
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,fastSplice_flixel_util_FlxPath,return )
-
-Void FlxArrayUtil_obj::clearArray_flixel_group_FlxTypedGroup_T( Dynamic array,hx::Null< bool >  __o_recursive){
-bool recursive = __o_recursive.Default(false);
-	HX_STACK_FRAME("flixel.util.FlxArrayUtil","clearArray_flixel_group_FlxTypedGroup_T",0xd9fff6a1,"flixel.util.FlxArrayUtil.clearArray_flixel_group_FlxTypedGroup_T","flixel/util/FlxArrayUtil.hx",127,0xa0dc755b)
-	HX_STACK_ARG(array,"array")
-	HX_STACK_ARG(recursive,"recursive")
-{
-		HX_STACK_LINE(127)
-		if (((array != null()))){
-			HX_STACK_LINE(129)
-			if ((!(recursive))){
-				HX_STACK_LINE(131)
-				while((true)){
-					HX_STACK_LINE(131)
-					if ((!(((array->__Field(HX_CSTRING("length"),true) > (int)0))))){
-						HX_STACK_LINE(131)
-						break;
-					}
-					HX_STACK_LINE(133)
-					array->__Field(HX_CSTRING("pop"),true)();
-				}
-			}
-			else{
-				HX_STACK_LINE(138)
-				while((true)){
-					HX_STACK_LINE(138)
-					if ((!(((array->__Field(HX_CSTRING("length"),true) > (int)0))))){
-						HX_STACK_LINE(138)
-						break;
-					}
-					HX_STACK_LINE(140)
-					Dynamic thing = array->__Field(HX_CSTRING("pop"),true)();		HX_STACK_VAR(thing,"thing");
-					HX_STACK_LINE(141)
-					if ((::Std_obj::is(thing,hx::ClassOf< Array<int> >()))){
-						HX_STACK_LINE(143)
-						::flixel::util::FlxArrayUtil_obj::clearArray_clearArray_T(array,recursive);
-					}
-				}
-			}
-		}
-	}
-return null();
-}
-
-
-STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,clearArray_flixel_group_FlxTypedGroup_T,(void))
 
 Dynamic FlxArrayUtil_obj::getRandom_flixel_group_FlxTypedGroup_T( Dynamic Objects,hx::Null< int >  __o_StartIndex,hx::Null< int >  __o_EndIndex){
 int StartIndex = __o_StartIndex.Default(0);
@@ -585,8 +398,6 @@ Array< ::Dynamic > FlxArrayUtil_obj::fastSplice_flixel_system_debug_Window( Arra
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,fastSplice_flixel_system_debug_Window,return )
 
-Dynamic FlxArrayUtil_obj::clearArray_clearArray_T;
-
 Dynamic FlxArrayUtil_obj::swapAndPop_fastSplice_T( Dynamic array,int index){
 	HX_STACK_FRAME("flixel.util.FlxArrayUtil","swapAndPop_fastSplice_T",0xfdfa2694,"flixel.util.FlxArrayUtil.swapAndPop_fastSplice_T","flixel/util/FlxArrayUtil.hx",110,0xa0dc755b)
 	HX_STACK_ARG(array,"array")
@@ -602,6 +413,52 @@ Dynamic FlxArrayUtil_obj::swapAndPop_fastSplice_T( Dynamic array,int index){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,swapAndPop_fastSplice_T,return )
 
+Void FlxArrayUtil_obj::clearArray( Dynamic array,hx::Null< bool >  __o_recursive){
+bool recursive = __o_recursive.Default(false);
+	HX_STACK_FRAME("flixel.util.FlxArrayUtil","clearArray",0xac755a77,"flixel.util.FlxArrayUtil.clearArray","flixel/util/FlxArrayUtil.hx",126,0xa0dc755b)
+	HX_STACK_ARG(array,"array")
+	HX_STACK_ARG(recursive,"recursive")
+{
+		HX_STACK_LINE(126)
+		if (((array != null()))){
+			HX_STACK_LINE(128)
+			if ((!(recursive))){
+				HX_STACK_LINE(130)
+				while((true)){
+					HX_STACK_LINE(130)
+					if ((!(((array->__Field(HX_CSTRING("length"),true) > (int)0))))){
+						HX_STACK_LINE(130)
+						break;
+					}
+					HX_STACK_LINE(132)
+					array->__Field(HX_CSTRING("pop"),true)();
+				}
+			}
+			else{
+				HX_STACK_LINE(137)
+				while((true)){
+					HX_STACK_LINE(137)
+					if ((!(((array->__Field(HX_CSTRING("length"),true) > (int)0))))){
+						HX_STACK_LINE(137)
+						break;
+					}
+					HX_STACK_LINE(139)
+					Dynamic thing = array->__Field(HX_CSTRING("pop"),true)();		HX_STACK_VAR(thing,"thing");
+					HX_STACK_LINE(140)
+					if ((::Std_obj::is(thing,hx::ClassOf< Array<int> >()))){
+						HX_STACK_LINE(142)
+						::flixel::util::FlxArrayUtil_obj::clearArray(array,recursive);
+					}
+				}
+			}
+		}
+	}
+return null();
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxArrayUtil_obj,clearArray,(void))
+
 
 FlxArrayUtil_obj::FlxArrayUtil_obj()
 {
@@ -610,23 +467,20 @@ FlxArrayUtil_obj::FlxArrayUtil_obj()
 Dynamic FlxArrayUtil_obj::__Field(const ::String &inName,bool inCallProp)
 {
 	switch(inName.length) {
+	case 10:
+		if (HX_FIELD_EQ(inName,"clearArray") ) { return clearArray_dyn(); }
+		break;
 	case 13:
 		if (HX_FIELD_EQ(inName,"setLength_Int") ) { return setLength_Int_dyn(); }
 		break;
 	case 23:
-		if (HX_FIELD_EQ(inName,"clearArray_clearArray_T") ) { return clearArray_clearArray_T; }
 		if (HX_FIELD_EQ(inName,"swapAndPop_fastSplice_T") ) { return swapAndPop_fastSplice_T_dyn(); }
 		break;
 	case 30:
-		if (HX_FIELD_EQ(inName,"clearArray_flixel_util_FlxPath") ) { return clearArray_flixel_util_FlxPath_dyn(); }
 		if (HX_FIELD_EQ(inName,"fastSplice_flixel_util_FlxPath") ) { return fastSplice_flixel_util_FlxPath_dyn(); }
 		break;
 	case 31:
-		if (HX_FIELD_EQ(inName,"clearArray_flixel_util_FlxTimer") ) { return clearArray_flixel_util_FlxTimer_dyn(); }
 		if (HX_FIELD_EQ(inName,"fastSplice_flixel_util_FlxTimer") ) { return fastSplice_flixel_util_FlxTimer_dyn(); }
-		break;
-	case 32:
-		if (HX_FIELD_EQ(inName,"clearArray_flixel_input_FlxSwipe") ) { return clearArray_flixel_input_FlxSwipe_dyn(); }
 		break;
 	case 33:
 		if (HX_FIELD_EQ(inName,"fastSplice_flixel_tweens_FlxTween") ) { return fastSplice_flixel_tweens_FlxTween_dyn(); }
@@ -642,9 +496,6 @@ Dynamic FlxArrayUtil_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"setLength_flixel_input_keyboard_FlxKey") ) { return setLength_flixel_input_keyboard_FlxKey_dyn(); }
 		if (HX_FIELD_EQ(inName,"getRandom_flixel_group_FlxTypedGroup_T") ) { return getRandom_flixel_group_FlxTypedGroup_T_dyn(); }
 		break;
-	case 39:
-		if (HX_FIELD_EQ(inName,"clearArray_flixel_group_FlxTypedGroup_T") ) { return clearArray_flixel_group_FlxTypedGroup_T_dyn(); }
-		break;
 	case 41:
 		if (HX_FIELD_EQ(inName,"fastSplice_flixel_system_debug_WatchEntry") ) { return fastSplice_flixel_system_debug_WatchEntry_dyn(); }
 		break;
@@ -656,10 +507,6 @@ Dynamic FlxArrayUtil_obj::__Field(const ::String &inName,bool inCallProp)
 
 Dynamic FlxArrayUtil_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool inCallProp)
 {
-	switch(inName.length) {
-	case 23:
-		if (HX_FIELD_EQ(inName,"clearArray_clearArray_T") ) { clearArray_clearArray_T=inValue.Cast< Dynamic >(); return inValue; }
-	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
 
@@ -669,23 +516,19 @@ void FlxArrayUtil_obj::__GetFields(Array< ::String> &outFields)
 };
 
 static ::String sStaticFields[] = {
-	HX_CSTRING("clearArray_flixel_input_FlxSwipe"),
 	HX_CSTRING("setLength_flixel_system_replay_FrameRecord"),
 	HX_CSTRING("setLength_flixel_group_FlxTypedGroup_T"),
 	HX_CSTRING("setLength_flixel_input_keyboard_FlxKey"),
 	HX_CSTRING("fastSplice_flixel_text_FlxTextFormat"),
 	HX_CSTRING("setLength_Int"),
 	HX_CSTRING("fastSplice_flixel_tweens_FlxTween"),
-	HX_CSTRING("clearArray_flixel_util_FlxTimer"),
 	HX_CSTRING("fastSplice_flixel_util_FlxTimer"),
-	HX_CSTRING("clearArray_flixel_util_FlxPath"),
 	HX_CSTRING("fastSplice_flixel_util_FlxPath"),
-	HX_CSTRING("clearArray_flixel_group_FlxTypedGroup_T"),
 	HX_CSTRING("getRandom_flixel_group_FlxTypedGroup_T"),
 	HX_CSTRING("fastSplice_flixel_system_debug_WatchEntry"),
 	HX_CSTRING("fastSplice_flixel_system_debug_Window"),
-	HX_CSTRING("clearArray_clearArray_T"),
 	HX_CSTRING("swapAndPop_fastSplice_T"),
+	HX_CSTRING("clearArray"),
 	String(null()) };
 
 #if HXCPP_SCRIPTABLE
@@ -697,13 +540,11 @@ static ::String sMemberFields[] = {
 
 static void sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(FlxArrayUtil_obj::__mClass,"__mClass");
-	HX_MARK_MEMBER_NAME(FlxArrayUtil_obj::clearArray_clearArray_T,"clearArray_clearArray_T");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(FlxArrayUtil_obj::__mClass,"__mClass");
-	HX_VISIT_MEMBER_NAME(FlxArrayUtil_obj::clearArray_clearArray_T,"clearArray_clearArray_T");
 };
 
 #endif

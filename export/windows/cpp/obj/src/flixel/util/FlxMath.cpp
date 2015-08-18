@@ -36,17 +36,14 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -301,13 +298,13 @@ bool FlxMath_obj::mouseInFlxRect( bool useWorldCoords,::flixel::util::FlxRect re
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxMath_obj,mouseInFlxRect,return )
 
-bool FlxMath_obj::pointInRectangle( Float pointX,Float pointY,::openfl::geom::Rectangle rect){
+bool FlxMath_obj::pointInRectangle( Float pointX,Float pointY,::openfl::_legacy::geom::Rectangle rect){
 	HX_STACK_FRAME("flixel.util.FlxMath","pointInRectangle",0x5cdc4928,"flixel.util.FlxMath.pointInRectangle","flixel/util/FlxMath.hx",226,0xa5ea82fe)
 	HX_STACK_ARG(pointX,"pointX")
 	HX_STACK_ARG(pointY,"pointY")
 	HX_STACK_ARG(rect,"rect")
 	struct _Function_1_1{
-		inline static bool Block( ::openfl::geom::Rectangle &rect,Float &pointX){
+		inline static bool Block( ::openfl::_legacy::geom::Rectangle &rect,Float &pointX){
 			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxMath.hx",227,0xa5ea82fe)
 			{
 				HX_STACK_LINE(227)
@@ -319,7 +316,7 @@ bool FlxMath_obj::pointInRectangle( Float pointX,Float pointY,::openfl::geom::Re
 		}
 	};
 	struct _Function_1_2{
-		inline static bool Block( Float &pointY,::openfl::geom::Rectangle &rect){
+		inline static bool Block( Float &pointY,::openfl::_legacy::geom::Rectangle &rect){
 			HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","flixel/util/FlxMath.hx",227,0xa5ea82fe)
 			{
 				HX_STACK_LINE(227)
@@ -441,12 +438,12 @@ Float FlxMath_obj::getDistance( ::flixel::util::FlxPoint Point1,::flixel::util::
 	HX_STACK_LINE(321)
 	if ((Point1->_weak)){
 		HX_STACK_LINE(321)
-		::flixel::util::FlxPoint_obj::_pool->put(Point1);
+		Point1->put();
 	}
 	HX_STACK_LINE(322)
 	if ((Point2->_weak)){
 		HX_STACK_LINE(322)
-		::flixel::util::FlxPoint_obj::_pool->put(Point2);
+		Point2->put();
 	}
 	HX_STACK_LINE(323)
 	return ::Math_obj::sqrt(((dx * dx) + (dy * dy)));
@@ -512,7 +509,7 @@ int FlxMath_obj::distanceToPoint( ::flixel::FlxSprite Sprite,::flixel::util::Flx
 	HX_STACK_LINE(373)
 	if ((Target->_weak)){
 		HX_STACK_LINE(373)
-		::flixel::util::FlxPoint_obj::_pool->put(Target);
+		Target->put();
 	}
 	HX_STACK_LINE(374)
 	Float _g = ::Math_obj::sqrt(((dx * dx) + (dy * dy)));		HX_STACK_VAR(_g,"_g");
@@ -538,7 +535,7 @@ bool IncludeEqual = __o_IncludeEqual.Default(false);
 		HX_STACK_LINE(393)
 		if ((Target->_weak)){
 			HX_STACK_LINE(393)
-			::flixel::util::FlxPoint_obj::_pool->put(Target);
+			Target->put();
 		}
 		HX_STACK_LINE(395)
 		if ((IncludeEqual)){

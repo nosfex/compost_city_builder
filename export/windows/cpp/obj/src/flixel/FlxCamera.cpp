@@ -42,11 +42,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxRect
-#include <flixel/util/FlxPool_flixel_util_FlxRect.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxRandom
 #include <flixel/util/FlxRandom.h>
@@ -60,44 +57,44 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Tilesheet
-#include <openfl/display/Tilesheet.h>
+#ifndef INCLUDED_openfl__legacy_display_Tilesheet
+#include <openfl/_legacy/display/Tilesheet.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Transform
-#include <openfl/geom/Transform.h>
+#ifndef INCLUDED_openfl__legacy_geom_Transform
+#include <openfl/_legacy/geom/Transform.h>
 #endif
 namespace flixel{
 
@@ -171,7 +168,7 @@ Float Zoom = __o_Zoom.Default(0);
 		HX_STACK_LINE(422)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(422)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(422)
 		point->_inPool = false;
 		HX_STACK_LINE(422)
@@ -196,7 +193,7 @@ Float Zoom = __o_Zoom.Default(0);
 		HX_STACK_LINE(430)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(430)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(430)
 		point->_inPool = false;
 		HX_STACK_LINE(430)
@@ -213,7 +210,7 @@ Float Zoom = __o_Zoom.Default(0);
 		HX_STACK_LINE(431)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(431)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(431)
 		point->_inPool = false;
 		HX_STACK_LINE(431)
@@ -230,7 +227,7 @@ Float Zoom = __o_Zoom.Default(0);
 		HX_STACK_LINE(432)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(432)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(432)
 		point->_inPool = false;
 		HX_STACK_LINE(432)
@@ -247,7 +244,7 @@ Float Zoom = __o_Zoom.Default(0);
 		HX_STACK_LINE(433)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(433)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(433)
 		point->_inPool = false;
 		HX_STACK_LINE(433)
@@ -256,7 +253,7 @@ Float Zoom = __o_Zoom.Default(0);
 	HX_STACK_LINE(433)
 	this->_flashOffset = _g4;
 	HX_STACK_LINE(447)
-	::openfl::display::Sprite _g5 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g5,"_g5");
+	::openfl::_legacy::display::Sprite _g5 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g5,"_g5");
 	HX_STACK_LINE(447)
 	this->canvas = _g5;
 	HX_STACK_LINE(448)
@@ -264,7 +261,7 @@ Float Zoom = __o_Zoom.Default(0);
 	HX_STACK_LINE(449)
 	this->canvas->set_y((-(this->height) * 0.5));
 	HX_STACK_LINE(456)
-	::openfl::display::Sprite _g6 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g6,"_g6");
+	::openfl::_legacy::display::Sprite _g6 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g6,"_g6");
 	HX_STACK_LINE(456)
 	this->flashSprite = _g6;
 	HX_STACK_LINE(457)
@@ -278,11 +275,11 @@ Float Zoom = __o_Zoom.Default(0);
 	HX_STACK_LINE(467)
 	this->flashSprite->addChild(this->canvas);
 	HX_STACK_LINE(469)
-	::openfl::geom::Rectangle _g7 = ::openfl::geom::Rectangle_obj::__new((int)0,(int)0,this->width,this->height);		HX_STACK_VAR(_g7,"_g7");
+	::openfl::_legacy::geom::Rectangle _g7 = ::openfl::_legacy::geom::Rectangle_obj::__new((int)0,(int)0,this->width,this->height);		HX_STACK_VAR(_g7,"_g7");
 	HX_STACK_LINE(469)
 	this->_flashRect = _g7;
 	HX_STACK_LINE(470)
-	::openfl::geom::Point _g8 = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g8,"_g8");
+	::openfl::_legacy::geom::Point _g8 = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g8,"_g8");
 	HX_STACK_LINE(470)
 	this->_flashPoint = _g8;
 	HX_STACK_LINE(472)
@@ -294,7 +291,7 @@ Float Zoom = __o_Zoom.Default(0);
 		HX_STACK_LINE(472)
 		Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 		HX_STACK_LINE(472)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(472)
 		point->_inPool = false;
 		HX_STACK_LINE(472)
@@ -303,11 +300,11 @@ Float Zoom = __o_Zoom.Default(0);
 	HX_STACK_LINE(472)
 	this->_fxShakeOffset = _g9;
 	HX_STACK_LINE(478)
-	::openfl::geom::Rectangle _g10 = ::openfl::geom::Rectangle_obj::__new((int)0,(int)0,this->width,this->height);		HX_STACK_VAR(_g10,"_g10");
+	::openfl::_legacy::geom::Rectangle _g10 = ::openfl::_legacy::geom::Rectangle_obj::__new((int)0,(int)0,this->width,this->height);		HX_STACK_VAR(_g10,"_g10");
 	HX_STACK_LINE(478)
 	this->canvas->set_scrollRect(_g10);
 	HX_STACK_LINE(481)
-	::openfl::display::Sprite _g11 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g11,"_g11");
+	::openfl::_legacy::display::Sprite _g11 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g11,"_g11");
 	HX_STACK_LINE(481)
 	this->debugLayer = _g11;
 	HX_STACK_LINE(482)
@@ -524,7 +521,7 @@ Void FlxCamera_obj::render( ){
 				HX_STACK_LINE(400)
 				hx::OrEq(tempFlags,currItem->blending);
 				HX_STACK_LINE(401)
-				::openfl::display::Graphics _g = this->canvas->get_graphics();		HX_STACK_VAR(_g,"_g");
+				::openfl::_legacy::display::Graphics _g = this->canvas->get_graphics();		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(401)
 				currItem->graphics->get_tilesheet()->tileSheet->drawTiles(_g,data,(bool(this->antialiasing) || bool(currItem->antialiasing)),tempFlags,position);
 				HX_STACK_LINE(402)
@@ -842,7 +839,7 @@ Void FlxCamera_obj::updateFollow( ){
 					HX_STACK_LINE(628)
 					{
 						HX_STACK_LINE(628)
-						::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(this->target->x,this->target->y);		HX_STACK_VAR(point,"point");
+						::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(this->target->x,this->target->y);		HX_STACK_VAR(point,"point");
 						HX_STACK_LINE(628)
 						point->_inPool = false;
 						HX_STACK_LINE(628)
@@ -1571,7 +1568,7 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxCamera_obj,stopFX,(void))
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxCamera_obj,copyFrom,return )
 
-Void FlxCamera_obj::fill( int Color,hx::Null< bool >  __o_BlendAlpha,hx::Null< Float >  __o_FxAlpha,::openfl::display::Graphics graphics){
+Void FlxCamera_obj::fill( int Color,hx::Null< bool >  __o_BlendAlpha,hx::Null< Float >  __o_FxAlpha,::openfl::_legacy::display::Graphics graphics){
 bool BlendAlpha = __o_BlendAlpha.Default(true);
 Float FxAlpha = __o_FxAlpha.Default(1.0);
 	HX_STACK_FRAME("flixel.FlxCamera","fill",0xa57a338c,"flixel.FlxCamera.fill","flixel/FlxCamera.hx",928,0xe7aeb95a)
@@ -1587,7 +1584,7 @@ Float FxAlpha = __o_FxAlpha.Default(1.0);
 			return null();
 		}
 		HX_STACK_LINE(946)
-		::openfl::display::Graphics targetGraphics;		HX_STACK_VAR(targetGraphics,"targetGraphics");
+		::openfl::_legacy::display::Graphics targetGraphics;		HX_STACK_VAR(targetGraphics,"targetGraphics");
 		HX_STACK_LINE(946)
 		if (((graphics == null()))){
 			HX_STACK_LINE(946)
@@ -1623,7 +1620,7 @@ Void FlxCamera_obj::drawFX( ){
 			HX_STACK_LINE(967)
 			alphaComponent = (int((int(this->_fxFlashColor) >> int((int)24))) & int((int)255));
 			HX_STACK_LINE(972)
-			::openfl::display::Graphics _g = this->canvas->get_graphics();		HX_STACK_VAR(_g,"_g");
+			::openfl::_legacy::display::Graphics _g = this->canvas->get_graphics();		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(972)
 			this->fill((int(this->_fxFlashColor) & int((int)16777215)),true,(Float((((  (((alphaComponent <= (int)0))) ? Float((int)255) : Float(alphaComponent) )) * this->_fxFlashAlpha)) / Float((int)255)),_g);
 		}
@@ -1632,7 +1629,7 @@ Void FlxCamera_obj::drawFX( ){
 			HX_STACK_LINE(979)
 			alphaComponent = (int((int(this->_fxFadeColor) >> int((int)24))) & int((int)255));
 			HX_STACK_LINE(984)
-			::openfl::display::Graphics _g1 = this->canvas->get_graphics();		HX_STACK_VAR(_g1,"_g1");
+			::openfl::_legacy::display::Graphics _g1 = this->canvas->get_graphics();		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(984)
 			this->fill((int(this->_fxFadeColor) & int((int)16777215)),true,(Float((((  (((alphaComponent <= (int)0))) ? Float((int)255) : Float(alphaComponent) )) * this->_fxFadeAlpha)) / Float((int)255)),_g1);
 		}
@@ -1641,7 +1638,7 @@ Void FlxCamera_obj::drawFX( ){
 			HX_STACK_LINE(990)
 			{
 				HX_STACK_LINE(990)
-				::openfl::display::Sprite _g = this->flashSprite;		HX_STACK_VAR(_g,"_g");
+				::openfl::_legacy::display::Sprite _g = this->flashSprite;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(990)
 				Float _g2 = _g->get_x();		HX_STACK_VAR(_g2,"_g2");
 				HX_STACK_LINE(990)
@@ -1652,7 +1649,7 @@ Void FlxCamera_obj::drawFX( ){
 			HX_STACK_LINE(991)
 			{
 				HX_STACK_LINE(991)
-				::openfl::display::Sprite _g = this->flashSprite;		HX_STACK_VAR(_g,"_g");
+				::openfl::_legacy::display::Sprite _g = this->flashSprite;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(991)
 				Float _g4 = _g->get_y();		HX_STACK_VAR(_g4,"_g4");
 				HX_STACK_LINE(991)
@@ -1844,7 +1841,7 @@ int FlxCamera_obj::set_width( int Value){
 		HX_STACK_LINE(1098)
 		if (((this->canvas != null()))){
 			HX_STACK_LINE(1100)
-			::openfl::geom::Rectangle rect = this->canvas->get_scrollRect();		HX_STACK_VAR(rect,"rect");
+			::openfl::_legacy::geom::Rectangle rect = this->canvas->get_scrollRect();		HX_STACK_VAR(rect,"rect");
 			HX_STACK_LINE(1101)
 			rect->width = Value;
 			HX_STACK_LINE(1102)
@@ -1877,7 +1874,7 @@ int FlxCamera_obj::set_height( int Value){
 		HX_STACK_LINE(1128)
 		if (((this->canvas != null()))){
 			HX_STACK_LINE(1130)
-			::openfl::geom::Rectangle rect = this->canvas->get_scrollRect();		HX_STACK_VAR(rect,"rect");
+			::openfl::_legacy::geom::Rectangle rect = this->canvas->get_scrollRect();		HX_STACK_VAR(rect,"rect");
 			HX_STACK_LINE(1131)
 			rect->height = Value;
 			HX_STACK_LINE(1132)
@@ -1979,7 +1976,7 @@ int FlxCamera_obj::set_color( int Color){
 	HX_STACK_LINE(1179)
 	this->color = (int(Color) & int((int)16777215));
 	HX_STACK_LINE(1190)
-	::openfl::geom::ColorTransform colorTransform = this->canvas->get_transform()->get_colorTransform();		HX_STACK_VAR(colorTransform,"colorTransform");
+	::openfl::_legacy::geom::ColorTransform colorTransform = this->canvas->get_transform()->get_colorTransform();		HX_STACK_VAR(colorTransform,"colorTransform");
 	HX_STACK_LINE(1191)
 	colorTransform->redMultiplier = (Float(((int(this->color) >> int((int)16)))) / Float((int)255));
 	HX_STACK_LINE(1192)
@@ -2272,7 +2269,7 @@ Dynamic FlxCamera_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 		if (HX_FIELD_EQ(inName,"scroll") ) { scroll=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"height") ) { if (inCallProp) return set_height(inValue);height=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_point") ) { _point=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"canvas") ) { canvas=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"canvas") ) { canvas=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"bgColor") ) { bgColor=inValue.Cast< int >(); return inValue; }
@@ -2286,13 +2283,13 @@ Dynamic FlxCamera_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 	case 10:
 		if (HX_FIELD_EQ(inName,"followLerp") ) { followLerp=inValue.Cast< Float >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"followLead") ) { followLead=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_flashRect") ) { _flashRect=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"debugLayer") ) { debugLayer=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_flashRect") ) { _flashRect=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"debugLayer") ) { debugLayer=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"defaultZoom") ) { defaultZoom=inValue.Cast< Float >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"flashSprite") ) { flashSprite=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"_flashPoint") ) { _flashPoint=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"flashSprite") ) { flashSprite=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_flashPoint") ) { _flashPoint=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"_storageHead") ) { _storageHead=inValue.Cast< ::flixel::system::layer::DrawStackItem >(); return inValue; }
@@ -2407,7 +2404,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxCamera_obj,scroll),HX_CSTRING("scroll")},
 	{hx::fsInt,(int)offsetof(FlxCamera_obj,bgColor),HX_CSTRING("bgColor")},
 	{hx::fsBool,(int)offsetof(FlxCamera_obj,useBgAlphaBlending),HX_CSTRING("useBgAlphaBlending")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxCamera_obj,flashSprite),HX_CSTRING("flashSprite")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxCamera_obj,flashSprite),HX_CSTRING("flashSprite")},
 	{hx::fsInt,(int)offsetof(FlxCamera_obj,width),HX_CSTRING("width")},
 	{hx::fsInt,(int)offsetof(FlxCamera_obj,height),HX_CSTRING("height")},
 	{hx::fsFloat,(int)offsetof(FlxCamera_obj,zoom),HX_CSTRING("zoom")},
@@ -2416,8 +2413,8 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsInt,(int)offsetof(FlxCamera_obj,color),HX_CSTRING("color")},
 	{hx::fsBool,(int)offsetof(FlxCamera_obj,antialiasing),HX_CSTRING("antialiasing")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxCamera_obj,followLead),HX_CSTRING("followLead")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(FlxCamera_obj,_flashRect),HX_CSTRING("_flashRect")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(FlxCamera_obj,_flashPoint),HX_CSTRING("_flashPoint")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(FlxCamera_obj,_flashRect),HX_CSTRING("_flashRect")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(FlxCamera_obj,_flashPoint),HX_CSTRING("_flashPoint")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxCamera_obj,_flashOffset),HX_CSTRING("_flashOffset")},
 	{hx::fsInt,(int)offsetof(FlxCamera_obj,_fxFlashColor),HX_CSTRING("_fxFlashColor")},
 	{hx::fsFloat,(int)offsetof(FlxCamera_obj,_fxFlashDuration),HX_CSTRING("_fxFlashDuration")},
@@ -2436,8 +2433,8 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxCamera_obj,_fxShakeOffset),HX_CSTRING("_fxShakeOffset")},
 	{hx::fsInt,(int)offsetof(FlxCamera_obj,_fxShakeDirection),HX_CSTRING("_fxShakeDirection")},
 	{hx::fsObject /*::flixel::util::FlxPoint*/ ,(int)offsetof(FlxCamera_obj,_point),HX_CSTRING("_point")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxCamera_obj,canvas),HX_CSTRING("canvas")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxCamera_obj,debugLayer),HX_CSTRING("debugLayer")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxCamera_obj,canvas),HX_CSTRING("canvas")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxCamera_obj,debugLayer),HX_CSTRING("debugLayer")},
 	{hx::fsObject /*::flixel::system::layer::DrawStackItem*/ ,(int)offsetof(FlxCamera_obj,_currentStackItem),HX_CSTRING("_currentStackItem")},
 	{hx::fsObject /*::flixel::system::layer::DrawStackItem*/ ,(int)offsetof(FlxCamera_obj,_headOfDrawStack),HX_CSTRING("_headOfDrawStack")},
 	{ hx::fsUnknown, 0, null()}

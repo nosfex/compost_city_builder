@@ -24,38 +24,38 @@
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
 namespace flixel{
 namespace system{
@@ -71,7 +71,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(29)
 	super::__construct(HX_CSTRING("log"),_g,null(),null(),null(),null(),null());
 	HX_STACK_LINE(31)
-	::openfl::text::TextField _g1 = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(_g1,"_g1");
+	::openfl::_legacy::text::TextField _g1 = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(31)
 	this->_text = _g1;
 	HX_STACK_LINE(32)
@@ -87,7 +87,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(37)
 	this->_text->set_embedFonts(true);
 	HX_STACK_LINE(38)
-	::openfl::text::TextFormat _g2 = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,(int)12,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
+	::openfl::_legacy::text::TextFormat _g2 = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,(int)12,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g2,"_g2");
 	HX_STACK_LINE(38)
 	this->_text->set_defaultTextFormat(_g2);
 	HX_STACK_LINE(39)
@@ -239,7 +239,7 @@ bool FireOnce = __o_FireOnce.Default(false);
 		}
 		else{
 			HX_STACK_LINE(129)
-			::openfl::text::TextField _g2 = this->_text;		HX_STACK_VAR(_g2,"_g2");
+			::openfl::_legacy::text::TextField _g2 = this->_text;		HX_STACK_VAR(_g2,"_g2");
 			HX_STACK_LINE(129)
 			::String _g21 = _g2->get_htmlText();		HX_STACK_VAR(_g21,"_g21");
 			HX_STACK_LINE(129)
@@ -344,7 +344,7 @@ Dynamic Log_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool i
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_text") ) { _text=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_text") ) { _text=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"_lines") ) { _lines=inValue.Cast< Array< ::String > >(); return inValue; }
@@ -366,7 +366,7 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(Log_obj,_text),HX_CSTRING("_text")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(Log_obj,_text),HX_CSTRING("_text")},
 	{hx::fsObject /*Array< ::String >*/ ,(int)offsetof(Log_obj,_lines),HX_CSTRING("_lines")},
 	{ hx::fsUnknown, 0, null()}
 };

@@ -13,8 +13,8 @@ HX_DECLARE_CLASS3(flixel,input,keyboard,FlxKeyboard)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxInput)
 HX_DECLARE_CLASS3(flixel,system,replay,CodeValuePair)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,events,Event)
-HX_DECLARE_CLASS2(openfl,events,KeyboardEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,KeyboardEvent)
 namespace flixel{
 namespace input{
 namespace keyboard{
@@ -94,16 +94,16 @@ class HXCPP_CLASS_ATTRIBUTES  FlxKeyboard_obj : public hx::Object{
 		virtual bool checkKeyStatus( Array< ::String > KeyArray,int Status);
 		Dynamic checkKeyStatus_dyn();
 
-		virtual Void onKeyUp( ::openfl::events::KeyboardEvent FlashEvent);
+		virtual Void onKeyUp( ::openfl::_legacy::events::KeyboardEvent FlashEvent);
 		Dynamic onKeyUp_dyn();
 
-		virtual Void onKeyDown( ::openfl::events::KeyboardEvent FlashEvent);
+		virtual Void onKeyDown( ::openfl::_legacy::events::KeyboardEvent FlashEvent);
 		Dynamic onKeyDown_dyn();
 
 		virtual bool inKeyArray( Array< ::String > KeyArray,int KeyCode);
 		Dynamic inKeyArray_dyn();
 
-		virtual int resolveKeyCode( ::openfl::events::KeyboardEvent e);
+		virtual int resolveKeyCode( ::openfl::_legacy::events::KeyboardEvent e);
 		Dynamic resolveKeyCode_dyn();
 
 		virtual Void updateKeyStates( int KeyCode,bool Down);

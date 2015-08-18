@@ -1,10 +1,10 @@
 #include <hxcpp.h>
 
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 #ifndef INCLUDED_openfl_events_UncaughtErrorEvents
 #include <openfl/events/UncaughtErrorEvents.h>
@@ -12,13 +12,13 @@
 namespace openfl{
 namespace events{
 
-Void UncaughtErrorEvents_obj::__construct(::openfl::events::IEventDispatcher target)
+Void UncaughtErrorEvents_obj::__construct(::openfl::_legacy::events::IEventDispatcher target)
 {
-HX_STACK_FRAME("openfl.events.UncaughtErrorEvents","new",0xf17d0a07,"openfl.events.UncaughtErrorEvents.new","openfl/events/UncaughtErrorEvents.hx",3,0x17415d69)
+HX_STACK_FRAME("openfl.events.UncaughtErrorEvents","new",0xf17d0a07,"openfl.events.UncaughtErrorEvents.new","openfl/events/UncaughtErrorEvents.hx",4,0x17415d69)
 HX_STACK_THIS(this)
 HX_STACK_ARG(target,"target")
 {
-	HX_STACK_LINE(3)
+	HX_STACK_LINE(4)
 	super::__construct(target);
 }
 ;
@@ -28,7 +28,7 @@ HX_STACK_ARG(target,"target")
 //UncaughtErrorEvents_obj::~UncaughtErrorEvents_obj() { }
 
 Dynamic UncaughtErrorEvents_obj::__CreateEmpty() { return  new UncaughtErrorEvents_obj; }
-hx::ObjectPtr< UncaughtErrorEvents_obj > UncaughtErrorEvents_obj::__new(::openfl::events::IEventDispatcher target)
+hx::ObjectPtr< UncaughtErrorEvents_obj > UncaughtErrorEvents_obj::__new(::openfl::_legacy::events::IEventDispatcher target)
 {  hx::ObjectPtr< UncaughtErrorEvents_obj > result = new UncaughtErrorEvents_obj();
 	result->__construct(target);
 	return result;}

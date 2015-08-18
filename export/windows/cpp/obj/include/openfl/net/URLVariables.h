@@ -15,12 +15,12 @@ class HXCPP_CLASS_ATTRIBUTES  URLVariables_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef URLVariables_obj OBJ_;
 		URLVariables_obj();
-		Void __construct(::String encoded);
+		Void __construct(::String inEncoded);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< URLVariables_obj > __new(::String encoded);
+		static hx::ObjectPtr< URLVariables_obj > __new(::String inEncoded);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~URLVariables_obj();
@@ -33,7 +33,7 @@ class HXCPP_CLASS_ATTRIBUTES  URLVariables_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("URLVariables"); }
 
-		virtual Void decode( ::String data);
+		virtual Void decode( ::String inVars);
 		Dynamic decode_dyn();
 
 		virtual ::String toString( );

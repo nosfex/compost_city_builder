@@ -32,6 +32,17 @@ Dynamic CallStack_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
+Array< ::Dynamic > CallStack_obj::callStack( ){
+	HX_STACK_FRAME("haxe.CallStack","callStack",0xfa9165be,"haxe.CallStack.callStack","haxe/CallStack.hx",77,0xb8d73e1d)
+	HX_STACK_LINE(89)
+	Array< ::String > s = ::__hxcpp_get_call_stack(true);		HX_STACK_VAR(s,"s");
+	HX_STACK_LINE(90)
+	return ::haxe::CallStack_obj::makeStack(s);
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(CallStack_obj,callStack,return )
+
 Array< ::Dynamic > CallStack_obj::exceptionStack( ){
 	Array< ::String > s = ::__hxcpp_get_exception_stack();
 	return ::haxe::CallStack_obj::makeStack(s);
@@ -41,32 +52,38 @@ Array< ::Dynamic > CallStack_obj::exceptionStack( ){
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(CallStack_obj,exceptionStack,return )
 
 ::String CallStack_obj::toString( Array< ::Dynamic > stack){
-	HX_STACK_FRAME("haxe.CallStack","toString",0xd59be738,"haxe.CallStack.toString","C:\\HaxeToolkit\\haxe\\std/haxe/CallStack.hx",170,0xf338fe24)
+	HX_STACK_FRAME("haxe.CallStack","toString",0xd59be738,"haxe.CallStack.toString","haxe/CallStack.hx",206,0xb8d73e1d)
 	HX_STACK_ARG(stack,"stack")
-	HX_STACK_LINE(171)
+	HX_STACK_LINE(207)
 	::StringBuf b = ::StringBuf_obj::__new();		HX_STACK_VAR(b,"b");
-	HX_STACK_LINE(172)
+	HX_STACK_LINE(209)
+	Array< ::Dynamic > _g = stack->copy();		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(209)
+	stack = _g;
+	HX_STACK_LINE(210)
+	stack->reverse();
+	HX_STACK_LINE(212)
 	{
-		HX_STACK_LINE(172)
-		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(172)
+		HX_STACK_LINE(212)
+		int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(212)
 		while((true)){
-			HX_STACK_LINE(172)
-			if ((!(((_g < stack->length))))){
-				HX_STACK_LINE(172)
+			HX_STACK_LINE(212)
+			if ((!(((_g1 < stack->length))))){
+				HX_STACK_LINE(212)
 				break;
 			}
-			HX_STACK_LINE(172)
-			::haxe::StackItem s = stack->__get(_g).StaticCast< ::haxe::StackItem >();		HX_STACK_VAR(s,"s");
-			HX_STACK_LINE(172)
-			++(_g);
-			HX_STACK_LINE(173)
+			HX_STACK_LINE(212)
+			::haxe::StackItem s = stack->__get(_g1).StaticCast< ::haxe::StackItem >();		HX_STACK_VAR(s,"s");
+			HX_STACK_LINE(212)
+			++(_g1);
+			HX_STACK_LINE(213)
 			b->add(HX_CSTRING("\nCalled from "));
-			HX_STACK_LINE(174)
+			HX_STACK_LINE(214)
 			::haxe::CallStack_obj::itemToString(b,s);
 		}
 	}
-	HX_STACK_LINE(176)
+	HX_STACK_LINE(216)
 	return b->b->join(HX_CSTRING(""));
 }
 
@@ -75,82 +92,82 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(CallStack_obj,toString,return )
 
 Void CallStack_obj::itemToString( ::StringBuf b,::haxe::StackItem s){
 {
-		HX_STACK_FRAME("haxe.CallStack","itemToString",0xc121696b,"haxe.CallStack.itemToString","C:\\HaxeToolkit\\haxe\\std/haxe/CallStack.hx",180,0xf338fe24)
+		HX_STACK_FRAME("haxe.CallStack","itemToString",0xc121696b,"haxe.CallStack.itemToString","haxe/CallStack.hx",220,0xb8d73e1d)
 		HX_STACK_ARG(b,"b")
 		HX_STACK_ARG(s,"s")
-		HX_STACK_LINE(180)
+		HX_STACK_LINE(220)
 		switch( (int)(s->__Index())){
 			case (int)0: {
-				HX_STACK_LINE(182)
+				HX_STACK_LINE(222)
 				b->add(HX_CSTRING("a C function"));
 			}
 			;break;
 			case (int)1: {
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(220)
 				::String m = (::haxe::StackItem(s))->__Param(0);		HX_STACK_VAR(m,"m");
-				HX_STACK_LINE(183)
+				HX_STACK_LINE(223)
 				{
-					HX_STACK_LINE(184)
+					HX_STACK_LINE(224)
 					b->add(HX_CSTRING("module "));
-					HX_STACK_LINE(185)
+					HX_STACK_LINE(225)
 					b->add(m);
 				}
 			}
 			;break;
 			case (int)2: {
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(220)
 				int line = (::haxe::StackItem(s))->__Param(2);		HX_STACK_VAR(line,"line");
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(220)
 				::String file = (::haxe::StackItem(s))->__Param(1);		HX_STACK_VAR(file,"file");
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(220)
 				::haxe::StackItem s1 = (::haxe::StackItem(s))->__Param(0);		HX_STACK_VAR(s1,"s1");
-				HX_STACK_LINE(186)
+				HX_STACK_LINE(226)
 				{
-					HX_STACK_LINE(187)
+					HX_STACK_LINE(227)
 					if (((s1 != null()))){
-						HX_STACK_LINE(188)
+						HX_STACK_LINE(228)
 						::haxe::CallStack_obj::itemToString(b,s1);
-						HX_STACK_LINE(189)
+						HX_STACK_LINE(229)
 						b->add(HX_CSTRING(" ("));
 					}
-					HX_STACK_LINE(191)
+					HX_STACK_LINE(231)
 					b->add(file);
-					HX_STACK_LINE(192)
+					HX_STACK_LINE(232)
 					b->add(HX_CSTRING(" line "));
-					HX_STACK_LINE(193)
+					HX_STACK_LINE(233)
 					b->add(line);
-					HX_STACK_LINE(194)
+					HX_STACK_LINE(234)
 					if (((s1 != null()))){
-						HX_STACK_LINE(194)
+						HX_STACK_LINE(234)
 						b->add(HX_CSTRING(")"));
 					}
 				}
 			}
 			;break;
 			case (int)3: {
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(220)
 				::String meth = (::haxe::StackItem(s))->__Param(1);		HX_STACK_VAR(meth,"meth");
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(220)
 				::String cname = (::haxe::StackItem(s))->__Param(0);		HX_STACK_VAR(cname,"cname");
-				HX_STACK_LINE(195)
+				HX_STACK_LINE(235)
 				{
-					HX_STACK_LINE(196)
+					HX_STACK_LINE(236)
 					b->add(cname);
-					HX_STACK_LINE(197)
+					HX_STACK_LINE(237)
 					b->add(HX_CSTRING("."));
-					HX_STACK_LINE(198)
+					HX_STACK_LINE(238)
 					b->add(meth);
 				}
 			}
 			;break;
 			case (int)4: {
-				HX_STACK_LINE(180)
-				int n = (::haxe::StackItem(s))->__Param(0);		HX_STACK_VAR(n,"n");
-				HX_STACK_LINE(199)
+				HX_STACK_LINE(220)
+				Dynamic n = (::haxe::StackItem(s))->__Param(0);		HX_STACK_VAR(n,"n");
+				HX_STACK_LINE(239)
 				{
-					HX_STACK_LINE(200)
+					HX_STACK_LINE(240)
 					b->add(HX_CSTRING("local function #"));
-					HX_STACK_LINE(201)
+					HX_STACK_LINE(241)
 					b->add(n);
 				}
 			}
@@ -176,19 +193,19 @@ Array< ::Dynamic > CallStack_obj::makeStack( Array< ::String > s){
 			++(_g);
 			Array< ::String > words = func.split(HX_CSTRING("::"));
 			if (((words->length == (int)0))){
-				m->unshift(::haxe::StackItem_obj::CFunction);
+				m->push(::haxe::StackItem_obj::CFunction);
 			}
 			else{
 				if (((words->length == (int)2))){
 					::haxe::StackItem _g1 = ::haxe::StackItem_obj::Method(words->__get((int)0),words->__get((int)1));
-					m->unshift(_g1);
+					m->push(_g1);
 				}
 				else{
 					if (((words->length == (int)4))){
 						::haxe::StackItem _g1 = ::haxe::StackItem_obj::Method(words->__get((int)0),words->__get((int)1));
 						Dynamic _g2 = ::Std_obj::parseInt(words->__get((int)3));
 						::haxe::StackItem _g3 = ::haxe::StackItem_obj::FilePos(_g1,words->__get((int)2),_g2);
-						m->unshift(_g3);
+						m->push(_g3);
 					}
 				}
 			}
@@ -212,6 +229,7 @@ Dynamic CallStack_obj::__Field(const ::String &inName,bool inCallProp)
 		if (HX_FIELD_EQ(inName,"toString") ) { return toString_dyn(); }
 		break;
 	case 9:
+		if (HX_FIELD_EQ(inName,"callStack") ) { return callStack_dyn(); }
 		if (HX_FIELD_EQ(inName,"makeStack") ) { return makeStack_dyn(); }
 		break;
 	case 12:
@@ -234,6 +252,7 @@ void CallStack_obj::__GetFields(Array< ::String> &outFields)
 };
 
 static ::String sStaticFields[] = {
+	HX_CSTRING("callStack"),
 	HX_CSTRING("exceptionStack"),
 	HX_CSTRING("toString"),
 	HX_CSTRING("itemToString"),

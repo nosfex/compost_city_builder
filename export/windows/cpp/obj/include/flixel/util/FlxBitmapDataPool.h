@@ -7,9 +7,9 @@
 
 HX_DECLARE_CLASS2(flixel,util,FlxBitmapDataPool)
 HX_DECLARE_CLASS3(flixel,util,_FlxBitmapDataPool,FlxBitmapDataPoolNode)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace util{
 
@@ -38,11 +38,11 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBitmapDataPool_obj : public hx::Object{
 		static int length;
 		static ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode _head;
 		static ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode _tail;
-		static ::openfl::geom::Rectangle _rect;
-		static ::openfl::display::BitmapData get( int w,int h,hx::Null< bool >  transparent,Dynamic fillColor,Dynamic exactSize);
+		static ::openfl::_legacy::geom::Rectangle _rect;
+		static ::openfl::_legacy::display::BitmapData get( int w,int h,hx::Null< bool >  transparent,Dynamic fillColor,Dynamic exactSize);
 		static Dynamic get_dyn();
 
-		static Void put( ::openfl::display::BitmapData bmd);
+		static Void put( ::openfl::_legacy::display::BitmapData bmd);
 		static Dynamic put_dyn();
 
 		static Void clear( );

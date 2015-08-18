@@ -11,11 +11,13 @@ namespace errors{
 
 Void EOFError_obj::__construct()
 {
-HX_STACK_FRAME("openfl.errors.EOFError","new",0xc20c3743,"openfl.errors.EOFError.new","openfl/errors/EOFError.hx",9,0x8db2236d)
+HX_STACK_FRAME("openfl.errors.EOFError","new",0xc20c3743,"openfl.errors.EOFError.new","openfl/errors/EOFError.hx",18,0x8db2236d)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(9)
+	HX_STACK_LINE(20)
 	super::__construct(HX_CSTRING("End of file was encountered"),(int)2030);
+	HX_STACK_LINE(22)
+	this->name = HX_CSTRING("EOFError");
 }
 ;
 	return null();

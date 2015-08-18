@@ -5,7 +5,7 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/Sprite.h>
+#include <openfl/_legacy/display/Sprite.h>
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxGame)
 HX_DECLARE_CLASS1(flixel,FlxState)
@@ -15,19 +15,19 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS3(flixel,system,debug,FlxDebugger)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxFocusLostScreen)
 HX_DECLARE_CLASS3(flixel,system,ui,FlxSoundTray)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 namespace flixel{
 
 
-class HXCPP_CLASS_ATTRIBUTES  FlxGame_obj : public ::openfl::display::Sprite_obj{
+class HXCPP_CLASS_ATTRIBUTES  FlxGame_obj : public ::openfl::_legacy::display::Sprite_obj{
 	public:
-		typedef ::openfl::display::Sprite_obj super;
+		typedef ::openfl::_legacy::display::Sprite_obj super;
 		typedef FlxGame_obj OBJ_;
 		FlxGame_obj();
 		Void __construct(hx::Null< int >  __o_GameSizeX,hx::Null< int >  __o_GameSizeY,::Class InitialState,hx::Null< Float >  __o_Zoom,hx::Null< int >  __o_UpdateFramerate,hx::Null< int >  __o_DrawFramerate,hx::Null< bool >  __o_SkipSplash,hx::Null< bool >  __o_StartFullscreen);
@@ -63,7 +63,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxGame_obj : public ::openfl::display::Sprite_obj
 		bool _lostFocus;
 		bool _onFocusFiredOnce;
 		::flixel::system::ui::FlxFocusLostScreen _focusLostScreen;
-		::openfl::display::Sprite _inputContainer;
+		::openfl::_legacy::display::Sprite _inputContainer;
 		::Class _customSoundTray;
 		::Class _customFocusLostScreen;
 		bool _skipSplash;

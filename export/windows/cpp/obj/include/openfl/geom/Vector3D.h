@@ -60,7 +60,7 @@ class HXCPP_CLASS_ATTRIBUTES  Vector3D_obj : public hx::Object{
 		virtual Void incrementBy( ::openfl::geom::Vector3D a);
 		Dynamic incrementBy_dyn();
 
-		virtual bool nearEquals( ::openfl::geom::Vector3D toCompare,Float tolerance,hx::Null< bool >  allFour);
+		virtual bool nearEquals( ::openfl::geom::Vector3D toCompare,Float tolerance,Dynamic allFour);
 		Dynamic nearEquals_dyn();
 
 		virtual Void negate( );
@@ -72,11 +72,11 @@ class HXCPP_CLASS_ATTRIBUTES  Vector3D_obj : public hx::Object{
 		virtual Void project( );
 		Dynamic project_dyn();
 
-		virtual Void setTo( Float xa,Float ya,Float za);
-		Dynamic setTo_dyn();
-
 		virtual Void scaleBy( Float s);
 		Dynamic scaleBy_dyn();
+
+		virtual Void setTo( Float xa,Float ya,Float za);
+		Dynamic setTo_dyn();
 
 		virtual ::openfl::geom::Vector3D subtract( ::openfl::geom::Vector3D a);
 		Dynamic subtract_dyn();

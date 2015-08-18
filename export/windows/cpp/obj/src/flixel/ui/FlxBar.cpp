@@ -60,11 +60,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
-#endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxStringUtil
 #include <flixel/util/FlxStringUtil.h>
@@ -81,20 +78,20 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_Tilesheet
-#include <openfl/display/Tilesheet.h>
+#ifndef INCLUDED_openfl__legacy_display_Tilesheet
+#include <openfl/_legacy/display/Tilesheet.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace ui{
@@ -126,7 +123,7 @@ bool border = __o_border.Default(false);
 	HX_STACK_LINE(139)
 	this->fixedPosition = true;
 	HX_STACK_LINE(140)
-	::openfl::geom::Point _g = ::openfl::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::geom::Point _g = ::openfl::_legacy::geom::Point_obj::__new(null(),null());		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(140)
 	this->zeroOffset = _g;
 	HX_STACK_LINE(142)
@@ -152,7 +149,7 @@ bool border = __o_border.Default(false);
 	HX_STACK_LINE(156)
 	this->_framesPosition = HX_CSTRING("horizontal");
 	HX_STACK_LINE(159)
-	::openfl::geom::Point _g3 = ::openfl::geom::Point_obj::__new((int)0,(int)0);		HX_STACK_VAR(_g3,"_g3");
+	::openfl::_legacy::geom::Point _g3 = ::openfl::_legacy::geom::Point_obj::__new((int)0,(int)0);		HX_STACK_VAR(_g3,"_g3");
 	HX_STACK_LINE(159)
 	this->filledBarPoint = _g3;
 	HX_STACK_LINE(165)
@@ -217,11 +214,11 @@ Void FlxBar_obj::destroy( ){
 		HX_STACK_LINE(204)
 		this->filledBarPoint = null();
 		HX_STACK_LINE(206)
-		::openfl::display::BitmapData _g1 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->emptyBar);		HX_STACK_VAR(_g1,"_g1");
+		::openfl::_legacy::display::BitmapData _g1 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->emptyBar);		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(206)
 		this->emptyBar = _g1;
 		HX_STACK_LINE(207)
-		::openfl::display::BitmapData _g2 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->filledBar);		HX_STACK_VAR(_g2,"_g2");
+		::openfl::_legacy::display::BitmapData _g2 = ::flixel::util::FlxDestroyUtil_obj::dispose(this->filledBar);		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(207)
 		this->filledBar = _g2;
 		HX_STACK_LINE(209)
@@ -244,7 +241,7 @@ Void FlxBar_obj::trackParent( int offsetX,int offsetY){
 		HX_STACK_LINE(225)
 		{
 			HX_STACK_LINE(225)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(offsetX,offsetY);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(offsetX,offsetY);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(225)
 			point->_inPool = false;
 			HX_STACK_LINE(225)
@@ -521,9 +518,9 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(423)
 			if (((_g3 == false))){
 				HX_STACK_LINE(425)
-				::openfl::display::BitmapData emptyBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(emptyBar,"emptyBar");
+				::openfl::_legacy::display::BitmapData emptyBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(emptyBar,"emptyBar");
 				HX_STACK_LINE(426)
-				::openfl::geom::Rectangle _g4 = ::openfl::geom::Rectangle_obj::__new((int)1,(int)1,(this->barWidth - (int)2),(this->barHeight - (int)2));		HX_STACK_VAR(_g4,"_g4");
+				::openfl::_legacy::geom::Rectangle _g4 = ::openfl::_legacy::geom::Rectangle_obj::__new((int)1,(int)1,(this->barWidth - (int)2),(this->barHeight - (int)2));		HX_STACK_VAR(_g4,"_g4");
 				HX_STACK_LINE(426)
 				emptyBar->fillRect(_g4,empty);
 				HX_STACK_LINE(428)
@@ -550,9 +547,9 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(431)
 			if (((_g6 == false))){
 				HX_STACK_LINE(433)
-				::openfl::display::BitmapData filledBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(filledBar,"filledBar");
+				::openfl::_legacy::display::BitmapData filledBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(filledBar,"filledBar");
 				HX_STACK_LINE(434)
-				::openfl::geom::Rectangle _g7 = ::openfl::geom::Rectangle_obj::__new((int)1,(int)1,(this->barWidth - (int)2),(this->barHeight - (int)2));		HX_STACK_VAR(_g7,"_g7");
+				::openfl::_legacy::geom::Rectangle _g7 = ::openfl::_legacy::geom::Rectangle_obj::__new((int)1,(int)1,(this->barWidth - (int)2),(this->barHeight - (int)2));		HX_STACK_VAR(_g7,"_g7");
 				HX_STACK_LINE(434)
 				filledBar->fillRect(_g7,fill);
 				HX_STACK_LINE(436)
@@ -581,7 +578,7 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(449)
 			if (((_g9 == false))){
 				HX_STACK_LINE(451)
-				::openfl::display::BitmapData emptyBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,empty,null());		HX_STACK_VAR(emptyBar,"emptyBar");
+				::openfl::_legacy::display::BitmapData emptyBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,empty,null());		HX_STACK_VAR(emptyBar,"emptyBar");
 				HX_STACK_LINE(452)
 				::flixel::FlxG_obj::bitmap->addWithSpaces(emptyBar,(int)0,(int)0,(int)1,(int)1,false,emptyKey);
 			}
@@ -606,7 +603,7 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(455)
 			if (((_g11 == false))){
 				HX_STACK_LINE(457)
-				::openfl::display::BitmapData filledBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,fill,null());		HX_STACK_VAR(filledBar,"filledBar");
+				::openfl::_legacy::display::BitmapData filledBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,fill,null());		HX_STACK_VAR(filledBar,"filledBar");
 				HX_STACK_LINE(458)
 				::flixel::FlxG_obj::bitmap->addWithSpaces(filledBar,(int)0,(int)0,(int)1,(int)1,false,filledKey);
 			}
@@ -780,7 +777,7 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(550)
 			if (((_g5 == false))){
 				HX_STACK_LINE(552)
-				::openfl::display::BitmapData emptyBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(emptyBar,"emptyBar");
+				::openfl::_legacy::display::BitmapData emptyBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(emptyBar,"emptyBar");
 				HX_STACK_LINE(553)
 				::flixel::util::FlxGradient_obj::overlayGradientOnBitmapData(emptyBar,(this->barWidth - (int)2),(this->barHeight - (int)2),empty,(int)1,(int)1,chunkSize,rotation,null());
 				HX_STACK_LINE(554)
@@ -807,7 +804,7 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(557)
 			if (((_g7 == false))){
 				HX_STACK_LINE(559)
-				::openfl::display::BitmapData filledBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(filledBar,"filledBar");
+				::openfl::_legacy::display::BitmapData filledBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,border,null());		HX_STACK_VAR(filledBar,"filledBar");
 				HX_STACK_LINE(560)
 				::flixel::util::FlxGradient_obj::overlayGradientOnBitmapData(filledBar,(this->barWidth - (int)2),(this->barHeight - (int)2),fill,(int)1,(int)1,chunkSize,rotation,null());
 				HX_STACK_LINE(561)
@@ -836,7 +833,7 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(571)
 			if (((_g9 == false))){
 				HX_STACK_LINE(573)
-				::openfl::display::BitmapData emptyBar = ::flixel::util::FlxGradient_obj::createGradientBitmapData(this->barWidth,this->barHeight,empty,chunkSize,rotation,null());		HX_STACK_VAR(emptyBar,"emptyBar");
+				::openfl::_legacy::display::BitmapData emptyBar = ::flixel::util::FlxGradient_obj::createGradientBitmapData(this->barWidth,this->barHeight,empty,chunkSize,rotation,null());		HX_STACK_VAR(emptyBar,"emptyBar");
 				HX_STACK_LINE(574)
 				::flixel::FlxG_obj::bitmap->addWithSpaces(emptyBar,(int)0,(int)0,(int)1,(int)1,false,emptyKey);
 			}
@@ -861,7 +858,7 @@ int border = __o_border.Default(-1);
 			HX_STACK_LINE(577)
 			if (((_g11 == false))){
 				HX_STACK_LINE(579)
-				::openfl::display::BitmapData filledBar = ::flixel::util::FlxGradient_obj::createGradientBitmapData(this->barWidth,this->barHeight,fill,chunkSize,rotation,null());		HX_STACK_VAR(filledBar,"filledBar");
+				::openfl::_legacy::display::BitmapData filledBar = ::flixel::util::FlxGradient_obj::createGradientBitmapData(this->barWidth,this->barHeight,fill,chunkSize,rotation,null());		HX_STACK_VAR(filledBar,"filledBar");
 				HX_STACK_LINE(580)
 				::flixel::FlxG_obj::bitmap->addWithSpaces(filledBar,(int)0,(int)0,(int)1,(int)1,false,filledKey);
 			}
@@ -939,7 +936,7 @@ int fillBackground = __o_fillBackground.Default(-16711936);
 			filledGraphics = ::flixel::FlxG_obj::bitmap->addWithSpaces(fill,(int)0,(int)0,(int)1,(int)1,Unique,null());
 		}
 		HX_STACK_LINE(617)
-		::openfl::display::BitmapData emptyBitmapData;		HX_STACK_VAR(emptyBitmapData,"emptyBitmapData");
+		::openfl::_legacy::display::BitmapData emptyBitmapData;		HX_STACK_VAR(emptyBitmapData,"emptyBitmapData");
 		HX_STACK_LINE(617)
 		if (((emptyGraphics != null()))){
 			HX_STACK_LINE(617)
@@ -950,7 +947,7 @@ int fillBackground = __o_fillBackground.Default(-16711936);
 			emptyBitmapData = null();
 		}
 		HX_STACK_LINE(618)
-		::openfl::display::BitmapData fillBitmapData;		HX_STACK_VAR(fillBitmapData,"fillBitmapData");
+		::openfl::_legacy::display::BitmapData fillBitmapData;		HX_STACK_VAR(fillBitmapData,"fillBitmapData");
 		HX_STACK_LINE(618)
 		if (((filledGraphics != null()))){
 			HX_STACK_LINE(618)
@@ -1092,7 +1089,7 @@ int fillBackground = __o_fillBackground.Default(-16711936);
 			HX_STACK_LINE(694)
 			if (((_g11 == false))){
 				HX_STACK_LINE(696)
-				::openfl::display::BitmapData filledBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,fillBackground,null());		HX_STACK_VAR(filledBar,"filledBar");
+				::openfl::_legacy::display::BitmapData filledBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,fillBackground,null());		HX_STACK_VAR(filledBar,"filledBar");
 				HX_STACK_LINE(697)
 				::flixel::FlxG_obj::bitmap->addWithSpaces(filledBar,(int)0,(int)0,(int)1,(int)1,false,filledKey);
 			}
@@ -1138,7 +1135,7 @@ int fillBackground = __o_fillBackground.Default(-16711936);
 				HX_STACK_LINE(726)
 				if (((_g15 == false))){
 					HX_STACK_LINE(728)
-					::openfl::display::BitmapData emptyBar = ::openfl::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,emptyBackground,null());		HX_STACK_VAR(emptyBar,"emptyBar");
+					::openfl::_legacy::display::BitmapData emptyBar = ::openfl::_legacy::display::BitmapData_obj::__new(this->barWidth,this->barHeight,true,emptyBackground,null());		HX_STACK_VAR(emptyBar,"emptyBar");
 					HX_STACK_LINE(729)
 					::flixel::FlxG_obj::bitmap->addWithSpaces(emptyBar,(int)0,(int)0,(int)1,(int)1,false,emptyKey);
 				}
@@ -1741,7 +1738,7 @@ return null();
 }
 
 
-::openfl::display::BitmapData FlxBar_obj::set_pixels( ::openfl::display::BitmapData Pixels){
+::openfl::_legacy::display::BitmapData FlxBar_obj::set_pixels( ::openfl::_legacy::display::BitmapData Pixels){
 	HX_STACK_FRAME("flixel.ui.FlxBar","set_pixels",0x3c70e2cf,"flixel.ui.FlxBar.set_pixels","flixel/ui/FlxBar.hx",1126,0x9c56c8d5)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Pixels,"Pixels")
@@ -1778,9 +1775,9 @@ Void FlxBar_obj::updateFrameData( ){
 			HX_STACK_LINE(1146)
 			::flixel::system::layer::TileSheetData _this = this->cachedGraphics->get_tilesheet();		HX_STACK_VAR(_this,"_this");
 			HX_STACK_LINE(1146)
-			::openfl::geom::Rectangle tileRect = ::openfl::geom::Rectangle_obj::__new((int)0,(int)0,this->barWidth,this->barHeight);		HX_STACK_VAR(tileRect,"tileRect");
+			::openfl::_legacy::geom::Rectangle tileRect = ::openfl::_legacy::geom::Rectangle_obj::__new((int)0,(int)0,this->barWidth,this->barHeight);		HX_STACK_VAR(tileRect,"tileRect");
 			HX_STACK_LINE(1146)
-			::openfl::geom::Point point = ::openfl::geom::Point_obj::__new((0.5 * this->barWidth),(0.5 * this->barHeight));		HX_STACK_VAR(point,"point");
+			::openfl::_legacy::geom::Point point = ::openfl::_legacy::geom::Point_obj::__new((0.5 * this->barWidth),(0.5 * this->barHeight));		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(1146)
 			_g = _this->tileSheet->addTileRectID(tileRect,point);
 		}
@@ -1922,9 +1919,9 @@ Void FlxBar_obj::updateFrameData( ){
 					HX_STACK_LINE(1223)
 					::flixel::system::layer::TileSheetData _this = this->_cachedFrontGraphics->get_tilesheet();		HX_STACK_VAR(_this,"_this");
 					HX_STACK_LINE(1223)
-					::openfl::geom::Rectangle tileRect = ::openfl::geom::Rectangle_obj::__new(frameX,frameY,frameWidth,frameHeight);		HX_STACK_VAR(tileRect,"tileRect");
+					::openfl::_legacy::geom::Rectangle tileRect = ::openfl::_legacy::geom::Rectangle_obj::__new(frameX,frameY,frameWidth,frameHeight);		HX_STACK_VAR(tileRect,"tileRect");
 					HX_STACK_LINE(1223)
-					::openfl::geom::Point point = ::openfl::geom::Point_obj::__new((0.5 * frameWidth),(0.5 * frameHeight));		HX_STACK_VAR(point,"point");
+					::openfl::_legacy::geom::Point point = ::openfl::_legacy::geom::Point_obj::__new((0.5 * frameWidth),(0.5 * frameHeight));		HX_STACK_VAR(point,"point");
 					HX_STACK_LINE(1223)
 					_g11 = _this->tileSheet->addTileRectID(tileRect,point);
 				}
@@ -2308,37 +2305,37 @@ Dynamic FlxBar_obj::__SetField(const ::String &inName,const Dynamic &inValue,boo
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"barWidth") ) { barWidth=inValue.Cast< int >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"emptyBar") ) { emptyBar=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"emptyBar") ) { emptyBar=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"barHeight") ) { barHeight=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"emptyKill") ) { emptyKill=inValue.Cast< bool >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"filledBar") ) { filledBar=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"filledBar") ) { filledBar=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"zeroOffset") ) { zeroOffset=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"zeroOffset") ) { zeroOffset=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"killOnEmpty") ) { return set_killOnEmpty(inValue); }
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"pxPerPercent") ) { pxPerPercent=inValue.Cast< Float >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"emptyBarRect") ) { emptyBarRect=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"emptyBarRect") ) { emptyBarRect=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_frontRegion") ) { _frontRegion=inValue.Cast< ::flixel::system::layer::Region >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"currentValue") ) { return set_currentValue(inValue); }
 		break;
 	case 13:
 		if (HX_FIELD_EQ(inName,"fixedPosition") ) { fixedPosition=inValue.Cast< bool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"emptyCallback") ) { emptyCallback=inValue.Cast< Dynamic >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"emptyBarPoint") ) { emptyBarPoint=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"filledBarRect") ) { filledBarRect=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"emptyBarPoint") ) { emptyBarPoint=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"filledBarRect") ) { filledBarRect=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"fillDirection") ) { fillDirection=inValue.Cast< int >(); return inValue; }
 		break;
 	case 14:
 		if (HX_FIELD_EQ(inName,"parentVariable") ) { parentVariable=inValue.Cast< ::String >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"positionOffset") ) { positionOffset=inValue.Cast< ::flixel::util::FlxPoint >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"filledCallback") ) { filledCallback=inValue.Cast< Dynamic >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"filledBarPoint") ) { filledBarPoint=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"filledBarPoint") ) { filledBarPoint=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"fillHorizontal") ) { fillHorizontal=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 15:
@@ -2423,15 +2420,15 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsFloat,(int)offsetof(FlxBar_obj,value),HX_CSTRING("value")},
 	{hx::fsFloat,(int)offsetof(FlxBar_obj,pxPerPercent),HX_CSTRING("pxPerPercent")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxBar_obj,emptyCallback),HX_CSTRING("emptyCallback")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxBar_obj,emptyBar),HX_CSTRING("emptyBar")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(FlxBar_obj,emptyBarRect),HX_CSTRING("emptyBarRect")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(FlxBar_obj,emptyBarPoint),HX_CSTRING("emptyBarPoint")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxBar_obj,emptyBar),HX_CSTRING("emptyBar")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(FlxBar_obj,emptyBarRect),HX_CSTRING("emptyBarRect")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(FlxBar_obj,emptyBarPoint),HX_CSTRING("emptyBarPoint")},
 	{hx::fsBool,(int)offsetof(FlxBar_obj,emptyKill),HX_CSTRING("emptyKill")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(FlxBar_obj,zeroOffset),HX_CSTRING("zeroOffset")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(FlxBar_obj,zeroOffset),HX_CSTRING("zeroOffset")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxBar_obj,filledCallback),HX_CSTRING("filledCallback")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxBar_obj,filledBar),HX_CSTRING("filledBar")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(FlxBar_obj,filledBarRect),HX_CSTRING("filledBarRect")},
-	{hx::fsObject /*::openfl::geom::Point*/ ,(int)offsetof(FlxBar_obj,filledBarPoint),HX_CSTRING("filledBarPoint")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxBar_obj,filledBar),HX_CSTRING("filledBar")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(FlxBar_obj,filledBarRect),HX_CSTRING("filledBarRect")},
+	{hx::fsObject /*::openfl::_legacy::geom::Point*/ ,(int)offsetof(FlxBar_obj,filledBarPoint),HX_CSTRING("filledBarPoint")},
 	{hx::fsInt,(int)offsetof(FlxBar_obj,fillDirection),HX_CSTRING("fillDirection")},
 	{hx::fsBool,(int)offsetof(FlxBar_obj,fillHorizontal),HX_CSTRING("fillHorizontal")},
 	{hx::fsInt,(int)offsetof(FlxBar_obj,_emptyBarFrameID),HX_CSTRING("_emptyBarFrameID")},

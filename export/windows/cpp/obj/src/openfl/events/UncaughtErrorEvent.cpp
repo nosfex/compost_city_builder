@@ -3,11 +3,11 @@
 #ifndef INCLUDED_Std
 #include <Std.h>
 #endif
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
+#endif
 #ifndef INCLUDED_openfl_events_ErrorEvent
 #include <openfl/events/ErrorEvent.h>
-#endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
 #endif
 #ifndef INCLUDED_openfl_events_TextEvent
 #include <openfl/events/TextEvent.h>
@@ -18,21 +18,21 @@
 namespace openfl{
 namespace events{
 
-Void UncaughtErrorEvent_obj::__construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,Dynamic error_in)
+Void UncaughtErrorEvent_obj::__construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,Dynamic error)
 {
-HX_STACK_FRAME("openfl.events.UncaughtErrorEvent","new",0x17652810,"openfl.events.UncaughtErrorEvent.new","openfl/events/UncaughtErrorEvent.hx",8,0x0dad2340)
+HX_STACK_FRAME("openfl.events.UncaughtErrorEvent","new",0x17652810,"openfl.events.UncaughtErrorEvent.new","openfl/events/UncaughtErrorEvent.hx",12,0x0dad2340)
 HX_STACK_THIS(this)
 HX_STACK_ARG(type,"type")
 HX_STACK_ARG(__o_bubbles,"bubbles")
 HX_STACK_ARG(__o_cancelable,"cancelable")
-HX_STACK_ARG(error_in,"error_in")
+HX_STACK_ARG(error,"error")
 bool bubbles = __o_bubbles.Default(true);
 bool cancelable = __o_cancelable.Default(true);
 {
-	HX_STACK_LINE(10)
+	HX_STACK_LINE(14)
 	super::__construct(type,bubbles,cancelable,null(),null());
-	HX_STACK_LINE(11)
-	this->error = error_in;
+	HX_STACK_LINE(15)
+	this->error = error;
 }
 ;
 	return null();
@@ -41,9 +41,9 @@ bool cancelable = __o_cancelable.Default(true);
 //UncaughtErrorEvent_obj::~UncaughtErrorEvent_obj() { }
 
 Dynamic UncaughtErrorEvent_obj::__CreateEmpty() { return  new UncaughtErrorEvent_obj; }
-hx::ObjectPtr< UncaughtErrorEvent_obj > UncaughtErrorEvent_obj::__new(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,Dynamic error_in)
+hx::ObjectPtr< UncaughtErrorEvent_obj > UncaughtErrorEvent_obj::__new(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable,Dynamic error)
 {  hx::ObjectPtr< UncaughtErrorEvent_obj > result = new UncaughtErrorEvent_obj();
-	result->__construct(type,__o_bubbles,__o_cancelable,error_in);
+	result->__construct(type,__o_bubbles,__o_cancelable,error);
 	return result;}
 
 Dynamic UncaughtErrorEvent_obj::__Create(hx::DynamicArray inArgs)
@@ -51,44 +51,44 @@ Dynamic UncaughtErrorEvent_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0],inArgs[1],inArgs[2],inArgs[3]);
 	return result;}
 
-::openfl::events::Event UncaughtErrorEvent_obj::clone( ){
-	HX_STACK_FRAME("openfl.events.UncaughtErrorEvent","clone",0x483db70d,"openfl.events.UncaughtErrorEvent.clone","openfl/events/UncaughtErrorEvent.hx",16,0x0dad2340)
+::openfl::_legacy::events::Event UncaughtErrorEvent_obj::clone( ){
+	HX_STACK_FRAME("openfl.events.UncaughtErrorEvent","clone",0x483db70d,"openfl.events.UncaughtErrorEvent.clone","openfl/events/UncaughtErrorEvent.hx",20,0x0dad2340)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(18)
+	HX_STACK_LINE(22)
 	::String _g = this->get_type();		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(18)
+	HX_STACK_LINE(22)
 	bool _g1 = this->get_bubbles();		HX_STACK_VAR(_g1,"_g1");
-	HX_STACK_LINE(18)
+	HX_STACK_LINE(22)
 	bool _g2 = this->get_cancelable();		HX_STACK_VAR(_g2,"_g2");
-	HX_STACK_LINE(18)
+	HX_STACK_LINE(22)
 	return ::openfl::events::UncaughtErrorEvent_obj::__new(_g,_g1,_g2,this->error);
 }
 
 
 ::String UncaughtErrorEvent_obj::toString( ){
-	HX_STACK_FRAME("openfl.events.UncaughtErrorEvent","toString",0x4ef19afc,"openfl.events.UncaughtErrorEvent.toString","openfl/events/UncaughtErrorEvent.hx",23,0x0dad2340)
+	HX_STACK_FRAME("openfl.events.UncaughtErrorEvent","toString",0x4ef19afc,"openfl.events.UncaughtErrorEvent.toString","openfl/events/UncaughtErrorEvent.hx",27,0x0dad2340)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::String _g = this->get_type();		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(25)
-	::String _g1 = (HX_CSTRING("[UncaughtErrorEvent type=") + _g);		HX_STACK_VAR(_g1,"_g1");
-	HX_STACK_LINE(25)
-	::String _g2 = (_g1 + HX_CSTRING(" bubbles="));		HX_STACK_VAR(_g2,"_g2");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
+	::String _g1 = (HX_CSTRING("[UncaughtErrorEvent type=\"") + _g);		HX_STACK_VAR(_g1,"_g1");
+	HX_STACK_LINE(29)
+	::String _g2 = (_g1 + HX_CSTRING("\" bubbles="));		HX_STACK_VAR(_g2,"_g2");
+	HX_STACK_LINE(29)
 	bool _g3 = this->get_bubbles();		HX_STACK_VAR(_g3,"_g3");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::String _g4 = ::Std_obj::string(_g3);		HX_STACK_VAR(_g4,"_g4");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::String _g5 = (_g2 + _g4);		HX_STACK_VAR(_g5,"_g5");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::String _g6 = (_g5 + HX_CSTRING(" cancelable="));		HX_STACK_VAR(_g6,"_g6");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	bool _g7 = this->get_cancelable();		HX_STACK_VAR(_g7,"_g7");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::String _g8 = ::Std_obj::string(_g7);		HX_STACK_VAR(_g8,"_g8");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	::String _g9 = (_g6 + _g8);		HX_STACK_VAR(_g9,"_g9");
-	HX_STACK_LINE(25)
+	HX_STACK_LINE(29)
 	return (_g9 + HX_CSTRING("]"));
 }
 

@@ -10,8 +10,8 @@ HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,util,FlxGradient)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace util{
 
@@ -45,13 +45,13 @@ class HXCPP_CLASS_ATTRIBUTES  FlxGradient_obj : public hx::Object{
 		static ::flixel::FlxSprite createGradientFlxSprite( int width,int height,Array< int > colors,hx::Null< int >  chunkSize,hx::Null< int >  rotation,hx::Null< bool >  interpolate);
 		static Dynamic createGradientFlxSprite_dyn();
 
-		static ::openfl::display::BitmapData createGradientBitmapData( int width,int height,Array< int > colors,hx::Null< int >  chunkSize,hx::Null< int >  rotation,hx::Null< bool >  interpolate);
+		static ::openfl::_legacy::display::BitmapData createGradientBitmapData( int width,int height,Array< int > colors,hx::Null< int >  chunkSize,hx::Null< int >  rotation,hx::Null< bool >  interpolate);
 		static Dynamic createGradientBitmapData_dyn();
 
 		static ::flixel::FlxSprite overlayGradientOnFlxSprite( ::flixel::FlxSprite dest,int width,int height,Array< int > colors,hx::Null< int >  destX,hx::Null< int >  destY,hx::Null< int >  chunkSize,hx::Null< int >  rotation,hx::Null< bool >  interpolate);
 		static Dynamic overlayGradientOnFlxSprite_dyn();
 
-		static ::openfl::display::BitmapData overlayGradientOnBitmapData( ::openfl::display::BitmapData dest,int width,int height,Array< int > colors,hx::Null< int >  destX,hx::Null< int >  destY,hx::Null< int >  chunkSize,hx::Null< int >  rotation,hx::Null< bool >  interpolate);
+		static ::openfl::_legacy::display::BitmapData overlayGradientOnBitmapData( ::openfl::_legacy::display::BitmapData dest,int width,int height,Array< int > colors,hx::Null< int >  destX,hx::Null< int >  destY,hx::Null< int >  chunkSize,hx::Null< int >  rotation,hx::Null< bool >  interpolate);
 		static Dynamic overlayGradientOnBitmapData_dyn();
 
 };

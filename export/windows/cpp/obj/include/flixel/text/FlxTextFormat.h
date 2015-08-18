@@ -8,7 +8,7 @@
 #include <flixel/interfaces/IFlxDestroyable.h>
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,text,FlxTextFormat)
-HX_DECLARE_CLASS2(openfl,text,TextFormat)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextFormat)
 namespace flixel{
 namespace text{
 
@@ -41,7 +41,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTextFormat_obj : public hx::Object{
 		int borderColor;
 		int start;
 		int end;
-		::openfl::text::TextFormat format;
+		::openfl::_legacy::text::TextFormat format;
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
 

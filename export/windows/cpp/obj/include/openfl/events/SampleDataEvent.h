@@ -5,21 +5,21 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/events/Event.h>
+#include <openfl/_legacy/events/Event.h>
 HX_DECLARE_CLASS2(haxe,io,Bytes)
-HX_DECLARE_CLASS2(openfl,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,ByteArray)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataInput)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IDataOutput)
+HX_DECLARE_CLASS3(openfl,_legacy,utils,IMemoryRange)
 HX_DECLARE_CLASS2(openfl,events,SampleDataEvent)
-HX_DECLARE_CLASS2(openfl,utils,ByteArray)
-HX_DECLARE_CLASS2(openfl,utils,IDataInput)
-HX_DECLARE_CLASS2(openfl,utils,IDataOutput)
-HX_DECLARE_CLASS2(openfl,utils,IMemoryRange)
 namespace openfl{
 namespace events{
 
 
-class HXCPP_CLASS_ATTRIBUTES  SampleDataEvent_obj : public ::openfl::events::Event_obj{
+class HXCPP_CLASS_ATTRIBUTES  SampleDataEvent_obj : public ::openfl::_legacy::events::Event_obj{
 	public:
-		typedef ::openfl::events::Event_obj super;
+		typedef ::openfl::_legacy::events::Event_obj super;
 		typedef SampleDataEvent_obj OBJ_;
 		SampleDataEvent_obj();
 		Void __construct(::String type,hx::Null< bool >  __o_bubbles,hx::Null< bool >  __o_cancelable);
@@ -39,9 +39,9 @@ class HXCPP_CLASS_ATTRIBUTES  SampleDataEvent_obj : public ::openfl::events::Eve
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("SampleDataEvent"); }
 
-		::openfl::utils::ByteArray data;
+		::openfl::_legacy::utils::ByteArray data;
 		Float position;
-		virtual ::openfl::events::Event clone( );
+		virtual ::openfl::_legacy::events::Event clone( );
 
 		virtual ::String toString( );
 

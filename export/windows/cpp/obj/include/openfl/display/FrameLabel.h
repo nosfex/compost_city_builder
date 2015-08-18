@@ -5,17 +5,17 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/events/EventDispatcher.h>
+#include <openfl/_legacy/events/EventDispatcher.h>
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 HX_DECLARE_CLASS2(openfl,display,FrameLabel)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
 namespace openfl{
 namespace display{
 
 
-class HXCPP_CLASS_ATTRIBUTES  FrameLabel_obj : public ::openfl::events::EventDispatcher_obj{
+class HXCPP_CLASS_ATTRIBUTES  FrameLabel_obj : public ::openfl::_legacy::events::EventDispatcher_obj{
 	public:
-		typedef ::openfl::events::EventDispatcher_obj super;
+		typedef ::openfl::_legacy::events::EventDispatcher_obj super;
 		typedef FrameLabel_obj OBJ_;
 		FrameLabel_obj();
 		Void __construct(::String name,int frame);

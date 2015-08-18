@@ -21,8 +21,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -169,7 +169,7 @@ Float y = __o_y.Default(0);
 		HX_STACK_LINE(85)
 		{
 			HX_STACK_LINE(85)
-			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(x,y);		HX_STACK_VAR(point,"point");
+			::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(x,y);		HX_STACK_VAR(point,"point");
 			HX_STACK_LINE(85)
 			point->_inPool = false;
 			HX_STACK_LINE(85)

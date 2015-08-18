@@ -6,26 +6,26 @@
 #ifndef INCLUDED_flixel_system_debug_DebuggerUtil
 #include <flixel/system/debug/DebuggerUtil.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
 namespace flixel{
 namespace system{
@@ -49,7 +49,7 @@ Dynamic DebuggerUtil_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
-::openfl::text::TextField DebuggerUtil_obj::createTextField( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,hx::Null< int >  __o_Color,hx::Null< int >  __o_Size){
+::openfl::_legacy::text::TextField DebuggerUtil_obj::createTextField( hx::Null< Float >  __o_X,hx::Null< Float >  __o_Y,hx::Null< int >  __o_Color,hx::Null< int >  __o_Size){
 Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 int Color = __o_Color.Default(-1);
@@ -61,7 +61,7 @@ int Size = __o_Size.Default(12);
 	HX_STACK_ARG(Size,"Size")
 {
 		HX_STACK_LINE(28)
-		::openfl::text::TextField tf = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(tf,"tf");
+		::openfl::_legacy::text::TextField tf = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(tf,"tf");
 		HX_STACK_LINE(29)
 		tf->set_x(X);
 		HX_STACK_LINE(30)
@@ -75,7 +75,7 @@ int Size = __o_Size.Default(12);
 		HX_STACK_LINE(34)
 		tf->set_selectable(false);
 		HX_STACK_LINE(39)
-		::openfl::text::TextFormat _g = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,Size,(int((int((int(((int((int(Color) >> int((int)16))) & int((int)255)))) << int((int)16))) | int((int(((int((int(Color) >> int((int)8))) & int((int)255)))) << int((int)8))))) | int((int(Color) & int((int)255)))),null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::text::TextFormat _g = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEBUGGER,Size,(int((int((int(((int((int(Color) >> int((int)16))) & int((int)255)))) << int((int)16))) | int((int(((int((int(Color) >> int((int)8))) & int((int)255)))) << int((int)8))))) | int((int(Color) & int((int)255)))),null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(39)
 		tf->set_defaultTextFormat(_g);
 		struct _Function_1_1{

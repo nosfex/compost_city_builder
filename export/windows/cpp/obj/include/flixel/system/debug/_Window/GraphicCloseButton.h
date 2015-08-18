@@ -5,19 +5,19 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/BitmapData.h>
+#include <openfl/_legacy/display/BitmapData.h>
 HX_DECLARE_CLASS4(flixel,system,debug,_Window,GraphicCloseButton)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace system{
 namespace debug{
 namespace _Window{
 
 
-class HXCPP_CLASS_ATTRIBUTES  GraphicCloseButton_obj : public ::openfl::display::BitmapData_obj{
+class HXCPP_CLASS_ATTRIBUTES  GraphicCloseButton_obj : public ::openfl::_legacy::display::BitmapData_obj{
 	public:
-		typedef ::openfl::display::BitmapData_obj super;
+		typedef ::openfl::_legacy::display::BitmapData_obj super;
 		typedef GraphicCloseButton_obj OBJ_;
 		GraphicCloseButton_obj();
 		Void __construct(int width,int height,Dynamic __o_transparent,Dynamic __o_fillRGBA);

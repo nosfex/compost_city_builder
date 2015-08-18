@@ -5,19 +5,19 @@
 #include <hxcpp.h>
 #endif
 
-#include <openfl/display/BitmapData.h>
+#include <openfl/_legacy/display/BitmapData.h>
 HX_DECLARE_CLASS4(flixel,input,mouse,_FlxMouse,GraphicCursor)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace input{
 namespace mouse{
 namespace _FlxMouse{
 
 
-class HXCPP_CLASS_ATTRIBUTES  GraphicCursor_obj : public ::openfl::display::BitmapData_obj{
+class HXCPP_CLASS_ATTRIBUTES  GraphicCursor_obj : public ::openfl::_legacy::display::BitmapData_obj{
 	public:
-		typedef ::openfl::display::BitmapData_obj super;
+		typedef ::openfl::_legacy::display::BitmapData_obj super;
 		typedef GraphicCursor_obj OBJ_;
 		GraphicCursor_obj();
 		Void __construct(int width,int height,Dynamic __o_transparent,Dynamic __o_fillRGBA);

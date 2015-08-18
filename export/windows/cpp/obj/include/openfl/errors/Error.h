@@ -41,6 +41,7 @@ class HXCPP_CLASS_ATTRIBUTES  Error_obj : public hx::Object{
 		virtual ::String toString( );
 		Dynamic toString_dyn();
 
+		static ::String DEFAULT_TO_STRING;
 };
 
 } // end namespace openfl

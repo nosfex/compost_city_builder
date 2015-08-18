@@ -10,7 +10,7 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS3(flixel,util,loaders,TextureAtlasFrame)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace util{
 namespace loaders{
@@ -42,7 +42,7 @@ class HXCPP_CLASS_ATTRIBUTES  TextureAtlasFrame_obj : public hx::Object{
 		::String __ToString() const { return HX_CSTRING("TextureAtlasFrame"); }
 
 		::String name;
-		::openfl::geom::Rectangle frame;
+		::openfl::_legacy::geom::Rectangle frame;
 		bool rotated;
 		bool trimmed;
 		::flixel::util::FlxPoint sourceSize;

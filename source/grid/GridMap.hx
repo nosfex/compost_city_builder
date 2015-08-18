@@ -15,7 +15,7 @@ import flixel.FlxG;
 import production.Product;
 class GridMap extends FlxGroup
 {
-    var _grids:Array<BaseGrid> = null;
+    var _grids:Array<Array<BaseGrid>> = null;
     var _initPos:FlxPoint = null;
     var _posCorrection:FlxPoint = null;
     var _lastGridCount:Int = 0;
@@ -34,10 +34,13 @@ class GridMap extends FlxGroup
 		
 		for (i in 0 ... _grids.length)
 		{
-			if (_grids[i].forceCheck)
+			for ( j in 0 ... _grids[i].length)
 			{
-				unpowerEverything();
-				_grids[i].forceCheck = false;
+				if (_grids[i][j].forceCheck)
+				{
+					unpowerEverything();
+					_grids[i][j].forceCheck = false;
+				}
 			}
 		}
 		checkPowered();	
@@ -48,36 +51,42 @@ class GridMap extends FlxGroup
 	{
 		for (i in 0 ... _grids.length)
 		{
-    		_grids[i].setPowered(false);
-    	}
+			for ( j in 0 ... _grids[i].length)
+			{
+				_grids[i][j].setPowered(false);
+			}
+    	}	
 	}
 
     function checkPowered():Void
     {
-    	_grids.sort(sortGrids);
+    //	_grids.sort(sortGrids);
     	
     	for (i in 0 ... _grids.length) 
 		{
-    		var b:Building = _grids[i].getBuilding();
-    		if (b != null) 
+			for ( j in 0 ... _grids[i].length)
 			{
-    			if (b.powered) 
+				var b:Building = _grids[i][j].getBuilding();
+				if (b != null) 
 				{
-    				if (b.getProductionType() == "power" && b.getProduction() > 0) 
+					if (b.powered) 
 					{
-    					_grids[i].setPowered(true);
-    					
-    					if (b.getInfluenceArea() == "N4") 
+						if (b.getProductionType() == "power" && b.getProduction() > 0) 
 						{
-    						var n4arr:Array<grid.BaseGrid> = N4FromIndex(i);
-    						for (j in 0 ... n4arr.length) 
+							_grids[i][j].setPowered(true);
+							
+							if (b.getInfluenceArea() == "N4") 
 							{
-    							n4arr[j].setPowered(true);
-    						}
-    					}
-    				}
-    			}
-    		}
+								var n4arr:Array<grid.BaseGrid> = N4FromColRow(j, i);
+								for (k in 0 ... n4arr.length) 
+								{
+									n4arr[k].setPowered(true);
+								}
+							}
+						}
+					}
+				}
+			}
     	}
     }
 	
@@ -170,9 +179,26 @@ class GridMap extends FlxGroup
     	}
     	_lastGridCount = gridCount;
     	var maxGrids:Float = Math.sqrt(gridCount);
-    	var col:Int = 0;
-    	var row:Int = 0;
-    	while (row < maxGrids) 
+    	var col:Int = cast maxGrids;
+    	var row:Int = cast maxGrids;
+		
+		for ( i in 0 ... col)
+		{
+			_grids.push(new Array());
+		}
+		
+		for ( i in 0 ... row )
+		{
+			for ( j in 0 ... col)
+			{
+				var g:BaseGrid = new BaseGrid(32 + ((j) * (96 * 1.25)), 32 + ((i) * (96 * 1.25)));
+    			g.usable = false;
+				_grids[i].push(g);
+				add(g);
+			}
+		}
+		
+    /*	while (row < maxGrids) 
 		{
     		var g:BaseGrid = new BaseGrid(32 + ((col) * (96 * 1.25)), 32 + ((row) * (96 * 1.25)));
     		_grids.push(g);
@@ -184,14 +210,14 @@ class GridMap extends FlxGroup
     			row++;
     		}
     		add(g);
-    	}
-    	_initPos = new FlxPoint(_grids[0].x, _grids[0].y);
-    	scaleToGrowth();
+    	}*/
+    	_initPos = new FlxPoint(_grids[0][0].x, _grids[0][0].y);
+    //	scaleToGrowth();
     }
 
     public function scaleToGrowth():Void
     {
-    	var maxGrids:Float = Math.sqrt(_grids.length);
+    /*	var maxGrids:Float = Math.sqrt(_grids.length);
     	var gridsTotalSize:Float = (96 * 1.25) * maxGrids;
     	var maxHeightScale = FlxG.height * .85;
     	var newScale:Float = maxHeightScale / gridsTotalSize;
@@ -214,40 +240,60 @@ class GridMap extends FlxGroup
     		}
     		this.setAll("scale", new FlxPoint(newScale, newScale), true);
 		
-    	}
+    	}*/
     }
 
-    public function N4FromIndex(index:Int):Array<BaseGrid>
+    public function N4FromColRow(col:Int, row: Int):Array<BaseGrid>
     {
     	var sideSize:Float = Math.sqrt(_grids.length);
-    	var top:Int = cast index - sideSize;
-    	var left:Int = cast index - 1;
-    	var right:Int = cast index + 1;
-    	var bottom:Int = cast index + sideSize;
+    	var top:Int = cast row - 1;
+    	var left:Int = cast col - 1;
+    	var right:Int = cast col + 1;
+    	var bottom:Int = cast row + 1;
     	var ret:Array<BaseGrid> = new Array();
     	if (top >= 0)
 		{
-    		ret.push(_grids[top]);
+    		ret.push(_grids[top][col]);
     	}
-    	if (bottom < _grids.length) 
+    	if (bottom < _grids[0].length) 
 		{
-    		ret.push(_grids[bottom]);
+    		ret.push(_grids[bottom][col]);
     	}
-    	if (index % sideSize != 0) 
+    	if (left >= 0) 
 		{
-    		ret.push(_grids[left]);
+    		ret.push(_grids[row][left]);
     	}
-    	if (right % sideSize != 0 && right < _grids.length) 
+    	if (right < _grids[0].length) 
 		{
-    		ret.push(_grids[right]);
+    		ret.push(_grids[row][right]);
     	}
     
     	return ret;
     }
 
-    public function addGrids(colrowToAdd:Float):Void
+    public function addGrids():Void
     {
-    	var initGrids:Float = Math.sqrt(_grids.length);
+		return ;
+		var maxRow :Int = _grids[0].length;
+		var maxCol :Int = maxRow;
+		// GH: Create new grid
+		var temp : Array<Array<BaseGrid>> = new Array();
+		
+		for (i in 0 ... maxRow)
+		{
+			temp[i] = new Array();
+		}
+		
+		for (i in 0 ... maxRow)
+		{
+			for (j in 0 ... maxCol)
+			{
+				
+			}
+		}
+		
+		/*
+    	var initGrids:Float = Math.sqrt(_grids[].length);
     	var maxRow:Float = 0;
     	var maxCol:Float = initGrids;
     	var maxGridsToAdd:Float = initGrids + colrowToAdd;
@@ -271,7 +317,7 @@ class GridMap extends FlxGroup
     	_grids.sort(sortGrids);
     	scaleToGrowth();
 		
-		checkPowered();
+		checkPowered();*/
     }
 
     function sortGrids(a:BaseGrid, b:BaseGrid):Int

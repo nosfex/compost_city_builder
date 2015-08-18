@@ -21,8 +21,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_loaders_CachedGraphics
 #include <flixel/util/loaders/CachedGraphics.h>
@@ -36,17 +36,17 @@
 #ifndef INCLUDED_haxe_format_JsonParser
 #include <haxe/format/JsonParser.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace util{
@@ -125,7 +125,7 @@ Void TexturePackerData_obj::parseData( ){
 		HX_STACK_LINE(47)
 		{
 			HX_STACK_LINE(47)
-			::String text = ::openfl::Assets_obj::getText(this->description);		HX_STACK_VAR(text,"text");
+			::String text = ::openfl::_legacy::Assets_obj::getText(this->description);		HX_STACK_VAR(text,"text");
 			HX_STACK_LINE(47)
 			data = ::haxe::format::JsonParser_obj::__new(text)->parseRec();
 		}
@@ -159,7 +159,7 @@ Void TexturePackerData_obj::parseData( ){
 				HX_STACK_LINE(56)
 				{
 					HX_STACK_LINE(56)
-					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(frame->__Field(HX_CSTRING("sourceSize"),true)->__Field(HX_CSTRING("w"),true),frame->__Field(HX_CSTRING("sourceSize"),true)->__Field(HX_CSTRING("h"),true));		HX_STACK_VAR(point,"point");
+					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(frame->__Field(HX_CSTRING("sourceSize"),true)->__Field(HX_CSTRING("w"),true),frame->__Field(HX_CSTRING("sourceSize"),true)->__Field(HX_CSTRING("h"),true));		HX_STACK_VAR(point,"point");
 					HX_STACK_LINE(56)
 					point->_inPool = false;
 					HX_STACK_LINE(56)
@@ -172,7 +172,7 @@ Void TexturePackerData_obj::parseData( ){
 				HX_STACK_LINE(57)
 				{
 					HX_STACK_LINE(57)
-					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)0,(int)0);		HX_STACK_VAR(point,"point");
+					::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)0,(int)0);		HX_STACK_VAR(point,"point");
 					HX_STACK_LINE(57)
 					point->_inPool = false;
 					HX_STACK_LINE(57)
@@ -185,7 +185,7 @@ Void TexturePackerData_obj::parseData( ){
 				HX_STACK_LINE(60)
 				if ((frame->__Field(HX_CSTRING("rotated"),true))){
 					HX_STACK_LINE(62)
-					::openfl::geom::Rectangle _g21 = ::openfl::geom::Rectangle_obj::__new(frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("x"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("y"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("h"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("w"),true));		HX_STACK_VAR(_g21,"_g21");
+					::openfl::_legacy::geom::Rectangle _g21 = ::openfl::_legacy::geom::Rectangle_obj::__new(frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("x"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("y"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("h"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("w"),true));		HX_STACK_VAR(_g21,"_g21");
 					HX_STACK_LINE(62)
 					texFrame->frame = _g21;
 					HX_STACK_LINE(63)
@@ -193,7 +193,7 @@ Void TexturePackerData_obj::parseData( ){
 				}
 				else{
 					HX_STACK_LINE(67)
-					::openfl::geom::Rectangle _g3 = ::openfl::geom::Rectangle_obj::__new(frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("x"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("y"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("w"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("h"),true));		HX_STACK_VAR(_g3,"_g3");
+					::openfl::_legacy::geom::Rectangle _g3 = ::openfl::_legacy::geom::Rectangle_obj::__new(frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("x"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("y"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("w"),true),frame->__Field(HX_CSTRING("frame"),true)->__Field(HX_CSTRING("h"),true));		HX_STACK_VAR(_g3,"_g3");
 					HX_STACK_LINE(67)
 					texFrame->frame = _g3;
 					HX_STACK_LINE(68)
@@ -280,7 +280,7 @@ Dynamic TexturePackerData_obj::__SetField(const ::String &inName,const Dynamic &
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"asset") ) { asset=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"asset") ) { asset=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"frames") ) { frames=inValue.Cast< Array< ::Dynamic > >(); return inValue; }
@@ -311,7 +311,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(TexturePackerData_obj,frames),HX_CSTRING("frames")},
 	{hx::fsString,(int)offsetof(TexturePackerData_obj,assetName),HX_CSTRING("assetName")},
 	{hx::fsString,(int)offsetof(TexturePackerData_obj,description),HX_CSTRING("description")},
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(TexturePackerData_obj,asset),HX_CSTRING("asset")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(TexturePackerData_obj,asset),HX_CSTRING("asset")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif

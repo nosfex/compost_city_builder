@@ -9,11 +9,11 @@
 #ifndef INCLUDED_flixel_util_FlxDestroyUtil
 #include <flixel/util/FlxDestroyUtil.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
 namespace flixel{
 namespace util{
@@ -116,7 +116,7 @@ Dynamic FlxDestroyUtil_obj::putArray( Dynamic array){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxDestroyUtil_obj,putArray,return )
 
-::openfl::display::BitmapData FlxDestroyUtil_obj::dispose( ::openfl::display::BitmapData Bitmap){
+::openfl::_legacy::display::BitmapData FlxDestroyUtil_obj::dispose( ::openfl::_legacy::display::BitmapData Bitmap){
 	HX_STACK_FRAME("flixel.util.FlxDestroyUtil","dispose",0x6eab30f5,"flixel.util.FlxDestroyUtil.dispose","flixel/util/FlxDestroyUtil.hx",81,0xaf22421a)
 	HX_STACK_ARG(Bitmap,"Bitmap")
 	HX_STACK_LINE(82)

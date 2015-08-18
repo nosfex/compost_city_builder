@@ -1,13 +1,13 @@
 #include <hxcpp.h>
 
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
+#endif
 #ifndef INCLUDED_openfl_display_FrameLabel
 #include <openfl/display/FrameLabel.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
 #endif
 namespace openfl{
 namespace display{
@@ -75,7 +75,7 @@ void FrameLabel_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(name,"name");
 	HX_MARK_MEMBER_NAME(__frame,"__frame");
 	HX_MARK_MEMBER_NAME(__name,"__name");
-	::openfl::events::EventDispatcher_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::events::EventDispatcher_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -85,7 +85,7 @@ void FrameLabel_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(name,"name");
 	HX_VISIT_MEMBER_NAME(__frame,"__frame");
 	HX_VISIT_MEMBER_NAME(__name,"__name");
-	::openfl::events::EventDispatcher_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::events::EventDispatcher_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic FrameLabel_obj::__Field(const ::String &inName,bool inCallProp)

@@ -15,14 +15,14 @@ HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,text,FlxTextFormat)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
 HX_DECLARE_CLASS3(flixel,util,loaders,CachedGraphics)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,filters,BitmapFilter)
-HX_DECLARE_CLASS2(openfl,text,TextField)
-HX_DECLARE_CLASS2(openfl,text,TextFormat)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,filters,BitmapFilter)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextField)
+HX_DECLARE_CLASS3(openfl,_legacy,text,TextFormat)
 namespace flixel{
 namespace text{
 
@@ -54,9 +54,9 @@ class HXCPP_CLASS_ATTRIBUTES  FlxText_obj : public ::flixel::FlxSprite_obj{
 		Float borderSize;
 		Float borderQuality;
 		::flixel::util::FlxPoint shadowOffset;
-		::openfl::text::TextField _textField;
-		::openfl::text::TextFormat _defaultFormat;
-		::openfl::text::TextFormat _formatAdjusted;
+		::openfl::_legacy::text::TextField _textField;
+		::openfl::_legacy::text::TextFormat _defaultFormat;
+		::openfl::_legacy::text::TextFormat _formatAdjusted;
 		Array< ::Dynamic > _formats;
 		Array< ::Dynamic > _filters;
 		int _widthInc;
@@ -78,10 +78,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxText_obj : public ::flixel::FlxSprite_obj{
 		virtual Void setBorderStyle( int Style,hx::Null< int >  Color,hx::Null< Float >  Size,hx::Null< Float >  Quality);
 		Dynamic setBorderStyle_dyn();
 
-		virtual Void addFilter( ::openfl::filters::BitmapFilter filter,hx::Null< int >  widthInc,hx::Null< int >  heightInc);
+		virtual Void addFilter( ::openfl::_legacy::filters::BitmapFilter filter,hx::Null< int >  widthInc,hx::Null< int >  heightInc);
 		Dynamic addFilter_dyn();
 
-		virtual Void removeFilter( ::openfl::filters::BitmapFilter filter);
+		virtual Void removeFilter( ::openfl::_legacy::filters::BitmapFilter filter);
 		Dynamic removeFilter_dyn();
 
 		virtual Void clearFilters( );
@@ -89,7 +89,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxText_obj : public ::flixel::FlxSprite_obj{
 
 		virtual Void updateFrameData( );
 
-		virtual Void applyFormats( ::openfl::text::TextFormat FormatAdjusted,hx::Null< bool >  UseBorderColor);
+		virtual Void applyFormats( ::openfl::_legacy::text::TextFormat FormatAdjusted,hx::Null< bool >  UseBorderColor);
 		Dynamic applyFormats_dyn();
 
 		virtual Float set_fieldWidth( Float value);
@@ -169,7 +169,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxText_obj : public ::flixel::FlxSprite_obj{
 		virtual Float set_borderQuality( Float Value);
 		Dynamic set_borderQuality_dyn();
 
-		virtual ::openfl::text::TextField get_textField( );
+		virtual ::openfl::_legacy::text::TextField get_textField( );
 		Dynamic get_textField_dyn();
 
 		virtual ::flixel::util::loaders::CachedGraphics set_cachedGraphics( ::flixel::util::loaders::CachedGraphics Value);
@@ -181,13 +181,13 @@ class HXCPP_CLASS_ATTRIBUTES  FlxText_obj : public ::flixel::FlxSprite_obj{
 
 		virtual Void calcFrame( hx::Null< bool >  RunOnCpp);
 
-		virtual ::openfl::text::TextFormat dtfCopy( );
+		virtual ::openfl::_legacy::text::TextFormat dtfCopy( );
 		Dynamic dtfCopy_dyn();
 
 		virtual ::String convertTextAlignmentFromString( ::String StrAlign);
 		Dynamic convertTextAlignmentFromString_dyn();
 
-		virtual Void updateFormat( ::openfl::text::TextFormat Format);
+		virtual Void updateFormat( ::openfl::_legacy::text::TextFormat Format);
 		Dynamic updateFormat_dyn();
 
 		static int BORDER_NONE;

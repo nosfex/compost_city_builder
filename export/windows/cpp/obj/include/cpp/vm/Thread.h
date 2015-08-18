@@ -33,11 +33,17 @@ class HXCPP_CLASS_ATTRIBUTES  Thread_obj : public hx::Object{
 		::String __ToString() const { return HX_CSTRING("Thread"); }
 
 		Dynamic handle;
+		virtual Void sendMessage( Dynamic msg);
+		Dynamic sendMessage_dyn();
+
 		static ::cpp::vm::Thread current( );
 		static Dynamic current_dyn();
 
 		static ::cpp::vm::Thread create( Dynamic callb);
 		static Dynamic create_dyn();
+
+		static Dynamic readMessage( bool block);
+		static Dynamic readMessage_dyn();
 
 };
 

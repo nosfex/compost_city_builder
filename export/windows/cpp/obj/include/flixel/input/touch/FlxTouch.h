@@ -13,7 +13,7 @@ HX_DECLARE_CLASS3(flixel,input,touch,FlxTouch)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(openfl,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
 namespace flixel{
 namespace input{
 namespace touch{
@@ -51,7 +51,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxTouch_obj : public ::flixel::util::FlxPoint_obj
 		int _last;
 		::flixel::util::FlxPoint _point;
 		::flixel::util::FlxPoint _globalScreenPosition;
-		::openfl::geom::Point _flashPoint;
+		::openfl::_legacy::geom::Point _flashPoint;
 		::flixel::util::FlxPoint _justPressedPosition;
 		Float _justPressedTimeInTicks;
 		virtual Void destroy( );

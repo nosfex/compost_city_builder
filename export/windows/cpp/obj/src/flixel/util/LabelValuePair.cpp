@@ -3,8 +3,8 @@
 #ifndef INCLUDED_flixel_interfaces_IFlxDestroyable
 #include <flixel/interfaces/IFlxDestroyable.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_LabelValuePair
-#include <flixel/util/FlxPool_flixel_util_LabelValuePair.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_LabelValuePair
 #include <flixel/util/LabelValuePair.h>
@@ -84,7 +84,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(LabelValuePair_obj,destroy,(void))
 
-::flixel::util::FlxPool_flixel_util_LabelValuePair LabelValuePair_obj::_pool;
+::flixel::util::FlxPool LabelValuePair_obj::_pool;
 
 ::flixel::util::LabelValuePair LabelValuePair_obj::weak( ::String label,Dynamic value){
 	HX_STACK_FRAME("flixel.util.LabelValuePair","weak",0x1e0c0675,"flixel.util.LabelValuePair.weak","flixel/util/FlxStringUtil.hx",559,0x4e012e33)
@@ -149,7 +149,7 @@ Dynamic LabelValuePair_obj::__SetField(const ::String &inName,const Dynamic &inV
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=inValue.Cast< ::flixel::util::FlxPool_flixel_util_LabelValuePair >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_pool") ) { _pool=inValue.Cast< ::flixel::util::FlxPool >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"label") ) { label=inValue.Cast< ::String >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"value") ) { value=inValue.Cast< Dynamic >(); return inValue; }
 	}
@@ -215,7 +215,7 @@ void LabelValuePair_obj::__register()
 
 void LabelValuePair_obj::__boot()
 {
-	_pool= ::flixel::util::FlxPool_flixel_util_LabelValuePair_obj::__new(hx::ClassOf< ::flixel::util::LabelValuePair >());
+	_pool= ::flixel::util::FlxPool_obj::__new(hx::ClassOf< ::flixel::util::LabelValuePair >());
 }
 
 } // end namespace flixel

@@ -57,53 +57,53 @@
 #ifndef INCLUDED_flixel_util_FlxTimer
 #include <flixel/util/FlxTimer.h>
 #endif
-#ifndef INCLUDED_openfl_Assets
-#include <openfl/Assets.h>
+#ifndef INCLUDED_openfl__legacy_Assets
+#include <openfl/_legacy/Assets.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_media_Sound
-#include <openfl/media/Sound.h>
+#ifndef INCLUDED_openfl__legacy_media_Sound
+#include <openfl/_legacy/media/Sound.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormat
-#include <openfl/text/TextFormat.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormat
+#include <openfl/_legacy/text/TextFormat.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextFormatAlign
-#include <openfl/text/TextFormatAlign.h>
+#ifndef INCLUDED_openfl__legacy_text_TextFormatAlign
+#include <openfl/_legacy/text/TextFormatAlign.h>
 #endif
 namespace flixel{
 namespace system{
@@ -184,21 +184,21 @@ Void FlxSplash_obj::create( ){
 			}
 		}
 		HX_STACK_LINE(57)
-		int stageWidth = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(stageWidth,"stageWidth");
+		int stageWidth = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(stageWidth,"stageWidth");
 		HX_STACK_LINE(58)
-		int stageHeight = ::openfl::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(stageHeight,"stageHeight");
+		int stageHeight = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(stageHeight,"stageHeight");
 		HX_STACK_LINE(60)
-		::openfl::display::Sprite _g1 = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
+		::openfl::_legacy::display::Sprite _g1 = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(60)
 		this->_sprite = _g1;
 		HX_STACK_LINE(61)
-		::openfl::Lib_obj::get_current()->get_stage()->addChild(this->_sprite);
+		::openfl::_legacy::Lib_obj::get_current()->get_stage()->addChild(this->_sprite);
 		HX_STACK_LINE(62)
-		::openfl::display::Graphics _g2 = this->_sprite->get_graphics();		HX_STACK_VAR(_g2,"_g2");
+		::openfl::_legacy::display::Graphics _g2 = this->_sprite->get_graphics();		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(62)
 		this->_gfx = _g2;
 		HX_STACK_LINE(64)
-		::openfl::text::TextField _g3 = ::openfl::text::TextField_obj::__new();		HX_STACK_VAR(_g3,"_g3");
+		::openfl::_legacy::text::TextField _g3 = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(_g3,"_g3");
 		HX_STACK_LINE(64)
 		this->_text = _g3;
 		HX_STACK_LINE(65)
@@ -206,19 +206,19 @@ Void FlxSplash_obj::create( ){
 		HX_STACK_LINE(66)
 		this->_text->set_embedFonts(true);
 		HX_STACK_LINE(67)
-		::openfl::text::TextFormat dtf = ::openfl::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEFAULT,(int)16,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(dtf,"dtf");
+		::openfl::_legacy::text::TextFormat dtf = ::openfl::_legacy::text::TextFormat_obj::__new(::flixel::system::FlxAssets_obj::FONT_DEFAULT,(int)16,(int)16777215,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(dtf,"dtf");
 		HX_STACK_LINE(68)
-		dtf->align = ::openfl::text::TextFormatAlign_obj::CENTER;
+		dtf->align = ::openfl::_legacy::text::TextFormatAlign_obj::CENTER;
 		HX_STACK_LINE(69)
 		this->_text->set_defaultTextFormat(dtf);
 		HX_STACK_LINE(70)
 		this->_text->set_text(HX_CSTRING("HaxeFlixel"));
 		HX_STACK_LINE(71)
-		::openfl::Lib_obj::get_current()->get_stage()->addChild(this->_text);
+		::openfl::_legacy::Lib_obj::get_current()->get_stage()->addChild(this->_text);
 		HX_STACK_LINE(73)
 		this->onResize(stageWidth,stageHeight);
 		HX_STACK_LINE(76)
-		::openfl::media::Sound _g4;		HX_STACK_VAR(_g4,"_g4");
+		::openfl::_legacy::media::Sound _g4;		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(76)
 		{
 			HX_STACK_LINE(76)
@@ -226,7 +226,7 @@ Void FlxSplash_obj::create( ){
 			HX_STACK_LINE(76)
 			extension = HX_CSTRING(".ogg");
 			HX_STACK_LINE(76)
-			_g4 = ::openfl::Assets_obj::getSound((HX_CSTRING("assets/sounds/flixel") + extension),null());
+			_g4 = ::openfl::_legacy::Assets_obj::getSound((HX_CSTRING("assets/sounds/flixel") + extension),null());
 		}
 		HX_STACK_LINE(76)
 		::flixel::FlxG_obj::sound->load(_g4,null(),null(),null(),null(),null(),null())->play(null());
@@ -538,9 +538,9 @@ Void FlxSplash_obj::onComplete( ::flixel::tweens::FlxTween Tween){
 		HX_STACK_LINE(190)
 		::flixel::FlxG_obj::keys->enabled = true;
 		HX_STACK_LINE(192)
-		::openfl::Lib_obj::get_current()->get_stage()->removeChild(this->_sprite);
+		::openfl::_legacy::Lib_obj::get_current()->get_stage()->removeChild(this->_sprite);
 		HX_STACK_LINE(193)
-		::openfl::Lib_obj::get_current()->get_stage()->removeChild(this->_text);
+		::openfl::_legacy::Lib_obj::get_current()->get_stage()->removeChild(this->_text);
 		HX_STACK_LINE(194)
 		{
 			HX_STACK_LINE(194)
@@ -649,16 +649,16 @@ Dynamic FlxSplash_obj::__SetField(const ::String &inName,const Dynamic &inValue,
 {
 	switch(inName.length) {
 	case 4:
-		if (HX_FIELD_EQ(inName,"_gfx") ) { _gfx=inValue.Cast< ::openfl::display::Graphics >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_gfx") ) { _gfx=inValue.Cast< ::openfl::_legacy::display::Graphics >(); return inValue; }
 		break;
 	case 5:
-		if (HX_FIELD_EQ(inName,"_text") ) { _text=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_text") ) { _text=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"_times") ) { _times=inValue.Cast< Array< Float > >(); return inValue; }
 		break;
 	case 7:
-		if (HX_FIELD_EQ(inName,"_sprite") ) { _sprite=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_sprite") ) { _sprite=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_colors") ) { _colors=inValue.Cast< Array< int > >(); return inValue; }
 		break;
 	case 8:
@@ -703,9 +703,9 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxSplash_obj,_sprite),HX_CSTRING("_sprite")},
-	{hx::fsObject /*::openfl::display::Graphics*/ ,(int)offsetof(FlxSplash_obj,_gfx),HX_CSTRING("_gfx")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(FlxSplash_obj,_text),HX_CSTRING("_text")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxSplash_obj,_sprite),HX_CSTRING("_sprite")},
+	{hx::fsObject /*::openfl::_legacy::display::Graphics*/ ,(int)offsetof(FlxSplash_obj,_gfx),HX_CSTRING("_gfx")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(FlxSplash_obj,_text),HX_CSTRING("_text")},
 	{hx::fsObject /*Array< Float >*/ ,(int)offsetof(FlxSplash_obj,_times),HX_CSTRING("_times")},
 	{hx::fsObject /*Array< int >*/ ,(int)offsetof(FlxSplash_obj,_colors),HX_CSTRING("_colors")},
 	{hx::fsObject /*Dynamic*/ ,(int)offsetof(FlxSplash_obj,_functions),HX_CSTRING("_functions")},

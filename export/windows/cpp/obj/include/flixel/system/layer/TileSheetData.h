@@ -16,11 +16,11 @@ HX_DECLARE_CLASS4(flixel,system,layer,frames,FlxSpriteFrames)
 HX_DECLARE_CLASS3(flixel,util,loaders,TextureAtlasFrame)
 HX_DECLARE_CLASS3(flixel,util,loaders,TexturePackerData)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,Tilesheet)
-HX_DECLARE_CLASS2(openfl,geom,Point)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Tilesheet)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Point)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace system{
 namespace layer{
@@ -31,12 +31,12 @@ class HXCPP_CLASS_ATTRIBUTES  TileSheetData_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef TileSheetData_obj OBJ_;
 		TileSheetData_obj();
-		Void __construct(::openfl::display::BitmapData Bitmap);
+		Void __construct(::openfl::_legacy::display::BitmapData Bitmap);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< TileSheetData_obj > __new(::openfl::display::BitmapData Bitmap);
+		static hx::ObjectPtr< TileSheetData_obj > __new(::openfl::_legacy::display::BitmapData Bitmap);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~TileSheetData_obj();
@@ -56,14 +56,14 @@ class HXCPP_CLASS_ATTRIBUTES  TileSheetData_obj : public hx::Object{
 		::haxe::ds::StringMap flxFrames;
 		Array< ::String > frameNames;
 		Array< ::Dynamic > framesArr;
-		::openfl::display::BitmapData bitmap;
+		::openfl::_legacy::display::BitmapData bitmap;
 		virtual ::flixel::system::layer::frames::FlxFrame getFrame( ::String name);
 		Dynamic getFrame_dyn();
 
-		virtual ::flixel::system::layer::frames::FlxSpriteFrames getSpriteSheetFrames( ::flixel::system::layer::Region region,::openfl::geom::Point origin);
+		virtual ::flixel::system::layer::frames::FlxSpriteFrames getSpriteSheetFrames( ::flixel::system::layer::Region region,::openfl::_legacy::geom::Point origin);
 		Dynamic getSpriteSheetFrames_dyn();
 
-		virtual ::String getSpriteSheetFrameKey( ::openfl::geom::Rectangle rect,::openfl::geom::Point point);
+		virtual ::String getSpriteSheetFrameKey( ::openfl::_legacy::geom::Rectangle rect,::openfl::_legacy::geom::Point point);
 		Dynamic getSpriteSheetFrameKey_dyn();
 
 		virtual ::String getKeyForSpriteSheetFrames( int width,int height,int startX,int startY,int endX,int endY,int xSpacing,int ySpacing,Float pointX,Float pointY);
@@ -72,19 +72,19 @@ class HXCPP_CLASS_ATTRIBUTES  TileSheetData_obj : public hx::Object{
 		virtual bool containsSpriteSheetFrames( int width,int height,int startX,int startY,int endX,int endY,int xSpacing,int ySpacing,Float pointX,Float pointY);
 		Dynamic containsSpriteSheetFrames_dyn();
 
-		virtual ::flixel::system::layer::frames::FlxFrame addSpriteSheetFrame( ::openfl::geom::Rectangle rect,::openfl::geom::Point point);
+		virtual ::flixel::system::layer::frames::FlxFrame addSpriteSheetFrame( ::openfl::_legacy::geom::Rectangle rect,::openfl::_legacy::geom::Point point);
 		Dynamic addSpriteSheetFrame_dyn();
 
 		virtual bool containsFrame( ::String key);
 		Dynamic containsFrame_dyn();
 
-		virtual int addTileRect( ::openfl::geom::Rectangle tileRect,::openfl::geom::Point point);
+		virtual int addTileRect( ::openfl::_legacy::geom::Rectangle tileRect,::openfl::_legacy::geom::Point point);
 		Dynamic addTileRect_dyn();
 
 		virtual Void destroy( );
 		Dynamic destroy_dyn();
 
-		virtual Void onContext( ::openfl::display::BitmapData bitmap);
+		virtual Void onContext( ::openfl::_legacy::display::BitmapData bitmap);
 		Dynamic onContext_dyn();
 
 		virtual ::flixel::system::layer::frames::FlxSpriteFrames getTexturePackerFrames( ::flixel::util::loaders::TexturePackerData data,hx::Null< int >  startX,hx::Null< int >  startY);

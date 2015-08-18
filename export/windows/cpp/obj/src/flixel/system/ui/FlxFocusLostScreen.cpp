@@ -27,29 +27,29 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 namespace flixel{
 namespace system{
@@ -65,9 +65,9 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(15)
 	this->draw();
 	HX_STACK_LINE(17)
-	::openfl::display::Sprite logo = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(logo,"logo");
+	::openfl::_legacy::display::Sprite logo = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(logo,"logo");
 	HX_STACK_LINE(18)
-	::openfl::display::Graphics _g = logo->get_graphics();		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::display::Graphics _g = logo->get_graphics();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(18)
 	::flixel::system::FlxAssets_obj::drawLogo(_g);
 	HX_STACK_LINE(19)
@@ -107,7 +107,7 @@ Void FlxFocusLostScreen_obj::draw( ){
 		HX_STACK_FRAME("flixel.system.ui.FlxFocusLostScreen","draw",0x9c914faf,"flixel.system.ui.FlxFocusLostScreen.draw","flixel/system/ui/FlxFocusLostScreen.hx",31,0x1e64ca7a)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(32)
-		::openfl::display::Graphics gfx = this->get_graphics();		HX_STACK_VAR(gfx,"gfx");
+		::openfl::_legacy::display::Graphics gfx = this->get_graphics();		HX_STACK_VAR(gfx,"gfx");
 		HX_STACK_LINE(34)
 		Float _g = ::flixel::FlxG_obj::game->get_scaleX();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(34)

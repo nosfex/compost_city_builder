@@ -6,13 +6,13 @@
 #endif
 
 HX_DECLARE_CLASS0(ApplicationMain)
-HX_DECLARE_CLASS2(openfl,display,DisplayObject)
-HX_DECLARE_CLASS2(openfl,display,DisplayObjectContainer)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,display,InteractiveObject)
-HX_DECLARE_CLASS2(openfl,display,Sprite)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,DisplayObjectContainer)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,InteractiveObject)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Sprite)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
 
 
 class HXCPP_CLASS_ATTRIBUTES  ApplicationMain_obj : public hx::Object{
@@ -35,9 +35,9 @@ class HXCPP_CLASS_ATTRIBUTES  ApplicationMain_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("ApplicationMain"); }
 
-		static ::openfl::display::Sprite barA;
-		static ::openfl::display::Sprite barB;
-		static ::openfl::display::Sprite container;
+		static ::openfl::_legacy::display::Sprite barA;
+		static ::openfl::_legacy::display::Sprite barB;
+		static ::openfl::_legacy::display::Sprite container;
 		static int forceHeight;
 		static int forceWidth;
 		static Void main( );

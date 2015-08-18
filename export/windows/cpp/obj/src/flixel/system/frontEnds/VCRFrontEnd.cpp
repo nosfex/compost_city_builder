@@ -39,32 +39,32 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_ui_Mouse
-#include <openfl/ui/Mouse.h>
+#ifndef INCLUDED_openfl__legacy_ui_Mouse
+#include <openfl/_legacy/ui/Mouse.h>
 #endif
 namespace flixel{
 namespace system{
@@ -106,7 +106,7 @@ Void VCRFrontEnd_obj::pause( ){
 			HX_STACK_LINE(60)
 			if ((!(::flixel::FlxG_obj::mouse->useSystemCursor))){
 				HX_STACK_LINE(61)
-				::openfl::ui::Mouse_obj::show();
+				::openfl::_legacy::ui::Mouse_obj::show();
 			}
 			HX_STACK_LINE(64)
 			this->paused = true;
@@ -138,7 +138,7 @@ Void VCRFrontEnd_obj::resume( ){
 			HX_STACK_LINE(80)
 			if ((!(::flixel::FlxG_obj::mouse->useSystemCursor))){
 				HX_STACK_LINE(81)
-				::openfl::ui::Mouse_obj::hide();
+				::openfl::_legacy::ui::Mouse_obj::hide();
 			}
 			HX_STACK_LINE(84)
 			this->paused = false;

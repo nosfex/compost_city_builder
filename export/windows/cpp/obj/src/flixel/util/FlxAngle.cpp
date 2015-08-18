@@ -36,8 +36,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -177,7 +177,7 @@ Array< Float > FlxAngle_obj::sinTable;
 			HX_STACK_LINE(117)
 			Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 			HX_STACK_LINE(117)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(117)
 			point1->_inPool = false;
 			HX_STACK_LINE(117)
@@ -248,12 +248,12 @@ Float FlxAngle_obj::getAngle( ::flixel::util::FlxPoint Point1,::flixel::util::Fl
 	HX_STACK_LINE(163)
 	if ((Point1->_weak)){
 		HX_STACK_LINE(163)
-		::flixel::util::FlxPoint_obj::_pool->put(Point1);
+		Point1->put();
 	}
 	HX_STACK_LINE(164)
 	if ((Point2->_weak)){
 		HX_STACK_LINE(164)
-		::flixel::util::FlxPoint_obj::_pool->put(Point2);
+		Point2->put();
 	}
 	HX_STACK_LINE(166)
 	return angle;
@@ -528,7 +528,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxAngle_obj,angleBetweenTouch,return )
 			HX_STACK_LINE(376)
 			Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 			HX_STACK_LINE(376)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(376)
 			point1->_inPool = false;
 			HX_STACK_LINE(376)
@@ -574,7 +574,7 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC3(FlxAngle_obj,getCartesianCoords,return )
 			HX_STACK_LINE(397)
 			Float Y1 = (int)0;		HX_STACK_VAR(Y1,"Y1");
 			HX_STACK_LINE(397)
-			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->set(X1,Y1);		HX_STACK_VAR(point1,"point1");
+			::flixel::util::FlxPoint point1 = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X1,Y1);		HX_STACK_VAR(point1,"point1");
 			HX_STACK_LINE(397)
 			point1->_inPool = false;
 			HX_STACK_LINE(397)

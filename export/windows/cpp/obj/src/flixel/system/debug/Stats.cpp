@@ -51,44 +51,44 @@
 #ifndef INCLUDED_flixel_util_FlxRect
 #include <flixel/util/FlxRect.h>
 #endif
-#ifndef INCLUDED_openfl_display_Bitmap
-#include <openfl/display/Bitmap.h>
+#ifndef INCLUDED_openfl__legacy_display_Bitmap
+#include <openfl/_legacy/display/Bitmap.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_system_System
-#include <openfl/system/System.h>
+#ifndef INCLUDED_openfl__legacy_system_System
+#include <openfl/_legacy/system/System.h>
 #endif
-#ifndef INCLUDED_openfl_text_TextField
-#include <openfl/text/TextField.h>
+#ifndef INCLUDED_openfl__legacy_text_TextField
+#include <openfl/_legacy/text/TextField.h>
 #endif
 namespace flixel{
 namespace system{
@@ -228,15 +228,15 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(146)
 	this->addChild(this->drawTimeGraph);
 	HX_STACK_LINE(148)
-	::openfl::text::TextField _g18 = ::flixel::system::debug::DebuggerUtil_obj::createTextField(gutter,((graphHeight * (int)2) + (int)45),(int)-1426063361,(int)11);		HX_STACK_VAR(_g18,"_g18");
+	::openfl::_legacy::text::TextField _g18 = ::flixel::system::debug::DebuggerUtil_obj::createTextField(gutter,((graphHeight * (int)2) + (int)45),(int)-1426063361,(int)11);		HX_STACK_VAR(_g18,"_g18");
 	HX_STACK_LINE(148)
-	::openfl::text::TextField _g19 = this->_leftTextField = _g18;		HX_STACK_VAR(_g19,"_g19");
+	::openfl::_legacy::text::TextField _g19 = this->_leftTextField = _g18;		HX_STACK_VAR(_g19,"_g19");
 	HX_STACK_LINE(148)
 	this->addChild(_g19);
 	HX_STACK_LINE(149)
-	::openfl::text::TextField _g20 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((gutter + (int)70),((graphHeight * (int)2) + (int)45),(int)-1,(int)11);		HX_STACK_VAR(_g20,"_g20");
+	::openfl::_legacy::text::TextField _g20 = ::flixel::system::debug::DebuggerUtil_obj::createTextField((gutter + (int)70),((graphHeight * (int)2) + (int)45),(int)-1,(int)11);		HX_STACK_VAR(_g20,"_g20");
 	HX_STACK_LINE(149)
-	::openfl::text::TextField _g21 = this->_rightTextField = _g20;		HX_STACK_VAR(_g21,"_g21");
+	::openfl::_legacy::text::TextField _g21 = this->_rightTextField = _g20;		HX_STACK_VAR(_g21,"_g21");
 	HX_STACK_LINE(149)
 	this->addChild(_g21);
 	HX_STACK_LINE(151)
@@ -398,7 +398,7 @@ Void Stats_obj::update( ){
 			HX_STACK_LINE(253)
 			this->fpsGraph->update((Float(this->_frameCount) / Float(((Float(((this->_currentTime - this->_itvTime))) / Float((int)1000))))),(Float(this->_totalCount) / Float(((Float(((this->_currentTime - this->_initTime))) / Float((int)1000))))));
 			HX_STACK_LINE(254)
-			int _g = ::openfl::system::System_obj::get_totalMemory();		HX_STACK_VAR(_g,"_g");
+			int _g = ::openfl::_legacy::system::System_obj::get_totalMemory();		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(254)
 			Float _g1 = (Float(_g) / Float((int)1024));		HX_STACK_VAR(_g1,"_g1");
 			HX_STACK_LINE(254)
@@ -605,7 +605,7 @@ Float Stats_obj::currentMem( ){
 	HX_STACK_FRAME("flixel.system.debug.Stats","currentMem",0x0f2cfdf3,"flixel.system.debug.Stats.currentMem","flixel/system/debug/Stats.hx",357,0xa5a2e9c8)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(358)
-	int _g = ::openfl::system::System_obj::get_totalMemory();		HX_STACK_VAR(_g,"_g");
+	int _g = ::openfl::_legacy::system::System_obj::get_totalMemory();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(358)
 	Float _g1 = (Float(_g) / Float((int)1024));		HX_STACK_VAR(_g1,"_g1");
 	HX_STACK_LINE(358)
@@ -1060,12 +1060,12 @@ Dynamic Stats_obj::__SetField(const ::String &inName,const Dynamic &inValue,bool
 		if (HX_FIELD_EQ(inName,"_activeObject") ) { _activeObject=inValue.Cast< Array< int > >(); return inValue; }
 		break;
 	case 14:
-		if (HX_FIELD_EQ(inName,"_leftTextField") ) { _leftTextField=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_leftTextField") ) { _leftTextField=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_visibleObject") ) { _visibleObject=inValue.Cast< Array< int > >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"drawCallsCount") ) { drawCallsCount=inValue.Cast< int >(); return inValue; }
 		break;
 	case 15:
-		if (HX_FIELD_EQ(inName,"_rightTextField") ) { _rightTextField=inValue.Cast< ::openfl::text::TextField >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_rightTextField") ) { _rightTextField=inValue.Cast< ::openfl::_legacy::text::TextField >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"updateTimeGraph") ) { updateTimeGraph=inValue.Cast< ::flixel::system::debug::StatsGraph >(); return inValue; }
 		break;
 	case 16:
@@ -1135,8 +1135,8 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(Stats_obj,_leftTextField),HX_CSTRING("_leftTextField")},
-	{hx::fsObject /*::openfl::text::TextField*/ ,(int)offsetof(Stats_obj,_rightTextField),HX_CSTRING("_rightTextField")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(Stats_obj,_leftTextField),HX_CSTRING("_leftTextField")},
+	{hx::fsObject /*::openfl::_legacy::text::TextField*/ ,(int)offsetof(Stats_obj,_rightTextField),HX_CSTRING("_rightTextField")},
 	{hx::fsInt,(int)offsetof(Stats_obj,_itvTime),HX_CSTRING("_itvTime")},
 	{hx::fsInt,(int)offsetof(Stats_obj,_initTime),HX_CSTRING("_initTime")},
 	{hx::fsInt,(int)offsetof(Stats_obj,_frameCount),HX_CSTRING("_frameCount")},

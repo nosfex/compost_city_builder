@@ -54,38 +54,38 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_geom_ColorTransform
-#include <openfl/geom/ColorTransform.h>
+#ifndef INCLUDED_openfl__legacy_geom_ColorTransform
+#include <openfl/_legacy/geom/ColorTransform.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Matrix
-#include <openfl/geom/Matrix.h>
+#ifndef INCLUDED_openfl__legacy_geom_Matrix
+#include <openfl/_legacy/geom/Matrix.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Point
-#include <openfl/geom/Point.h>
+#ifndef INCLUDED_openfl__legacy_geom_Point
+#include <openfl/_legacy/geom/Point.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
-#ifndef INCLUDED_openfl_utils_ByteArray
-#include <openfl/utils/ByteArray.h>
+#ifndef INCLUDED_openfl__legacy_utils_ByteArray
+#include <openfl/_legacy/utils/ByteArray.h>
 #endif
-#ifndef INCLUDED_openfl_utils_IDataInput
-#include <openfl/utils/IDataInput.h>
+#ifndef INCLUDED_openfl__legacy_utils_IDataInput
+#include <openfl/_legacy/utils/IDataInput.h>
 #endif
-#ifndef INCLUDED_openfl_utils_IDataOutput
-#include <openfl/utils/IDataOutput.h>
+#ifndef INCLUDED_openfl__legacy_utils_IDataOutput
+#include <openfl/_legacy/utils/IDataOutput.h>
 #endif
-#ifndef INCLUDED_openfl_utils_IMemoryRange
-#include <openfl/utils/IMemoryRange.h>
+#ifndef INCLUDED_openfl__legacy_utils_IMemoryRange
+#include <openfl/_legacy/utils/IMemoryRange.h>
 #endif
 namespace flixel{
 namespace util{
@@ -112,23 +112,23 @@ int FlxCollision_obj::CAMERA_WALL_OUTSIDE;
 
 int FlxCollision_obj::CAMERA_WALL_INSIDE;
 
-::openfl::geom::Point FlxCollision_obj::pointA;
+::openfl::_legacy::geom::Point FlxCollision_obj::pointA;
 
-::openfl::geom::Point FlxCollision_obj::pointB;
+::openfl::_legacy::geom::Point FlxCollision_obj::pointB;
 
-::openfl::geom::Point FlxCollision_obj::centerA;
+::openfl::_legacy::geom::Point FlxCollision_obj::centerA;
 
-::openfl::geom::Point FlxCollision_obj::centerB;
+::openfl::_legacy::geom::Point FlxCollision_obj::centerB;
 
-::openfl::geom::Matrix FlxCollision_obj::matrixA;
+::openfl::_legacy::geom::Matrix FlxCollision_obj::matrixA;
 
-::openfl::geom::Matrix FlxCollision_obj::matrixB;
+::openfl::_legacy::geom::Matrix FlxCollision_obj::matrixB;
 
-::openfl::geom::Matrix FlxCollision_obj::testMatrix;
+::openfl::_legacy::geom::Matrix FlxCollision_obj::testMatrix;
 
-::openfl::geom::Rectangle FlxCollision_obj::boundsA;
+::openfl::_legacy::geom::Rectangle FlxCollision_obj::boundsA;
 
-::openfl::geom::Rectangle FlxCollision_obj::boundsB;
+::openfl::_legacy::geom::Rectangle FlxCollision_obj::boundsB;
 
 bool FlxCollision_obj::pixelPerfectCheck( ::flixel::FlxSprite Contact,::flixel::FlxSprite Target,hx::Null< int >  __o_AlphaTolerance,::flixel::FlxCamera Camera){
 int AlphaTolerance = __o_AlphaTolerance.Default(1);
@@ -247,7 +247,7 @@ int AlphaTolerance = __o_AlphaTolerance.Default(1);
 			::flixel::util::FlxCollision_obj::boundsB->height = Target->frameHeight;
 		}
 		HX_STACK_LINE(88)
-		::openfl::geom::Rectangle intersect = ::flixel::util::FlxCollision_obj::boundsA->intersection(::flixel::util::FlxCollision_obj::boundsB);		HX_STACK_VAR(intersect,"intersect");
+		::openfl::_legacy::geom::Rectangle intersect = ::flixel::util::FlxCollision_obj::boundsA->intersection(::flixel::util::FlxCollision_obj::boundsB);		HX_STACK_VAR(intersect,"intersect");
 		HX_STACK_LINE(90)
 		if (((  ((!(((  ((!(intersect->isEmpty()))) ? bool((intersect->width < (int)1)) : bool(true) ))))) ? bool((intersect->height < (int)1)) : bool(true) ))){
 			HX_STACK_LINE(92)
@@ -276,9 +276,9 @@ int AlphaTolerance = __o_AlphaTolerance.Default(1);
 			Target->calcFrame(true);
 		}
 		HX_STACK_LINE(107)
-		::openfl::display::BitmapData testA = Contact->framePixels;		HX_STACK_VAR(testA,"testA");
+		::openfl::_legacy::display::BitmapData testA = Contact->framePixels;		HX_STACK_VAR(testA,"testA");
 		HX_STACK_LINE(108)
-		::openfl::display::BitmapData testB = Target->framePixels;		HX_STACK_VAR(testB,"testB");
+		::openfl::_legacy::display::BitmapData testB = Target->framePixels;		HX_STACK_VAR(testB,"testB");
 		HX_STACK_LINE(110)
 		int overlapWidth = ::Std_obj::_int(intersect->width);		HX_STACK_VAR(overlapWidth,"overlapWidth");
 		HX_STACK_LINE(111)
@@ -298,7 +298,7 @@ int AlphaTolerance = __o_AlphaTolerance.Default(1);
 			HX_STACK_LINE(128)
 			int _g25 = ::Math_obj::floor(::flixel::util::FlxCollision_obj::boundsA->height);		HX_STACK_VAR(_g25,"_g25");
 			HX_STACK_LINE(128)
-			::openfl::display::BitmapData testA2 = ::flixel::util::FlxBitmapDataPool_obj::get(_g24,_g25,true,(int)0,false);		HX_STACK_VAR(testA2,"testA2");
+			::openfl::_legacy::display::BitmapData testA2 = ::flixel::util::FlxBitmapDataPool_obj::get(_g24,_g25,true,(int)0,false);		HX_STACK_VAR(testA2,"testA2");
 			HX_STACK_LINE(131)
 			testA2->draw(testA,::flixel::util::FlxCollision_obj::testMatrix,null(),null(),null(),false);
 			HX_STACK_LINE(132)
@@ -316,7 +316,7 @@ int AlphaTolerance = __o_AlphaTolerance.Default(1);
 			HX_STACK_LINE(140)
 			int _g27 = ::Math_obj::floor(::flixel::util::FlxCollision_obj::boundsB->height);		HX_STACK_VAR(_g27,"_g27");
 			HX_STACK_LINE(140)
-			::openfl::display::BitmapData testB2 = ::flixel::util::FlxBitmapDataPool_obj::get(_g26,_g27,true,(int)0,false);		HX_STACK_VAR(testB2,"testB2");
+			::openfl::_legacy::display::BitmapData testB2 = ::flixel::util::FlxBitmapDataPool_obj::get(_g26,_g27,true,(int)0,false);		HX_STACK_VAR(testB2,"testB2");
 			HX_STACK_LINE(141)
 			testB2->draw(testB,::flixel::util::FlxCollision_obj::testMatrix,null(),null(),null(),false);
 			HX_STACK_LINE(142)
@@ -347,9 +347,9 @@ int AlphaTolerance = __o_AlphaTolerance.Default(1);
 		HX_STACK_LINE(153)
 		::flixel::util::FlxCollision_obj::boundsB->height = overlapHeight;
 		HX_STACK_LINE(155)
-		::openfl::utils::ByteArray pixelsA = testA->getPixels(::flixel::util::FlxCollision_obj::boundsA);		HX_STACK_VAR(pixelsA,"pixelsA");
+		::openfl::_legacy::utils::ByteArray pixelsA = testA->getPixels(::flixel::util::FlxCollision_obj::boundsA);		HX_STACK_VAR(pixelsA,"pixelsA");
 		HX_STACK_LINE(156)
-		::openfl::utils::ByteArray pixelsB = testB->getPixels(::flixel::util::FlxCollision_obj::boundsB);		HX_STACK_VAR(pixelsB,"pixelsB");
+		::openfl::_legacy::utils::ByteArray pixelsB = testB->getPixels(::flixel::util::FlxCollision_obj::boundsB);		HX_STACK_VAR(pixelsB,"pixelsB");
 		HX_STACK_LINE(158)
 		bool hit = false;		HX_STACK_VAR(hit,"hit");
 		HX_STACK_LINE(161)
@@ -530,7 +530,7 @@ int AlphaTolerance = __o_AlphaTolerance.Default(1);
 			Target->calcFrame(true);
 		}
 		HX_STACK_LINE(230)
-		::openfl::display::BitmapData test = Target->framePixels;		HX_STACK_VAR(test,"test");
+		::openfl::_legacy::display::BitmapData test = Target->framePixels;		HX_STACK_VAR(test,"test");
 		HX_STACK_LINE(232)
 		int pixelAlpha = (int)0;		HX_STACK_VAR(pixelAlpha,"pixelAlpha");
 		HX_STACK_LINE(233)
@@ -741,19 +741,19 @@ Dynamic FlxCollision_obj::__SetField(const ::String &inName,const Dynamic &inVal
 {
 	switch(inName.length) {
 	case 6:
-		if (HX_FIELD_EQ(inName,"pointA") ) { pointA=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"pointB") ) { pointB=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"pointA") ) { pointA=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"pointB") ) { pointB=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
 		break;
 	case 7:
-		if (HX_FIELD_EQ(inName,"centerA") ) { centerA=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"centerB") ) { centerB=inValue.Cast< ::openfl::geom::Point >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"matrixA") ) { matrixA=inValue.Cast< ::openfl::geom::Matrix >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"matrixB") ) { matrixB=inValue.Cast< ::openfl::geom::Matrix >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"boundsA") ) { boundsA=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
-		if (HX_FIELD_EQ(inName,"boundsB") ) { boundsB=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"centerA") ) { centerA=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"centerB") ) { centerB=inValue.Cast< ::openfl::_legacy::geom::Point >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"matrixA") ) { matrixA=inValue.Cast< ::openfl::_legacy::geom::Matrix >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"matrixB") ) { matrixB=inValue.Cast< ::openfl::_legacy::geom::Matrix >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"boundsA") ) { boundsA=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"boundsB") ) { boundsB=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		break;
 	case 10:
-		if (HX_FIELD_EQ(inName,"testMatrix") ) { testMatrix=inValue.Cast< ::openfl::geom::Matrix >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"testMatrix") ) { testMatrix=inValue.Cast< ::openfl::_legacy::geom::Matrix >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -840,15 +840,15 @@ void FlxCollision_obj::__boot()
 {
 	CAMERA_WALL_OUTSIDE= (int)0;
 	CAMERA_WALL_INSIDE= (int)1;
-	pointA= ::openfl::geom::Point_obj::__new(null(),null());
-	pointB= ::openfl::geom::Point_obj::__new(null(),null());
-	centerA= ::openfl::geom::Point_obj::__new(null(),null());
-	centerB= ::openfl::geom::Point_obj::__new(null(),null());
-	matrixA= ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
-	matrixB= ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
-	testMatrix= ::openfl::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
-	boundsA= ::openfl::geom::Rectangle_obj::__new(null(),null(),null(),null());
-	boundsB= ::openfl::geom::Rectangle_obj::__new(null(),null(),null(),null());
+	pointA= ::openfl::_legacy::geom::Point_obj::__new(null(),null());
+	pointB= ::openfl::_legacy::geom::Point_obj::__new(null(),null());
+	centerA= ::openfl::_legacy::geom::Point_obj::__new(null(),null());
+	centerB= ::openfl::_legacy::geom::Point_obj::__new(null(),null());
+	matrixA= ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
+	matrixB= ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
+	testMatrix= ::openfl::_legacy::geom::Matrix_obj::__new(null(),null(),null(),null(),null(),null());
+	boundsA= ::openfl::_legacy::geom::Rectangle_obj::__new(null(),null(),null(),null());
+	boundsB= ::openfl::_legacy::geom::Rectangle_obj::__new(null(),null(),null(),null());
 }
 
 } // end namespace flixel

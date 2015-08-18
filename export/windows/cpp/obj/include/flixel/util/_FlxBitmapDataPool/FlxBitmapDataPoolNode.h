@@ -6,8 +6,8 @@
 #endif
 
 HX_DECLARE_CLASS3(flixel,util,_FlxBitmapDataPool,FlxBitmapDataPoolNode)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
 namespace flixel{
 namespace util{
 namespace _FlxBitmapDataPool{
@@ -18,12 +18,12 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBitmapDataPoolNode_obj : public hx::Object{
 		typedef hx::Object super;
 		typedef FlxBitmapDataPoolNode_obj OBJ_;
 		FlxBitmapDataPoolNode_obj();
-		Void __construct(::openfl::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next);
+		Void __construct(::openfl::_legacy::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true)
 			{ return hx::Object::operator new(inSize,inContainer); }
-		static hx::ObjectPtr< FlxBitmapDataPoolNode_obj > __new(::openfl::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next);
+		static hx::ObjectPtr< FlxBitmapDataPoolNode_obj > __new(::openfl::_legacy::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~FlxBitmapDataPoolNode_obj();
@@ -35,7 +35,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxBitmapDataPoolNode_obj : public hx::Object{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("FlxBitmapDataPoolNode"); }
 
-		::openfl::display::BitmapData bmd;
+		::openfl::_legacy::display::BitmapData bmd;
 		::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev;
 		::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next;
 };

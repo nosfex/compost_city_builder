@@ -12,9 +12,9 @@ HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,system,FlxSound)
 HX_DECLARE_CLASS3(flixel,system,frontEnds,SoundFrontEnd)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,media,Sound)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,media,Sound)
 namespace flixel{
 namespace system{
 namespace frontEnds{
@@ -59,7 +59,7 @@ class HXCPP_CLASS_ATTRIBUTES  SoundFrontEnd_obj : public hx::Object{
 		virtual ::flixel::system::FlxSound load( Dynamic EmbeddedSound,hx::Null< Float >  Volume,hx::Null< bool >  Looped,hx::Null< bool >  AutoDestroy,hx::Null< bool >  AutoPlay,::String URL,Dynamic OnComplete);
 		Dynamic load_dyn();
 
-		virtual ::openfl::media::Sound cache( ::String EmbeddedSound);
+		virtual ::openfl::_legacy::media::Sound cache( ::String EmbeddedSound);
 		Dynamic cache_dyn();
 
 		virtual ::flixel::system::FlxSound play( ::String EmbeddedSound,hx::Null< Float >  Volume,hx::Null< bool >  Looped,hx::Null< bool >  AutoDestroy,Dynamic OnComplete);

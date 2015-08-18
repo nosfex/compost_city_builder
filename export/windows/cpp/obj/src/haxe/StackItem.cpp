@@ -10,7 +10,7 @@ namespace haxe{
 ::haxe::StackItem  StackItem_obj::FilePos(::haxe::StackItem s,::String file,int line)
 	{ return hx::CreateEnum< StackItem_obj >(HX_CSTRING("FilePos"),2,hx::DynamicArray(0,3).Add(s).Add(file).Add(line)); }
 
-::haxe::StackItem  StackItem_obj::LocalFunction(int v)
+::haxe::StackItem  StackItem_obj::LocalFunction(Dynamic v)
 	{ return hx::CreateEnum< StackItem_obj >(HX_CSTRING("LocalFunction"),4,hx::DynamicArray(0,1).Add(v)); }
 
 ::haxe::StackItem  StackItem_obj::Method(::String classname,::String method)

@@ -6,9 +6,9 @@
 #endif
 
 HX_DECLARE_CLASS2(flixel,util,FlxSave)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,net,SharedObject)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,net,SharedObject)
 namespace flixel{
 namespace util{
 
@@ -37,7 +37,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxSave_obj : public hx::Object{
 
 		Dynamic data;
 		::String name;
-		::openfl::net::SharedObject _sharedObject;
+		::openfl::_legacy::net::SharedObject _sharedObject;
 		Dynamic _onComplete;
 		Dynamic &_onComplete_dyn() { return _onComplete;}
 		bool _closeRequested;

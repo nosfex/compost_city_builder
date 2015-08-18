@@ -30,32 +30,32 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_geom_Rectangle
-#include <openfl/geom/Rectangle.h>
+#ifndef INCLUDED_openfl__legacy_geom_Rectangle
+#include <openfl/_legacy/geom/Rectangle.h>
 #endif
 namespace flixel{
 namespace system{
@@ -68,15 +68,15 @@ HX_STACK_THIS(this)
 {
 	HX_STACK_LINE(27)
 	this->useBufferLocking = false;
-	HX_STACK_LINE(166)
-	::openfl::geom::Rectangle _g = ::openfl::geom::Rectangle_obj::__new(null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(166)
+	HX_STACK_LINE(169)
+	::openfl::_legacy::geom::Rectangle _g = ::openfl::_legacy::geom::Rectangle_obj::__new(null(),null(),null(),null());		HX_STACK_VAR(_g,"_g");
+	HX_STACK_LINE(169)
 	this->_cameraRect = _g;
-	HX_STACK_LINE(167)
+	HX_STACK_LINE(170)
 	Array< ::Dynamic > _g1 = Array_obj< ::Dynamic >::__new();		HX_STACK_VAR(_g1,"_g1");
-	HX_STACK_LINE(167)
+	HX_STACK_LINE(170)
 	this->list = _g1;
-	HX_STACK_LINE(168)
+	HX_STACK_LINE(171)
 	::flixel::FlxCamera_obj::defaultCameras = this->list;
 }
 ;
@@ -222,6 +222,8 @@ Void CameraFrontEnd_obj::reset( ::flixel::FlxCamera NewCamera){
 		::flixel::FlxG_obj::camera = _g2;
 		HX_STACK_LINE(110)
 		NewCamera->ID = (int)0;
+		HX_STACK_LINE(113)
+		::flixel::FlxCamera_obj::defaultCameras = this->list;
 	}
 return null();
 }
@@ -233,29 +235,29 @@ Void CameraFrontEnd_obj::flash( hx::Null< int >  __o_Color,hx::Null< Float >  __
 int Color = __o_Color.Default(-1);
 Float Duration = __o_Duration.Default(1);
 bool Force = __o_Force.Default(false);
-	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","flash",0x12371db3,"flixel.system.frontEnds.CameraFrontEnd.flash","flixel/system/frontEnds/CameraFrontEnd.hx",123,0x7a57d3ec)
+	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","flash",0x12371db3,"flixel.system.frontEnds.CameraFrontEnd.flash","flixel/system/frontEnds/CameraFrontEnd.hx",126,0x7a57d3ec)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Color,"Color")
 	HX_STACK_ARG(Duration,"Duration")
 	HX_STACK_ARG(OnComplete,"OnComplete")
 	HX_STACK_ARG(Force,"Force")
 {
-		HX_STACK_LINE(123)
+		HX_STACK_LINE(126)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(123)
+		HX_STACK_LINE(126)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(123)
+		HX_STACK_LINE(126)
 		while((true)){
-			HX_STACK_LINE(123)
+			HX_STACK_LINE(126)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(123)
+				HX_STACK_LINE(126)
 				break;
 			}
-			HX_STACK_LINE(123)
+			HX_STACK_LINE(126)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(123)
+			HX_STACK_LINE(126)
 			++(_g);
-			HX_STACK_LINE(125)
+			HX_STACK_LINE(128)
 			camera->flash(Color,Duration,OnComplete,Force);
 		}
 	}
@@ -270,7 +272,7 @@ int Color = __o_Color.Default(-16777216);
 Float Duration = __o_Duration.Default(1);
 bool FadeIn = __o_FadeIn.Default(false);
 bool Force = __o_Force.Default(false);
-	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","fade",0x4aaafed9,"flixel.system.frontEnds.CameraFrontEnd.fade","flixel/system/frontEnds/CameraFrontEnd.hx",140,0x7a57d3ec)
+	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","fade",0x4aaafed9,"flixel.system.frontEnds.CameraFrontEnd.fade","flixel/system/frontEnds/CameraFrontEnd.hx",143,0x7a57d3ec)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Color,"Color")
 	HX_STACK_ARG(Duration,"Duration")
@@ -278,22 +280,22 @@ bool Force = __o_Force.Default(false);
 	HX_STACK_ARG(OnComplete,"OnComplete")
 	HX_STACK_ARG(Force,"Force")
 {
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(143)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(143)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(143)
 		while((true)){
-			HX_STACK_LINE(140)
+			HX_STACK_LINE(143)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(140)
+				HX_STACK_LINE(143)
 				break;
 			}
-			HX_STACK_LINE(140)
+			HX_STACK_LINE(143)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(140)
+			HX_STACK_LINE(143)
 			++(_g);
-			HX_STACK_LINE(142)
+			HX_STACK_LINE(145)
 			camera->fade(Color,Duration,FadeIn,OnComplete,Force);
 		}
 	}
@@ -308,7 +310,7 @@ Float Intensity = __o_Intensity.Default(0.05);
 Float Duration = __o_Duration.Default(0.5);
 bool Force = __o_Force.Default(true);
 int Direction = __o_Direction.Default(0);
-	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","shake",0x8bc7c6c9,"flixel.system.frontEnds.CameraFrontEnd.shake","flixel/system/frontEnds/CameraFrontEnd.hx",157,0x7a57d3ec)
+	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","shake",0x8bc7c6c9,"flixel.system.frontEnds.CameraFrontEnd.shake","flixel/system/frontEnds/CameraFrontEnd.hx",160,0x7a57d3ec)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Intensity,"Intensity")
 	HX_STACK_ARG(Duration,"Duration")
@@ -316,22 +318,22 @@ int Direction = __o_Direction.Default(0);
 	HX_STACK_ARG(Force,"Force")
 	HX_STACK_ARG(Direction,"Direction")
 {
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(160)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(160)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(157)
+		HX_STACK_LINE(160)
 		while((true)){
-			HX_STACK_LINE(157)
+			HX_STACK_LINE(160)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(157)
+				HX_STACK_LINE(160)
 				break;
 			}
-			HX_STACK_LINE(157)
+			HX_STACK_LINE(160)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(157)
+			HX_STACK_LINE(160)
 			++(_g);
-			HX_STACK_LINE(159)
+			HX_STACK_LINE(162)
 			camera->shake(Intensity,Duration,OnComplete,Force,Direction);
 		}
 	}
@@ -343,35 +345,35 @@ HX_DEFINE_DYNAMIC_FUNC5(CameraFrontEnd_obj,shake,(void))
 
 Void CameraFrontEnd_obj::lock( ){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","lock",0x4eace548,"flixel.system.frontEnds.CameraFrontEnd.lock","flixel/system/frontEnds/CameraFrontEnd.hx",176,0x7a57d3ec)
+		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","lock",0x4eace548,"flixel.system.frontEnds.CameraFrontEnd.lock","flixel/system/frontEnds/CameraFrontEnd.hx",179,0x7a57d3ec)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(176)
+		HX_STACK_LINE(179)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(176)
+		HX_STACK_LINE(179)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(176)
+		HX_STACK_LINE(179)
 		while((true)){
-			HX_STACK_LINE(176)
+			HX_STACK_LINE(179)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(176)
+				HX_STACK_LINE(179)
 				break;
 			}
-			HX_STACK_LINE(176)
+			HX_STACK_LINE(179)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(176)
+			HX_STACK_LINE(179)
 			++(_g);
-			HX_STACK_LINE(178)
+			HX_STACK_LINE(181)
 			if (((bool((bool((camera == null())) || bool(!(camera->exists)))) || bool(!(camera->visible))))){
-				HX_STACK_LINE(180)
+				HX_STACK_LINE(183)
 				continue;
 			}
-			HX_STACK_LINE(193)
+			HX_STACK_LINE(196)
 			camera->clearDrawStack();
-			HX_STACK_LINE(194)
-			camera->canvas->get_graphics()->clear();
 			HX_STACK_LINE(197)
+			camera->canvas->get_graphics()->clear();
+			HX_STACK_LINE(200)
 			camera->debugLayer->get_graphics()->clear();
-			HX_STACK_LINE(205)
+			HX_STACK_LINE(208)
 			camera->fill((int(camera->bgColor) & int((int)16777215)),camera->useBgAlphaBlending,(Float(((int((int(camera->bgColor) >> int((int)24))) & int((int)255)))) / Float((int)255)),null());
 		}
 	}
@@ -383,26 +385,26 @@ HX_DEFINE_DYNAMIC_FUNC0(CameraFrontEnd_obj,lock,(void))
 
 Void CameraFrontEnd_obj::render( ){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","render",0xab0985f3,"flixel.system.frontEnds.CameraFrontEnd.render","flixel/system/frontEnds/CameraFrontEnd.hx",213,0x7a57d3ec)
+		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","render",0xab0985f3,"flixel.system.frontEnds.CameraFrontEnd.render","flixel/system/frontEnds/CameraFrontEnd.hx",216,0x7a57d3ec)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(213)
+		HX_STACK_LINE(216)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(213)
+		HX_STACK_LINE(216)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(213)
+		HX_STACK_LINE(216)
 		while((true)){
-			HX_STACK_LINE(213)
+			HX_STACK_LINE(216)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(213)
+				HX_STACK_LINE(216)
 				break;
 			}
-			HX_STACK_LINE(213)
+			HX_STACK_LINE(216)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(213)
+			HX_STACK_LINE(216)
 			++(_g);
-			HX_STACK_LINE(215)
+			HX_STACK_LINE(218)
 			if (((bool((bool((camera != null())) && bool(camera->exists))) && bool(camera->visible)))){
-				HX_STACK_LINE(217)
+				HX_STACK_LINE(220)
 				camera->render();
 			}
 		}
@@ -415,29 +417,29 @@ HX_DEFINE_DYNAMIC_FUNC0(CameraFrontEnd_obj,render,(void))
 
 Void CameraFrontEnd_obj::unlock( ){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","unlock",0x0b6cbd61,"flixel.system.frontEnds.CameraFrontEnd.unlock","flixel/system/frontEnds/CameraFrontEnd.hx",228,0x7a57d3ec)
+		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","unlock",0x0b6cbd61,"flixel.system.frontEnds.CameraFrontEnd.unlock","flixel/system/frontEnds/CameraFrontEnd.hx",231,0x7a57d3ec)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(228)
+		HX_STACK_LINE(231)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(228)
+		HX_STACK_LINE(231)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(228)
+		HX_STACK_LINE(231)
 		while((true)){
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(231)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(228)
+				HX_STACK_LINE(231)
 				break;
 			}
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(231)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(228)
+			HX_STACK_LINE(231)
 			++(_g);
-			HX_STACK_LINE(230)
+			HX_STACK_LINE(233)
 			if (((bool((bool((camera == null())) || bool(!(camera->exists)))) || bool(!(camera->visible))))){
-				HX_STACK_LINE(232)
+				HX_STACK_LINE(235)
 				continue;
 			}
-			HX_STACK_LINE(235)
+			HX_STACK_LINE(238)
 			camera->drawFX();
 		}
 	}
@@ -449,35 +451,35 @@ HX_DEFINE_DYNAMIC_FUNC0(CameraFrontEnd_obj,unlock,(void))
 
 Void CameraFrontEnd_obj::update( ){
 {
-		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","update",0x2ce5a0a6,"flixel.system.frontEnds.CameraFrontEnd.update","flixel/system/frontEnds/CameraFrontEnd.hx",253,0x7a57d3ec)
+		HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","update",0x2ce5a0a6,"flixel.system.frontEnds.CameraFrontEnd.update","flixel/system/frontEnds/CameraFrontEnd.hx",256,0x7a57d3ec)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(253)
+		HX_STACK_LINE(256)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(253)
+		HX_STACK_LINE(256)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(253)
+		HX_STACK_LINE(256)
 		while((true)){
-			HX_STACK_LINE(253)
+			HX_STACK_LINE(256)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(253)
+				HX_STACK_LINE(256)
 				break;
 			}
-			HX_STACK_LINE(253)
+			HX_STACK_LINE(256)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(253)
+			HX_STACK_LINE(256)
 			++(_g);
-			HX_STACK_LINE(255)
+			HX_STACK_LINE(258)
 			if (((bool((camera != null())) && bool(camera->exists)))){
-				HX_STACK_LINE(257)
+				HX_STACK_LINE(260)
 				if ((camera->active)){
-					HX_STACK_LINE(259)
+					HX_STACK_LINE(262)
 					camera->update();
 				}
-				HX_STACK_LINE(262)
+				HX_STACK_LINE(265)
 				camera->flashSprite->set_x((camera->x + camera->_flashOffset->x));
-				HX_STACK_LINE(263)
+				HX_STACK_LINE(266)
 				camera->flashSprite->set_y((camera->y + camera->_flashOffset->y));
-				HX_STACK_LINE(264)
+				HX_STACK_LINE(267)
 				camera->flashSprite->set_visible(camera->visible);
 			}
 		}
@@ -489,18 +491,18 @@ return null();
 HX_DEFINE_DYNAMIC_FUNC0(CameraFrontEnd_obj,update,(void))
 
 int CameraFrontEnd_obj::get_bgColor( ){
-	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","get_bgColor",0x99072db8,"flixel.system.frontEnds.CameraFrontEnd.get_bgColor","flixel/system/frontEnds/CameraFrontEnd.hx",271,0x7a57d3ec)
+	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","get_bgColor",0x99072db8,"flixel.system.frontEnds.CameraFrontEnd.get_bgColor","flixel/system/frontEnds/CameraFrontEnd.hx",274,0x7a57d3ec)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(271)
+	HX_STACK_LINE(274)
 	if (((::flixel::FlxG_obj::camera == null()))){
-		HX_STACK_LINE(271)
+		HX_STACK_LINE(274)
 		return (int)-16777216;
 	}
 	else{
-		HX_STACK_LINE(271)
+		HX_STACK_LINE(274)
 		return ::flixel::FlxG_obj::camera->bgColor;
 	}
-	HX_STACK_LINE(271)
+	HX_STACK_LINE(274)
 	return (int)0;
 }
 
@@ -508,31 +510,31 @@ int CameraFrontEnd_obj::get_bgColor( ){
 HX_DEFINE_DYNAMIC_FUNC0(CameraFrontEnd_obj,get_bgColor,return )
 
 int CameraFrontEnd_obj::set_bgColor( int Color){
-	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","set_bgColor",0xa37434c4,"flixel.system.frontEnds.CameraFrontEnd.set_bgColor","flixel/system/frontEnds/CameraFrontEnd.hx",275,0x7a57d3ec)
+	HX_STACK_FRAME("flixel.system.frontEnds.CameraFrontEnd","set_bgColor",0xa37434c4,"flixel.system.frontEnds.CameraFrontEnd.set_bgColor","flixel/system/frontEnds/CameraFrontEnd.hx",278,0x7a57d3ec)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Color,"Color")
-	HX_STACK_LINE(276)
+	HX_STACK_LINE(279)
 	{
-		HX_STACK_LINE(276)
+		HX_STACK_LINE(279)
 		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(276)
+		HX_STACK_LINE(279)
 		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(276)
+		HX_STACK_LINE(279)
 		while((true)){
-			HX_STACK_LINE(276)
+			HX_STACK_LINE(279)
 			if ((!(((_g < _g1->length))))){
-				HX_STACK_LINE(276)
+				HX_STACK_LINE(279)
 				break;
 			}
-			HX_STACK_LINE(276)
+			HX_STACK_LINE(279)
 			::flixel::FlxCamera camera = _g1->__get(_g).StaticCast< ::flixel::FlxCamera >();		HX_STACK_VAR(camera,"camera");
-			HX_STACK_LINE(276)
+			HX_STACK_LINE(279)
 			++(_g);
-			HX_STACK_LINE(278)
+			HX_STACK_LINE(281)
 			camera->bgColor = Color;
 		}
 	}
-	HX_STACK_LINE(281)
+	HX_STACK_LINE(284)
 	return Color;
 }
 
@@ -606,7 +608,7 @@ Dynamic CameraFrontEnd_obj::__SetField(const ::String &inName,const Dynamic &inV
 		if (HX_FIELD_EQ(inName,"bgColor") ) { return set_bgColor(inValue); }
 		break;
 	case 11:
-		if (HX_FIELD_EQ(inName,"_cameraRect") ) { _cameraRect=inValue.Cast< ::openfl::geom::Rectangle >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_cameraRect") ) { _cameraRect=inValue.Cast< ::openfl::_legacy::geom::Rectangle >(); return inValue; }
 		break;
 	case 16:
 		if (HX_FIELD_EQ(inName,"useBufferLocking") ) { useBufferLocking=inValue.Cast< bool >(); return inValue; }
@@ -630,7 +632,7 @@ static ::String sStaticFields[] = {
 static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(CameraFrontEnd_obj,list),HX_CSTRING("list")},
 	{hx::fsBool,(int)offsetof(CameraFrontEnd_obj,useBufferLocking),HX_CSTRING("useBufferLocking")},
-	{hx::fsObject /*::openfl::geom::Rectangle*/ ,(int)offsetof(CameraFrontEnd_obj,_cameraRect),HX_CSTRING("_cameraRect")},
+	{hx::fsObject /*::openfl::_legacy::geom::Rectangle*/ ,(int)offsetof(CameraFrontEnd_obj,_cameraRect),HX_CSTRING("_cameraRect")},
 	{ hx::fsUnknown, 0, null()}
 };
 #endif

@@ -27,38 +27,38 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
 #endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
 #endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 
 Void Main_obj::__construct()
@@ -83,7 +83,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(30)
 	super::__construct();
 	HX_STACK_LINE(32)
-	::openfl::display::Stage _g = this->get_stage();		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::display::Stage _g = this->get_stage();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(32)
 	if (((_g != null()))){
 		HX_STACK_LINE(34)
@@ -91,7 +91,7 @@ HX_STACK_THIS(this)
 	}
 	else{
 		HX_STACK_LINE(38)
-		this->addEventListener(::openfl::events::Event_obj::ADDED_TO_STAGE,this->init_dyn(),null(),null(),null());
+		this->addEventListener(::openfl::_legacy::events::Event_obj::ADDED_TO_STAGE,this->init_dyn(),null(),null(),null());
 	}
 }
 ;
@@ -111,15 +111,15 @@ Dynamic Main_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct();
 	return result;}
 
-Void Main_obj::init( ::openfl::events::Event E){
+Void Main_obj::init( ::openfl::_legacy::events::Event E){
 {
 		HX_STACK_FRAME("Main","init",0xea732345,"Main.init","Main.hx",43,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(E,"E")
 		HX_STACK_LINE(44)
-		if ((this->hasEventListener(::openfl::events::Event_obj::ADDED_TO_STAGE))){
+		if ((this->hasEventListener(::openfl::_legacy::events::Event_obj::ADDED_TO_STAGE))){
 			HX_STACK_LINE(46)
-			this->removeEventListener(::openfl::events::Event_obj::ADDED_TO_STAGE,this->init_dyn(),null());
+			this->removeEventListener(::openfl::_legacy::events::Event_obj::ADDED_TO_STAGE,this->init_dyn(),null());
 		}
 		HX_STACK_LINE(49)
 		this->setupGame();
@@ -135,9 +135,9 @@ Void Main_obj::setupGame( ){
 		HX_STACK_FRAME("Main","setupGame",0x7f7688ba,"Main.setupGame","Main.hx",53,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(54)
-		int stageWidth = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(stageWidth,"stageWidth");
+		int stageWidth = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(stageWidth,"stageWidth");
 		HX_STACK_LINE(55)
-		int stageHeight = ::openfl::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(stageHeight,"stageHeight");
+		int stageHeight = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(stageHeight,"stageHeight");
 		HX_STACK_LINE(57)
 		if (((this->zoom == (int)-1))){
 			HX_STACK_LINE(59)
@@ -174,7 +174,7 @@ Void Main_obj::main( ){
 		HX_STACK_LINE(25)
 		::Main _g = ::Main_obj::__new();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(25)
-		::openfl::Lib_obj::get_current()->addChild(_g);
+		::openfl::_legacy::Lib_obj::get_current()->addChild(_g);
 	}
 return null();
 }
@@ -197,7 +197,7 @@ void Main_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(framerate,"framerate");
 	HX_MARK_MEMBER_NAME(skipSplash,"skipSplash");
 	HX_MARK_MEMBER_NAME(startFullscreen,"startFullscreen");
-	::openfl::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -210,7 +210,7 @@ void Main_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(framerate,"framerate");
 	HX_VISIT_MEMBER_NAME(skipSplash,"skipSplash");
 	HX_VISIT_MEMBER_NAME(startFullscreen,"startFullscreen");
-	::openfl::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic Main_obj::__Field(const ::String &inName,bool inCallProp)

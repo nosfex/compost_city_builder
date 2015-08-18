@@ -3,17 +3,17 @@
 #ifndef INCLUDED_flixel_util__FlxBitmapDataPool_FlxBitmapDataPoolNode
 #include <flixel/util/_FlxBitmapDataPool/FlxBitmapDataPoolNode.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
 namespace flixel{
 namespace util{
 namespace _FlxBitmapDataPool{
 
-Void FlxBitmapDataPoolNode_obj::__construct(::openfl::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next)
+Void FlxBitmapDataPoolNode_obj::__construct(::openfl::_legacy::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next)
 {
 HX_STACK_FRAME("flixel.util._FlxBitmapDataPool.FlxBitmapDataPoolNode","new",0x6f761b8f,"flixel.util._FlxBitmapDataPool.FlxBitmapDataPoolNode.new","flixel/util/FlxBitmapDataPool.hx",159,0x992b0db1)
 HX_STACK_THIS(this)
@@ -35,7 +35,7 @@ HX_STACK_ARG(next,"next")
 //FlxBitmapDataPoolNode_obj::~FlxBitmapDataPoolNode_obj() { }
 
 Dynamic FlxBitmapDataPoolNode_obj::__CreateEmpty() { return  new FlxBitmapDataPoolNode_obj; }
-hx::ObjectPtr< FlxBitmapDataPoolNode_obj > FlxBitmapDataPoolNode_obj::__new(::openfl::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next)
+hx::ObjectPtr< FlxBitmapDataPoolNode_obj > FlxBitmapDataPoolNode_obj::__new(::openfl::_legacy::display::BitmapData bmd,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode prev,::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode next)
 {  hx::ObjectPtr< FlxBitmapDataPoolNode_obj > result = new FlxBitmapDataPoolNode_obj();
 	result->__construct(bmd,prev,next);
 	return result;}
@@ -83,7 +83,7 @@ Dynamic FlxBitmapDataPoolNode_obj::__SetField(const ::String &inName,const Dynam
 {
 	switch(inName.length) {
 	case 3:
-		if (HX_FIELD_EQ(inName,"bmd") ) { bmd=inValue.Cast< ::openfl::display::BitmapData >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"bmd") ) { bmd=inValue.Cast< ::openfl::_legacy::display::BitmapData >(); return inValue; }
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"prev") ) { prev=inValue.Cast< ::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode >(); return inValue; }
@@ -105,7 +105,7 @@ static ::String sStaticFields[] = {
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::openfl::display::BitmapData*/ ,(int)offsetof(FlxBitmapDataPoolNode_obj,bmd),HX_CSTRING("bmd")},
+	{hx::fsObject /*::openfl::_legacy::display::BitmapData*/ ,(int)offsetof(FlxBitmapDataPoolNode_obj,bmd),HX_CSTRING("bmd")},
 	{hx::fsObject /*::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode*/ ,(int)offsetof(FlxBitmapDataPoolNode_obj,prev),HX_CSTRING("prev")},
 	{hx::fsObject /*::flixel::util::_FlxBitmapDataPool::FlxBitmapDataPoolNode*/ ,(int)offsetof(FlxBitmapDataPoolNode_obj,next),HX_CSTRING("next")},
 	{ hx::fsUnknown, 0, null()}

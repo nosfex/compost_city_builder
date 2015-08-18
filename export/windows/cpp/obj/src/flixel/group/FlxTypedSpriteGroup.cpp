@@ -48,8 +48,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_flixel_util_FlxVelocity
 #include <flixel/util/FlxVelocity.h>
@@ -57,14 +57,14 @@
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
 #endif
-#ifndef INCLUDED_openfl_display_BitmapData
-#include <openfl/display/BitmapData.h>
+#ifndef INCLUDED_openfl__legacy_display_BitmapData
+#include <openfl/_legacy/display/BitmapData.h>
 #endif
-#ifndef INCLUDED_openfl_display_BlendMode
-#include <openfl/display/BlendMode.h>
+#ifndef INCLUDED_openfl__legacy_display_BlendMode
+#include <openfl/_legacy/display/BlendMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
 namespace flixel{
 namespace group{
@@ -110,9 +110,9 @@ Dynamic FlxTypedSpriteGroup_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0],inArgs[1],inArgs[2]);
 	return result;}
 
-Void FlxTypedSpriteGroup_obj::transformChildren_openfl_display_BlendMode( Dynamic Function,::openfl::display::BlendMode Value){
+Void FlxTypedSpriteGroup_obj::transformChildren_openfl__legacy_display_BlendMode( Dynamic Function,::openfl::_legacy::display::BlendMode Value){
 {
-		HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","transformChildren_openfl_display_BlendMode",0x546b9da9,"flixel.group.FlxTypedSpriteGroup.transformChildren_openfl_display_BlendMode","flixel/group/FlxTypedSpriteGroup.hx",560,0x49082bbf)
+		HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","transformChildren_openfl__legacy_display_BlendMode",0x65952a52,"flixel.group.FlxTypedSpriteGroup.transformChildren_openfl__legacy_display_BlendMode","flixel/group/FlxTypedSpriteGroup.hx",560,0x49082bbf)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(Function,"Function")
 		HX_STACK_ARG(Value,"Value")
@@ -150,7 +150,7 @@ return null();
 }
 
 
-HX_DEFINE_DYNAMIC_FUNC2(FlxTypedSpriteGroup_obj,transformChildren_openfl_display_BlendMode,(void))
+HX_DEFINE_DYNAMIC_FUNC2(FlxTypedSpriteGroup_obj,transformChildren_openfl__legacy_display_BlendMode,(void))
 
 Void FlxTypedSpriteGroup_obj::transformChildren_Int( Dynamic Function,int Value){
 {
@@ -464,7 +464,7 @@ Void FlxTypedSpriteGroup_obj::initVars( ){
 				HX_STACK_LINE(90)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(90)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(90)
 				point->_inPool = false;
 				HX_STACK_LINE(90)
@@ -481,7 +481,7 @@ Void FlxTypedSpriteGroup_obj::initVars( ){
 				HX_STACK_LINE(90)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(90)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(90)
 				point->_inPool = false;
 				HX_STACK_LINE(90)
@@ -498,7 +498,7 @@ Void FlxTypedSpriteGroup_obj::initVars( ){
 				HX_STACK_LINE(90)
 				Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 				HX_STACK_LINE(90)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(90)
 				point->_inPool = false;
 				HX_STACK_LINE(90)
@@ -511,7 +511,7 @@ Void FlxTypedSpriteGroup_obj::initVars( ){
 			HX_STACK_LINE(90)
 			{
 				HX_STACK_LINE(90)
-				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set((int)10000,(int)10000);		HX_STACK_VAR(point,"point");
+				::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)((int)10000,(int)10000);		HX_STACK_VAR(point,"point");
 				HX_STACK_LINE(90)
 				point->_inPool = false;
 				HX_STACK_LINE(90)
@@ -757,91 +757,91 @@ Void FlxTypedSpriteGroup_obj::update( ){
 		HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","update",0x579c78f6,"flixel.group.FlxTypedSpriteGroup.update","flixel/group/FlxTypedSpriteGroup.hx",203,0x49082bbf)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(204)
+		this->group->update();
+		HX_STACK_LINE(206)
 		if ((this->moves)){
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float dt = ::flixel::FlxG_obj::elapsed;		HX_STACK_VAR(dt,"dt");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g = ::flixel::util::FlxVelocity_obj::computeVelocity(this->angularVelocity,this->angularAcceleration,this->angularDrag,this->maxAngular);		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g1 = (_g - this->angularVelocity);		HX_STACK_VAR(_g1,"_g1");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float velocityDelta = (0.5 * _g1);		HX_STACK_VAR(velocityDelta,"velocityDelta");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			hx::AddEq(this->angularVelocity,velocityDelta);
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::FlxObject _g2 = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g2,"_g2");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g2->set_angle((_g2->angle + (this->angularVelocity * dt)));
 			}
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			hx::AddEq(this->angularVelocity,velocityDelta);
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g2 = ::flixel::util::FlxVelocity_obj::computeVelocity(this->velocity->x,this->acceleration->x,this->drag->x,this->maxVelocity->x);		HX_STACK_VAR(_g2,"_g2");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g3 = (_g2 - this->velocity->x);		HX_STACK_VAR(_g3,"_g3");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g4 = (0.5 * _g3);		HX_STACK_VAR(_g4,"_g4");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			velocityDelta = _g4;
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::util::FlxPoint _g5 = this->velocity;		HX_STACK_VAR(_g5,"_g5");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g5->set_x((_g5->x + velocityDelta));
 			}
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float delta = (this->velocity->x * dt);		HX_STACK_VAR(delta,"delta");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::util::FlxPoint _g5 = this->velocity;		HX_STACK_VAR(_g5,"_g5");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g5->set_x((_g5->x + velocityDelta));
 			}
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::FlxObject _g5 = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g5,"_g5");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g5->set_x((_g5->x + delta));
 			}
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g5 = ::flixel::util::FlxVelocity_obj::computeVelocity(this->velocity->y,this->acceleration->y,this->drag->y,this->maxVelocity->y);		HX_STACK_VAR(_g5,"_g5");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g6 = (_g5 - this->velocity->y);		HX_STACK_VAR(_g6,"_g6");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			Float _g7 = (0.5 * _g6);		HX_STACK_VAR(_g7,"_g7");
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			velocityDelta = _g7;
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::util::FlxPoint _g8 = this->velocity;		HX_STACK_VAR(_g8,"_g8");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g8->set_y((_g8->y + velocityDelta));
 			}
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			delta = (this->velocity->y * dt);
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::util::FlxPoint _g8 = this->velocity;		HX_STACK_VAR(_g8,"_g8");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g8->set_y((_g8->y + velocityDelta));
 			}
-			HX_STACK_LINE(206)
+			HX_STACK_LINE(208)
 			{
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				::flixel::FlxObject _g8 = hx::ObjectPtr<OBJ_>(this);		HX_STACK_VAR(_g8,"_g8");
-				HX_STACK_LINE(206)
+				HX_STACK_LINE(208)
 				_g8->set_y((_g8->y + delta));
 			}
 		}
-		HX_STACK_LINE(209)
-		this->group->update();
 	}
 return null();
 }
@@ -1607,14 +1607,14 @@ int FlxTypedSpriteGroup_obj::set_color( int Value){
 }
 
 
-::openfl::display::BlendMode FlxTypedSpriteGroup_obj::set_blend( ::openfl::display::BlendMode Value){
+::openfl::_legacy::display::BlendMode FlxTypedSpriteGroup_obj::set_blend( ::openfl::_legacy::display::BlendMode Value){
 	HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","set_blend",0x9f630fe7,"flixel.group.FlxTypedSpriteGroup.set_blend","flixel/group/FlxTypedSpriteGroup.hx",747,0x49082bbf)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
 	HX_STACK_LINE(748)
 	if (((bool(this->exists) && bool((this->blend != Value))))){
 		HX_STACK_LINE(749)
-		this->transformChildren_openfl_display_BlendMode(this->blendTransform_dyn(),Value);
+		this->transformChildren_openfl__legacy_display_BlendMode(this->blendTransform_dyn(),Value);
 	}
 	HX_STACK_LINE(750)
 	return this->blend = Value;
@@ -1956,7 +1956,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC2(FlxTypedSpriteGroup_obj,gColorTransform,(void))
 
-Void FlxTypedSpriteGroup_obj::blendTransform( ::flixel::FlxSprite Sprite,::openfl::display::BlendMode Blend){
+Void FlxTypedSpriteGroup_obj::blendTransform( ::flixel::FlxSprite Sprite,::openfl::_legacy::display::BlendMode Blend){
 {
 		HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","blendTransform",0x1d7b3ac8,"flixel.group.FlxTypedSpriteGroup.blendTransform","flixel/group/FlxTypedSpriteGroup.hx",864,0x49082bbf)
 		HX_STACK_THIS(this)
@@ -2324,7 +2324,7 @@ bool AutoBuffer = __o_AutoBuffer.Default(false);
 }
 
 
-::openfl::display::BitmapData FlxTypedSpriteGroup_obj::set_pixels( ::openfl::display::BitmapData Value){
+::openfl::_legacy::display::BitmapData FlxTypedSpriteGroup_obj::set_pixels( ::openfl::_legacy::display::BitmapData Value){
 	HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","set_pixels",0xc29e6ad7,"flixel.group.FlxTypedSpriteGroup.set_pixels","flixel/group/FlxTypedSpriteGroup.hx",962,0x49082bbf)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Value,"Value")
@@ -2342,7 +2342,7 @@ bool AutoBuffer = __o_AutoBuffer.Default(false);
 }
 
 
-::openfl::display::BitmapData FlxTypedSpriteGroup_obj::get_pixels( ){
+::openfl::_legacy::display::BitmapData FlxTypedSpriteGroup_obj::get_pixels( ){
 	HX_STACK_FRAME("flixel.group.FlxTypedSpriteGroup","get_pixels",0xbf20cc63,"flixel.group.FlxTypedSpriteGroup.get_pixels","flixel/group/FlxTypedSpriteGroup.hx",980,0x49082bbf)
 	HX_STACK_THIS(this)
 	HX_STACK_LINE(980)
@@ -2595,8 +2595,8 @@ Dynamic FlxTypedSpriteGroup_obj::__Field(const ::String &inName,bool inCallProp)
 	case 40:
 		if (HX_FIELD_EQ(inName,"transformChildren_Array_flixel_FlxCamera") ) { return transformChildren_Array_flixel_FlxCamera_dyn(); }
 		break;
-	case 42:
-		if (HX_FIELD_EQ(inName,"transformChildren_openfl_display_BlendMode") ) { return transformChildren_openfl_display_BlendMode_dyn(); }
+	case 50:
+		if (HX_FIELD_EQ(inName,"transformChildren_openfl__legacy_display_BlendMode") ) { return transformChildren_openfl__legacy_display_BlendMode_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -2654,7 +2654,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 #endif
 
 static ::String sMemberFields[] = {
-	HX_CSTRING("transformChildren_openfl_display_BlendMode"),
+	HX_CSTRING("transformChildren_openfl__legacy_display_BlendMode"),
 	HX_CSTRING("transformChildren_Int"),
 	HX_CSTRING("transformChildren_Float"),
 	HX_CSTRING("transformChildren_Bool"),

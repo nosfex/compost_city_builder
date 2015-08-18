@@ -129,32 +129,44 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_openfl_Lib
-#include <openfl/Lib.h>
+#ifndef INCLUDED_openfl__legacy_Lib
+#include <openfl/_legacy/Lib.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObject
-#include <openfl/display/DisplayObject.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObject
+#include <openfl/_legacy/display/DisplayObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_DisplayObjectContainer
-#include <openfl/display/DisplayObjectContainer.h>
+#ifndef INCLUDED_openfl__legacy_display_DisplayObjectContainer
+#include <openfl/_legacy/display/DisplayObjectContainer.h>
 #endif
-#ifndef INCLUDED_openfl_display_Graphics
-#include <openfl/display/Graphics.h>
+#ifndef INCLUDED_openfl__legacy_display_Graphics
+#include <openfl/_legacy/display/Graphics.h>
 #endif
-#ifndef INCLUDED_openfl_display_IBitmapDrawable
-#include <openfl/display/IBitmapDrawable.h>
+#ifndef INCLUDED_openfl__legacy_display_IBitmapDrawable
+#include <openfl/_legacy/display/IBitmapDrawable.h>
 #endif
-#ifndef INCLUDED_openfl_display_InteractiveObject
-#include <openfl/display/InteractiveObject.h>
+#ifndef INCLUDED_openfl__legacy_display_InteractiveObject
+#include <openfl/_legacy/display/InteractiveObject.h>
 #endif
-#ifndef INCLUDED_openfl_display_MovieClip
-#include <openfl/display/MovieClip.h>
+#ifndef INCLUDED_openfl__legacy_display_MovieClip
+#include <openfl/_legacy/display/MovieClip.h>
 #endif
-#ifndef INCLUDED_openfl_display_Sprite
-#include <openfl/display/Sprite.h>
+#ifndef INCLUDED_openfl__legacy_display_Sprite
+#include <openfl/_legacy/display/Sprite.h>
 #endif
-#ifndef INCLUDED_openfl_display_Stage
-#include <openfl/display/Stage.h>
+#ifndef INCLUDED_openfl__legacy_display_Stage
+#include <openfl/_legacy/display/Stage.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_display_Tilesheet
+#include <openfl/_legacy/display/Tilesheet.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_Event
+#include <openfl/_legacy/events/Event.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_EventDispatcher
+#include <openfl/_legacy/events/EventDispatcher.h>
+#endif
+#ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
+#include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
 #ifndef INCLUDED_openfl_display_StageAlign
 #include <openfl/display/StageAlign.h>
@@ -162,20 +174,8 @@
 #ifndef INCLUDED_openfl_display_StageScaleMode
 #include <openfl/display/StageScaleMode.h>
 #endif
-#ifndef INCLUDED_openfl_display_Tilesheet
-#include <openfl/display/Tilesheet.h>
-#endif
-#ifndef INCLUDED_openfl_events_Event
-#include <openfl/events/Event.h>
-#endif
-#ifndef INCLUDED_openfl_events_EventDispatcher
-#include <openfl/events/EventDispatcher.h>
-#endif
 #ifndef INCLUDED_openfl_events_FocusEvent
 #include <openfl/events/FocusEvent.h>
-#endif
-#ifndef INCLUDED_openfl_events_IEventDispatcher
-#include <openfl/events/IEventDispatcher.h>
 #endif
 namespace flixel{
 
@@ -226,7 +226,7 @@ bool StartFullscreen = __o_StartFullscreen.Default(false);
 	HX_STACK_LINE(225)
 	this->_startFullscreen = StartFullscreen;
 	HX_STACK_LINE(229)
-	::openfl::display::Sprite _g = ::openfl::display::Sprite_obj::__new();		HX_STACK_VAR(_g,"_g");
+	::openfl::_legacy::display::Sprite _g = ::openfl::_legacy::display::Sprite_obj::__new();		HX_STACK_VAR(_g,"_g");
 	HX_STACK_LINE(229)
 	this->_inputContainer = _g;
 	HX_STACK_LINE(232)
@@ -249,7 +249,7 @@ bool StartFullscreen = __o_StartFullscreen.Default(false);
 		this->_initialState = InitialState;
 	}
 	HX_STACK_LINE(246)
-	this->addEventListener(::openfl::events::Event_obj::ADDED_TO_STAGE,this->create_dyn(),null(),null(),null());
+	this->addEventListener(::openfl::_legacy::events::Event_obj::ADDED_TO_STAGE,this->create_dyn(),null(),null(),null());
 }
 ;
 	return null();
@@ -274,16 +274,16 @@ Void FlxGame_obj::create( Dynamic _){
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(_,"_")
 		HX_STACK_LINE(254)
-		::openfl::display::Stage _g = this->get_stage();		HX_STACK_VAR(_g,"_g");
+		::openfl::_legacy::display::Stage _g = this->get_stage();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(254)
 		if (((_g == null()))){
 			HX_STACK_LINE(256)
 			return null();
 		}
 		HX_STACK_LINE(258)
-		this->removeEventListener(::openfl::events::Event_obj::ADDED_TO_STAGE,this->create_dyn(),null());
+		this->removeEventListener(::openfl::_legacy::events::Event_obj::ADDED_TO_STAGE,this->create_dyn(),null());
 		HX_STACK_LINE(260)
-		int _g1 = ::openfl::Lib_obj::getTimer();		HX_STACK_VAR(_g1,"_g1");
+		int _g1 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(260)
 		this->_total = _g1;
 		HX_STACK_LINE(263)
@@ -297,9 +297,9 @@ Void FlxGame_obj::create( Dynamic _){
 		HX_STACK_LINE(278)
 		this->addChild(this->_inputContainer);
 		HX_STACK_LINE(282)
-		int _g2 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g2,"_g2");
+		int _g2 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(282)
-		int _g3 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(_g3,"_g3");
+		int _g3 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(_g3,"_g3");
 		HX_STACK_LINE(282)
 		::flixel::system::debug::FlxDebugger _g4 = ::flixel::system::debug::FlxDebugger_obj::__new(_g2,_g3);		HX_STACK_VAR(_g4,"_g4");
 		HX_STACK_LINE(282)
@@ -368,13 +368,13 @@ Void FlxGame_obj::create( Dynamic _){
 			::flixel::FlxG_obj::log->advanced(HX_CSTRING("FlxG.updateFramerate: The update framerate shouldn't be smaller than the draw framerate, since it can slow down your game."),::flixel::system::debug::LogStyle_obj::WARNING,true);
 		}
 		HX_STACK_LINE(319)
-		this->get_stage()->addEventListener(::openfl::events::Event_obj::ENTER_FRAME,this->onEnterFrame_dyn(),null(),null(),null());
+		this->get_stage()->addEventListener(::openfl::_legacy::events::Event_obj::ENTER_FRAME,this->onEnterFrame_dyn(),null(),null(),null());
 		HX_STACK_LINE(323)
-		this->get_stage()->addEventListener(::openfl::events::Event_obj::RESIZE,this->onResize_dyn(),null(),null(),null());
+		this->get_stage()->addEventListener(::openfl::_legacy::events::Event_obj::RESIZE,this->onResize_dyn(),null(),null(),null());
 		HX_STACK_LINE(326)
-		int _g10 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g10,"_g10");
+		int _g10 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(_g10,"_g10");
 		HX_STACK_LINE(326)
-		int _g11 = ::openfl::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(_g11,"_g11");
+		int _g11 = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(_g11,"_g11");
 		HX_STACK_LINE(326)
 		this->resizeGame(_g10,_g11);
 	}
@@ -507,9 +507,9 @@ Void FlxGame_obj::onResize( Dynamic _){
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(_,"_")
 		HX_STACK_LINE(413)
-		int width = ::openfl::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(width,"width");
+		int width = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageWidth();		HX_STACK_VAR(width,"width");
 		HX_STACK_LINE(414)
-		int height = ::openfl::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(height,"height");
+		int height = ::openfl::_legacy::Lib_obj::get_current()->get_stage()->get_stageHeight();		HX_STACK_VAR(height,"height");
 		HX_STACK_LINE(417)
 		::flixel::FlxG_obj::bitmap->onContext();
 		HX_STACK_LINE(420)
@@ -594,7 +594,7 @@ Void FlxGame_obj::onEnterFrame( Dynamic _){
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(_,"_")
 		HX_STACK_LINE(458)
-		int _g = ::openfl::Lib_obj::getTimer();		HX_STACK_VAR(_g,"_g");
+		int _g = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(_g,"_g");
 		HX_STACK_LINE(458)
 		this->ticks = _g;
 		HX_STACK_LINE(459)
@@ -867,7 +867,7 @@ Void FlxGame_obj::update( ){
 		HX_STACK_LINE(672)
 		if ((::flixel::FlxG_obj::debugger->visible)){
 			HX_STACK_LINE(674)
-			int _g = ::openfl::Lib_obj::getTimer();		HX_STACK_VAR(_g,"_g");
+			int _g = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(674)
 			this->ticks = _g;
 		}
@@ -955,7 +955,7 @@ Void FlxGame_obj::update( ){
 		HX_STACK_LINE(703)
 		::flixel::FlxG_obj::signals->postUpdate->dispatch();
 		HX_STACK_LINE(706)
-		int _g1 = ::openfl::Lib_obj::getTimer();		HX_STACK_VAR(_g1,"_g1");
+		int _g1 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(706)
 		int _g2 = (_g1 - this->ticks);		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(706)
@@ -982,7 +982,7 @@ Void FlxGame_obj::update( ){
 			}
 		}
 		HX_STACK_LINE(714)
-		::flixel::util::FlxArrayUtil_obj::clearArray_flixel_input_FlxSwipe(::flixel::FlxG_obj::swipes,null());
+		::flixel::util::FlxArrayUtil_obj::clearArray(::flixel::FlxG_obj::swipes,null());
 	}
 return null();
 }
@@ -1031,7 +1031,7 @@ Void FlxGame_obj::draw( ){
 		HX_STACK_LINE(788)
 		if ((::flixel::FlxG_obj::debugger->visible)){
 			HX_STACK_LINE(791)
-			int _g = ::openfl::Lib_obj::getTimer();		HX_STACK_VAR(_g,"_g");
+			int _g = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(_g,"_g");
 			HX_STACK_LINE(791)
 			this->ticks = _g;
 		}
@@ -1152,7 +1152,7 @@ Void FlxGame_obj::draw( ){
 		HX_STACK_LINE(839)
 		::flixel::FlxG_obj::signals->postDraw->dispatch();
 		HX_STACK_LINE(842)
-		int _g1 = ::openfl::Lib_obj::getTimer();		HX_STACK_VAR(_g1,"_g1");
+		int _g1 = ::openfl::_legacy::Lib_obj::getTimer();		HX_STACK_VAR(_g1,"_g1");
 		HX_STACK_LINE(842)
 		int _g2 = (_g1 - this->ticks);		HX_STACK_VAR(_g2,"_g2");
 		HX_STACK_LINE(842)
@@ -1195,7 +1195,7 @@ void FlxGame_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(_startFullscreen,"_startFullscreen");
 	HX_MARK_MEMBER_NAME(_requestedState,"_requestedState");
 	HX_MARK_MEMBER_NAME(_resetGame,"_resetGame");
-	::openfl::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
 
@@ -1224,7 +1224,7 @@ void FlxGame_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(_startFullscreen,"_startFullscreen");
 	HX_VISIT_MEMBER_NAME(_requestedState,"_requestedState");
 	HX_VISIT_MEMBER_NAME(_resetGame,"_resetGame");
-	::openfl::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
+	::openfl::_legacy::display::DisplayObjectContainer_obj::__Visit(HX_VISIT_ARG);
 }
 
 Dynamic FlxGame_obj::__Field(const ::String &inName,bool inCallProp)
@@ -1334,7 +1334,7 @@ Dynamic FlxGame_obj::__SetField(const ::String &inName,const Dynamic &inValue,bo
 		if (HX_FIELD_EQ(inName,"_initialState") ) { _initialState=inValue.Cast< ::Class >(); return inValue; }
 		break;
 	case 15:
-		if (HX_FIELD_EQ(inName,"_inputContainer") ) { _inputContainer=inValue.Cast< ::openfl::display::Sprite >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"_inputContainer") ) { _inputContainer=inValue.Cast< ::openfl::_legacy::display::Sprite >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"_requestedState") ) { _requestedState=inValue.Cast< ::flixel::FlxState >(); return inValue; }
 		break;
 	case 16:
@@ -1405,7 +1405,7 @@ static hx::StorageInfo sMemberStorageInfo[] = {
 	{hx::fsBool,(int)offsetof(FlxGame_obj,_lostFocus),HX_CSTRING("_lostFocus")},
 	{hx::fsBool,(int)offsetof(FlxGame_obj,_onFocusFiredOnce),HX_CSTRING("_onFocusFiredOnce")},
 	{hx::fsObject /*::flixel::system::ui::FlxFocusLostScreen*/ ,(int)offsetof(FlxGame_obj,_focusLostScreen),HX_CSTRING("_focusLostScreen")},
-	{hx::fsObject /*::openfl::display::Sprite*/ ,(int)offsetof(FlxGame_obj,_inputContainer),HX_CSTRING("_inputContainer")},
+	{hx::fsObject /*::openfl::_legacy::display::Sprite*/ ,(int)offsetof(FlxGame_obj,_inputContainer),HX_CSTRING("_inputContainer")},
 	{hx::fsObject /*::Class*/ ,(int)offsetof(FlxGame_obj,_customSoundTray),HX_CSTRING("_customSoundTray")},
 	{hx::fsObject /*::Class*/ ,(int)offsetof(FlxGame_obj,_customFocusLostScreen),HX_CSTRING("_customFocusLostScreen")},
 	{hx::fsBool,(int)offsetof(FlxGame_obj,_skipSplash),HX_CSTRING("_skipSplash")},

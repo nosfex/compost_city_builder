@@ -9,9 +9,9 @@
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxPooled)
 HX_DECLARE_CLASS2(flixel,util,FlxPoint)
-HX_DECLARE_CLASS2(flixel,util,FlxPool_flixel_util_FlxRect)
+HX_DECLARE_CLASS2(flixel,util,FlxPool)
 HX_DECLARE_CLASS2(flixel,util,FlxRect)
-HX_DECLARE_CLASS2(openfl,geom,Rectangle)
+HX_DECLARE_CLASS3(openfl,_legacy,geom,Rectangle)
 namespace flixel{
 namespace util{
 
@@ -61,10 +61,10 @@ class HXCPP_CLASS_ATTRIBUTES  FlxRect_obj : public hx::Object{
 		virtual ::flixel::util::FlxRect copyTo( ::flixel::util::FlxRect Rect);
 		Dynamic copyTo_dyn();
 
-		virtual ::flixel::util::FlxRect copyFromFlash( ::openfl::geom::Rectangle FlashRect);
+		virtual ::flixel::util::FlxRect copyFromFlash( ::openfl::_legacy::geom::Rectangle FlashRect);
 		Dynamic copyFromFlash_dyn();
 
-		virtual ::openfl::geom::Rectangle copyToFlash( ::openfl::geom::Rectangle FlashRect);
+		virtual ::openfl::_legacy::geom::Rectangle copyToFlash( ::openfl::_legacy::geom::Rectangle FlashRect);
 		Dynamic copyToFlash_dyn();
 
 		virtual bool overlaps( ::flixel::util::FlxRect Rect);
@@ -106,7 +106,7 @@ class HXCPP_CLASS_ATTRIBUTES  FlxRect_obj : public hx::Object{
 		virtual Float set_bottom( Float Value);
 		Dynamic set_bottom_dyn();
 
-		static ::flixel::util::FlxPool_flixel_util_FlxRect _pool;
+		static ::flixel::util::FlxPool _pool;
 		static ::flixel::util::FlxRect get( hx::Null< Float >  X,hx::Null< Float >  Y,hx::Null< Float >  Width,hx::Null< Float >  Height);
 		static Dynamic get_dyn();
 

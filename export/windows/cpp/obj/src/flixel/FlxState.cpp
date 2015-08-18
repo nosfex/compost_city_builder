@@ -111,12 +111,10 @@ HX_DEFINE_DYNAMIC_FUNC1(FlxState_obj,openSubState,(void))
 
 Void FlxState_obj::closeSubState( ){
 {
-		HX_STACK_FRAME("flixel.FlxState","closeSubState",0x519577cc,"flixel.FlxState.closeSubState","flixel/FlxState.hx",77,0xdf96844c)
+		HX_STACK_FRAME("flixel.FlxState","closeSubState",0x519577cc,"flixel.FlxState.closeSubState","flixel/FlxState.hx",78,0xdf96844c)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(78)
 		this->_requestSubStateReset = true;
-		HX_STACK_LINE(79)
-		this->_requestedSubState = null();
 	}
 return null();
 }
@@ -126,23 +124,25 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxState_obj,closeSubState,(void))
 
 Void FlxState_obj::resetSubState( ){
 {
-		HX_STACK_FRAME("flixel.FlxState","resetSubState",0x772d18e3,"flixel.FlxState.resetSubState","flixel/FlxState.hx",86,0xdf96844c)
+		HX_STACK_FRAME("flixel.FlxState","resetSubState",0x772d18e3,"flixel.FlxState.resetSubState","flixel/FlxState.hx",85,0xdf96844c)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(88)
+		HX_STACK_LINE(87)
 		if (((this->subState != null()))){
-			HX_STACK_LINE(90)
+			HX_STACK_LINE(89)
 			if (((this->subState->closeCallback != null()))){
-				HX_STACK_LINE(92)
+				HX_STACK_LINE(91)
 				this->subState->closeCallback();
 			}
-			HX_STACK_LINE(94)
+			HX_STACK_LINE(93)
 			if ((this->destroySubStates)){
-				HX_STACK_LINE(96)
+				HX_STACK_LINE(95)
 				this->subState->destroy();
 			}
 		}
-		HX_STACK_LINE(101)
+		HX_STACK_LINE(100)
 		this->subState = this->_requestedSubState;
+		HX_STACK_LINE(101)
+		this->_requestedSubState = null();
 		HX_STACK_LINE(103)
 		if (((this->subState != null()))){
 			HX_STACK_LINE(106)
@@ -232,9 +232,9 @@ Void FlxState_obj::tryUpdate( ){
 		HX_STACK_LINE(158)
 		if ((this->_requestSubStateReset)){
 			HX_STACK_LINE(160)
-			this->resetSubState();
-			HX_STACK_LINE(161)
 			this->_requestSubStateReset = false;
+			HX_STACK_LINE(161)
+			this->resetSubState();
 		}
 		else{
 			HX_STACK_LINE(163)

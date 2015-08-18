@@ -6,12 +6,12 @@
 #endif
 
 HX_DECLARE_CLASS2(flixel,system,FlxAssets)
-HX_DECLARE_CLASS2(openfl,display,BitmapData)
-HX_DECLARE_CLASS2(openfl,display,Graphics)
-HX_DECLARE_CLASS2(openfl,display,IBitmapDrawable)
-HX_DECLARE_CLASS2(openfl,events,EventDispatcher)
-HX_DECLARE_CLASS2(openfl,events,IEventDispatcher)
-HX_DECLARE_CLASS2(openfl,media,Sound)
+HX_DECLARE_CLASS3(openfl,_legacy,display,BitmapData)
+HX_DECLARE_CLASS3(openfl,_legacy,display,Graphics)
+HX_DECLARE_CLASS3(openfl,_legacy,display,IBitmapDrawable)
+HX_DECLARE_CLASS3(openfl,_legacy,events,EventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,events,IEventDispatcher)
+HX_DECLARE_CLASS3(openfl,_legacy,media,Sound)
 namespace flixel{
 namespace system{
 
@@ -38,16 +38,13 @@ class HXCPP_CLASS_ATTRIBUTES  FlxAssets_obj : public hx::Object{
 
 		static ::String FONT_DEFAULT;
 		static ::String FONT_DEBUGGER;
-		static Void init( );
-		static Dynamic init_dyn();
-
-		static Void drawLogo( ::openfl::display::Graphics graph);
+		static Void drawLogo( ::openfl::_legacy::display::Graphics graph);
 		static Dynamic drawLogo_dyn();
 
-		static ::openfl::display::BitmapData getBitmapData( ::String id);
+		static ::openfl::_legacy::display::BitmapData getBitmapData( ::String id);
 		static Dynamic getBitmapData_dyn();
 
-		static ::openfl::media::Sound getSound( ::String id);
+		static ::openfl::_legacy::media::Sound getSound( ::String id);
 		static Dynamic getSound_dyn();
 
 		static Void cacheSounds( );

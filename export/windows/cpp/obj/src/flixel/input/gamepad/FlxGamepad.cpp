@@ -18,8 +18,8 @@
 #ifndef INCLUDED_flixel_util_FlxPoint
 #include <flixel/util/FlxPoint.h>
 #endif
-#ifndef INCLUDED_flixel_util_FlxPool_flixel_util_FlxPoint
-#include <flixel/util/FlxPool_flixel_util_FlxPoint.h>
+#ifndef INCLUDED_flixel_util_FlxPool
+#include <flixel/util/FlxPool.h>
 #endif
 #ifndef INCLUDED_hxMath
 #include <hxMath.h>
@@ -92,7 +92,7 @@ Float GlobalDeadZone = __o_GlobalDeadZone.Default(0);
 		HX_STACK_LINE(66)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(66)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(66)
 		point->_inPool = false;
 		HX_STACK_LINE(66)
@@ -109,7 +109,7 @@ Float GlobalDeadZone = __o_GlobalDeadZone.Default(0);
 		HX_STACK_LINE(67)
 		Float Y = (int)0;		HX_STACK_VAR(Y,"Y");
 		HX_STACK_LINE(67)
-		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->set(X,Y);		HX_STACK_VAR(point,"point");
+		::flixel::util::FlxPoint point = ::flixel::util::FlxPoint_obj::_pool->get()->__Field(HX_CSTRING("set"),true)(X,Y);		HX_STACK_VAR(point,"point");
 		HX_STACK_LINE(67)
 		point->_inPool = false;
 		HX_STACK_LINE(67)
@@ -184,7 +184,7 @@ Void FlxGamepad_obj::update( ){
 			HX_STACK_LINE(117)
 			if (((button == null()))){
 				HX_STACK_LINE(119)
-				return null();
+				continue;
 			}
 			HX_STACK_LINE(122)
 			if (((bool((button->last == (int)-1)) && bool((button->current == (int)-1))))){
@@ -334,7 +334,7 @@ bool FlxGamepad_obj::anyPressed( Array< int > ButtonIDArray){
 			HX_STACK_LINE(199)
 			if (((this->buttons->__get(b).StaticCast< ::flixel::input::gamepad::FlxGamepadButton >() != null()))){
 				HX_STACK_LINE(201)
-				if (((this->buttons->__get(b).StaticCast< ::flixel::input::gamepad::FlxGamepadButton >()->current == (int)1))){
+				if (((this->buttons->__get(b).StaticCast< ::flixel::input::gamepad::FlxGamepadButton >()->current > (int)0))){
 					HX_STACK_LINE(202)
 					return true;
 				}

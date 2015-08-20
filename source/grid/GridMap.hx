@@ -19,7 +19,7 @@ class GridMap extends FlxGroup
     var _initPos:FlxPoint = null;
     var _posCorrection:FlxPoint = null;
     var _lastGridCount:Int = 0;
-	
+	var _increaseGridCount = 0;
 	var _products :Array<Product> = new Array<Product>();
 	
 	public function new()
@@ -273,6 +273,7 @@ class GridMap extends FlxGroup
 
     public function addGrids():Void
     {
+		_increaseGridCount++;
 		var maxRow :Int = _grids[0].length  + 2;
 		var maxCol :Int = maxRow;
 		// GH: Create new grid
@@ -288,7 +289,7 @@ class GridMap extends FlxGroup
 			for (j in 0 ... maxCol)
 			{
 				
-				var g:BaseGrid = new BaseGrid(32 + ((j-1) * (96 * 1.25)), 32 + ((i-1) * (96 * 1.25)));
+				var g:BaseGrid = new BaseGrid(32 + ((j-_increaseGridCount) * (96 * 1.25)), 32 + ((i-_increaseGridCount) * (96 * 1.25)));
     			g.usable = false;
 				temp[i].push(g);
 				//add(g);

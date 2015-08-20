@@ -33,7 +33,7 @@ class PlayState extends FlxState
 		super.create();
 		
 		_map = new GridMap();
-		_map.initMap(16);
+		_map.initMap(9);
 		add(_map);
 		
 		BuildingFactory.instance();

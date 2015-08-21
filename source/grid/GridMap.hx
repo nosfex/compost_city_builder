@@ -1,19 +1,18 @@
 package grid;
 import flixel.util.FlxRect;
-
+import flixel.group.FlxSpriteGroup;
 import flash.geom.Point;
 import flixel.FlxBasic;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
-import flixel.system.scaleModes.BaseScaleMode;
 import haxe.ds.Vector.Vector;
 import flixel.util.FlxPoint;
 import flixel.util.FlxSort;
 import buildings.Building;
 import flixel.FlxG;
 import production.Product;
-class GridMap extends FlxGroup
+class GridMap extends FlxSpriteGroup
 {
     var _grids:Array<Array<BaseGrid>> = null;
     var _initPos:FlxPoint = null;
@@ -22,9 +21,9 @@ class GridMap extends FlxGroup
 	var _increaseGridCount = 0;
 	var _products :Array<Product> = new Array<Product>();
 	
-	public function new()
+	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
     {
-    	super();
+    	super(X, Y, MaxSize);
 		CompostG.GRID_MAP = this;
     }
 

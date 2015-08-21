@@ -41,17 +41,19 @@ class PlayState extends FlxState
 
 		_selector = new Selector();
 		_selector.initSelector(_categoryData);
+		_selector.scrollFactor.set();
 		add(_selector);
 		
 		CompostG.updateProductAmount("money", 10);
 		
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
-		FlxG.camera = new FlxCamera(0, 0, FlxG.width, FlxG.height);
-		
-		_camControl = new CameraController( (FlxG.width * .75) / 2, (FlxG.height * .85) / 2, FlxG.width * .75, FlxG.height * .85);
+		_moneyTxt.scrollFactor.set();
+		_camControl = new CameraController( 0, 0, FlxG.width , FlxG.height );
 		add(_camControl);
 		
-		FlxG.camera.follow(_camControl);
+		FlxG.camera.follow(_camControl, 0, null, 0);
+		
+		FlxG.camera.setBounds(0, 0, FlxG.width * 2, FlxG.height * 2);
 		add(_moneyTxt);
 	}
 	
@@ -75,7 +77,7 @@ class PlayState extends FlxState
 		{
 			_map.addGrids();
 		}
-		
+			
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 	}	
 }

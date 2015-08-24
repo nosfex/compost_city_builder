@@ -11,7 +11,8 @@ import flixel.input.keyboard.FlxKey;
 class CameraController extends FlxObject
 {
 	static private inline var _camControlSpeed:Int = 150;
-
+	
+	
 	public function new(X:Float=0, Y:Float=0, Width:Float=0, Height:Float=0) 
 	{
 		super(X, Y, Width, Height);

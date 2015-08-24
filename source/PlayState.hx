@@ -48,12 +48,12 @@ class PlayState extends FlxState
 		
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
 		_moneyTxt.scrollFactor.set();
-		_camControl = new CameraController( 0, 0, FlxG.width , FlxG.height );
+		_camControl = new CameraController( -FlxG.width * .15, -FlxG.height * .25, FlxG.width , FlxG.height );
 		add(_camControl);
 		
 		FlxG.camera.follow(_camControl, 0, null, 0);
 		
-		FlxG.camera.setBounds(0, 0, FlxG.width * 2, FlxG.height * 2);
+		FlxG.camera.setBounds( -FlxG.width / 2, -FlxG.height / 2, FlxG.width * 2, FlxG.height * 2);
 		add(_moneyTxt);
 	}
 	

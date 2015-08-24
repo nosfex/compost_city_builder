@@ -119,7 +119,7 @@ class BaseGrid extends FlxSpriteGroup
       
 		if (FlxG.mouse.justPressed)
 		{
-			var p :FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+			var p :FlxPoint = new FlxPoint(FlxG.mouse.x, FlxG.mouse.y);
 			var r :FlxRect = new FlxRect(x, y, width * scale.x, height * scale.y);
 			
 			if (r == null)
@@ -175,7 +175,6 @@ class BaseGrid extends FlxSpriteGroup
 		}
 		else
 		{
-			
 			alpha = 0.5;
 			if(_building != null && _building.alive)
 			{

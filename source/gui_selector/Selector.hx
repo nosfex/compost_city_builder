@@ -5,8 +5,10 @@ import category.CategoryData;
 import flixel.system.FlxVersion;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.util.FlxPoint;
 import flixel.util.FlxRect;
+import flixel.util.FlxColor;
 /**
  * ...
  * @author Gerardo Heidel
@@ -19,6 +21,8 @@ class Selector extends FlxSpriteGroup
 	var initPosY : Map<FlxButton, Float> = new Map();
 	var internalCategoryButtons : Map<FlxButton, Array<FlxButton>> = new Map();
 	var _buttonHeight : Float = 50;
+	var px : Float;
+	public var bkg:FlxSprite;
 	
 	public function new() 
 	{
@@ -27,11 +31,19 @@ class Selector extends FlxSpriteGroup
 	
 	public function initSelector(data :CategoryData) :Void
 	{
-		buildCategoryButton(FlxG.width * 0.8, FlxG.height * 0.1, "Energy", data);
-		buildCategoryButton(FlxG.width * 0.8, FlxG.height * 0.2, "Production", data);
-		buildCategoryButton(FlxG.width * 0.8, FlxG.height * 0.3, "Housing", data);
+		x = 0;
+		px = x;
+		bkg = new FlxSprite(px, 0, null);
+		bkg.makeGraphic(cast(FlxG.width * 0.25), FlxG.height, FlxColor.TEAL);
+		add(bkg);
 		
-		buildFunctionButton(FlxG.width * 0.8, FlxG.height * 0.8, "Erase");
+		
+		
+		buildCategoryButton(px +FlxG.width * 0.05, FlxG.height * 0.1, "Energy", data);
+		buildCategoryButton(px +FlxG.width * 0.05, FlxG.height * 0.2, "Production", data);
+		buildCategoryButton(px + FlxG.width * 0.05, FlxG.height * 0.3, "Housing", data);
+		
+		buildFunctionButton(px + FlxG.width * 0.05, FlxG.height * 0.8, "Erase");
 	}
 	
 	private function buildFunctionButton(XBase: Float, YBase: Float, buttonName : String) :Void

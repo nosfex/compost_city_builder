@@ -25,6 +25,7 @@ class PlayState extends FlxState
 	private var _selector :gui_selector.Selector;
 	private var _moneyTxt :FlxText;
 	private var _camControl : CameraController;
+	var hudCam:FlxCamera;
 	/**
 	 * Function that is called up when to state is created to set it up. 
 	 */
@@ -39,22 +40,31 @@ class PlayState extends FlxState
 		BuildingFactory.instance();
 		_categoryData = new CategoryData();
 
-		_selector = new Selector();
-		_selector.initSelector(_categoryData);
-		_selector.scrollFactor.set();
-		add(_selector);
-		
-		CompostG.updateProductAmount("money", 10);
 		
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
 		_moneyTxt.scrollFactor.set();
 		_camControl = new CameraController( -FlxG.width * .15, -FlxG.height * .25, FlxG.width , FlxG.height );
 		add(_camControl);
 		
-		FlxG.camera.follow(_camControl, 0, null, 0);
+		_selector = new Selector();
+		_selector.initSelector(_categoryData);
+	//	_selector.scrollFactor.set();
+		add(_selector);
+	//	_selector.x = 10006;
+		CompostG.updateProductAmount("money", 10);
 		
+
+		
+		FlxG.camera.follow(_camControl, 0, null, 0);
 		FlxG.camera.setBounds( -FlxG.width / 2, -FlxG.height / 2, FlxG.width * 2, FlxG.height * 2);
-		add(_moneyTxt);
+		_selector.add(_moneyTxt);
+		
+		hudCam = new FlxCamera(cast(FlxG.width * .75), 0, cast(FlxG.width ), FlxG.height);
+		
+		FlxG.cameras.add(hudCam);
+		hudCam.alpha = 0.5;
+		hudCam.zoom = 1;
+		hudCam.follow(_selector.bkg);
 	}
 	
 	/**
@@ -77,7 +87,8 @@ class PlayState extends FlxState
 		{
 			_map.addGrids();
 		}
-			
+		
+		
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 	}	
 }

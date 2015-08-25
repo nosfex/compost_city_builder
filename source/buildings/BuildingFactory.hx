@@ -5,6 +5,7 @@ import buildings.Building;
 import sys.io.FileInput;
 import sys.io.File;
 import haxe.io.Eof;
+import flixel.FlxG;
 //import haxe.io.Error;
 
 /**
@@ -71,7 +72,9 @@ class BuildingFactory
 		{
 			return null;
 		}
-
+		
+		if (FlxG.mouse.screenX >=FlxG.width * .75)
+			return null;
 		
 		if (_buildingData[CURRENT_BUILDING].price > CompostG.getProductAmountByType("money"))
 			return null;

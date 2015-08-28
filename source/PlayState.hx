@@ -12,6 +12,7 @@ import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
 import gui_selector.Selector;
 import grid.GridMap;
+import flixel.util.FlxPoint;
 
 /**
  * A FlxState which can be used for the actual gameplay.
@@ -42,29 +43,25 @@ class PlayState extends FlxState
 
 		
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
+		
 		_moneyTxt.scrollFactor.set();
-		_camControl = new CameraController( -FlxG.width * .15, -FlxG.height * .25, FlxG.width , FlxG.height );
+		_camControl = new CameraController(0, 0, FlxG.width * .75 , FlxG.height  * .85);
 		add(_camControl);
 		
 		_selector = new Selector();
 		_selector.initSelector(_categoryData);
-	//	_selector.scrollFactor.set();
 		add(_selector);
-	//	_selector.x = 10006;
 		CompostG.updateProductAmount("money", 10);
-		
-
-		
+			
 		FlxG.camera.follow(_camControl, 0, null, 0);
-		FlxG.camera.setBounds( -FlxG.width / 2, -FlxG.height / 2, FlxG.width * 2, FlxG.height * 2);
-		_selector.add(_moneyTxt);
+		FlxG.camera.setBounds(0, 0, FlxG.width * 2, FlxG.height * 2);
+		add(_moneyTxt);
 		
-		hudCam = new FlxCamera(cast(FlxG.width * .75), 0, cast(FlxG.width ), FlxG.height);
+		hudCam = new FlxCamera(cast(FlxG.width * .75), 0, cast(FlxG.width *.25 ), FlxG.height);
 		
 		FlxG.cameras.add(hudCam);
-		hudCam.alpha = 0.5;
 		hudCam.zoom = 1;
-		hudCam.follow(_selector.bkg);
+		hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height));
 	}
 	
 	/**

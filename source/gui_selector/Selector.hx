@@ -22,7 +22,11 @@ class Selector extends FlxSpriteGroup
 	var internalCategoryButtons : Map<FlxButton, Array<FlxButton>> = new Map();
 	var _buttonHeight : Float = 50;
 	var px : Float;
+	var py : Float;
+	var camOffsetX : Float ;
 	public var bkg:FlxSprite;
+	
+
 	
 	public function new() 
 	{
@@ -32,18 +36,17 @@ class Selector extends FlxSpriteGroup
 	public function initSelector(data :CategoryData) :Void
 	{
 		x = 0;
-		px = x;
-		bkg = new FlxSprite(px, 0, null);
+		y = 0;
+		px = 10000;
+		bkg = new FlxSprite(px, py, null);
 		bkg.makeGraphic(cast(FlxG.width * 0.25), FlxG.height, FlxColor.TEAL);
 		add(bkg);
 		
-		
-		
-		buildCategoryButton(px +FlxG.width * 0.05, FlxG.height * 0.1, "Energy", data);
-		buildCategoryButton(px +FlxG.width * 0.05, FlxG.height * 0.2, "Production", data);
-		buildCategoryButton(px + FlxG.width * 0.05, FlxG.height * 0.3, "Housing", data);
-		
-		buildFunctionButton(px + FlxG.width * 0.05, FlxG.height * 0.8, "Erase");
+		camOffsetX = -px - x + FlxG.width * .75;
+		buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.1, "Energy", data);
+		buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.2, "Production", data);
+		buildCategoryButton(px + FlxG.width * 0.05, py + FlxG.height * 0.3, "Housing", data);
+		buildFunctionButton(px + FlxG.width * 0.05, py + FlxG.height * 0.8, "Erase");
 	}
 	
 	private function buildFunctionButton(XBase: Float, YBase: Float, buttonName : String) :Void
@@ -55,16 +58,16 @@ class Selector extends FlxSpriteGroup
 
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
-	
 		var data : Map<String, Array<String>> = category.getHeadlines();
 		var  innerData :Array<String> = data[categoryName];
 		var btn :FlxButton = new FlxButton(XBase, YBase, categoryName, selectCategory);
 		
 		add(btn);
+		btn.ID = 
 		categoryButtons.push(btn);
 		initPosY[btn] = YBase;
 		internalCategoryButtons[btn] = new Array();
-
+		
 		for(i in 0 ... innerData.length)
 		{
 			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 10, YBase + ( (i + 1) * _buttonHeight), innerData[i] ));
@@ -91,7 +94,7 @@ class Selector extends FlxSpriteGroup
 				if (!curBtn.visible)
 					continue;
 				var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-				var r :FlxRect = new FlxRect(curBtn.x, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
+				var r :FlxRect = new FlxRect(curBtn.x + camOffsetX, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
 				if (p.inFlxRect(r))
 				{
 					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
@@ -109,7 +112,7 @@ class Selector extends FlxSpriteGroup
 		for(btn in functionButtons)
 		{
 			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-			var r :FlxRect = new FlxRect(btn.x, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
+			var r :FlxRect = new FlxRect(btn.x + camOffsetX, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
 			if (p.inFlxRect(r))
 			{
 				CompostG.FUNC_BUTTON = btn.text;
@@ -125,7 +128,7 @@ class Selector extends FlxSpriteGroup
 		for(btn in categoryButtons)
 		{
 			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-			var r :FlxRect = new FlxRect(btn.x, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
+			var r :FlxRect = new FlxRect(btn.x+ camOffsetX, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
 			if (p.inFlxRect(r))
 			{
 				unrollCategory(btn);
@@ -160,6 +163,8 @@ class Selector extends FlxSpriteGroup
 
 				else
 				{
+					FlxG.log.add("MOVE THE " + btn + " DOWN");
+					FlxG.log.add("DATA POS " + data[data.length - 1].y);
 					btn.setPosition(button.x, button.y  + (data[data.length - 1].y + 15));	
 				}
 			}

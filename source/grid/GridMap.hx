@@ -196,20 +196,7 @@ class GridMap extends FlxSpriteGroup
 				add(g);
 			}
 		}
-		
-    /*	while (row < maxGrids) 
-		{
-    		var g:BaseGrid = new BaseGrid(32 + ((col) * (96 * 1.25)), 32 + ((row) * (96 * 1.25)));
-    		_grids.push(g);
-    		g.usable = false;
-    		col++;
-    		if (col >= maxGrids) 
-			{
-    			col = 0;
-    			row++;
-    		}
-    		add(g);
-    	}*/
+	
     	_initPos = new FlxPoint(_grids[0][0].x, _grids[0][0].y);
     //	scaleToGrowth();
     }
@@ -323,32 +310,7 @@ class GridMap extends FlxSpriteGroup
 		_grids = temp;
 		
 
-		/*
-    	var initGrids:Float = Math.sqrt(_grids[].length);
-    	var maxRow:Float = 0;
-    	var maxCol:Float = initGrids;
-    	var maxGridsToAdd:Float = initGrids + colrowToAdd;
-    	while (maxRow < maxGridsToAdd)
-		{
-    		var g:BaseGrid = new BaseGrid(32 + ((maxCol) * (96 * 1.25)), 32 + ((maxRow) * (96 * 1.25)));
-    		_grids.unshift(g);
-    		g.alpha = 0.5;
-    		maxCol++;
-    		if (maxCol >= maxGridsToAdd)
-			{
-    			maxCol = initGrids;
-    			maxRow++;
-    			if (maxRow == maxGridsToAdd - 1) 
-				{
-    				maxCol = 0;
-    			}
-    		}
-    		add(g);
-    	}
-    	_grids.sort(sortGrids);
-    	scaleToGrowth();
-		
-		checkPowered();*/
+		FlxG.camera.setBounds(_grids[0][0].x - 96*.25 , _grids[0][0].y - 96 *.25, FlxG.width * .75 + _grids[maxRow - 1][maxCol - 1].x + 96 * 3.25, FlxG.height * .25 +  _grids[maxRow - 1][maxCol - 1].y + 96 * 3.25);
     }
 
     function sortGrids(a:BaseGrid, b:BaseGrid):Int

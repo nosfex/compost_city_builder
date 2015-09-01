@@ -198,8 +198,7 @@ class GridMap extends FlxSpriteGroup
 		}
 	
     	_initPos = new FlxPoint(_grids[0][0].x, _grids[0][0].y);
-    //	scaleToGrowth();
-    }
+	}
 
     public function scaleToGrowth():Void
     {
@@ -309,8 +308,15 @@ class GridMap extends FlxSpriteGroup
 			
 		_grids = temp;
 		
-
-		FlxG.camera.setBounds(_grids[0][0].x - 96*.25 , _grids[0][0].y - 96 *.25, FlxG.width * .75 + _grids[maxRow - 1][maxCol - 1].x + 96 * 3.25, FlxG.height * .25 +  _grids[maxRow - 1][maxCol - 1].y + 96 * 3.25);
+		var boundHeight: Float =  FlxG.height * .25 +  _grids[maxRow - 1][maxCol - 1].y + -( _grids[0][0].x - 96*.25);
+		var boundWidth: Float =  FlxG.width * .75 +  _grids[maxRow - 1][maxCol - 1].y + -(_grids[0][0].y - 96*.25);
+		
+		var rect :FlxRect = new FlxRect(_grids[0][0].x - 96*.25,  _grids[0][0].y - 96 *.25, boundWidth, boundHeight );
+		FlxG.log.add("BOUNDWIDTH: "+ boundWidth);
+		FlxG.log.add("BOUNDHEIGHT: "+ boundHeight);
+		FlxG.log.add("BOUNDX: " + rect.x);
+		FlxG.log.add("BOUNDY: " + rect.y);
+		FlxG.camera.setBounds( rect.x, rect.y, boundWidth, boundHeight);
     }
 
     function sortGrids(a:BaseGrid, b:BaseGrid):Int

@@ -11,6 +11,8 @@ import flixel.input.keyboard.FlxKey;
 class CameraController extends FlxObject
 {
 	static private inline var _camControlSpeed:Int = 150;
+	var _confirmScrollTimer :Float = 0;
+	var _maxConfirmScrollTimer :Float = 1.5;
 	
 	public function new(X:Float=0, Y:Float=0, Width:Float=0, Height:Float=0) 
 	{
@@ -21,26 +23,52 @@ class CameraController extends FlxObject
 	{
 		super.update();
 		
-		if (FlxG.mouse.screenX < FlxG.width * 0.05)
+		if (FlxG.mouse.screenX <= FlxG.width * 0.15)
 		{
-			this.x -= _camControlSpeed * FlxG.elapsed;
+			_confirmScrollTimer += FlxG.elapsed;
+			if (_confirmScrollTimer > _maxConfirmScrollTimer)
+			{
+				this.x -= _camControlSpeed * FlxG.elapsed;
+			}
 		}
 		
-		if (FlxG.mouse.screenX > FlxG.width * 0.95) 
+		if (FlxG.mouse.screenX >= FlxG.width * 0.6 && FlxG.mouse.screenX <= FlxG.width * 0.75 )
 		{
-			this.x += _camControlSpeed * FlxG.elapsed;
+			_confirmScrollTimer += FlxG.elapsed;
+			if (_confirmScrollTimer > _maxConfirmScrollTimer)
+			{
+				this.x += _camControlSpeed * FlxG.elapsed;
+			}
 		}
 		
-		if (FlxG.mouse.screenY < FlxG.height * 0.05)
+		if (FlxG.mouse.screenY <= FlxG.height * 0.15)
 		{
-			this.y -= _camControlSpeed * FlxG.elapsed;
+			_confirmScrollTimer += FlxG.elapsed;
+			if (_confirmScrollTimer > _maxConfirmScrollTimer)
+			{
+				this.y -= _camControlSpeed * FlxG.elapsed;
+			}
 		}
 		
-		if (FlxG.mouse.screenY > FlxG.height * 0.95) 
+		if (FlxG.mouse.screenY >= FlxG.height * 0.85) 
 		{
-			this.y += _camControlSpeed * FlxG.elapsed;
+			_confirmScrollTimer += FlxG.elapsed;
+			if (_confirmScrollTimer > _maxConfirmScrollTimer)
+			{
+				this.y += _camControlSpeed * FlxG.elapsed;
+			}
 		}
 		
+		
+		if (FlxG.mouse.screenX >= .15  && FlxG.mouse.screenX <= .6)
+		{
+			_confirmScrollTimer = 0;
+		}
+		
+		if (FlxG.mouse.screenY >= .15 && FlxG.mouse.screenY <= .85)
+		{
+			_confirmScrollTimer = 0;
+		}
 		
 		
 		if (FlxG.mouse.wheel > 0)

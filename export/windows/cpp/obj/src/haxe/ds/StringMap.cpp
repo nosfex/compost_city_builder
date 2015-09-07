@@ -64,10 +64,12 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC2(StringMap_obj,set,(void))
 
-Dynamic StringMap_obj::get( ::String key){
+Dynamic StringMap_obj::get( Dynamic _tmp_key){
 	HX_STACK_FRAME("haxe.ds.StringMap","get",0x0f0ea0fc,"haxe.ds.StringMap.get","C:\\HaxeToolkit\\haxe\\std/cpp/_std/haxe/ds/StringMap.hx",36,0x969b5cf0)
 	HX_STACK_THIS(this)
-	HX_STACK_ARG(key,"key")
+	HX_STACK_ARG(_tmp_key,"_tmp_key")
+	HX_STACK_LINE(36)
+	::String key = _tmp_key;		HX_STACK_VAR(key,"key");
 	HX_STACK_LINE(36)
 	return this->__Internal->__Field(key,true);
 }

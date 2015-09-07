@@ -1,7 +1,13 @@
 package world;
 import flash.display.BitmapData;
 import flixel.FlxG;
+import haxe.Json;
+import sys.io.File;
 import flixel.util.FlxMath;
+import sys.io.FileOutput;
+import haxe.format.JsonPrinter;
+import tjson.TJSON;
+import haxe.format.JsonParser;
 
 /**
  * @author null
@@ -11,9 +17,9 @@ import flixel.util.FlxMath;
 class WorldData
 {
 	// GH: Generation presets. How hard does the planet has to be?
-	public static var worldSize : String = "MEDIUM"; // GH: Determines how many grids max. Determines a wild bunch of stuff for geo data
-	public static var resourceAmount : String = "MEDIUM"; // GH: Geo data + water modifier
-	public static var wildLife : String = "FEW"; // GH: Decorates the world. Always a scavenger poblation. Sometimes warrior population. Sometimes Giant monsters
+	public static var worldSize : String = "BIG"; // GH: Determines how many grids max. Determines a wild bunch of stuff for geo data
+	public static var resourceAmount : String = "BIG"; // GH: Geo data + water modifier
+	public static var wildLife : String = "ZOO"; // GH: Decorates the world. Always a scavenger poblation. Sometimes warrior population. Sometimes Giant monsters
 	public static var funGenerator :String = "BORING"; // GH: Level of out of place effects on the world. Orbital cannons, random world eruptions
 	// GH: Season data
 	
@@ -23,6 +29,11 @@ class WorldData
 	private var _water : WaterData;
 	private var _geo :GeologicalData;
 	private var _animal :AnimalData;
+	
+	@:isVar public var supportsLife(default, default)  :Float = 0;
+	@:isVar public var superMinerals(default, default) :Float = 0;
+	@:isVar public var climaticPhenomena(default, default) :Float = 0;
+	@:isVar public var celestialBodies(default, default) :Float = 0;
 	
 	// GH: This gets filled later on with the hard data results
 	private var _resourcesAvailable : Array<String> = new Array(); // GH: resource names to be on the grid
@@ -43,7 +54,18 @@ class WorldData
 		_animal 		= new AnimalData();
 		
 		// GH: initialize values
+		initWorldSizeValues();
+		initResourceValues();
+		initWildlifeValues();
+		initWorldValues();
 		
+		// GH: Exponentiate values
+		// GH: Generate actual world values
+		writeToJSON();
+	}
+	
+	private function initWorldSizeValues() :Void
+	{
 		switch(worldSize) 
 		{
 			case "SMALL":
@@ -69,10 +91,11 @@ class WorldData
 				_geo.rockFormation += 0.6 + FlxMath.bound(Math.random(), 0, 0.4);
 				_water.clean += 0.8;
 				_water.coverage += 0.6 + FlxMath.bound(Math.random(), 0, 0.3);
-			
 		}
-		
-		// GH: Exponentiate values
+	}
+	
+	private function initResourceValues() :Void
+	{
 		
 		switch(resourceAmount)
 		{
@@ -99,7 +122,10 @@ class WorldData
 		}
 
 		_atmosphere.gravitySupport += _atmosphere.breathable + _geo.metalDensity + _geo.rockFormation;
-
+	}
+	
+	private function initWildlifeValues() :Void
+	{
 		var sizeOffset :Float = 0;
 		var aggroOffset :Float = 0;
 		var evoOffset :Float = 0;
@@ -124,8 +150,38 @@ class WorldData
 		_animal.evolutionaryStage = _atmosphere.breathable - (_geo.metalDensity * evoOffset) + _water.clean + _water.coverage + _atmosphere.breathable + _atmosphere.gravitySupport;
 		_animal.atemporality = _atmosphere.breathable + _atmosphere.gravitySupport ;
 		_animal.agressiveness = _geo.metalDensity / .5 + (_geo.rockFormation + _water.clean / _water.coverage) * aggroOffset;
-				
+	}
+	
+	private function initWorldValues() :Void
+	{
+		supportsLife 	+= (_animal.populationSize + _atmosphere.breathable) / _temperature.heat + (_water.clean + _water.coverage) / _atmosphere.gravitySupport ;
+		superMinerals 	+= (_geo.metalDensity + _geo.rockFormation) / _water.coverage + (_atmosphere.gravitySupport + _geo.metalDensity) / _temperature.heat;
+		climaticPhenomena += supportsLife + superMinerals + _geo.rockFormation + _water.coverage;
+		celestialBodies += 1 * (_geo.metalDensity + _atmosphere.gravitySupport + _geo.rockFormation);
+	}
+	
+	private function writeToJSON() :Void
+	{
+		var obj = 
+		{
+			worldSize:WorldData.worldSize,
+			resourceAmount:WorldData.resourceAmount,
+			wildLife:WorldData.wildLife,
+			lifeSupport:supportsLife,
+			mineralsEx:superMinerals,
+			climatic:climaticPhenomena,
+			meteors:celestialBodies,
+			animalData: { populationSize:_animal.populationSize, evolutionaryStage:_animal.evolutionaryStage, agressiveness:_animal.agressiveness, atemporality:_animal.atemporality },
+			temperature: { heat:_temperature.heat },
+			water: { clean:_water.clean, coverage:_water.coverage },
+			atmosphere: { breathable:_atmosphere.breathable, gravitySupport:_atmosphere.gravitySupport },
+			geological: { metalDensity:_geo.metalDensity, rockFormation:_geo.rockFormation }
+			
+		};
 		
+		var json = TJSON.encode(obj);
+		var f : FileOutput = File.write("worldData.json", false);
+		f.writeString(json);
 	}
 	
 	public function createWorldMap() :Void

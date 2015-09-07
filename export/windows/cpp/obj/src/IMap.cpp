@@ -4,8 +4,14 @@
 #include <IMap.h>
 #endif
 
+HX_DEFINE_DYNAMIC_FUNC1(IMap_obj,get,return )
+
+HX_DEFINE_DYNAMIC_FUNC0(IMap_obj,keys,return )
+
 
 static ::String sMemberFields[] = {
+	HX_CSTRING("get"),
+	HX_CSTRING("keys"),
 	String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {

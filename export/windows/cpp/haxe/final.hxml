@@ -7,6 +7,8 @@
 -D openfl=3.2.2
 -cp C:/HaxeToolkit/haxe/lime/hxcpp/3,2,102
 -D hxcpp=3.2.102
+-cp C:/HaxeToolkit/haxe/lime/tjson/1,4,0
+-D tjson=1.4.0
 -cp source
 -cp c:\HaxeToolkit\haxe\lime/lime/2,5,2/legacy
 -D openfl-legacy

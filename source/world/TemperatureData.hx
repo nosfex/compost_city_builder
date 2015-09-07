@@ -7,7 +7,7 @@ package world;
 class TemperatureData
 {
 
-	@isVar:public var heat(default, default) : Float = 0;
+	@:isVar public var heat(default, default) : Float = 0;
 	
 	public function new() 
 	{

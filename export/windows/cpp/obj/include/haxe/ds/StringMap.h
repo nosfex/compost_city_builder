@@ -41,7 +41,7 @@ class HXCPP_CLASS_ATTRIBUTES  StringMap_obj : public hx::Object{
 		virtual Void set( ::String key,Dynamic value);
 		Dynamic set_dyn();
 
-		virtual Dynamic get( ::String key);
+		virtual Dynamic get( Dynamic _tmp_key);
 		Dynamic get_dyn();
 
 		virtual bool exists( ::String key);

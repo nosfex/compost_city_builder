@@ -14,9 +14,17 @@ class HXCPP_CLASS_ATTRIBUTES  IMap_obj : public hx::Interface{
 		typedef IMap_obj OBJ_;
 		HX_DO_INTERFACE_RTTI;
 		static void __boot();
+virtual Dynamic get( Dynamic k)=0;
+		Dynamic get_dyn();
+virtual Dynamic keys( )=0;
+		Dynamic keys_dyn();
 };
 
 #define DELEGATE_IMap \
+virtual Dynamic get( Dynamic k) { return mDelegate->get(k);}  \
+virtual Dynamic get_dyn() { return mDelegate->get_dyn();}  \
+virtual Dynamic keys( ) { return mDelegate->keys();}  \
+virtual Dynamic keys_dyn() { return mDelegate->keys_dyn();}  \
 
 
 template<typename IMPL>

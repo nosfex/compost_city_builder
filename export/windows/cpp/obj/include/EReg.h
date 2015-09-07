@@ -36,10 +36,15 @@ class HXCPP_CLASS_ATTRIBUTES  EReg_obj : public hx::Object{
 		virtual bool match( ::String s);
 		Dynamic match_dyn();
 
+		virtual ::String matched( int n);
+		Dynamic matched_dyn();
+
 		static Dynamic regexp_new_options;
 		static Dynamic &regexp_new_options_dyn() { return regexp_new_options;}
 		static Dynamic regexp_match;
 		static Dynamic &regexp_match_dyn() { return regexp_match;}
+		static Dynamic regexp_matched;
+		static Dynamic &regexp_matched_dyn() { return regexp_matched;}
 };
 
 

@@ -41,7 +41,7 @@ class HXCPP_CLASS_ATTRIBUTES  IntMap_obj : public hx::Object{
 		virtual Void set( int key,Dynamic value);
 		Dynamic set_dyn();
 
-		virtual Dynamic get( int key);
+		virtual Dynamic get( Dynamic _tmp_key);
 		Dynamic get_dyn();
 
 		virtual bool exists( int key);

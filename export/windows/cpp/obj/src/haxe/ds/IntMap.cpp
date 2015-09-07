@@ -56,10 +56,12 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC2(IntMap_obj,set,(void))
 
-Dynamic IntMap_obj::get( int key){
+Dynamic IntMap_obj::get( Dynamic _tmp_key){
 	HX_STACK_FRAME("haxe.ds.IntMap","get",0x721d74ec,"haxe.ds.IntMap.get","C:\\HaxeToolkit\\haxe\\std/cpp/_std/haxe/ds/IntMap.hx",37,0x604d6034)
 	HX_STACK_THIS(this)
-	HX_STACK_ARG(key,"key")
+	HX_STACK_ARG(_tmp_key,"_tmp_key")
+	HX_STACK_LINE(37)
+	int key = _tmp_key;		HX_STACK_VAR(key,"key");
 	HX_STACK_LINE(37)
 	return ::__int_hash_get(this->h,key);
 }

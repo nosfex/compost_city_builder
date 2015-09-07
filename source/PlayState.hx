@@ -13,6 +13,7 @@ import flixel.util.FlxMath;
 import gui_selector.Selector;
 import grid.GridMap;
 import flixel.util.FlxPoint;
+import world.WorldData;
 
 /**
  * A FlxState which can be used for the actual gameplay.
@@ -26,6 +27,8 @@ class PlayState extends FlxState
 	private var _selector :gui_selector.Selector;
 	private var _moneyTxt :FlxText;
 	private var _camControl : CameraController;
+	
+	private var _worldData :WorldData;
 	var hudCam:FlxCamera;
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -62,6 +65,9 @@ class PlayState extends FlxState
 		FlxG.cameras.add(hudCam);
 		hudCam.zoom = 1;
 		hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height));
+		
+		_worldData = new WorldData();
+		_worldData.init();
 	}
 	
 	/**

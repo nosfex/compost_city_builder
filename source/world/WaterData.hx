@@ -7,11 +7,10 @@ package world;
  */
 class WaterData
 {
-	private var _coverage :Float = 0;  // GH: 0 no coverage - 1 full
-	private var _clean :Float = 0 // GH: Range, 0 dirty, 1 _clean
-// 	
+	@isVar: public var coverage(default, default) :Float = 0;  // GH: 0 no coverage - 1 full
+	@isVar: public var clean(default, default) :Float = 0 // GH: Range, 0 dirty, 1 _clean
+	
 	public function new() 
 	{
-		
 	}	
 }

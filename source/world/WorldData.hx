@@ -10,15 +10,18 @@ import sys.io.FileOutput;
 import haxe.format.JsonPrinter;
 import tjson.TJSON;
 import haxe.format.JsonParser;
-import world.WorldData.SunTextureData;
+//import world.WorldData.SunTextureData;
+import flash.utils.ByteArray;
+import flash.geom.Rectangle;
 
+import openfl.Assets;
 /**
  * @author null
  * null
  * null
  */
 // GH: HAXXOR! Load a computer generated texture to calculate distance to nearest star
-@:bitmap(AssetPaths.rock__png) class SunTextureData extends BitmapData {}
+//@:bitmap(AssetPaths.rock__png) class SunTextureData extends BitmapData {}
 	
 class WorldData
 {
@@ -41,8 +44,8 @@ class WorldData
 	@:isVar public var climaticPhenomena(default, default) :Float = 0;
 	@:isVar public var celestialBodies(default, default) :Float = 0;
 	
-	
-	private var _textureData :SunTextureData = new SunTextureData(256, 256) ;
+	// GH: 
+	private var _texture :Bitmap;
 	
 	// GH: This gets filled later on with the hard data results
 	private var _resourcesAvailable : Array<String> = new Array(); // GH: resource names to be on the grid
@@ -79,12 +82,28 @@ class WorldData
 	{
 		
 		//_textureData = cast(AssetPaths.rock__png).bitmapData;
+//		FlxG.log.add(cast(BitmapData, _textureData)bitmapData);
+		_texture = new Bitmap(Assets.getBitmapData(AssetPaths.rock__png), null, false);
+		
+		// GH: Generate a mid point area of optimal data?
+//		FlxG.log.add(_texture.bitmapData.getPixel(128, 128));
+		
+		var midRect :Rectangle = new Rectangle(128, 128, 128, 128 );
+		var data :ByteArray = _texture.bitmapData.getPixels(midRect);
+		for(i in 0 ... 23)
+		{
+			for(j in 0 ... 23)
+			{
+				FlxG.log.add("data: " + _texture.bitmapData.getPixel(i, j));	
+			}
+		}
+		
 	}
 	
 	
 	private function initWorldSizeValues() :Void
 	{
-		switch(worldSize) 
+// 		switch(worldSize) 
 		{
 			case "SMALL":
 				_atmosphere.breathable += .3 + FlxMath.bound(Math.random(), 0.1, 0.5);

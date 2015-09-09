@@ -79,6 +79,78 @@ HX_DEFINE_DYNAMIC_FUNC4(Bytes_obj,blit,(void))
 
 HX_DEFINE_DYNAMIC_FUNC2(Bytes_obj,sub,return )
 
+Float Bytes_obj::getDouble( int pos){
+	HX_STACK_FRAME("haxe.io.Bytes","getDouble",0xc306ed24,"haxe.io.Bytes.getDouble","C:\\HaxeToolkit\\haxe\\std/haxe/io/Bytes.hx",203,0x20b05d0c)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(pos,"pos")
+	HX_STACK_LINE(210)
+	if (((bool((pos < (int)0)) || bool(((pos + (int)8) > this->length))))){
+		HX_STACK_LINE(210)
+		HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds);
+	}
+	HX_STACK_LINE(211)
+	return ::__hxcpp_memory_get_double(this->b,pos);
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Bytes_obj,getDouble,return )
+
+Float Bytes_obj::getFloat( int pos){
+	HX_STACK_FRAME("haxe.io.Bytes","getFloat",0x2c9026e9,"haxe.io.Bytes.getFloat","C:\\HaxeToolkit\\haxe\\std/haxe/io/Bytes.hx",218,0x20b05d0c)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(pos,"pos")
+	HX_STACK_LINE(225)
+	if (((bool((pos < (int)0)) || bool(((pos + (int)4) > this->length))))){
+		HX_STACK_LINE(225)
+		HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds);
+	}
+	HX_STACK_LINE(226)
+	return ::__hxcpp_memory_get_float(this->b,pos);
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Bytes_obj,getFloat,return )
+
+Void Bytes_obj::setDouble( int pos,Float v){
+{
+		HX_STACK_FRAME("haxe.io.Bytes","setDouble",0xa657d930,"haxe.io.Bytes.setDouble","C:\\HaxeToolkit\\haxe\\std/haxe/io/Bytes.hx",233,0x20b05d0c)
+		HX_STACK_THIS(this)
+		HX_STACK_ARG(pos,"pos")
+		HX_STACK_ARG(v,"v")
+		HX_STACK_LINE(240)
+		if (((bool((pos < (int)0)) || bool(((pos + (int)8) > this->length))))){
+			HX_STACK_LINE(240)
+			HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds);
+		}
+		HX_STACK_LINE(241)
+		::__hxcpp_memory_set_double(this->b,pos,v);
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(Bytes_obj,setDouble,(void))
+
+Void Bytes_obj::setFloat( int pos,Float v){
+{
+		HX_STACK_FRAME("haxe.io.Bytes","setFloat",0xdaed805d,"haxe.io.Bytes.setFloat","C:\\HaxeToolkit\\haxe\\std/haxe/io/Bytes.hx",247,0x20b05d0c)
+		HX_STACK_THIS(this)
+		HX_STACK_ARG(pos,"pos")
+		HX_STACK_ARG(v,"v")
+		HX_STACK_LINE(254)
+		if (((bool((pos < (int)0)) || bool(((pos + (int)4) > this->length))))){
+			HX_STACK_LINE(254)
+			HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds);
+		}
+		HX_STACK_LINE(255)
+		::__hxcpp_memory_set_float(this->b,pos,v);
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(Bytes_obj,setFloat,(void))
+
 ::String Bytes_obj::getString( int pos,int len){
 	HX_STACK_FRAME("haxe.io.Bytes","getString",0xa16beae4,"haxe.io.Bytes.getString","C:\\HaxeToolkit\\haxe\\std/haxe/io/Bytes.hx",261,0x20b05d0c)
 	HX_STACK_THIS(this)
@@ -191,9 +263,13 @@ Dynamic Bytes_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"ofString") ) { return ofString_dyn(); }
+		if (HX_FIELD_EQ(inName,"getFloat") ) { return getFloat_dyn(); }
+		if (HX_FIELD_EQ(inName,"setFloat") ) { return setFloat_dyn(); }
 		if (HX_FIELD_EQ(inName,"toString") ) { return toString_dyn(); }
 		break;
 	case 9:
+		if (HX_FIELD_EQ(inName,"getDouble") ) { return getDouble_dyn(); }
+		if (HX_FIELD_EQ(inName,"setDouble") ) { return setDouble_dyn(); }
 		if (HX_FIELD_EQ(inName,"getString") ) { return getString_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
@@ -237,6 +313,10 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("b"),
 	HX_CSTRING("blit"),
 	HX_CSTRING("sub"),
+	HX_CSTRING("getDouble"),
+	HX_CSTRING("getFloat"),
+	HX_CSTRING("setDouble"),
+	HX_CSTRING("setFloat"),
 	HX_CSTRING("getString"),
 	HX_CSTRING("toString"),
 	String(null()) };

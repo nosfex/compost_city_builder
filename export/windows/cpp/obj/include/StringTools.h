@@ -58,6 +58,9 @@ class HXCPP_CLASS_ATTRIBUTES  StringTools_obj : public hx::Object{
 		static ::String replace( ::String s,::String sub,::String by);
 		static Dynamic replace_dyn();
 
+		static ::String hex( int n,Dynamic digits);
+		static Dynamic hex_dyn();
+
 };
 
 

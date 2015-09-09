@@ -189,6 +189,16 @@ bool Reflect_obj::deleteField( Dynamic o,::String field){
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Reflect_obj,deleteField,return )
 
+Dynamic Reflect_obj::makeVarArgs( Dynamic f){
+	HX_STACK_FRAME("Reflect","makeVarArgs",0x978955c5,"Reflect.makeVarArgs","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",105,0x487b3827)
+	HX_STACK_ARG(f,"f")
+	HX_STACK_LINE(105)
+	return ::__hxcpp_create_var_args(f);
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Reflect_obj,makeVarArgs,return )
+
 
 Reflect_obj::Reflect_obj()
 {
@@ -213,6 +223,7 @@ Dynamic Reflect_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"deleteField") ) { return deleteField_dyn(); }
+		if (HX_FIELD_EQ(inName,"makeVarArgs") ) { return makeVarArgs_dyn(); }
 		break;
 	case 14:
 		if (HX_FIELD_EQ(inName,"compareMethods") ) { return compareMethods_dyn(); }
@@ -239,6 +250,7 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("compareMethods"),
 	HX_CSTRING("isObject"),
 	HX_CSTRING("deleteField"),
+	HX_CSTRING("makeVarArgs"),
 	String(null()) };
 
 #if HXCPP_SCRIPTABLE

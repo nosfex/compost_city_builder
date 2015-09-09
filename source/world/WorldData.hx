@@ -2,18 +2,24 @@ package world;
 import flash.display.BitmapData;
 import flixel.FlxG;
 import haxe.Json;
+import lime.net.oauth.OAuthRequest.KVPair;
+import openfl.display.Bitmap;
 import sys.io.File;
 import flixel.util.FlxMath;
 import sys.io.FileOutput;
 import haxe.format.JsonPrinter;
 import tjson.TJSON;
 import haxe.format.JsonParser;
+import world.WorldData.SunTextureData;
 
 /**
  * @author null
  * null
  * null
  */
+// GH: HAXXOR! Load a computer generated texture to calculate distance to nearest star
+@:bitmap(AssetPaths.rock__png) class SunTextureData extends BitmapData {}
+	
 class WorldData
 {
 	// GH: Generation presets. How hard does the planet has to be?
@@ -35,6 +41,9 @@ class WorldData
 	@:isVar public var climaticPhenomena(default, default) :Float = 0;
 	@:isVar public var celestialBodies(default, default) :Float = 0;
 	
+	
+	private var _textureData :SunTextureData = new SunTextureData(256, 256) ;
+	
 	// GH: This gets filled later on with the hard data results
 	private var _resourcesAvailable : Array<String> = new Array(); // GH: resource names to be on the grid
 	
@@ -53,6 +62,8 @@ class WorldData
 		_atmosphere 	= new AtmosphereData();
 		_animal 		= new AnimalData();
 		
+		
+		initWorldDistanceToSun();
 		// GH: initialize values
 		initWorldSizeValues();
 		initResourceValues();
@@ -63,6 +74,13 @@ class WorldData
 		// GH: Generate actual world values
 		writeToJSON();
 	}
+	
+	private function initWorldDistanceToSun() :Void
+	{
+		
+		//_textureData = cast(AssetPaths.rock__png).bitmapData;
+	}
+	
 	
 	private function initWorldSizeValues() :Void
 	{

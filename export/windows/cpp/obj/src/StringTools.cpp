@@ -217,6 +217,50 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,trim,return )
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(StringTools_obj,replace,return )
 
+::String StringTools_obj::hex( int n,Dynamic digits){
+	HX_STACK_FRAME("StringTools","hex",0xd91debd7,"StringTools.hex","C:\\HaxeToolkit\\haxe\\std/StringTools.hx",313,0xb9dbeb2d)
+	HX_STACK_ARG(n,"n")
+	HX_STACK_ARG(digits,"digits")
+	HX_STACK_LINE(319)
+	::String s = HX_CSTRING("");		HX_STACK_VAR(s,"s");
+	HX_STACK_LINE(320)
+	::String hexChars = HX_CSTRING("0123456789ABCDEF");		HX_STACK_VAR(hexChars,"hexChars");
+	HX_STACK_LINE(321)
+	while((true)){
+		HX_STACK_LINE(322)
+		::String _g = hexChars.charAt((int(n) & int((int)15)));		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(322)
+		::String _g1 = (_g + s);		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(322)
+		s = _g1;
+		HX_STACK_LINE(323)
+		hx::UShrEq(n,(int)4);
+		HX_STACK_LINE(321)
+		if ((!(((n > (int)0))))){
+			HX_STACK_LINE(321)
+			break;
+		}
+	}
+	HX_STACK_LINE(326)
+	if (((digits != null()))){
+		HX_STACK_LINE(327)
+		while((true)){
+			HX_STACK_LINE(327)
+			if ((!(((s.length < digits))))){
+				HX_STACK_LINE(327)
+				break;
+			}
+			HX_STACK_LINE(328)
+			s = (HX_CSTRING("0") + s);
+		}
+	}
+	HX_STACK_LINE(329)
+	return s;
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(StringTools_obj,hex,return )
+
 
 StringTools_obj::StringTools_obj()
 {
@@ -225,6 +269,9 @@ StringTools_obj::StringTools_obj()
 Dynamic StringTools_obj::__Field(const ::String &inName,bool inCallProp)
 {
 	switch(inName.length) {
+	case 3:
+		if (HX_FIELD_EQ(inName,"hex") ) { return hex_dyn(); }
+		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"trim") ) { return trim_dyn(); }
 		break;
@@ -271,6 +318,7 @@ static ::String sStaticFields[] = {
 	HX_CSTRING("rtrim"),
 	HX_CSTRING("trim"),
 	HX_CSTRING("replace"),
+	HX_CSTRING("hex"),
 	String(null()) };
 
 #if HXCPP_SCRIPTABLE

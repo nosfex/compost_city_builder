@@ -39,6 +39,9 @@ class HXCPP_CLASS_ATTRIBUTES  File_obj : public hx::Object{
 		static ::haxe::io::Bytes getBytes( ::String path);
 		static Dynamic getBytes_dyn();
 
+		static Void saveBytes( ::String path,::haxe::io::Bytes bytes);
+		static Dynamic saveBytes_dyn();
+
 		static ::sys::io::FileOutput write( ::String path,hx::Null< bool >  binary);
 		static Dynamic write_dyn();
 

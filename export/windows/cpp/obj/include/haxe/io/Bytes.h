@@ -40,6 +40,18 @@ class HXCPP_CLASS_ATTRIBUTES  Bytes_obj : public hx::Object{
 		virtual ::haxe::io::Bytes sub( int pos,int len);
 		Dynamic sub_dyn();
 
+		virtual Float getDouble( int pos);
+		Dynamic getDouble_dyn();
+
+		virtual Float getFloat( int pos);
+		Dynamic getFloat_dyn();
+
+		virtual Void setDouble( int pos,Float v);
+		Dynamic setDouble_dyn();
+
+		virtual Void setFloat( int pos,Float v);
+		Dynamic setFloat_dyn();
+
 		virtual ::String getString( int pos,int len);
 		Dynamic getString_dyn();
 

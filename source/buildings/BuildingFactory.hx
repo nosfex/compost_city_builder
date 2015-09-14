@@ -44,7 +44,6 @@ class BuildingFactory
 	{
 		var fileContent = File.getContent(AssetPaths.buildings_data__json);
 		var jsonBuildings :Dynamic = Json.parse(fileContent);
-		//var buildings :Array<BuildingData> = cast(jsonBuildings.buildings, Array<BuildingData>);
 		
 		for (i in 0 ... jsonBuildings.buildings.length)
 		{	

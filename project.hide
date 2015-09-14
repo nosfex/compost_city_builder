@@ -21,15 +21,6 @@
             ,"activeLine" : 35
         }
         ,{
-             "path" : "source/buildings/BuildingFactory.hx"
-            ,"useTabs" : true
-            ,"indentSize" : 4
-            ,"foldedRegions" : [
-
-            ]
-            ,"activeLine" : 20
-        }
-        ,{
              "path" : "source/buildings/BuildingData.hx"
             ,"useTabs" : true
             ,"indentSize" : 4
@@ -83,8 +74,17 @@
             ]
             ,"activeLine" : 165
         }
+        ,{
+             "path" : "source/world/WorldData.hx"
+            ,"useTabs" : true
+            ,"indentSize" : 4
+            ,"foldedRegions" : [
+
+            ]
+            ,"activeLine" : 61
+        }
     ]
-    ,"activeFile" : "source/buildings/Building.hx"
+    ,"activeFile" : "source/world/WorldData.hx"
     ,"openFLTarget" : "mac"
     ,"openFLBuildMode" : "Debug"
     ,"runActionType" : 2

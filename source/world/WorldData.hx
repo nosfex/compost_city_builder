@@ -44,6 +44,9 @@ class WorldData
 	@:isVar public var climaticPhenomena(default, default) :Float = 0;
 	@:isVar public var celestialBodies(default, default) :Float = 0;
 	
+	private var _distanceToSun : Float = 0;
+	private var _mass : Float = 0;
+	private var _waterW : Float = 0;
 	// GH: 
 	private var _texture :Bitmap;
 	
@@ -81,29 +84,32 @@ class WorldData
 	private function initWorldDistanceToSun() :Void
 	{
 		
-		//_textureData = cast(AssetPaths.rock__png).bitmapData;
-//		FlxG.log.add(cast(BitmapData, _textureData)bitmapData);
 		_texture = new Bitmap(Assets.getBitmapData(AssetPaths.rock__png), null, false);
-		
-		// GH: Generate a mid point area of optimal data?
-//		FlxG.log.add(_texture.bitmapData.getPixel(128, 128));
-		
 		var midRect :Rectangle = new Rectangle(128, 128, 128, 128 );
 		var data :ByteArray = _texture.bitmapData.getPixels(midRect);
-		for(i in 0 ... 23)
-		{
-			for(j in 0 ... 23)
-			{
-				FlxG.log.add("data: " + _texture.bitmapData.getPixel(i, j));	
-			}
-		}
 		
+		
+		// GH: Get mass 
+		var mX : Int = Math.floor(Math.random() * 128);
+		var mY : Int = Math.floor(Math.random() * 128);
+
+		_mass = data[mX + mY];
+		
+		FlxG.log.add(_mass + " MAAAASSS " + " IX: "+ mX + " IY: " + mY );
+		
+		var wX : Int = Math.floor(Math.random() * 128);
+		var wY : Int = Math.floor(Math.random() * 128);
+
+		_waterW = data[wX + wY];
+		
+		
+		FlxG.log.add(_waterW + " WATER " + " IX: "+ wX + " IY: " + wY );
 	}
 	
 	
 	private function initWorldSizeValues() :Void
 	{
-// 		switch(worldSize) 
+ 		switch(worldSize) 
 		{
 			case "SMALL":
 				_atmosphere.breathable += .3 + FlxMath.bound(Math.random(), 0.1, 0.5);

@@ -89,21 +89,28 @@ class WorldData
 		var data :ByteArray = _texture.bitmapData.getPixels(midRect);
 		
 		
+		FlxG.log.add("RectDataSize: " + data.length);
 		// GH: Get mass 
 		var mX : Int = Math.floor(Math.random() * 128);
 		var mY : Int = Math.floor(Math.random() * 128);
 
-		_mass = data[mX + mY];
+		_mass = data[(mX + mY) ];
 		
 		FlxG.log.add(_mass + " MAAAASSS " + " IX: "+ mX + " IY: " + mY );
 		
 		var wX : Int = Math.floor(Math.random() * 128);
 		var wY : Int = Math.floor(Math.random() * 128);
 
-		_waterW = data[wX + wY];
+		_waterW = data[(wX + wY) ];
 		
+		FlxG.log.add(_waterW + " WATER " + " IX: " + wX + " IY: " + wY );
 		
-		FlxG.log.add(_waterW + " WATER " + " IX: "+ wX + " IY: " + wY );
+		var dX : Int = Math.floor(Math.random() * 128);
+		var dY : Int = Math.floor(Math.random() * 128);
+
+		_distanceToSun = data[(dX + dY)];
+		
+		FlxG.log.add(_distanceToSun + " DISTANCETOSUN " + " DX: "+ dX + " DY: " + dY );
 	}
 	
 	

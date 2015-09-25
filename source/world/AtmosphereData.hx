@@ -14,4 +14,10 @@ class AtmosphereData
 		
 	}
 	
+	public function toString() :String
+	{
+		return "breathable: " + breathable + " gravitySupport: " + gravitySupport;	
+	}
+
+	
 }

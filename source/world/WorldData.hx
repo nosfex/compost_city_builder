@@ -53,6 +53,10 @@ class WorldData
 	// GH: This gets filled later on with the hard data results
 	private var _resourcesAvailable : Array<String> = new Array(); // GH: resource names to be on the grid
 	
+	private var _waterMaxRating :Float = 700;
+	
+	private var _maxTiles : Int = 0;
+	
 	// GH: Wildling data
 	public function new() 
 	{
@@ -79,6 +83,45 @@ class WorldData
 		// GH: Exponentiate values
 		// GH: Generate actual world values
 		writeToJSON();
+		
+		FlxG.log.add(_temperature.toString());
+		FlxG.log.add(_water.toString());
+		FlxG.log.add(_atmosphere.toString());
+		FlxG.log.add(_animal.toString());
+		FlxG.log.add(_geo.toString());
+		/// GH: Basic world layer of data generation
+		// GH: Generate actual world data.
+		// GH: Define how much water we will get
+		
+
+		FlxG.log.add(getWaterTiles());
+		
+		FlxG.log.add("MAX TILES: "+ _maxTiles);
+		
+	}
+	
+	private function getWaterTiles() : Int
+	{
+		
+		var maxRange : Float = 0;
+		switch(worldSize) 
+		{
+			case "SMALL":
+				maxRange += 3;
+				
+			case "MEDIUM":
+				maxRange += 6;
+				
+			case "BIG":
+				maxRange += 9;
+			
+		}
+		var waterRating :Float = maxRange*(_water.coverage / _water.clean);
+						
+//		var newRating: Float = maxRange * Math.floor(waterRating);
+				
+//		_waterMaxRating-=1000;
+		return Math.ceil(maxRange * waterRating / _waterMaxRating);
 	}
 	
 	private function initWorldDistanceToSun() :Void
@@ -91,24 +134,24 @@ class WorldData
 		
 		FlxG.log.add("RectDataSize: " + data.length);
 		// GH: Get mass 
-		var mX : Int = Math.floor(Math.random() * 128);
+		var mX : Int = Math.floor(Math.random() * data.length);
 		var mY : Int = Math.floor(Math.random() * 128);
 
-		_mass = data[(mX + mY) ];
+		_mass = data[(mX ) ];
 		
 		FlxG.log.add(_mass + " MAAAASSS " + " IX: "+ mX + " IY: " + mY );
 		
-		var wX : Int = Math.floor(Math.random() * 128);
+		var wX : Int = Math.floor(Math.random() * data.length);
 		var wY : Int = Math.floor(Math.random() * 128);
 
-		_waterW = data[(wX + wY) ];
+		_waterW = data[(wX ) ];
 		
 		FlxG.log.add(_waterW + " WATER " + " IX: " + wX + " IY: " + wY );
 		
-		var dX : Int = Math.floor(Math.random() * 128);
+		var dX : Int = Math.floor(Math.random() * data.length);
 		var dY : Int = Math.floor(Math.random() * 128);
 
-		_distanceToSun = data[(dX + dY)];
+		_distanceToSun = data[(dX)];
 		
 		FlxG.log.add(_distanceToSun + " DISTANCETOSUN " + " DX: "+ dX + " DY: " + dY );
 	}
@@ -116,60 +159,54 @@ class WorldData
 	
 	private function initWorldSizeValues() :Void
 	{
+		var sizeOffset : Float = 0;
  		switch(worldSize) 
 		{
 			case "SMALL":
-				_atmosphere.breathable += .3 + FlxMath.bound(Math.random(), 0.1, 0.5);
-				_temperature.heat += 0.6 + FlxMath.bound(Math.random(), 0.1, 0.4);
-				_geo.metalDensity += 0.7 + FlxMath.bound(Math.random(), 0, 0.3);
-				_geo.rockFormation += 0.1 + FlxMath.bound(Math.random(), 0, 0.4);
-				_water.clean += 0.8;
-				_water.coverage += 0.2 + FlxMath.bound(Math.random(), 0, 0.1);
+				sizeOffset += 0.2;
 				
 			case "MEDIUM":
-				_atmosphere.breathable += .5 + FlxMath.bound(Math.random(), 0.1, 0.25);
-				_temperature.heat += 0.5 + FlxMath.bound(Math.random(), 0.1, 0.4);
-				_geo.metalDensity += 0.5 + FlxMath.bound(Math.random(), 0, 0.3);
-				_geo.rockFormation += 0.4 + FlxMath.bound(Math.random(), 0, 0.4);
-				_water.clean += 0.8;
-				_water.coverage += 0.4 + FlxMath.bound(Math.random(), 0, 0.2);
+				sizeOffset += 0.5;
 				
 			case "BIG":
-				_atmosphere.breathable += .6 + FlxMath.bound(Math.random(), 0.1, 0.3);
-				_temperature.heat += 0.4 + FlxMath.bound(Math.random(), 0.1, 0.4);
-				_geo.metalDensity += 0.3 + FlxMath.bound(Math.random(), 0, 0.6);
-				_geo.rockFormation += 0.6 + FlxMath.bound(Math.random(), 0, 0.4);
-				_water.clean += 0.8;
-				_water.coverage += 0.6 + FlxMath.bound(Math.random(), 0, 0.3);
+				sizeOffset += 0.7;
+			
 		}
+				
+		_atmosphere.breathable += _distanceToSun + FlxMath.bound(Math.random(), 0.1, 0.5);
+		_temperature.heat += sizeOffset + _distanceToSun + _waterW + FlxMath.bound(Math.random(), 0.1, 0.4);
+		_geo.metalDensity += (1 - sizeOffset) + _mass + _distanceToSun + FlxMath.bound(Math.random(), 0, 0.3);
+		_geo.rockFormation += sizeOffset + _mass + FlxMath.bound(Math.random(), 0, 0.4);
+// 		_water.clean += 0.8;
+		_water.coverage += sizeOffset - 1 +   _waterW + FlxMath.bound(Math.random(), 0, 0.1);
 	}
 	
 	private function initResourceValues() :Void
 	{
 		
+		var resourceOffset : Float = 0;
 		switch(resourceAmount)
 		{
 			case "SMALL":
-				_atmosphere.breathable *= 1 + (FlxMath.bound(-Math.random(), -0.15, -0.05));
-				_temperature.heat *= 1 + FlxMath.bound(Math.random(), 0.1, 0.2);
-				_geo.metalDensity *= 0.7 + FlxMath.bound(Math.random() - Math.random(), -0.1, 0.2 );
-				_geo.rockFormation *= 1 + FlxMath.bound(Math.random() - Math.random(), -0.2, 0.1 );
-				_water.clean *= 1;
-				
+				resourceOffset += 0.3;
+				_maxTiles  = 9 * 9;
 			case "MEDIUM":
-				_atmosphere.breathable *= 0.95 + (FlxMath.bound(-Math.random(), -0.15, -0.05));
-				_temperature.heat *= 1 + FlxMath.bound(Math.random(), 0.2, 0.3);
-				_geo.metalDensity *= 0.9 + FlxMath.bound(Math.random() - Math.random(), -0.1, 0.4 );
-				_geo.rockFormation *= 1 + FlxMath.bound(Math.random() , 0.2, 0.3 );
-				_water.clean *= 1 +(FlxMath.bound(-Math.random(), -0.15, -0.05));
+				resourceOffset += 0.7;
+				_maxTiles  = 13 * 13;
 				
 			case "BIG":
-				_atmosphere.breathable *= 0.9 + (FlxMath.bound(-Math.random(), -0.15, -0.05));
-				_temperature.heat *= 1.1 + FlxMath.bound(Math.random(), 0.2, 0.3);
-				_geo.metalDensity *= 1 + FlxMath.bound(Math.random() - Math.random(), -0.1, 0.4 );
-				_geo.rockFormation *= 1.1 + FlxMath.bound(Math.random() , 0.2, 0.3 );
-				_water.clean *= 0.9 +(FlxMath.bound(-Math.random(), -0.15, -0.05));
+				resourceOffset += 1.1;
+				_maxTiles = 19 * 19;
+				
 		}
+
+		
+				
+		_atmosphere.breathable *= resourceOffset + 255 / _distanceToSun + (FlxMath.bound(-Math.random(), -0.15, -0.05));
+		_temperature.heat *= resourceOffset + 255 / _distanceToSun + FlxMath.bound(Math.random(), 0.2, 0.3);
+		_geo.metalDensity *=  resourceOffset + 255 / _mass + FlxMath.bound(Math.random() - Math.random(), -0.1, 0.4 );
+		_geo.rockFormation *= resourceOffset +  255 / _mass + FlxMath.bound(Math.random() , 0.2, 0.3 );
+		_water.clean *= resourceOffset + 1 +(FlxMath.bound(-Math.random(), -0.15, -0.05));
 
 		_atmosphere.gravitySupport += _atmosphere.breathable + _geo.metalDensity + _geo.rockFormation;
 	}
@@ -228,7 +265,7 @@ class WorldData
 			geological: { metalDensity:_geo.metalDensity, rockFormation:_geo.rockFormation }
 			
 		};
-		
+		//FlxG.log.add(obj);
 		var json = TJSON.encode(obj);
 		var f : FileOutput = File.write("worldData.json", false);
 		f.writeString(json);

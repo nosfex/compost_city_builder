@@ -14,4 +14,10 @@ class TemperatureData
 		
 	}
 	
+	public function toString() :String
+	{
+		return "heat: " + heat;	
+	}
+
+	
 }

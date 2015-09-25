@@ -13,4 +13,9 @@ class WaterData
 	public function new() 
 	{
 	}	
+	
+	public function toString() :String
+	{
+		return "coverage: " + coverage + " clean: " + clean;	
+	}
 }

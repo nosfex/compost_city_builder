@@ -66,8 +66,10 @@ class PlayState extends FlxState
 		hudCam.zoom = 1;
 		hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height));
 		
-		_worldData = new WorldData();
+// 		_worldData = new WorldData();
 		_worldData.init();
+	
+
 	}
 	
 	/**

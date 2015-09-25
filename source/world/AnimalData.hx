@@ -16,4 +16,9 @@ class AnimalData
 		
 	}
 	
+	public function toString() :String
+	{
+		return "agressiveness: " + agressiveness + " populationSize: " + populationSize + " evolutionaryStage: " + evolutionaryStage + " atemporality: " + atemporality ;	
+	}
+	
 }

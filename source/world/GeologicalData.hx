@@ -15,4 +15,10 @@ class GeologicalData
 		
 	}
 	
+	public function toString() :String
+	{
+		return "metalDensity: " + metalDensity + " rockFormation: " + rockFormation;	
+	}
+
+	
 }

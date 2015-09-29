@@ -57,6 +57,7 @@ class WorldData
 	
 	private var _maxTiles : Int = 0;
 	
+	private var _waterTiles : Int = 0;
 	// GH: Wildling data
 	public function new() 
 	{
@@ -94,15 +95,34 @@ class WorldData
 		// GH: Define how much water we will get
 		
 
-		FlxG.log.add(getWaterTiles());
+		_waterTiles = getWaterTiles();
 		
 		FlxG.log.add("MAX TILES: "+ _maxTiles);
 		
 	}
 	
+	private function getMineralTiles() :Int
+	{
+		var maxRange  :Float  = 0;
+		switch (worldSize)
+		{
+			case "SMALL":
+				maxRange += 3;
+				
+			case "MEDIUM":
+				maxRange += 6;
+				
+			case "BIG":
+				maxRange += 9;
+
+		}
+
+		return 0; // 
+
+	}
+	
 	private function getWaterTiles() : Int
 	{
-		
 		var maxRange : Float = 0;
 		switch(worldSize) 
 		{
@@ -116,11 +136,8 @@ class WorldData
 				maxRange += 9;
 			
 		}
-		var waterRating :Float = maxRange*(_water.coverage / _water.clean);
-						
-//		var newRating: Float = maxRange * Math.floor(waterRating);
 				
-//		_waterMaxRating-=1000;
+		var waterRating :Float = maxRange*(_water.coverage / _water.clean);
 		return Math.ceil(maxRange * waterRating / _waterMaxRating);
 	}
 	

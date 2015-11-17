@@ -39,10 +39,10 @@
 
 Void DocumentClass_obj::__construct()
 {
-HX_STACK_FRAME("DocumentClass","new",0x4aeb0a6f,"DocumentClass.new","ApplicationMain.hx",206,0x0780ded5)
+HX_STACK_FRAME("DocumentClass","new",0x4aeb0a6f,"DocumentClass.new","ApplicationMain.hx",217,0x0780ded5)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(206)
+	HX_STACK_LINE(217)
 	super::__construct();
 }
 ;
@@ -63,9 +63,9 @@ Dynamic DocumentClass_obj::__Create(hx::DynamicArray inArgs)
 	return result;}
 
 ::openfl::_legacy::display::Stage DocumentClass_obj::get_stage( ){
-	HX_STACK_FRAME("DocumentClass","get_stage",0xea357664,"DocumentClass.get_stage","ApplicationMain.hx",275,0x0780ded5)
+	HX_STACK_FRAME("DocumentClass","get_stage",0xea357664,"DocumentClass.get_stage","ApplicationMain.hx",286,0x0780ded5)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(275)
+	HX_STACK_LINE(286)
 	return ::openfl::_legacy::Lib_obj::get_current()->get_stage();
 }
 

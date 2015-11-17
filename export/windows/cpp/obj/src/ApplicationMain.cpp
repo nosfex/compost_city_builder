@@ -106,28 +106,28 @@ int ApplicationMain_obj::forceWidth;
 
 Void ApplicationMain_obj::main( ){
 {
-		HX_STACK_FRAME("ApplicationMain","main",0x93d2f73e,"ApplicationMain.main","ApplicationMain.hx",23,0x0780ded5)
-		HX_STACK_LINE(25)
+		HX_STACK_FRAME("ApplicationMain","main",0x93d2f73e,"ApplicationMain.main","ApplicationMain.hx",27,0x0780ded5)
+		HX_STACK_LINE(29)
 		::openfl::_legacy::Lib_obj::setPackage(HX_CSTRING("HaxeFlixel"),HX_CSTRING("FlxProject"),HX_CSTRING("com.example.myapp"),HX_CSTRING("0.0.1"));
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","ApplicationMain.hx",41,0x0780ded5)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","ApplicationMain.hx",52,0x0780ded5)
 			{
-				HX_STACK_LINE(43)
+				HX_STACK_LINE(54)
 				::openfl::_legacy::Lib_obj::get_current()->get_stage()->set_align(::openfl::display::StageAlign_obj::TOP_LEFT);
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(55)
 				::openfl::_legacy::Lib_obj::get_current()->get_stage()->set_scaleMode(::openfl::display::StageScaleMode_obj::NO_SCALE);
-				HX_STACK_LINE(45)
+				HX_STACK_LINE(56)
 				::openfl::_legacy::Lib_obj::get_current()->loaderInfo = ::openfl::_legacy::display::LoaderInfo_obj::create(null());
-				HX_STACK_LINE(67)
+				HX_STACK_LINE(78)
 				try
 				{
 				HX_STACK_CATCHABLE(Dynamic, 0);
 				{
-					HX_STACK_LINE(69)
+					HX_STACK_LINE(80)
 					::String currentPath = ::haxe::io::Path_obj::directory(::Sys_obj::executablePath());		HX_STACK_VAR(currentPath,"currentPath");
-					HX_STACK_LINE(70)
+					HX_STACK_LINE(81)
 					::Sys_obj::setCwd(currentPath);
 				}
 				}
@@ -138,42 +138,42 @@ Void ApplicationMain_obj::main( ){
 						}
 					}
 				}
-				HX_STACK_LINE(87)
+				HX_STACK_LINE(98)
 				::openfl::_legacy::Assets_obj::initialize();
-				HX_STACK_LINE(89)
+				HX_STACK_LINE(100)
 				bool hasMain = false;		HX_STACK_VAR(hasMain,"hasMain");
-				HX_STACK_LINE(91)
+				HX_STACK_LINE(102)
 				{
-					HX_STACK_LINE(91)
+					HX_STACK_LINE(102)
 					int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-					HX_STACK_LINE(91)
+					HX_STACK_LINE(102)
 					Array< ::String > _g1 = ::Type_obj::getClassFields(hx::ClassOf< ::Main >());		HX_STACK_VAR(_g1,"_g1");
-					HX_STACK_LINE(91)
+					HX_STACK_LINE(102)
 					while(((_g < _g1->length))){
-						HX_STACK_LINE(91)
+						HX_STACK_LINE(102)
 						::String methodName = _g1->__get(_g);		HX_STACK_VAR(methodName,"methodName");
-						HX_STACK_LINE(91)
+						HX_STACK_LINE(102)
 						++(_g);
-						HX_STACK_LINE(93)
+						HX_STACK_LINE(104)
 						if (((methodName == HX_CSTRING("main")))){
-							HX_STACK_LINE(95)
+							HX_STACK_LINE(106)
 							hasMain = true;
-							HX_STACK_LINE(96)
+							HX_STACK_LINE(107)
 							break;
 						}
 					}
 				}
-				HX_STACK_LINE(102)
+				HX_STACK_LINE(113)
 				if ((hasMain)){
-					HX_STACK_LINE(104)
+					HX_STACK_LINE(115)
 					::Reflect_obj::callMethod(hx::ClassOf< ::Main >(),::Reflect_obj::field(hx::ClassOf< ::Main >(),HX_CSTRING("main")),Dynamic( Array_obj<Dynamic>::__new()));
 				}
 				else{
-					HX_STACK_LINE(108)
+					HX_STACK_LINE(119)
 					::DocumentClass instance = ::Type_obj::createInstance(hx::ClassOf< ::DocumentClass >(),Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(instance,"instance");
-					HX_STACK_LINE(110)
+					HX_STACK_LINE(121)
 					if ((::Std_obj::is(instance,hx::ClassOf< ::openfl::_legacy::display::DisplayObject >()))){
-						HX_STACK_LINE(112)
+						HX_STACK_LINE(123)
 						::openfl::_legacy::Lib_obj::get_current()->addChild(instance);
 					}
 				}
@@ -182,7 +182,7 @@ Void ApplicationMain_obj::main( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(52)
 		::openfl::_legacy::Lib_obj::create( Dynamic(new _Function_1_1()),(int)640,(int)480,(int)60,(int)0,(int((int((int((int((int((int((int((int((int((int(::openfl::_legacy::Lib_obj::HARDWARE) | int(::openfl::_legacy::Lib_obj::ALLOW_SHADERS))) | int((int)0))) | int((int)0))) | int((int)0))) | int(::openfl::_legacy::Lib_obj::RESIZABLE))) | int((int)0))) | int(::openfl::_legacy::Lib_obj::VSYNC))) | int((int)0))) | int((int)0))) | int((int)0)),HX_CSTRING("FlxProject"),null(),null());
 	}
 return null();

@@ -79,6 +79,32 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(List_obj,push,(void))
 
+Dynamic List_obj::pop( ){
+	HX_STACK_FRAME("List","pop",0xed8a8da1,"List.pop","C:\\HaxeToolkit\\haxe\\std/List.hx",100,0x1e139e47)
+	HX_STACK_THIS(this)
+	HX_STACK_LINE(101)
+	if (((this->h == null()))){
+		HX_STACK_LINE(102)
+		return null();
+	}
+	HX_STACK_LINE(103)
+	Dynamic x = this->h->__GetItem((int)0);		HX_STACK_VAR(x,"x");
+	HX_STACK_LINE(104)
+	this->h = this->h->__GetItem((int)1);
+	HX_STACK_LINE(105)
+	if (((this->h == null()))){
+		HX_STACK_LINE(106)
+		this->q = null();
+	}
+	HX_STACK_LINE(107)
+	(this->length)--;
+	HX_STACK_LINE(108)
+	return x;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(List_obj,pop,return )
+
 bool List_obj::isEmpty( ){
 	HX_STACK_FRAME("List","isEmpty",0xaa565653,"List.isEmpty","C:\\HaxeToolkit\\haxe\\std/List.hx",115,0x1e139e47)
 	HX_STACK_THIS(this)
@@ -225,6 +251,7 @@ Dynamic List_obj::__Field(const ::String &inName,bool inCallProp)
 		break;
 	case 3:
 		if (HX_FIELD_EQ(inName,"add") ) { return add_dyn(); }
+		if (HX_FIELD_EQ(inName,"pop") ) { return pop_dyn(); }
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"push") ) { return push_dyn(); }
@@ -281,6 +308,7 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("length"),
 	HX_CSTRING("add"),
 	HX_CSTRING("push"),
+	HX_CSTRING("pop"),
 	HX_CSTRING("isEmpty"),
 	HX_CSTRING("remove"),
 	HX_CSTRING("iterator"),

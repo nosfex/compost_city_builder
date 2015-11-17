@@ -53,23 +53,23 @@ class PlayState extends FlxState
 		
 		_selector = new Selector();
 		_selector.initSelector(_categoryData);
+		_selector.scrollFactor.set(0, 0);
 		add(_selector);
 		CompostG.updateProductAmount("money", 10);
-			
+		//CompostG.UI_SELECTOR = _selector;
+		
 		FlxG.camera.follow(_camControl, 0, null, 0);
 		FlxG.camera.setBounds(0, 0, FlxG.width * 2, FlxG.height * 2);
 		add(_moneyTxt);
 		
-		hudCam = new FlxCamera(cast(FlxG.width * .75), 0, cast(FlxG.width *.25 ), FlxG.height);
+		//hudCam = new FlxCamera(cast(FlxG.width * 0), 0, cast(FlxG.width *.25 ), FlxG.height);
 		
-		FlxG.cameras.add(hudCam);
-		hudCam.zoom = 1;
-		hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height));
+		//FlxG.cameras.add(hudCam);
+		//hudCam.zoom = 1;
+		//hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height));
 		
-// 		_worldData = new WorldData();
-		_worldData.init();
-	
-
+		_worldData = new WorldData();
+		_worldData.init();	
 	}
 	
 	/**

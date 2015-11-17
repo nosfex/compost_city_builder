@@ -36,6 +36,12 @@ class HXCPP_CLASS_ATTRIBUTES  Path_obj : public hx::Object{
 		::String file;
 		::String ext;
 		bool backslash;
+		virtual ::String toString( );
+		Dynamic toString_dyn();
+
+		static ::String withoutDirectory( ::String path);
+		static Dynamic withoutDirectory_dyn();
+
 		static ::String directory( ::String path);
 		static Dynamic directory_dyn();
 

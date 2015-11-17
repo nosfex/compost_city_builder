@@ -1,4 +1,5 @@
 package ;
+import flixel.group.FlxSpriteGroup;
 import grid.GridMap;
 import Map;
 
@@ -9,15 +10,13 @@ import Map;
 class CompostG
 {
 
-	public function new() 
-	{
-		
-	}
-	
 	public static var FUNC_BUTTON : String = "";
 	public static var GRID_MAP :GridMap = null;
 	
+	// GH: UI accessor
+	public static var UI_SELECTOR : FlxSpriteGroup = null;
 	
+	// GH: Book keeping of produced resources
 	private static var _products : Map<String, Int> = new Map<String, Int>();
 	public static function updateProductAmount(prodType :String, amount : Int) :Void
 	{

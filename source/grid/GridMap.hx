@@ -1,4 +1,5 @@
 package grid;
+import flixel.system.scaleModes.BaseScaleMode;
 import flixel.util.FlxRect;
 import flixel.group.FlxSpriteGroup;
 import flash.geom.Point;
@@ -27,10 +28,12 @@ class GridMap extends FlxSpriteGroup
 		CompostG.GRID_MAP = this;
     }
 
+	// GH: main loop of the grid
     override public function update():Void
     {
     	super.update();
 		
+		// GH: turn off everything if something changed in a grid
 		for (i in 0 ... _grids.length)
 		{
 			for ( j in 0 ... _grids[i].length)
@@ -42,10 +45,47 @@ class GridMap extends FlxSpriteGroup
 				}
 			}
 		}
+		// GH: Always try to see if we have to power up anything
 		checkPowered();	
 		clearDead();
+		
+		// GH: Check pick
+		if (FlxG.mouse.justPressed)
+		{
+			FlxG.log.add("Very basic, working");
+			var mp : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+			var g :BaseGrid = checkGridPos(mp);
+			if (g == null)
+			{
+				FlxG.log.add("No grid selected");
+			}
+			else
+			{
+				FlxG.log.add("picking grid, good job");
+			}
+		}
     }
 	
+	function checkGridPos(point :FlxPoint) : BaseGrid
+	{
+		for (i in 0 ... _grids.length)
+		{
+			for (j in 0 ... _grids[i].length)
+			{
+				var g :BaseGrid = _grids[i][j];
+				var rg : FlxRect = new FlxRect(g.x, g.y, g.width, g.height);
+				if (rg.containsFlxPoint(point))
+				{
+					return g;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
+	
+	// GH: Kill the lights
 	function unpowerEverything()
 	{
 		for (i in 0 ... _grids.length)
@@ -57,10 +97,9 @@ class GridMap extends FlxSpriteGroup
     	}	
 	}
 
+	// GH: Turn on the lights
     function checkPowered():Void
     {
-    //	_grids.sort(sortGrids);
-    	
     	for (i in 0 ... _grids.length) 
 		{
 			for ( j in 0 ... _grids[i].length)
@@ -68,12 +107,16 @@ class GridMap extends FlxSpriteGroup
 				var b:Building = _grids[i][j].getBuilding();
 				if (b != null) 
 				{
+					// GH: This building is powered?
 					if (b.powered) 
 					{
+						// GH: If this building produces power and it has stock, move on
 						if (b.getProductionType() == "power" && b.getProduction() > 0) 
 						{
+							// GH: Power this grid and it's neighbors
 							_grids[i][j].setPowered(true);
 							
+							// GH: For now, power in an N4
 							if (b.getInfluenceArea() == "N4") 
 							{
 								var n4arr:Array<grid.BaseGrid> = N4FromColRow(j, i);
@@ -89,6 +132,7 @@ class GridMap extends FlxSpriteGroup
     	}
     }
 	
+	// GH: Do we have garbage on the gridmap?
 	function clearDead() :Void
 	{
 		for (i in 0 ... this.members.length)
@@ -101,7 +145,7 @@ class GridMap extends FlxSpriteGroup
 		
 		}
 	}
-	
+	// GH: add production to the internal book keeping of the grid
 	public function addProduct(product :Product) :Void
 	{
 		// GH: Add codE?!@?
@@ -110,35 +154,36 @@ class GridMap extends FlxSpriteGroup
 		product.flxColRect = new FlxRect(0, 0, FlxG.width * .75, FlxG.height * .85);
 	}
 	
+	// GH: Consume a product
 	public function removeProduct(prodType :String, amount :Int) :Array<Product>
 	{
 		var ret :Array<Product> = new Array<Product>();
 		for (i in 0 ... _products.length)
 		{
 			var parent : Building = _products[i].prodParent;
+			// GH: k, do we even have what we are asking for?
 			if ( parent.getProductionType() == prodType )
 			{
+				// GH: We have it, do we have enough?
 				if (parent.productionObject.length >= amount)
 				{
 					trace("Can we get them?");
 					for (j in 0 ... amount)
 					{
+						// GH: Remove and ship it to consumer
 						var p : Product = parent.productionObject.pop();
 						ret.push(p);
 						CompostG.updateProductAmount(prodType, -1);
-						trace("Count: " + j);
 					}
 					return ret;
 				}
 			}
 		}
-		
 		return ret;
 	}
 	
 	public function useProduct(prodType :String, amount :Int, from :Building) :Void
 	{
-		
 		var amountToTake :Int = amount;
 		for (i in 0 ... _products.length)
 		{	 
@@ -159,7 +204,7 @@ class GridMap extends FlxSpriteGroup
 			}
 		}
 	}
-	
+	// GH: I don't even
 	function checkProducts() :Void
 	{
 	}
@@ -170,6 +215,7 @@ class GridMap extends FlxSpriteGroup
 		_grids = null;
     }
 
+	// GH: Map creation
     public function initMap(gridCount:Int):Void
     {
     	if (_grids == null) 
@@ -190,6 +236,7 @@ class GridMap extends FlxSpriteGroup
 		{
 			for ( j in 0 ... col)
 			{
+				// GH: Complex offsetting of the grids
 				var g:BaseGrid = new BaseGrid(32 + ((j) * (96 * 1.25)), 32 + ((i) * (96 * 1.25)));
     			g.usable = false;
 				_grids[i].push(g);
@@ -200,6 +247,7 @@ class GridMap extends FlxSpriteGroup
     	_initPos = new FlxPoint(_grids[0][0].x, _grids[0][0].y);
 	}
 
+	// GH: Somehow keeping this
     public function scaleToGrowth():Void
     {
     /*	var maxGrids:Float = Math.sqrt(_grids.length);
@@ -268,12 +316,12 @@ class GridMap extends FlxSpriteGroup
 		{
 			temp[i] = new Array();
 		}
-		
+		// GH: create a new map and fill it with rubbish
 		for (i in 0 ... maxRow)
 		{
 			for (j in 0 ... maxCol)
 			{
-				
+			
 				var g:BaseGrid = new BaseGrid(32 + ((j-_increaseGridCount) * (96 * 1.25)), 32 + ((i-_increaseGridCount) * (96 * 1.25)));
     			g.usable = false;
 				temp[i].push(g);
@@ -288,6 +336,7 @@ class GridMap extends FlxSpriteGroup
 			for (j in 1 ... maxCol - 1)
 			{
 				var newPos : FlxPoint = new FlxPoint(temp[i][j].x, temp[i][j].y);
+				// GH: Temp now has the old data
 				temp[i][j] = _grids[i-1][j-1];
 				temp[i][j].x =newPos.x; temp[i][j].y = newPos.y;
 			}
@@ -307,7 +356,7 @@ class GridMap extends FlxSpriteGroup
 		}
 			
 		_grids = temp;
-		
+		// GH: Camera bounds resetting
 		var boundHeight: Float =  FlxG.height * .25 +  _grids[maxRow - 1][maxCol - 1].y + -( _grids[0][0].x - 96*.25);
 		var boundWidth: Float =  FlxG.width * .75 +  _grids[maxRow - 1][maxCol - 1].y + -(_grids[0][0].y - 96*.25);
 		
@@ -319,6 +368,7 @@ class GridMap extends FlxSpriteGroup
 		FlxG.camera.setBounds( rect.x, rect.y, boundWidth, boundHeight);
     }
 
+	// GH: Sort from 0.0 to max.max
     function sortGrids(a:BaseGrid, b:BaseGrid):Int
     {
     	if (a.y < b.y)

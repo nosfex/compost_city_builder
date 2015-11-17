@@ -33,7 +33,7 @@ namespace debug{
 
 Void GraphicBitmapLog_obj::__construct(int width,int height,Dynamic __o_transparent,Dynamic __o_fillRGBA)
 {
-HX_STACK_FRAME("flixel.system.debug.GraphicBitmapLog","new",0xf8da4027,"flixel.system.debug.GraphicBitmapLog.new","openfl/_legacy/Assets.hx",1666,0x9276b055)
+HX_STACK_FRAME("flixel.system.debug.GraphicBitmapLog","new",0xf8da4027,"flixel.system.debug.GraphicBitmapLog.new","openfl/_legacy/Assets.hx",2010,0x9276b055)
 HX_STACK_THIS(this)
 HX_STACK_ARG(width,"width")
 HX_STACK_ARG(height,"height")
@@ -42,17 +42,17 @@ HX_STACK_ARG(__o_fillRGBA,"fillRGBA")
 Dynamic transparent = __o_transparent.Default(true);
 Dynamic fillRGBA = __o_fillRGBA.Default(-1);
 {
-	HX_STACK_LINE(1732)
+	HX_STACK_LINE(2076)
 	super::__construct(width,height,transparent,fillRGBA,null());
-	HX_STACK_LINE(1734)
+	HX_STACK_LINE(2078)
 	::haxe::io::Bytes _g = ::haxe::Resource_obj::getBytes(::flixel::system::debug::GraphicBitmapLog_obj::resourceName);		HX_STACK_VAR(_g,"_g");
-	HX_STACK_LINE(1734)
+	HX_STACK_LINE(2078)
 	::openfl::_legacy::utils::ByteArray byteArray = ::openfl::_legacy::utils::ByteArray_obj::fromBytes(_g);		HX_STACK_VAR(byteArray,"byteArray");
-	HX_STACK_LINE(1735)
+	HX_STACK_LINE(2079)
 	{
-		HX_STACK_LINE(1735)
+		HX_STACK_LINE(2079)
 		Dynamic _g1 = ::openfl::_legacy::display::BitmapData_obj::lime_bitmap_data_from_bytes(byteArray,null());		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(1735)
+		HX_STACK_LINE(2079)
 		this->__handle = _g1;
 	}
 }

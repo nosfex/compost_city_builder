@@ -60,8 +60,8 @@
 #ifndef INCLUDED_openfl__legacy_events_IEventDispatcher
 #include <openfl/_legacy/events/IEventDispatcher.h>
 #endif
-#ifndef INCLUDED_openfl_events_JoystickEvent
-#include <openfl/events/JoystickEvent.h>
+#ifndef INCLUDED_openfl__legacy_events_JoystickEvent
+#include <openfl/_legacy/events/JoystickEvent.h>
 #endif
 namespace flixel{
 namespace input{
@@ -518,7 +518,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC0(FlxGamepadManager_obj,reset,(void))
 
-Void FlxGamepadManager_obj::handleButtonDown( ::openfl::events::JoystickEvent FlashEvent){
+Void FlxGamepadManager_obj::handleButtonDown( ::openfl::_legacy::events::JoystickEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.gamepad.FlxGamepadManager","handleButtonDown",0x9a9405cf,"flixel.input.gamepad.FlxGamepadManager.handleButtonDown","flixel/input/gamepad/FlxGamepadManager.hx",361,0xccfee0a6)
 		HX_STACK_THIS(this)
@@ -539,7 +539,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxGamepadManager_obj,handleButtonDown,(void))
 
-Void FlxGamepadManager_obj::handleButtonUp( ::openfl::events::JoystickEvent FlashEvent){
+Void FlxGamepadManager_obj::handleButtonUp( ::openfl::_legacy::events::JoystickEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.gamepad.FlxGamepadManager","handleButtonUp",0x87ba4e88,"flixel.input.gamepad.FlxGamepadManager.handleButtonUp","flixel/input/gamepad/FlxGamepadManager.hx",372,0xccfee0a6)
 		HX_STACK_THIS(this)
@@ -560,7 +560,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxGamepadManager_obj,handleButtonUp,(void))
 
-Void FlxGamepadManager_obj::handleAxisMove( ::openfl::events::JoystickEvent FlashEvent){
+Void FlxGamepadManager_obj::handleAxisMove( ::openfl::_legacy::events::JoystickEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.gamepad.FlxGamepadManager","handleAxisMove",0xbb7c51ed,"flixel.input.gamepad.FlxGamepadManager.handleAxisMove","flixel/input/gamepad/FlxGamepadManager.hx",383,0xccfee0a6)
 		HX_STACK_THIS(this)
@@ -576,7 +576,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxGamepadManager_obj,handleAxisMove,(void))
 
-Void FlxGamepadManager_obj::handleBallMove( ::openfl::events::JoystickEvent FlashEvent){
+Void FlxGamepadManager_obj::handleBallMove( ::openfl::_legacy::events::JoystickEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.gamepad.FlxGamepadManager","handleBallMove",0x63851e4b,"flixel.input.gamepad.FlxGamepadManager.handleBallMove","flixel/input/gamepad/FlxGamepadManager.hx",389,0xccfee0a6)
 		HX_STACK_THIS(this)
@@ -620,7 +620,7 @@ return null();
 
 HX_DEFINE_DYNAMIC_FUNC1(FlxGamepadManager_obj,handleBallMove,(void))
 
-Void FlxGamepadManager_obj::handleHatMove( ::openfl::events::JoystickEvent FlashEvent){
+Void FlxGamepadManager_obj::handleHatMove( ::openfl::_legacy::events::JoystickEvent FlashEvent){
 {
 		HX_STACK_FRAME("flixel.input.gamepad.FlxGamepadManager","handleHatMove",0x5f7942d1,"flixel.input.gamepad.FlxGamepadManager.handleHatMove","flixel/input/gamepad/FlxGamepadManager.hx",396,0xccfee0a6)
 		HX_STACK_THIS(this)

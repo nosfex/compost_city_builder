@@ -11,7 +11,7 @@ HX_DECLARE_CLASS3(flixel,input,gamepad,FlxGamepadManager)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxDestroyable)
 HX_DECLARE_CLASS2(flixel,interfaces,IFlxInput)
 HX_DECLARE_CLASS3(openfl,_legacy,events,Event)
-HX_DECLARE_CLASS2(openfl,events,JoystickEvent)
+HX_DECLARE_CLASS3(openfl,_legacy,events,JoystickEvent)
 namespace flixel{
 namespace input{
 namespace gamepad{
@@ -83,19 +83,19 @@ class HXCPP_CLASS_ATTRIBUTES  FlxGamepadManager_obj : public hx::Object{
 		virtual Void reset( );
 		Dynamic reset_dyn();
 
-		virtual Void handleButtonDown( ::openfl::events::JoystickEvent FlashEvent);
+		virtual Void handleButtonDown( ::openfl::_legacy::events::JoystickEvent FlashEvent);
 		Dynamic handleButtonDown_dyn();
 
-		virtual Void handleButtonUp( ::openfl::events::JoystickEvent FlashEvent);
+		virtual Void handleButtonUp( ::openfl::_legacy::events::JoystickEvent FlashEvent);
 		Dynamic handleButtonUp_dyn();
 
-		virtual Void handleAxisMove( ::openfl::events::JoystickEvent FlashEvent);
+		virtual Void handleAxisMove( ::openfl::_legacy::events::JoystickEvent FlashEvent);
 		Dynamic handleAxisMove_dyn();
 
-		virtual Void handleBallMove( ::openfl::events::JoystickEvent FlashEvent);
+		virtual Void handleBallMove( ::openfl::_legacy::events::JoystickEvent FlashEvent);
 		Dynamic handleBallMove_dyn();
 
-		virtual Void handleHatMove( ::openfl::events::JoystickEvent FlashEvent);
+		virtual Void handleHatMove( ::openfl::_legacy::events::JoystickEvent FlashEvent);
 		Dynamic handleHatMove_dyn();
 
 		virtual Void update( );

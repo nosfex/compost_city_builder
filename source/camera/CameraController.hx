@@ -14,6 +14,12 @@ class CameraController extends FlxObject
 	var _confirmScrollTimer :Float = 0;
 	var _maxConfirmScrollTimer :Float = 1.5;
 	
+	@:isVar public var minLimitX(default, default) :Float = 0.15;
+	@:isVar public var minLimitY(default, default) :Float = 0.15;
+	@:isVar public var maxLimitX(default, default) :Float = 0.85;
+	@:isVar public var maxLimitY(default, default) :Float = 0.85;
+	
+	
 	public function new(X:Float=0, Y:Float=0, Width:Float=0, Height:Float=0) 
 	{
 		super(X, Y, Width, Height);
@@ -23,79 +29,52 @@ class CameraController extends FlxObject
 	{
 		super.update();
 		
-		if (FlxG.mouse.screenX <= FlxG.width * 0.15)
+		if (FlxG.mouse.screenX <= FlxG.width * minLimitX)
 		{
-			_confirmScrollTimer += FlxG.elapsed;
-			if (_confirmScrollTimer > _maxConfirmScrollTimer)
-			{
-				this.x -= _camControlSpeed * FlxG.elapsed;
-			}
+			moveCam(true, -_camControlSpeed);
 		}
 		
-		if (FlxG.mouse.screenX >= FlxG.width * 0.6 && FlxG.mouse.screenX <= FlxG.width * 0.75 )
+		if (FlxG.mouse.screenX >= FlxG.width * maxLimitX )
 		{
-			_confirmScrollTimer += FlxG.elapsed;
-			if (_confirmScrollTimer > _maxConfirmScrollTimer)
-			{
-				this.x += _camControlSpeed * FlxG.elapsed;
-			}
+			moveCam(true, _camControlSpeed);
 		}
 		
-		if (FlxG.mouse.screenY <= FlxG.height * 0.15)
+		if (FlxG.mouse.screenY <= FlxG.height * minLimitY)
 		{
-			_confirmScrollTimer += FlxG.elapsed;
-			if (_confirmScrollTimer > _maxConfirmScrollTimer)
-			{
-				this.y -= _camControlSpeed * FlxG.elapsed;
-			}
+			moveCam(false, -_camControlSpeed);
 		}
 		
-		if (FlxG.mouse.screenY >= FlxG.height * 0.85) 
+		if (FlxG.mouse.screenY >= FlxG.height * maxLimitY) 
 		{
-			_confirmScrollTimer += FlxG.elapsed;
-			if (_confirmScrollTimer > _maxConfirmScrollTimer)
-			{
-				this.y += _camControlSpeed * FlxG.elapsed;
-			}
+			moveCam(false, _camControlSpeed);
 		}
 		
 		
-		if (FlxG.mouse.screenX >= .15  && FlxG.mouse.screenX <= .6)
+		if (FlxG.mouse.screenX >= minLimitX  && FlxG.mouse.screenX <= maxLimitX)
 		{
 			_confirmScrollTimer = 0;
 		}
 		
-		if (FlxG.mouse.screenY >= .15 && FlxG.mouse.screenY <= .85)
+		if (FlxG.mouse.screenY >= minLimitY && FlxG.mouse.screenY <= minLimitY)
 		{
 			_confirmScrollTimer = 0;
 		}
 		
-		
+		// GH: This is bullshit
 		if (FlxG.mouse.wheel > 0)
 		{
 			FlxG.camera.zoom -= FlxG.mouse.wheel * FlxG.elapsed;
 		}
 		
-		// GH: Key controls
-		if (FlxG.keys.checkStatus(FlxKey.U, FlxKey.PRESSED))
+	}
+	// GH: Cleanup, check this doesn't break anything
+	function moveCam(x :Bool, speed: Float) : Void
+	{
+		_confirmScrollTimer += FlxG.elapsed;
+		if (_confirmScrollTimer > _maxConfirmScrollTimer)
 		{
-			this.y -= _camControlSpeed * FlxG.elapsed;
-			FlxG.log.add("UP");
-		}
-		
-		if (FlxG.keys.checkStatus(FlxKey.J, FlxKey.PRESSED))
-		{
-			this.y += _camControlSpeed * FlxG.elapsed;
-		}
-		
-		if (FlxG.keys.checkStatus(FlxKey.H, FlxKey.PRESSED))
-		{
-			this.x -= _camControlSpeed * FlxG.elapsed;
-		}
-		
-		if (FlxG.keys.checkStatus(FlxKey.K, FlxKey.PRESSED))
-		{
-			this.x += _camControlSpeed * FlxG.elapsed;
+			if (x) this.x += speed * FlxG.elapsed;
+			else this.y += speed * FlxG.elapsed;
 		}
 	}
 	

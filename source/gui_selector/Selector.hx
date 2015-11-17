@@ -26,29 +26,31 @@ class Selector extends FlxSpriteGroup
 	var camOffsetX : Float ;
 	public var bkg:FlxSprite;
 	
-
 	
 	public function new() 
 	{
 		super();
 	}
 	
+	// GH: Initialize the basic bkg and the popup bar
 	public function initSelector(data :CategoryData) :Void
 	{
 		x = 0;
-		y = 0;
-		px = 10000;
-		bkg = new FlxSprite(px, py, null);
-		bkg.makeGraphic(cast(FlxG.width * 0.25), FlxG.height, FlxColor.TEAL);
+		y = FlxG.height * .9;
+		px = 0;
+		bkg = new FlxSprite(x, y, null);
+		// GH: Use a primitive for now
+		bkg.makeGraphic(cast(FlxG.width * 0.25), cast(FlxG.height * .10), FlxColor.TEAL);
 		add(bkg);
 		
-		camOffsetX = -px - x + FlxG.width * .75;
-		buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.1, "Energy", data);
+		camOffsetX = -px - x ;
+	/*	buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.1, "Energy", data);
 		buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.2, "Production", data);
 		buildCategoryButton(px + FlxG.width * 0.05, py + FlxG.height * 0.3, "Housing", data);
-		buildFunctionButton(px + FlxG.width * 0.05, py + FlxG.height * 0.8, "Erase");
+		buildFunctionButton(px + FlxG.width * 0.05, py + FlxG.height * 0.8, "Erase");*/
 	}
 	
+	// GH: Deprecated
 	private function buildFunctionButton(XBase: Float, YBase: Float, buttonName : String) :Void
 	{
 		var btn :FlxButton = new FlxButton(XBase, YBase, buttonName, selectFunction);
@@ -56,6 +58,7 @@ class Selector extends FlxSpriteGroup
 		add(btn);
 	}
 
+	// GH: Deprecated
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
 		var data : Map<String, Array<String>> = category.getHeadlines();
@@ -74,6 +77,7 @@ class Selector extends FlxSpriteGroup
 		}
 	}
 	
+	// GH: Deprecated
 	private function buildBuildingButton(X :Float, Y :Float, building: String) :FlxButton
 	{
 		var btn :FlxButton = new FlxButton(X, Y, building, selectBuilding);

@@ -83,6 +83,30 @@ Dynamic Path_obj::__Create(hx::DynamicArray inArgs)
 	result->__construct(inArgs[0]);
 	return result;}
 
+::String Path_obj::toString( ){
+	HX_STACK_FRAME("haxe.io.Path","toString",0xc0ab5735,"haxe.io.Path.toString","C:\\HaxeToolkit\\haxe\\std/haxe/io/Path.hx",109,0x4f1aa280)
+	HX_STACK_THIS(this)
+	HX_STACK_LINE(109)
+	return ((((  (((this->dir == null()))) ? ::String(HX_CSTRING("")) : ::String((this->dir + ((  ((this->backslash)) ? ::String(HX_CSTRING("\\")) : ::String(HX_CSTRING("/")) )))) )) + this->file) + ((  (((this->ext == null()))) ? ::String(HX_CSTRING("")) : ::String((HX_CSTRING(".") + this->ext)) )));
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Path_obj,toString,return )
+
+::String Path_obj::withoutDirectory( ::String path){
+	HX_STACK_FRAME("haxe.io.Path","withoutDirectory",0xdf35ce8e,"haxe.io.Path.withoutDirectory","C:\\HaxeToolkit\\haxe\\std/haxe/io/Path.hx",128,0x4f1aa280)
+	HX_STACK_ARG(path,"path")
+	HX_STACK_LINE(129)
+	::haxe::io::Path s = ::haxe::io::Path_obj::__new(path);		HX_STACK_VAR(s,"s");
+	HX_STACK_LINE(130)
+	s->dir = null();
+	HX_STACK_LINE(131)
+	return s->toString();
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Path_obj,withoutDirectory,return )
+
 ::String Path_obj::directory( ::String path){
 	HX_STACK_FRAME("haxe.io.Path","directory",0xbcfe23c4,"haxe.io.Path.directory","C:\\HaxeToolkit\\haxe\\std/haxe/io/Path.hx",141,0x4f1aa280)
 	HX_STACK_ARG(path,"path")
@@ -204,11 +228,15 @@ Dynamic Path_obj::__Field(const ::String &inName,bool inCallProp)
 	case 4:
 		if (HX_FIELD_EQ(inName,"file") ) { return file; }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"toString") ) { return toString_dyn(); }
+		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"directory") ) { return directory_dyn(); }
 		if (HX_FIELD_EQ(inName,"backslash") ) { return backslash; }
 		break;
 	case 16:
+		if (HX_FIELD_EQ(inName,"withoutDirectory") ) { return withoutDirectory_dyn(); }
 		if (HX_FIELD_EQ(inName,"addTrailingSlash") ) { return addTrailingSlash_dyn(); }
 		break;
 	case 21:
@@ -243,6 +271,7 @@ void Path_obj::__GetFields(Array< ::String> &outFields)
 };
 
 static ::String sStaticFields[] = {
+	HX_CSTRING("withoutDirectory"),
 	HX_CSTRING("directory"),
 	HX_CSTRING("addTrailingSlash"),
 	HX_CSTRING("removeTrailingSlashes"),
@@ -263,6 +292,7 @@ static ::String sMemberFields[] = {
 	HX_CSTRING("file"),
 	HX_CSTRING("ext"),
 	HX_CSTRING("backslash"),
+	HX_CSTRING("toString"),
 	String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {

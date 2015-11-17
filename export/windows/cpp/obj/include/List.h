@@ -39,6 +39,9 @@ class HXCPP_CLASS_ATTRIBUTES  List_obj : public hx::Object{
 		virtual Void push( Dynamic item);
 		Dynamic push_dyn();
 
+		virtual Dynamic pop( );
+		Dynamic pop_dyn();
+
 		virtual bool isEmpty( );
 		Dynamic isEmpty_dyn();
 

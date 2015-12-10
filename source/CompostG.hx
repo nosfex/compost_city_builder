@@ -1,6 +1,7 @@
 package ;
 import flixel.group.FlxSpriteGroup;
 import grid.GridMap;
+import gui_selector.Selector;
 import Map;
 
 /**
@@ -14,7 +15,7 @@ class CompostG
 	public static var GRID_MAP :GridMap = null;
 	
 	// GH: UI accessor
-	public static var UI_SELECTOR : FlxSpriteGroup = null;
+	public static var UI_SELECTOR : Selector = null;
 	
 	// GH: Book keeping of produced resources
 	private static var _products : Map<String, Int> = new Map<String, Int>();

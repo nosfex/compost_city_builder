@@ -1,14 +1,20 @@
 package gui_selector;
 
+import buildings.BuildingFactory;
 import flixel.group.FlxSpriteGroup;
 import category.CategoryData;
 import flixel.system.FlxVersion;
+import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxPoint;
 import flixel.util.FlxRect;
 import flixel.util.FlxColor;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import grid.BaseGrid;
+
 /**
  * ...
  * @author Gerardo Heidel
@@ -24,9 +30,15 @@ class Selector extends FlxSpriteGroup
 	var px : Float;
 	var py : Float;
 	var camOffsetX : Float ;
-	public var bkg:FlxSprite;
 	
+	var selectionText : FlxText;
 	
+	var buttonContainer : FlxSprite;
+	var bkg:FlxSprite;
+	var categoryData : CategoryData;
+	
+	@:isVar public var selectedGrid(default, default) : BaseGrid = null;
+	@:isVar public var selectorLocked(default, default) :Bool = false;
 	public function new() 
 	{
 		super();
@@ -36,18 +48,124 @@ class Selector extends FlxSpriteGroup
 	public function initSelector(data :CategoryData) :Void
 	{
 		x = 0;
-		y = FlxG.height * .9;
+		y = 0;
 		px = 0;
-		bkg = new FlxSprite(x, y, null);
+		bkg = new FlxSprite(x, FlxG.height * .9, null);
 		// GH: Use a primitive for now
 		bkg.makeGraphic(cast(FlxG.width * 0.25), cast(FlxG.height * .10), FlxColor.TEAL);
+		bkg.scrollFactor.set(0, 0);
 		add(bkg);
 		
 		camOffsetX = -px - x ;
-	/*	buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.1, "Energy", data);
-		buildCategoryButton(px +FlxG.width * 0.05, py + FlxG.height * 0.2, "Production", data);
-		buildCategoryButton(px + FlxG.width * 0.05, py + FlxG.height * 0.3, "Housing", data);
-		buildFunctionButton(px + FlxG.width * 0.05, py + FlxG.height * 0.8, "Erase");*/
+		
+		selectionText = new FlxText(FlxG.width * 0.05, FlxG.height * .95, 200, "NOPE");
+		add(selectionText);
+		
+		buttonContainer = new FlxSprite(FlxG.width * .35, FlxG.height, null);
+		buttonContainer.makeGraphic(cast(FlxG.width * .4), cast(FlxG.height * .25), FlxColor.TEAL);
+		buttonContainer.scrollFactor.set(0, 0);
+		add(buttonContainer);
+		
+		categoryData = new CategoryData();
+	}
+	
+	public function checkClearSelection() :Void
+	{
+		var mp : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+		var bcRect :FlxRect = new FlxRect(buttonContainer.x, buttonContainer.y, buttonContainer.width, buttonContainer.height);
+		if (bcRect.containsFlxPoint(mp))
+		{
+			return;
+		}
+		else clearSelection();
+	}	
+	// GH: clear selection
+	private function clearSelection() : Void
+	{
+		selectionText.text = "";
+		removeButtonContainer();
+		selectorLocked = false;
+		clearSelectedGrid();
+	}
+	
+	// GH: 
+	private function clearSelectedGrid() :Void
+	{
+		if (selectedGrid != null)
+		{
+			selectedGrid.selected = false;
+			selectedGrid = null;
+		}
+	}
+	// GH: Grid sets
+	public function setSelected(grid : grid.BaseGrid	) :Void
+	{
+		clearSelectedGrid();
+
+		if (grid.getBuilding() != null)
+		{
+			selectionText.text = grid.getBuilding().name;
+			
+			// GH: Pull up special ui (upgrade, delete, etc)
+		}
+		else
+		{
+			selectionText.text = "SUCH GRID";
+			// GH: Construction UI
+			populateBuildingButtons();
+			pushButtonContainer();
+		}
+		selectedGrid = grid;
+		selectedGrid.selected = true;
+		selectorLocked = true;
+	}
+	
+	function removeButtonContainer() : Void
+	{
+		// GH: Run animation for all the contained objects
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
+		FlxTween.tween(buttonContainer, { y:FlxG.height }, 0.25, options); 
+		for (i in 0 ... categoryButtons.length)
+		{
+			FlxTween.tween(categoryButtons[i], { y: FlxG.height }, 0.25, options);
+			for (j in 0 ... internalCategoryButtons[categoryButtons[i]].length)
+			{
+				internalCategoryButtons[categoryButtons[i]][j].visible = false;
+				
+			}
+		}
+	}
+	
+	// GH: push container
+	function pushButtonContainer() : Void
+	{
+		// GH: Run animation for all the contained objects
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadIn };
+		FlxTween.tween(buttonContainer, { y:FlxG.height * .75 }, 0.25, options); 
+		for (i in 0 ... categoryButtons.length)
+		{
+			FlxTween.tween(categoryButtons[i], { y: FlxG.height * (1.05 + (i) * .05) - FlxG.height * .25 }, 0.25, options);
+		}
+	}
+	
+	// GH: building buttons for selector
+	function populateBuildingButtons() :Void
+	{
+		for (i in 0 ... categoryButtons.length )
+		{
+			remove(categoryButtons[i], true);
+		}
+		categoryButtons = new Array();
+		// GH: Determine what the fuck are we working with
+		// GH: On an empty block, load regular buildings
+		buildCategoryButton(FlxG.width * .38, FlxG.height * 1.05, "Energy", categoryData);
+		buildCategoryButton(FlxG.width * .38, FlxG.height * 1.10, "Housing", categoryData);
+		buildCategoryButton(FlxG.width * .38, FlxG.height * 1.15, "Production", categoryData);
+	}
+	
+	function onBuildingConstruction() :Void
+	{
+		
 	}
 	
 	// GH: Deprecated
@@ -58,7 +176,6 @@ class Selector extends FlxSpriteGroup
 		add(btn);
 	}
 
-	// GH: Deprecated
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
 		var data : Map<String, Array<String>> = category.getHeadlines();
@@ -70,14 +187,15 @@ class Selector extends FlxSpriteGroup
 		categoryButtons.push(btn);
 		initPosY[btn] = YBase;
 		internalCategoryButtons[btn] = new Array();
-		
+		var modYCount :Int = 0;
+		// GH: Build internal buttons for categories
 		for(i in 0 ... innerData.length)
 		{
-			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 10, YBase + ( (i + 1) * _buttonHeight), innerData[i] ));
+			modYCount += (i % 5) == 0 ? 1 : 0;
+			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 10 + i * _buttonHeight, FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[i] ));
 		}
 	}
 	
-	// GH: Deprecated
 	private function buildBuildingButton(X :Float, Y :Float, building: String) :FlxButton
 	{
 		var btn :FlxButton = new FlxButton(X, Y, building, selectBuilding);
@@ -102,7 +220,15 @@ class Selector extends FlxSpriteGroup
 				if (p.inFlxRect(r))
 				{
 					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
+					selectedGrid.addBuilding(buildings.BuildingFactory.instance().createBuildingInstance());
+					
 					CompostG.FUNC_BUTTON = "";
+					for (j in 0 ... internalCategoryButtons[btn].length)
+					{
+						var auxBtn :FlxButton = internalCategoryButtons[btn][j];
+						auxBtn.visible = false;
+					}
+					clearSelection();
 					
 					return;
 				}
@@ -138,7 +264,7 @@ class Selector extends FlxSpriteGroup
 				unrollCategory(btn);
 			}
 		}
-
+		
 	}
 
 	private function unrollCategory(button :FlxButton) :Void
@@ -148,30 +274,14 @@ class Selector extends FlxSpriteGroup
 		for(btn in categoryButtons)
 		{
 			
-			btn.y = initPosY[btn];
-				
-			for(i in 0 ... internalCategoryButtons[btn].length)
-			{
-				var vis :Bool = false;
-				var data :Array<FlxButton> = internalCategoryButtons[btn];
-				if(btn == button)
-				{
-					vis = true;
-				}
-				data[i].visible = vis;
-
-				if(btn.y <= button.y)
-				{
-					continue;
-				}
-
-				else
-				{
-					FlxG.log.add("MOVE THE " + btn + " DOWN");
-					FlxG.log.add("DATA POS " + data[data.length - 1].y);
-					btn.setPosition(button.x, button.y  + (data[data.length - 1].y + 15));	
-				}
-			}
+			//btn.y = initPosY[btn];
+			btn.visible = false;
+		}
+		
+		for(i in 0 ... internalCategoryButtons[button].length)
+		{
+			var data :Array<FlxButton> = internalCategoryButtons[button];
+			data[i].visible = true;
 		}
 
 	}

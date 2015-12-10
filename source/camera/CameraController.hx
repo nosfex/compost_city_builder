@@ -29,6 +29,12 @@ class CameraController extends FlxObject
 	{
 		super.update();
 		
+	
+		if (CompostG.UI_SELECTOR.selectorLocked)
+		{
+			return;
+		}
+		
 		if (FlxG.mouse.screenX <= FlxG.width * minLimitX)
 		{
 			moveCam(true, -_camControlSpeed);
@@ -48,7 +54,6 @@ class CameraController extends FlxObject
 		{
 			moveCam(false, _camControlSpeed);
 		}
-		
 		
 		if (FlxG.mouse.screenX >= minLimitX  && FlxG.mouse.screenX <= maxLimitX)
 		{

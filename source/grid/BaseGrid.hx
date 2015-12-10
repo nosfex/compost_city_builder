@@ -13,8 +13,8 @@ import flixel.util.FlxRect;
  */
 class BaseGrid extends FlxSpriteGroup
 {
+	@:isVar public var selected(default, default) :Bool = false;
 
-	
 	public var usable(get, set) : Bool;
 	public var forceCheck(get, set) : Bool;
 	
@@ -34,7 +34,7 @@ class BaseGrid extends FlxSpriteGroup
 		_base = new FlxSprite(x, y, null);
 		_base.makeGraphic(96, 96, 0x5500FF90);
 		_base.origin = new FlxPoint();
-		
+		_base.useColorTransform = true;
 		alpha = 0.5;
 		add(_base);
 		_power = false;
@@ -130,22 +130,7 @@ class BaseGrid extends FlxSpriteGroup
 			if (p.inFlxRect(r))
 			{
 				
-				if(CompostG.FUNC_BUTTON != "Erase")
-				{
-					addBuilding(BuildingFactory.instance().createBuildingInstance());
-				}
-				else
-				{
-					if (_building != null && _building.alive)
-					{
-						_building.kill();
-						_building.alive = false;
-						
-						_building = null; 
-						_forceCheck = true;
-						return;
-					}
-				}
+				selected = true;
 			}
 		}
 
@@ -159,12 +144,15 @@ class BaseGrid extends FlxSpriteGroup
 				members[i].alpha = alpha;
 			}
 		}
+		
+		
 
 		if(_power)
 		{
-			alpha = 1;
-		
- 			if(_building != null)
+			//alpha = 1;
+			
+			_base.makeGraphic(96, 96 , 0x550000FF);
+			if(_building != null)
 			{
 				if(_building.requiresPower())
 				{
@@ -185,9 +173,15 @@ class BaseGrid extends FlxSpriteGroup
 			}
 			_powerIcon.visible = true;
 		}
-
+			
+		if (selected)
+		{
+			alpha = 1;
+		}
+		else alpha = 0.5;
+			
     }
-
+	
     override public function destroy():Void
     {
         super.destroy();

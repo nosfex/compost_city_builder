@@ -52,16 +52,34 @@ class GridMap extends FlxSpriteGroup
 		// GH: Check pick
 		if (FlxG.mouse.justPressed)
 		{
+			for (i in 0 ... _grids.length)
+			{
+				for ( j in 0 ... _grids[i].length)
+				{
+					if(CompostG.UI_SELECTOR.selectedGrid != _grids[i][j])
+					{
+						_grids[i][j].selected = false;
+					}
+				}
+			}
+			// GH: World coordinates, basic,
+			// need to check functionality further
 			FlxG.log.add("Very basic, working");
-			var mp : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+			
+			var mp : FlxPoint = new FlxPoint(FlxG.mouse.x, FlxG.mouse.y);
 			var g :BaseGrid = checkGridPos(mp);
 			if (g == null)
 			{
+				// GH: Found nothing, clear up selection
 				FlxG.log.add("No grid selected");
+				CompostG.UI_SELECTOR.checkClearSelection();
 			}
 			else
 			{
+				// GH: Lit up grid? 
+				// GH: Grid selected effectively, pop up stuff
 				FlxG.log.add("picking grid, good job");
+				CompostG.UI_SELECTOR.setSelected(g);
 			}
 		}
     }

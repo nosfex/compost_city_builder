@@ -1,9 +1,11 @@
 package camera;
-
 import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.input.keyboard.FlxKeyList;
 import flixel.input.keyboard.FlxKey;
+import flixel.util.FlxPoint;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 /**
  * ...
  * @author Gerardo Heidel
@@ -70,8 +72,15 @@ class CameraController extends FlxObject
 		{
 			FlxG.camera.zoom -= FlxG.mouse.wheel * FlxG.elapsed;
 		}
-		
 	}
+	
+	public function moveToPos(pos : FlxPoint) : Void
+	{
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
+		
+		FlxTween.tween(this, { x:pos.x - FlxG.width / 2, y:pos.y - FlxG.height / 2 }, 0.1, options);
+	}
+	
 	// GH: Cleanup, check this doesn't break anything
 	function moveCam(x :Bool, speed: Float) : Void
 	{

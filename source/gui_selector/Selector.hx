@@ -39,7 +39,8 @@ class Selector extends FlxSpriteGroup
 	
 	@:isVar public var selectedGrid(default, default) : BaseGrid = null;
 	@:isVar public var selectorLocked(default, default) :Bool = false;
-	public function new() 
+	@:isVar public var overSelector(default, default) :Bool = false;
+	public function new()  
 	{
 		super();
 	}
@@ -134,6 +135,18 @@ class Selector extends FlxSpriteGroup
 				
 			}
 		}
+	}
+	
+	public function checkPassthrough() :Bool
+	{	
+		var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+		var r :FlxRect = new FlxRect(buttonContainer.x, buttonContainer.y, buttonContainer.width , buttonContainer.height);
+		if (p.inFlxRect(r))
+		{
+			return false;
+		}
+		
+		return true;
 	}
 	
 	// GH: push container

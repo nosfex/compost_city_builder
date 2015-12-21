@@ -64,7 +64,6 @@ class GridMap extends FlxSpriteGroup
 			}
 			// GH: World coordinates, basic,
 			// need to check functionality further
-			FlxG.log.add("Very basic, working");
 			
 			var mp : FlxPoint = new FlxPoint(FlxG.mouse.x, FlxG.mouse.y);
 			var g :BaseGrid = checkGridPos(mp);
@@ -78,8 +77,13 @@ class GridMap extends FlxSpriteGroup
 			{
 				// GH: Lit up grid? 
 				// GH: Grid selected effectively, pop up stuff
-				FlxG.log.add("picking grid, good job");
-				CompostG.UI_SELECTOR.setSelected(g);
+				if (CompostG.UI_SELECTOR.checkPassthrough())
+				{
+					FlxG.log.add("picking grid, good job");
+					CompostG.UI_SELECTOR.setSelected(g);
+					CompostG.CAM.moveToPos(new FlxPoint(g.x, g.y));
+				}
+				
 			}
 		}
     }
@@ -263,6 +267,8 @@ class GridMap extends FlxSpriteGroup
 		}
 	
     	_initPos = new FlxPoint(_grids[0][0].x, _grids[0][0].y);
+		
+		//CompostG.CAM.moveToPos(_initPos);
 	}
 
 	// GH: Somehow keeping this

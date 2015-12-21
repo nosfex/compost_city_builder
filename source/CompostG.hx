@@ -1,4 +1,5 @@
 package ;
+import camera.CameraController;
 import flixel.group.FlxSpriteGroup;
 import grid.GridMap;
 import gui_selector.Selector;
@@ -13,6 +14,10 @@ class CompostG
 
 	public static var FUNC_BUTTON : String = "";
 	public static var GRID_MAP :GridMap = null;
+	
+	
+	// GH: cam controller
+	public static var CAM : CameraController = null;
 	
 	// GH: UI accessor
 	public static var UI_SELECTOR : Selector = null;

@@ -27,7 +27,6 @@ class PlayState extends FlxState
 	private var _selector :gui_selector.Selector;
 	private var _moneyTxt :FlxText;
 	private var _camControl : CameraController;
-	
 	private var _worldData :WorldData;
 	var hudCam:FlxCamera;
 	/**
@@ -69,7 +68,7 @@ class PlayState extends FlxState
 		FlxG.cameras.add(hudCam);
 		hudCam.zoom = 1;
 		hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height * .1));*/
-		
+		CompostG.CAM = _camControl;
 		_worldData = new WorldData();
 		_worldData.init();	
 	}

@@ -21,6 +21,8 @@ class GridMap extends FlxSpriteGroup
     var _lastGridCount:Int = 0;
 	var _increaseGridCount = 0;
 	var _products :Array<Product> = new Array<Product>();
+	var tileSizeOffset :Int = 96;
+	var quarterTileSize :Int = 32;
 	
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
     {
@@ -259,7 +261,7 @@ class GridMap extends FlxSpriteGroup
 			for ( j in 0 ... col)
 			{
 				// GH: Complex offsetting of the grids
-				var g:BaseGrid = new BaseGrid(32 + ((j) * (96 * 1.25)), 32 + ((i) * (96 * 1.25)));
+				var g:BaseGrid = new BaseGrid(quarterTileSize + ((j) * (tileSizeOffset * 1.25)), quarterTileSize + ((i) * (tileSizeOffset * 1.25)));
     			g.usable = false;
 				_grids[i].push(g);
 				add(g);
@@ -331,6 +333,7 @@ class GridMap extends FlxSpriteGroup
     public function addGrids():Void
     {
 		_increaseGridCount++;
+		_increaseGridCount++;
 		var maxRow :Int = _grids[0].length  + 2;
 		var maxCol :Int = maxRow;
 		// GH: Create new grid
@@ -346,7 +349,7 @@ class GridMap extends FlxSpriteGroup
 			for (j in 0 ... maxCol)
 			{
 			
-				var g:BaseGrid = new BaseGrid(32 + ((j-_increaseGridCount) * (96 * 1.25)), 32 + ((i-_increaseGridCount) * (96 * 1.25)));
+				var g:BaseGrid = new BaseGrid(quarterTileSize + ((j-_increaseGridCount) * (tileSizeOffset * 1.25)), quarterTileSize+ ((i-_increaseGridCount) * (tileSizeOffset * 1.25)));
     			g.usable = false;
 				temp[i].push(g);
 				//add(g);
@@ -381,10 +384,13 @@ class GridMap extends FlxSpriteGroup
 			
 		_grids = temp;
 		// GH: Camera bounds resetting
-		var boundHeight: Float =  FlxG.height * .25 +  _grids[maxRow - 1][maxCol - 1].y + -( _grids[0][0].x - 96*.25);
-		var boundWidth: Float =  FlxG.width * .75 +  _grids[maxRow - 1][maxCol - 1].y + -(_grids[0][0].y - 96*.25);
+		var boundHeight: Float = FlxG.height * .25 +  _grids[maxRow - 1][maxCol - 1].y + -( _grids[0][0].y - quarterTileSize);
+		var boundWidth: Float =  FlxG.width * .75 +  _grids[maxRow - 1][maxCol - 1].x + -(_grids[0][0].x - quarterTileSize);
 		
-		var rect :FlxRect = new FlxRect(_grids[0][0].x - 96*.25,  _grids[0][0].y - 96 *.25, boundWidth, boundHeight );
+		// GH: Add extra room to give the camera a little breather
+		boundHeight += tileSizeOffset * 2;
+		
+		var rect :FlxRect = new FlxRect(-tileSizeOffset + _grids[0][0].x - quarterTileSize, -tileSizeOffset +  _grids[0][0].y - quarterTileSize, -tileSizeOffset + boundWidth, boundHeight );
 		FlxG.log.add("BOUNDWIDTH: "+ boundWidth);
 		FlxG.log.add("BOUNDHEIGHT: "+ boundHeight);
 		FlxG.log.add("BOUNDX: " + rect.x);

@@ -17,9 +17,9 @@ class CameraController extends FlxObject
 	var _maxConfirmScrollTimer :Float = 1.5;
 	
 	@:isVar public var minLimitX(default, default) :Float = 0.15;
-	@:isVar public var minLimitY(default, default) :Float = 0.15;
+	@:isVar public var minLimitY(default, default) :Float = 0.25;
 	@:isVar public var maxLimitX(default, default) :Float = 0.85;
-	@:isVar public var maxLimitY(default, default) :Float = 0.85;
+	@:isVar public var maxLimitY(default, default) :Float = 0.65;
 	
 	
 	public function new(X:Float=0, Y:Float=0, Width:Float=0, Height:Float=0) 
@@ -52,7 +52,7 @@ class CameraController extends FlxObject
 			moveCam(false, -_camControlSpeed);
 		}
 		
-		if (FlxG.mouse.screenY >= FlxG.height * maxLimitY) 
+		else if (FlxG.mouse.screenY >= FlxG.height * maxLimitY) 
 		{
 			moveCam(false, _camControlSpeed);
 		}
@@ -62,10 +62,10 @@ class CameraController extends FlxObject
 			_confirmScrollTimer = 0;
 		}
 		
-		if (FlxG.mouse.screenY >= minLimitY && FlxG.mouse.screenY <= minLimitY)
+		/*if (FlxG.mouse.screenY >= minLimitY && FlxG.mouse.screenY <= minLimitY)
 		{
 			_confirmScrollTimer = 0;
-		}
+		}*/
 		
 		// GH: This is bullshit
 		if (FlxG.mouse.wheel > 0)

@@ -1,10 +1,11 @@
 {
   "buildings":
   [	
-    {"requiresPower": true, "upkeepCost" :8, "requiresManPower":true, "maxManPower":2, "price":4, "area":"N4", "techLevel":0, "productionType":"money", "productionRate":1, "maxProduction":10000, "name":"Slave Agency","lockTile":true, "buildingMaxDmg":3},
-    {"requiresPower": false, "upkeepCost":4, "requiresManPower":false, "maxManPower":0, "price": 1, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Plant","lockTile":true, "buildingMaxDmg":3},
-    {"requiresPower": true, "upkeepCost": 2, "requiresManPower":false, "maxManPower":0, "price":1,  "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Line", "lockTile":false, "buildingMaxDmg":3 },
-    {"requiresPower": true, "upkeepCost": 20, "requiresManPower":false, "maxManPower":0, "price":3, "area":"N4", "techLevel":0, "productionType":"clone", "productionRate":1, "maxProduction":4, "name":"Clone Center","lockTile":false, "buildingMaxDmg":3}
+	{"functions":["Scrap", "Add Grids"],"requiresPower": false, "upkeepCost" :0, "requiresManPower":false, "maxManPower":0, "price":0, "area":"N4", "techLevel":0, "productionType":"grids", "productionRate":1, "maxProduction":10000, "name":"City Council","lockTile":true, "buildingMaxDmg":3},
+    {"functions":["Scrap"],"requiresPower": true, "upkeepCost" :8, "requiresManPower":true, "maxManPower":2, "price":4, "area":"N4", "techLevel":0, "productionType":"money", "productionRate":1, "maxProduction":10000, "name":"Slave Agency","lockTile":true, "buildingMaxDmg":3},
+    {"functions":["Scrap"],"requiresPower": false, "upkeepCost":40, "requiresManPower":false, "maxManPower":0, "price": 20, "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Plant","lockTile":true, "buildingMaxDmg":3},
+    {"functions":["Scrap"],"requiresPower": true, "upkeepCost": 10, "requiresManPower":false, "maxManPower":0, "price":10,  "area":"N4", "techLevel":0, "productionType":"power", "productionRate":1, "maxProduction":0, "name":"Power Line", "lockTile":false, "buildingMaxDmg":3 },
+    {"functions":["Scrap"],"requiresPower": true, "upkeepCost": 200, "requiresManPower":false, "maxManPower":0, "price":300, "area":"N4", "techLevel":0, "productionType":"clone", "productionRate":1, "maxProduction":4, "name":"Clone Center","lockTile":false, "buildingMaxDmg":3}
   ]
   
 }

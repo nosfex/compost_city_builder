@@ -2,7 +2,6 @@ package world;
 import flash.display.BitmapData;
 import flixel.FlxG;
 import haxe.Json;
-import lime.net.oauth.OAuthRequest.KVPair;
 import openfl.display.Bitmap;
 import sys.io.File;
 import flixel.util.FlxMath;

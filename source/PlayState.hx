@@ -56,7 +56,7 @@ class PlayState extends FlxState
 		_selector.initSelector(_categoryData);
 		_selector.scrollFactor.set(0, 0);
 		
-		CompostG.updateProductAmount("money", 10);
+		CompostG.updateProductAmount("money", 1000);
 		CompostG.UI_SELECTOR = _selector;
 		
 		FlxG.camera.follow(_camControl, 0, null, 0);

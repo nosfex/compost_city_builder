@@ -66,14 +66,14 @@ class GridMap extends FlxSpriteGroup
 			}
 			// GH: World coordinates, basic,
 			// need to check functionality further
-			
+			CompostG.UI_SELECTOR.checkClearSelection();
 			var mp : FlxPoint = new FlxPoint(FlxG.mouse.x, FlxG.mouse.y);
 			var g :BaseGrid = checkGridPos(mp);
 			if (g == null)
 			{
 				// GH: Found nothing, clear up selection
 				FlxG.log.add("No grid selected");
-				CompostG.UI_SELECTOR.checkClearSelection();
+				
 			}
 			else
 			{

@@ -20,6 +20,8 @@ class BuildingData
 	public var 	holdTile :Bool = false;
 	public var  price :Int = 0;
 	public var 	upkeepCost : Int = 0;
+	
+	public var availabeFunctions:Array<String> = new Array<String>();
 	public function new() 
 	{
 		

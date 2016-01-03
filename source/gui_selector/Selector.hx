@@ -79,7 +79,8 @@ class Selector extends FlxSpriteGroup
 			return;
 		}
 		else clearSelection();
-	}	
+	}
+	
 	// GH: clear selection
 	private function clearSelection() : Void
 	{
@@ -106,8 +107,14 @@ class Selector extends FlxSpriteGroup
 		if (grid.getBuilding() != null)
 		{
 			selectionText.text = grid.getBuilding().name;
-			
-			// GH: Pull up special ui (upgrade, delete, etc)
+			FlxG.log.add("Functions: " + grid.getBuilding().availableFunctions.toString());
+			for (i in 0 ... grid.getBuilding().availableFunctions.length)
+			{
+				// GH: Pull up special ui (upgrade, delete, etc)
+				buildFunctionButton(i * 100, 0, grid.getBuilding().availableFunctions[i]);
+				//buildFunctionButton()
+			}
+			pushButtonContainer();
 		}
 		else
 		{
@@ -184,7 +191,7 @@ class Selector extends FlxSpriteGroup
 	// GH: Deprecated
 	private function buildFunctionButton(XBase: Float, YBase: Float, buttonName : String) :Void
 	{
-		var btn :FlxButton = new FlxButton(XBase, YBase, buttonName, selectFunction);
+		var btn :FlxButton = new FlxButton(buttonContainer.x + XBase, buttonContainer.y + YBase, buttonName, selectFunction);
 		functionButtons.push(btn);
 		add(btn);
 	}
@@ -224,7 +231,6 @@ class Selector extends FlxSpriteGroup
 		{
 			for(i in 0 ... internalCategoryButtons[btn].length)
 			{
-
 				var curBtn :FlxButton = internalCategoryButtons[btn][i];
 				if (!curBtn.visible)
 					continue;
@@ -234,7 +240,7 @@ class Selector extends FlxSpriteGroup
 				{
 					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
 					selectedGrid.addBuilding(buildings.BuildingFactory.instance().createBuildingInstance());
-					
+					FlxG.log.add("BUILDING TO BUILD: " + curBtn.text);
 					CompostG.FUNC_BUTTON = "";
 					for (j in 0 ... internalCategoryButtons[btn].length)
 					{

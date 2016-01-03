@@ -61,6 +61,7 @@ class BuildingFactory
 			bData.requiresManPower	= (jsonBuildings.buildings[i]).requiresManPower;
 			bData.price 			= (jsonBuildings.buildings[i]).price;
 			bData.upkeepCost 		= (jsonBuildings.buildings[i]).upkeepCost;
+			bData.availabeFunctions = (jsonBuildings.buildings[i]).functions;
 			_buildingData.arrayWrite(bData.name, bData);
 		}
 	}
@@ -82,14 +83,14 @@ class BuildingFactory
 		{
 			case "Power Plant":
 				graphic = AssetPaths.power_plant_0__png;
-				
 			case "Power Line":
- 				graphic = AssetPaths.power_line_0__png;
-				
+ 				graphic = AssetPaths.power_line_0__png;	
 			case "Clone Center":
 				graphic = AssetPaths.clone_hab_center_0__png;
 			case "Slave Agency":
 				graphic = AssetPaths.slave_center_0__png;
+			case "Headquarters":
+				graphic = AssetPaths.headquarters_0__png;
 		}
 		var b :Building = new Building(0, 0, graphic);
 		trace("CURRENT_BUILDING" + CURRENT_BUILDING);

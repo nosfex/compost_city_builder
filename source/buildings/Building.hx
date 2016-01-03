@@ -38,6 +38,8 @@ class Building extends FlxSprite
 	var _workers :Array<Clone> = new Array();
 	var _upkeepCost :Int = 0; 
 	
+	@:isVar public var availableFunctions(default, default) : Array<String> = new Array<String>();
+	
 	public function get_upkeepCost() :Int									{ return _upkeepCost; }
 	public function set_upkeepCost(value : Int) :Int						{ _upkeepCost = value; return _upkeepCost; }
 	
@@ -86,6 +88,7 @@ class Building extends FlxSprite
     	_maxProduction = data.maxProduction;
     	_requiresManPower = data.requiresManPower;
     	_maxManPower = data.maxManPower;
+		availableFunctions = data.availableFunctions;
     	this.solid = false;
     	this.moves = false;
     }
@@ -200,4 +203,17 @@ class Building extends FlxSprite
     	}
     	_productionObject = new Array();
     }
+	
+	// GH: process building functions from the selector 
+	public function processFunction(funcName :String): Void
+	{
+		switch(funcName)
+		{
+			case "Scrap":
+				kill();
+			//	break;
+			case "Add Grid":
+			//	break;
+		}
+	}
 }

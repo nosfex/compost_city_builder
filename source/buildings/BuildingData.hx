@@ -21,7 +21,7 @@ class BuildingData
 	public var  price :Int = 0;
 	public var 	upkeepCost : Int = 0;
 	
-	public var availabeFunctions:Array<String> = new Array<String>();
+	public var availableFunctions:Array<String> = new Array<String>();
 	public function new() 
 	{
 		

@@ -89,6 +89,7 @@ class Building extends FlxSprite
     	_requiresManPower = data.requiresManPower;
     	_maxManPower = data.maxManPower;
 		availableFunctions = data.availableFunctions;
+		
     	this.solid = false;
     	this.moves = false;
     }
@@ -211,6 +212,7 @@ class Building extends FlxSprite
 		{
 			case "Scrap":
 				kill();
+				powered = false;
 			//	break;
 			case "Add Grid":
 			//	break;

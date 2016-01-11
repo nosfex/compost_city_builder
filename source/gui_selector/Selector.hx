@@ -106,14 +106,7 @@ class Selector extends FlxSpriteGroup
 
 		if (grid.getBuilding() != null)
 		{
-			selectionText.text = grid.getBuilding().name;
-			FlxG.log.add("Functions: " + grid.getBuilding().availableFunctions.toString());
-			for (i in 0 ... grid.getBuilding().availableFunctions.length)
-			{
-				// GH: Pull up special ui (upgrade, delete, etc)
-				buildFunctionButton(i * 100, 0, grid.getBuilding().availableFunctions[i]);
-				//buildFunctionButton()
-			}
+			populateFunctionButtons(grid);
 			pushButtonContainer();
 		}
 		else
@@ -142,6 +135,11 @@ class Selector extends FlxSpriteGroup
 				
 			}
 		}
+		
+		for (i in 0 ... functionButtons.length)
+		{
+			functionButtons[i].visible = false;
+		}
 	}
 	
 	public function checkPassthrough() :Bool
@@ -162,9 +160,15 @@ class Selector extends FlxSpriteGroup
 		// GH: Run animation for all the contained objects
 		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadIn };
 		FlxTween.tween(buttonContainer, { y:FlxG.height * .75 }, 0.25, options); 
+		// GH: Category buttons tweeening
 		for (i in 0 ... categoryButtons.length)
 		{
 			FlxTween.tween(categoryButtons[i], { y: FlxG.height * (1.05 + (i) * .05) - FlxG.height * .25 }, 0.25, options);
+		}
+		// GH: Function buttons tweeening
+		for (i in 0 ... functionButtons.length)
+		{
+			FlxTween.tween(functionButtons[i], { y: FlxG.height * (1.05 + (i) * .05) - FlxG.height * .25 }, 0.25, options);
 		}
 	}
 	
@@ -188,10 +192,22 @@ class Selector extends FlxSpriteGroup
 		
 	}
 	
-	// GH: Deprecated
+	private function populateFunctionButtons(grid : BaseGrid) : Void
+	{
+		selectionText.text = grid.getBuilding().name;
+		FlxG.log.add("Functions: " + grid.getBuilding().availableFunctions.toString());
+		for (i in 0 ... grid.getBuilding().availableFunctions.length)
+		{
+			// GH: Pull up special ui (upgrade, delete, etc)
+			buildFunctionButton(50, FlxG.height * 1.05 + (0.1 * i), grid.getBuilding().availableFunctions[i]);
+			//buildFunctionButton()
+		}
+	}
+	
+	// GH: Build function buttons
 	private function buildFunctionButton(XBase: Float, YBase: Float, buttonName : String) :Void
 	{
-		var btn :FlxButton = new FlxButton(buttonContainer.x + XBase, buttonContainer.y + YBase, buttonName, selectFunction);
+		var btn :FlxButton = new FlxButton(buttonContainer.x + XBase, YBase, buttonName, selectFunction);
 		functionButtons.push(btn);
 		add(btn);
 	}
@@ -266,6 +282,9 @@ class Selector extends FlxSpriteGroup
 			{
 				CompostG.FUNC_BUTTON = btn.text;
 				trace("FUNCTION" + btn.text);
+			//	selectedGrid.getBuilding().processFunction(CompostG.FUNC_BUTTON);
+				selectedGrid.processFunction(CompostG.FUNC_BUTTON);
+				clearSelection();
 			}
 		}
 

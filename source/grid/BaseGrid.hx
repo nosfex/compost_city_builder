@@ -27,6 +27,7 @@ class BaseGrid extends FlxSpriteGroup
 		
 	private var _forceCheck : Bool = false;
 	private var _powerIcon :FlxSprite = null;
+	private var _dirtyGraphic : Bool = false;
 	
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
 	{
@@ -114,8 +115,8 @@ class BaseGrid extends FlxSpriteGroup
     {
 		super.update();
 	
-		if (!this.alive)
-			return;
+		//if (!this.alive)
+	//		return;
       
 		if (FlxG.mouse.justPressed)
 		{
@@ -150,7 +151,7 @@ class BaseGrid extends FlxSpriteGroup
 		if(_power)
 		{
 			//alpha = 1;
-			
+			_dirtyGraphic = true;
 			_base.makeGraphic(96, 96 , 0x550000FF);
 			if(_building != null)
 			{
@@ -164,6 +165,11 @@ class BaseGrid extends FlxSpriteGroup
 		else
 		{
 			alpha = 0.5;
+			if (_dirtyGraphic)
+			{
+				_base.makeGraphic(96, 96, 0x5500FF90);
+				_dirtyGraphic = false;
+			}
 			if(_building != null && _building.alive)
 			{
 				if(_building.requiresPower())
@@ -187,5 +193,22 @@ class BaseGrid extends FlxSpriteGroup
         super.destroy();
     }
 	
+	
+	public function processFunction(funcName : String): Void
+	{
+		switch(funcName)
+		{
+			case "Scrap":
+				//kill();
+				//setPowered(false);
+				setPowered(false);
+				forceCheck = true;
+		}
+		_building.processFunction(funcName);
+		remove(_building);
+		_building = null;
+		CompostG.UI_SELECTOR.selectedGrid = null;
+		CompostG.FUNC_BUTTON = "";
+	}
 	
 }

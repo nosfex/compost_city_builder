@@ -15,21 +15,21 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\flixel\3,3,11" />
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\openfl\3,4,0" />
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\lime\2,7,0" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\flixel\3,3,12" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\openfl\3,5,3" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\lime\2,8,3" />
     <class path="G:\Program Files\HaxeToolkit\haxe\lib\tjson\1,4,0" />
     <class path="source" />
     <class path="export\windows\cpp\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="flixel=3.3.11&#xA;openfl=3.4.0&#xA;lime=2.7.0&#xA;tjson=1.4.0&#xA;openfl-next&#xA;tools=2.7.0&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;openfl-native&#xA;FLX_RENDER_TILE&#xA;windows&#xA;desktop&#xA;display" />
+    <option directives="flixel=3.3.12&#xA;openfl=3.5.3&#xA;lime=2.8.3&#xA;tjson=1.4.0&#xA;openfl-next&#xA;tools=2.8.3&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;openfl-native&#xA;FLX_RENDER_TILE&#xA;windows&#xA;desktop&#xA;display" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="False" />
-    <option additional="--remap flash:openfl&#xA;#--macro keep(&quot;Main&quot;)&#xA;-debug " />
+    <option additional="--macro openfl.Lib.includeExterns()&#xA;--remap flash:openfl&#xA;#--macro keep(&quot;Main&quot;)&#xA;-debug " />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

@@ -61,7 +61,9 @@ class BuildingFactory
 			bData.requiresManPower	= (jsonBuildings.buildings[i]).requiresManPower;
 			bData.price 			= (jsonBuildings.buildings[i]).price;
 			bData.upkeepCost 		= (jsonBuildings.buildings[i]).upkeepCost;
-			bData.availabeFunctions = (jsonBuildings.buildings[i]).functions;
+			bData.availableFunctions = (jsonBuildings.buildings[i]).functions;
+			FlxG.log.add("BUILDING FUNCTIONS: " + bData.availableFunctions );
+			
 			_buildingData.arrayWrite(bData.name, bData);
 		}
 	}

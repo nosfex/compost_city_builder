@@ -42,32 +42,25 @@ class PlayState extends FlxState
 		
 		BuildingFactory.instance();
 		_categoryData = new CategoryData();
-
-		
+		// GH: Temporal money text
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
-		
 		_moneyTxt.scrollFactor.set();
 		_camControl = new CameraController(0, 0, FlxG.width * .75 , FlxG.height  * .85);
 		add(_camControl);
 		
+		// GH: Root of all evil, the menu
 		_selector = new Selector();
-		
 		add(_selector);
 		_selector.initSelector(_categoryData);
 		_selector.scrollFactor.set(0, 0);
 		
 		CompostG.updateProductAmount("money", 1000);
 		CompostG.UI_SELECTOR = _selector;
-		
+		// GH: Init camera controls, set initial world bounds, these bounds are not really good btw
 		FlxG.camera.follow(_camControl, 0, null, 0);
 		FlxG.camera.setBounds(0, 0, FlxG.width * 2, FlxG.height * 2);
 		add(_moneyTxt);
-		
-	/*	hudCam = new FlxCamera(cast(FlxG.width * 0), 0, cast(FlxG.width *.25 ), FlxG.height);
-		
-		FlxG.cameras.add(hudCam);
-		hudCam.zoom = 1;
-		hudCam.follow(_selector.bkg, FlxCamera.STYLE_LOCKON, new FlxPoint(0, FlxG.height * .1));*/
+		// GH: World setup
 		CompostG.CAM = _camControl;
 		_worldData = new WorldData();
 		_worldData.init();	
@@ -93,7 +86,6 @@ class PlayState extends FlxState
 		{
 			_map.addGrids();
 		}
-		
 		
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 	}	

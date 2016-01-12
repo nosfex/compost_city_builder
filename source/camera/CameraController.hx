@@ -61,12 +61,7 @@ class CameraController extends FlxObject
 		{
 			_confirmScrollTimer = 0;
 		}
-		
-		/*if (FlxG.mouse.screenY >= minLimitY && FlxG.mouse.screenY <= minLimitY)
-		{
-			_confirmScrollTimer = 0;
-		}*/
-		
+			
 		// GH: This is bullshit
 		if (FlxG.mouse.wheel > 0)
 		{

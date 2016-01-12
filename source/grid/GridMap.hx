@@ -54,6 +54,7 @@ class GridMap extends FlxSpriteGroup
 		// GH: Check pick
 		if (FlxG.mouse.justPressed)
 		{
+			FlxG.log.add("PRE SELECTED");
 			for (i in 0 ... _grids.length)
 			{
 				for ( j in 0 ... _grids[i].length)
@@ -64,6 +65,7 @@ class GridMap extends FlxSpriteGroup
 					}
 				}
 			}
+			FlxG.log.add("GOT GRID?");
 			// GH: World coordinates, basic,
 			// need to check functionality further
 			CompostG.UI_SELECTOR.checkClearSelection();

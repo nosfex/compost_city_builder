@@ -82,7 +82,7 @@ class Selector extends FlxSpriteGroup
 	}
 	
 	// GH: clear selection
-	private function clearSelection() : Void
+	public function clearSelection() : Void
 	{
 		selectionText.text = "";
 		removeButtonContainer();

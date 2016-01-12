@@ -1,5 +1,6 @@
 package grid;
 
+import cpp.Void;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxPoint;
@@ -193,6 +194,14 @@ class BaseGrid extends FlxSpriteGroup
         super.destroy();
     }
 	
+	public function removeBuilding() :Void
+	{
+		// GH: we need to reset the tile completely
+		setPowered(false);
+		forceCheck = true; // GH: Force checks to enable the gridMap status check for tiles
+		remove(_building, true);
+		_building = null;
+	}
 	
 	public function processFunction(funcName : String): Void
 	{
@@ -201,14 +210,12 @@ class BaseGrid extends FlxSpriteGroup
 			case "Scrap":
 				//kill();
 				//setPowered(false);
-				setPowered(false);
-				forceCheck = true;
+				_building.processFunction(funcName);
+				removeBuilding();
+				CompostG.UI_SELECTOR.clearSelection();
+				CompostG.FUNC_BUTTON = "";
 		}
-		_building.processFunction(funcName);
-		remove(_building);
-		_building = null;
-		CompostG.UI_SELECTOR.selectedGrid = null;
-		CompostG.FUNC_BUTTON = "";
+		
 	}
 	
 }

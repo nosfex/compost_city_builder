@@ -134,6 +134,8 @@ class Selector extends FlxSpriteGroup
 				internalCategoryButtons[categoryButtons[i]][j].visible = false;
 				
 			}
+			
+			categoryButtons[i].visible = false;
 		}
 		
 		for (i in 0 ... functionButtons.length)
@@ -196,6 +198,14 @@ class Selector extends FlxSpriteGroup
 	{
 		selectionText.text = grid.getBuilding().name;
 		FlxG.log.add("Functions: " + grid.getBuilding().availableFunctions.toString());
+		
+		for (i in 0 ... functionButtons.length )
+		{
+			remove(functionButtons[i], true);
+		}
+		
+		functionButtons = new Array();
+		
 		for (i in 0 ... grid.getBuilding().availableFunctions.length)
 		{
 			// GH: Pull up special ui (upgrade, delete, etc)

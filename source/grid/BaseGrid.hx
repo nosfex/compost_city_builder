@@ -1,6 +1,5 @@
 package grid;
 
-import cpp.Void;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxPoint;

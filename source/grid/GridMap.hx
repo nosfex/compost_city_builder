@@ -1,4 +1,5 @@
 package grid;
+import buildings.BuildingFactory;
 import flixel.system.scaleModes.BaseScaleMode;
 import flixel.util.FlxRect;
 import flixel.group.FlxSpriteGroup;
@@ -87,7 +88,6 @@ class GridMap extends FlxSpriteGroup
 					CompostG.UI_SELECTOR.setSelected(g);
 					CompostG.CAM.moveToPos(new FlxPoint(g.x, g.y));
 				}
-				
 			}
 		}
     }
@@ -271,8 +271,15 @@ class GridMap extends FlxSpriteGroup
 			}
 		}
 	
-    	_initPos = new FlxPoint(_grids[0][0].x, _grids[0][0].y);
+    	
 		
+		
+		var halfGrid : Int = Math.floor(Math.sqrt(gridCount) / 2);
+		BuildingFactory.CURRENT_BUILDING = "Headquarters";
+		var middleGrid :BaseGrid = _grids[halfGrid][halfGrid];
+		middleGrid.addBuilding(BuildingFactory.instance().createBuildingInstance());
+		BuildingFactory.CURRENT_BUILDING = "";
+		_initPos = new FlxPoint(middleGrid.x, middleGrid.y);
 		//CompostG.CAM.moveToPos(_initPos);
 	}
 

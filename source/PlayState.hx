@@ -36,11 +36,12 @@ class PlayState extends FlxState
 	{
 		super.create();
 		
+		BuildingFactory.instance();
 		_map = new GridMap();
 		_map.initMap(9);
 		add(_map);
 		
-		BuildingFactory.instance();
+		
 		_categoryData = new CategoryData();
 		// GH: Temporal money text
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");

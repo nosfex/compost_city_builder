@@ -80,6 +80,7 @@ class BuildingFactory
 		
 		if (_buildingData[CURRENT_BUILDING].price > CompostG.getProductAmountByType("money"))
 			return null;
+	
 		var graphic :Dynamic = null;
 		switch (CURRENT_BUILDING)
 		{
@@ -94,6 +95,7 @@ class BuildingFactory
 			case "Headquarters":
 				graphic = AssetPaths.headquarters_0__png;
 		}
+		
 		var b :Building = new Building(0, 0, graphic);
 		trace("CURRENT_BUILDING" + CURRENT_BUILDING);
 		b.load(_buildingData[CURRENT_BUILDING]);

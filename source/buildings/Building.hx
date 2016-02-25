@@ -214,8 +214,8 @@ class Building extends FlxSprite
 				kill();
 				powered = false;
 			//	break;
-			case "Add Grid":
-			//	break;
+			case "Add Grids":
+				CompostG.GRID_MAP.addGrids();
 		}
 	}
 }

@@ -222,6 +222,7 @@ class Selector extends FlxSpriteGroup
 		add(btn);
 	}
 
+	// GH: Only builds categories for unnocupied grid
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
 		var data : Map<String, Array<String>> = category.getHeadlines();
@@ -292,9 +293,7 @@ class Selector extends FlxSpriteGroup
 			{
 				CompostG.FUNC_BUTTON = btn.text;
 				trace("FUNCTION" + btn.text);
-			//	selectedGrid.getBuilding().processFunction(CompostG.FUNC_BUTTON);
 				selectedGrid.processFunction(CompostG.FUNC_BUTTON);
-				clearSelection();
 			}
 		}
 

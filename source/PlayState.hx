@@ -65,6 +65,8 @@ class PlayState extends FlxState
 		CompostG.CAM = _camControl;
 		_worldData = new WorldData();
 		_worldData.init();	
+		
+		CompostG.GRID_MAP = _map;
 	}
 	
 	/**

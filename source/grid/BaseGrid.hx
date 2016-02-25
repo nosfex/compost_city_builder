@@ -213,6 +213,9 @@ class BaseGrid extends FlxSpriteGroup
 				removeBuilding();
 				CompostG.UI_SELECTOR.clearSelection();
 				CompostG.FUNC_BUTTON = "";
+			case "Add Grids":
+				_building.processFunction(funcName);
+				CompostG.FUNC_BUTTON = "";
 		}
 		
 	}

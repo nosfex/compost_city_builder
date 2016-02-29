@@ -280,7 +280,6 @@ class GridMap extends FlxSpriteGroup
 		middleGrid.addBuilding(BuildingFactory.instance().createBuildingInstance());
 		BuildingFactory.CURRENT_BUILDING = "";
 		_initPos = new FlxPoint(middleGrid.x, middleGrid.y);
-		//CompostG.CAM.moveToPos(_initPos);
 	}
 
 	// GH: Somehow keeping this
@@ -346,6 +345,7 @@ class GridMap extends FlxSpriteGroup
 		_increaseGridCount++;
 		var maxRow :Int = _grids[0].length  + 2;
 		var maxCol :Int = maxRow;
+		
 		// GH: Create new grid
 		var temp : Array<Array<BaseGrid>> = new Array();
 		
@@ -358,11 +358,9 @@ class GridMap extends FlxSpriteGroup
 		{
 			for (j in 0 ... maxCol)
 			{
-			
-				var g:BaseGrid = new BaseGrid(quarterTileSize + ((j-_increaseGridCount) * (tileSizeOffset * 1.25)), quarterTileSize+ ((i-_increaseGridCount) * (tileSizeOffset * 1.25)));
+					var g:BaseGrid = new BaseGrid(quarterTileSize + ((j-_increaseGridCount) * (tileSizeOffset * 1.25)), quarterTileSize+ ((i-_increaseGridCount) * (tileSizeOffset * 1.25)));
     			g.usable = false;
 				temp[i].push(g);
-				//add(g);
 			}
 		}
 			
@@ -406,7 +404,20 @@ class GridMap extends FlxSpriteGroup
 		FlxG.log.add("BOUNDX: " + rect.x);
 		FlxG.log.add("BOUNDY: " + rect.y);
 		FlxG.camera.setBounds( rect.x, rect.y, boundWidth, boundHeight);
+		
+		_lastGridCount = _grids[0].length * _grids[0].length;
     }
+	
+	
+	// GH: lock cam to the center
+	public function focusOnCenterGrid() : Void
+	{
+		var halfGrid : Int = Math.floor(Math.sqrt(_lastGridCount) / 2);
+		var middleGrid :BaseGrid = _grids[halfGrid][halfGrid];
+		_initPos = new FlxPoint(middleGrid.x, middleGrid.y);
+		FlxG.log.add(" FOKKIN INITPOS: " + _initPos.toString() + " HALF GRID: " + halfGrid + " _lastGridCount: "+ _lastGridCount );
+		CompostG.CAM.moveToPos(_initPos);
+	}
 
 	// GH: Sort from 0.0 to max.max
     function sortGrids(a:BaseGrid, b:BaseGrid):Int

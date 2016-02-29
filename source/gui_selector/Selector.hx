@@ -226,7 +226,7 @@ class Selector extends FlxSpriteGroup
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
 		var data : Map<String, Array<String>> = category.getHeadlines();
-		var  innerData :Array<String> = data[categoryName];
+		var innerData :Array<String> = data[categoryName];
 		var btn :FlxButton = new FlxButton(XBase, YBase, categoryName, selectCategory);
 		
 		add(btn);
@@ -282,7 +282,6 @@ class Selector extends FlxSpriteGroup
 		}
 	}
 	
-	
 	private function selectFunction() :Void
 	{
 		for(btn in functionButtons)
@@ -296,10 +295,8 @@ class Selector extends FlxSpriteGroup
 				selectedGrid.processFunction(CompostG.FUNC_BUTTON);
 			}
 		}
-
 	}
 	
-
 	private function selectCategory() :Void
 	{
 		for(btn in categoryButtons)

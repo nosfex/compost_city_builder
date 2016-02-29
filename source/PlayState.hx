@@ -90,6 +90,12 @@ class PlayState extends FlxState
 			_map.addGrids();
 		}
 		
+		
+		if (FlxG.keys.justReleased.F)
+		{
+			_map.focusOnCenterGrid();
+		}
+		
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 	}	
 }

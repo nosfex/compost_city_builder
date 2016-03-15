@@ -2,7 +2,7 @@ package production;
 import buildings.Building;
 import clones.Clone;
 import flixel.FlxSprite;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
 import haxe.io.Error;
 import openfl.utils.Object;
 import production.Product;

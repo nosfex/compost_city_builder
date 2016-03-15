@@ -1,5 +1,5 @@
 	package buildings;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
 import haxe.Json;
 import buildings.Building;
 import sys.io.FileInput;

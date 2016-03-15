@@ -2,11 +2,11 @@ package grid;
 
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
 import flixel.FlxG;
 import buildings.Building;
 import buildings.BuildingFactory;
-import flixel.util.FlxRect;
+import flixel.math.FlxRect;
 /**
  * ...
  * @author Gerardo Heidel
@@ -111,9 +111,9 @@ class BaseGrid extends FlxSpriteGroup
 	}
 
 	
-	override public function update():Void
+	override public function update(elapsed: Float):Void
     {
-		super.update();
+		super.update(elapsed);
 	
 		//if (!this.alive)
 	//		return;
@@ -128,7 +128,7 @@ class BaseGrid extends FlxSpriteGroup
 				trace("r IS SHIT");
 			}
 			
-			if (p.inFlxRect(r))
+			if (p.inRect(r))
 			{
 				
 				selected = true;

@@ -3,7 +3,7 @@ import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.input.keyboard.FlxKeyList;
 import flixel.input.keyboard.FlxKey;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 /**
@@ -27,9 +27,9 @@ class CameraController extends FlxObject
 		super(X, Y, Width, Height);
 	}
 	
-	override public function update() :Void
+	override public function update(elapsed :Float) :Void
 	{
-		super.update();
+		super.update(elapsed);
 		
 	
 		if (CompostG.UI_SELECTOR.selectorLocked)
@@ -39,22 +39,22 @@ class CameraController extends FlxObject
 		
 		if (FlxG.mouse.screenX <= FlxG.width * minLimitX)
 		{
-			moveCam(true, -_camControlSpeed);
+			moveCam(elapsed, true, -_camControlSpeed);
 		}
 		
 		if (FlxG.mouse.screenX >= FlxG.width * maxLimitX )
 		{
-			moveCam(true, _camControlSpeed);
+			moveCam(elapsed, true, _camControlSpeed);
 		}
 		
 		if (FlxG.mouse.screenY <= FlxG.height * minLimitY)
 		{
-			moveCam(false, -_camControlSpeed);
+			moveCam(elapsed, false, -_camControlSpeed);
 		}
 		
 		else if (FlxG.mouse.screenY >= FlxG.height * maxLimitY) 
 		{
-			moveCam(false, _camControlSpeed);
+			moveCam(elapsed, false, _camControlSpeed);
 		}
 		
 		if (FlxG.mouse.screenX >= minLimitX  && FlxG.mouse.screenX <= maxLimitX)
@@ -65,25 +65,24 @@ class CameraController extends FlxObject
 		// GH: This is bullshit
 		if (FlxG.mouse.wheel > 0)
 		{
-			FlxG.camera.zoom -= FlxG.mouse.wheel * FlxG.elapsed;
+			FlxG.camera.zoom -= FlxG.mouse.wheel * elapsed;
 		}
 	}
 	
 	public function moveToPos(pos : FlxPoint) : Void
 	{
 		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
-		
 		FlxTween.tween(this, { x:pos.x - FlxG.width / 2, y:pos.y - FlxG.height / 2 }, 0.1, options);
 	}
 	
 	// GH: Cleanup, check this doesn't break anything
-	function moveCam(x :Bool, speed: Float) : Void
+	function moveCam(elapsed: Float, x :Bool, speed: Float) : Void
 	{
-		_confirmScrollTimer += FlxG.elapsed;
+		_confirmScrollTimer += elapsed;
 		if (_confirmScrollTimer > _maxConfirmScrollTimer)
 		{
-			if (x) this.x += speed * FlxG.elapsed;
-			else this.y += speed * FlxG.elapsed;
+			if (x) this.x += speed * elapsed;
+			else this.y += speed * elapsed;
 		}
 	}
 	

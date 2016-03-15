@@ -4,7 +4,7 @@ import flixel.FlxG;
 import haxe.Json;
 import openfl.display.Bitmap;
 import sys.io.File;
-import flixel.util.FlxMath;
+import flixel.math.FlxMath;
 import sys.io.FileOutput;
 import haxe.format.JsonPrinter;
 import tjson.TJSON;
@@ -52,9 +52,10 @@ class WorldData
 	// GH: This gets filled later on with the hard data results
 	private var _resourcesAvailable : Array<String> = new Array(); // GH: resource names to be on the grid
 	
-	private var _waterMaxRating :Float = 700;
-	
-	private var _maxTiles : Int = 0;
+	private var _waterMaxRating :Float = 300;
+	private var _mineralMaxRating :Float = 300;
+	// GH: Maximum amount of growth allowed for a colony
+	@:isVar public var maxTilesGrowth(default, default) : Int = 0;
 	
 	private var _waterTiles : Int = 0;
 	// GH: Wildling data
@@ -96,7 +97,9 @@ class WorldData
 
 		_waterTiles = getWaterTiles();
 		
-		FlxG.log.add("MAX TILES: "+ _maxTiles);
+		FlxG.log.add("MAX TILES: " + maxTilesGrowth);
+		FlxG.log.add("WATER TILES: " + _waterTiles);
+		FlxG.log.add("MINERAL TILES: " + getMineralTiles());
 		
 	}
 	
@@ -115,8 +118,9 @@ class WorldData
 				maxRange += 9;
 
 		}
-
-		return 0; // 
+		
+		var mineralRating :Float = maxRange * (_geo.metalDensity + _geo.rockFormation);
+		return Math.ceil(mineralRating / _mineralMaxRating); // 
 
 	}
 	
@@ -142,11 +146,9 @@ class WorldData
 	
 	private function initWorldDistanceToSun() :Void
 	{
-		
 		_texture = new Bitmap(Assets.getBitmapData(AssetPaths.rock__png), null, false);
 		var midRect :Rectangle = new Rectangle(128, 128, 128, 128 );
 		var data :ByteArray = _texture.bitmapData.getPixels(midRect);
-		
 		
 		FlxG.log.add("RectDataSize: " + data.length);
 		// GH: Get mass 
@@ -193,7 +195,7 @@ class WorldData
 		_temperature.heat += sizeOffset + _distanceToSun + _waterW + FlxMath.bound(Math.random(), 0.1, 0.4);
 		_geo.metalDensity += (1 - sizeOffset) + _mass + _distanceToSun + FlxMath.bound(Math.random(), 0, 0.3);
 		_geo.rockFormation += sizeOffset + _mass + FlxMath.bound(Math.random(), 0, 0.4);
-// 		_water.clean += 0.8;
+ 		_water.clean += 1;
 		_water.coverage += sizeOffset - 1 +   _waterW + FlxMath.bound(Math.random(), 0, 0.1);
 	}
 	
@@ -205,19 +207,16 @@ class WorldData
 		{
 			case "SMALL":
 				resourceOffset += 0.3;
-				_maxTiles  = 9 * 9;
+				maxTilesGrowth  = 9; // GH: This allows for 9 cycles of grid.AddTiles
 			case "MEDIUM":
 				resourceOffset += 0.7;
-				_maxTiles  = 13 * 13;
+				maxTilesGrowth  = 13 ; // GH: This allows for 13 cycles of grid.AddTiles
 				
 			case "BIG":
 				resourceOffset += 1.1;
-				_maxTiles = 19 * 19;
-				
+				maxTilesGrowth = 19; // GH: This allows for 19 cycles of grid.AddTiles
 		}
 
-		
-				
 		_atmosphere.breathable *= resourceOffset + 255 / _distanceToSun + (FlxMath.bound(-Math.random(), -0.15, -0.05));
 		_temperature.heat *= resourceOffset + 255 / _distanceToSun + FlxMath.bound(Math.random(), 0.2, 0.3);
 		_geo.metalDensity *=  resourceOffset + 255 / _mass + FlxMath.bound(Math.random() - Math.random(), -0.1, 0.4 );
@@ -245,8 +244,7 @@ class WorldData
 			case "ZOO":
 				sizeOffset = 1.2;
 				aggroOffset = 1;
-				evoOffset = .5;
-			
+				evoOffset = .5;		
 		}
 		
 		_animal.populationSize = (_atmosphere.breathable + _water.clean + _temperature.heat + _water.coverage) * sizeOffset;

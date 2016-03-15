@@ -1,7 +1,7 @@
 package buildings;
 
 import flixel.FlxSprite;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
 import haxe.Json;
 import flixel.FlxG;
 import openfl.utils.Object;
@@ -94,23 +94,23 @@ class Building extends FlxSprite
     	this.moves = false;
     }
 
-    override public function update():Void
+    override public function update(elapsed :Float):Void
     {
-    	super.update();
+    	super.update(elapsed);
     	if (this.alive) 
 		{
 			if (_power || !_requiresPower)
 			{
     			if (_requiresManPower && _currentManPower < _maxManPower)
 				{
-    				manpowerCheck();
+    				manpowerCheck(elapsed);
     				return;
     			}
     			if (_productionTimer >= _productionRate) 
 				{
-					productionCheck();
+					productionCheck(elapsed);
 				}
-    			_productionTimer += FlxG.elapsed;
+    			_productionTimer += elapsed;
     		} 
 			else
 			{
@@ -123,7 +123,7 @@ class Building extends FlxSprite
     	}
     }
 
-    function manpowerCheck():Void
+    function manpowerCheck(elapsed :Float):Void
     {
     	if (CompostG.getProductAmountByType("clone") < _maxManPower) 
 		{
@@ -142,12 +142,12 @@ class Building extends FlxSprite
 					CompostG.GRID_MAP.useProduct("clone", 1, this);
     				return;
     			}
-				_manPowerEnablerTimer += FlxG.elapsed;
+				_manPowerEnablerTimer += elapsed;
     		} 
     	}
     }
 
-    function productionCheck():Void
+    function productionCheck(elapsed :Float):Void
     {
     	if (_production <= _maxProduction)
 		{

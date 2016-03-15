@@ -3,8 +3,8 @@ package clones;
 import buildings.Building;
 import flixel.FlxSprite;
 import flixel.FlxG;
-import flixel.util.FlxPoint;
-import flixel.util.FlxRect;
+import flixel.math.FlxPoint;
+import flixel.math.FlxRect;
 import production.Product;
 
 /**
@@ -53,13 +53,13 @@ class Clone extends Product
 	public override function use(fromBuilding :Building) :Void
 	{
 		super.use(fromBuilding);
-		_gotoPos = new FlxPoint(fromBuilding.x, fromBuilding.y);
+		_gotoPos = new FlxPoint(fromBuilding.getScreenPosition().x, fromBuilding.getScreenPosition().y);
 		
 	}
 
-	public override function update() :Void
+	public override function update(elapsed :Float) :Void
 	{
-		super.update();
+		super.update(elapsed);
 		
 		if (_gotoPos != null && _forcedOrders.length == 0)
 		{
@@ -77,7 +77,7 @@ class Clone extends Product
 		}
 		// GH FIX THIS BUGGED OUT
 		// GH: Force it to live within the confines of the area
-		while (!_flxColRect.containsFlxPoint(new FlxPoint(this.x + _speed.x * FlxG.elapsed, this.y + _speed.y * FlxG.elapsed )))
+		while (!_flxColRect.containsPoint(new FlxPoint(this.x + _speed.x * FlxG.elapsed, this.y + _speed.y * FlxG.elapsed )))
 		{
 			// GH: Change direction;
 			changeDirection();

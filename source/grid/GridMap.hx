@@ -1,7 +1,7 @@
 package grid;
 import buildings.BuildingFactory;
 import flixel.system.scaleModes.BaseScaleMode;
-import flixel.util.FlxRect;
+import flixel.math.FlxRect;
 import flixel.group.FlxSpriteGroup;
 import flash.geom.Point;
 import flixel.FlxBasic;
@@ -9,8 +9,8 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 import haxe.ds.Vector.Vector;
-import flixel.util.FlxPoint;
-import flixel.util.FlxSort;
+import flixel.math.FlxPoint;
+
 import buildings.Building;
 import flixel.FlxG;
 import production.Product;
@@ -32,9 +32,9 @@ class GridMap extends FlxSpriteGroup
     }
 
 	// GH: main loop of the grid
-    override public function update():Void
+    override public function update(elapsed :Float):Void
     {
-    	super.update();
+    	super.update(elapsed);
 		
 		// GH: turn off everything if something changed in a grid
 		for (i in 0 ... _grids.length)
@@ -100,7 +100,7 @@ class GridMap extends FlxSpriteGroup
 			{
 				var g :BaseGrid = _grids[i][j];
 				var rg : FlxRect = new FlxRect(g.x, g.y, g.width, g.height);
-				if (rg.containsFlxPoint(point))
+				if (rg.containsPoint(point))
 				{
 					return g;
 				}
@@ -270,9 +270,6 @@ class GridMap extends FlxSpriteGroup
 				add(g);
 			}
 		}
-	
-    	
-		
 		
 		var halfGrid : Int = Math.floor(Math.sqrt(gridCount) / 2);
 		BuildingFactory.CURRENT_BUILDING = "Headquarters";
@@ -403,7 +400,7 @@ class GridMap extends FlxSpriteGroup
 		FlxG.log.add("BOUNDHEIGHT: "+ boundHeight);
 		FlxG.log.add("BOUNDX: " + rect.x);
 		FlxG.log.add("BOUNDY: " + rect.y);
-		FlxG.camera.setBounds( rect.x, rect.y, boundWidth, boundHeight);
+		FlxG.camera.setScrollBoundsRect( rect.x, rect.y, boundWidth, boundHeight);
 		
 		_lastGridCount = _grids[0].length * _grids[0].length;
     }

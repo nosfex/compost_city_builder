@@ -9,10 +9,11 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
-import flixel.util.FlxMath;
+import flixel.math.FlxMath;
 import gui_selector.Selector;
 import grid.GridMap;
-import flixel.util.FlxPoint;
+import flixel.math.FlxPoint;
+import world.World;
 import world.WorldData;
 
 /**
@@ -28,6 +29,7 @@ class PlayState extends FlxState
 	private var _moneyTxt :FlxText;
 	private var _camControl : CameraController;
 	private var _worldData :WorldData;
+	private var _world :World;
 	var hudCam:FlxCamera;
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -58,15 +60,15 @@ class PlayState extends FlxState
 		CompostG.updateProductAmount("money", 1000);
 		CompostG.UI_SELECTOR = _selector;
 		// GH: Init camera controls, set initial world bounds, these bounds are not really good btw
-		FlxG.camera.follow(_camControl, 0, null, 0);
-		FlxG.camera.setBounds(0, 0, FlxG.width * 2, FlxG.height * 2);
+		FlxG.camera.follow(_camControl, FlxCameraFollowStyle.LOCKON, 1);
+		FlxG.camera.setScrollBoundsRect(0, 0, FlxG.width * 2, FlxG.height * 2);
 		add(_moneyTxt);
 		// GH: World setup
 		CompostG.CAM = _camControl;
-		_worldData = new WorldData();
-		_worldData.init();	
 		
 		CompostG.GRID_MAP = _map;
+		_world = new World();
+		add(_world);
 	}
 	
 	/**
@@ -81,9 +83,9 @@ class PlayState extends FlxState
 	/**
 	 * Function that is called once every frame.
 	 */
-	override public function update():Void
+	override public function update(elapsed :Float):Void
 	{
-		super.update();
+		super.update(elapsed);
 		
 		if (FlxG.keys.justReleased.A)
 		{

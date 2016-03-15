@@ -8,8 +8,8 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.util.FlxPoint;
-import flixel.util.FlxRect;
+import flixel.math.FlxPoint;
+import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -53,7 +53,7 @@ class Selector extends FlxSpriteGroup
 		px = 0;
 		bkg = new FlxSprite(x, FlxG.height * .9, null);
 		// GH: Use a primitive for now
-		bkg.makeGraphic(cast(FlxG.width * 0.25), cast(FlxG.height * .10), FlxColor.TEAL);
+		bkg.makeGraphic(cast(FlxG.width * 0.25), cast(FlxG.height * .10), FlxColor.GREEN);
 		bkg.scrollFactor.set(0, 0);
 		add(bkg);
 		
@@ -63,7 +63,7 @@ class Selector extends FlxSpriteGroup
 		add(selectionText);
 		
 		buttonContainer = new FlxSprite(FlxG.width * .35, FlxG.height, null);
-		buttonContainer.makeGraphic(cast(FlxG.width * .4), cast(FlxG.height * .25), FlxColor.TEAL);
+		buttonContainer.makeGraphic(cast(FlxG.width * .4), cast(FlxG.height * .25), FlxColor.GREEN);
 		buttonContainer.scrollFactor.set(0, 0);
 		add(buttonContainer);
 		
@@ -74,7 +74,7 @@ class Selector extends FlxSpriteGroup
 	{
 		var mp : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 		var bcRect :FlxRect = new FlxRect(buttonContainer.x, buttonContainer.y, buttonContainer.width, buttonContainer.height);
-		if (bcRect.containsFlxPoint(mp))
+		if (bcRect.containsPoint(mp))
 		{
 			return;
 		}
@@ -148,7 +148,7 @@ class Selector extends FlxSpriteGroup
 	{	
 		var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 		var r :FlxRect = new FlxRect(buttonContainer.x, buttonContainer.y, buttonContainer.width , buttonContainer.height);
-		if (p.inFlxRect(r))
+		if (p.inRect(r))
 		{
 			return false;
 		}
@@ -263,7 +263,7 @@ class Selector extends FlxSpriteGroup
 					continue;
 				var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 				var r :FlxRect = new FlxRect(curBtn.x + camOffsetX, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
-				if (p.inFlxRect(r))
+				if (p.inRect(r))
 				{
 					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
 					selectedGrid.addBuilding(buildings.BuildingFactory.instance().createBuildingInstance());
@@ -288,7 +288,7 @@ class Selector extends FlxSpriteGroup
 		{
 			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 			var r :FlxRect = new FlxRect(btn.x + camOffsetX, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
-			if (p.inFlxRect(r))
+			if (p.inRect(r))
 			{
 				CompostG.FUNC_BUTTON = btn.text;
 				trace("FUNCTION" + btn.text);
@@ -303,7 +303,7 @@ class Selector extends FlxSpriteGroup
 		{
 			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
 			var r :FlxRect = new FlxRect(btn.x+ camOffsetX, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
-			if (p.inFlxRect(r))
+			if (p.inRect(r))
 			{
 				unrollCategory(btn);
 			}

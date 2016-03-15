@@ -1,7 +1,7 @@
 package production;
 import flixel.FlxSprite;
-import flixel.util.FlxPoint;
-import flixel.util.FlxRect;
+import flixel.math.FlxPoint;
+import flixel.math.FlxRect;
 import buildings.Building;
 /**
  * @author null
@@ -38,9 +38,9 @@ class Product extends FlxSprite
 		_useFromBuilding = fromBuilding;
 	}
 	
-	public override function update() :Void
+	public override function update(elapsed: Float) :Void
 	{
-		super.update();
+		super.update(elapsed);
 	}
 	
 	public function get_prodParent() :Building { return _prodParent; }

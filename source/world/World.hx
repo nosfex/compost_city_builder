@@ -1,8 +1,10 @@
 package world;
 
+import cpp.Void;
 import flixel.FlxG;
 import flixel.group.FlxSpriteGroup;
 import flixel.util.FlxTimer;
+import grid.BaseGrid;
 
 /**
  * ...
@@ -37,23 +39,76 @@ class World extends FlxSpriteGroup
 		worldData.init();
 		
 		gridIds = new Array();
-		for (i in 0 ... worldData.maxTilesGrowth)
+		
+	
+		
+		//gridIds.push(new Array());
+	}
+	
+	// GH: Create gridIds from the worldData
+	private function generateMapResourcesData(initialSize : Int) :Void
+	{
+		var maxGrids:Float = Math.sqrt(initialSize);
+    	var col:Int = cast maxGrids;
+    	var row:Int = cast maxGrids;
+		
+		
+		for ( i in 0 ... col)
 		{
 			gridIds.push(new Array());
-		
-			for (j in 0 ... worldData.maxTilesGrowth)
+			for ( j in 0 ... row)
 			{
 				gridIds[i].push(0);
 			}
 		}
+		// GH: Start with the initial values
+		// GH: Force the center tile to be a usable one for the headquarter
+		gridIds[1][1] = BaseGrid.NORMAL_GRID;
 		
+		for (i in 0 ... worldData.maxTilesGrowth)
+		{
+			addGrids();
+		}
+		
+		// GH: Make mineral bodies first. Depends on how massive the world is + amount of minerals determined by the world data
 	}
 	
-	// GH: Create gridIds from the worldData
-	private function generateMapResourcesData() :Void
+	private function addGrids() : Void
 	{
+		var maxRow :Int = gridIds[0].length  + 2;
+		var maxCol :Int = maxRow;
 		
+		// GH: Create new grid
+		var temp : Array<Array<BaseGrid>> = new Array();
+		
+		for (i in 0 ... maxRow)
+		{
+			temp[i] = new Array();
+		}
+		// GH: create a new map and fill it with rubbish
+		for (i in 0 ... maxRow)
+		{
+			for (j in 0 ... maxCol)
+			{
+				temp[i].push(0);
+			}
+		}
+			
+		
+		// GH: Copy the old shit
+		for(i in 1 ... maxRow - 1)
+		{
+			for (j in 1 ... maxCol - 1)
+			{
+				// GH: Temp now has the old data
+				temp[i][j] = gridIds[i-1][j-1];
+			}
+		}
+		
+		gridIds = temp;
 	}
+	
+	
 	
 	override public function update(elapsed :Float)
 	{

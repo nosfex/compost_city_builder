@@ -13,6 +13,15 @@ import flixel.math.FlxRect;
  */
 class BaseGrid extends FlxSpriteGroup
 {
+	
+	// GH: Arbitrary ids
+	static public var NORMAL_GRID 	:Int = 100;
+	static public var WATER_GRID	:Int = 200;
+	static public var MINERAL_GRID	:Int = 300;
+	static public var NULL_GRID		:Int = 400;
+	
+	
+	
 	@:isVar public var selected(default, default) :Bool = false;
 
 	public var usable(get, set) : Bool;

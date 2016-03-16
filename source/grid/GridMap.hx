@@ -355,7 +355,7 @@ class GridMap extends FlxSpriteGroup
 		{
 			for (j in 0 ... maxCol)
 			{
-					var g:BaseGrid = new BaseGrid(quarterTileSize + ((j-_increaseGridCount) * (tileSizeOffset * 1.25)), quarterTileSize+ ((i-_increaseGridCount) * (tileSizeOffset * 1.25)));
+				var g:BaseGrid = new BaseGrid(quarterTileSize + ((j-_increaseGridCount) * (tileSizeOffset * 1.25)), quarterTileSize+ ((i-_increaseGridCount) * (tileSizeOffset * 1.25)));
     			g.usable = false;
 				temp[i].push(g);
 			}

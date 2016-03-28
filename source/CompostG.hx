@@ -14,6 +14,7 @@ class CompostG
 
 	public static var FUNC_BUTTON : String = "";
 	public static var GRID_MAP :GridMap = null;
+
 	
 	
 	// GH: cam controller

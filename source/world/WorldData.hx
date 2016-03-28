@@ -57,8 +57,11 @@ class WorldData
 	// GH: Maximum amount of growth allowed for a colony
 	@:isVar public var maxTilesGrowth(default, default) : Int = 0;
 	
-	private var _waterTiles : Int = 0;
+	@:isVar public var waterTiles(default, default) 	: Int = 0;
+	@:isVar public var mineralTiles(default, default) 	: Int = 0;
 	// GH: Wildling data
+	
+	
 	public function new() 
 	{
 		
@@ -95,10 +98,11 @@ class WorldData
 		// GH: Define how much water we will get
 		
 
-		_waterTiles = getWaterTiles();
+		waterTiles = getWaterTiles();
+		mineralTiles = getMineralTiles();
 		
 		FlxG.log.add("MAX TILES: " + maxTilesGrowth);
-		FlxG.log.add("WATER TILES: " + _waterTiles);
+		FlxG.log.add("WATER TILES: " + waterTiles);
 		FlxG.log.add("MINERAL TILES: " + getMineralTiles());
 		
 	}

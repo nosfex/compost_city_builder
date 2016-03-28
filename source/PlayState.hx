@@ -38,8 +38,12 @@ class PlayState extends FlxState
 	{
 		super.create();
 		
+		_world = new World();
+		_world.generateMapResourcesData(9);
+		
 		BuildingFactory.instance();
 		_map = new GridMap();
+		_map.world = _world;
 		_map.initMap(9);
 		add(_map);
 		
@@ -67,7 +71,7 @@ class PlayState extends FlxState
 		CompostG.CAM = _camControl;
 		
 		CompostG.GRID_MAP = _map;
-		_world = new World();
+	
 		add(_world);
 	}
 	

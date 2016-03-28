@@ -14,6 +14,8 @@ import flixel.math.FlxPoint;
 import buildings.Building;
 import flixel.FlxG;
 import production.Product;
+import world.World;
+
 class GridMap extends FlxSpriteGroup
 {
     var _grids:Array<Array<BaseGrid>> = null;
@@ -24,6 +26,8 @@ class GridMap extends FlxSpriteGroup
 	var _products :Array<Product> = new Array<Product>();
 	var tileSizeOffset :Int = 96;
 	var quarterTileSize :Int = 32;
+	
+	@:isVar public var world(default, default) : World = null;
 	
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
     {
@@ -277,6 +281,8 @@ class GridMap extends FlxSpriteGroup
 		middleGrid.addBuilding(BuildingFactory.instance().createBuildingInstance());
 		BuildingFactory.CURRENT_BUILDING = "";
 		_initPos = new FlxPoint(middleGrid.x, middleGrid.y);
+		
+		setTileData();
 	}
 
 	// GH: Somehow keeping this
@@ -403,8 +409,23 @@ class GridMap extends FlxSpriteGroup
 		FlxG.camera.setScrollBoundsRect( rect.x, rect.y, boundWidth, boundHeight);
 		
 		_lastGridCount = _grids[0].length * _grids[0].length;
+		setTileData();
     }
 	
+	
+	// GH: Set tile data (loaded from World class)
+	public function setTileData() :Void
+	{
+		var ids: Array<Array<Int>> = world.getIDMapForSize(_grids.length);
+		for (i in 0 ... _grids.length)
+		{
+			for (j in 0 ... _grids.length)
+			{
+				var ij : Int = ids[i][j] ;
+				_grids[i][j].type = ij;
+			}
+		}
+	}
 	
 	// GH: lock cam to the center
 	public function focusOnCenterGrid() : Void

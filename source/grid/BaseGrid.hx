@@ -15,15 +15,33 @@ class BaseGrid extends FlxSpriteGroup
 {
 	
 	// GH: Arbitrary ids
-	static public var NORMAL_GRID 	:Int = 100;
-	static public var WATER_GRID	:Int = 200;
-	static public var MINERAL_GRID	:Int = 300;
-	static public var NULL_GRID		:Int = 400;
+	static public var NORMAL_GRID 	:Int = 0x10;
+	static public var WATER_GRID	:Int = 0x20;
+	static public var MINERAL_GRID	:Int = 0x30;
+	static public var NULL_GRID		:Int = 0x90;
 	
-	
-	
+	// GH: Type properties 
+	@:isVar public var type(default, set) : Int = 0x00;
+	// GH: Selected prop, lights up tile
 	@:isVar public var selected(default, default) :Bool = false;
 
+	// GH: Type Setter, we change tyle graphics
+	function set_type(newType :Int)
+	{
+		switch(newType)
+		{
+			case 0x10:
+				return type = newType;
+			case 0x20:
+				_typeIcon.loadGraphic(AssetPaths.water_tile__png);
+				
+			case 0x30:
+				_typeIcon.loadGraphic(AssetPaths.mineral_tile__png);
+				
+		}
+		return type = newType;
+	}
+	
 	public var usable(get, set) : Bool;
 	public var forceCheck(get, set) : Bool;
 	
@@ -35,7 +53,7 @@ class BaseGrid extends FlxSpriteGroup
 	private var _power :Bool;
 		
 	private var _forceCheck : Bool = false;
-	private var _powerIcon :FlxSprite = null;
+	private var _typeIcon :FlxSprite = null;
 	private var _dirtyGraphic : Bool = false;
 	
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
@@ -49,9 +67,9 @@ class BaseGrid extends FlxSpriteGroup
 		add(_base);
 		_power = false;
 		
-		_powerIcon = new FlxSprite(x, y, AssetPaths.power__png);
-		_powerIcon.origin = new FlxPoint();
-		add(_powerIcon);
+		_typeIcon = new FlxSprite(x, y, AssetPaths.power__png);
+		_typeIcon.origin = new FlxPoint();
+		add(_typeIcon);
 		this.solid = false;
 		this.moves = false;
 		
@@ -169,7 +187,7 @@ class BaseGrid extends FlxSpriteGroup
 					_building.powered = (true);
 				}
 			}
-			_powerIcon.visible = false;
+			_typeIcon.visible = false;
 		}
 		else
 		{
@@ -186,7 +204,7 @@ class BaseGrid extends FlxSpriteGroup
 					_building.powered = (false)	;
 				}
 			}
-			_powerIcon.visible = true;
+			_typeIcon.visible = true;
 		}
 			
 		if (selected)

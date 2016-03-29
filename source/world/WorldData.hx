@@ -96,8 +96,6 @@ class WorldData
 		/// GH: Basic world layer of data generation
 		// GH: Generate actual world data.
 		// GH: Define how much water we will get
-		
-
 		waterTiles = getWaterTiles();
 		mineralTiles = getMineralTiles();
 		
@@ -144,6 +142,7 @@ class WorldData
 			
 		}
 				
+		maxRange = 50;
 		var waterRating :Float = maxRange*(_water.coverage / _water.clean);
 		return Math.ceil(maxRange * waterRating / _waterMaxRating);
 	}

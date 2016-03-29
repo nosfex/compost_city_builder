@@ -410,6 +410,8 @@ class GridMap extends FlxSpriteGroup
 		
 		_lastGridCount = _grids[0].length * _grids[0].length;
 		setTileData();
+		var halfPos :Int = cast Math.floor(_grids.length / 2);
+		CompostG.CAM.moveToPos(new FlxPoint(_grids[halfPos][halfPos].x, _grids[halfPos][halfPos].y ));
     }
 	
 	

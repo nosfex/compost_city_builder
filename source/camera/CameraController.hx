@@ -72,7 +72,7 @@ class CameraController extends FlxObject
 	public function moveToPos(pos : FlxPoint) : Void
 	{
 		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
-		FlxTween.tween(this, { x:pos.x - FlxG.width / 2, y:pos.y - FlxG.height / 2 }, 0.1, options);
+		FlxTween.tween(this, { x:pos.x - FlxG.width / 2, y:pos.y - FlxG.height / 2 }, 0.31, options);
 	}
 	
 	// GH: Cleanup, check this doesn't break anything

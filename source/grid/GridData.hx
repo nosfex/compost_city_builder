@@ -7,8 +7,10 @@ package grid;
 class GridData
 {
 
-	var productionCD : Float;
-	//var resourceGenerated :BaseResource;
+	
+	public var type: Int = 0;
+	public var filter :Array<String> = new Array<String>();
+	public var powerable :Bool = true;
 	
 	public function new() 
 	{

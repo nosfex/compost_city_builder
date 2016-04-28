@@ -15,17 +15,17 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\flixel\4,0,0" />
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\openfl\3,6,0" />
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\lime\2,9,0" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\flixel\4,0,1" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\openfl\3,6,1" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\lime\2,9,1" />
     <class path="G:\Program Files\HaxeToolkit\haxe\lib\tjson\1,4,0" />
     <class path="source" />
-    <class path="G:\Program Files\HaxeToolkit\haxe\lib\openfl\3,6,0\extern" />
+    <class path="G:\Program Files\HaxeToolkit\haxe\lib\openfl\3,6,1\extern" />
     <class path="export\windows\cpp\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="flixel=4.0.0&#xA;openfl=3.6.0&#xA;lime=2.9.0&#xA;tjson=1.4.0&#xA;openfl-next&#xA;tools=2.9.0&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;openfl-native&#xA;windows&#xA;desktop&#xA;display" />
+    <option directives="flixel=4.0.1&#xA;openfl=3.6.1&#xA;lime=2.9.1&#xA;tjson=1.4.0&#xA;openfl-next&#xA;tools=2.9.1&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;openfl-native&#xA;windows&#xA;desktop&#xA;display" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />

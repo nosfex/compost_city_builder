@@ -15,6 +15,8 @@ import buildings.Building;
 import flixel.FlxG;
 import production.Product;
 import world.World;
+import sys.io.File;
+import haxe.Json;
 
 class GridMap extends FlxSpriteGroup
 {
@@ -26,6 +28,8 @@ class GridMap extends FlxSpriteGroup
 	var _products :Array<Product> = new Array<Product>();
 	var tileSizeOffset :Int = 96;
 	var quarterTileSize :Int = 32;
+	
+	var _gridData : Array<GridData> = new Array<GridData>();
 	
 	@:isVar public var world(default, default) : World = null;
 	
@@ -249,6 +253,26 @@ class GridMap extends FlxSpriteGroup
 	// GH: Map creation
     public function initMap(gridCount:Int):Void
     {
+		var fileContent = File.getContent(AssetPaths.grid_data__json);
+		var jsonGrid :Dynamic = Json.parse(fileContent);
+		
+		for (i in 0 ... jsonGrid.grids.length)
+		{
+			var g : GridData = new GridData();
+			switch(jsonGrid.grids[i].type)
+			{
+				case "water":
+					g.type = BaseGrid.WATER_GRID;
+				case "base":
+					g.type = BaseGrid.NORMAL_GRID;
+				case "mineral":
+					g.type = BaseGrid.MINERAL_GRID;
+			}
+			g.powerable = jsonGrid.grids[i].power;
+			g.filter = jsonGrid.grids[i].filter;
+			_gridData.push(g);
+		}
+		
     	if (_grids == null) 
 		{
     		_grids = new Array();
@@ -425,6 +449,15 @@ class GridMap extends FlxSpriteGroup
 			{
 				var ij : Int = ids[i][j] ;
 				_grids[i][j].type = ij;
+				
+				for (xx in 0 ... _gridData.length )
+				{
+					if (_gridData[xx].type == ij)
+					{
+						_grids[i][j].filter = _gridData[xx].filter;
+						_grids[i][j].powerable = _gridData[xx].powerable;
+					}
+				}
 			}
 		}
 	}

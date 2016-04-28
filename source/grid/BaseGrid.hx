@@ -24,17 +24,22 @@ class BaseGrid extends FlxSpriteGroup
 	@:isVar public var type(default, set) : Int = 0x00;
 	// GH: Selected prop, lights up tile
 	@:isVar public var selected(default, default) :Bool = false;
+	
+	@:isVar public var filter(default, default) : Array<String> = null; 
+	@:isVar public var powerable(default, default) : Bool = true;
 
 	// GH: Type Setter, we change tyle graphics
 	function set_type(newType :Int)
 	{
 		switch(newType)
 		{
+			// GH: Normal tile
 			case 0x10:
 				return type = newType;
+			// GH: Water tile
 			case 0x20:
 				_typeIcon.loadGraphic(AssetPaths.water_tile__png);
-				
+			// GH: Mineral tile
 			case 0x30:
 				_typeIcon.loadGraphic(AssetPaths.mineral_tile__png);
 				
@@ -59,31 +64,40 @@ class BaseGrid extends FlxSpriteGroup
 	public function new(X:Float = 0, Y:Float = 0, MaxSize:Int = 0)
 	{
 		super(X, Y, MaxSize);
+		
+		// GH: Generate the holder
 		_base = new FlxSprite(x, y, null);
 		_base.makeGraphic(96, 96, 0x5500FF90);
 		_base.origin = new FlxPoint();
 		_base.useColorTransform = true;
 		alpha = 0.5;
 		add(_base);
+		// GH: start unpowered
 		_power = false;
 		
+		// GH: Icon for the tile (represents water / empty / mineral)
 		_typeIcon = new FlxSprite(x, y, AssetPaths.power__png);
 		_typeIcon.origin = new FlxPoint();
 		add(_typeIcon);
+		// GH: Stupid flixel physics
 		this.solid = false;
 		this.moves = false;
-		
 	}
 	
 	public function isPowered() :Bool { return _power; }
+	// GH: Force powering of the tile + building
 	public function setPowered(value :Bool) 
 	{ 
-		_power = value; 
-		if(_building != null)
+		// GH: Some times you can't power them
+		if (powerable)
 		{
-			if(_building.requiresPower())
+			_power = value; 
+			if(_building != null)
 			{
-				_building.powered = value;
+				if(_building.requiresPower())
+				{
+					_building.powered = value;
+				}	
 			}
 		}
 	}
@@ -91,7 +105,6 @@ class BaseGrid extends FlxSpriteGroup
 	public function getBuilding() :Building { return _building;}
 	
 	public function get_forceCheck() :Bool { return _forceCheck;}
-	
 	public function set_forceCheck(value)
 	{
 		_forceCheck = value;
@@ -141,10 +154,7 @@ class BaseGrid extends FlxSpriteGroup
 	override public function update(elapsed: Float):Void
     {
 		super.update(elapsed);
-	
-		//if (!this.alive)
-	//		return;
-      
+	  
 		if (FlxG.mouse.justPressed)
 		{
 			var p :FlxPoint = new FlxPoint(FlxG.mouse.x, FlxG.mouse.y);
@@ -234,8 +244,6 @@ class BaseGrid extends FlxSpriteGroup
 		switch(funcName)
 		{
 			case "Scrap":
-				//kill();
-				//setPowered(false);
 				_building.processFunction(funcName);
 				removeBuilding();
 				CompostG.UI_SELECTOR.clearSelection();

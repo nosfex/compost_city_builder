@@ -103,7 +103,9 @@ class Selector extends FlxSpriteGroup
 	public function setSelected(grid : grid.BaseGrid	) :Void
 	{
 		clearSelectedGrid();
-
+		selectedGrid = grid;
+		selectedGrid.selected = true;
+		selectorLocked = true;
 		if (grid.getBuilding() != null)
 		{
 			populateFunctionButtons(grid);
@@ -111,14 +113,21 @@ class Selector extends FlxSpriteGroup
 		}
 		else
 		{
-			selectionText.text = "SUCH GRID";
+			
+			switch(grid.type)
+			{
+				case BaseGrid.MINERAL_GRID:
+					selectionText.text = "MINERAL";
+				case BaseGrid.WATER_GRID:
+					selectionText.text = "WATER";
+				case BaseGrid.NORMAL_GRID:
+					selectionText.text = "DIRT";
+			}
 			// GH: Construction UI
 			populateBuildingButtons();
 			pushButtonContainer();
 		}
-		selectedGrid = grid;
-		selectedGrid.selected = true;
-		selectorLocked = true;
+	
 	}
 	
 	function removeButtonContainer() : Void
@@ -182,11 +191,17 @@ class Selector extends FlxSpriteGroup
 			remove(categoryButtons[i], true);
 		}
 		categoryButtons = new Array();
-		// GH: Determine what the fuck are we working with
+		
 		// GH: On an empty block, load regular buildings
-		buildCategoryButton(FlxG.width * .38, FlxG.height * 1.05, "Energy", categoryData);
-		buildCategoryButton(FlxG.width * .38, FlxG.height * 1.10, "Housing", categoryData);
-		buildCategoryButton(FlxG.width * .38, FlxG.height * 1.15, "Production", categoryData);
+		// GH: Check first for a filtered block
+		//if (selectedGrid.filter != null)
+		{
+			
+			for (i in 0 ... selectedGrid.filter.length)
+			{
+				buildCategoryButton(FlxG.width * .38, FlxG.height * (1.05 + i * 0.05) , selectedGrid.filter[i], categoryData);
+			}
+		}
 	}
 	
 	function onBuildingConstruction() :Void

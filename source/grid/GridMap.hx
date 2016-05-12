@@ -269,7 +269,8 @@ class GridMap extends FlxSpriteGroup
 					g.type = BaseGrid.MINERAL_GRID;
 			}
 			g.powerable = jsonGrid.grids[i].power;
-			g.filter = jsonGrid.grids[i].filter;
+			g.categoryFilter = jsonGrid.grids[i].categoryFilter;
+			g.buildingFilter = jsonGrid.grids[i].buildingFilter;
 			_gridData.push(g);
 		}
 		
@@ -454,7 +455,8 @@ class GridMap extends FlxSpriteGroup
 				{
 					if (_gridData[xx].type == ij)
 					{
-						_grids[i][j].filter = _gridData[xx].filter;
+						_grids[i][j].categoryFilter = _gridData[xx].categoryFilter;
+						_grids[i][j].buildingFilter = _gridData[xx].buildingFilter;
 						_grids[i][j].powerable = _gridData[xx].powerable;
 					}
 				}

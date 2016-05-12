@@ -19,7 +19,9 @@ class BuildingData
 	public var 	maxProduction :Int;
 	public var 	holdTile :Bool = false;
 	public var  price :Int = 0;
-	public var 	upkeepCost : Int = 0;
+	public var 	upkeepCost :Array<Int> = new Array();
+	public var 	currency :Array<String> = new Array();
+	
 	
 	public var availableFunctions:Array<String> = new Array<String>();
 	public function new() 

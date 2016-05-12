@@ -25,7 +25,8 @@ class BaseGrid extends FlxSpriteGroup
 	// GH: Selected prop, lights up tile
 	@:isVar public var selected(default, default) :Bool = false;
 	
-	@:isVar public var filter(default, default) : Array<String> = null; 
+	@:isVar public var categoryFilter(default, default) : Array<String> = null;  
+	@:isVar public var buildingFilter(default, default) : Array<String> = null;
 	@:isVar public var powerable(default, default) : Bool = true;
 
 	// GH: Type Setter, we change tyle graphics
@@ -129,7 +130,6 @@ class BaseGrid extends FlxSpriteGroup
 			return;
 		}
 		
-		
 		if (_building != null)
 		{
 			return;
@@ -190,6 +190,7 @@ class BaseGrid extends FlxSpriteGroup
 			//alpha = 1;
 			_dirtyGraphic = true;
 			_base.makeGraphic(96, 96 , 0x550000FF);
+			
 			if(_building != null)
 			{
 				if(_building.requiresPower())
@@ -197,7 +198,10 @@ class BaseGrid extends FlxSpriteGroup
 					_building.powered = (true);
 				}
 			}
-			_typeIcon.visible = false;
+			if (this.type == NORMAL_GRID)
+			{
+				_typeIcon.visible = false;
+			}
 		}
 		else
 		{

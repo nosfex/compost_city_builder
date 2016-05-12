@@ -3,7 +3,7 @@
   "buildings":
   [ 
     { "owner":"Energy", "buildings":["Power Plant", "Power Line"] }, 
-    { "owner":"Production", "buildings": ["Slave Agency", "techfactory"] }, 
+    { "owner":"Production", "buildings": ["Slave Agency", "Mineral Extractor"] }, 
     { "owner":"Housing", "buildings": ["Clone Center", "richhood"]}
   ]
 }

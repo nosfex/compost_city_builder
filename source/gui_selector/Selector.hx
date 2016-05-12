@@ -194,13 +194,9 @@ class Selector extends FlxSpriteGroup
 		
 		// GH: On an empty block, load regular buildings
 		// GH: Check first for a filtered block
-		//if (selectedGrid.filter != null)
+		for (i in 0 ... selectedGrid.categoryFilter.length)
 		{
-			
-			for (i in 0 ... selectedGrid.filter.length)
-			{
-				buildCategoryButton(FlxG.width * .38, FlxG.height * (1.05 + i * 0.05) , selectedGrid.filter[i], categoryData);
-			}
+			buildCategoryButton(FlxG.width * .38, FlxG.height * (1.05 + i * 0.05) , selectedGrid.categoryFilter[i], categoryData);
 		}
 	}
 	
@@ -245,16 +241,32 @@ class Selector extends FlxSpriteGroup
 		var btn :FlxButton = new FlxButton(XBase, YBase, categoryName, selectCategory);
 		
 		add(btn);
-		btn.ID = 
-		categoryButtons.push(btn);
+		btn.ID = categoryButtons.push(btn);
 		initPosY[btn] = YBase;
 		internalCategoryButtons[btn] = new Array();
 		var modYCount :Int = 0;
 		// GH: Build internal buttons for categories
+		var iCount :Int = -1;
+		
 		for(i in 0 ... innerData.length)
 		{
-			modYCount += (i % 5) == 0 ? 1 : 0;
-			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 10 + i * _buttonHeight, FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[i] ));
+			var forceContinue : Bool = true;
+			
+			for (j in 0 ... selectedGrid.buildingFilter.length)
+			{
+				if (selectedGrid.buildingFilter[j] == innerData [i])
+				{
+					iCount = i;
+					forceContinue = false;
+					break;
+				}
+			}
+			if (forceContinue)
+			{
+				continue;
+			}
+			modYCount += (iCount % 5) == 0 ? 1 : 0;
+			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 20 + iCount * _buttonHeight, FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[iCount] ));
 		}
 	}
 	

@@ -13,8 +13,8 @@ class Building extends FlxSprite
     public var name(get, set):String;
     public var powered(get, set):Bool;
     public var productionObject(get, set):Array<Product>;
-	public var upkeepCost(get, set) : Int;
-    var _requiresPower:Bool = false;
+	
+	var _requiresPower:Bool = false;
     var _requiresManPower:Bool = false;
     var _maxManPower:Int = 0;
     var _influenceArea:String = "N4";
@@ -36,18 +36,16 @@ class Building extends FlxSprite
     var _manPowerEnablerTimer:Float = 0;
     var _manPowerMaxPower:Float = 2;
 	var _workers :Array<Clone> = new Array();
-	var _upkeepCost :Int = 0; 
 	
+	@:isVar public var currency(default, default) :Array<String> = new Array<String>(); 
 	@:isVar public var availableFunctions(default, default) : Array<String> = new Array<String>();
+	@:isVar public var upkeepCost(default, default) :Array<Int> = new Array<Int>();
 	
-	public function get_upkeepCost() :Int									{ return _upkeepCost; }
-	public function set_upkeepCost(value : Int) :Int						{ _upkeepCost = value; return _upkeepCost; }
-	
-    public function get_name():String    									{ return _name; }
-    public function set_name(value) 										{ _name = value; return _name; }
+    public function get_name():String		    									{ return _name; }
+    public function set_name(value) 												{ _name = value; return _name; }
 
-    public function get_powered():Bool    									{ return _power; }
-    public function set_powered(value:Bool) 								{ _power = value; return _power; }
+    public function get_powered():Bool    										{ return _power; }
+    public function set_powered(value:Bool) 									{ _power = value; return _power; }
 
     public function get_productionObject():Array<Product>    				{ return _productionObject; }
     public function set_productionObject(po:Array<Product>):Array<Product>  { _productionObject = po; return _productionObject; }
@@ -88,6 +86,8 @@ class Building extends FlxSprite
     	_maxProduction = data.maxProduction;
     	_requiresManPower = data.requiresManPower;
     	_maxManPower = data.maxManPower;
+		upkeepCost = data.upkeepCost;
+		currency = data.currency;
 		availableFunctions = data.availableFunctions;
 		
     	this.solid = false;
@@ -127,7 +127,7 @@ class Building extends FlxSprite
     {
     	if (CompostG.getProductAmountByType("clone") < _maxManPower) 
 		{
-			trace("wORKERS PLEASE");
+			trace("WORKERS PLEASE");
     		return;
     	} 
 		else
@@ -165,6 +165,7 @@ class Building extends FlxSprite
     	}
     }
 	
+	// GH: Callback when the worker arrives to destination
 	public function addWorker(worker :Clone) :Void
 	{
 		for (i in 0 ... _workers.length)
@@ -172,10 +173,10 @@ class Building extends FlxSprite
 			if(_workers[i] == worker)
 			{
 				return;	
-			}
-			 
+			}	 
 		}
-
+		
+		
 		_workers.push(worker);
 		_currentManPower++;
 		trace("WORKER ADDED");
@@ -202,6 +203,11 @@ class Building extends FlxSprite
     		_productionObject[i].kill();
     		_productionObject[i].visible = false;
     	}
+		for (i in 0 ... _currentManPower)
+		{
+			_workers.splice(i, 1);
+		}
+		_workers = new Array();
     	_productionObject = new Array();
     }
 	
@@ -213,7 +219,6 @@ class Building extends FlxSprite
 			case "Scrap":
 				kill();
 				powered = false;
-			//	break;
 			case "Add Grids":
 				CompostG.GRID_MAP.addGrids();
 		}

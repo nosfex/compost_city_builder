@@ -26,7 +26,10 @@ class PlayState extends FlxState
 	private var _buildingFactory :BuildingFactory ;
 	private var _categoryData :CategoryData;
 	private var _selector :gui_selector.Selector;
+	
+	private var _mineralTxt :FlxText;
 	private var _moneyTxt :FlxText;
+	
 	private var _camControl : CameraController;
 	private var _worldData :WorldData;
 	private var _world :World;
@@ -47,11 +50,13 @@ class PlayState extends FlxState
 		_map.initMap(9);
 		add(_map);
 		
-		
 		_categoryData = new CategoryData();
 		// GH: Temporal money text
 		_moneyTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.051, 200, "");
 		_moneyTxt.scrollFactor.set();
+		_mineralTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.1, 200, "");
+		_mineralTxt.scrollFactor.set();
+		
 		_camControl = new CameraController(0, 0, FlxG.width * .75 , FlxG.height  * .85);
 		add(_camControl);
 		
@@ -62,16 +67,19 @@ class PlayState extends FlxState
 		_selector.scrollFactor.set(0, 0);
 		
 		CompostG.updateProductAmount("money", 1000);
+		CompostG.updateProductAmount("mineral", 0);
 		CompostG.UI_SELECTOR = _selector;
 		// GH: Init camera controls, set initial world bounds, these bounds are not really good btw
 		FlxG.camera.follow(_camControl, FlxCameraFollowStyle.LOCKON, 1);
 		FlxG.camera.setScrollBoundsRect(0, 0, FlxG.width * 2, FlxG.height * 2);
+		
 		add(_moneyTxt);
+		add(_mineralTxt);
+		
 		// GH: World setup
 		CompostG.CAM = _camControl;
-		
 		CompostG.GRID_MAP = _map;
-	
+		
 		add(_world);
 	}
 	
@@ -96,12 +104,12 @@ class PlayState extends FlxState
 			_map.addGrids();
 		}
 		
-		
 		if (FlxG.keys.justReleased.F)
 		{
 			_map.focusOnCenterGrid();
 		}
 		
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
+		_mineralTxt.text = "MINERAL: " + CompostG.getProductAmountByType("mineral");
 	}	
 }

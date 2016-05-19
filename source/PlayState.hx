@@ -79,6 +79,7 @@ class PlayState extends FlxState
 		
 		add(_moneyTxt);
 		add(_mineralTxt);
+		add(_waterTxt);
 		
 		// GH: World setup
 		CompostG.CAM = _camControl;

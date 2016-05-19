@@ -21,7 +21,7 @@ class BuildingData
 	public var  price :Int = 0;
 	public var 	upkeepCost :Array<Int> = new Array();
 	public var 	currency :Array<String> = new Array();
-	
+	public var 	description :String = "CULO";
 	
 	public var availableFunctions:Array<String> = new Array<String>();
 	public function new() 

@@ -5,6 +5,7 @@ import flixel.group.FlxSpriteGroup;
 import category.CategoryData;
 import flixel.system.FlxVersion;
 import flixel.text.FlxText;
+import flixel.ui.FlxBitmapTextButton;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -13,6 +14,7 @@ import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
+
 import grid.BaseGrid;
 
 /**
@@ -33,9 +35,12 @@ class Selector extends FlxSpriteGroup
 	
 	var selectionText : FlxText;
 	
-	var buttonContainer : FlxSprite;
+	var _buttonContainer : FlxSprite;
 	var bkg:FlxSprite;
+	var _topBar : FlxSprite;
 	var categoryData : CategoryData;
+	var _descriptionTxt : FlxText;
+	var _latestCategoryBtn:FlxButton;
 	
 	@:isVar public var selectedGrid(default, default) : BaseGrid = null;
 	@:isVar public var selectorLocked(default, default) :Bool = false;
@@ -61,20 +66,27 @@ class Selector extends FlxSpriteGroup
 		
 		selectionText = new FlxText(FlxG.width * 0.05, FlxG.height * .95, 200, "NOPE");
 		add(selectionText);
+		// GH: Button container where all the buttons go
+		_buttonContainer = new FlxSprite(FlxG.width * .35, FlxG.height, null);
+		_buttonContainer.makeGraphic(cast(FlxG.width * .4), cast(FlxG.height * .25), FlxColor.GREEN);
+		_buttonContainer.scrollFactor.set(0, 0);
+		add(_buttonContainer);
+		// GH: Top bar where all the data on the rollover stuff goes
+		_topBar = new FlxSprite(FlxG.width * .35, -FlxG.height * 0.1, null);
+		_topBar.makeGraphic(cast(FlxG.width * .4), cast(FlxG.height * .1), FlxColor.GREEN);
+		_topBar.scrollFactor.set(0, 0);
+		add(_topBar);
 		
-		buttonContainer = new FlxSprite(FlxG.width * .35, FlxG.height, null);
-		buttonContainer.makeGraphic(cast(FlxG.width * .4), cast(FlxG.height * .25), FlxColor.GREEN);
-		buttonContainer.scrollFactor.set(0, 0);
-		add(buttonContainer);
+		_descriptionTxt = new FlxText(FlxG.width * .356, -FlxG.height * 0.1, 200, "DESCRIPTION");
+		add(_descriptionTxt);
+		
 		
 		categoryData = new CategoryData();
 	}
 	
 	public function checkClearSelection() :Void
 	{
-		var mp : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-		var bcRect :FlxRect = new FlxRect(buttonContainer.x, buttonContainer.y, buttonContainer.width, buttonContainer.height);
-		if (bcRect.containsPoint(mp))
+		if (CompostG.getMouseOverRect(_buttonContainer))
 		{
 			return;
 		}
@@ -134,7 +146,7 @@ class Selector extends FlxSpriteGroup
 	{
 		// GH: Run animation for all the contained objects
 		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
-		FlxTween.tween(buttonContainer, { y:FlxG.height }, 0.25, options); 
+		FlxTween.tween(_buttonContainer, { y:FlxG.height }, 0.25, options); 
 		for (i in 0 ... categoryButtons.length)
 		{
 			FlxTween.tween(categoryButtons[i], { y: FlxG.height }, 0.25, options);
@@ -155,22 +167,21 @@ class Selector extends FlxSpriteGroup
 	
 	public function checkPassthrough() :Bool
 	{	
-		var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-		var r :FlxRect = new FlxRect(buttonContainer.x, buttonContainer.y, buttonContainer.width , buttonContainer.height);
-		if (p.inRect(r))
+		if (CompostG.getMouseOverRect(_buttonContainer))
 		{
 			return false;
 		}
 		
 		return true;
 	}
+
 	
 	// GH: push container
 	function pushButtonContainer() : Void
 	{
 		// GH: Run animation for all the contained objects
 		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadIn };
-		FlxTween.tween(buttonContainer, { y:FlxG.height * .75 }, 0.25, options); 
+		FlxTween.tween(_buttonContainer, { y:FlxG.height * .75 }, 0.25, options); 
 		// GH: Category buttons tweeening
 		for (i in 0 ... categoryButtons.length)
 		{
@@ -191,7 +202,6 @@ class Selector extends FlxSpriteGroup
 			remove(categoryButtons[i], true);
 		}
 		categoryButtons = new Array();
-		
 		// GH: On an empty block, load regular buildings
 		// GH: Check first for a filtered block
 		for (i in 0 ... selectedGrid.categoryFilter.length)
@@ -202,7 +212,6 @@ class Selector extends FlxSpriteGroup
 	
 	function onBuildingConstruction() :Void
 	{
-		
 	}
 	
 	private function populateFunctionButtons(grid : BaseGrid) : Void
@@ -228,11 +237,38 @@ class Selector extends FlxSpriteGroup
 	// GH: Build function buttons
 	private function buildFunctionButton(XBase: Float, YBase: Float, buttonName : String) :Void
 	{
-		var btn :FlxButton = new FlxButton(buttonContainer.x + XBase, YBase, buttonName, selectFunction);
+		var btn :FlxButton = new FlxButton(_buttonContainer.x + XBase, YBase, buttonName, selectFunction);
+		btn.onOver = new FlxButtonEvent(onOverBuildingFunction);
+		btn.onOut = new FlxButtonEvent(onOutBuildingFunction);
 		functionButtons.push(btn);
 		add(btn);
 	}
-
+	
+	// GH: Callback for the function button
+	private function onOverBuildingFunction() : Void
+	{
+		// GH: Tween the top bar + description Txt for this funciton
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
+		FlxTween.tween(_topBar, { y:0 }, 0.25, options); 
+		FlxTween.tween(_descriptionTxt, { y:FlxG.height * 0.02 }, 0.25, options);
+		// GH: Grab a hacked description
+		for (i in 0 ... functionButtons.length)
+		{
+			if (CompostG.getMouseOverRect(functionButtons[i], new FlxPoint(camOffsetX, 0), functionButtons[i].scale ))
+			{
+				_descriptionTxt.text = (selectedGrid.getBuilding().getFunctionDescriptionByName(functionButtons[i].text));
+			}
+		}	
+	}
+	
+	// GH: Tween out the description text + bar
+	private function onOutBuildingFunction() :Void
+	{
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
+		FlxTween.tween(_topBar, { y:-FlxG.height * 0.1 }, 0.25, options); 
+		FlxTween.tween(_descriptionTxt, { y:-FlxG.height * 0.1}, 0.25, options);
+	}
+	
 	// GH: Only builds categories for unnocupied grid
 	private function buildCategoryButton(XBase: Float, YBase: Float, categoryName : String, category: CategoryData) :Void
 	{
@@ -268,16 +304,46 @@ class Selector extends FlxSpriteGroup
 			modYCount += (iCount % 5) == 0 ? 1 : 0;
 			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 20 + iCount * _buttonHeight, FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[iCount] ));
 		}
+		
+		
 	}
 	
 	private function buildBuildingButton(X :Float, Y :Float, building: String) :FlxButton
 	{
 		var btn :FlxButton = new FlxButton(X, Y, building, selectBuilding);
 		btn.visible = false;
+		btn.onOver = new FlxButtonEvent(onOverBuildingBuy);
+		btn.onOut = new FlxButtonEvent(onOutBuildingBuy);
 		add(btn);
 		return btn;
 	}
 	
+	private function onOverBuildingBuy() :Void
+	{
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
+		FlxTween.tween(_topBar, { y:0 }, 0.25, options); 
+		FlxTween.tween(_descriptionTxt, { y:FlxG.height * 0.02 }, 0.25, options);
+		// GH: Grab a hacked description
+		
+		for (i in 0 ...  internalCategoryButtons[_latestCategoryBtn].length)
+		{
+			var button : FlxButton = internalCategoryButtons[_latestCategoryBtn][i];
+			if (CompostG.getMouseOverRect( button, new FlxPoint(camOffsetX, 0),  button.scale ))
+			{
+				
+				var price :String = BuildingFactory.instance().getBuildingDescription(button.text) + "\n" + BuildingFactory.instance().getBuildingPrice(button.text);
+				_descriptionTxt.text = price;
+			}
+		}	
+	}
+	
+	private function onOutBuildingBuy() :Void
+	{
+		var options: TweenOptions = { type: FlxTween.PERSIST, ease:FlxEase.quadOut };
+		FlxTween.tween(_topBar, { y:-FlxG.height * 0.1}, 0.25, options); 
+		FlxTween.tween(_descriptionTxt, { y:-FlxG.height * 0.1 }, 0.25, options);
+		
+	}
 	
 	private function selectBuilding() :Void
 	{
@@ -288,9 +354,8 @@ class Selector extends FlxSpriteGroup
 				var curBtn :FlxButton = internalCategoryButtons[btn][i];
 				if (!curBtn.visible)
 					continue;
-				var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-				var r :FlxRect = new FlxRect(curBtn.x + camOffsetX, curBtn.y, curBtn.width * curBtn.scale.x, curBtn.height * curBtn.scale.y);
-				if (p.inRect(r))
+				
+				if (CompostG.getMouseOverRect(curBtn, new FlxPoint(camOffsetX, 0), curBtn.scale))
 				{
 					buildings.BuildingFactory.CURRENT_BUILDING = curBtn.text;
 					selectedGrid.addBuilding(buildings.BuildingFactory.instance().createBuildingInstance());
@@ -313,9 +378,7 @@ class Selector extends FlxSpriteGroup
 	{
 		for(btn in functionButtons)
 		{
-			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-			var r :FlxRect = new FlxRect(btn.x + camOffsetX, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
-			if (p.inRect(r))
+			if (CompostG.getMouseOverRect(btn, new FlxPoint(camOffsetX, 0),  btn.scale))
 			{
 				CompostG.FUNC_BUTTON = btn.text;
 				trace("FUNCTION" + btn.text);
@@ -328,9 +391,7 @@ class Selector extends FlxSpriteGroup
 	{
 		for(btn in categoryButtons)
 		{
-			var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
-			var r :FlxRect = new FlxRect(btn.x+ camOffsetX, btn.y, btn.width * btn.scale.x, btn.height * btn.scale.y);
-			if (p.inRect(r))
+			if (CompostG.getMouseOverRect(btn, new FlxPoint(camOffsetX, 0), btn.scale))
 			{
 				unrollCategory(btn);
 			}
@@ -354,6 +415,8 @@ class Selector extends FlxSpriteGroup
 			var data :Array<FlxButton> = internalCategoryButtons[button];
 			data[i].visible = true;
 		}
+		
+		_latestCategoryBtn = button;
 
 	}
 }

@@ -1,6 +1,10 @@
-package ;
+package ; 
 import camera.CameraController;
+import flixel.FlxG;
+import flixel.math.FlxPoint;
 import flixel.group.FlxSpriteGroup;
+import flixel.FlxSprite;
+import flixel.math.FlxRect;
 import grid.GridMap;
 import gui_selector.Selector;
 import Map;
@@ -15,8 +19,6 @@ class CompostG
 	public static var FUNC_BUTTON : String = "";
 	public static var GRID_MAP :GridMap = null;
 
-	
-	
 	// GH: cam controller
 	public static var CAM : CameraController = null;
 	
@@ -33,5 +35,21 @@ class CompostG
 	public static function getProductAmountByType(prodType :String) :Int
 	{
 		return _products[prodType];
+	}
+	
+	// GH: Returns if the mouse is passing over something. Gotta stop ctrl+c+v stuff
+	public static function getMouseOverRect(source : FlxSprite, ?posOffset: FlxPoint = null, ?sizeOffset :FlxPoint = null ) :Bool
+	{
+		if (posOffset == null) posOffset = new FlxPoint();
+		if (sizeOffset == null) sizeOffset = new FlxPoint(1, 1);
+		
+		var p : FlxPoint = new FlxPoint(FlxG.mouse.screenX, FlxG.mouse.screenY);
+		var r :FlxRect = new FlxRect(source.x + posOffset.x, source.y + posOffset.y, source.width * sizeOffset.x , source.height * sizeOffset.y);
+		
+		if (r.containsPoint(p))
+		{
+			return true;
+		}
+		return false;
 	}
 }

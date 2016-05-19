@@ -28,6 +28,7 @@ class PlayState extends FlxState
 	private var _selector :gui_selector.Selector;
 	
 	private var _mineralTxt :FlxText;
+	private var _waterTxt : FlxText;
 	private var _moneyTxt :FlxText;
 	
 	private var _camControl : CameraController;
@@ -56,6 +57,9 @@ class PlayState extends FlxState
 		_moneyTxt.scrollFactor.set();
 		_mineralTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.1, 200, "");
 		_mineralTxt.scrollFactor.set();
+		_waterTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.151, 200, "");
+		_waterTxt.scrollFactor.set();
+		
 		
 		_camControl = new CameraController(0, 0, FlxG.width * .75 , FlxG.height  * .85);
 		add(_camControl);
@@ -111,5 +115,6 @@ class PlayState extends FlxState
 		
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 		_mineralTxt.text = "MINERAL: " + CompostG.getProductAmountByType("mineral");
+		_waterTxt.text = "WATER: " + CompostG.getProductAmountByType("water");
 	}	
 }

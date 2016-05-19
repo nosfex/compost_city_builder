@@ -66,10 +66,26 @@ class BuildingFactory
 			bData.upkeepCost 		= (jsonBuildings.buildings[i]).upkeepCost;
 			bData.currency			= (jsonBuildings.buildings[i]).currency;
 			bData.availableFunctions = (jsonBuildings.buildings[i]).functions;
+			bData.description = (jsonBuildings.buildings[i]).description;
 			FlxG.log.add("BUILDING FUNCTIONS: " + bData.availableFunctions );
 			
 			_buildingData.arrayWrite(bData.name, bData);
 		}
+	}
+	
+	public function getBuildingDescription(name : String) :String
+	{
+		return _buildingData[name].description;
+	}
+	
+	public function getBuildingPrice(name : String) : String
+	{
+		var price :String = "";
+		for (i in 0 ... _buildingData[name].upkeepCost.length)
+		{
+			price +=  _buildingData[name].currency[i] + ": " +  _buildingData[name].upkeepCost[i] + " ";
+		}
+		return price;
 	}
 	
 	public function createBuildingInstance() :Building
@@ -109,6 +125,8 @@ class BuildingFactory
 				graphic = AssetPaths.headquarters_0__png;
 			case "Mineral Extractor":
 				graphic = AssetPaths.mineral_extractor__png;
+			case "Water Extractor":
+				graphic = AssetPaths.water_extractor__png;
 		}
 		// GH: Create the building
 		var b :Building = new Building(0, 0, graphic);

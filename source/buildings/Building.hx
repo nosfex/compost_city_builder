@@ -57,6 +57,8 @@ class Building extends FlxSprite
     public function getPrice():Int 											{ return _price; }
     public function getInfluenceArea():String 								{ return _influenceArea; }
 	public function getProductionType():String 								{ return _productionType; }
+	
+	
 
     public function getProduction():Int
     {
@@ -222,5 +224,29 @@ class Building extends FlxSprite
 			case "Add Grids":
 				CompostG.GRID_MAP.addGrids();
 		}
+	}
+	
+	// GH: return in case we have something to say about this
+	public function getFunctionDescriptionByName(name :String) : String
+	{
+		var ret :String = "DEVELOPER GET TO WORK";
+		switch(name)
+		{
+			case "Scrap":
+				ret = "SELL THIS BUILDING FOR A FRACTION OF IT'S PRICE";
+			case "Add Grids":
+				ret = "ADD MORE GRIDS TO THE MAP";
+		}
+		return ret;
+	}
+	
+	public function getBuildingPrice() : String
+	{
+		var price : String = "";
+		for (i in 0 ... currency.length)
+		{
+			price += currency[i] + ": " + upkeepCost[i]  + " ";
+		}
+		return  price;
 	}
 }

@@ -100,9 +100,10 @@ class Selector extends FlxSpriteGroup
 		removeButtonContainer();
 		selectorLocked = false;
 		clearSelectedGrid();
+		onOutBuildingBuy();
 	}
 	
-	// GH: 
+	// GH:  
 	private function clearSelectedGrid() :Void
 	{
 		if (selectedGrid != null)
@@ -125,7 +126,6 @@ class Selector extends FlxSpriteGroup
 		}
 		else
 		{
-			
 			switch(grid.type)
 			{
 				case BaseGrid.MINERAL_GRID:
@@ -139,7 +139,6 @@ class Selector extends FlxSpriteGroup
 			populateBuildingButtons();
 			pushButtonContainer();
 		}
-	
 	}
 	
 	function removeButtonContainer() : Void
@@ -153,9 +152,7 @@ class Selector extends FlxSpriteGroup
 			for (j in 0 ... internalCategoryButtons[categoryButtons[i]].length)
 			{
 				internalCategoryButtons[categoryButtons[i]][j].visible = false;
-				
 			}
-			
 			categoryButtons[i].visible = false;
 		}
 		
@@ -175,7 +172,6 @@ class Selector extends FlxSpriteGroup
 		return true;
 	}
 
-	
 	// GH: push container
 	function pushButtonContainer() : Void
 	{
@@ -304,8 +300,6 @@ class Selector extends FlxSpriteGroup
 			modYCount += (iCount % 5) == 0 ? 1 : 0;
 			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 20 + iCount * _buttonHeight, FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[iCount] ));
 		}
-		
-		
 	}
 	
 	private function buildBuildingButton(X :Float, Y :Float, building: String) :FlxButton
@@ -324,13 +318,11 @@ class Selector extends FlxSpriteGroup
 		FlxTween.tween(_topBar, { y:0 }, 0.25, options); 
 		FlxTween.tween(_descriptionTxt, { y:FlxG.height * 0.02 }, 0.25, options);
 		// GH: Grab a hacked description
-		
 		for (i in 0 ...  internalCategoryButtons[_latestCategoryBtn].length)
 		{
 			var button : FlxButton = internalCategoryButtons[_latestCategoryBtn][i];
 			if (CompostG.getMouseOverRect( button, new FlxPoint(camOffsetX, 0),  button.scale ))
 			{
-				
 				var price :String = BuildingFactory.instance().getBuildingDescription(button.text) + "\n" + BuildingFactory.instance().getBuildingPrice(button.text);
 				_descriptionTxt.text = price;
 			}
@@ -367,7 +359,6 @@ class Selector extends FlxSpriteGroup
 						auxBtn.visible = false;
 					}
 					clearSelection();
-					
 					return;
 				}
 			}

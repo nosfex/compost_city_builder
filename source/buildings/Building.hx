@@ -44,19 +44,19 @@ class Building extends FlxSprite
     public function get_name():String		    									{ return _name; }
     public function set_name(value) 												{ _name = value; return _name; }
 
-    public function get_powered():Bool    										{ return _power; }
-    public function set_powered(value:Bool) 									{ _power = value; return _power; }
+    public function get_powered():Bool    											{ return _power; }
+    public function set_powered(value:Bool) 										{ _power = value; return _power; }
 
-    public function get_productionObject():Array<Product>    				{ return _productionObject; }
-    public function set_productionObject(po:Array<Product>):Array<Product>  { _productionObject = po; return _productionObject; }
+    public function get_productionObject():Array<Product>    						{ return _productionObject; }
+    public function set_productionObject(po:Array<Product>):Array<Product>  		{ _productionObject = po; return _productionObject; }
 
-    public function requiresPower():Bool 									{ return _requiresPower; }
-    public function requiresManPower():Bool 								{ return _requiresManPower; }
+    public function requiresPower():Bool 											{ return _requiresPower; }
+    public function requiresManPower():Bool 										{ return _requiresManPower; }
 
-    public function maxManPower():Int 										{ return _maxManPower; }
-    public function getPrice():Int 											{ return _price; }
-    public function getInfluenceArea():String 								{ return _influenceArea; }
-	public function getProductionType():String 								{ return _productionType; }
+    public function maxManPower():Int 												{ return _maxManPower; }
+    public function getPrice():Int 													{ return _price; }
+    public function getInfluenceArea():String 										{ return _influenceArea; }
+	public function getProductionType():String 										{ return _productionType; }
 	
 	
 
@@ -177,7 +177,6 @@ class Building extends FlxSprite
 				return;	
 			}	 
 		}
-		
 		
 		_workers.push(worker);
 		_currentManPower++;

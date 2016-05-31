@@ -13,6 +13,7 @@ import flixel.math.FlxMath;
 import gui_selector.Selector;
 import grid.GridMap;
 import flixel.math.FlxPoint;
+import simulation.SimulationController;
 import world.World;
 import world.WorldData;
 
@@ -30,10 +31,15 @@ class PlayState extends FlxState
 	private var _mineralTxt :FlxText;
 	private var _waterTxt : FlxText;
 	private var _moneyTxt :FlxText;
+	private var _dateTxt : FlxText;
 	
 	private var _camControl : CameraController;
 	private var _worldData :WorldData;
 	private var _world :World;
+	// GH: Timer manager
+	
+	private var _simulator :SimulationController;
+	
 	var hudCam:FlxCamera;
 	/**
 	 * Function that is called up when to state is created to set it up. 
@@ -60,6 +66,9 @@ class PlayState extends FlxState
 		_waterTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.151, 200, "");
 		_waterTxt.scrollFactor.set();
 		
+		_dateTxt = new FlxText(FlxG.width * 0.9, FlxG.height * 0.201, 200, "");
+		_dateTxt.scrollFactor.set();
+		
 		
 		_camControl = new CameraController(0, 0, FlxG.width * .75 , FlxG.height  * .85);
 		add(_camControl);
@@ -80,12 +89,15 @@ class PlayState extends FlxState
 		add(_moneyTxt);
 		add(_mineralTxt);
 		add(_waterTxt);
+		add(_dateTxt );
 		
 		// GH: World setup
 		CompostG.CAM = _camControl;
 		CompostG.GRID_MAP = _map;
 		
 		add(_world);
+		_simulator = new SimulationController();
+		
 	}
 	
 	/**
@@ -117,5 +129,8 @@ class PlayState extends FlxState
 		_moneyTxt.text = "MONEY: " + CompostG.getProductAmountByType("money");
 		_mineralTxt.text = "MINERAL: " + CompostG.getProductAmountByType("mineral");
 		_waterTxt.text = "WATER: " + CompostG.getProductAmountByType("water");
+		_dateTxt.text = "DATE: " + _simulator.currentDay + " / " + _simulator.currentMonth + " / " + _simulator.currentYear; 
+		
+		
 	}	
 }

@@ -1,5 +1,6 @@
 package buildings;
 
+
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import haxe.Json;
@@ -13,6 +14,7 @@ class Building extends FlxSprite
     public var name(get, set):String;
     public var powered(get, set):Bool;
     public var productionObject(get, set):Array<Product>;
+	
 	
 	var _requiresPower:Bool = false;
     var _requiresManPower:Bool = false;
@@ -40,7 +42,7 @@ class Building extends FlxSprite
 	@:isVar public var currency(default, default) :Array<String> = new Array<String>(); 
 	@:isVar public var availableFunctions(default, default) : Array<String> = new Array<String>();
 	@:isVar public var upkeepCost(default, default) :Array<Int> = new Array<Int>();
-	
+	// GH: Should replace this with proper @:isVar
     public function get_name():String		    									{ return _name; }
     public function set_name(value) 												{ _name = value; return _name; }
 
@@ -75,6 +77,7 @@ class Building extends FlxSprite
     	super(X, Y, SimpleGraphic);
     }
 
+	// GH: Parse the building
     public function load(data:Object):Void
     {
     	_requiresPower = data.requiresPower;
@@ -99,32 +102,42 @@ class Building extends FlxSprite
     override public function update(elapsed :Float):Void
     {
     	super.update(elapsed);
+		// GH: valid building?
     	if (this.alive) 
 		{
-			if (_power || !_requiresPower)
-			{
-    			if (_requiresManPower && _currentManPower < _maxManPower)
-				{
-    				manpowerCheck(elapsed);
-    				return;
-    			}
-    			if (_productionTimer >= _productionRate) 
-				{
-					productionCheck(elapsed);
-				}
-    			_productionTimer += elapsed;
-    		} 
-			else
-			{
-    			trace("NO POWER - REQUIRES POWER");
-    		}
+			// GH: Are we dead?
 			if(_buildingMaxDmg <= 0)
 			{
     			this.kill();
     		}
     	}
     }
+	
+	public function tryProduction() :Void
+	{
+		FlxG.log.add("Trying to produce");
+		// GH: is it powered?
+		if (_power || !_requiresPower)
+		{
+			// GH: this is going to be replaced for events
+			// GH: is it manned?
+			if (_requiresManPower && _currentManPower < _maxManPower)
+			{
+				manpowerCheck(_manPowerMaxPower+1);
+				return;
+			}
+			// GH: Production is being replaced 
+			productionCheck(0);
+			
+		} 
+		else
+		{
+			trace("NO POWER - REQUIRES POWER");
+		}
+		
+	}
 
+	// GH: Signal the clones in the board to come to aid us
     function manpowerCheck(elapsed :Float):Void
     {
     	if (CompostG.getProductAmountByType("clone") < _maxManPower) 
@@ -149,6 +162,7 @@ class Building extends FlxSprite
     	}
     }
 
+	// GH: Add products to CompostG bookkeeping
     function productionCheck(elapsed :Float):Void
     {
     	if (_production <= _maxProduction)
@@ -196,6 +210,7 @@ class Building extends FlxSprite
 		}
 	}
 
+	// GH: cleanup this building
     override public function kill():Void
     {
     	super.kill();
@@ -212,7 +227,7 @@ class Building extends FlxSprite
     	_productionObject = new Array();
     }
 	
-	// GH: process building functions from the selector 
+	// GH: process building functions from777777 the selector 
 	public function processFunction(funcName :String): Void
 	{
 		switch(funcName)
@@ -239,6 +254,7 @@ class Building extends FlxSprite
 		return ret;
 	}
 	
+	// GH: returns the price from the json
 	public function getBuildingPrice() : String
 	{
 		var price : String = "";

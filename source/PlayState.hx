@@ -14,6 +14,7 @@ import gui_selector.Selector;
 import grid.GridMap;
 import flixel.math.FlxPoint;
 import simulation.SimulationController;
+import simulation.SimulationDayEvent;
 import world.World;
 import world.WorldData;
 
@@ -97,6 +98,7 @@ class PlayState extends FlxState
 		
 		add(_world);
 		_simulator = new SimulationController();
+		_simulator.addEventListener(SimulationDayEvent.DAY_OVER, _map.onDayPassed);
 		
 	}
 	

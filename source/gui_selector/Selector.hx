@@ -298,7 +298,7 @@ class Selector extends FlxSpriteGroup
 				continue;
 			}
 			modYCount += (iCount % 5) == 0 ? 1 : 0;
-			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 20 + iCount * _buttonHeight, FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[iCount] ));
+			internalCategoryButtons[btn].push(buildBuildingButton(XBase + 20 + iCount * (_buttonHeight * 2), FlxG.height * .78 + ( modYCount * _buttonHeight), innerData[iCount] ));
 		}
 	}
 	

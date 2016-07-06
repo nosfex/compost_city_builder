@@ -2,12 +2,15 @@ package simulation;
 
 import flixel.FlxG;
 import flixel.util.FlxTimer;
+import openfl.events.EventDispatcher;
+import openfl.events.Event;
+import openfl.events.IEventDispatcher;
 
 /**
  * ...
  * @author Gerardo Heidel
  */
-class SimulationController
+class SimulationController implements IEventDispatcher
 {
 	
 	// GH: Made up duration
@@ -26,8 +29,14 @@ class SimulationController
 	@:isVar public var currentMonth :Int = 1;
 	@:isVar public var currentYear :Int = 1975;
 	
+	private var _dispatcher :EventDispatcher;
+	
+	
+	
 	public function new() 
 	{
+		_dispatcher = new EventDispatcher(this);
+		
 		init();
 	}
 	
@@ -42,6 +51,7 @@ class SimulationController
 		currentHour++;
 		checkIncreaseHour();
 		checkIncreaseDay();
+		checkIncreaseMonth();
 	}
 	
 	private function checkIncreaseHour() :Void
@@ -50,6 +60,9 @@ class SimulationController
 		{
 			currentDay++;
 			currentHour = 0;
+			// GH: Fire a widespread event
+			FlxG.log.add("FIRING + : " + SimulationDayEvent.DAY_OVER + " WILLtRIGGER?: " + willTrigger(SimulationDayEvent.DAY_OVER)) ;
+			_dispatcher.dispatchEvent(new SimulationDayEvent(SimulationDayEvent.DAY_OVER));
 		}
 	}
 	
@@ -59,6 +72,7 @@ class SimulationController
 		{
 			currentMonth++;
 			currentDay = 0;
+			_dispatcher.dispatchEvent(new SimulationDayEvent(SimulationDayEvent.MONTH_OVER));
 		}
 	}
 	
@@ -68,6 +82,7 @@ class SimulationController
 		{
 			currentYear++;
 			currentMonth = 0;
+			_dispatcher.dispatchEvent(new SimulationDayEvent(SimulationDayEvent.YEAR_OVER));
 		}
 	}
 	
@@ -75,6 +90,28 @@ class SimulationController
 	public function update() :Void
 	{
 		
+	}
+	
+	// GH: IEventDispatcher implementation
+	public function addEventListener (type:String, listener:Dynamic->Void, useCapture:Bool = false, priority:Int = 0, useWeakReference:Bool = false):Void
+	{
+		_dispatcher.addEventListener(type, listener, useCapture, priority, useWeakReference);
+	}
+	public function dispatchEvent (event:Event):Bool
+	{
+		return _dispatcher.dispatchEvent(event);
+	}
+	public function hasEventListener (type:String):Bool
+	{
+		return _dispatcher.hasEventListener(type);
+	}
+	public function removeEventListener (type:String, listener:Dynamic->Void, useCapture:Bool = false):Void
+	{
+		_dispatcher.removeEventListener(type, listener, useCapture);
+	}
+	public function willTrigger (type:String):Bool
+	{
+		return _dispatcher.willTrigger(type);
 	}
 	
 }

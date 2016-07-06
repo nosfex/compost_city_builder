@@ -10,6 +10,7 @@ import flixel.FlxSprite;
 import flixel.group.FlxGroup;
 import haxe.ds.Vector.Vector;
 import flixel.math.FlxPoint;
+import simulation.SimulationDayEvent;
 
 import buildings.Building;
 import flixel.FlxG;
@@ -99,7 +100,7 @@ class GridMap extends FlxSpriteGroup
 			}
 		}
     }
-	
+	// GH: Returns a a grid at a given point
 	function checkGridPos(point :FlxPoint) : BaseGrid
 	{
 		for (i in 0 ... _grids.length)
@@ -114,8 +115,23 @@ class GridMap extends FlxSpriteGroup
 				}
 			}
 		}
-		
 		return null;
+	}
+	
+	// GH: daily events
+	public function onDayPassed(e :SimulationDayEvent) :Void
+	{
+		for (i in 0 ... _grids.length)
+		{
+			for (j in 0 ... _grids[i].length)
+			{
+				var b : Building= _grids[i][j].getBuilding();
+				if (b != null)
+				{
+					b.tryProduction();
+				}
+			}
+		}
 	}
 	
 	
@@ -130,7 +146,7 @@ class GridMap extends FlxSpriteGroup
 			}
     	}	
 	}
-
+	
 	// GH: Turn on the lights
     function checkPowered():Void
     {

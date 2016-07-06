@@ -4,6 +4,6 @@
   [ 
     { "owner":"Energy", "buildings":["Power Plant", "Power Line"] }, 
     { "owner":"Production", "buildings": ["Slave Agency", "Mineral Extractor", "Water Extractor"] }, 
-    { "owner":"Housing", "buildings": ["Clone Center", "richhood"]}
+    { "owner":"Housing", "buildings": ["Clone Center"]}
   ]
 }

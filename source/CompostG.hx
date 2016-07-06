@@ -52,4 +52,7 @@ class CompostG
 		}
 		return false;
 	}
+	
+	// GH: Whenever the player completes a task, give them a reward
+	public static function cashReward(type : String.)
 }

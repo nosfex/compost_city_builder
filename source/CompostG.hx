@@ -14,7 +14,7 @@ import Map;
  * @author Gerardo Heidel
  */
 class CompostG
-{
+{ 
 
 	public static var FUNC_BUTTON : String = "";
 	public static var GRID_MAP :GridMap = null;
@@ -54,5 +54,15 @@ class CompostG
 	}
 	
 	// GH: Whenever the player completes a task, give them a reward
-	public static function cashReward(type : String.)
+	public static function cashReward(type : String, amount : Int) : Void
+	{
+		//switch(type)
+		{
+			// GH: Maybe there is a special case where we don't add production (:
+		//	case default: 
+				CompostG.updateProductAmount(type, amount);
+			//	break;
+			
+		}
+	}
 }

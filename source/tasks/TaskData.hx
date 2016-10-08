@@ -11,6 +11,7 @@ class TaskData
 	public var type 		:String = "";
 	public var description 	:String = "";
 	public var target  		:String = "";
+	public var reward 		:Int    = 0;
 	public function new() 
 	{
 		

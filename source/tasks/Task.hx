@@ -27,7 +27,7 @@ class Task
 		
 	}
 	
-	public function init(data : TaskData) : Void
+	public function init(data : Dynamic) : Void
 	{
 		timed = data.timed;
 		type = data.type;
